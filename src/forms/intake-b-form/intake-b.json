@@ -1,0 +1,348 @@
+{
+	"name": "POC Intake-B",
+	"pages": [
+		{
+			"label": "Past OIs and Treatment",
+			"sections": [
+				{
+					"label": "Opportunistic Infections",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Opportunistic Infection present",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "opportunisticInfectionPresent"
+						}
+					]
+				},
+				{
+					"label": "Past Prophylaxis/Treatment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Cotrimoxazole Date started",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "cotrimoxazoleDateStarted"
+						},
+						{
+							"label": "Cotrimoxazole Date stopped",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "cotrimoxazoleDateStopped"
+						},
+						{
+							"label": "Tuberculosis Preventive Therapy Date started",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "tuberculosisPreventiveTherapyDateStarted"
+						},
+						{
+							"label": "Tuberculosis Preventive Therapy Date completed",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "tuberculosisPreventiveTherapyDateCompleted"
+						},
+						{
+							"label": "Fluconazole Preventive Therapy (FPT): Date started",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "FluconazolePreventiveTherapy(FPT):Date started"
+						},
+						{
+							"label": "Fluconazole Preventive Therapy (FPT):Date completed",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "FluconazolePreventiveTherapy(FPT):DateCompleted"
+						},
+						{
+							"label": "ARV For PMTCT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "ARVForPMTCT"
+						},
+						{
+							"label": "Health facility",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "healthFacility"
+						},
+						{
+							"label": "Regimen for mother",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "regimenForMother"
+						},
+						{
+							"label": "Regimen for baby",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "regimenForBaby"
+						},
+						{
+							"label": "Lifelong ART/TI",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "lifelongARTTI"
+						},
+						{
+							"label": "Regimen",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "Regimen"
+						},
+						{
+							"label": "Start date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "startDate"
+						},
+						{
+							"label": "Still on Treatment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "stillonTreatment"
+						},
+						{
+							"label": "Months on ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "monthsOnART"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Client status at enrolment",
+			"sections": [
+				{
+					"label": "Vital signs",
+					"isExpanded": "true",
+					"questions": []
+				},
+				{
+					"label": "Anthropoemetry",
+					"isExpanded": "true",
+					"questions": []
+				},
+				{
+					"label": "Functional status",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Functional status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "functionalStatus"
+						}
+					]
+				},
+				{
+					"label": "developmental status",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "developmental status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "developmentalStatus"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Presenting symptoms",
+			"sections": [
+				{
+					"label": "Presenting complaints",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Presenting complaints",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "presentingComplaints"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Pregnancy at enrollment",
+			"sections": [
+				{
+					"label": "Pregnancy at enrollment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Pregnancy at enrollment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "pregnancyAtEnrollment"
+						},
+						{
+							"label": "LMP",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "LMP"
+						},
+						{
+							"label": "EDD",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "EDD"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Physical Examination",
+			"sections": [
+				{
+					"label": "Physical Examination",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "General Appearance",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "generalAppearance"
+						},
+						{
+							"label": "Physical Examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "physicalExamination"
+						},
+						{
+							"label": "WHO Stagng",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "WHOStagng"
+						},
+						{
+							"label": "Reason for Staging",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "reasonForStaging"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Notes",
+			"sections": [
+				{
+					"label": "Notes",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Notes",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "notes"
+						}
+					]
+				}
+			]
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"uuid": "xxxx",
+	"referencedForms": []
+}
