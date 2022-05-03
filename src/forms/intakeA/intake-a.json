@@ -1,0 +1,359 @@
+{
+	"name": "",
+	"pages": [
+		{
+			"label": "General Information",
+			"sections": [
+				{
+					"label": "General Information",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Enrollment Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "enrollment_date"
+						},
+						{
+							"label": "MRN",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "mrn"
+						},
+						{
+							"label": "Unit TB No",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "unit_tb_no"
+						},
+						{
+							"label": "Target Population Type",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "target_population_type"
+						},
+						{
+							"label": "Client resides within catchment area",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "catchment_area"
+						},
+						{
+							"label": "Challenge to regular follow-up",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "regular_followup"
+						}
+					]
+				},
+				{
+					"label": "Under 5s",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Mother's Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "",
+								"rows": "4"
+							},
+							"id": "mothers_name"
+						},
+						{
+							"label": "Father's Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "",
+								"rows": "4"
+							},
+							"id": "fathers_name"
+						},
+						{
+							"label": "grandfather's Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "",
+								"rows": "4"
+							},
+							"id": "grandfathers_name"
+						},
+						{
+							"label": "Place of delivery",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "place_of_delivery"
+						},
+						{
+							"label": "Mode of delivery",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "mode_of_delivery"
+						}
+					]
+				},
+				{
+					"label": "HIV Confirmation",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Date confirmed",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "",
+								"weeksList": ""
+							},
+							"id": "date_confirmed"
+						},
+						{
+							"label": "Test type",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "test_type"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Entry Point",
+			"sections": [
+				{
+					"label": "Entry Point",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Within the facility ",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "within_the_facility"
+						},
+						{
+							"label": "Outside the facility",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "outside_the_facility"
+						},
+						{
+							"label": "Reason for referral",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "reason_for_referral"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Transfer-In",
+			"sections": []
+		},
+		{
+			"label": "Care giver/Emergency Contact",
+			"sections": [
+				{
+					"label": "Care Giver/Emergency Contact",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Care giver name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "",
+								"rows": "3"
+							},
+							"id": "care_giver_name"
+						},
+						{
+							"label": "Age",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "age"
+						},
+						{
+							"label": "Gender",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "gender"
+						},
+						{
+							"label": "Relation",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "relation"
+						},
+						{
+							"label": "Address",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "address"
+						},
+						{
+							"label": "Region",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "region"
+						},
+						{
+							"label": "Zone/Subcity",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "zone"
+						},
+						{
+							"label": "Woreda",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "woreda"
+						},
+						{
+							"label": "Kebele",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "kebele"
+						},
+						{
+							"label": "House No.",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "house_no"
+						},
+						{
+							"label": "Phone Number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": ""
+							},
+							"id": "phone_number"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Disclosure",
+			"sections": [
+				{
+					"label": "Disclosure",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Disclosed HIV Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "disclosed_hiv_status"
+						},
+						{
+							"label": "To who",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "to_who"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Notes",
+			"sections": [
+				{
+					"label": "Notes",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Notes",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "",
+								"rows": "8"
+							},
+							"id": "notes"
+						}
+					]
+				}
+			]
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"uuid": "xxxx",
+	"referencedForms": []
+}
