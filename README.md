@@ -1,6 +1,6 @@
-![Node.js CI](https://github.com/openmrs/openmrs-esm-template-app/workflows/Node.js%20CI/badge.svg)
+![Node.js CI](https://github.com/openmrs/openmrs-esm-ethiohri-app/workflows/Node.js%20CI/badge.svg)
 
-# OpenMRS ESM Template App
+# OpenMRS ESM ethiohri App
 
 This repository provides a starting point for creating your own
 [OpenMRS Microfrontend](https://wiki.openmrs.org/display/projects/OpenMRS+3.0%3A+A+Frontend+Framework+that+enables+collaboration+and+better+User+Experience).
@@ -27,7 +27,7 @@ should open with the OpenMRS 3 application. Log in and then navigate to
 
 ## Adapting the code
 
-1. Start by finding and replacing all instances of "template" with the name
+1. Start by finding and replacing all instances of "ethiohri" with the name
   of your microfrontend.
 1. Update `index.ts` as appropriate, at least changing the feature name and
   the page name and route.
@@ -39,7 +39,7 @@ should open with the OpenMRS 3 application. Log in and then navigate to
 1. Delete the contents of `translations/en.json`.
 1. Open up `.github/workflows` and adapt it to your needs. If you're writing
   a microfrontend that will be managed by the community, you might be able to
-  just replace all instances of `template` with your microfrontend's name.
+  just replace all instances of `ethiohri` with your microfrontend's name.
   However, if you're writing a microfrontend for a specific organization or
   implementation, you will probably need to configure GitHub Actions differently.
 1. Delete the contents of this README and write a short explanation of what

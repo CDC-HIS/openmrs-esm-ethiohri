@@ -36,57 +36,15 @@ const backendDependencies = {
  * load-time (such as defining the config schema) and then returns an
  * object which describes how the React application(s) should be
  * rendered.
- *
- * In this example, our return object contains a single page definition.
- * It tells the app shell that the default export of `greeter.tsx`
- * should be rendered when the route matches `hello`. The full route
- * will be `openmrsSpaBase() + 'hello'`, which is usually
- * `/openmrs/spa/hello`.
  */
 function setupOpenMRS() {
-  const moduleName = "@openmrs/esm-template-app";
-
-  const options = {
-    featureName: "hello-world",
-    moduleName,
-  };
+  const moduleName = "@openmrs/esm-ethiohri-app";
 
   defineConfigSchema(moduleName, configSchema);
 
   return {
-    pages: [
-      {
-        load: getAsyncLifecycle(() => import("./hello"), options),
-        route: "hello",
-      },
-    ],
-    extensions: [
-      {
-        id: "Red box",
-        load: getAsyncLifecycle(
-          () => import("./boxes/extensions/red-box"),
-          options
-        ),
-        slot: "Boxes",
-      },
-      {
-        id: "Blue box",
-        load: getAsyncLifecycle(
-          () => import("./boxes/extensions/blue-box"),
-          options
-        ),
-        slot: "Boxes",
-        // same as `slots: ["Boxes"],`
-      },
-      {
-        id: "Brand box",
-        load: getAsyncLifecycle(
-          () => import("./boxes/extensions/brand-box"),
-          options
-        ),
-        slot: "Boxes",
-      },
-    ],
+    pages: [],
+    extensions: [],
   };
 }
 
