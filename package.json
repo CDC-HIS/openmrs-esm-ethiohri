@@ -45,7 +45,9 @@
   "dependencies": {
     "@carbon/icons-react": "^10.18.0",
     "carbon-components-react": "^7.25.0",
-    "lodash-es": "^4.17.15"
+    "lodash-es": "^4.17.15",
+    "openmrs-esm-ohri-commons-lib": "^0.6.33-alpha.0",
+    "openmrs-ohri-form-engine-lib": "^0.1.7"
   },
   "peerDependencies": {
     "@openmrs/esm-framework": "^3.14.0-pre",
@@ -58,6 +60,7 @@
     "rxjs": "6.x"
   },
   "devDependencies": {
+    "@openmrs/esm-patient-common-lib": "next",
     "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/preset-env": "^7.14.4",

@@ -1,0 +1,11 @@
+{
+    "@openmrs/esm-patient-chart-app": {
+      "extensionSlots": {
+        "program-management-summary-slot": {
+          "remove": [
+            "program-management-summary-ext"
+          ]
+        }
+      }
+    }
+  }

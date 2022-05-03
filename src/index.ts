@@ -5,8 +5,13 @@
  * microfrontend.
  */
 
-import { getAsyncLifecycle, defineConfigSchema } from "@openmrs/esm-framework";
+import {
+  getAsyncLifecycle,
+  defineConfigSchema,
+  provide,
+} from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
+import dashBoardOverrides from "./dashboard-overrides.json";
 
 /**
  * This tells the app shell how to obtain translation files: that they
@@ -41,10 +46,24 @@ function setupOpenMRS() {
   const moduleName = "@openmrs/esm-ethiohri-app";
 
   defineConfigSchema(moduleName, configSchema);
+  // provide(dashBoardOverrides);
 
   return {
     pages: [],
-    extensions: [],
+    extensions: [
+      {
+        id: "ethiohri-program-summary-ext",
+        slot: "program-management-summary-slot",
+        load: getAsyncLifecycle(
+          () =>
+            import("./program-management-summary/program-management.component"),
+          {
+            featureName: "program-summary-extension",
+            moduleName,
+          }
+        ),
+      },
+    ],
   };
 }
 
