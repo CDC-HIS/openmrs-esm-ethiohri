@@ -9,10 +9,12 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
+  getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import dashBoardOverrides from "./dashboard-overrides.json";
-
+import { addToBaseFormsRegistry } from "openmrs-ohri-form-engine-lib";
+import formsRegistry from "./forms/forms-registry";
 /**
  * This tells the app shell how to obtain translation files: that they
  * are JSON files in the directory `../translations` (which you should
@@ -46,8 +48,8 @@ function setupOpenMRS() {
   const moduleName = "@openmrs/esm-ethiohri-app";
 
   defineConfigSchema(moduleName, configSchema);
-  // provide(dashBoardOverrides);
-
+  provide(dashBoardOverrides);
+  addToBaseFormsRegistry(formsRegistry);
   return {
     pages: [],
     extensions: [
