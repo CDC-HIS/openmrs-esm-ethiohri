@@ -9,7 +9,6 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
-  getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import dashBoardOverrides from "./dashboard-overrides.json";
