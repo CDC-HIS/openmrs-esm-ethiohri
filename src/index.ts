@@ -58,7 +58,9 @@ function setupOpenMRS() {
         slot: "program-management-summary-slot",
         load: getAsyncLifecycle(
           () =>
-            import("./program-management-summary/program-management.component"),
+            import(
+              "./pages/program-management/program-managment-summary.component"
+            ),
           {
             featureName: "program-summary-extension",
             moduleName,
