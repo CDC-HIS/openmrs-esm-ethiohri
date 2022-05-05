@@ -1,19 +1,20 @@
 import { Tab, Tabs } from "carbon-components-react";
 import React from "react";
-import IntakeA from "./tabs/intake-a.component";
-import IntakeB from "./tabs/intake-b.component";
+import IntakeAEncounterList from "./tabs/intake-a.component";
+import IntakeBEncounterList from "./tabs/intake-b.component";
+import styles from "./program-management.scss";
 
 const ProgramManagment: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
   return (
-    <div>
+    <div className={styles.tabContainer}>
       <Tabs>
         <Tab label="Intake A">
-          <IntakeA patientUuid={patientUuid} />
+          <IntakeAEncounterList patientUuid={patientUuid} />
         </Tab>
         <Tab label="Intake B">
-          <IntakeB patientUuid={patientUuid} />
+          <IntakeBEncounterList patientUuid={patientUuid} />
         </Tab>
       </Tabs>
     </div>

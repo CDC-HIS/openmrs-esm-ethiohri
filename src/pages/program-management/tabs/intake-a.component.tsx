@@ -53,7 +53,9 @@ const columns = [
   },
 ];
 
-const IntakeA: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
+  patientUuid,
+}) => {
   return (
     <EncounterList
       patientUuid={patientUuid}
@@ -67,4 +69,4 @@ const IntakeA: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 };
 
-export default IntakeA;
+export default IntakeAEncounterList;
