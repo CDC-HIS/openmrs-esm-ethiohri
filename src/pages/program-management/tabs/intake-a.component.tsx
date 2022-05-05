@@ -58,7 +58,7 @@ const IntakeA: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
     <EncounterList
       patientUuid={patientUuid}
       encounterUuid=""
-      form={{ package: "hiv", name: "intake_a" }}
+      form={{ package: "eth-hiv", name: "intake_a" }}
       columns={columns}
       description="Intake A Encounter List"
       headerTitle="Intake A"
