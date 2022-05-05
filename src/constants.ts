@@ -1,1 +1,2 @@
-export const INTAKE_A_ENCOUNTER_TYPE = "";
+export const INTAKE_A_ENCOUNTER_TYPE = "05add044-67f8-48c9-928d-79002ab19efe";
+export const INTAKE_B_ENCOUNTER_TYPE = "dc94a223-66bc-45b7-8e34-d13b8686f239";
