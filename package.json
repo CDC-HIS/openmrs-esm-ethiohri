@@ -46,7 +46,7 @@
     "@carbon/icons-react": "^10.18.0",
     "carbon-components-react": "^7.25.0",
     "lodash-es": "^4.17.15",
-    "openmrs-esm-ohri-commons-lib": "^0.6.33-alpha.0",
+    "openmrs-esm-ohri-commons-lib": "^0.6.39",
     "openmrs-ohri-form-engine-lib": "^0.1.7"
   },
   "peerDependencies": {
