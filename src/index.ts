@@ -11,7 +11,7 @@ import {
   provide,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
-import dashBoardOverrides from "./dashboard-overrides.json";
+import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
 import { addToBaseFormsRegistry } from "openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
 /**
@@ -47,7 +47,7 @@ function setupOpenMRS() {
   const moduleName = "@openmrs/esm-ethiohri-app";
 
   defineConfigSchema(moduleName, configSchema);
-  provide(dashBoardOverrides);
+  provide(ethiohriConfigOverrides);
   addToBaseFormsRegistry(formsRegistry);
   return {
     pages: [],

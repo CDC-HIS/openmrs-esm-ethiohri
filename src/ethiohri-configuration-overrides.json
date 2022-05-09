@@ -1,0 +1,55 @@
+{
+    "@openmrs/esm-patient-chart-app": {
+      "extensionSlots": {
+        "program-management-summary-slot": {
+          "remove": [
+            "program-management-summary-ext"
+          ]
+        },
+        "patient-chartdashboard-slot": {
+          "remove": [
+            "cacx-appointments-dashboard",
+            "cacx-summary-dashboard",
+            "cacx-visits-dashboard",
+            "covid-Assessments-dashboard",
+            "covid-lab-results", 
+            "covid-vaccinations-dashboard",
+            "pre-exposure-prophylaxis",
+            "hts-service-summary-dashboard",
+            "medications-summary-dashboard", 
+            "lab-results-summary-dashboard-slot",
+            "partner-notification-services-slot",
+            "adherence-counselling-summary-slot",
+            "general-counselling-summary-slot",
+            "visits-summary-slot",
+            "visits-summary-ext"
+          ]
+        }
+      }
+    },
+    "openmrs-esm-ohri-core-app": {
+      "extensionSlots": {
+        "dashboard-slot": {
+          "remove": [
+            "hiv-dashboard-items",
+            "covid-dashboard-items"
+          ]
+        }
+      }
+    },
+    "@openmrs/esm-login-app": {
+      "logo": {
+        "src": "http://ec2-44-202-151-178.compute-1.amazonaws.com/openmrs/spa/ethiohri_darkbk.png"
+      }
+    },
+    "@openmrs/esm-primary-navigation-app": {
+      "logo": {
+        "src": "http://ec2-44-202-151-178.compute-1.amazonaws.com/openmrs/spa/ethiohri_lightbk.png"
+      }
+    },
+    "@openmrs/esm-styleguide": {
+      "Brand color #1": "#002f6c",
+      "Brand color #2": "#1a75bb",
+      "Brand color #3": "#1a75bb"
+    }
+  }
