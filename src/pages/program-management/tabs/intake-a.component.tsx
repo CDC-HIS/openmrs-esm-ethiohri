@@ -3,6 +3,7 @@ import {
   EncounterList,
   getObsFromEncounter,
 } from "openmrs-esm-ohri-commons-lib/src/index";
+import { INTAKE_A_ENCOUNTER_TYPE } from "../../../constants";
 
 const columns = [
   {
@@ -59,7 +60,7 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid=""
+      encounterUuid={INTAKE_A_ENCOUNTER_TYPE}
       form={{ package: "eth-hiv", name: "intake_a" }}
       columns={columns}
       description="Intake A Encounter List"
