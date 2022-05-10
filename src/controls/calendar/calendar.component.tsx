@@ -9,15 +9,13 @@ const Calendar: React.FC<{
     // @ts-ignore
     var calendar = window.jQuery?.calendars.instance("ethiopian", "am");
     // @ts-ignore
-    // window.jQuery?('#id_et_calender').calendarsPicker({
-    //   calendar: calendar,
-    //   onSelect: () => {
-    //     // @ts-ignore
-    //       var eth = window.jQuery('#id_et_calender').val();
-    //       console.log({ valueDate: eth})
-    //   },
-    // })
-    // console.log({ calendar });
+    window.jQuery?.("#id_et_calender").calendarsPicker({
+      calendar: calendar,
+      onSelect: () => {
+        // @ts-ignore
+        var eth = window.jQuery("#id_et_calender").val();
+      },
+    });
     // @ts-ignore
   }, [window.jQuery]);
 
