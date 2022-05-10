@@ -11,4 +11,8 @@ config.overrides.resolve = {
     "openmrs-ohri-form-engine-lib": "openmrs-ohri-form-engine-lib/src/index",
   },
 };
+// Overrides to disable CSS Modules for non-scss scripts, this means
+// CSS Modules will only be supported with .scss scripts
+config.cssRuleConfig.use = ["style-loader", "css-loader"];
+config.cssRuleConfig.test = /\.css$/;
 module.exports = config;

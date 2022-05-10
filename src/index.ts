@@ -25,7 +25,6 @@ require("./vendor/lib/jquery-calendars/js/jquery.calendars.min.js");
 require("./vendor/lib/jquery-calendars/js/jquery.calendars.all.min.js");
 require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian.min.js");
 require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian-am.js");
-
 /**
  * This tells the app shell how to obtain translation files: that they
  * are JSON files in the directory `../translations` (which you should
