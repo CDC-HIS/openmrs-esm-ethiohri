@@ -127,8 +127,8 @@
 							"label": "Date confirmed",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
-								"concept": "",
+								"rendering": "eth-date",
+								"concept": "chgvugvuyguygu-hgvgvuyguy-hgchgchgcgcuhvju",
 								"weeksList": ""
 							},
 							"id": "date_confirmed"
