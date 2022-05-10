@@ -65,4 +65,5 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
     />
   );
 };
+
 export default IntakeBEncounterList;
