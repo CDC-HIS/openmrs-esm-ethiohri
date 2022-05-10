@@ -20,13 +20,12 @@ import {
   OHRIFormsTagLibraryStore,
 } from "openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
-import { createDashboardLink } from "@openmrs/esm-patient-common-lib";
-require("./assets/lib/jquery-calendars/js/jquery.min.js");
-require("./assets/lib/jquery-calendars/js/jquery.plugin.min.js");
-require("./assets/lib/jquery-calendars/js/jquery.calendars.min.js");
-require("./assets/lib/jquery-calendars/js/jquery.calendars.all.min.js");
-require("./assets/lib/jquery-calendars/js/jquery.calendars.ethiopian.min.js");
-require("./assets/lib/jquery-calendars/js/jquery.calendars.ethiopian-am.js");
+require("./vendor/lib/jquery-calendars/js/jquery.min.js");
+require("./vendor/lib/jquery-calendars/js/jquery.plugin.min.js");
+require("./vendor/lib/jquery-calendars/js/jquery.calendars.min.js");
+require("./vendor/lib/jquery-calendars/js/jquery.calendars.all.min.js");
+require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian.min.js");
+require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian-am.js");
 
 /**
  * This tells the app shell how to obtain translation files: that they
