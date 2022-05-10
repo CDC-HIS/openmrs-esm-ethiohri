@@ -14,6 +14,13 @@ import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
 import { addToBaseFormsRegistry } from "openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
+require("./assets/lib/jquery-calendars/js/jquery.min.js");
+require("./assets/lib/jquery-calendars/js/jquery.plugin.min.js");
+require("./assets/lib/jquery-calendars/js/jquery.calendars.min.js");
+require("./assets/lib/jquery-calendars/js/jquery.calendars.all.min.js");
+require("./assets/lib/jquery-calendars/js/jquery.calendars.ethiopian.min.js");
+require("./assets/lib/jquery-calendars/js/jquery.calendars.ethiopian-am.js");
+
 /**
  * This tells the app shell how to obtain translation files: that they
  * are JSON files in the directory `../translations` (which you should
@@ -45,7 +52,6 @@ const backendDependencies = {
  */
 function setupOpenMRS() {
   const moduleName = "@openmrs/esm-ethiohri-app";
-
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
   addToBaseFormsRegistry(formsRegistry);
