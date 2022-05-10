@@ -53,16 +53,6 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "166432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "166432"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "363787002"
-									}
-								],
 								"answers": [
 									{
 										"concept": "166431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -91,34 +81,16 @@
 												"value": "385436007"
 											}
 										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "166432"
 									},
 									{
-										"concept": "166430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "General population",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "166430"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "385436007"
-											}
-										]
-									},
-									{
-										"concept": "166431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Target population",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "166431"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "385436007"
-											}
-										]
+										"type": "SNOMED-CT",
+										"value": "363787002"
 									}
 								]
 							},
@@ -658,11 +630,6 @@
 										]
 									},
 									{
-										"concept": "162050AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Comprehensive care center",
-										"conceptMappings": []
-									},
-									{
 										"concept": "261855fb-32d6-43c3-b0bf-e8737db154f7",
 										"label": "Family Planning Clinic",
 										"conceptMappings": []
@@ -769,126 +736,6 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "165475AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Antenatal program",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160552AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Nutrition program",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1845"
-											},
-											{
-												"type": "PIH",
-												"value": "1845"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "386373004"
-											},
-											{
-												"type": "CIEL",
-												"value": "160552"
-											}
-										]
-									},
-									{
-										"concept": "164835AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Labor and delivery unit",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other non-coded",
-										"conceptMappings": [
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
-									},
-									{
-										"concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Inpatient care or hospitalization",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1429"
-											},
-											{
-												"type": "PIH",
-												"value": "1429"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5485"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5485"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "394656005"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "394656005"
-											},
-											{
-												"type": "CIEL",
-												"value": "5485"
-											}
-										]
-									},
-									{
 										"concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Outpatient department",
 										"conceptMappings": [
@@ -919,90 +766,6 @@
 											{
 												"type": "CIEL",
 												"value": "160542"
-											}
-										]
-									},
-									{
-										"concept": "6007b076-9e67-47e5-8e57-ee5d1331fbe0",
-										"label": "Post Natal Program",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Outpatient department",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "33022008"
-											},
-											{
-												"type": "PIH",
-												"value": "1651"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1965"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1965"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "33022008"
-											},
-											{
-												"type": "PIH",
-												"value": "1651"
-											},
-											{
-												"type": "CIEL",
-												"value": "160542"
-											}
-										]
-									},
-									{
-										"concept": "160546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sexually transmitted infection program/clinic",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "25681007"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "25681007"
-											},
-											{
-												"type": "CIEL",
-												"value": "160546"
-											},
-											{
-												"type": "PIH",
-												"value": "1786"
-											},
-											{
-												"type": "PIH",
-												"value": "1786"
-											}
-										]
-									},
-									{
-										"concept": "261855fb-32d6-43c3-b0bf-e8737db154f7",
-										"label": "Family Planning Clinic",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160541AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Tuberculosis treatment program",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "401173007"
-											},
-											{
-												"type": "CIEL",
-												"value": "160541"
 											}
 										]
 									},
@@ -1019,7 +782,7 @@
 							"label": "Outside the facility",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "checkbox",
 								"concept": "91eb14f1-c951-4d65-a4b4-6dbf9d88cd1a",
 								"answers": [
 									{
@@ -1196,7 +959,7 @@
 								"answers": [
 									{
 										"concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Male gender",
+										"label": "Male",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1218,7 +981,7 @@
 									},
 									{
 										"concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Female gender",
+										"label": "Female",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -1473,44 +1236,6 @@
 											{
 												"type": "AMPATH",
 												"value": "1065"
-											}
-										]
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
 											}
 										]
 									}
