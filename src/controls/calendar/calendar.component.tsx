@@ -1,5 +1,6 @@
+import { TextInput } from "carbon-components-react";
 import React, { useEffect } from "react";
-
+import "../../vendor/lib/jquery-calendars/css/jquery.calendars.picker.css";
 const Calendar: React.FC<{
   question: any;
   onChange: () => void;
@@ -21,12 +22,12 @@ const Calendar: React.FC<{
 
   return (
     <div>
-      <input
-        type="text"
+      <TextInput
         id="id_et_calender"
-        className="datepicker"
-        placeholder="DD-MM-YYYY"
+        labelText={question.label}
         autoComplete="off"
+        className="datepicker"
+        placeholder="DD/MM/YYYY"
       />
     </div>
   );
