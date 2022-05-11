@@ -875,24 +875,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "2cb28f68-0277-48d7-8b38-8e6cf38a30a9",
-								"answers": [
-									{
-										"concept": "cc786035-c6cf-49ac-b4fb-c849ea07eb33",
-										"label": "To be enrolled as transferred in Pre-ART client",
-										"conceptMappings": []
-									},
-									{
-										"concept": "30458643-b575-4a93-98e8-06a1011633ca",
-										"label": "To be enrolled in ART",
-										"conceptMappings": []
-									},
-									{
-										"concept": "cf055224-fe93-432b-8934-5a11a98ce999",
-										"label": "To be enrolled as new Pre-ART",
-										"conceptMappings": []
-									}
-								]
+								"concept": ""
+								
 							},
 							"id": "reason_for_referral"
 						}
@@ -943,7 +927,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
-								"concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "",
 								"max": "",
 								"min": "",
 								"showDate": ""
