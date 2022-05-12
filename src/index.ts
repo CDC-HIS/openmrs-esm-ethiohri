@@ -9,11 +9,14 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
+  getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
 import { addToBaseFormsRegistry } from "openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
+import { createDashboardLink } from "@openmrs/esm-patient-common-lib";
+
 /**
  * This tells the app shell how to obtain translation files: that they
  * are JSON files in the directory `../translations` (which you should
@@ -46,6 +49,8 @@ const backendDependencies = {
 function setupOpenMRS() {
   const moduleName = "@openmrs/esm-ethiohri-app";
 
+  const options = { featureName: "ethiohri", moduleName };
+
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
   addToBaseFormsRegistry(formsRegistry);
@@ -66,6 +71,30 @@ function setupOpenMRS() {
           }
         ),
       },
+      // Sample code to add new sidenav links
+      // {
+      //   id: "ethiohri-dashboard",
+      //   slot: "patient-chart-dashboard-slot",
+      //   load: getSyncLifecycle(
+      //     createDashboardLink(ethiohriDashboardMeta),
+      //     options
+      //   ),
+      //   meta: ethiohriDashboardMeta,
+      // },
+      // {
+      //   id: "ethiohri-summary-ext",
+      //   slot: "ethiohri-dashboard-slot",
+      //   load: getAsyncLifecycle(
+      //     () =>
+      //       import(
+      //         "./pages/program-management/program-managment-summary.component"
+      //       ),
+      //     {
+      //       featureName: "program-summary-extension",
+      //       moduleName,
+      //     }
+      //   ),
+      // },
     ],
   };
 }

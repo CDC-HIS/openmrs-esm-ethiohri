@@ -39,12 +39,12 @@
     },
     "@openmrs/esm-login-app": {
       "logo": {
-        "src": "http://ec2-44-202-151-178.compute-1.amazonaws.com/openmrs/spa/ethiohri_darkbk.png"
+        "src": "https://ethiohri-dev.globalhealthapp.net/openmrs/spa/ethiohri_darkbk.png"
       }
     },
     "@openmrs/esm-primary-navigation-app": {
       "logo": {
-        "src": "http://ec2-44-202-151-178.compute-1.amazonaws.com/openmrs/spa/ethiohri_lightbk.png"
+        "src": "https://ethiohri-dev.globalhealthapp.net/openmrs/spa/ethiohri_lightbk.png"
       }
     },
     "@openmrs/esm-styleguide": {
