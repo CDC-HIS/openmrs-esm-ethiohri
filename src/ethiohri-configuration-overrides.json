@@ -11,12 +11,12 @@
             "cacx-appointments-dashboard",
             "cacx-summary-dashboard",
             "cacx-visits-dashboard",
-            "covid-Assessments-dashboard",
-            "covid-lab-results", 
+            "covid-assessments-dashboard",
+            "covid-lab-results",
             "covid-vaccinations-dashboard",
             "pre-exposure-prophylaxis",
             "hts-service-summary-dashboard",
-            "medications-summary-dashboard", 
+            "medications-summary-dashboard",
             "lab-results-summary-dashboard-slot",
             "partner-notification-services-slot",
             "adherence-counselling-summary-slot",
@@ -39,12 +39,12 @@
     },
     "@openmrs/esm-login-app": {
       "logo": {
-        "src": "http://ec2-44-202-151-178.compute-1.amazonaws.com/openmrs/spa/ethiohri_darkbk.png"
+        "src": "https://ethiohri-dev.globalhealthapp.net/openmrs/spa/ethiohri_darkbk.png"
       }
     },
     "@openmrs/esm-primary-navigation-app": {
       "logo": {
-        "src": "http://ec2-44-202-151-178.compute-1.amazonaws.com/openmrs/spa/ethiohri_lightbk.png"
+        "src": "https://ethiohri-dev.globalhealthapp.net/openmrs/spa/ethiohri_lightbk.png"
       }
     },
     "@openmrs/esm-styleguide": {

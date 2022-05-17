@@ -9,6 +9,7 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
+  getSyncLifecycle,
   getGlobalStore,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
@@ -56,6 +57,9 @@ const backendDependencies = {
  */
 function setupOpenMRS() {
   const moduleName = "@openmrs/esm-ethiohri-app";
+
+  const options = { featureName: "ethiohri", moduleName };
+
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
   addToBaseFormsRegistry(formsRegistry);
@@ -85,6 +89,30 @@ function setupOpenMRS() {
           }
         ),
       },
+      // Sample code to add new sidenav links
+      // {
+      //   id: "ethiohri-dashboard",
+      //   slot: "patient-chart-dashboard-slot",
+      //   load: getSyncLifecycle(
+      //     createDashboardLink(ethiohriDashboardMeta),
+      //     options
+      //   ),
+      //   meta: ethiohriDashboardMeta,
+      // },
+      // {
+      //   id: "ethiohri-summary-ext",
+      //   slot: "ethiohri-dashboard-slot",
+      //   load: getAsyncLifecycle(
+      //     () =>
+      //       import(
+      //         "./pages/program-management/program-managment-summary.component"
+      //       ),
+      //     {
+      //       featureName: "program-summary-extension",
+      //       moduleName,
+      //     }
+      //   ),
+      // },
     ],
   };
 }
