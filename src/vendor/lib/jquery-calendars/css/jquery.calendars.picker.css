@@ -1,6 +1,6 @@
 /* Default styling for jQuery Calendars Picker v2.0.0. */
 .calendars {
-	background-color: #fff;
+	background-color: #f4f4f4;
 	color: #000;
 	/*border: 1px solid #444;*/
     -moz-border-radius: 0em;
@@ -218,14 +218,15 @@ button.calendars-cmd {
 	color: #888;
 }
 .calendars-month td .calendars-other-month {
-	background-color: #fff;
+	background-color: #f4f4f4;
 }
 .calendars-month td .calendars-weekend {
 	background-color: transparent;
 }
 .calendars-month td .calendars-today {
-	background-color: #fff;
+	background-color: #f4f4f4;
     color: #2677fb;
+	font-weight: bold;
 }
 .calendars-month td .calendars-highlight {
 	background-color: #ededed;
