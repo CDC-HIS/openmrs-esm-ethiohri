@@ -62,11 +62,13 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
 
   const onDateChange = ([date]) => {
     var gregDate = ethToGreg(date);
+    var testDate = new Date(gregDate);
+    var savedDate = new Date(testDate.setDate(testDate.getDate() + 1));
     const refinedDate =
       date instanceof Date
         ? new Date(date.getTime() - date.getTimezoneOffset() * 60000)
-        : gregDate;
-    setFieldValue(question.id, refinedDate);
+        : savedDate;
+    setFieldValue(question.id, gregDate);
     onChange(question.id, refinedDate, setErrors);
     question.value = handler.handleFieldSubmission(
       question,
@@ -94,7 +96,8 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
       // @ts-ignore
       var appdategcstr = window.jQuery?.calendars
         .instance("gregorian")
-        .formatDate("mm/dd/yyyy", appdategc);
+        // .formatDate("mm/dd/yyyy", appdategc);
+        .formatDate("yyyy,mm,dd", appdategc);
 
       return appdategcstr;
     } else return null;
@@ -105,6 +108,11 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
     var dmy;
     dmy = gregdate.split("-"); // first try the - separator
     if (dmy.length != 3) dmy = gregdate.split("/"); // then try the / separator
+    if (dmy.length != 3)
+      dmy = new Date(gregdate)
+        .toLocaleDateString("en-US")
+        .toString()
+        .split("/");
     if (dmy.length == 3) {
       // @ts-ignore
       var appdate = ($ as any).calendars
@@ -135,8 +143,19 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
         fields
       );
       if (!isEmpty(prevValue?.value)) {
-        prevValue.display = dateFormatter.format(prevValue.value);
-        prevValue.value = [prevValue.value];
+        //TODO: check whether value is a string or an array | Not needed
+        try {
+          prevValue.display = gregToEth(
+            new Date(prevValue.value).toLocaleDateString("en-US").toString()
+          );
+        } catch (error) {
+          console.log("########???????  ERROR LOG: ", { error, prevValue });
+        }
+        prevValue.value = [
+          gregToEth(
+            new Date(prevValue.value).toLocaleDateString("en-US").toString()
+          ),
+        ];
         setPreviousValueForReview(prevValue);
       }
     }
@@ -187,11 +206,7 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
             // id="id_et_calender"
             id={question.id}
             labelText={question.label}
-            value={
-              field.value instanceof Date
-                ? field.value.toLocaleDateString(window.navigator.language)
-                : gregToEth(field.value)
-            }
+            value={gregToEth(field.value)}
             autoComplete="off"
             className="datepicker"
             placeholder="DD/MM/YYYY"
