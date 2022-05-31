@@ -63,7 +63,8 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
   const onDateChange = ([date]) => {
     var gregDate = ethToGreg(date);
     var testDate = new Date(gregDate);
-    var savedDate = new Date(testDate.setDate(testDate.getDate() + 1));
+    var savedDate = new Date(testDate);
+    savedDate.setHours(12);
     const refinedDate =
       date instanceof Date
         ? new Date(date.getTime() - date.getTimezoneOffset() * 60000)
@@ -149,7 +150,7 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
             new Date(prevValue.value).toLocaleDateString("en-US").toString()
           );
         } catch (error) {
-          console.log("########???????  ERROR LOG: ", { error, prevValue });
+          // console.log("########???????  ERROR LOG: ", { error, prevValue });
         }
         prevValue.value = [
           gregToEth(
