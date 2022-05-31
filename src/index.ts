@@ -71,6 +71,53 @@ function setupOpenMRS() {
           }
         ),
       },
+      {
+        id: "hts-service-summary-list-ext",
+        slot: "hts-service-summary-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/hiv-service/hiv-service-summary.component"),
+          {
+            featureName: "service-summary-extension",
+            moduleName,
+          }
+        ),
+      },
+      {
+        id: "visits-summary-ext",
+        slot: "visits-summary-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/visit-summary/visit-summary.component"),
+          {
+            featureName: "visit-summary-extension",
+            moduleName,
+          }
+        ),
+      },
+      {
+        id: "adherence-counselling-summary-ext",
+        slot: "adherence-counselling-summary-slot",
+        load: getAsyncLifecycle(
+          () =>
+            import(
+              "./pages/adherence-counselling/adherence-counselling-summary.component"
+            ),
+          {
+            featureName: "adherence-summary-extension",
+            moduleName,
+          }
+        ),
+      },
+      {
+        id: "hts-patient-encounters-list-ext",
+        slot: "hts-summary-dashboard-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/hts/hts-overview-summary.component"),
+          {
+            featureName: "hts-patient-encounters-list",
+            moduleName,
+          }
+        ),
+      },
       // Sample code to add new sidenav links
       // {
       //   id: "ethiohri-dashboard",
