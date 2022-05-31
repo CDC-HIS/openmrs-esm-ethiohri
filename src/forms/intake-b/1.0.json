@@ -12,10 +12,250 @@
 							"label": "Opportunistic Infection present",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
+								"rendering": "radio",
+								"concept": "c52ecf45-bd6c-43ed-861b-9a2714878729",
+								"answers": [
+									{
+										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "None",
+										"conceptMappings": [
+											{
+												"type": "PIH-Malawi",
+												"value": "1107"
+											},
+											{
+												"type": "PIH",
+												"value": "1107"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1107"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "260413007"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "NONE"
+											},
+											{
+												"type": "CIEL",
+												"value": "1107"
+											}
+										]
+									},
+									{
+										"concept": "131768AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Opportunistic Infectious Disease",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "23985"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "7388"
+											},
+											{
+												"type": "CIEL",
+												"value": "131768"
+											},
+											{
+												"type": "PIH",
+												"value": "1607"
+											},
+											{
+												"type": "PIH",
+												"value": "1731"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "61274003"
+											},
+											{
+												"type": "PIH",
+												"value": "1401"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											}
+										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "IMO-ProblemIT",
+										"value": "23985"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "7388"
+									},
+									{
+										"type": "CIEL",
+										"value": "131768"
+									},
+									{
+										"type": "PIH",
+										"value": "1607"
+									},
+									{
+										"type": "PIH",
+										"value": "1731"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "61274003"
+									},
+									{
+										"type": "PIH",
+										"value": "1401"
+									}
+								]
 							},
 							"id": "opportunisticInfectionPresent"
+						},
+						{
+							"label": "Current HIV related opportunistic infections",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "6bdf2636-7da1-4691-afcc-5eede094138f",
+								"answers": [
+									{
+										"concept": "145872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cerebral Cryptococcosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "120781AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cervical Intraepithelial Neoplasm",
+										"conceptMappings": []
+									},
+									{
+										"concept": "120330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Coccidioidomycosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "142963AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cytomegalovirus infection",
+										"conceptMappings": []
+									},
+									{
+										"concept": "111759AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Hepatitis B",
+										"conceptMappings": []
+									},
+									{
+										"concept": "156590AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "hepatitis C virus infection",
+										"conceptMappings": []
+									},
+									{
+										"concept": "153466AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "herpes simplex type 2 infection",
+										"conceptMappings": []
+									},
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Herpes zoster",
+										"conceptMappings": []
+									},
+									{
+										"concept": "117514AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Histoplasmosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HIV encephalopathy",
+										"conceptMappings": []
+									},
+									{
+										"concept": "137480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Infection due to Candida Albicans",
+										"conceptMappings": []
+									},
+									{
+										"concept": "116322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Leukoencephalopathy",
+										"conceptMappings": []
+									},
+									{
+										"concept": "116104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Malignant Lymphoma",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160007AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Mycobacterium tuberculosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "882AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumocystis carinii pneumonia",
+										"conceptMappings": []
+									},
+									{
+										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumonia",
+										"conceptMappings": []
+									},
+									{
+										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pulmonary Cryptococcosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Salmonella Septicaemia",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "823AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Wasting syndrome",
+										"conceptMappings": []
+									}
+								]
+							},
+							"hide": {
+								"hideWhenExpression": "opportunisticInfectionPresent != '131768AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "currentHIVRelatedOIs"
 						}
 					]
 				},
@@ -165,8 +405,18 @@
 							"label": "ARV For PMTCT",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": "5576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"rendering": "radio",
+								"concept": "",
+								"answers": [
+									{
+										"label": "yes",
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"label": "no",
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								],
 								"conceptMappings": [
 									{
 										"type": "SNOMED-MVP",
@@ -179,36 +429,6 @@
 									{
 										"type": "PIH",
 										"value": "1446"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "416608005"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "55761000105009"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5576"
-									},
-									{
-										"type": "PIH",
-										"value": "1446"
-									},
-									{
-										"type": "AMPATH",
-										"value": "2198"
-									}
-								],
-								"answers": [
-									{
-										"label": "yes",
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"label": "no",
-										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									}
 								]
 							},
@@ -221,6 +441,9 @@
 								"rendering": "text",
 								"concept": "1537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
+							"hide": {
+								"hideWhenExpression": "ARVForPMTCT != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "healthFacility"
 						},
 						{
@@ -229,6 +452,9 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": ""
+							},
+							"hide": {
+								"hideWhenExpression": "ARVForPMTCT != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "regimenForMother"
 						},
@@ -239,14 +465,27 @@
 								"rendering": "text",
 								"concept": ""
 							},
+							"hide": {
+								"hideWhenExpression": "ARVForPMTCT != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "regimenForBaby"
 						},
 						{
 							"label": "Lifelong ART/TI",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
+								"rendering": "radio",
+								"concept": "",
+								"answers": [
+									{
+										"label": "yes",
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"label": "no",
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
 							},
 							"id": "lifelongARTTI"
 						},
@@ -256,6 +495,9 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": ""
+							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "Regimen"
 						},
@@ -308,14 +550,30 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "startDate"
 						},
 						{
 							"label": "Still on Treatment",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
+								"rendering": "checkbox",
+								"concept": "",
+								"answers": [
+									{
+										"label": "yes",
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"label": "no",
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "stillonTreatment"
 						},
@@ -332,6 +590,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "monthsOnART"
 						}
 					]
@@ -342,67 +603,46 @@
 			"label": "Client status at enrolment",
 			"sections": [
 				{
-					"label": "Vital signs",
-					"isExpanded": "true",
-					"questions": []
-				},
-				{
 					"label": "Anthropoemetry",
 					"isExpanded": "true",
-					"questions": []
+					"questions": [
+						{
+							"label": "Anthropometry interpretation",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "anthropometryInterpretation"
+						}
+					]
 				},
 				{
 					"label": "Functional status",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Functional status",
+							"label": "Patient Functional status",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
 								"concept": ""
 							},
-							"id": "functionalStatus"
+							"id": "patientFunctionalStatus"
 						}
 					]
 				},
 				{
-					"label": "developmental status",
+					"label": "Developmental Status",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "developmental status",
+							"label": "Developmental Milestones",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "radio",
 								"concept": "1200AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
-									{
-										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Normal",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "CIEL",
-												"value": "1115"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											}
-										]
-									},
 									{
 										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Abnormal",
@@ -412,28 +652,16 @@
 												"value": "514"
 											},
 											{
-												"type": "SNOMED-CT",
-												"value": "263654008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "514"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1116"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "263654008"
-											},
-											{
 												"type": "CIEL",
 												"value": "1116"
 											},
 											{
 												"type": "AMPATH",
 												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
 											}
 										]
 									},
@@ -441,6 +669,24 @@
 										"concept": "6022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Delayed milestones",
 										"conceptMappings": []
+									},
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
 									}
 								]
 							},
@@ -1035,17 +1281,17 @@
 			]
 		},
 		{
-			"label": "Pregnancy at enrollment",
+			"label": "Pregnancy",
 			"sections": [
 				{
-					"label": "Pregnancy at enrollment",
+					"label": "Pregnancy",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Pregnancy at enrollment",
+							"label": "Pregnancy at Enrollment",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "radio",
 								"concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
 									{
@@ -1162,32 +1408,6 @@
 											}
 										]
 									}
-								],
-								"conceptMappings": [
-									{
-										"type": "PIH",
-										"value": "5272"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5272"
-									},
-									{
-										"type": "LOINC",
-										"value": "11449-6"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "1755"
-									},
-									{
-										"type": "AMPATH",
-										"value": "44"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "77386006"
-									}
 								]
 							},
 							"id": "pregnancyAtEnrollment"
@@ -1212,6 +1432,9 @@
 										"value": "166079"
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "pregnancyAtEnrollment != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "LMP"
 						},
@@ -1260,6 +1483,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "pregnancyAtEnrollment != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "EDD"
 						}
 					]
@@ -1270,7 +1496,7 @@
 			"label": "Physical Examination",
 			"sections": [
 				{
-					"label": "Physical Examination",
+					"label": "Physical Examination at Enrollment",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -1302,53 +1528,11 @@
 							"id": "physicalExamination"
 						},
 						{
-							"label": "WHO Stagng",
+							"label": "WHO Staging",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "radio",
 								"concept": "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "AMPATH",
-										"value": "5356"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "385354005"
-									},
-									{
-										"type": "PIH",
-										"value": "1480"
-									},
-									{
-										"type": "CIEL",
-										"value": "5356"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "7562"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "7562"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "385354005"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5356"
-									},
-									{
-										"type": "LOINC",
-										"value": "45233-4"
-									},
-									{
-										"type": "PIH",
-										"value": "1480"
-									}
-								],
 								"answers": [
 									{
 										"concept": "1221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1902,7 +2086,7 @@
 									}
 								]
 							},
-							"id": "WHOStagng"
+							"id": "WHOStaging"
 						},
 						{
 							"label": "Reason for Staging",
@@ -1921,17 +2105,24 @@
 			"label": "Notes",
 			"sections": [
 				{
-					"label": "Notes",
+					"label": "Intake Notes",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Notes",
+							"label": "Comments",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
+								"rendering": "textarea",
+								"concept": "165095AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"rows": "5",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "165095"
+									}
+								]
 							},
-							"id": "notes"
+							"id": "intakeNotes"
 						}
 					]
 				}
@@ -1942,5 +2133,5 @@
 	"uuid": "xxxx",
 	"referencedForms": [],
 	"encounterType": "dc94a223-66bc-45b7-8e34-d13b8686f239",
-  "allowUnspecifiedAll": true
+	"allowUnspecifiedAll": true
 }
