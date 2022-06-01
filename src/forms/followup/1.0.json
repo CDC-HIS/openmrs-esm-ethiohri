@@ -1,0 +1,995 @@
+{
+	"name": "POC Followup Form",
+	"pages": [
+		{
+			"label": "General Information",
+			"sections": [
+				{
+					"label": "Patient Details",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Follow-Up Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "160753"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "439771001"
+									}
+								],
+								"weeksList": ""
+							},
+							"id": "followUpDate"
+						},
+						{
+							"label": "Eligibility Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibilityStatus"
+						},
+						{
+							"label": "Eligible Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibleDate"
+						},
+						{
+							"label": "Why Eligible",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "whyEligible"
+						},
+						{
+							"label": "Unique ART No",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "uniqueARTNo"
+						},
+						{
+							"label": "Eligible & Ready",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibleAndReady"
+						},
+						{
+							"label": "Client Readiness Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "clientReadinessDate"
+						},
+						{
+							"label": "Started ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "startedART"
+						},
+						{
+							"label": "ART Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "2516"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "2516"
+									},
+									{
+										"type": "SNOMED-MVP",
+										"value": "1595991000105005"
+									},
+									{
+										"type": "CIEL",
+										"value": "159599"
+									}
+								]
+							},
+							"id": "artStartDate "
+						},
+						{
+							"label": "Months on ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "monthsOnART"
+						}
+					]
+				},
+				{
+					"label": "Pregnancy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Last Menstrual Period",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "lastMenstrualPeriod"
+						},
+						{
+							"label": "Pregnant",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "pregnant"
+						},
+						{
+							"label": "Expected Date of Delivery",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "expectedDateOfDelivery"
+						},
+						{
+							"label": "Referred to PMTCT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "referredToPMTCT"
+						},
+						{
+							"label": "Wants to be Pregnant",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "wantsToBePregnant"
+						},
+						{
+							"label": "Is the client Breast Feeding",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "isTheClientBreastFeeding"
+						}
+					]
+				},
+				{
+					"label": "Family Planning",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "On Family Planning",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "onFamilyPlanning"
+						},
+						{
+							"label": "Family Planning Methods",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "familyPlanningMethods"
+						}
+					]
+				},
+				{
+					"label": "Patient Assessment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Functional Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "functionalStatus"
+						},
+						{
+							"label": "Developmental Milestones",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "developmentalMilestones"
+						}
+					]
+				},
+				{
+					"label": "WHO Stage",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "WHO Staging",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "whoStaging"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Tuberculosis",
+			"sections": [
+				{
+					"label": "Current TB/TPT Status",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Currently on TB treatment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "currentlyOnTBTreatment"
+						},
+						{
+							"label": "Currently on TPT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "currentlyOnTPT"
+						},
+						{
+							"label": "Tuberculosis Screening Done",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tuberculosisScreeningDone"
+						},
+						{
+							"label": "Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "screening"
+						},
+						{
+							"label": "Pediatrics Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "pediatricsScreening"
+						},
+						{
+							"label": "Adult Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "adultScreening"
+						},
+						{
+							"label": "Tuberculosis screening outcome",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tuberculosisScreeningOutcome"
+						}
+					]
+				},
+				{
+					"label": "TPT Eligibility Assessment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Eligible for TPT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibleForTPT"
+						},
+						{
+							"label": "TPT Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tptStartDate"
+						},
+						{
+							"label": "TPT prophylaxis type",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tptProphylaxisType"
+						},
+						{
+							"label": "Reason for not being eligible",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "reasonForNotBeingEligible"
+						},
+						{
+							"label": "TPT Completed Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tptCompletedDate"
+						},
+						{
+							"label": "TPT follow-up",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tptFollowup"
+						}
+					]
+				},
+				{
+					"label": "Presumptive Tuberculosis",
+					"isExpanded": "true",
+					"questions": []
+				},
+				{
+					"label": "Treatment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Specimen Sent",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "specimenSent"
+						},
+						{
+							"label": "Diagnostic Test",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "diagnosticTest"
+						},
+						{
+							"label": "TB Diagnostic Test Result",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbDiagnosticTestResult"
+						},
+						{
+							"label": "TB Diagnosis Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbDiagnosisDate"
+						},
+						{
+							"label": "Started TB Treatment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "startedTBTreatment"
+						},
+						{
+							"label": "TB Treatment Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbTreatmentStartDate"
+						},
+						{
+							"label": "TB Treatment Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbTreatmentStatus"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Cervical Cancer",
+			"sections": [
+				{
+					"label": "Cervical Cancer Screening & Treatment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Screened for cervical cancer",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "screenedForCervicalCancer"
+						},
+						{
+							"label": "Type of Cx Ca Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "typeOfCxCaScreening"
+						},
+						{
+							"label": "Management of cervical lesions",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "managementOfCervicalLesions"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "OI & Pain Management",
+			"sections": [
+				{
+					"label": "Opportunistic Infection",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Opportunistic Infection Present",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "opportunisticInfectionPresent"
+						},
+						{
+							"label": "Current Opportunistic Infections",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "currentOpportunisticInfections"
+						}
+					]
+				},
+				{
+					"label": "Pain Management",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Assessed for pain",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "assessedForPain"
+						},
+						{
+							"label": "WHO pain scale",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "whoPainScale"
+						}
+					]
+				},
+				{
+					"label": "Other Medication",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Intake Notes\\Comments",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "intakeNotes"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Lab Results",
+			"sections": [
+				{
+					"label": "Viral Load",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Viral Load Done",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadDone"
+						},
+						{
+							"label": "Viral load request date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadRequestDate"
+						},
+						{
+							"label": "Viral load received date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadReceivedDate"
+						},
+						{
+							"label": "Viral Load Count",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadCount"
+						},
+						{
+							"label": "Viral load status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadStatus"
+						}
+					]
+				},
+				{
+					"label": "Other Lab Tests",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Other Lab Tests",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "otherLabTests "
+						}
+					]
+				},
+				{
+					"label": "Lab Results",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "CD4 /mm3",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cd4mm3"
+						},
+						{
+							"label": "CD4 % if < 5 years",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cd4IfLess5Years"
+						},
+						{
+							"label": "Hgb",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "hgb"
+						},
+						{
+							"label": "ALT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "altLabResult"
+						},
+						{
+							"label": "Creatinine/Cr",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "creatinine"
+						},
+						{
+							"label": "AST",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "astLabResult"
+						},
+						{
+							"label": "CrAg",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "crAgLabResult"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Preventive Therapies",
+			"sections": [
+				{
+					"label": "Cotrimoxazole Preventive Therapy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Cotrimoxazole Preventive Therapy plan",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotrimoxazolePreventiveTherapyPlan"
+						},
+						{
+							"label": "Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotriStartDate"
+						},
+						{
+							"label": "Adherence Level",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotriAdherenceLevel"
+						},
+						{
+							"label": "Stop Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotriStopDate"
+						},
+						{
+							"label": "Cotrimoxazole Dispensed in days",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotrimoxazoleDispensedInDays"
+						}
+					]
+				},
+				{
+					"label": "Fluconazole Preventive Therapy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Fluconazole Preventive Therapy plan",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazolePreventiveTherapyPlan"
+						},
+						{
+							"label": "Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazoleStartDate"
+						},
+						{
+							"label": "Stop Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazoleStopDate"
+						},
+						{
+							"label": "Fluconazole Dispensed in days",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazoleDispensedInDays"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "ARV Dispensing",
+			"sections": [
+				{
+					"label": "Assess & counsel for ARV Adherence",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "ARV Adherence",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "arvAdherence"
+						},
+						{
+							"label": "Reason for poor/fair adherence",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "reasonForPoorFairAdherence"
+						}
+					]
+				},
+				{
+					"label": "ARV Drugs",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Regimen line",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "regimenLine"
+						},
+						{
+							"label": "ARV Dispensed in days",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "arvDispensedInDays"
+						}
+					]
+				},
+				{
+					"label": "ARV Side Effects",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "ARV Side Effects",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "arvSideEffects"
+						},
+						{
+							"label": "List Side Effects",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "listSideEffects"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "HIV Prevention",
+			"sections": [
+				{
+					"label": "Client sets HIV prevention plan",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Client sets HIV prevention plan",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "clientSetsHIVPreventionPlan"
+						}
+					]
+				},
+				{
+					"label": "Disclosure for Children",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Disclosure for Children",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "disclosureForChildren"
+						}
+					]
+				},
+				{
+					"label": "Operation Triple Zero",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Enrolled to OTZ",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "enrolledToOTZ"
+						},
+						{
+							"label": "Enrollment Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "enrollmentDate"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Appointments",
+			"sections": [
+				{
+					"label": "Next Appointment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Next visit date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-MVP",
+										"value": "50961000105000"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5096"
+									},
+									{
+										"type": "org.openmrs.module.mdrtb",
+										"value": "RETURN VISIT DATE"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "5096"
+									},
+									{
+										"type": "CIEL",
+										"value": "5096"
+									}
+								]
+							},
+							"id": "nextVisitDate"
+						}
+					]
+				}
+			]
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"uuid": "xxxx",
+	"referencedForms": [],
+    "encounterType": "136b2ded-22a3-4831-a39a-088d35a50ef5",
+    "allowUnspecifiedAll": true
+}
