@@ -37,6 +37,15 @@
         }
       }
     },
+    "openmrs-esm-ohri-cervical-cancer-app": {
+      "extensionSlots": {
+        "patient-chart-dashboard-slot": {
+          "remove": [
+            "CacxSummaryListProps"
+          ]
+        }
+      }
+    },
     "@openmrs/esm-login-app": {
       "logo": {
         "src": "https://ethiohri-dev.globalhealthapp.net/openmrs/spa/ethiohri_darkbk.png"
