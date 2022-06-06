@@ -267,7 +267,7 @@
 							"label": "Cotrimoxazole Date started",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -286,7 +286,7 @@
 							"label": "Cotrimoxazole Date stopped",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -305,7 +305,7 @@
 							"label": "Tuberculosis Preventive Therapy Date started",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -348,7 +348,7 @@
 							"label": "Tuberculosis Preventive Therapy Date completed",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -375,7 +375,7 @@
 							"label": "Fluconazole Preventive Therapy (FPT): Date started",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "5ac4300a-5e19-45c8-8692-31a57d6d5b8c",
 								"conceptMappings": [
 									{
@@ -384,13 +384,13 @@
 									}
 								]
 							},
-							"id": "FluconazolePreventiveTherapy(FPT):Date started"
+							"id": "fluconazolePreventiveTherapyDateStarted"
 						},
 						{
 							"label": "Fluconazole Preventive Therapy (FPT):Date completed",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "c2d57bcb-02f2-457d-af05-8d759a1457a7",
 								"conceptMappings": [
 									{
@@ -399,7 +399,7 @@
 									}
 								]
 							},
-							"id": "FluconazolePreventiveTherapy(FPT):DateCompleted"
+							"id": "fluconazolePreventiveTherapyDateCompleted"
 						},
 						{
 							"label": "ARV For PMTCT",

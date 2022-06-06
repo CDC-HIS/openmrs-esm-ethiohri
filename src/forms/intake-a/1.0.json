@@ -12,7 +12,7 @@
 							"label": "Enrollment Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
