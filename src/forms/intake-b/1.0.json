@@ -406,29 +406,95 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "",
+								"concept": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
 									{
-										"label": "yes",
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											}
+										]
 									},
 									{
-										"label": "no",
-										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											}
+										]
 									}
 								],
 								"conceptMappings": [
 									{
-										"type": "SNOMED-MVP",
-										"value": "55761000105009"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5576"
-									},
-									{
-										"type": "PIH",
-										"value": "1446"
+										"type": "CIEL",
+										"value": "163532"
 									}
 								]
 							},
@@ -439,7 +505,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "1537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								"concept": "162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"hide": {
 								"hideWhenExpression": "ARVForPMTCT != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -625,8 +691,65 @@
 							"label": "Patient Functional status",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
+								"rendering": "checkbox",
+								"concept": "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "162753"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "363803005"
+									}
+								],
+								"answers": [
+									{
+										"concept": "162751AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk with assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk without assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bedridden",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Patient ambulatory",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162063AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk independently",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk without assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162751AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk with assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bedridden",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Patient ambulatory",
+										"conceptMappings": []
+									}
+								]
 							},
 							"id": "patientFunctionalStatus"
 						}
@@ -1523,7 +1646,13 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": ""
+								"concept": "163042AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163042"
+									}
+								]
 							},
 							"id": "physicalExamination"
 						},
@@ -2087,15 +2216,6 @@
 								]
 							},
 							"id": "WHOStaging"
-						},
-						{
-							"label": "Reason for Staging",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
-							},
-							"id": "reasonForStaging"
 						}
 					]
 				}
