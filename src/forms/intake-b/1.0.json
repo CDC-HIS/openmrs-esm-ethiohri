@@ -691,8 +691,65 @@
 							"label": "Patient Functional status",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
+								"rendering": "checkbox",
+								"concept": "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "162753"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "363803005"
+									}
+								],
+								"answers": [
+									{
+										"concept": "162751AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk with assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk without assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bedridden",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Patient ambulatory",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162063AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk independently",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk without assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162751AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Able to walk with assistance",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bedridden",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Patient ambulatory",
+										"conceptMappings": []
+									}
+								]
 							},
 							"id": "patientFunctionalStatus"
 						}
@@ -2159,15 +2216,6 @@
 								]
 							},
 							"id": "WHOStaging"
-						},
-						{
-							"label": "Reason for Staging",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
-							},
-							"id": "reasonForStaging"
 						}
 					]
 				}
