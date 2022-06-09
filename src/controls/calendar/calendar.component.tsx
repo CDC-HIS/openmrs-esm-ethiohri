@@ -190,11 +190,9 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
   return encounterContext.sessionMode == "view" || isTrue(question.readonly) ? (
     <OHRIFieldValueView
       label={question.label}
-      value={
-        field.value instanceof Date
-          ? field.value.toLocaleDateString(window.navigator.language)
-          : field.value
-      }
+      value={gregToEth(
+        new Date(field.value).toLocaleDateString("en-US").toString()
+      )}
       conceptName={conceptName}
       isInline={isInline}
     />
@@ -207,7 +205,9 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
             // id="id_et_calender"
             id={question.id}
             labelText={question.label}
-            value={gregToEth(field.value)}
+            value={gregToEth(
+              new Date(field.value).toLocaleDateString("en-US").toString()
+            )}
             autoComplete="off"
             className="datepicker"
             placeholder="DD/MM/YYYY"
