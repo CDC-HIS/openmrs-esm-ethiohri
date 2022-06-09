@@ -6,7 +6,7 @@ const AdherenceSummary: React.FC<{ patientUuid: string }> = ({
 }) => {
   return (
     <div>
-      <Tabs>
+      <Tabs type="container">
         <Tab label="Adherence Counselling Summary">
           <div>Adherence Counselling Summary coming soon</div>
         </Tab>

@@ -102,9 +102,9 @@ function setupOpenMRS() {
       },
       {
         id: "visits-summary-ext",
-        slot: "visits-summary-slot",
+        slot: "ethiohri-visits-summary-slot",
         load: getAsyncLifecycle(
-          () => import("./pages/visit-summary/visit-summary.component"),
+          () => import("./pages/visits/visits-summary.component"),
           {
             featureName: "visit-summary-extension",
             moduleName,
@@ -113,7 +113,7 @@ function setupOpenMRS() {
       },
       {
         id: "adherence-counselling-summary-ext",
-        slot: "adherence-counselling-summary-slot",
+        slot: "ethiohri-adherence-counselling-summary-slot",
         load: getAsyncLifecycle(
           () =>
             import(
@@ -127,7 +127,7 @@ function setupOpenMRS() {
       },
       {
         id: "hts-patient-encounters-list-ext",
-        slot: "hts-summary-dashboard-slot",
+        slot: "ethiohri-hts-summary-dashboard-slot",
         load: getAsyncLifecycle(
           () => import("./pages/hts/hts-overview-summary.component"),
           {

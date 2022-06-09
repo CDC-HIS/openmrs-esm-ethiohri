@@ -21,7 +21,10 @@ const columns = [
     key: "issuesAddressed",
     header: "Issues Addressed",
     getValue: (encounter) => {
-      return "---";
+      return getObsFromEncounter(
+        encounter,
+        "bbcdc4d4-8e9e-41ab-b197-2b5d97c1a7e0"
+      );
     },
   },
   {
@@ -30,6 +33,27 @@ const columns = [
     getValue: (encounter) => {
       return "---";
     },
+  },
+  ,
+  {
+    key: "actions",
+    header: "Actions",
+    getValue: (encounter) => [
+      {
+        form: { name: "phdp", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "View PHDP",
+        mode: "view",
+      },
+      {
+        form: { name: "phdp", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "Edit PHDP",
+        mode: "edit",
+      },
+    ],
   },
 ];
 

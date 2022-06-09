@@ -6,7 +6,7 @@
             "program-management-summary-ext"
           ]
         },
-        "patient-chartdashboard-slot": {
+        "patient-chart-dashboard-slot": {
           "remove": [
             "cacx-appointments-dashboard",
             "cacx-summary-dashboard",
@@ -22,7 +22,16 @@
             "adherence-counselling-summary-slot",
             "general-counselling-summary-slot",
             "visits-summary-slot",
-            "visits-summary-ext"
+            "visits-summary-ext",
+            "ohri-covid"
+          ]
+        },
+        "ohri-covid-patient-chart-slot": {
+          "remove": [
+            "covid-assessments-dashboard",
+            "covid-lab-results",
+            "covid-vaccinations-dashboard",
+            "ohri-covid-patient-chart-ext"
           ]
         }
       }
@@ -37,11 +46,37 @@
         }
       }
     },
+    "openmrs-esm-ohri-covid-app": {
+      "extensionSlots": {
+        "ohri-covid-patient-chart-slot": {
+          "remove": [
+            "covid-assessments-dashboard",
+            "covid-lab-results",
+            "covid-vaccinations-dashboard"
+          ]
+        }
+      }
+    },
     "openmrs-esm-ohri-cervical-cancer-app": {
       "extensionSlots": {
-        "patient-chart-dashboard-slot": {
+        "cervical-cancer-slot": {
           "remove": [
-            "CacxSummaryListProps"
+            "cacx-visits-dashboard",
+            "cacx-appointments-dashboard"
+          ]
+        }
+      }
+    },
+    "openmrs-esm-ohri-hiv-app": {
+      "extensionSlots": {
+        "ohri-hiv-care-and-treatment-slot": {
+          "remove": [
+            "general-counselling-summary",
+            "general-counselling-summary-ext",
+            "partner-notification-services",
+            "lab-results-summary-dashboard",
+            "medications-summary",
+            "appointments-summary"
           ]
         }
       }

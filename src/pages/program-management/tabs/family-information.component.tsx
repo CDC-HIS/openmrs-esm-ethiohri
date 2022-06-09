@@ -20,7 +20,10 @@ const columns = [
     key: "familyMemberAge",
     header: "Age",
     getValue: (encounter) => {
-      return "---";
+      return getObsFromEncounter(
+        encounter,
+        "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      );
     },
   },
   {
@@ -73,6 +76,26 @@ const columns = [
       );
     },
   },
+  {
+    key: "actions",
+    header: "Actions",
+    getValue: (encounter) => [
+      {
+        form: { name: "family_information", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "View Family Information",
+        mode: "view",
+      },
+      {
+        form: { name: "family_information", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "Edit Family Information",
+        mode: "edit",
+      },
+    ],
+  },
 ];
 
 const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
@@ -85,7 +108,7 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
       form={{ package: "eth-hiv", name: "family_information" }}
       columns={columns}
       description="Family Information List"
-      headerTitle="Family Information"
+      headerTitle="Family Members"
       dropdownText="Add"
     />
   );
