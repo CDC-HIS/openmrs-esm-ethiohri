@@ -39,6 +39,26 @@ const columns = [
       return getData(encounter, "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
+  {
+    key: "actions",
+    header: "Actions",
+    getValue: (encounter) => [
+      {
+        form: { name: "followup", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "View Followup",
+        mode: "view",
+      },
+      {
+        form: { name: "followup", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "Edit Followup",
+        mode: "edit",
+      },
+    ],
+  },
 ];
 
 const FollowupEncounterList: React.FC<{ patientUuid: string }> = ({
