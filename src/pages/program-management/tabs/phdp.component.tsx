@@ -15,10 +15,7 @@ const columns = [
     key: "issuesAddressed",
     header: "Issues Addressed",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "bbcdc4d4-8e9e-41ab-b197-2b5d97c1a7e0"
-      );
+      return getData(encounter, "bbcdc4d4-8e9e-41ab-b197-2b5d97c1a7e0");
     },
   },
   {

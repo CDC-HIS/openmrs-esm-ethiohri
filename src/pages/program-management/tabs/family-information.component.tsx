@@ -15,10 +15,7 @@ const columns = [
     key: "familyMemberAge",
     header: "Age",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      );
+      return getData(encounter, "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
