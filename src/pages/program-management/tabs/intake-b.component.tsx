@@ -1,51 +1,35 @@
 import React from "react";
-import {
-  EncounterList,
-  getObsFromEncounter,
-} from "openmrs-esm-ohri-commons-lib/src/index";
+import { EncounterList } from "openmrs-esm-ohri-commons-lib/src/index";
 import { INTAKE_B_ENCOUNTER_TYPE } from "../../../constants";
+import { getData } from "../../encounterUtils";
 
 const columns = [
   {
     key: "pastOI",
     header: "Past OIs Recorded",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "c52ecf45-bd6c-43ed-861b-9a2714878729"
-      );
+      return getData(encounter, "c52ecf45-bd6c-43ed-861b-9a2714878729");
     },
   },
   {
     key: "lifeARTDate",
     header: "Lifelong ART Start Date",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
     key: "whoStaging",
     header: "WHO Staging",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      );
+      return getData(encounter, "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
     key: "inhStartDate",
     header: "INH Start Date",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "164852AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "164852AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
 ];

@@ -1,20 +1,14 @@
 import React from "react";
-import {
-  EncounterList,
-  getObsFromEncounter,
-} from "openmrs-esm-ohri-commons-lib/src/index";
+import { EncounterList } from "openmrs-esm-ohri-commons-lib/src/index";
 import { FOLLOWUP_ENCOUNTER_TYPE } from "../../../constants";
+import { getData } from "../../encounterUtils";
 
 const columns = [
   {
     key: "followUpDate",
     header: "Follow-Up Date",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
@@ -28,11 +22,7 @@ const columns = [
     key: "artStartDate",
     header: "ART Start Date",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
@@ -46,11 +36,7 @@ const columns = [
     key: "nextVisitDate",
     header: "Next visit date",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
 ];
