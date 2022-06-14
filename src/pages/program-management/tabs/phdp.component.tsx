@@ -22,7 +22,7 @@ const columns = [
     key: "conclusion",
     header: "Conclusion",
     getValue: (encounter) => {
-      return "---";
+      return getData(encounter, "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   ,
