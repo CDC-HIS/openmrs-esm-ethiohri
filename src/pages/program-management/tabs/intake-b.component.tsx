@@ -32,6 +32,26 @@ const columns = [
       return getData(encounter, "164852AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
+  {
+    key: "actions",
+    header: "Actions",
+    getValue: (encounter) => [
+      {
+        form: { name: "intake_b", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "View Intake-B",
+        mode: "view",
+      },
+      {
+        form: { name: "intake_b", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "Edit Intake-B",
+        mode: "edit",
+      },
+    ],
+  },
 ];
 
 const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({

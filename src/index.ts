@@ -125,7 +125,7 @@ function setupOpenMRS() {
           }
         ),
       },
-      {
+      /* {
         id: "hts-patient-encounters-list-ext",
         slot: "ethiohri-hts-summary-dashboard-slot",
         load: getAsyncLifecycle(
@@ -135,7 +135,7 @@ function setupOpenMRS() {
             moduleName,
           }
         ),
-      },
+      }, */
       // Sample code to add new sidenav links
       // {
       //   id: "ethiohri-dashboard",

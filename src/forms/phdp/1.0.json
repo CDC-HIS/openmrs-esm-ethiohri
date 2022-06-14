@@ -102,8 +102,18 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "textarea",
-								"concept": "",
-								"rows": ""
+								"concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"rows": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "160632"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1915"
+									}
+								]
 							},
 							"id": "conclusion"
 						}
