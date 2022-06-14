@@ -1,20 +1,14 @@
 import React from "react";
-import {
-  EncounterList,
-  getObsFromEncounter,
-} from "openmrs-esm-ohri-commons-lib/src/index";
+import { EncounterList } from "openmrs-esm-ohri-commons-lib/src/index";
 import { PHDP_ENCOUNTER_TYPE } from "../../../constants";
+import { getData } from "../../encounterUtils";
 
 const columns = [
   {
     key: "phdpdate",
     header: "Date",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {

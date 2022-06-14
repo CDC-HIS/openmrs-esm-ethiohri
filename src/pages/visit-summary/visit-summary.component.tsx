@@ -1,12 +1,13 @@
 import { Tab, Tabs } from "carbon-components-react";
 import React from "react";
+import FollowupEncounterList from "./follow-up/followup.component";
 
-const VisitSummary: React.FC<{ patientUuid: string }> = () => {
+const VisitSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <div>
       <Tabs>
         <Tab label="Follow-Up">
-          <div>Followup Form coming soon</div>
+          <FollowupEncounterList patientUuid={patientUuid} />
         </Tab>
       </Tabs>
     </div>

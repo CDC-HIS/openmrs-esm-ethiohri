@@ -1,41 +1,28 @@
 import React from "react";
-import {
-  EncounterList,
-  getObsFromEncounter,
-} from "openmrs-esm-ohri-commons-lib/src/index";
+import { EncounterList } from "openmrs-esm-ohri-commons-lib/src/index";
 import { INTAKE_A_ENCOUNTER_TYPE } from "../../../constants";
+import { getData } from "../../encounterUtils";
 
 const columns = [
   {
     key: "date",
     header: "Enrolment Date",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
     key: "dateConfirmed",
     header: "Date Confirmed",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        true
-      );
+      return getData(encounter, "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
     key: "referralPoint",
     header: "Facility Referral Point",
     getValue: (encounter) => {
-      return getObsFromEncounter(
-        encounter,
-        "80bcc9c1-e328-47e8-affe-6d1bffe4adf1"
-      );
+      return getData(encounter, "80bcc9c1-e328-47e8-affe-6d1bffe4adf1");
     },
   },
   {
@@ -49,7 +36,7 @@ const columns = [
     key: "disclosedHIVStatus",
     header: "Disclosed HIV status",
     getValue: (encounter) => {
-      return getObsFromEncounter(encounter, "1048AAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "1048AAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
 ];

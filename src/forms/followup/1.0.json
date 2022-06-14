@@ -1,0 +1,1714 @@
+{
+	"name": "POC Followup Form",
+	"pages": [
+		{
+			"label": "General Information",
+			"sections": [
+				{
+					"label": "Patient Details",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Follow-Up Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "160753"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "439771001"
+									}
+								],
+								"weeksList": ""
+							},
+							"id": "followUpDate"
+						},
+						{
+							"label": "Eligibility Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibilityStatus"
+						},
+						{
+							"label": "Eligible Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibleDate"
+						},
+						{
+							"label": "Why Eligible",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "whyEligible"
+						},
+						{
+							"label": "Unique ART No",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "uniqueARTNo"
+						},
+						{
+							"label": "Eligible & Ready",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibleAndReady"
+						},
+						{
+							"label": "Client Readiness Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "clientReadinessDate"
+						},
+						{
+							"label": "Started ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "startedART"
+						},
+						{
+							"label": "ART Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "2516"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "2516"
+									},
+									{
+										"type": "SNOMED-MVP",
+										"value": "1595991000105005"
+									},
+									{
+										"type": "CIEL",
+										"value": "159599"
+									}
+								]
+							},
+							"id": "artStartDate "
+						},
+						{
+							"label": "Months on ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "monthsOnART"
+						}
+					]
+				},
+				{
+					"label": "Pregnancy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Last Menstrual Period",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "lastMenstrualPeriod"
+						},
+						{
+							"label": "Pregnant",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "pregnant"
+						},
+						{
+							"label": "Expected Date of Delivery",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "expectedDateOfDelivery"
+						},
+						{
+							"label": "Referred to PMTCT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "referredToPMTCT"
+						},
+						{
+							"label": "Wants to be Pregnant",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "wantsToBePregnant"
+						},
+						{
+							"label": "Is the client Breast Feeding",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "isTheClientBreastFeeding"
+						}
+					]
+				},
+				{
+					"label": "Family Planning",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "On Family Planning",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "onFamilyPlanning"
+						},
+						{
+							"label": "Family Planning Methods",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "familyPlanningMethods"
+						}
+					]
+				},
+				{
+					"label": "Patient Assessment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Functional Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "functionalStatus"
+						},
+						{
+							"label": "Developmental Milestones",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "developmentalMilestones"
+						}
+					]
+				},
+				{
+					"label": "WHO Stage",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "WHO Staging",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "whoStaging"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Tuberculosis",
+			"sections": [
+				{
+					"label": "Current TB/TPT Status",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Currently on TB treatment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "159798AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "159798"
+									},
+									{
+										"type": "PIH",
+										"value": "1257"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											}
+										]
+									},
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											}
+										]
+									}
+								]
+							},
+							"id": "currentlyOnTBTreatment"
+						},
+						{
+							"label": "Currently on TPT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "KenyaEMR",
+										"value": "164949"
+									},
+									{
+										"type": "CIEL",
+										"value": "166449"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											}
+										]
+									},
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											}
+										]
+									}
+								]
+							},
+							"id": "currentlyOnTPT"
+						},
+						{
+							"label": "Tuberculosis Screening Done",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "f8868467-bd15-4576-9da8-bfb8ef64ea17",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-CT",
+										"value": "171126009"
+									},
+									{
+										"type": "OCT",
+										"value": "TuberculosisScreening"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											}
+										]
+									},
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											}
+										]
+									}
+								]
+							},
+							"id": "tuberculosisScreeningDone"
+						},
+						{
+							"label": "Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "screening"
+						},
+						{
+							"label": "Pediatrics Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "16ba5f4b-5430-44c8-91e4-c4c66b072f29",
+								"answers": [
+									{
+										"concept": "159799AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "cough lasting more than 2 weeks",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-MVP",
+												"value": "1597991000105004"
+											},
+											{
+												"type": "PIH",
+												"value": "2573"
+											}
+										]
+									},
+									{
+										"concept": "1494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fever lasting more than three weeks",
+										"conceptMappings": []
+									},
+									{
+										"concept": "140707AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Failure to Gain Weight",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "27344"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T10"
+											},
+											{
+												"type": "CIEL",
+												"value": "140707"
+											},
+											{
+												"type": "3BT",
+												"value": "10035463"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "36440009"
+											}
+										]
+									},
+									{
+										"concept": "124068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Tuberculosis contact",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "pediatricsScreening"
+						},
+						{
+							"label": "Adult Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "12a22a0b-f0ed-4f1a-8d70-7c6acda5ae78",
+								"answers": [
+									{
+										"concept": "133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Night sweats",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "6029"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50760"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "42984000"
+											},
+											{
+												"type": "ICPC2",
+												"value": "A09"
+											},
+											{
+												"type": "3BT",
+												"value": "10063085"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6029"
+											}
+										]
+									},
+									{
+										"concept": "1494AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fever lasting more than three weeks",
+										"conceptMappings": []
+									},
+									{
+										"concept": "159799AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "cough lasting more than 2 weeks",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-MVP",
+												"value": "1597991000105004"
+											},
+											{
+												"type": "PIH",
+												"value": "2573"
+											}
+										]
+									},
+									{
+										"concept": "150796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal Weight Loss",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "adultScreening"
+						},
+						{
+							"label": "Tuberculosis screening outcome",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "c0661c0f-348b-4941-812b-c531a0a67f2e",
+								"conceptMappings": [
+									{
+										"type": "OCT",
+										"value": "TuberculosisScreeningOutcome"
+									}
+								],
+								"answers": [
+									{
+										"concept": "159798AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "currently on tuberculosis treatment",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "159798"
+											},
+											{
+												"type": "PIH",
+												"value": "1257"
+											}
+										]
+									},
+									{
+										"concept": "166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Currently taking tuberculosis prophylaxis",
+										"conceptMappings": [
+											{
+												"type": "KenyaEMR",
+												"value": "164949"
+											},
+											{
+												"type": "CIEL",
+												"value": "166449"
+											}
+										]
+									},
+									{
+										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Negative",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "665"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "260385009"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "NEGATIVE"
+											},
+											{
+												"type": "AMPATH",
+												"value": "664"
+											},
+											{
+												"type": "PIH",
+												"value": "664"
+											},
+											{
+												"type": "CIEL",
+												"value": "664"
+											}
+										]
+									},
+									{
+										"concept": "662edd6a-9f8a-4dfa-9956-a6ec42018c72",
+										"label": "Presumptive Tuberculosis",
+										"conceptMappings": [
+											{
+												"type": "OCT",
+												"value": "PresumptiveTB"
+											}
+										]
+									},
+									{
+										"concept": "166519AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Screening not done",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "tuberculosisScreeningOutcome"
+						}
+					]
+				},
+				{
+					"label": "TPT Eligibility Assessment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Eligible for TPT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "eligibleForTPT"
+						},
+						{
+							"label": "TPT Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "162320"
+									}
+								]
+							},
+							"id": "tptStartDate"
+						},
+						{
+							"label": "TPT prophylaxis type",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tptProphylaxisType"
+						},
+						{
+							"label": "Reason for not being eligible",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "reasonForNotBeingEligible"
+						},
+						{
+							"label": "TPT Completed Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "163284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163284"
+									}
+								]
+							},
+							"id": "tptCompletedDate"
+						},
+						{
+							"label": "TPT follow-up",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tptFollowup"
+						}
+					]
+				},
+				{
+					"label": "Presumptive Tuberculosis",
+					"isExpanded": "true",
+					"questions": []
+				},
+				{
+					"label": "Treatment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Specimen Sent",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "specimenSent"
+						},
+						{
+							"label": "Diagnostic Test",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "diagnosticTest"
+						},
+						{
+							"label": "TB Diagnostic Test Result",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbDiagnosticTestResult"
+						},
+						{
+							"label": "TB Diagnosis Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbDiagnosisDate"
+						},
+						{
+							"label": "Started TB Treatment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "startedTBTreatment"
+						},
+						{
+							"label": "TB Treatment Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbTreatmentStartDate"
+						},
+						{
+							"label": "TB Treatment Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "tbTreatmentStatus"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Cervical Cancer",
+			"sections": [
+				{
+					"label": "Cervical Cancer Screening & Treatment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Screened for cervical cancer",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "screenedForCervicalCancer"
+						},
+						{
+							"label": "Type of Cx Ca Screening",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "typeOfCxCaScreening"
+						},
+						{
+							"label": "Management of cervical lesions",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "managementOfCervicalLesions"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "OI & Pain Management",
+			"sections": [
+				{
+					"label": "Opportunistic Infection",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Opportunistic Infection Present",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "opportunisticInfectionPresent"
+						},
+						{
+							"label": "Current Opportunistic Infections",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "currentOpportunisticInfections"
+						}
+					]
+				},
+				{
+					"label": "Pain Management",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Assessed for pain",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "assessedForPain"
+						},
+						{
+							"label": "WHO pain scale",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "whoPainScale"
+						}
+					]
+				},
+				{
+					"label": "Other Medication",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Intake Notes\\Comments",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "intakeNotes"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Lab Results",
+			"sections": [
+				{
+					"label": "Viral Load",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Viral Load Done",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadDone"
+						},
+						{
+							"label": "Viral load request date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadRequestDate"
+						},
+						{
+							"label": "Viral load received date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadReceivedDate"
+						},
+						{
+							"label": "Viral Load Count",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadCount"
+						},
+						{
+							"label": "Viral load status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "viralLoadStatus"
+						}
+					]
+				},
+				{
+					"label": "Other Lab Tests",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Other Lab Tests",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "otherLabTests "
+						}
+					]
+				},
+				{
+					"label": "Lab Results",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "CD4 /mm3",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cd4mm3"
+						},
+						{
+							"label": "CD4 % if < 5 years",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cd4IfLess5Years"
+						},
+						{
+							"label": "Hgb",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "hgb"
+						},
+						{
+							"label": "ALT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "altLabResult"
+						},
+						{
+							"label": "Creatinine/Cr",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "creatinine"
+						},
+						{
+							"label": "AST",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "astLabResult"
+						},
+						{
+							"label": "CrAg",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "crAgLabResult"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Preventive Therapies",
+			"sections": [
+				{
+					"label": "Cotrimoxazole Preventive Therapy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Cotrimoxazole Preventive Therapy plan",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "1261AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "1261"
+									},
+									{
+										"type": "CIEL",
+										"value": "1261"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Change regimen",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1259"
+											},
+											{
+												"type": "CIEL",
+												"value": "1259"
+											}
+										]
+									},
+									{
+										"concept": "1257AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Continue regimen",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1257"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "266714009"
+											},
+											{
+												"type": "PIH",
+												"value": "1257"
+											},
+											{
+												"type": "CIEL",
+												"value": "1257"
+											}
+										]
+									},
+									{
+										"concept": "981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Dosing change",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1258"
+											},
+											{
+												"type": "AMPATH",
+												"value": "981"
+											},
+											{
+												"type": "CIEL",
+												"value": "981"
+											}
+										]
+									},
+									{
+										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "None",
+										"conceptMappings": [
+											{
+												"type": "PIH-Malawi",
+												"value": "1107"
+											},
+											{
+												"type": "PIH",
+												"value": "1107"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1107"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "260413007"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "NONE"
+											},
+											{
+												"type": "CIEL",
+												"value": "1107"
+											}
+										]
+									},
+									{
+										"concept": "1256AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Start drugs",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1256"
+											},
+											{
+												"type": "PIH",
+												"value": "1256"
+											},
+											{
+												"type": "CIEL",
+												"value": "1256"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "12561000105002"
+											}
+										]
+									},
+									{
+										"concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Stop all",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1260"
+											},
+											{
+												"type": "CIEL",
+												"value": "1260"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1260"
+											}
+										]
+									}
+								]
+							},
+							"id": "cotrimoxazolePreventiveTherapyPlan"
+						},
+						{
+							"label": "Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotriStartDate"
+						},
+						{
+							"label": "Adherence Level",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotriAdherenceLevel"
+						},
+						{
+							"label": "Stop Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotriStopDate"
+						},
+						{
+							"label": "Cotrimoxazole Dispensed in days",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "cotrimoxazoleDispensedInDays"
+						}
+					]
+				},
+				{
+					"label": "Fluconazole Preventive Therapy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Fluconazole Preventive Therapy plan",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazolePreventiveTherapyPlan"
+						},
+						{
+							"label": "Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazoleStartDate"
+						},
+						{
+							"label": "Stop Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazoleStopDate"
+						},
+						{
+							"label": "Fluconazole Dispensed in days",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "fluconazoleDispensedInDays"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "ARV Dispensing",
+			"sections": [
+				{
+					"label": "Assess & counsel for ARV Adherence",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "ARV Adherence",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "da4e1fd2-727f-4677-ab5f-44058555052c",
+								"conceptMappings": [
+									{
+										"type": "OCT",
+										"value": "HAARTAdherence"
+									}
+								],
+								"answers": [
+									{
+										"concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fair",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "159406"
+											}
+										]
+									},
+									{
+										"concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Good",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "159405"
+											}
+										]
+									},
+									{
+										"concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Poor",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "159407"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											}
+										]
+									}
+								]
+							},
+							"id": "arvAdherence"
+						},
+						{
+							"label": "Reason for poor/fair adherence",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "reasonForPoorFairAdherence"
+						}
+					]
+				},
+				{
+					"label": "ARV Drugs",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Regimen line",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "regimenLine"
+						},
+						{
+							"label": "ARV Dispensed in days",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "arvDispensedInDays"
+						}
+					]
+				},
+				{
+					"label": "ARV Side Effects",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "ARV Side Effects",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "arvSideEffects"
+						},
+						{
+							"label": "List Side Effects",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "listSideEffects"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "HIV Prevention",
+			"sections": [
+				{
+					"label": "Client sets HIV prevention plan",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Client sets HIV prevention plan",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "clientSetsHIVPreventionPlan"
+						}
+					]
+				},
+				{
+					"label": "Disclosure for Children",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Disclosure for Children",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "573f93e2-12f6-483e-aa6e-14e9b76b311a",
+								"answers": [
+									{
+										"concept": "761c9ffb-8a75-44c6-bad3-b62cd700d41c",
+										"label": "Full disclosure :Stage 1",
+										"conceptMappings": []
+									},
+									{
+										"concept": "13784dde-37e1-4e40-b224-dbc9701bc605",
+										"label": "Full disclosure: Stage 2",
+										"conceptMappings": []
+									},
+									{
+										"concept": "708acbc1-d493-499c-b3e7-67abd685a943",
+										"label": "Full disclosure: Stage 3",
+										"conceptMappings": []
+									},
+									{
+										"concept": "37c60d5a-e873-429d-a59f-aeff839ada3c",
+										"label": "Full disclosure: Stage 4",
+										"conceptMappings": []
+									},
+									{
+										"concept": "621816e2-16ba-4ae3-aa62-b5b3812780c1",
+										"label": "Partial disclosure",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2961369f-6d08-4553-bc52-329c43135d76",
+										"label": "Pre-disclosure",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "disclosureForChildren"
+						}
+					]
+				},
+				{
+					"label": "Operation Triple Zero",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Enrolled to OTZ",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "enrolledToOTZ"
+						},
+						{
+							"label": "Enrollment Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": ""
+							},
+							"id": "enrollmentDate"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Appointments",
+			"sections": [
+				{
+					"label": "Next Appointment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Next visit date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-MVP",
+										"value": "50961000105000"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5096"
+									},
+									{
+										"type": "org.openmrs.module.mdrtb",
+										"value": "RETURN VISIT DATE"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "5096"
+									},
+									{
+										"type": "CIEL",
+										"value": "5096"
+									}
+								]
+							},
+							"id": "nextVisitDate"
+						}
+					]
+				}
+			]
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"uuid": "xxxx",
+	"referencedForms": [],
+	"encounterType": "136b2ded-22a3-4831-a39a-088d35a50ef5",
+	"allowUnspecifiedAll": true
+}
