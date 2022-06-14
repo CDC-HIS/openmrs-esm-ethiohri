@@ -84,7 +84,7 @@ jobs:
   dev:
       runs-on: ubuntu-latest
       #Test
-     # needs: release
+      needs: release
 
       if: ${{ github.ref == 'refs/heads/develop' }}
 
