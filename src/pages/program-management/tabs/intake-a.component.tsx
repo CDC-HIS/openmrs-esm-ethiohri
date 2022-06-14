@@ -29,15 +29,35 @@ const columns = [
     key: "externalRefPoint",
     header: "External Ref Point",
     getValue: (encounter) => {
-      return "---";
+      return getData(encounter, "91eb14f1-c951-4d65-a4b4-6dbf9d88cd1a");
     },
   },
   {
     key: "disclosedHIVStatus",
     header: "Disclosed HIV status",
     getValue: (encounter) => {
-      return getData(encounter, "1048AAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "159423AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
+  },
+  {
+    key: "actions",
+    header: "Actions",
+    getValue: (encounter) => [
+      {
+        form: { name: "intake_a", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "View Intake-A",
+        mode: "view",
+      },
+      {
+        form: { name: "intake_a", package: "eth-hiv" },
+        encounterUuid: encounter.uuid,
+        intent: "*",
+        label: "Edit Intake-A",
+        mode: "edit",
+      },
+    ],
   },
 ];
 

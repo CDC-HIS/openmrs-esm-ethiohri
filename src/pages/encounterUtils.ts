@@ -6,11 +6,7 @@ export function getData(
   isDate: boolean = false
 ) {
   if (isDate) {
-    return gregToEth(
-      new Date(getObsFromEncounter(encounter, conceptId, isDate))
-        .toLocaleDateString("en-US")
-        .toString()
-    );
+    return gregToEth(getObsFromEncounter(encounter, conceptId, isDate));
   } else {
     return getObsFromEncounter(encounter, conceptId, isDate);
   }
@@ -19,10 +15,7 @@ export function getData(
 function gregToEth(gregdate) {
   if (!gregdate) return null;
   var dmy;
-  dmy = gregdate.split("-"); // first try the - separator
-  if (dmy.length != 3) dmy = gregdate.split("/"); // then try the / separator
-  if (dmy.length != 3)
-    dmy = new Date(gregdate).toLocaleDateString("en-US").toString().split("/");
+  dmy = new Date(gregdate.toString()).toLocaleDateString("en-US").split("/");
   if (dmy.length == 3) {
     // @ts-ignore
     var appdate = ($ as any).calendars
@@ -40,7 +33,6 @@ function gregToEth(gregdate) {
     var appdateetstr = ($ as any).calendars
       .instance("ethiopian")
       .formatDate("dd/mm/yyyy", appdateet);
-
     return appdateetstr;
   } else return null;
 }

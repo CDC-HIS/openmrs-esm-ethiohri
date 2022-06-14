@@ -12,7 +12,7 @@
 							"label": "Follow-Up Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -95,7 +95,7 @@
 							"label": "ART Start Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -472,7 +472,7 @@
 							"label": "Tuberculosis Screening Done",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "radio",
 								"concept": "f8868467-bd15-4576-9da8-bfb8ef64ea17",
 								"conceptMappings": [
 									{
@@ -584,7 +584,7 @@
 							"label": "Pediatrics Screening",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "checkbox",
 								"concept": "16ba5f4b-5430-44c8-91e4-c4c66b072f29",
 								"answers": [
 									{
@@ -645,7 +645,7 @@
 							"label": "Adult Screening",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "checkbox",
 								"concept": "12a22a0b-f0ed-4f1a-8d70-7c6acda5ae78",
 								"answers": [
 									{
@@ -710,7 +710,7 @@
 							"label": "Tuberculosis screening outcome",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "checkbox",
 								"concept": "c0661c0f-348b-4941-812b-c531a0a67f2e",
 								"conceptMappings": [
 									{
@@ -815,7 +815,7 @@
 							"label": "TPT Start Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "eth-date",
 								"concept": "162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -848,7 +848,7 @@
 							"label": "TPT Completed Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "eth-date",
 								"concept": "163284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -1203,7 +1203,7 @@
 							"label": "Cotrimoxazole Preventive Therapy plan",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "radio",
 								"concept": "1261AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -1437,7 +1437,7 @@
 							"label": "ARV Adherence",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "radio",
 								"concept": "da4e1fd2-727f-4677-ab5f-44058555052c",
 								"conceptMappings": [
 									{
@@ -1597,7 +1597,7 @@
 							"label": "Disclosure for Children",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
+								"rendering": "radio",
 								"concept": "573f93e2-12f6-483e-aa6e-14e9b76b311a",
 								"answers": [
 									{
@@ -1673,7 +1673,7 @@
 							"label": "Next visit date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [

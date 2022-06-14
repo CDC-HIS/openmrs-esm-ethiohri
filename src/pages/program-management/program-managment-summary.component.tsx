@@ -18,7 +18,7 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
         <Tab label="Intake B">
           <IntakeBEncounterList patientUuid={patientUuid} />
         </Tab>
-        <Tab label="Family Information">
+        <Tab label="Family Members">
           <FamilyInformationList patientUuid={patientUuid} />
         </Tab>
         <Tab label="PHDP">

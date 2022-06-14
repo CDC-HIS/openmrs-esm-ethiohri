@@ -1,11 +1,11 @@
 import { Tab, Tabs } from "carbon-components-react";
 import React from "react";
-import FollowupEncounterList from "./follow-up/followup.component";
+import FollowupEncounterList from "./tabs/followup.component";
 
-const VisitSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <div>
-      <Tabs>
+      <Tabs type="container">
         <Tab label="Follow-Up">
           <FollowupEncounterList patientUuid={patientUuid} />
         </Tab>
@@ -14,4 +14,4 @@ const VisitSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 };
 
-export default VisitSummary;
+export default VisitsSummary;
