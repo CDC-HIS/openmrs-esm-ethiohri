@@ -3,7 +3,8 @@
     "^.+\\.tsx?$": "babel-jest"
   },
   "transformIgnorePatterns": [
-    "/node_modules/(?!@openmrs)"
+    "/node_modules/(?!@openmrs)",
+    "/node_modules/(?!@@ohri)"
   ],
   "moduleNameMapper": {
     "^@carbon/icons-react/es/(.*)$": "@carbon/icons-react/lib/$1",

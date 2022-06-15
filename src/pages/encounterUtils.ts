@@ -1,4 +1,4 @@
-import { getObsFromEncounter } from "openmrs-esm-ohri-commons-lib/src/index";
+import { getObsFromEncounter } from "@ohri/openmrs-esm-ohri-commons-lib/src/index";
 
 export function getData(
   encounter: any,

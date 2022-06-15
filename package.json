@@ -14,7 +14,7 @@
     "analyze": "webpack --mode=production --env.analyze=true",
     "lint": "eslint src --ext js,jsx,ts,tsx",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "typescript": "tsc",
+    "typescript": "tsc --skipLibCheck",
     "test": "jest --config jest.config.json --passWithNoTests",
     "verify": "concurrently 'yarn:lint' 'yarn:test' 'yarn:typescript'",
     "coverage": "yarn test -- --coverage",
