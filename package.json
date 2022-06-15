@@ -47,7 +47,9 @@
     "@carbon/icons-react": "^10.18.0",
     "@ohri/openmrs-esm-ohri-commons-lib": "next",
     "carbon-components-react": "^7.25.0",
-    "lodash-es": "^4.17.15"
+    "lodash-es": "^4.17.15",
+    "openmrs-esm-ohri-commons-lib": "^0.6.39",
+    "openmrs-ohri-form-engine-lib": "^0.1.11-0"
   },
   "peerDependencies": {
     "@ohri/openmrs-ohri-form-engine-lib": "^0.1",
@@ -67,8 +69,8 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime": "^7.14.0",
-    "@openmrs/esm-framework": "3.4.1-pre.77",
-    "@openmrs/esm-patient-common-lib": "3.2.1-pre.120",
+    "@openmrs/esm-framework": "next",
+    "@openmrs/esm-patient-common-lib": "next",
     "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
@@ -95,7 +97,8 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.4",
     "jest-cli": "^27.0.4",
-    "openmrs": "3.4.1-pre.77",
+    "openmrs": "next",
+    "openmrs-esm-ohri-commons-lib": "latest",
     "prettier": "^2.3.0",
     "pretty-quick": "^3.1.0",
     "react": "^16.13.1",
