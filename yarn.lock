@@ -1811,7 +1811,7 @@
   dependencies:
     lodash-es "^4.17.21"
 
-"@openmrs/esm-framework@^3.3.2-pre.1211", "@openmrs/esm-framework@^3.3.2-pre.64":
+"@openmrs/esm-framework@^3.3.2-pre.1211", "@openmrs/esm-framework@^3.3.2-pre.50":
   version "3.3.2-pre.1211"
   resolved "https://registry.yarnpkg.com/@openmrs/esm-framework/-/esm-framework-3.3.2-pre.1211.tgz#2ad77bf53695c3ccaa9de7da0665c04de5953412"
   integrity sha512-BsXHc1GCa7WMzVuKgjojcuy7ckz60ykzVJXWiJZUSexhwEvCZ5TPzzgrNB67B4hKLagfwyUUvzpApiiFmvQYiA==
@@ -1844,7 +1844,7 @@
     uuid "^8.3.2"
     workbox-window "^6.1.5"
 
-"@openmrs/esm-patient-common-lib@next":
+"@openmrs/esm-patient-common-lib@3.1.1-pre.76":
   version "3.1.1-pre.76"
   resolved "https://registry.yarnpkg.com/@openmrs/esm-patient-common-lib/-/esm-patient-common-lib-3.1.1-pre.76.tgz#88735a1c160b6331344a424a75de13558c5c6eac"
   integrity sha512-e7LNGJrslmRe/IQy1ibkvG8ikZzJK5Tivp/EGcocoQhXfWcyNKv1Tebnb5m1OfW6uMXAbTLQXsbE+7b42GbQ6Q==
@@ -2432,12 +2432,12 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.4.tgz#cd667bcfdd025213aafb7ca5915a932590acdcdc"
   integrity sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==
 
-"@types/react-dom@^16.9.14":
-  version "16.9.16"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.16.tgz#c591f2ed1c6f32e9759dfa6eb4abfd8041f29e39"
-  integrity sha512-Oqc0RY4fggGA3ltEgyPLc3IV9T73IGoWjkONbsyJ3ZBn+UPPCYpU2ec0i3cEbJuEdZtkqcCF2l1zf2pBdgUGSg==
+"@types/react-dom@17.0.2":
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.2.tgz#35654cf6c49ae162d5bc90843d5437dc38008d43"
+  integrity sha512-Icd9KEgdnFfJs39KyRyr0jQ7EKhq8U6CcHRMGAS45fp5qgUvxL3ujUCfWFttUK2UErqZNj97t9gsVPNAqcwoCg==
   dependencies:
-    "@types/react" "^16"
+    "@types/react" "*"
 
 "@types/react-router-dom@^5.1.7":
   version "5.3.3"
@@ -2456,22 +2456,12 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
-"@types/react@*":
-  version "18.0.12"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.12.tgz#cdaa209d0a542b3fcf69cf31a03976ec4cdd8840"
-  integrity sha512-duF1OTASSBQtcigUvhuiTB1Ya3OvSy+xORCiEf20H0P0lzx+/KeVsA99U5UjLXSbyo1DRJDlLKqTeM1ngosqtg==
+"@types/react@*", "@types/react@17.0.2", "@types/react@^16.9.46":
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.2.tgz#3de24c4efef902dd9795a49c75f760cbe4f7a5a8"
+  integrity sha512-Xt40xQsrkdvjn1EyWe1Bc0dJLcil/9x2vAuW7ya+PuQip4UYUaXyhzWmAbwRsdMgwOFHpfp7/FFZebDU6Y8VHA==
   dependencies:
     "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^16", "@types/react@^16.13.1", "@types/react@^16.9.46":
-  version "16.14.26"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.26.tgz#82540a240ba7207ebe87d9579051bc19c9ef7605"
-  integrity sha512-c/5CYyciOO4XdFcNhZW1O2woVx86k4T+DO2RorHZL7EhitkNQgSD/SgpdZJAUJa/qjVgOmTM44gHkAdZSXeQuQ==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
     csstype "^3.0.2"
 
 "@types/resolve@1.17.1":
@@ -2492,11 +2482,6 @@
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/@types/retry/-/retry-0.12.0.tgz#2b35eccfcee7d38cd72ad99232fbd58bffb3c84d"
   integrity sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==
-
-"@types/scheduler@*":
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
-  integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
 "@types/serve-index@^1.9.1":
   version "1.9.1"
@@ -8057,7 +8042,7 @@ opener@^1.5.2:
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.2.tgz#5d37e1f35077b9dcac4301372271afdeb2a13598"
   integrity sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==
 
-openmrs@^3.3.2-pre.64:
+openmrs@^3.3.2-pre.50:
   version "3.3.2-pre.1211"
   resolved "https://registry.yarnpkg.com/openmrs/-/openmrs-3.3.2-pre.1211.tgz#aabbd7e7d2646a6fbbdbb44134938100a0af73df"
   integrity sha512-kk84UT1FYMoa16kJSK7DY5FQ3KWUK0ygVyb22uNeUBjIidJkMj78U5EygpSVmgmaD1Gk9S3yz1j4kTsIZX1X0w==
@@ -10235,7 +10220,7 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@^4.3.2:
+typescript@^4.4.3:
   version "4.7.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.3.tgz#8364b502d5257b540f9de4c40be84c98e23a129d"
   integrity sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==
