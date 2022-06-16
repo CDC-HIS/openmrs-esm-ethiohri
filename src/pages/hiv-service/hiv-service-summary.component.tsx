@@ -1,7 +1,7 @@
 import { Tab, Tabs } from "carbon-components-react";
 import React from "react";
 
-const ServiceSummary: React.FC<{ patientUuid: string }> = () => {
+const ServiceSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <div>
       <Tabs type="container">

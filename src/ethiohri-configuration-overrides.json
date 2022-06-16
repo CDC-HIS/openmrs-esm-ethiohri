@@ -81,16 +81,6 @@
         }
       }
     },
-    "@openmrs/esm-login-app": {
-      "logo": {
-        "src": "https://ethiohri-dev.globalhealthapp.net/openmrs/spa/ethiohri_darkbk.png"
-      }
-    },
-    "@openmrs/esm-primary-navigation-app": {
-      "logo": {
-        "src": "https://ethiohri-dev.globalhealthapp.net/openmrs/spa/ethiohri_lightbk.png"
-      }
-    },
     "@openmrs/esm-styleguide": {
       "Brand color #1": "#002f6c",
       "Brand color #2": "#1a75bb",

@@ -14,11 +14,12 @@ import {
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
+import ethiohriConfig from "./ethiohri-config";
 import {
   addToBaseFormsRegistry,
   ControlRegistryItem,
   OHRIFormsTagLibraryStore,
-} from "openmrs-ohri-form-engine-lib";
+} from "@ohri/openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
 require("./vendor/lib/jquery-calendars/js/jquery.min.js");
 require("./vendor/lib/jquery-calendars/js/jquery.plugin.min.js");
@@ -62,6 +63,7 @@ function setupOpenMRS() {
 
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
+  provide(ethiohriConfig);
   addToBaseFormsRegistry(formsRegistry);
   const tagLibStore = getGlobalStore<Array<ControlRegistryItem>>(
     OHRIFormsTagLibraryStore,
