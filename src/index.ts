@@ -9,7 +9,6 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
-  getSyncLifecycle,
   getGlobalStore,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
@@ -57,7 +56,7 @@ const backendDependencies = {
  * rendered.
  */
 function setupOpenMRS() {
-  const moduleName = "@openmrs/esm-ethiohri-app";
+  const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 
   const options = { featureName: "ethiohri", moduleName };
 
