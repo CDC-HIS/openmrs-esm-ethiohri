@@ -20,12 +20,13 @@ import {
   OHRIFormsTagLibraryStore,
 } from "@ohri/openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
-require("./vendor/lib/jquery-calendars/js/jquery.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.plugin.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.all.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian-am.js");
+// Commenting this out for now as we figure out a better option for a modern date-picker library
+// require("./vendor/lib/jquery-calendars/js/jquery.min.js");
+// require("./vendor/lib/jquery-calendars/js/jquery.plugin.min.js");
+// require("./vendor/lib/jquery-calendars/js/jquery.calendars.min.js");
+// require("./vendor/lib/jquery-calendars/js/jquery.calendars.all.min.js");
+// require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian.min.js");
+// require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian-am.js");
 /**
  * This tells the app shell how to obtain translation files: that they
  * are JSON files in the directory `../translations` (which you should
