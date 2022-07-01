@@ -12,6 +12,7 @@ import {
   OHRIFieldValueView,
 } from "@ohri/openmrs-ohri-form-engine-lib";
 import styles from "../input/_input.scss";
+require("./ethiohri-date.scss");
 import { DatePicker, Provider, defaultTheme } from "@adobe/react-spectrum";
 import moment from "moment";
 
