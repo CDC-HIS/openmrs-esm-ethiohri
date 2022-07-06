@@ -14,7 +14,12 @@ import {
 import styles from "../input/_input.scss";
 require("./ethiohri-date.scss");
 import { DatePicker, Provider, defaultTheme } from "@adobe/react-spectrum";
-import moment from "moment";
+import {
+  parseDate,
+  EthiopicCalendar,
+  toCalendar,
+  CalendarDate,
+} from "@internationalized/date";
 
 const dateFormatter = new Intl.DateTimeFormat(window.navigator.language);
 
@@ -63,10 +68,12 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
   ]);
 
   const onDateChange = ([date]) => {
+    var newDate = new Date(date);
+    newDate.setHours(12);
     const refinedDate =
       date instanceof Date
         ? new Date(date.getTime() - date.getTimezoneOffset() * 60000)
-        : date;
+        : newDate;
     setFieldValue(question.id, refinedDate);
     onChange(question.id, refinedDate, setErrors);
     question.value = handler.handleFieldSubmission(
@@ -116,8 +123,12 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
         fields
       );
       if (!isEmpty(prevValue?.value)) {
-        prevValue.display = dateFormatter.format(prevValue.value);
-        prevValue.value = [prevValue.value];
+        prevValue.display = gregToEth(
+          new Date(prevValue.value).toLocaleDateString("en-US").toString()
+        );
+        prevValue.value = [
+          new Date(prevValue.value).toLocaleDateString("en-US").toString(),
+        ];
         setPreviousValueForReview(prevValue);
       }
     }
@@ -130,6 +141,46 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
       }
     );
   }, [conceptName]);
+
+  function gregToEth(gregdate) {
+    if (!gregdate) return null;
+    let dmy = gregdate.split("/");
+    if (dmy.length == 3) {
+      let year = parseInt(dmy[2], 10);
+      let month = parseInt(dmy[0], 10);
+      let day = parseInt(dmy[1], 10);
+      let gregorianDate = new CalendarDate(year, month, day);
+      let ethiopianDate = toCalendar(gregorianDate, new EthiopicCalendar());
+      let finalDate =
+        ethiopianDate.day +
+        "/" +
+        ethiopianDate.month +
+        "/" +
+        ethiopianDate.year;
+      return finalDate;
+    } else return null;
+  }
+
+  function formatDate(value) {
+    if (!value) return "2022-08-06";
+    let dmy = new Date(value).toLocaleDateString("en-US").split("/");
+    if (dmy.length == 3) {
+      let year = parseInt(dmy[2], 10);
+      let month = parseInt(dmy[0], 10);
+      let day = parseInt(dmy[1], 10);
+      let finalDate = year + "-" + formatDigit(month) + "-" + formatDigit(day);
+      return finalDate;
+    } else {
+      return "2022-08-06";
+    }
+  }
+
+  function formatDigit(number) {
+    return parseInt(number, 10).toLocaleString("en-US", {
+      minimumIntegerDigits: 2,
+      useGrouping: false,
+    });
+  }
 
   return encounterContext.sessionMode == "view" || isTrue(question.readonly) ? (
     <OHRIFieldValueView
@@ -150,8 +201,16 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
             locale="am-AM-u-ca-ethiopic"
             theme={defaultTheme}
             height="100%"
+            colorScheme="light"
           >
-            <DatePicker label="Date"></DatePicker>
+            <DatePicker
+              value={parseDate(formatDate(field.value))}
+              onChange={(e) => {
+                onDateChange([e]);
+              }}
+              id={question.id}
+              label={question.label}
+            ></DatePicker>
           </Provider>
         </div>
         {previousValueForReview && (
