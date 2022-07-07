@@ -86,7 +86,7 @@ jobs:
       #Test
       needs: release
 
-#       if: ${{ github.ref == 'refs/heads/develop' }}
+      if: ${{ github.ref == 'refs/heads/develop' }}
 
       steps:
         - name: Download Artifacts
