@@ -162,7 +162,7 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
   }
 
   function formatDate(value) {
-    if (!value) return "2022-08-06";
+    if (!value) return null;
     let dmy = new Date(value).toLocaleDateString("en-US").split("/");
     if (dmy.length == 3) {
       let year = parseInt(dmy[2], 10);
@@ -171,7 +171,7 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
       let finalDate = year + "-" + formatDigit(month) + "-" + formatDigit(day);
       return finalDate;
     } else {
-      return "2022-08-06";
+      return null;
     }
   }
 
@@ -204,7 +204,11 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
             colorScheme="light"
           >
             <DatePicker
-              value={parseDate(formatDate(field.value))}
+              value={
+                formatDate(field.value) != null
+                  ? parseDate(formatDate(field.value))
+                  : null
+              }
               onChange={(e) => {
                 onDateChange([e]);
               }}
