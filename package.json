@@ -44,6 +44,7 @@
     "url": "https://github.com/CDC-HIS/openmrs-esm-ethiohri/issues"
   },
   "dependencies": {
+    "@adobe/react-spectrum": "^3.19.0",
     "@carbon/icons-react": "^10.18.0",
     "@ohri/openmrs-esm-ohri-commons-lib": "next",
     "carbon-components-react": "^7.25.0",
@@ -69,8 +70,9 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime": "^7.14.0",
-    "@openmrs/esm-framework": "next",
-    "@openmrs/esm-patient-common-lib": "next",
+    "@ohri/openmrs-ohri-form-engine-lib": "next",
+    "@openmrs/esm-framework": "3.4.1-pre.77",
+    "@openmrs/esm-patient-common-lib": "3.2.1-pre.120",
     "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
@@ -106,8 +108,7 @@
     "react-i18next": "^11.7.0",
     "react-router-dom": "^5.2.0",
     "rxjs": "^6.5.4",
-    "typescript": "^4.4.3",
-    "@ohri/openmrs-ohri-form-engine-lib": "next"
+    "typescript": "^4.4.3"
   },
   "resolutions": {
     "@types/react": "17.0.2",
