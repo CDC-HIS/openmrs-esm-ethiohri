@@ -63,7 +63,7 @@ jobs:
   
     needs: build
 
-    #if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' }}
 
     steps:
       - uses: actions/checkout@v2
@@ -76,7 +76,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
       - run: yarn
-      - run: yarn publish --access public --tag next
+      - run: yarn publish --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     
