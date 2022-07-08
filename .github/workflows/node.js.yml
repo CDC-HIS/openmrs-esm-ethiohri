@@ -75,10 +75,8 @@ jobs:
           node-version: "16.x"
           registry-url: 'https://registry.npmjs.org'
       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      #- run: yarn install
-      - run: npm install
-      - run: npm publish --access public --tag latest
-      #- run: yarn publish --access public --tag latest
+      - run: yarn build
+      - run: yarn publish --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     
