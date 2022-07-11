@@ -6754,6 +6754,7 @@
                                 },
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
+							"readonly": "true",
 							"id": "treatmentEndDate",
 							"validators": ""
 						}
