@@ -3208,6 +3208,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
+								"calculate": {
+                                    "calculateExpression": "calcEDD('LMP')"
+                                },
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{

@@ -426,6 +426,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
+								"calculate": {
+                                    "calculateExpression": "calcMonthsOnART('artStartDate')"
+                                },
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -5740,9 +5743,70 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "(arvAdherence != '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') && (arvAdherence != '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+								"hideWhenExpression": "!includes('arvAdherence', '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
 							"id": "reasonForPoorFairAdherence"
+						}
+					]
+				},
+				{
+					"label": "Patient Status",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Patient Status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "160433AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "TO",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5240AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "LOST",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "DROP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "STOP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "DEAD",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "ON ART",
+										"conceptMappings": []
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "160433"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "6538"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "365860008"
+									}
+								]
+							},
+							"id": "patientStatus"
 						}
 					]
 				},
@@ -6665,7 +6729,7 @@
 			"label": "Appointments",
 			"sections": [
 				{
-					"label": "Next Appointment",
+					"label": "Appointment",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -6674,63 +6738,24 @@
 							"questionOptions": {
 								"rendering": "date",
 								"calculate": {
-                                    "calculateExpression": "calcNextVisitDate('followupDate', 'arvDispensedInDays')"
-                                },
+									"calculateExpression": "calcNextVisitDate('followupDate', 'arvDispensedInDays')"
+								},
 								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"id": "nextVisitDate"
-						}
-					]
-				}
-			]
-		},
-		{
-			"label": "Outcome",
-			"sections": [
-				{
-					"label": "Outcome",
-					"isExpanded": "true",
-					"questions": [
+						},
 						{
-							"label": "Patient Status",
+							"label": "Treatment end date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
-								"concept": "160433AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"answers": [
-									{
-										"concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "On ART",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "To",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5240AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Lost",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Drop",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stop",
-										"conceptMappings": []
-									},
-									{
-										"concept": "159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Dead",
-										"conceptMappings": []
-									}
-								]
+								"rendering": "date",
+								"calculate": {
+                                    "calculateExpression": "calcTreatmentEndDate('followupDate', 'arvDispensedInDays', 'patientStatus')"
+                                },
+								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"id": "patientStatus"
+							"id": "treatmentEndDate",
+							"validators": ""
 						}
 					]
 				}
