@@ -30,7 +30,8 @@
   ],
   "keywords": [
     "openmrs",
-    "microfrontends"
+    "microfrontends",
+    "ethiohri"
   ],
   "repository": {
     "type": "git",
@@ -47,14 +48,14 @@
     "@adobe/react-spectrum": "^3.19.0",
     "@carbon/icons-react": "^10.18.0",
     "@ohri/openmrs-esm-ohri-commons-lib": "next",
+    "@ohri/openmrs-ohri-form-engine-lib": "next",
     "carbon-components-react": "^7.25.0",
-    "lodash-es": "^4.17.15",
-    "openmrs-esm-ohri-commons-lib": "^0.6.39",
-    "openmrs-ohri-form-engine-lib": "^0.1.11-0"
+    "lodash-es": "^4.17.15"
   },
   "peerDependencies": {
     "@ohri/openmrs-ohri-form-engine-lib": "^0.1",
     "@openmrs/esm-framework": "3.x",
+    "@openmrs/esm-patient-common-lib": "3.x",
     "carbon-components": "10.x",
     "carbon-icons": "7.x",
     "dayjs": "1.x",
@@ -71,8 +72,8 @@
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime": "^7.14.0",
     "@ohri/openmrs-ohri-form-engine-lib": "next",
-    "@openmrs/esm-framework": "3.4.1-pre.77",
-    "@openmrs/esm-patient-common-lib": "3.2.1-pre.120",
+    "@openmrs/esm-framework": "^3.4.1-pre.77",
+    "@openmrs/esm-patient-common-lib": "^3.2.1-pre.120",
     "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
@@ -100,7 +101,6 @@
     "jest": "^27.0.4",
     "jest-cli": "^27.0.4",
     "openmrs": "next",
-    "openmrs-esm-ohri-commons-lib": "latest",
     "prettier": "^2.3.0",
     "pretty-quick": "^3.1.0",
     "react": "^16.13.1",
