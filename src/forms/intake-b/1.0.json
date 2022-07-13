@@ -138,7 +138,7 @@
 							"id": "opportunisticInfectionPresent"
 						},
 						{
-							"label": "Current HIV related opportunistic infections",
+							"label": "HIV related opportunistic infections",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "checkbox",
@@ -249,7 +249,7 @@
 							"hide": {
 								"hideWhenExpression": "opportunisticInfectionPresent != '131768AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "currentHIVRelatedOIs"
+							"id": "HIVRelatedOIs"
 						}
 					]
 				},
@@ -1749,15 +1749,85 @@
 							"label": "Still on Treatment",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "radio",
 								"concept": "160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
 									{
 										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "No",
 										"conceptMappings": [
 											{
 												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
 												"value": "1066"
 											},
 											{
@@ -1827,62 +1897,6 @@
 												"value": "1067"
 											}
 										]
-									},
-									{
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Yes",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 373066001"
-											}
-										]
-									}
-								],
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "159368"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "CIEL",
-										"value": "159368"
 									}
 								]
 							},
@@ -1940,77 +1954,155 @@
 			"label": "Client status at enrolment",
 			"sections": [
 				{
-					"label": "Anthropometry",
+					"label": "Vital signs",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Anthropometry interpretation",
+							"label": "Temprature",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
-								"concept": "1854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"answers": [
+								"rendering": "number",
+								"concept": "961effac-0888-4fe6-9601-277d204c5d22",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "temprature"
+						},
+						{
+							"label": "Heart Rate",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "da7f89c4-537a-4c65-98ae-cccfee4e8fbc",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "heartRate"
+						},
+						{
+							"label": "Systolic blood pressure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
 									{
-										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Normal",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "CIEL",
-												"value": "1115"
-											}
-										]
+										"type": "SNOMED CT",
+										"value": "CT: 271649006"
 									},
 									{
-										"concept": "123814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Underweight",
-										"conceptMappings": []
+										"type": "PIH",
+										"value": "5085"
 									},
 									{
-										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											}
-										]
+										"type": "CIEL",
+										"value": "5085"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5085"
 									}
 								]
 							},
-							"id": "anthropometryInterpretation"
+							"id": "systolicBloodPressure"
+						},
+						{
+							"label": "Diastolic blood pressure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "5086"
+									},
+									{
+										"type": "SNOMED CT",
+										"value": "CT: 271650006"
+									},
+									{
+										"type": "LOINC",
+										"value": "35094-2"
+									},
+									{
+										"type": "PIH",
+										"value": "5086"
+									},
+									{
+										"type": "CIEL",
+										"value": "5086"
+									}
+								]
+							},
+							"id": "diastolicBloodPressure"
+						},
+						{
+							"label": "Respiratory Rate/RR",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "5242"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5242"
+									},
+									{
+										"type": "CIEL",
+										"value": "5242"
+									},
+									{
+										"type": "CIEL",
+										"value": "5242"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "86290005"
+									},
+									{
+										"type": "PIH",
+										"value": "5242"
+									},
+									{
+										"type": "org.openmrs.module.mdrtb",
+										"value": "RESPIRATORY RATE"
+									},
+									{
+										"type": "SNOMED CT",
+										"value": "CT: 86290005"
+									},
+									{
+										"type": "LOINC",
+										"value": "9279-1"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5242"
+									}
+								]
+							},
+							"id": "rr"
 						}
 					]
 				},
 				{
-					"label": "Functional status",
+					"label": "Functional Status",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -2048,11 +2140,75 @@
 								]
 							},
 							"id": "patientFunctionalStatus"
+						},
+						{
+							"label": "Height",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "5090"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5090"
+									},
+									{
+										"type": "CIEL",
+										"value": "5090"
+									}
+								]
+							},
+							"id": "height"
+						},
+						{
+							"label": "Weight",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "5089"
+									},
+									{
+										"type": "PIH",
+										"value": "5089"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5089"
+									}
+								]
+							},
+							"id": "weight"
+						},
+						{
+							"label": "BMI",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "bmi"
 						}
 					]
 				},
 				{
-					"label": "Developmental Status",
+					"label": "For child only",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -2124,6 +2280,104 @@
 								]
 							},
 							"id": "developmentalStatus"
+						},
+						{
+							"label": "Anthropometry interpretation",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "123814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Underweight",
+										"conceptMappings": []
+									},
+									{
+										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Overweight",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											}
+										]
+									}
+								]
+							},
+							"id": "anthropometryInterpretation"
+						},
+						{
+							"label": "Head Circumference",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "5314"
+									},
+									{
+										"type": "LOINC",
+										"value": "8287-5"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "363812007"
+									},
+									{
+										"type": "IMO-ProcedureIT",
+										"value": "29947201"
+									},
+									{
+										"type": "CIEL",
+										"value": "5314"
+									}
+								]
+							},
+							"id": "headCircumference"
 						}
 					]
 				}
@@ -2954,6 +3208,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
+								"calculate": {
+                                    "calculateExpression": "calcEDD('LMP')"
+                                },
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
