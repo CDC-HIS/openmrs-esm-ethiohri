@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [master]
+    branches: [master,develop]
   pull_request:
     branches: [master]
   release:
@@ -40,7 +40,7 @@ jobs:
 
     needs: build
 
-    if: ${{ github.event_name == 'push' }}
+    #if: ${{ github.event_name == 'push' }}
 
     steps:
       - run: echo "Uncomment the lines below and delete this one."
@@ -60,10 +60,10 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
-
+  
     needs: build
 
-    if: ${{ github.event_name == 'release' }}
+    if: ${{ github.event_name == 'push' }}
 
     steps:
       - uses: actions/checkout@v2
@@ -74,7 +74,30 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: 'https://registry.npmjs.org'
-      - run: yarn
-      - run: yarn publish --access public
+      - run: yarn install
+      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
+      - run: yarn build
+      - run: yarn publish --access public --tag latest --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    
+    
+  dev:
+      runs-on: ubuntu-latest
+      #Test
+      needs: release
+
+      if: ${{ github.ref == 'refs/heads/develop' }}
+
+      steps:
+        - name: Download Artifacts
+          uses: actions/download-artifact@v3
+        - name: Compute Timestamp
+          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        - uses: garygrossgarten/github-action-ssh@release
+          name: Run the Update MicroFronEnd Script
+          with:
+              command: cd /usr/share/tomcat/frontendmodules/ && /bin/bash update_frontend_modules.sh
+              host: ${{ secrets.ETHIOHRI_HOST }}
+              username: ${{ secrets.ETHIOHRI_USER }}
+              privateKey: ${{ secrets.ETHIOHRI_DEV_PRIVATE_KEY}}

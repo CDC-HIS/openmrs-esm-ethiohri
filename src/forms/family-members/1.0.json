@@ -9,10 +9,10 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Family member",
+							"label": "Relationship",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
 									{
@@ -218,15 +218,6 @@
 								]
 							},
 							"id": "familyMember"
-						},
-						{
-							"label": "Relationship",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "text",
-								"concept": "164352AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-							},
-							"id": "relationship"
 						},
 						{
 							"label": "Age",
@@ -445,6 +436,19 @@
 								]
 							},
 							"id": "counselledForHIV"
+						},
+						{
+							"label": "Counsellation date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"weeksList": "",
+								"concept": "a4c7ffa9-ba89-4f7d-ae01-50c139527ce4"
+							},
+							"id": "counsellationDate",
+							"hide": {
+								"hideWhenExpression": "counselledForHIV != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
 						},
 						{
 							"label": "Tested for HIV",
@@ -716,7 +720,219 @@
 									}
 								]
 							},
-							"id": "hivTestResult"
+							"id": "hivTestResult",
+							"hide": {
+								"hideWhenExpression": "testedForHIV != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						},
+						{
+							"label": "Enrolled in care",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "3ca41707-40ef-424c-9e1a-923a407e68fc",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											}
+										]
+									}
+								]
+							},
+							"id": "enrolledInCare",
+							"hide": {
+								"hideWhenExpression": "hivTestResult != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						},
+						{
+							"label": "ART Start Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "2516"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "2516"
+									},
+									{
+										"type": "SNOMED-MVP",
+										"value": "1595991000105005"
+									},
+									{
+										"type": "CIEL",
+										"value": "159599"
+									}
+								]
+							},
+							"id": "artStartDate",
+							"hide": {
+								"hideWhenExpression": "enrolledInCare != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						},
+						{
+							"label": "Unique ART Number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "164402AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "164402"
+									}
+								]
+							},
+							"id": "uniqueArtNumber",
+							"hide": {
+								"hideWhenExpression": "enrolledInCare != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
 						}
 					]
 				}
@@ -727,5 +943,5 @@
 	"uuid": "xxxx",
 	"referencedForms": [],
 	"encounterType": "d384d248-04f8-42d3-9c49-3c44ab50f1d8",
-    "allowUnspecifiedAll": true
+	"allowUnspecifiedAll": true
 }

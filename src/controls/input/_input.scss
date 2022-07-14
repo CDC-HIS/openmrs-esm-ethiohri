@@ -1,0 +1,23 @@
+.formField {
+    // padding-bottom: 18px;
+    margin-top: 10px;
+  }
+  
+  .formField > div > div > label {
+    color: #525252;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .spectrum-Popover{
+    z-index: 1000000;
+  }
+  html,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}

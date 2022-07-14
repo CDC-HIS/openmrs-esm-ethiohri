@@ -9,23 +9,17 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
-  getSyncLifecycle,
   getGlobalStore,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
+import ethiohriConfig from "./ethiohri-config";
 import {
   addToBaseFormsRegistry,
   ControlRegistryItem,
   OHRIFormsTagLibraryStore,
-} from "openmrs-ohri-form-engine-lib";
+} from "@ohri/openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
-require("./vendor/lib/jquery-calendars/js/jquery.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.plugin.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.all.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian.min.js");
-require("./vendor/lib/jquery-calendars/js/jquery.calendars.ethiopian-am.js");
 /**
  * This tells the app shell how to obtain translation files: that they
  * are JSON files in the directory `../translations` (which you should
@@ -56,12 +50,13 @@ const backendDependencies = {
  * rendered.
  */
 function setupOpenMRS() {
-  const moduleName = "@openmrs/esm-ethiohri-app";
+  const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 
   const options = { featureName: "ethiohri", moduleName };
 
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
+  provide(ethiohriConfig);
   addToBaseFormsRegistry(formsRegistry);
   const tagLibStore = getGlobalStore<Array<ControlRegistryItem>>(
     OHRIFormsTagLibraryStore,
@@ -69,7 +64,7 @@ function setupOpenMRS() {
   );
   tagLibStore.getState().push({
     id: "eth-date",
-    loadControl: () => import("./controls/calendar/calendar.component"),
+    loadControl: () => import("./controls/date/ethiohri-date.component"),
     type: "eth-date",
   });
   return {

@@ -1,4 +1,9 @@
-import { getObsFromEncounter } from "openmrs-esm-ohri-commons-lib/src/index";
+import { getObsFromEncounter } from "@ohri/openmrs-esm-ohri-commons-lib/src/index";
+import {
+  EthiopicCalendar,
+  toCalendar,
+  CalendarDate,
+} from "@internationalized/date";
 
 export function getData(
   encounter: any,
@@ -14,25 +19,28 @@ export function getData(
 
 function gregToEth(gregdate) {
   if (!gregdate) return null;
-  var dmy;
-  dmy = new Date(gregdate.toString()).toLocaleDateString("en-US").split("/");
+  let dmy = new Date(gregdate.toString())
+    .toLocaleDateString("en-US")
+    .split("/");
   if (dmy.length == 3) {
-    // @ts-ignore
-    var appdate = ($ as any).calendars
-      .instance("gregorian")
-      .newDate(
-        parseInt(dmy[2], 10),
-        parseInt(dmy[0], 10),
-        parseInt(dmy[1], 10)
-      );
-    // @ts-ignore
-    var jd = ($ as any).calendars.instance("gregorian").toJD(appdate);
-    // @ts-ignore
-    var appdateet = ($ as any).calendars.instance("ethiopian").fromJD(jd);
-    // @ts-ignore
-    var appdateetstr = ($ as any).calendars
-      .instance("ethiopian")
-      .formatDate("dd/mm/yyyy", appdateet);
-    return appdateetstr;
-  } else return null;
+    let year = parseInt(dmy[2], 10);
+    let month = parseInt(dmy[0], 10);
+    let day = parseInt(dmy[1], 10);
+    let gregorianDate = new CalendarDate(year, month, day);
+    let ethiopianDate = toCalendar(gregorianDate, new EthiopicCalendar());
+    let finalDate =
+      ethiopianDate.year +
+      "-" +
+      formatDigit(ethiopianDate.month) +
+      "-" +
+      formatDigit(ethiopianDate.day);
+    return finalDate;
+  } else return "--";
+}
+
+function formatDigit(number) {
+  return parseInt(number, 10).toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  });
 }

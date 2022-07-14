@@ -1,5 +1,5 @@
 import React from "react";
-import { EncounterList } from "openmrs-esm-ohri-commons-lib/src/index";
+import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib/src/index";
 import { FOLLOWUP_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 
