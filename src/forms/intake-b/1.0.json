@@ -1743,7 +1743,7 @@
 							"hide": {
 								"hideWhenExpression": "lifelongARTTI != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "startDate"
+							"id": "artStartDate"
 						},
 						{
 							"label": "Still on Treatment",
@@ -1910,6 +1910,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
+								"calculate": {
+                                    "calculateExpression": "calcMonthsOnART('artStartDate')"
+                                },
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"max": "",
 								"min": "",
