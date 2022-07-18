@@ -1695,7 +1695,7 @@
 							"label": "Start date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -1951,14 +1951,14 @@
 			]
 		},
 		{
-			"label": "Client status at enrolment",
+			"label": "Client status at enrollment",
 			"sections": [
 				{
 					"label": "Vital signs",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Temprature",
+							"label": "Temperature",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -2198,6 +2198,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
+								"calculate": {
+                                    "calculateExpression": "calcBMI('height', 'weight')"
+                                },
 								"concept": "",
 								"max": "",
 								"min": "",
@@ -2279,7 +2282,10 @@
 									}
 								]
 							},
-							"id": "developmentalStatus"
+							"id": "developmentalStatus",
+							"hide": {
+								"hideWhenExpression": "validateAge('x') > 5"
+								}
 						},
 						{
 							"label": "Anthropometry interpretation",
@@ -2343,7 +2349,10 @@
 									}
 								]
 							},
-							"id": "anthropometryInterpretation"
+							"id": "anthropometryInterpretation",
+							"hide": {
+								"hideWhenExpression": "validateAge('x') > 5"
+								}
 						},
 						{
 							"label": "Head Circumference",
@@ -2377,9 +2386,20 @@
 									}
 								]
 							},
-							"id": "headCircumference"
+							"id": "headCircumference",
+							"hide": {
+								"hideWhenExpression": "validateAge('x') > 5"
+								}
 						}
-					]
+					],
+					"behaviours": [
+						{
+						  "intent": "*",
+						  "hide": {
+							"hideWhenExpression": "validateAge('x') > 5"
+							}
+						}
+					  ]
 				}
 			]
 		},
@@ -3181,7 +3201,7 @@
 							"label": "LMP",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "166079AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -3207,7 +3227,7 @@
 							"label": "EDD",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"calculate": {
                                     "calculateExpression": "calcEDD('LMP')"
                                 },
