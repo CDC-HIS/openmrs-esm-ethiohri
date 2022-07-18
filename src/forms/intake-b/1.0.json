@@ -2198,6 +2198,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
+								"calculate": {
+                                    "calculateExpression": "calcBMI('height', 'weight')"
+                                },
 								"concept": "",
 								"max": "",
 								"min": "",
