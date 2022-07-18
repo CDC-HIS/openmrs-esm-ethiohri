@@ -12,7 +12,7 @@
 							"label": "Followup Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
@@ -28,7 +28,7 @@
 							"label": "Date medically eligible for antiretroviral therapy",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"id": "dateMedicallyEligibleForART"
@@ -267,7 +267,7 @@
 							"label": "Date client was ready to start ART",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "fcd42696-8375-48d9-a6e3-19bce17a5156",
 								"weeksList": ""
 							},
@@ -394,7 +394,7 @@
 							"label": "Antiretroviral treatment start date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -475,7 +475,7 @@
 							"label": "Last Menstrual Period",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "166079AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -698,7 +698,7 @@
 							"label": "Expected Date of Delivery",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -2805,7 +2805,7 @@
 							"label": "TPT Start Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -3013,7 +3013,7 @@
 							"label": "TPT Completed Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "163284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -3323,7 +3323,7 @@
 							"label": "TB Diagnosis Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -3528,7 +3528,7 @@
 							"label": "TB Treatment Start Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -4493,7 +4493,7 @@
 							"label": "Viral load request date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -4511,7 +4511,7 @@
 							"label": "Viral load received date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "c541f044-4cdb-4302-b15c-b9901b22f20e",
 								"weeksList": ""
 							},
@@ -5036,7 +5036,7 @@
 							"label": "Start Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -5163,7 +5163,7 @@
 							"label": "Stop Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -5316,7 +5316,7 @@
 							"label": "Start Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "5ac4300a-5e19-45c8-8692-31a57d6d5b8c",
 								"conceptMappings": [
 									{
@@ -5335,7 +5335,7 @@
 							"label": "Stop Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "c2d57bcb-02f2-457d-af05-8d759a1457a7",
 								"weeksList": "",
 								"conceptMappings": [
@@ -6706,7 +6706,7 @@
 							"label": "Enrollment Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -6736,7 +6736,7 @@
 							"label": "Next visit date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"calculate": {
 									"calculateExpression": "calcNextVisitDate('followupDate', 'arvDispensedInDays')"
 								},
@@ -6748,7 +6748,7 @@
 							"label": "Treatment end date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"calculate": {
                                     "calculateExpression": "calcTreatmentEndDate('followupDate', 'arvDispensedInDays', 'patientStatus')"
                                 },

@@ -12,7 +12,7 @@
 							"label": "Enrollment Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -223,7 +223,10 @@
 								"rendering": "text",
 								"concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"id": "mothers_name"
+							"id": "mothers_name",
+							"hide": {
+								"hideWhenExpression": "validateAge('enrollment_date') > 5"
+								}
 						},
 						{
 							"label": "Mother's Father Name",
@@ -232,7 +235,10 @@
 								"rendering": "text",
 								"concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"id": "fathers_name"
+							"id": "fathers_name",
+							"hide": {
+								"hideWhenExpression": "validateAge('enrollment_date') > 5"
+								}
 						},
 						{
 							"label": "Mother's Grandfather Name",
@@ -241,7 +247,10 @@
 								"rendering": "text",
 								"concept": "160273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"id": "grandfathers_name"
+							"id": "grandfathers_name",
+							"hide": {
+								"hideWhenExpression": "validateAge('enrollment_date') > 5"
+								}
 						},
 						{
 							"label": "Place of delivery",
@@ -330,7 +339,10 @@
 									}
 								]
 							},
-							"id": "placeOfDelivery"
+							"id": "placeOfDelivery",
+							"hide": {
+								"hideWhenExpression": "validateAge('enrollment_date') > 5"
+								}
 						},
 						{
 							"label": "Mode of delivery",
@@ -411,9 +423,20 @@
 									}
 								]
 							},
-							"id": "mode_of_delivery"
+							"id": "mode_of_delivery",
+							"hide": {
+								"hideWhenExpression": "validateAge('enrollment_date') > 5"
+								}
 						}
-					]
+					],
+					"behaviours": [
+						{
+						  "intent": "*",
+						  "hide": {
+							"hideWhenExpression": "validateAge('enrollment_date') > 5"
+							}
+						}
+					  ]
 				},
 				{
 					"label": "HIV Confirmation",
@@ -423,7 +446,7 @@
 							"label": "Date confirmed",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
