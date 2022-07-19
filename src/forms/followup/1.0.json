@@ -472,7 +472,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Last Menstrual Period",
+							"label": "LMP",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
@@ -489,7 +489,7 @@
 									}
 								]
 							},
-							"id": "lastMenstrualPeriod"
+							"id": "LMP"
 						},
 						{
 							"label": "Pregnant",
@@ -695,10 +695,13 @@
 							"id": "pregnant"
 						},
 						{
-							"label": "Expected Date of Delivery",
+							"label": "EDD",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
+								"calculate": {
+                                    "calculateExpression": "calcEDD('LMP')"
+                                },
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -727,7 +730,7 @@
 							"hide": {
 								"hideWhenExpression": "pregnant != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "expectedDateOfDelivery"
+							"id": "EDD"
 						},
 						{
 							"label": "Referred to PMTCT",
@@ -5742,9 +5745,9 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "!includes('arvAdherence', '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
-							},
+							"hide": { 
+								"hideWhenExpression": "!(arvAdherence == '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || arvAdherence == '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+						},
 							"id": "reasonForPoorFairAdherence"
 						}
 					]
