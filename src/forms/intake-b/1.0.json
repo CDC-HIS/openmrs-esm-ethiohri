@@ -2202,7 +2202,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"calculate": {
-                                    "calculateExpression": "calcBMI('height','weight')"
+                                    "calculateExpression": "Math.round(calcBMI('height', 'weight'))"
                                 },
 								"concept": "cfce59f0-0ddd-4722-8eea-1ce5efaffc8b",
 								"max": "",
@@ -4054,7 +4054,7 @@
 	"availableIntents": [
         {
         "intent": "*",
-        "display": "Intake-B Behaviours"
+        "display": "Add Intake-B"
         }
         ],
 	"uuid": "xxxx",

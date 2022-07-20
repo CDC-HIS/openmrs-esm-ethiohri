@@ -1362,7 +1362,7 @@
 	"availableIntents": [
         {
         "intent": "*",
-        "display": "Intake-A Behaviours"
+        "display": "Add Intake-A"
         }
         ],
 	"uuid": "xxxx",
