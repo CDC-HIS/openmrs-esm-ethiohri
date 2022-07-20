@@ -48,7 +48,7 @@
 							"id": "unit_tb_no"
 						},
 						{
-							"label": "Target Population Type",
+							"label": "Key Population Type",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",

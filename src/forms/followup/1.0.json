@@ -1152,11 +1152,11 @@
 								],
 								"answers": [
 									{
-										"label": "yes",
+										"label": "Yes",
 										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									},
 									{
-										"label": "no",
+										"label": "No",
 										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									}
 								]
