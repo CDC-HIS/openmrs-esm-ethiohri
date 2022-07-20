@@ -1911,8 +1911,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"calculate": {
-                                    "calculateExpression": "calcMonthsOnART('artStartDate')"
-                                },
+									"calculateExpression": "calcMonthsOnART('artStartDate')"
+								},
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"max": "",
 								"min": "",
@@ -2202,9 +2202,9 @@
 							"questionOptions": {
 								"rendering": "number",
 								"calculate": {
-                                    "calculateExpression": "calcBMI('height', 'weight')"
+                                    "calculateExpression": "calcBMI('height','weight')"
                                 },
-								"concept": "",
+								"concept": "cfce59f0-0ddd-4722-8eea-1ce5efaffc8b",
 								"max": "",
 								"min": "",
 								"showDate": ""
@@ -2285,10 +2285,7 @@
 									}
 								]
 							},
-							"id": "developmentalStatus",
-							"hide": {
-								"hideWhenExpression": "validateAge('x') > 5"
-								}
+							"id": "developmentalStatus"
 						},
 						{
 							"label": "Anthropometry interpretation",
@@ -2352,10 +2349,7 @@
 									}
 								]
 							},
-							"id": "anthropometryInterpretation",
-							"hide": {
-								"hideWhenExpression": "validateAge('x') > 5"
-								}
+							"id": "anthropometryInterpretation"
 						},
 						{
 							"label": "Head Circumference",
@@ -2389,20 +2383,17 @@
 									}
 								]
 							},
-							"id": "headCircumference",
-							"hide": {
-								"hideWhenExpression": "validateAge('x') > 5"
-								}
+							"id": "headCircumference"
 						}
 					],
 					"behaviours": [
 						{
-						  "intent": "*",
-						  "hide": {
-							"hideWhenExpression": "validateAge('x') > 5"
+							"intent": "*",
+							"hide": {
+								"hideWhenExpression": "calcAgeBasedOnDate('x') > 5"
 							}
 						}
-					  ]
+					]
 				}
 			]
 		},
@@ -3232,8 +3223,8 @@
 							"questionOptions": {
 								"rendering": "eth-date",
 								"calculate": {
-                                    "calculateExpression": "calcEDD('LMP')"
-                                },
+									"calculateExpression": "calcEDD('LMP')"
+								},
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -4060,6 +4051,12 @@
 		}
 	],
 	"processor": "EncounterFormProcessor",
+	"availableIntents": [
+        {
+        "intent": "*",
+        "display": "Intake-B Behaviours"
+        }
+        ],
 	"uuid": "xxxx",
 	"referencedForms": [],
 	"encounterType": "dc94a223-66bc-45b7-8e34-d13b8686f239",

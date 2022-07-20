@@ -223,10 +223,7 @@
 								"rendering": "text",
 								"concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"id": "mothers_name",
-							"hide": {
-								"hideWhenExpression": "validateAge('enrollment_date') > 5"
-								}
+							"id": "mothers_name"
 						},
 						{
 							"label": "Mother's Father Name",
@@ -235,10 +232,7 @@
 								"rendering": "text",
 								"concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"id": "fathers_name",
-							"hide": {
-								"hideWhenExpression": "validateAge('enrollment_date') > 5"
-								}
+							"id": "fathers_name"
 						},
 						{
 							"label": "Mother's Grandfather Name",
@@ -247,10 +241,7 @@
 								"rendering": "text",
 								"concept": "160273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"id": "grandfathers_name",
-							"hide": {
-								"hideWhenExpression": "validateAge('enrollment_date') > 5"
-								}
+							"id": "grandfathers_name"
 						},
 						{
 							"label": "Place of delivery",
@@ -339,10 +330,7 @@
 									}
 								]
 							},
-							"id": "placeOfDelivery",
-							"hide": {
-								"hideWhenExpression": "validateAge('enrollment_date') > 5"
-								}
+							"id": "placeOfDelivery"
 						},
 						{
 							"label": "Mode of delivery",
@@ -423,17 +411,14 @@
 									}
 								]
 							},
-							"id": "mode_of_delivery",
-							"hide": {
-								"hideWhenExpression": "validateAge('enrollment_date') > 5"
-								}
+							"id": "mode_of_delivery"
 						}
 					],
 					"behaviours": [
 						{
 						  "intent": "*",
 						  "hide": {
-							"hideWhenExpression": "validateAge('enrollment_date') > 5"
+							"hideWhenExpression": "calcAgeBasedOnDate('enrollment_date') > 5"
 							}
 						}
 					  ]
@@ -1374,6 +1359,12 @@
 		}
 	],
 	"processor": "EncounterFormProcessor",
+	"availableIntents": [
+        {
+        "intent": "*",
+        "display": "Intake-A Behaviours"
+        }
+        ],
 	"uuid": "xxxx",
 	"referencedForms": [],
 	"encounterType": "05add044-67f8-48c9-928d-79002ab19efe",
