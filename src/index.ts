@@ -96,8 +96,8 @@ function setupOpenMRS() {
         ),
       },
       {
-        id: "visits-summary-ext",
-        slot: "ethiohri-visits-summary-slot",
+        id: "ethiohri-visits-summary-ext",
+        slot: "visits-summary-slot",
         load: getAsyncLifecycle(
           () => import("./pages/visits/visits-summary.component"),
           {
@@ -107,8 +107,8 @@ function setupOpenMRS() {
         ),
       },
       {
-        id: "adherence-counselling-summary-ext",
-        slot: "ethiohri-adherence-counselling-summary-slot",
+        id: "ethiohri-adherence-counselling-summary-ext",
+        slot: "adherence-counselling-summary-slot",
         load: getAsyncLifecycle(
           () =>
             import(

@@ -6,6 +6,16 @@
           "program-management-summary-ext"
         ]
       },
+      "visits-summary-slot": {
+        "remove": [
+          "visits-summary-ext"
+        ]
+      },
+      "adherence-counselling-summary-slot": {
+        "remove": [
+          "adherence-counselling-summary-ext"
+        ]
+      },
       "patient-chart-dashboard-slot": {
         "remove": [
           "cervical-cancer",
