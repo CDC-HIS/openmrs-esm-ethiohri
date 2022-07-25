@@ -427,8 +427,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"calculate": {
-                                    "calculateExpression": "calcMonthsOnART('artStartDate')"
-                                },
+									"calculateExpression": "calcMonthsOnART('artStartDate')"
+								},
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
 									{
@@ -700,8 +700,8 @@
 							"questionOptions": {
 								"rendering": "eth-date",
 								"calculate": {
-                                    "calculateExpression": "calcEDD('LMP')"
-                                },
+									"calculateExpression": "calcEDD('LMP')"
+								},
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -4378,7 +4378,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Viral Load Done",
+							"label": "Viral load done",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -4524,7 +4524,7 @@
 							"id": "viralLoadReceivedDate"
 						},
 						{
-							"label": "Viral Load Count",
+							"label": "Viral load count",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -4560,8 +4560,20 @@
 							"label": "Viral load status",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": ""
+								"rendering": "radio",
+								"concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
+								"answers": [
+									{
+										"concept": "5d5e42cc-acc4-4069-b3a8-7163e0db5d96",
+										"label": "Suppressed",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a6768be6-c08e-464d-8f53-5f4229508e54",
+										"label": "Unsuppressed",
+										"conceptMappings": []
+									}
+								]
 							},
 							"hide": {
 								"hideWhenExpression": "viralLoadDone != '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -5745,9 +5757,9 @@
 									}
 								]
 							},
-							"hide": { 
+							"hide": {
 								"hideWhenExpression": "!(arvAdherence == '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || arvAdherence == '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
-						},
+							},
 							"id": "reasonForPoorFairAdherence"
 						}
 					]
@@ -6753,8 +6765,8 @@
 							"questionOptions": {
 								"rendering": "eth-date",
 								"calculate": {
-                                    "calculateExpression": "calcTreatmentEndDate('followupDate', 'arvDispensedInDays', 'patientStatus')"
-                                },
+									"calculateExpression": "calcTreatmentEndDate('followupDate', 'arvDispensedInDays', 'patientStatus')"
+								},
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"readonly": "true",
