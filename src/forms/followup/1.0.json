@@ -1135,7 +1135,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "5271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "8d5be308-7205-4a57-844e-968f62850e65",
 								"conceptMappings": [
 									{
 										"type": "AMPATH",
