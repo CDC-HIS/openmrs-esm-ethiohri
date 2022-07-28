@@ -13,7 +13,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
-								"concept": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "b8cd8630-56dd-495e-8c84-e36a636febe7",
 								"weeksList": ""
 							},
 							"id": "followupDate"
@@ -4740,8 +4740,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": "100",
+								"min": "0",
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -5199,8 +5199,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1f69ba7c-9cb3-4238-beec-d12affda2142",
-								"max": "",
-								"min": "",
+								"max": "180",
+								"min": "30",
 								"showDate": ""
 							},
 							"hide": {
@@ -5371,8 +5371,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "03dc76ef-75ab-4cdd-b24b-761c4fa3c92f",
-								"max": "",
-								"min": "",
+								"max": "180",
+								"min": "30",
 								"showDate": ""
 							},
 							"hide": {
@@ -6196,8 +6196,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "3a0709e9-d7a8-44b9-9512-111db5ce3989",
-								"max": "",
-								"min": "",
+								"max": "180",
+								"min": "30",
 								"showDate": ""
 							},
 							"id": "arvDispensedInDays"
