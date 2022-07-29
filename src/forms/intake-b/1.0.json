@@ -2202,7 +2202,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"calculate": {
-                                    "calculateExpression": "Math.round(calcBMI('height', 'weight'))"
+                                    "calculateExpression": "Math.round(calcBMI('height','weight'))"
                                 },
 								"concept": "cfce59f0-0ddd-4722-8eea-1ce5efaffc8b",
 								"max": "",
