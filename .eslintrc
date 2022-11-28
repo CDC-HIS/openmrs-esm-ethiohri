@@ -1,4 +1,19 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["ts-react-important-stuff", "plugin:prettier/recommended"]
+  "extends": ["ts-react-important-stuff", "plugin:prettier/recommended"],
+  "no-restricted-imports": [
+    "error",
+    {
+      "patterns": [
+        {
+          "group": ["carbon-components-react"],
+          "message": "Import from `@carbon/react` directly. e.g. `import { Toggle } from '@carbon/react'`"
+        },
+        {
+          "group": ["@carbon/icons-react"],
+          "message": "Import from `@carbon/react/icons`. e.g. `import { ChevronUp } from '@carbon/react/icons'`"
+        }
+      ]
+    }
+  ]
 }
