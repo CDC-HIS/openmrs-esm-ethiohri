@@ -2,6 +2,7 @@ import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib/src/index";
 import { INTAKE_B_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
+import { moduleName } from "../../../index";
 
 const columns = [
   {
@@ -66,6 +67,10 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
       description="Intake B Encounter List"
       headerTitle="Intake B"
       dropdownText="Add"
+      launchOptions={{
+        displayText: "Add",
+        moduleName: moduleName,
+      }}
     />
   );
 };

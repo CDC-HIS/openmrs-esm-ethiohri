@@ -2,6 +2,7 @@ import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib/src/index";
 import { FAMILY_INFO_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
+import { moduleName } from "../../../index";
 
 const columns = [
   {
@@ -87,6 +88,10 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
       description="Family Information List"
       headerTitle="Family Members"
       dropdownText="Add"
+      launchOptions={{
+        displayText: "Add",
+        moduleName: moduleName,
+      }}
     />
   );
 };

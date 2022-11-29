@@ -32,6 +32,8 @@ const importTranslation = require.context(
   "lazy"
 );
 
+export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
+
 /**
  * This tells the app shell what versions of what OpenMRS backend modules
  * are expected. Warnings will appear if suitable modules are not
@@ -50,8 +52,6 @@ const backendDependencies = {
  * rendered.
  */
 function setupOpenMRS() {
-  const moduleName = "@icap-ethiopia/esm-ethiohri-app";
-
   const options = { featureName: "ethiohri", moduleName };
 
   defineConfigSchema(moduleName, configSchema);

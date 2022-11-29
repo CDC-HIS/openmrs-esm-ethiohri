@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "carbon-components-react";
+import { Tab, Tabs } from "@carbon/react";
 import React from "react";
 import IntakeAEncounterList from "./tabs/intake-a.component";
 import IntakeBEncounterList from "./tabs/intake-b.component";
