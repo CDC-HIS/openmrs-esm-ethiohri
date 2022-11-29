@@ -53,7 +53,7 @@
   },
   "peerDependencies": {
     "@carbon/icons-react": "^10.18.0",
-    "@ohri/openmrs-ohri-form-engine-lib": "^1.0.1",
+    "@ohri/openmrs-ohri-form-engine-lib": "1.x",
     "@openmrs/esm-framework": "4.x",
     "carbon-components": "11.x",
     "dayjs": "^1.8.16",
