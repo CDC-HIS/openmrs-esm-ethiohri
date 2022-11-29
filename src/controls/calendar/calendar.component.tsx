@@ -1,4 +1,4 @@
-import { TextInput } from "carbon-components";
+import { TextInput } from "@carbon/react";
 import {
   OHRIFormFieldProps,
   OHRIFormContext,

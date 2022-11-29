@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "carbon-components-react";
+import { Tab, Tabs } from "@carbon/react";
 import React from "react";
 
 const HtsOverview: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
