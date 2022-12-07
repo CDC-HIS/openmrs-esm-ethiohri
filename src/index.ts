@@ -1,10 +1,3 @@
-/**
- * This is the entrypoint file of the application. It communicates the
- * important features of this microfrontend to the app shell. It
- * connects the app shell to the React application(s) that make up this
- * microfrontend.
- */
-
 import {
   getAsyncLifecycle,
   defineConfigSchema,
@@ -20,11 +13,7 @@ import {
   OHRIFormsTagLibraryStore,
 } from "@ohri/openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
-/**
- * This tells the app shell how to obtain translation files: that they
- * are JSON files in the directory `../translations` (which you should
- * see in the directory structure).
- */
+
 const importTranslation = require.context(
   "../translations",
   false,
@@ -32,12 +21,8 @@ const importTranslation = require.context(
   "lazy"
 );
 
-/**
- * This tells the app shell what versions of what OpenMRS backend modules
- * are expected. Warnings will appear if suitable modules are not
- * installed. The keys are the part of the module name after
- * `openmrs-module-`; e.g., `openmrs-module-fhir2` becomes `fhir2`.
- */
+export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
+
 const backendDependencies = {
   fhir2: "^1.2.0",
   "webservices.rest": "^2.2.0",
@@ -50,23 +35,24 @@ const backendDependencies = {
  * rendered.
  */
 function setupOpenMRS() {
-  const moduleName = "@icap-ethiopia/esm-ethiohri-app";
-
   const options = { featureName: "ethiohri", moduleName };
 
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
   provide(ethiohriConfig);
   addToBaseFormsRegistry(formsRegistry);
+
   const tagLibStore = getGlobalStore<Array<ControlRegistryItem>>(
     OHRIFormsTagLibraryStore,
     []
   );
+
   tagLibStore.getState().push({
     id: "eth-date",
     loadControl: () => import("./controls/date/ethiohri-date.component"),
     type: "eth-date",
   });
+
   return {
     pages: [],
     extensions: [

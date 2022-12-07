@@ -1,4 +1,4 @@
-import { Tab, Tabs } from "carbon-components-react";
+import { Tab, Tabs } from "@carbon/react";
 import React from "react";
 
 const AdherenceSummary: React.FC<{ patientUuid: string }> = ({
