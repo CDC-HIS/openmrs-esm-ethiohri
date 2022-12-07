@@ -161,6 +161,14 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
     } else return null;
   }
 
+  const isIsoDate = (str) => {
+    var regex = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/g;
+    if (!regex.test(str)) {
+      return false;
+    }
+    return true;
+  };
+
   function formatDate(value) {
     if (!value) return null;
     let dmy = new Date(value).toLocaleDateString("en-US").split("/");
@@ -185,11 +193,9 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
   return encounterContext.sessionMode == "view" || isTrue(question.readonly) ? (
     <OHRIFieldValueView
       label={question.label}
-      value={
-        field.value instanceof Date
-          ? field.value.toLocaleDateString(window.navigator.language)
-          : field.value
-      }
+      value={gregToEth(
+        new Date(field.value).toLocaleDateString("en-US").toString()
+      )}
       conceptName={conceptName}
       isInline={isInline}
     />
@@ -206,7 +212,9 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
             <DatePicker
               value={
                 formatDate(field.value) != null
-                  ? parseDate(formatDate(field.value))
+                  ? isIsoDate(formatDate(field.value))
+                    ? parseDate(formatDate(field.value))
+                    : null
                   : null
               }
               onChange={(e) => {

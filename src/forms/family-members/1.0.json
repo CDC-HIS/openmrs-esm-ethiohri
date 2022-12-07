@@ -441,7 +441,7 @@
 							"label": "Counsellation date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"weeksList": "",
 								"concept": "a4c7ffa9-ba89-4f7d-ae01-50c139527ce4"
 							},
@@ -889,7 +889,7 @@
 							"label": "ART Start Date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [

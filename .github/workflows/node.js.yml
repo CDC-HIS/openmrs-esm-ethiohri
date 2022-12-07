@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [master,develop]
+    branches: [master,develop,etho_datepicker]
   pull_request:
     branches: [master]
   release:
@@ -63,7 +63,7 @@ jobs:
   
     needs: build
 
-    #if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' }}
 
     steps:
       - uses: actions/checkout@v2
@@ -74,9 +74,11 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: 'https://registry.npmjs.org'
+     
       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      - run: yarn
-      - run: yarn publish --access public --tag next
+      - run: yarn install
+      - run: yarn build
+      - run: yarn publish --access public --tag latest --no-git-tag-version 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     

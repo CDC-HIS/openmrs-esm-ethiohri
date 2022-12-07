@@ -48,7 +48,7 @@
 							"id": "unit_tb_no"
 						},
 						{
-							"label": "Target Population Type",
+							"label": "Key Population Type",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -221,18 +221,12 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "302147001"
-									}
-								]
+								"concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"id": "mothers_name"
 						},
 						{
-							"label": "Father's Name",
+							"label": "Mother's Father Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -241,7 +235,7 @@
 							"id": "fathers_name"
 						},
 						{
-							"label": "Grandfather's Name",
+							"label": "Mother's Grandfather Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -419,7 +413,15 @@
 							},
 							"id": "mode_of_delivery"
 						}
-					]
+					],
+					"behaviours": [
+						{
+						  "intent": "*",
+						  "hide": {
+							"hideWhenExpression": "calcAgeBasedOnDate('enrollment_date') > 5"
+							}
+						}
+					  ]
 				},
 				{
 					"label": "HIV Confirmation",
@@ -457,61 +459,25 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "ca4953af-9ad4-4514-b54a-6832acd7cae9",
-								"conceptMappings": [
-									{
-										"type": "OCT",
-										"value": "HIVTestType"
-									}
-								],
+								"concept": "a865a098-c9ee-4c51-a13b-5c5d574d036c",
 								"answers": [
 									{
-										"concept": "163722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Rapid test for HIV",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163722"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "165813002"
-											},
-											{
-												"type": "CIEL",
-												"value": "163722"
-											}
-										]
+										"concept": "73db2b99-84aa-4389-85e0-fe52e76a4a38",
+										"label": "DBS/PCR (For children)",
+										"conceptMappings": []
 									},
 									{
-										"concept": "844AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "HIV DNA polymerase chain reaction",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "844"
-											},
-											{
-												"type": "CIEL",
-												"value": "844"
-											},
-											{
-												"type": "AMPATH",
-												"value": "844"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "399256002"
-											}
-										]
+										"concept": "3612a06c-b10c-4022-990e-a9ad44c38f05",
+										"label": "Rapid HIV test",
+										"conceptMappings": []
 									},
 									{
 										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Unknown",
 										"conceptMappings": [
 											{
-												"type": "AMPATH",
-												"value": "1067"
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
 											},
 											{
 												"type": "CIEL",
@@ -530,6 +496,18 @@
 												"value": "UNKNOWN"
 											},
 											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
 												"type": "AMPATH",
 												"value": "1067"
 											},
@@ -538,8 +516,12 @@
 												"value": "1067"
 											},
 											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
 											}
 										]
 									}
@@ -559,10 +541,31 @@
 					"isExpanded": "true",
 					"questions": [
 						{
+							"label": "Entry point",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "dd282c99-ea69-44e7-9252-aff0198cc1e8",
+								"answers": [
+									{
+										"concept": "a0368d36-686d-4b98-b60e-e62cb3d46c9b",
+										"label": "Within the facility",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2c30c599-1e4f-46f9-8488-5ab57cdc8ac3",
+										"label": "Outside the facility",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "entryPoint"
+						},
+						{
 							"label": "Within the facility ",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "80bcc9c1-e328-47e8-affe-6d1bffe4adf1",
 								"answers": [
 									{
@@ -776,13 +779,16 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "entryPoint != 'a0368d36-686d-4b98-b60e-e62cb3d46c9b'"
+							},
 							"id": "within_the_facility"
 						},
 						{
 							"label": "Outside the facility",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "91eb14f1-c951-4d65-a4b4-6dbf9d88cd1a",
 								"answers": [
 									{
@@ -868,6 +874,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "entryPoint != '2c30c599-1e4f-46f9-8488-5ab57cdc8ac3'"
+							},
 							"id": "outside_the_facility"
 						},
 						{
@@ -899,10 +908,6 @@
 					]
 				}
 			]
-		},
-		{
-			"label": "Transfer-In",
-			"sections": []
 		},
 		{
 			"label": "Care giver/Emergency Contact",
@@ -1278,27 +1283,48 @@
 							"id": "disclosed_hiv_status"
 						},
 						{
-							"label": "To who",
+							"label": "Who knows your child's HIV positive status",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": "",
-								"conceptMappings": [
+								"rendering": "checkbox",
+								"concept": "de8937b6-6ebe-4302-a488-2198be481839",
+								"answers": [
 									{
-										"type": "PIH",
-										"value": "2061"
+										"concept": "0c4723e6-80d7-4c92-814f-c65f44f07c1b",
+										"label": "Spouse (Wife/Husband)",
+										"conceptMappings": []
 									},
 									{
-										"type": "CIEL",
-										"value": "159423"
+										"concept": "8ad449b8-44fb-42b2-b30a-2f1fc9986edc",
+										"label": "Sibling(s) (Brother(s)/Sister(s))",
+										"conceptMappings": []
 									},
 									{
-										"type": "PIH",
-										"value": "2061"
+										"concept": "54848ad0-6d2e-40b0-8143-57cabe3fc6e1",
+										"label": "Relatives",
+										"conceptMappings": []
+									},
+									{
+										"concept": "44dbbc6a-7985-4951-9cc4-4a1590031c0a",
+										"label": "Parent(s)",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c6757561-239f-4a8b-8cd4-677e9dac1263",
+										"label": "Own child(ren)",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5ec636f1-b0c1-4cf8-afab-db590dd2fa58",
+										"label": "Friends",
+										"conceptMappings": []
 									}
 								]
 							},
-							"id": "to_who"
+							"hide": {
+								"hideWhenExpression": "disclosed_hiv_status != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "whoKnowsChildsHIVPositiveStatus"
 						}
 					]
 				}
@@ -1333,6 +1359,12 @@
 		}
 	],
 	"processor": "EncounterFormProcessor",
+	"availableIntents": [
+        {
+        "intent": "*",
+        "display": "Add Intake-A"
+        }
+        ],
 	"uuid": "xxxx",
 	"referencedForms": [],
 	"encounterType": "05add044-67f8-48c9-928d-79002ab19efe",

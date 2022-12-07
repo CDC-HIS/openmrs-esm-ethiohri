@@ -1,89 +1,83 @@
 {
-    "@openmrs/esm-patient-chart-app": {
-      "extensionSlots": {
-        "program-management-summary-slot": {
-          "remove": [
-            "program-management-summary-ext"
-          ]
-        },
-        "patient-chart-dashboard-slot": {
-          "remove": [
-            "cacx-appointments-dashboard",
-            "cacx-summary-dashboard",
-            "cacx-visits-dashboard",
-            "covid-assessments-dashboard",
-            "covid-lab-results",
-            "covid-vaccinations-dashboard",
-            "pre-exposure-prophylaxis",
-            "hts-service-summary-dashboard",
-            "medications-summary-dashboard",
-            "lab-results-summary-dashboard-slot",
-            "partner-notification-services-slot",
-            "adherence-counselling-summary-slot",
-            "general-counselling-summary-slot",
-            "visits-summary-slot",
-            "visits-summary-ext",
-            "ohri-covid"
-          ]
-        },
-        "ohri-covid-patient-chart-slot": {
-          "remove": [
-            "covid-assessments-dashboard",
-            "covid-lab-results",
-            "covid-vaccinations-dashboard",
-            "ohri-covid-patient-chart-ext"
-          ]
-        }
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "program-management-summary-slot": {
+        "remove": [
+          "program-management-summary-ext"
+        ]
+      },
+      "visits-summary-slot": {
+        "remove": [
+          "visits-summary-ext"
+        ]
+      },
+      "adherence-counselling-summary-slot": {
+        "remove": [
+          "adherence-counselling-summary-ext"
+        ]
+      },
+      "patient-chart-dashboard-slot": {
+        "remove": [
+          "cervical-cancer",
+          "allergies-summary-dashboard",
+          "attachments-results-summary-dashboard",
+          "conditions-summary-dashboard",
+          "offline-tools-patient-chart-actions-dashboard-link",
+          "results-summary-dashboard",
+          "test-results-summary-dashboard",
+          "ohri-covid"
+        ]
       }
-    },
-    "openmrs-esm-ohri-core-app": {
-      "extensionSlots": {
-        "dashboard-slot": {
-          "remove": [
-            "hiv-dashboard-items",
-            "covid-dashboard-items"
-          ]
-        }
-      }
-    },
-    "openmrs-esm-ohri-covid-app": {
-      "extensionSlots": {
-        "ohri-covid-patient-chart-slot": {
-          "remove": [
-            "covid-assessments-dashboard",
-            "covid-lab-results",
-            "covid-vaccinations-dashboard"
-          ]
-        }
-      }
-    },
-    "openmrs-esm-ohri-cervical-cancer-app": {
-      "extensionSlots": {
-        "cervical-cancer-slot": {
-          "remove": [
-            "cacx-visits-dashboard",
-            "cacx-appointments-dashboard"
-          ]
-        }
-      }
-    },
-    "openmrs-esm-ohri-hiv-app": {
-      "extensionSlots": {
-        "ohri-hiv-care-and-treatment-slot": {
-          "remove": [
-            "general-counselling-summary",
-            "general-counselling-summary-ext",
-            "partner-notification-services",
-            "lab-results-summary-dashboard",
-            "medications-summary",
-            "appointments-summary"
-          ]
-        }
-      }
-    },
-    "@openmrs/esm-styleguide": {
-      "Brand color #1": "#002f6c",
-      "Brand color #2": "#1a75bb",
-      "Brand color #3": "#1a75bb"
     }
+  },
+  "openmrs-esm-ohri-core-app": {
+    "extensionSlots": {
+      "dashboard-slot": {
+        "remove": [
+          "hiv-dashboard-items",
+          "covid-dashboard-items"
+        ]
+      }
+    }
+  },
+  "openmrs-esm-ohri-covid-app": {
+    "extensionSlots": {
+      "ohri-covid-patient-chart-slot": {
+        "remove": [
+          "covid-assessments-dashboard",
+          "covid-lab-results",
+          "covid-vaccinations-dashboard"
+        ]
+      }
+    }
+  },
+  "openmrs-esm-ohri-cervical-cancer-app": {
+    "extensionSlots": {
+      "cervical-cancer-slot": {
+        "remove": [
+          "cacx-visits-dashboard",
+          "cacx-appointments-dashboard"
+        ]
+      }
+    }
+  },
+  "openmrs-esm-ohri-hiv-app": {
+    "extensionSlots": {
+      "ohri-hiv-care-and-treatment-slot": {
+        "remove": [
+          "general-counselling-summary",
+          "general-counselling-summary-ext",
+          "partner-notification-services",
+          "lab-results-summary-dashboard",
+          "medications-summary",
+          "appointments-summary"
+        ]
+      }
+    }
+  },
+  "@openmrs/esm-styleguide": {
+    "Brand color #1": "#002f6c",
+    "Brand color #2": "#1a75bb",
+    "Brand color #3": "#1a75bb"
   }
+}
