@@ -1,14 +1,14 @@
 import React from "react";
 import { EmptyStateComingSoon } from "@ohri/openmrs-esm-ohri-commons-lib";
 
-const AdherenceSummary: React.FC<{ patientUuid: string }> = ({
+const HivPatientSummary: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
-  const pageTitle = "Adherence Counselling Summary";
+  const pageTitle = "HIV Patient Summary";
 
   return (
     <EmptyStateComingSoon displayText={pageTitle} headerTitle={pageTitle} />
   );
 };
 
-export default AdherenceSummary;
+export default HivPatientSummary;
