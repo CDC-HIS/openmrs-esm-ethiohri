@@ -28,18 +28,13 @@ const backendDependencies = {
   "webservices.rest": "^2.2.0",
 };
 
-/**
- * This function performs any setup that should happen at microfrontend
- * load-time (such as defining the config schema) and then returns an
- * object which describes how the React application(s) should be
- * rendered.
- */
 function setupOpenMRS() {
   const options = { featureName: "ethiohri", moduleName };
 
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
   provide(ethiohriConfig);
+
   addToBaseFormsRegistry(formsRegistry);
 
   const tagLibStore = getGlobalStore<Array<ControlRegistryItem>>(
@@ -74,7 +69,7 @@ function setupOpenMRS() {
         id: "hts-service-summary-list-ext",
         slot: "hts-service-summary-slot",
         load: getAsyncLifecycle(
-          () => import("./pages/hiv-service/hiv-service-summary.component"),
+          () => import("./pages/hiv-summary/hiv-patient-summary.component"),
           {
             featureName: "service-summary-extension",
             moduleName,
@@ -106,41 +101,6 @@ function setupOpenMRS() {
           }
         ),
       },
-      /* {
-        id: "hts-patient-encounters-list-ext",
-        slot: "ethiohri-hts-summary-dashboard-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/hts/hts-overview-summary.component"),
-          {
-            featureName: "hts-patient-encounters-list",
-            moduleName,
-          }
-        ),
-      }, */
-      // Sample code to add new sidenav links
-      // {
-      //   id: "ethiohri-dashboard",
-      //   slot: "patient-chart-dashboard-slot",
-      //   load: getSyncLifecycle(
-      //     createDashboardLink(ethiohriDashboardMeta),
-      //     options
-      //   ),
-      //   meta: ethiohriDashboardMeta,
-      // },
-      // {
-      //   id: "ethiohri-summary-ext",
-      //   slot: "ethiohri-dashboard-slot",
-      //   load: getAsyncLifecycle(
-      //     () =>
-      //       import(
-      //         "./pages/program-management/program-managment-summary.component"
-      //       ),
-      //     {
-      //       featureName: "program-summary-extension",
-      //       moduleName,
-      //     }
-      //   ),
-      // },
     ],
   };
 }

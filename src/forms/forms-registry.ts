@@ -5,7 +5,7 @@ import phdp_1_0 from "./phdp/1.0.json";
 import followup_1_0 from "./followup/1.0.json";
 
 export default {
-  "eth-hiv": {
+  eth_hiv: {
     intake_a: {
       "1.0": intake_a_1_0,
     },
