@@ -59,14 +59,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "family_information", package: "eth-hiv" },
+        form: { name: "family_information", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View Family Information",
         mode: "view",
       },
       {
-        form: { name: "family_information", package: "eth-hiv" },
+        form: { name: "family_information", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit Family Information",
@@ -83,7 +83,7 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
     <EncounterList
       patientUuid={patientUuid}
       encounterUuid={FAMILY_INFO_ENCOUNTER_TYPE}
-      form={{ package: "eth-hiv", name: "family_information" }}
+      form={{ package: "eth_hiv", name: "family_information" }}
       columns={columns}
       description="Family Information List"
       headerTitle="Family Members"
