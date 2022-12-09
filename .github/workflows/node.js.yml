@@ -10,7 +10,7 @@ on:
       - created
 
 env:
-  ESM_NAME: "@openmrs/esm-ethiohri-app"
+  ESM_NAME: "@icap-ethiopia/esm-ethiohri-app"
   JS_NAME: "openmrs-esm-ethiohri-app.js"
 
 jobs:
@@ -80,7 +80,7 @@ jobs:
       - run: yarn build
       - run: yarn publish --access public --tag latest --no-git-tag-version 
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
     
     
   dev:
