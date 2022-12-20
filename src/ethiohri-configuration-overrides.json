@@ -92,7 +92,6 @@
         "id": "other",
         "name": "Other",
         "fields": [
-          "registrationDate",
           "kebela",
           "houseNumber"
         ]
@@ -113,12 +112,6 @@
         "label": "House Number",
         "type": "person attribute",
         "uuid": "553bedc6-4e59-42d3-b80b-d3cf02a792bd"
-      },
-      {
-        "id": "registrationDate",
-        "label": "Registration Date",
-        "type": "person attribute",
-        "uuid": "eba8e58c-7680-48c6-ae23-4d6679cbf4d3"
       }
     ]
   }
