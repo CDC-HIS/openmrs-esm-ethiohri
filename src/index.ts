@@ -7,11 +7,7 @@ import {
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
 import ethiohriConfig from "./ethiohri-config";
-import {
-  addToBaseFormsRegistry,
-  ControlRegistryItem,
-  OHRIFormsTagLibraryStore,
-} from "@ohri/openmrs-ohri-form-engine-lib";
+import { registerControl, addToBaseFormsRegistry } from "@ohri/openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
 
 const importTranslation = require.context(
@@ -37,17 +33,12 @@ function setupOpenMRS() {
 
   addToBaseFormsRegistry(formsRegistry);
 
-  const tagLibStore = getGlobalStore<Array<ControlRegistryItem>>(
-    OHRIFormsTagLibraryStore,
-    []
-  );
-
-  tagLibStore.getState().push({
+  registerControl({
     id: "eth-date",
     loadControl: () => import("./controls/date/ethiohri-date.component"),
     type: "eth-date",
   });
-
+  
   return {
     pages: [],
     extensions: [
