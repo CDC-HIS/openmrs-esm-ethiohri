@@ -84,16 +84,17 @@
     "sections": [
       "demographics",
       "contact",
-      "relationships",
-      "other"
+      "relationships"
     ],
     "sectionDefinitions": [
       {
-        "id": "other",
-        "name": "Other",
+        "id": "contact",
+        "name": "Contact Info",
         "fields": [
+          "address",
           "kebela",
-          "houseNumber"
+          "houseNumber",
+          "phone & email"
         ]
       }
     ],
