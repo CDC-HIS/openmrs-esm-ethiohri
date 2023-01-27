@@ -94,18 +94,27 @@
           "address",
           "kebela",
           "houseNumber",
+          "hometelephoneNumber",
+          "worktelephoneNumber",
           "phone & email"
+        ]
+      },
+      {
+        "id": "demographics",
+        "name": "Basic Info",
+        "fields": [
+          "name",
+          "gender",
+          "dob",
+          "id"
         ]
       }
     ],
     "fieldDefinitions": [
       {
         "id": "kebela",
-        "label": "Kebela",
+        "label": "Kebele",
         "type": "person attribute",
-        "validation": {
-          "required": true
-        },
         "uuid": "e1695908-916d-4c9e-b62b-90b512492da2"
       },
       {
@@ -113,7 +122,48 @@
         "label": "House Number",
         "type": "person attribute",
         "uuid": "553bedc6-4e59-42d3-b80b-d3cf02a792bd"
+      },
+      {
+        "id": "hometelephoneNumber",
+        "label": "Home Telephone Numbers",
+        "type": "person attribute",
+        "uuid": "b3269e45-8e40-44a1-a5f2-bbb2765c6287"
+      },
+      {
+        "id": "worktelephoneNumber",
+        "label": "Work Telephone Numbers",
+        "type": "person attribute",
+        "uuid": "a69aae3d-8c79-4ac5-a218-88889f007163"
       }
-    ]
+    ],
+    "fieldConfigurations": {
+      "gender": [
+        {
+          "id": "male",
+          "value": "Male",
+          "label": "Male"
+        },
+        {
+          "id": "female",
+          "value": "Female",
+          "label": "Female"
+        },
+        {
+          "id": "other",
+          "value": "Other",
+          "label": "Other"
+        }
+      ],
+      "address": {
+        "useAddressHierarchy": {
+          "useAddressHierarchyLabel": {
+            "country": "Country",
+            "stateProvince": "Region",
+            "countyDistrict": "Zone/Sub-City",
+            "cityVillage": "Woreda"
+          }
+        }
+      }
+    }
   }
 }
