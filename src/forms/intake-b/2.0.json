@@ -1,0 +1,4836 @@
+{
+	"name": "POC Intake-B",
+	"pages": [
+		{
+			"label": "Past OIs and Treatment",
+			"sections": [
+				{
+					"label": "Opportunistic Infections",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Opportunistic infection present",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "c52ecf45-bd6c-43ed-861b-9a2714878729",
+								"answers": [
+									{
+										"concept": "131768AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "  Yes",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "23985"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "7388"
+											},
+											{
+												"type": "CIEL",
+												"value": "131768"
+											},
+											{
+												"type": "PIH",
+												"value": "1607"
+											},
+											{
+												"type": "PIH",
+												"value": "1731"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "61274003"
+											},
+											{
+												"type": "PIH",
+												"value": "1401"
+											}
+										]
+									},
+									{
+										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH-Malawi",
+												"value": "1107"
+											},
+											{
+												"type": "PIH",
+												"value": "1107"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1107"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "260413007"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "NONE"
+											},
+											{
+												"type": "CIEL",
+												"value": "1107"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											}
+										]
+									}
+								]
+							},
+							"id": "opportunisticInfectionPresent"
+						},
+						{
+							"label": "HIV related opportunistic infections",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "hiv related",
+								"answers": [
+									{
+										"concept": "145872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cerebral Cryptococcosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "120781AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cervical Intraepithelial Neoplasm",
+										"conceptMappings": []
+									},
+									{
+										"concept": "120330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Coccidioidomycosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "142963AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cytomegalovirus infection",
+										"conceptMappings": []
+									},
+									{
+										"concept": "111759AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Hepatitis B",
+										"conceptMappings": []
+									},
+									{
+										"concept": "156590AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "hepatitis C virus infection",
+										"conceptMappings": []
+									},
+									{
+										"concept": "153466AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "herpes simplex type 2 infection",
+										"conceptMappings": []
+									},
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Herpes zoster",
+										"conceptMappings": []
+									},
+									{
+										"concept": "117514AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Histoplasmosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HIV encephalopathy",
+										"conceptMappings": []
+									},
+									{
+										"concept": "137480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Infection due to Candida Albicans",
+										"conceptMappings": []
+									},
+									{
+										"concept": "116322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Leukoencephalopathy",
+										"conceptMappings": []
+									},
+									{
+										"concept": "116104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Malignant Lymphoma",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160007AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Mycobacterium tuberculosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "882AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumocystis carinii pneumonia",
+										"conceptMappings": []
+									},
+									{
+										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumonia",
+										"conceptMappings": []
+									},
+									{
+										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pulmonary Cryptococcosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Salmonella Septicaemia",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "823AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Wasting syndrome",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "HIVRelatedOIs"
+						}
+					]
+				},
+				{
+					"label": "Past Prophylaxis/Treatment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Cotrimoxazole Date started",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": ""
+							},
+							"id": "cotrimoxazoleDateStarted"
+						},
+						{
+							"label": "Cotrimoxazole Date stopped",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": ""
+							},
+							"id": "cotrimoxazoleDateStopped"
+						},
+						{
+							"label": "INH started date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "d94d9408-837e-44bb-a7de-84007d08bd83",
+								"weeksList": ""
+							},
+							"id": "inhStartedDate"
+						},
+						{
+							"label": "INH completed date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "e9048636-538a-4c73-9fd7-9e2e98a43281"
+							},
+							"id": "inhCompletedDate"
+						},
+						{
+							"label": "Fluconazole Preventive Therapy (FPT): Date started",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "5ac4300a-5e19-45c8-8692-31a57d6d5b8c",
+								"conceptMappings": [
+									{
+										"type": "OCT",
+										"value": "FluconazoleStartDate"
+									}
+								]
+							},
+							"id": "fluconazolePreventiveTherapyDateStarted"
+						},
+						{
+							"label": "Fluconazole Preventive Therapy (FPT):Date completed",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "c2d57bcb-02f2-457d-af05-8d759a1457a7",
+								"conceptMappings": [
+									{
+										"type": "OCT",
+										"value": "FluconazoleStopDate"
+									}
+								]
+							},
+							"id": "fluconazolePreventiveTherapyDateCompleted"
+						},
+						{
+							"label": "ARV For PMTCT",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											}
+										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163532"
+									}
+								]
+							},
+							"id": "ARVForPMTCT"
+						},
+						{
+							"label": "Health facility",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "healthFacility"
+						},
+						{
+							"label": "Regimen for mother",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
+								"answers": [
+									{
+										"concept": "39d6b14c-7fdf-4d13-845e-841cdfc2736e",
+										"label": "1a - Invalid Regimen 1a",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
+										"label": "1a30 - D4T(30)+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
+										"label": "1a40 - D4T(40)+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
+										"label": "1b30 - D4T(30)+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
+										"label": "1b40 - D4T(40)+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
+										"label": "1c - AZT+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
+										"label": "1d - AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
+										"label": "1e - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
+										"label": "1f - TDF+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
+										"label": "1g - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
+										"label": "1h - ABC+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2a811ceb-3c34-47ff-943a-425b41651784",
+										"label": "1j - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c56be3a9-d678-4693-9566-84430239a2f5",
+										"label": "1k - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a87d9674-11af-4440-afd0-d097d84d0393",
+										"label": "2a - ABC+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
+										"label": "2b - ABC+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
+										"label": "2c - TDF+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
+										"label": "2d - TDF+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
+										"label": "2e - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "891bf06e-298a-40ee-8970-2311d18fed48",
+										"label": "2f - AZT+3TC+ATVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
+										"label": "2g - TDF+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
+										"label": "2h - TDF+3TC+ATVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
+										"label": "2i - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2a17d96a-3457-4b93-b007-b540a7543618",
+										"label": "2j - ABC+3TC+LPV/r",
+										"conceptMappings": []
+									},
+									{
+										"concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
+										"label": "2k - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
+										"label": "3a - DRVr+DTG+AZT/3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
+										"label": "3b - DRVr+DTG+TDF/3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "664137bb-d538-4afc-bbd1-7538cf158882",
+										"label": "3c - DRV/r+ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
+										"label": "3d - DRV/r+ABC+EFV+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
+										"label": "3e - DRV/r+TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
+										"label": "3f - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
+										"label": "4a - D4T+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
+										"label": "4b - D4T+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "756b4487-f358-4817-b248-9c05080bad67",
+										"label": "4c - AZT+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
+										"label": "4d - AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
+										"label": "4e - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
+										"label": "4f - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
+										"label": "4g - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
+										"label": "4h - Other specify",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
+										"label": "4i - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "eae01634-65ec-4174-a95c-622456663727",
+										"label": "4j - ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
+										"label": "4K - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
+										"label": "4L - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
+										"label": "5a - ABC+DDL+LPY",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7c30ed1a-a770-4b74-8704-82077427128d",
+										"label": "5b - ABC+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
+										"label": "5c - TDF+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
+										"label": "5d - TDF+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
+										"label": "5e - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
+										"label": "5f - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
+										"label": "5g - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
+										"label": "5h - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
+										"label": "5i - TDF+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
+										"label": "5j - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
+										"label": "5k - RAL+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
+										"label": "5l - RAL+ABC+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
+										"label": "5m - ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
+										"label": "5n - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
+										"label": "5o - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5415f1b1-a680-4870-89c5-3324d42da408",
+										"label": "6a - DRVr+RAL+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
+										"label": "6b - DRVr+RAL+TDF+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
+										"label": "6c - DRVr+DTG+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
+										"label": "6d - DRVr+DTG+TDF+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
+										"label": "6f - DRV/r+DTG+ABC+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
+										"label": "6g - DRV/r+ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
+										"label": "6h - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
+										"label": "Oth1A - Other first line Adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "78b94844-89d8-4f97-9e65-9a785d3eacf1",
+										"label": "Oth1C - Other first line Child",
+										"conceptMappings": []
+									},
+									{
+										"concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
+										"label": "Oth2A - Other second line Adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fff9e226-cbb4-492a-af38-06487408251f",
+										"label": "Oth2C - Other second line Child",
+										"conceptMappings": []
+									},
+									{
+										"concept": "87993b2d-d2ff-420c-8a80-f314183be7f2",
+										"label": "Oth3A - Other third line adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "57eef726-e977-4efd-996b-a94860341320",
+										"label": "Oth3C - Other third line child",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "regimenForMother"
+						},
+						{
+							"label": "Regimen for baby",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
+								"answers": [
+									{
+										"concept": "39d6b14c-7fdf-4d13-845e-841cdfc2736e",
+										"label": "1a - Invalid Regimen 1a",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
+										"label": "1a30 - D4T(30)+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
+										"label": "1a40 - D4T(40)+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
+										"label": "1b30 - D4T(30)+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
+										"label": "1b40 - D4T(40)+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
+										"label": "1c - AZT+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
+										"label": "1d - AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
+										"label": "1e - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
+										"label": "1f - TDF+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
+										"label": "1g - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
+										"label": "1h - ABC+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2a811ceb-3c34-47ff-943a-425b41651784",
+										"label": "1j - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c56be3a9-d678-4693-9566-84430239a2f5",
+										"label": "1k - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a87d9674-11af-4440-afd0-d097d84d0393",
+										"label": "2a - ABC+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
+										"label": "2b - ABC+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
+										"label": "2c - TDF+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
+										"label": "2d - TDF+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
+										"label": "2e - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "891bf06e-298a-40ee-8970-2311d18fed48",
+										"label": "2f - AZT+3TC+ATVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
+										"label": "2g - TDF+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
+										"label": "2h - TDF+3TC+ATVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
+										"label": "2i - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2a17d96a-3457-4b93-b007-b540a7543618",
+										"label": "2j - ABC+3TC+LPV/r",
+										"conceptMappings": []
+									},
+									{
+										"concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
+										"label": "2k - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
+										"label": "3a - DRVr+DTG+AZT/3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
+										"label": "3b - DRVr+DTG+TDF/3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "664137bb-d538-4afc-bbd1-7538cf158882",
+										"label": "3c - DRV/r+ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
+										"label": "3d - DRV/r+ABC+EFV+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
+										"label": "3e - DRV/r+TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
+										"label": "3f - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
+										"label": "4a - D4T+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
+										"label": "4b - D4T+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "756b4487-f358-4817-b248-9c05080bad67",
+										"label": "4c - AZT+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
+										"label": "4d - AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
+										"label": "4e - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
+										"label": "4f - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
+										"label": "4g - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
+										"label": "4h - Other specify",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
+										"label": "4i - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "eae01634-65ec-4174-a95c-622456663727",
+										"label": "4j - ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
+										"label": "4K - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
+										"label": "4L - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
+										"label": "5a - ABC+DDL+LPY",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7c30ed1a-a770-4b74-8704-82077427128d",
+										"label": "5b - ABC+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
+										"label": "5c - TDF+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
+										"label": "5d - TDF+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
+										"label": "5e - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
+										"label": "5f - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
+										"label": "5g - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
+										"label": "5h - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
+										"label": "5i - TDF+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
+										"label": "5j - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
+										"label": "5k - RAL+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
+										"label": "5l - RAL+ABC+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
+										"label": "5m - ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
+										"label": "5n - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
+										"label": "5o - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5415f1b1-a680-4870-89c5-3324d42da408",
+										"label": "6a - DRVr+RAL+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
+										"label": "6b - DRVr+RAL+TDF+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
+										"label": "6c - DRVr+DTG+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
+										"label": "6d - DRVr+DTG+TDF+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
+										"label": "6f - DRV/r+DTG+ABC+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
+										"label": "6g - DRV/r+ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
+										"label": "6h - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
+										"label": "Oth1A - Other first line Adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "78b94844-89d8-4f97-9e65-9a785d3eacf1",
+										"label": "Oth1C - Other first line Child",
+										"conceptMappings": []
+									},
+									{
+										"concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
+										"label": "Oth2A - Other second line Adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fff9e226-cbb4-492a-af38-06487408251f",
+										"label": "Oth2C - Other second line Child",
+										"conceptMappings": []
+									},
+									{
+										"concept": "87993b2d-d2ff-420c-8a80-f314183be7f2",
+										"label": "Oth3A - Other third line adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "57eef726-e977-4efd-996b-a94860341320",
+										"label": "Oth3C - Other third line child",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "regimenForBaby"
+						},
+						{
+							"label": "Lifelong ART/TI",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "PIH-Malawi",
+										"value": "7010"
+									},
+									{
+										"type": "CIEL",
+										"value": "1149"
+									},
+									{
+										"type": "PIH",
+										"value": "1432"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1149"
+									},
+									{
+										"type": "PIH",
+										"value": "1622"
+									},
+									{
+										"type": "PIH",
+										"value": "2589"
+									},
+									{
+										"type": "PIH",
+										"value": "1577"
+									}
+								]
+							},
+							"id": "lifelongARTTI"
+						},
+						{
+							"label": "ARV treatment taken",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "39238bfb-ea2c-4cec-a395-4d62574da39b",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									}
+								]
+							},
+							"id": "arvTreatmentTaken"
+						},
+						{
+							"label": "Regimen",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
+								"answers": [
+									{
+										"concept": "39d6b14c-7fdf-4d13-845e-841cdfc2736e",
+										"label": "1a - Invalid Regimen 1a",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
+										"label": "1a30 - D4T(30)+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
+										"label": "1a40 - D4T(40)+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
+										"label": "1b30 - D4T(30)+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
+										"label": "1b40 - D4T(40)+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
+										"label": "1c - AZT+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
+										"label": "1d - AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
+										"label": "1e - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
+										"label": "1f - TDF+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
+										"label": "1g - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
+										"label": "1h - ABC+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2a811ceb-3c34-47ff-943a-425b41651784",
+										"label": "1j - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c56be3a9-d678-4693-9566-84430239a2f5",
+										"label": "1k - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a87d9674-11af-4440-afd0-d097d84d0393",
+										"label": "2a - ABC+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
+										"label": "2b - ABC+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
+										"label": "2c - TDF+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
+										"label": "2d - TDF+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
+										"label": "2e - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "891bf06e-298a-40ee-8970-2311d18fed48",
+										"label": "2f - AZT+3TC+ATVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
+										"label": "2g - TDF+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
+										"label": "2h - TDF+3TC+ATVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
+										"label": "2i - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2a17d96a-3457-4b93-b007-b540a7543618",
+										"label": "2j - ABC+3TC+LPV/r",
+										"conceptMappings": []
+									},
+									{
+										"concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
+										"label": "2k - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
+										"label": "3a - DRVr+DTG+AZT/3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
+										"label": "3b - DRVr+DTG+TDF/3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "664137bb-d538-4afc-bbd1-7538cf158882",
+										"label": "3c - DRV/r+ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
+										"label": "3d - DRV/r+ABC+EFV+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
+										"label": "3e - DRV/r+TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
+										"label": "3f - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
+										"label": "4a - D4T+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
+										"label": "4b - D4T+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "756b4487-f358-4817-b248-9c05080bad67",
+										"label": "4c - AZT+3TC+NVP",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
+										"label": "4d - AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
+										"label": "4e - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
+										"label": "4f - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
+										"label": "4g - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
+										"label": "4h - Other specify",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
+										"label": "4i - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "eae01634-65ec-4174-a95c-622456663727",
+										"label": "4j - ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
+										"label": "4K - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
+										"label": "4L - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
+										"label": "5a - ABC+DDL+LPY",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7c30ed1a-a770-4b74-8704-82077427128d",
+										"label": "5b - ABC+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
+										"label": "5c - TDF+DDL+LPV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
+										"label": "5d - TDF+DDL+NFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
+										"label": "5e - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
+										"label": "5f - AZT+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
+										"label": "5g - TDF+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
+										"label": "5h - ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
+										"label": "5i - TDF+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
+										"label": "5j - ABC+3TC+LPVr",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
+										"label": "5k - RAL+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
+										"label": "5l - RAL+ABC+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
+										"label": "5m - ABC+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
+										"label": "5n - AZT+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
+										"label": "5o - TDF+3TC+DTG",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5415f1b1-a680-4870-89c5-3324d42da408",
+										"label": "6a - DRVr+RAL+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
+										"label": "6b - DRVr+RAL+TDF+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
+										"label": "6c - DRVr+DTG+AZT+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
+										"label": "6d - DRVr+DTG+TDF+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
+										"label": "6f - DRV/r+DTG+ABC+3TC",
+										"conceptMappings": []
+									},
+									{
+										"concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
+										"label": "6g - DRV/r+ABC+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
+										"label": "6h - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": []
+									},
+									{
+										"concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
+										"label": "Oth1A - Other first line Adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "78b94844-89d8-4f97-9e65-9a785d3eacf1",
+										"label": "Oth1C - Other first line Child",
+										"conceptMappings": []
+									},
+									{
+										"concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
+										"label": "Oth2A - Other second line Adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "fff9e226-cbb4-492a-af38-06487408251f",
+										"label": "Oth2C - Other second line Child",
+										"conceptMappings": []
+									},
+									{
+										"concept": "87993b2d-d2ff-420c-8a80-f314183be7f2",
+										"label": "Oth3A - Other third line adult",
+										"conceptMappings": []
+									},
+									{
+										"concept": "57eef726-e977-4efd-996b-a94860341320",
+										"label": "Oth3C - Other third line child",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "Regimen"
+						},
+						{
+							"label": "Start date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": ""
+							},
+							"id": "artStartDate"
+						},
+						{
+							"label": "Still on Treatment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											}
+										]
+									}
+								]
+							},
+							"id": "stillonTreatment"
+						},
+						{
+							"label": "Months on ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"calculate": {
+									"calculateExpression": "calcMonthsOnART('artStartDate')"
+								},
+								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "159368"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1897"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "261774000"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "261774000"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1897"
+									},
+									{
+										"type": "CIEL",
+										"value": "159368"
+									}
+								]
+							},
+							"id": "monthsOnART"
+						}
+						
+					]
+				}
+			]
+		},
+		{
+			"label": "Client status at enrollment",
+			"sections": [
+				{
+					"label": "Vital signs",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Temperature",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "5088"
+									},
+									{
+										"type": "LOINC",
+										"value": "8310-5"
+									},
+									{
+										"type": "org.openmrs.module.mdrtb",
+										"value": "TEMPERATURE"
+									},
+									{
+										"type": "CIEL",
+										"value": "5088"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "386725007"
+									},
+									{
+										"type": "PIH",
+										"value": "5088"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5088"
+									},
+									{
+										"type": "CIEL",
+										"value": "5088"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5088"
+									}
+								]
+							},
+							"id": "temperature"
+						},
+						{
+							"label": "Heart Rate",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "da7f89c4-537a-4c65-98ae-cccfee4e8fbc",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "heartRate"
+						},
+						{
+							"label": "Systolic blood pressure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "SNOMED CT",
+										"value": "CT: 271649006"
+									},
+									{
+										"type": "PIH",
+										"value": "5085"
+									},
+									{
+										"type": "CIEL",
+										"value": "5085"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5085"
+									}
+								]
+							},
+							"id": "systolicBloodPressure"
+						},
+						{
+							"label": "Diastolic blood pressure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "5086"
+									},
+									{
+										"type": "SNOMED CT",
+										"value": "CT: 271650006"
+									},
+									{
+										"type": "LOINC",
+										"value": "35094-2"
+									},
+									{
+										"type": "PIH",
+										"value": "5086"
+									},
+									{
+										"type": "CIEL",
+										"value": "5086"
+									}
+								]
+							},
+							"id": "diastolicBloodPressure"
+						},
+						{
+							"label": "Respiratory Rate/RR",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "5242"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5242"
+									},
+									{
+										"type": "CIEL",
+										"value": "5242"
+									},
+									{
+										"type": "CIEL",
+										"value": "5242"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "86290005"
+									},
+									{
+										"type": "PIH",
+										"value": "5242"
+									},
+									{
+										"type": "org.openmrs.module.mdrtb",
+										"value": "RESPIRATORY RATE"
+									},
+									{
+										"type": "SNOMED CT",
+										"value": "CT: 86290005"
+									},
+									{
+										"type": "LOINC",
+										"value": "9279-1"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5242"
+									}
+								]
+							},
+							"id": "rr"
+						}
+					]
+				},
+				{
+					"label": "Functional Status",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Patient functional status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "162063AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Walking",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Ambulatory",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bedridden",
+										"conceptMappings": []
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "162753"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "363803005"
+									}
+								]
+							},
+							"id": "patientFunctionalStatus"
+						},
+						{
+							"label": "Height",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "5090"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5090"
+									},
+									{
+										"type": "CIEL",
+										"value": "5090"
+									}
+								]
+							},
+							"id": "height"
+						},
+						{
+							"label": "Weight",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "5089"
+									},
+									{
+										"type": "PIH",
+										"value": "5089"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5089"
+									}
+								]
+							},
+							"id": "weight"
+						},
+						{
+							"label": "BMI",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "bmi"
+						}
+					]
+				},
+				{
+					"label": "For child only",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Developmental Milestones",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1200AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Appropriate for age",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "6022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Delay",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Regression",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											}
+										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "1200"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "251803000"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1200"
+									}
+								]
+							},
+							"id": "developmentalStatus"
+						},
+						{
+							"label": "Anthropometry interpretation",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "123814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Underweight",
+										"conceptMappings": []
+									},
+									{
+										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Overweight",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											}
+										]
+									}
+								]
+							},
+							"id": "anthropometryInterpretation"
+						},
+						{
+							"label": "Head Circumference",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "5314"
+									},
+									{
+										"type": "LOINC",
+										"value": "8287-5"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "363812007"
+									},
+									{
+										"type": "IMO-ProcedureIT",
+										"value": "29947201"
+									},
+									{
+										"type": "CIEL",
+										"value": "5314"
+									}
+								]
+							},
+							"id": "headCircumference"
+						}
+					],
+					"behaviours": [
+						{
+							"intent": "*"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Pregnancy",
+			"sections": [
+				{
+					"label": "Pregnancy",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Pregnancy at Enrollment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											}
+										]
+									}
+								]
+							},
+							"id": "pregnancyAtEnrollment"
+						},
+						{
+							"label": "LMP",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
+								"weeksList": ""
+							},
+							"id": "LMP"
+						},
+						{
+							"label": "EDD",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": ""
+							},
+							"id": "EDD"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Presenting symptoms",
+			"sections": [
+				{
+					"label": "Presenting complaints",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Presenting complaints",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "14718b2b-d38a-4f68-8e22-8bc739ae43f7",
+								"answers": [
+									{
+										"concept": "120655AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Chronic fatigue",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "300212"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R53"
+											},
+											{
+												"type": "CIEL",
+												"value": "120655"
+											}
+										]
+									},
+									{
+										"concept": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Weight loss",
+										"conceptMappings": []
+									},
+									{
+										"concept": "0d51073d-99b9-4d66-95f4-d345756e6ba9",
+										"label": "Flu-like (URTI)",
+										"conceptMappings": []
+									},
+									{
+										"concept": "133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Night sweats",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "6029"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50760"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "42984000"
+											},
+											{
+												"type": "ICPC2",
+												"value": "A09"
+											},
+											{
+												"type": "3BT",
+												"value": "10063085"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6029"
+											}
+										]
+									},
+									{
+										"concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fever",
+										"conceptMappings": [
+											{
+												"type": "3BT",
+												"value": "10049305"
+											},
+											{
+												"type": "PIH",
+												"value": "3722"
+											},
+											{
+												"type": "AMPATH",
+												"value": "157"
+											},
+											{
+												"type": "AMPATH",
+												"value": "157"
+											},
+											{
+												"type": "ICPC2",
+												"value": "A03"
+											},
+											{
+												"type": "ICD-11-WHO",
+												"value": "MG26"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R50.9"
+											},
+											{
+												"type": "3BT",
+												"value": "10049305"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5945"
+											},
+											{
+												"type": "PIH",
+												"value": "3722"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "386661006"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5945"
+											},
+											{
+												"type": "PIH",
+												"value": "5945"
+											},
+											{
+												"type": "ICPC2",
+												"value": "A03"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "27348"
+											},
+											{
+												"type": "PIH",
+												"value": "5945"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R50.9"
+											},
+											{
+												"type": "CIEL",
+												"value": "140238"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "386661006"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "27348"
+											}
+										]
+									},
+									{
+										"concept": "118789AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Dysphagia",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "881"
+											},
+											{
+												"type": "PIH",
+												"value": "1355"
+											},
+											{
+												"type": "3BT",
+												"value": "10027911"
+											},
+											{
+												"type": "CIEL",
+												"value": "118789"
+											},
+											{
+												"type": "ICPC2",
+												"value": "D21"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R13"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "288939007"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "41555"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "40739000"
+											}
+										]
+									},
+									{
+										"concept": "125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Swallowing Painful",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Nausea",
+										"conceptMappings": []
+									},
+									{
+										"concept": "151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abdominal pain",
+										"conceptMappings": []
+									},
+									{
+										"concept": "132653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Numbness of Foot",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Diarrhea, chronic",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "236071009"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "K52.9"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "7544"
+											},
+											{
+												"type": "AMPATH",
+												"value": "15"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "72319"
+											},
+											{
+												"type": "CIEL",
+												"value": "5018"
+											},
+											{
+												"type": "PIH",
+												"value": "5018"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5018"
+											},
+											{
+												"type": "PIH",
+												"value": "1431"
+											}
+										]
+									},
+									{
+										"concept": "c15f7112-d140-49e7-a844-534e723d1bbf",
+										"label": "Other (Specify)",
+										"conceptMappings": [
+											{
+												"type": "OCT",
+												"value": "OtherSpecify"
+											}
+										]
+									}
+								]
+							},
+							"id": "presentingComplaints"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Physical Examination",
+			"sections": [
+				{
+					"label": "Physical Examination at Enrollment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "General Appearance",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "163042AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-CT",
+										"value": "271907004"
+									},
+									{
+										"type": "CIEL",
+										"value": "163042"
+									}
+								]
+							},
+							"id": "generalAppearance"
+						},
+						{
+							"label": "Physical Examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "1119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "1119"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "271907004"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1119"
+									},
+									{
+										"type": "PIH",
+										"value": "2419"
+									}
+								],
+								"answers": [
+									{
+										"concept": "146599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cachexia",
+										"conceptMappings": [
+											{
+												"type": "3BT",
+												"value": "10015944"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "9672"
+											},
+											{
+												"type": "PIH",
+												"value": "823"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T08"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238108007"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R64"
+											}
+										]
+									},
+									{
+										"concept": "159439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Distress",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "69328002"
+											},
+											{
+												"type": "CIEL",
+												"value": "159439"
+											},
+											{
+												"type": "PIH",
+												"value": "6735"
+											}
+										]
+									},
+									{
+										"concept": "5243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Gluteal wasting",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5243"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "52431000105000"
+											},
+											{
+												"type": "CIEL",
+												"value": "5243"
+											}
+										]
+									},
+									{
+										"concept": "136443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Jaundice",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "215"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "47368"
+											},
+											{
+												"type": "3BT",
+												"value": "10044624"
+											},
+											{
+												"type": "PIH",
+												"value": "215"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R17"
+											},
+											{
+												"type": "ICPC2",
+												"value": "D13"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "18165001"
+											}
+										]
+									},
+									{
+										"concept": "135488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Lymphadenopathy",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "30746006"
+											},
+											{
+												"type": "3BT",
+												"value": "10056366"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "48993"
+											},
+											{
+												"type": "PIH",
+												"value": "161"
+											},
+											{
+												"type": "AMPATH",
+												"value": "161"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5007"
+											},
+											{
+												"type": "ICPC2",
+												"value": "B02"
+											}
+										]
+									},
+									{
+										"concept": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Oedema",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "42607"
+											},
+											{
+												"type": "CIEL",
+												"value": "460"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "267038008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5143"
+											},
+											{
+												"type": "PIH",
+												"value": "460"
+											},
+											{
+												"type": "AMPATH",
+												"value": "460"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6002"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "460"
+											}
+										]
+									},
+									{
+										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Overweight",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											}
+										]
+									},
+									{
+										"concept": "159890AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Signs of physical abuse",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-MVP",
+												"value": "1598901000105008"
+											},
+											{
+												"type": "CIEL",
+												"value": "159890"
+											}
+										]
+									},
+									{
+										"concept": "5201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Temporal wasting",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "5201"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "52011000105003"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5201"
+											}
+										]
+									},
+									{
+										"concept": "163293AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unwell appearing",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "302772006"
+											},
+											{
+												"type": "CIEL",
+												"value": "163293"
+											}
+										]
+									},
+									{
+										"concept": "159438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Well appearing",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "159438"
+											},
+											{
+												"type": "PIH",
+												"value": "3227"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "102499006"
+											}
+										]
+									},
+									{
+										"concept": "163045AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HEENT examination (text)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "163045"
+											},
+											{
+												"type": "LOINC",
+												"value": "11393-6"
+											}
+										]
+									},
+									{
+										"concept": "166005AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "General lymph node exam (text)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "166005"
+											},
+											{
+												"type": "LOINC",
+												"value": "11447-0"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "274303007"
+											}
+										]
+									},
+									{
+										"concept": "160689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Chest examination (text)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "160689"
+											}
+										]
+									},
+									{
+										"concept": "163046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cardiac examination (text)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "163046"
+											}
+										]
+									},
+									{
+										"concept": "160947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abdominal examination (text)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "160947"
+											}
+										]
+									},
+									{
+										"concept": "1126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Urogenital exam findings",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "164637006"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "11261000105008"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "11261000105008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1126"
+											},
+											{
+												"type": "CIEL",
+												"value": "1126"
+											},
+											{
+												"type": "CIEL",
+												"value": "1126"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1126"
+											}
+										]
+									},
+									{
+										"concept": "163048AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Musculoskeletal examination (text)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "163048"
+											}
+										]
+									},
+									{
+										"concept": "160981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Skin examination (text)",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "271898004"
+											},
+											{
+												"type": "LOINC",
+												"value": "10206-1"
+											},
+											{
+												"type": "CIEL",
+												"value": "160981"
+											}
+										]
+									},
+									{
+										"concept": "163109AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Nervous system examination (text)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "163109"
+											}
+										]
+									},
+									{
+										"concept": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Oedema",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "42607"
+											},
+											{
+												"type": "CIEL",
+												"value": "460"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "267038008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5143"
+											},
+											{
+												"type": "PIH",
+												"value": "460"
+											},
+											{
+												"type": "AMPATH",
+												"value": "460"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6002"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "460"
+											}
+										]
+									},
+									{
+										"concept": "5201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Temporal wasting",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "5201"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "52011000105003"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5201"
+											}
+										]
+									},
+									{
+										"concept": "5243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Gluteal wasting",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5243"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "52431000105000"
+											},
+											{
+												"type": "CIEL",
+												"value": "5243"
+											}
+										]
+									},
+									{
+										"concept": "159438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Well appearing",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "159438"
+											},
+											{
+												"type": "PIH",
+												"value": "3227"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "102499006"
+											}
+										]
+									},
+									{
+										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Overweight",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											}
+										]
+									},
+									{
+										"concept": "159439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Distress",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "69328002"
+											},
+											{
+												"type": "CIEL",
+												"value": "159439"
+											},
+											{
+												"type": "PIH",
+												"value": "6735"
+											}
+										]
+									},
+									{
+										"concept": "159890AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Signs of physical abuse",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-MVP",
+												"value": "1598901000105008"
+											},
+											{
+												"type": "CIEL",
+												"value": "159890"
+											}
+										]
+									},
+									{
+										"concept": "163293AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unwell appearing",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "302772006"
+											},
+											{
+												"type": "CIEL",
+												"value": "163293"
+											}
+										]
+									}
+								]
+							},
+							"id": "physicalExamination"
+						},
+						{
+							"label": "HEENT examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "33b614d0-1953-4056-ac84-66b0492394e5",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "1122"
+									}
+								]
+							},
+							"id": "heentExamination"
+						},
+						{
+							"label": "HEENT examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "163045AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163045"
+									},
+									{
+										"type": "CIEL",
+										"value": "163045"
+									},
+									{
+										"type": "LOINC",
+										"value": "11393-6"
+									},
+									{
+										"type": "LOINC",
+										"value": "11393-6"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "164633005"
+									}
+								]
+							},
+							"id": "heentExaminationComment"
+						},
+						{
+							"label": "Lymph nodes examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "1121"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "274303007"
+									},
+									{
+										"type": "CIEL",
+										"value": "1121"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "274303007"
+									},
+									{
+										"type": "CIEL",
+										"value": "1121"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1121"
+									}
+								]
+							},
+							"id": "lymphNodesExamination"
+						},
+						{
+							"label": "Lymph nodes examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166005AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "166005"
+									},
+									{
+										"type": "LOINC",
+										"value": "11447-0"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "274303007"
+									}
+								]
+							},
+							"id": "lymphNodesExaminationComment"
+						},
+						{
+							"label": "Chest examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "51ee2cfb-01df-4b6b-8145-a265f6002be6",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								]
+							},
+							"id": "chestExamination"
+						},
+						{
+							"label": "Chest examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "160689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "LOINC",
+										"value": "11391-0"
+									},
+									{
+										"type": "CIEL",
+										"value": "160689"
+									},
+									{
+										"type": "CIEL",
+										"value": "160689"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "272016000"
+									}
+								]
+							},
+							"id": "chestExaminationComment"
+						},
+						{
+							"label": "Heart examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1d51e0df-9e50-432d-ae12-b5a044c8d6e6",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								]
+							},
+							"id": "heartExamination"
+						},
+						{
+							"label": "Heart examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "163046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163046"
+									},
+									{
+										"type": "CIEL",
+										"value": "163046"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "271910006"
+									}
+								]
+							},
+							"id": "heartExaminationComment"
+						},
+						{
+							"label": "Abdomen examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "84fa6273-8798-4cca-941d-2d21f8698e22",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								]
+							},
+							"id": "abdomenExamination"
+						},
+						{
+							"label": "Abdomen examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "160947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "160947"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "609624008"
+									},
+									{
+										"type": "LOINC",
+										"value": "10191-5"
+									},
+									{
+										"type": "CIEL",
+										"value": "160947"
+									}
+								]
+							},
+							"id": "abdomenExaminationComment"
+						},
+						{
+							"label": "Genitourinary system examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1c7d55db-453a-464e-a297-b9ce9cc2b77f",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								]
+							},
+							"id": "genitourinarySystemExamination"
+						},
+						{
+							"label": "Genitourinary system examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "1854b210-5a4b-4c7f-a591-f3eddbbae649"
+							},
+							"id": "genitourinarySystemExaminationComment"
+						},
+						{
+							"label": "Musculoskeletal system examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "a6cb33f0-6f6c-47fd-b862-90ccd8ffd18a",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								]
+							},
+							"id": "musculoskeletalSystemExamination"
+						},
+						{
+							"label": "Musculoskeletal system examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "163048AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163048"
+									},
+									{
+										"type": "CIEL",
+										"value": "163048"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "271916000"
+									}
+								]
+							},
+							"id": "musculoskeletalSystemExaminationComment"
+						},
+						{
+							"label": "Skin examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "2c8381a2-167e-4ce6-a3e1-5d7427e87667",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								]
+							},
+							"id": "skinExamination"
+						},
+						{
+							"label": "Skin examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "160981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-CT",
+										"value": "271898004"
+									},
+									{
+										"type": "LOINC",
+										"value": "10206-1"
+									},
+									{
+										"type": "CIEL",
+										"value": "160981"
+									}
+								]
+							},
+							"id": "skinExaminationComment"
+						},
+						{
+							"label": "Nervous system examination",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "adb5d92a-f8cc-4e77-92d0-cb263e2f4e7a",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abnormal",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											},
+											{
+												"type": "CIEL",
+												"value": "1116"
+											},
+											{
+												"type": "AMPATH",
+												"value": "514"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "263654008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1116"
+											}
+										]
+									}
+								]
+							},
+							"id": "nervousSystemExamination"
+						},
+						{
+							"label": "Nervous system examination comment",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "163109AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163109"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "271888005"
+									},
+									{
+										"type": "CIEL",
+										"value": "163109"
+									}
+								]
+							},
+							"id": "nervousSystemExaminationComment"
+						},
+						{
+							"label": "Other findings",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "0d3783f1-3790-4b7f-8213-2ff1358148ee"
+							},
+							"id": "otherPhysicalExaminationFindings"
+						},
+						{
+							"label": "WHO Staging",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "WHO Stage 1",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "103415007"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1204"
+											},
+											{
+												"type": "CIEL",
+												"value": "1204"
+											},
+											{
+												"type": "PIH",
+												"value": "1204"
+											}
+										]
+									},
+									{
+										"concept": "1205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "WHO Stage 2",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1205"
+											},
+											{
+												"type": "CIEL",
+												"value": "1205"
+											},
+											{
+												"type": "PIH",
+												"value": "1205"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "103416008"
+											}
+										]
+									},
+									{
+										"concept": "1206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "WHO Stage 3",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "1206"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1206"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "103417004"
+											},
+											{
+												"type": "PIH",
+												"value": "1206"
+											}
+										]
+									},
+									{
+										"concept": "1207AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "WHO Stage 4",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1207"
+											},
+											{
+												"type": "PIH",
+												"value": "1207"
+											},
+											{
+												"type": "CIEL",
+												"value": "1207"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "103418009"
+											}
+										]
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "5356"
+									},
+									{
+										"type": "PIH-Malawi",
+										"value": "7562"
+									},
+									{
+										"type": "CIEL",
+										"value": "5356"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "385354005"
+									},
+									{
+										"type": "PIH",
+										"value": "1480"
+									}
+								]
+							},
+							"id": "WHOStaging"
+						},
+						{
+							"label": "Why",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "b0caed70-3261-47a0-8ffe-37244e27d79b"
+							},
+							"id": "whyCurrentWHOStageChosen"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "ART Eligibility",
+			"sections": [
+				{
+					"label": "ART Eligibility Assessment & plan",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Eligibile for ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "162703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-CT",
+										"value": "307824009"
+									},
+									{
+										"type": "CIEL",
+										"value": "162703"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									}
+								]
+							},
+							"id": "eligibileForART"
+						},
+						{
+							"label": "Why eligible for ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "0675742c-ea84-4cab-a85f-54b46eadd1ee",
+								"answers": [
+									{
+										"concept": "163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Test and Treatment protocol",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "163329"
+											},
+											{
+												"type": "CIEL",
+												"value": "163329"
+											}
+										]
+									},
+									{
+										"concept": "cd52d9c3-23b5-4394-872e-9e70c4e66728",
+										"label": "Age <15 years",
+										"conceptMappings": []
+									},
+									{
+										"concept": "b8427c8e-5ee9-43f5-ba7f-220ffa86a42c",
+										"label": "WHO HIV Clinical Stage 3 and 4",
+										"conceptMappings": []
+									},
+									{
+										"concept": "6096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Discordant couple",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "6096"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6096"
+											},
+											{
+												"type": "CIEL",
+												"value": "6096"
+											}
+										]
+									},
+									{
+										"concept": "3911545e-6ece-4c0c-97c2-b39fdb31ebaf",
+										"label": "CD4 less than or equal to 500",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7e4d2281-c8f7-4090-bc29-4ff2313946cc",
+										"label": "Other reason for eligibility specify",
+										"conceptMappings": []
+									},
+									{
+										"concept": "7251a0e0-b3e8-464f-961e-94677dc03c83",
+										"label": "TTL",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "whyEligibleForART"
+						},
+						{
+							"label": "Other reason why eligible",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "7e4d2281-c8f7-4090-bc29-4ff2313946cc"
+							},
+							"id": "otherReasonWhyEligible"
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "Notes",
+			"sections": [
+				{
+					"label": "Intake Notes",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Comments",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "165095AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"rows": "5",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "165095"
+									}
+								]
+							},
+							"id": "intakeNotes"
+						}
+					]
+				}
+			]
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"availableIntents": [
+		{
+			"intent": "*",
+			"display": "Add Intake-B"
+		}
+	],
+	"uuid": "xxxx",
+	"referencedForms": [],
+	"encounterType": "dc94a223-66bc-45b7-8e34-d13b8686f239",
+	"allowUnspecifiedAll": true
+}
