@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
             dist
 
   pre_release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     needs: build
 
@@ -59,7 +59,7 @@ jobs:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
   
     needs: build
 
@@ -84,7 +84,7 @@ jobs:
     
     
   dev:
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-20.04
       #Test
       needs: release
 
