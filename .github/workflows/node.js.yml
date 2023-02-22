@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
             dist
 
   pre_release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     needs: build
 
@@ -59,7 +59,7 @@ jobs:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
   
     needs: build
 
@@ -76,15 +76,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
      
       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      - run: npm install
-      - run: npm build
-      - run: npm publish --access public --tag next --no-git-tag-version 
+      - run: yarn install
+      - run: yarn build
+      - run: yarn publish --access public --tag next --no-git-tag-version 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     
     
   dev:
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-20.04
       #Test
       needs: release
 
