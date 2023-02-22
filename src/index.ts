@@ -9,7 +9,7 @@ import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
 import ethiohriConfig from "./ethiohri-config";
 import {
   addToBaseFormsRegistry,
-  registerControl
+  registerControl,
 } from "@ohri/openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
 
