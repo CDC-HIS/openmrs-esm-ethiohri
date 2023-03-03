@@ -18,7 +18,8 @@
     "test": "jest --config jest.config.js --passWithNoTests",
     "verify": "concurrently 'yarn:lint' 'yarn:test' 'yarn:typescript'",
     "coverage": "yarn test -- --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publish": "npm publish "
   },
   "husky": {
     "hooks": {
@@ -84,7 +85,7 @@
     "eslint-config-ts-react-important-stuff": "^3.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "file-loader": "^6.2.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.0.0",
     "jest-cli": "^28.0.0",
