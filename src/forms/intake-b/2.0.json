@@ -138,7 +138,7 @@
 							"id": "opportunisticInfectionPresent"
 						},
 						{
-							"label": "HIV related opportunistic infections",
+							"label": "Past opportunistic Illness (OI)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "checkbox",
@@ -255,46 +255,46 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Cotrimoxazole Date started",
+							"label": "Cotrimoxazole started date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
 							"id": "cotrimoxazoleDateStarted"
 						},
 						{
-							"label": "Cotrimoxazole Date stopped",
+							"label": "Cotrimoxazole stopped date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
 							"id": "cotrimoxazoleDateStopped"
 						},
 						{
-							"label": "INH started date",
+							"label": "TPT started date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "d94d9408-837e-44bb-a7de-84007d08bd83",
 								"weeksList": ""
 							},
 							"id": "inhStartedDate"
 						},
 						{
-							"label": "INH completed date",
+							"label": "TPT completed date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "e9048636-538a-4c73-9fd7-9e2e98a43281"
 							},
 							"id": "inhCompletedDate"
 						},
 						{
-							"label": "Fluconazole Preventive Therapy (FPT): Date started",
+							"label": "Fluconazole Preventive Therapy (FPT) started date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
@@ -309,7 +309,7 @@
 							"id": "fluconazolePreventiveTherapyDateStarted"
 						},
 						{
-							"label": "Fluconazole Preventive Therapy (FPT):Date completed",
+							"label": "Fluconazole Preventive Therapy (FPT) completed date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
@@ -1715,14 +1715,55 @@
 							"id": "Regimen"
 						},
 						{
-							"label": "Start date",
+							"label": "ART Start date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
 							"id": "artStartDate"
+						},
+						{
+							"label": "Months on ART",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"calculate": {
+									"calculateExpression": "calcMonthsOnART('artStartDate')"
+								},
+								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "159368"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1897"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "261774000"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "261774000"
+									},
+									{
+										"type": "AMPATH",
+										"value": "1897"
+									},
+									{
+										"type": "CIEL",
+										"value": "159368"
+									}
+								]
+							},
+							"id": "monthsOnART"
 						},
 						{
 							"label": "Still on Treatment",
@@ -1880,48 +1921,8 @@
 								]
 							},
 							"id": "stillonTreatment"
-						},
-						{
-							"label": "Months on ART",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"calculate": {
-									"calculateExpression": "calcMonthsOnART('artStartDate')"
-								},
-								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "159368"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "CIEL",
-										"value": "159368"
-									}
-								]
-							},
-							"id": "monthsOnART"
 						}
+						
 						
 					]
 				}
@@ -1935,7 +1936,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Temperature",
+							"label": "Temperature (in degree Celsius)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -1985,7 +1986,7 @@
 							"id": "temperature"
 						},
 						{
-							"label": "Heart Rate",
+							"label": "PULSE/Heart Rate (per minute)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -1997,7 +1998,7 @@
 							"id": "heartRate"
 						},
 						{
-							"label": "Systolic blood pressure",
+							"label": "Systolic Blood Pressure (in mmHg)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -2027,7 +2028,7 @@
 							"id": "systolicBloodPressure"
 						},
 						{
-							"label": "Diastolic blood pressure",
+							"label": "Diastolic Blood Pressure (in mmHg)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -2061,7 +2062,7 @@
 							"id": "diastolicBloodPressure"
 						},
 						{
-							"label": "Respiratory Rate/RR",
+							"label": "Respiratory Rate/RR (R/min)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -2117,14 +2118,78 @@
 					]
 				},
 				{
-					"label": "Functional Status",
+					"label": "Anthropometry",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Patient functional status",
+							"label": "Height (in cm)",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "number",
+								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "5090"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5090"
+									},
+									{
+										"type": "CIEL",
+										"value": "5090"
+									}
+								]
+							},
+							"id": "height"
+						},
+						{
+							"label": "Weight (in kg)",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "5089"
+									},
+									{
+										"type": "PIH",
+										"value": "5089"
+									},
+									{
+										"type": "AMPATH",
+										"value": "5089"
+									}
+								]
+							},
+							"id": "weight"
+						},
+						{
+							"label": "BMI (kg/m2)",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "bmi"
+						},
+						{
+							"label": "Functional status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
 								"concept": "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
 									{
@@ -2155,71 +2220,8 @@
 								]
 							},
 							"id": "patientFunctionalStatus"
-						},
-						{
-							"label": "Height",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "PIH",
-										"value": "5090"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5090"
-									},
-									{
-										"type": "CIEL",
-										"value": "5090"
-									}
-								]
-							},
-							"id": "height"
-						},
-						{
-							"label": "Weight",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "5089"
-									},
-									{
-										"type": "PIH",
-										"value": "5089"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5089"
-									}
-								]
-							},
-							"id": "weight"
-						},
-						{
-							"label": "BMI",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
-								"max": "",
-								"min": "",
-								"showDate": ""
-							},
-							"id": "bmi"
 						}
+						
 					]
 				},
 				{
@@ -2227,7 +2229,105 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Developmental Milestones",
+							"label": "Head Circumference",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "",
+								"min": "",
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "AMPATH",
+										"value": "5314"
+									},
+									{
+										"type": "LOINC",
+										"value": "8287-5"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "363812007"
+									},
+									{
+										"type": "IMO-ProcedureIT",
+										"value": "29947201"
+									},
+									{
+										"type": "CIEL",
+										"value": "5314"
+									}
+								]
+							},
+							"id": "headCircumference"
+						},
+						{
+							"label": "Anthropometry interpretation",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "123814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Underweight",
+										"conceptMappings": []
+									},
+									{
+										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Overweight",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											}
+										]
+									}
+								]
+							},
+							"id": "anthropometryInterpretation"
+						},
+						{
+							"label": "Developmental status",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -2295,104 +2395,6 @@
 								]
 							},
 							"id": "developmentalStatus"
-						},
-						{
-							"label": "Anthropometry interpretation",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "1854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"answers": [
-									{
-										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Normal",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "CIEL",
-												"value": "1115"
-											}
-										]
-									},
-									{
-										"concept": "123814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Underweight",
-										"conceptMappings": []
-									},
-									{
-										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											}
-										]
-									}
-								]
-							},
-							"id": "anthropometryInterpretation"
-						},
-						{
-							"label": "Head Circumference",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "AMPATH",
-										"value": "5314"
-									},
-									{
-										"type": "LOINC",
-										"value": "8287-5"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "363812007"
-									},
-									{
-										"type": "IMO-ProcedureIT",
-										"value": "29947201"
-									},
-									{
-										"type": "CIEL",
-										"value": "5314"
-									}
-								]
-							},
-							"id": "headCircumference"
 						}
 					],
 					"behaviours": [
@@ -2400,14 +2402,9 @@
 							"intent": "*"
 						}
 					]
-				}
-			]
-		},
-		{
-			"label": "Pregnancy",
-			"sections": [
+				},
 				{
-					"label": "Pregnancy",
+					"label": "Pregnancy status",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -2571,7 +2568,7 @@
 							"label": "LMP",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
 								"weeksList": ""
 							},
@@ -2581,7 +2578,7 @@
 							"label": "EDD",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
@@ -2592,10 +2589,10 @@
 			]
 		},
 		{
-			"label": "Presenting symptoms",
+			"label": "Presenting symptoms and Physical examination",
 			"sections": [
 				{
-					"label": "Presenting complaints",
+					"label": "Presenting symptoms",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -2868,14 +2865,9 @@
 							"id": "presentingComplaints"
 						}
 					]
-				}
-			]
-		},
-		{
-			"label": "Physical Examination",
-			"sections": [
+				},
 				{
-					"label": "Physical Examination at Enrollment",
+					"label": "General appearance at enrollment",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -2896,7 +2888,13 @@
 								]
 							},
 							"id": "generalAppearance"
-						},
+						}
+					]
+				},
+				{
+					"label": "Physical Examination",
+					"isExpanded": "true",
+					"questions": [
 						{
 							"label": "Physical Examination",
 							"type": "obs",
@@ -3580,7 +3578,7 @@
 							"id": "heentExamination"
 						},
 						{
-							"label": "HEENT examination comment",
+							"label": "Specify Abnormal Finding of HEENT",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -3716,7 +3714,7 @@
 							"id": "lymphNodesExamination"
 						},
 						{
-							"label": "Lymph nodes examination comment",
+							"label": "Specify Abnormal Finding of Lymph nodes",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -3818,7 +3816,7 @@
 							"id": "chestExamination"
 						},
 						{
-							"label": "Chest examination comment",
+							"label": "Specify Abnormal Finding of Chest",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -3924,7 +3922,7 @@
 							"id": "heartExamination"
 						},
 						{
-							"label": "Heart examination comment",
+							"label": "Specify Abnormal Finding of Heart",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -4026,7 +4024,7 @@
 							"id": "abdomenExamination"
 						},
 						{
-							"label": "Abdomen examination comment",
+							"label": "Specify Abnormal Finding of Abdomen",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -4132,7 +4130,7 @@
 							"id": "genitourinarySystemExamination"
 						},
 						{
-							"label": "Genitourinary system examination comment",
+							"label": "Specify Abnormal Finding of Genitourinary System",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -4220,7 +4218,7 @@
 							"id": "musculoskeletalSystemExamination"
 						},
 						{
-							"label": "Musculoskeletal system examination comment",
+							"label": "Specify Abnormal Finding of Musculo-skeletal system",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -4322,7 +4320,7 @@
 							"id": "skinExamination"
 						},
 						{
-							"label": "Skin examination comment",
+							"label": "Specify Abnormal Finding of Skin",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -4424,7 +4422,7 @@
 							"id": "nervousSystemExamination"
 						},
 						{
-							"label": "Nervous system examination comment",
+							"label": "Specify Abnormal Finding of Nervous system",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -4602,6 +4600,7 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "162703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"readonly": "true",
 								"conceptMappings": [
 									{
 										"type": "SNOMED-CT",
@@ -4719,6 +4718,7 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "0675742c-ea84-4cab-a85f-54b46eadd1ee",
+								"readonly": "true",
 								"answers": [
 									{
 										"concept": "163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
