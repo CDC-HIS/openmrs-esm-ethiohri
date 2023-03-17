@@ -142,36 +142,155 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "checkbox",
-								"concept": "hiv related",
+								"concept": "7975443c-3962-4a94-b404-e66bc920f958",
 								"answers": [
 									{
-										"concept": "145872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cerebral Cryptococcosis",
+										"concept": "159348AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Chronic pharyngeal candidiasis",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "232406009"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "B37.8"
+											},
+											{
+												"type": "CIEL",
+												"value": "159348"
+											}
+										]
+									},
+									{
+										"concept": "1294AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Meningitis, cryptococcal",
+										"conceptMappings": [
+											{
+												"type": "ICD-10-WHO-2nd",
+												"value": "G02.1"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "14232007"
+											},
+											{
+												"type": "CIEL",
+												"value": "1294"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "7548"
+											},
+											{
+												"type": "PIH",
+												"value": "1359"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "B45.1"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "34000795"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1294"
+											}
+										]
+									},
+									{
+										"concept": "1219AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cryptococcosis",
 										"conceptMappings": []
 									},
 									{
-										"concept": "120781AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cervical Intraepithelial Neoplasm",
+										"concept": "5328AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HIV staging - persistent generalized lymphadenopathy",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5328"
+											},
+											{
+												"type": "CIEL",
+												"value": "5328"
+											},
+											{
+												"type": "CIEL",
+												"value": "5328"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "95892003"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "95892003"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "B23.1"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5328"
+											}
+										]
+									},
+									{
+										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HIV staging - minor mucocutaneous manifestations",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-MVP",
+												"value": "53301000105008"
+											},
+											{
+												"type": "CIEL",
+												"value": "5330"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "53301000105008"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5330"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "95346009"
+											},
+											{
+												"type": "CIEL",
+												"value": "5330"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5330"
+											}
+										]
+									},
+									{
+										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
+										"label": "Progressive multifocal leukocencephalopathy (PML)",
 										"conceptMappings": []
 									},
 									{
-										"concept": "120330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Coccidioidomycosis",
+										"concept": "160745AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Atypical mycobacterial infection, disseminated",
 										"conceptMappings": []
 									},
 									{
-										"concept": "142963AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cytomegalovirus infection",
+										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
+										"label": "Unexplained Prolonged Fever (>1 month)",
 										"conceptMappings": []
 									},
 									{
-										"concept": "111759AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Hepatitis B",
-										"conceptMappings": []
-									},
-									{
-										"concept": "156590AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "hepatitis C virus infection",
+										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
+										"label": "Pneumocystis Carinii Pneumonia (PCP)",
 										"conceptMappings": []
 									},
 									{
@@ -180,69 +299,413 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Herpes zoster",
+										"concept": "8f3b6312-fe22-48f7-8a73-964c72c584ed",
+										"label": "HIV disease resulting in Pneumocystis jirovecii pneumonia",
 										"conceptMappings": []
 									},
 									{
-										"concept": "117514AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Histoplasmosis",
+										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
+										"label": "Unexplained Chronic Diarrhea (>1 month)",
 										"conceptMappings": []
 									},
 									{
-										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "HIV encephalopathy",
-										"conceptMappings": []
-									},
-									{
-										"concept": "137480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Infection due to Candida Albicans",
-										"conceptMappings": []
-									},
-									{
-										"concept": "116322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Leukoencephalopathy",
-										"conceptMappings": []
-									},
-									{
-										"concept": "116104AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Malignant Lymphoma",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160007AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Mycobacterium tuberculosis",
-										"conceptMappings": []
-									},
-									{
-										"concept": "882AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumocystis carinii pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pulmonary Cryptococcosis",
-										"conceptMappings": []
-									},
-									{
-										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Salmonella Septicaemia",
-										"conceptMappings": []
+										"concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Kaposi sarcoma oral",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "644"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "424779008"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "C46.9"
+											},
+											{
+												"type": "CIEL",
+												"value": "644"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5171"
+											}
+										]
 									},
 									{
 										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Toxoplasmosis",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "26292"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "B58.9"
+											},
+											{
+												"type": "PIH",
+												"value": "2583"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "187192000"
+											},
+											{
+												"type": "CIEL",
+												"value": "5355"
+											},
+											{
+												"type": "PIH",
+												"value": "5355"
+											},
+											{
+												"type": "ICPC2",
+												"value": "A78"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5355"
+											},
+											{
+												"type": "3BT",
+												"value": "10098582"
+											}
+										]
+									},
+									{
+										"concept": "131767AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Opportunistic Mycosis",
 										"conceptMappings": []
 									},
 									{
-										"concept": "823AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Wasting syndrome",
+										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
+										"label": "Extra Pulmonary Tuberculosis (TB)",
 										"conceptMappings": []
+									},
+									{
+										"concept": "5354AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HIV staging - salmonella septicemia",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Candidiasis, oral",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5542"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5334"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "7545"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "26010"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "7545"
+											},
+											{
+												"type": "AMPATH",
+												"value": "295"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "79740000"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5334"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "79740000"
+											},
+											{
+												"type": "AMPATH",
+												"value": "296"
+											},
+											{
+												"type": "CIEL",
+												"value": "5334"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "26007"
+											},
+											{
+												"type": "AMPATH",
+												"value": "296"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "26010"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5542"
+											},
+											{
+												"type": "PIH",
+												"value": "5334"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "26007"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "B37.0"
+											},
+											{
+												"type": "AMPATH",
+												"value": "295"
+											},
+											{
+												"type": "CIEL",
+												"value": "5334"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5172"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5172"
+											},
+											{
+												"type": "PIH",
+												"value": "5334"
+											}
+										]
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other non-coded",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "6408"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "74964007"
+											}
+										]
+									},
+									{
+										"concept": "119288AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Encephalopathy",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "119288"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "57891"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5345"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "386806002"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "81308009"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "G93.4"
+											}
+										]
+									},
+									{
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis (TB)",
+										"conceptMappings": []
+									},
+									{
+										"concept": "01fc9f6b-2a49-41c6-82e0-42010086596f",
+										"label": "Wasting syndrome infection",
+										"conceptMappings": []
+									},
+									{
+										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Recurrent Upper Respiratory Tract Infection",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "804809"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "J06.9"
+											},
+											{
+												"type": "CIEL",
+												"value": "127784"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "195708003"
+											}
+										]
+									},
+									{
+										"concept": "154119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "cytomegalovirus (CMV) viremia",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "706342"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "B25.9"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "428217009"
+											},
+											{
+												"type": "CIEL",
+												"value": "154119"
+											}
+										]
+									},
+									{
+										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumonia",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "43"
+											},
+											{
+												"type": "AMPATH",
+												"value": "43"
+											},
+											{
+												"type": "3BT",
+												"value": "10081596"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "J18.9"
+											},
+											{
+												"type": "ICD-11-WHO",
+												"value": "CA40.Z"
+											},
+											{
+												"type": "CIEL",
+												"value": "114100"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "87580"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5969"
+											},
+											{
+												"type": "ICPC2",
+												"value": "R81"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "233604007"
+											}
+										]
+									},
+									{
+										"concept": "143110AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cryptosporidiosis",
+										"conceptMappings": [
+											{
+												"type": "ICPC2",
+												"value": "D70"
+											},
+											{
+												"type": "CIEL",
+												"value": "143110"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "A07.2"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "240370009"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "193751"
+											},
+											{
+												"type": "3BT",
+												"value": "10023203"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "58777003"
+											}
+										]
 									}
 								]
 							},
@@ -436,357 +899,237 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
-								"concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
+								"concept": "d43c5ef9-3ff0-47d4-9573-ea0efa7e3fdd",
 								"answers": [
-									{
-										"concept": "39d6b14c-7fdf-4d13-845e-841cdfc2736e",
-										"label": "1a - Invalid Regimen 1a",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
-										"label": "1a30 - D4T(30)+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
-										"label": "1a40 - D4T(40)+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
-										"label": "1b30 - D4T(30)+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
-										"label": "1b40 - D4T(40)+3TC+EFV",
-										"conceptMappings": []
-									},
 									{
 										"concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
 										"label": "1c - AZT+3TC+NVP",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1c"
+											}
+										]
 									},
 									{
 										"concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
 										"label": "1d - AZT+3TC+EFV",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1d"
+											}
+										]
 									},
 									{
 										"concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
 										"label": "1e - TDF+3TC+EFV",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1e"
+											}
+										]
 									},
 									{
 										"concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
 										"label": "1f - TDF+3TC+NVP",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1f"
+											}
+										]
 									},
 									{
 										"concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
 										"label": "1g - ABC+3TC+EFV",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1g"
+											}
+										]
 									},
 									{
 										"concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
 										"label": "1h - ABC+3TC+NVP",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1h"
+											}
+										]
 									},
 									{
 										"concept": "2a811ceb-3c34-47ff-943a-425b41651784",
 										"label": "1j - TDF+3TC+DTG",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1j"
+											}
+										]
 									},
 									{
 										"concept": "c56be3a9-d678-4693-9566-84430239a2f5",
 										"label": "1k - AZT+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a87d9674-11af-4440-afd0-d097d84d0393",
-										"label": "2a - ABC+DDL+LPV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
-										"label": "2b - ABC+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
-										"label": "2c - TDF+DDL+LPV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
-										"label": "2d - TDF+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
-										"label": "2e - AZT+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "891bf06e-298a-40ee-8970-2311d18fed48",
-										"label": "2f - AZT+3TC+ATVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
-										"label": "2g - TDF+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
-										"label": "2h - TDF+3TC+ATVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
-										"label": "2i - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2a17d96a-3457-4b93-b007-b540a7543618",
-										"label": "2j - ABC+3TC+LPV/r",
-										"conceptMappings": []
-									},
-									{
-										"concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
-										"label": "2k - AZT+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
-										"label": "3a - DRVr+DTG+AZT/3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
-										"label": "3b - DRVr+DTG+TDF/3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "664137bb-d538-4afc-bbd1-7538cf158882",
-										"label": "3c - DRV/r+ABC+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
-										"label": "3d - DRV/r+ABC+EFV+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
-										"label": "3e - DRV/r+TDF+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
-										"label": "3f - DRV/r+AZT+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
-										"label": "4a - D4T+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
-										"label": "4b - D4T+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "756b4487-f358-4817-b248-9c05080bad67",
-										"label": "4c - AZT+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
-										"label": "4d - AZT+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
-										"label": "4e - TDF+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
-										"label": "4f - AZT+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
-										"label": "4g - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
-										"label": "4h - Other specify",
-										"conceptMappings": []
-									},
-									{
-										"concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
-										"label": "4i - TDF+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "eae01634-65ec-4174-a95c-622456663727",
-										"label": "4j - ABC+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
-										"label": "4K - AZT+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
-										"label": "4L - ABC+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
-										"label": "5a - ABC+DDL+LPY",
-										"conceptMappings": []
-									},
-									{
-										"concept": "7c30ed1a-a770-4b74-8704-82077427128d",
-										"label": "5b - ABC+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
-										"label": "5c - TDF+DDL+LPV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
-										"label": "5d - TDF+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
-										"label": "5e - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
-										"label": "5f - AZT+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
-										"label": "5g - TDF+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
-										"label": "5h - ABC+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
-										"label": "5i - TDF+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
-										"label": "5j - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
-										"label": "5k - RAL+AZT+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
-										"label": "5l - RAL+ABC+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
-										"label": "5m - ABC+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
-										"label": "5n - AZT+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
-										"label": "5o - TDF+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5415f1b1-a680-4870-89c5-3324d42da408",
-										"label": "6a - DRVr+RAL+AZT+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
-										"label": "6b - DRVr+RAL+TDF+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
-										"label": "6c - DRVr+DTG+AZT+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
-										"label": "6d - DRVr+DTG+TDF+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
-										"label": "6f - DRV/r+DTG+ABC+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
-										"label": "6g - DRV/r+ABC+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
-										"label": "6h - DRV/r+AZT+3TC+EFV",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1k"
+											}
+										]
 									},
 									{
 										"concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
 										"label": "Oth1A - Other first line Adult",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "Oth1A"
+											}
+										]
 									},
 									{
-										"concept": "78b94844-89d8-4f97-9e65-9a785d3eacf1",
-										"label": "Oth1C - Other first line Child",
-										"conceptMappings": []
+										"concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
+										"label": "2e - AZT+3TC+LPVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2e"
+											}
+										]
+									},
+									{
+										"concept": "891bf06e-298a-40ee-8970-2311d18fed48",
+										"label": "2f - AZT+3TC+ATVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2f"
+											}
+										]
+									},
+									{
+										"concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
+										"label": "2g - TDF+3TC+LPVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2g"
+											}
+										]
+									},
+									{
+										"concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
+										"label": "2h - TDF+3TC+ATVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2h"
+											}
+										]
+									},
+									{
+										"concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
+										"label": "2i - ABC+3TC+LPVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2i"
+											}
+										]
+									},
+									{
+										"concept": "2a17d96a-3457-4b93-b007-b540a7543618",
+										"label": "2j - ABC+3TC+LPV/r",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2j"
+											}
+										]
+									},
+									{
+										"concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
+										"label": "2k - AZT+3TC+DTG",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2k"
+											}
+										]
 									},
 									{
 										"concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
 										"label": "Oth2A - Other second line Adult",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "Oth2A"
+											}
+										]
 									},
 									{
-										"concept": "fff9e226-cbb4-492a-af38-06487408251f",
-										"label": "Oth2C - Other second line Child",
-										"conceptMappings": []
+										"concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
+										"label": "3a - DRVr+DTG+AZT/3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "3a"
+											}
+										]
+									},
+									{
+										"concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
+										"label": "3b - DRVr+DTG+TDF/3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "3b"
+											}
+										]
+									},
+									{
+										"concept": "664137bb-d538-4afc-bbd1-7538cf158882",
+										"label": "3c - DRV/r+ABC+3TC+DTG",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "3c"
+											}
+										]
+									},
+									{
+										"concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
+										"label": "3e - DRV/r+TDF+3TC+EFV",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "3e"
+											}
+										]
+									},
+									{
+										"concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
+										"label": "3f - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "3f"
+											}
+										]
 									},
 									{
 										"concept": "87993b2d-d2ff-420c-8a80-f314183be7f2",
 										"label": "Oth3A - Other third line adult",
-										"conceptMappings": []
-									},
-									{
-										"concept": "57eef726-e977-4efd-996b-a94860341320",
-										"label": "Oth3C - Other third line child",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "Oth3A"
+											}
+										]
 									}
 								]
 							},
@@ -797,357 +1140,297 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
-								"concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
+								"concept": "5f979d21-5b8f-4f52-abfd-4d99cc828b91",
 								"answers": [
-									{
-										"concept": "39d6b14c-7fdf-4d13-845e-841cdfc2736e",
-										"label": "1a - Invalid Regimen 1a",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
-										"label": "1a30 - D4T(30)+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
-										"label": "1a40 - D4T(40)+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
-										"label": "1b30 - D4T(30)+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
-										"label": "1b40 - D4T(40)+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
-										"label": "1c - AZT+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
-										"label": "1d - AZT+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
-										"label": "1e - TDF+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
-										"label": "1f - TDF+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
-										"label": "1g - ABC+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
-										"label": "1h - ABC+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2a811ceb-3c34-47ff-943a-425b41651784",
-										"label": "1j - TDF+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c56be3a9-d678-4693-9566-84430239a2f5",
-										"label": "1k - AZT+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a87d9674-11af-4440-afd0-d097d84d0393",
-										"label": "2a - ABC+DDL+LPV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
-										"label": "2b - ABC+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
-										"label": "2c - TDF+DDL+LPV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
-										"label": "2d - TDF+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
-										"label": "2e - AZT+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "891bf06e-298a-40ee-8970-2311d18fed48",
-										"label": "2f - AZT+3TC+ATVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
-										"label": "2g - TDF+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
-										"label": "2h - TDF+3TC+ATVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
-										"label": "2i - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2a17d96a-3457-4b93-b007-b540a7543618",
-										"label": "2j - ABC+3TC+LPV/r",
-										"conceptMappings": []
-									},
-									{
-										"concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
-										"label": "2k - AZT+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
-										"label": "3a - DRVr+DTG+AZT/3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
-										"label": "3b - DRVr+DTG+TDF/3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "664137bb-d538-4afc-bbd1-7538cf158882",
-										"label": "3c - DRV/r+ABC+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
-										"label": "3d - DRV/r+ABC+EFV+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
-										"label": "3e - DRV/r+TDF+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
-										"label": "3f - DRV/r+AZT+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
-										"label": "4a - D4T+3TC+NVP",
-										"conceptMappings": []
-									},
-									{
-										"concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
-										"label": "4b - D4T+3TC+EFV",
-										"conceptMappings": []
-									},
 									{
 										"concept": "756b4487-f358-4817-b248-9c05080bad67",
 										"label": "4c - AZT+3TC+NVP",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4c"
+											}
+										]
 									},
 									{
 										"concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
 										"label": "4d - AZT+3TC+EFV",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4d"
+											}
+										]
 									},
 									{
 										"concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
 										"label": "4e - TDF+3TC+EFV",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4e"
+											}
+										]
 									},
 									{
 										"concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
 										"label": "4f - AZT+3TC+LPVr",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4f"
+											}
+										]
 									},
 									{
 										"concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
 										"label": "4g - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
-										"label": "4h - Other specify",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4g"
+											}
+										]
 									},
 									{
 										"concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
 										"label": "4i - TDF+3TC+DTG",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4i"
+											}
+										]
 									},
 									{
 										"concept": "eae01634-65ec-4174-a95c-622456663727",
 										"label": "4j - ABC+3TC+DTG",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4j"
+											}
+										]
 									},
 									{
 										"concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
 										"label": "4K - AZT+3TC+DTG",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4K"
+											}
+										]
 									},
 									{
 										"concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
 										"label": "4L - ABC+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
-										"label": "5a - ABC+DDL+LPY",
-										"conceptMappings": []
-									},
-									{
-										"concept": "7c30ed1a-a770-4b74-8704-82077427128d",
-										"label": "5b - ABC+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
-										"label": "5c - TDF+DDL+LPV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
-										"label": "5d - TDF+DDL+NFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
-										"label": "5e - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
-										"label": "5f - AZT+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
-										"label": "5g - TDF+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
-										"label": "5h - ABC+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
-										"label": "5i - TDF+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
-										"label": "5j - ABC+3TC+LPVr",
-										"conceptMappings": []
-									},
-									{
-										"concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
-										"label": "5k - RAL+AZT+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
-										"label": "5l - RAL+ABC+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
-										"label": "5m - ABC+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
-										"label": "5n - AZT+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
-										"label": "5o - TDF+3TC+DTG",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5415f1b1-a680-4870-89c5-3324d42da408",
-										"label": "6a - DRVr+RAL+AZT+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
-										"label": "6b - DRVr+RAL+TDF+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
-										"label": "6c - DRVr+DTG+AZT+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
-										"label": "6d - DRVr+DTG+TDF+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
-										"label": "6f - DRV/r+DTG+ABC+3TC",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
-										"label": "6g - DRV/r+ABC+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
-										"label": "6h - DRV/r+AZT+3TC+EFV",
-										"conceptMappings": []
-									},
-									{
-										"concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
-										"label": "Oth1A - Other first line Adult",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "4L"
+											}
+										]
 									},
 									{
 										"concept": "78b94844-89d8-4f97-9e65-9a785d3eacf1",
 										"label": "Oth1C - Other first line Child",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "Oth1C"
+											}
+										]
 									},
 									{
-										"concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
-										"label": "Oth2A - Other second line Adult",
-										"conceptMappings": []
+										"concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
+										"label": "5e - ABC+3TC+LPVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5e"
+											}
+										]
+									},
+									{
+										"concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
+										"label": "5f - AZT+3TC+LPVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5f"
+											}
+										]
+									},
+									{
+										"concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
+										"label": "5g - TDF+3TC+EFV",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5g"
+											}
+										]
+									},
+									{
+										"concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
+										"label": "5h - ABC+3TC+EFV",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5h"
+											}
+										]
+									},
+									{
+										"concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
+										"label": "5i - TDF+3TC+LPVr",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5i"
+											}
+										]
+									},
+									{
+										"concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
+										"label": "5k - RAL+AZT+3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5k"
+											}
+										]
+									},
+									{
+										"concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
+										"label": "5l - RAL+ABC+3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5l"
+											}
+										]
+									},
+									{
+										"concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
+										"label": "5m - ABC+3TC+DTG",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5m"
+											}
+										]
+									},
+									{
+										"concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
+										"label": "5n - AZT+3TC+DTG",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5n"
+											}
+										]
+									},
+									{
+										"concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
+										"label": "5o - TDF+3TC+DTG",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "5o"
+											}
+										]
 									},
 									{
 										"concept": "fff9e226-cbb4-492a-af38-06487408251f",
 										"label": "Oth2C - Other second line Child",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "Oth2C"
+											}
+										]
 									},
 									{
-										"concept": "87993b2d-d2ff-420c-8a80-f314183be7f2",
-										"label": "Oth3A - Other third line adult",
-										"conceptMappings": []
+										"concept": "5415f1b1-a680-4870-89c5-3324d42da408",
+										"label": "6a - DRVr+RAL+AZT+3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "6a"
+											}
+										]
+									},
+									{
+										"concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
+										"label": "6b - DRVr+RAL+TDF+3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "6b"
+											}
+										]
+									},
+									{
+										"concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
+										"label": "6c - DRVr+DTG+AZT+3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "6c"
+											}
+										]
+									},
+									{
+										"concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
+										"label": "6d - DRVr+DTG+TDF+3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "6d"
+											}
+										]
+									},
+									{
+										"concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
+										"label": "6f - DRV/r+DTG+ABC+3TC",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "6f"
+											}
+										]
+									},
+									{
+										"concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
+										"label": "6g - DRV/r+ABC+3TC+EFV",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "6g"
+											}
+										]
+									},
+									{
+										"concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
+										"label": "6h - DRV/r+AZT+3TC+EFV",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "6h"
+											}
+										]
 									},
 									{
 										"concept": "57eef726-e977-4efd-996b-a94860341320",
 										"label": "Oth3C - Other third line child",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "Oth3C"
+											}
+										]
 									}
 								]
 							},
@@ -1922,8 +2205,6 @@
 							},
 							"id": "stillonTreatment"
 						}
-						
-						
 					]
 				}
 			]
@@ -2220,8 +2501,19 @@
 								]
 							},
 							"id": "patientFunctionalStatus"
+						},
+						{
+							"label": "Percentage of lost body weight",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "90cf854e-2870-40d9-8d69-bb86597f74f8",
+								"max": "",
+								"min": "",
+								"showDate": ""
+							},
+							"id": "percentageOfLostBodyWeight"
 						}
-						
 					]
 				},
 				{
@@ -2603,62 +2895,9 @@
 								"concept": "14718b2b-d38a-4f68-8e22-8bc739ae43f7",
 								"answers": [
 									{
-										"concept": "120655AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Chronic fatigue",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "300212"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "R53"
-											},
-											{
-												"type": "CIEL",
-												"value": "120655"
-											}
-										]
-									},
-									{
-										"concept": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Weight loss",
+										"concept": "125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Swallowing Painful",
 										"conceptMappings": []
-									},
-									{
-										"concept": "0d51073d-99b9-4d66-95f4-d345756e6ba9",
-										"label": "Flu-like (URTI)",
-										"conceptMappings": []
-									},
-									{
-										"concept": "133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Night sweats",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "6029"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50760"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "42984000"
-											},
-											{
-												"type": "ICPC2",
-												"value": "A09"
-											},
-											{
-												"type": "3BT",
-												"value": "10063085"
-											},
-											{
-												"type": "AMPATH",
-												"value": "6029"
-											}
-										]
 									},
 									{
 										"concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2747,65 +2986,8 @@
 										]
 									},
 									{
-										"concept": "118789AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Dysphagia",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "881"
-											},
-											{
-												"type": "PIH",
-												"value": "1355"
-											},
-											{
-												"type": "3BT",
-												"value": "10027911"
-											},
-											{
-												"type": "CIEL",
-												"value": "118789"
-											},
-											{
-												"type": "ICPC2",
-												"value": "D21"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "R13"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "288939007"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "41555"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "40739000"
-											}
-										]
-									},
-									{
-										"concept": "125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Swallowing Painful",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Nausea",
-										"conceptMappings": []
-									},
-									{
-										"concept": "151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Abdominal pain",
-										"conceptMappings": []
-									},
-									{
-										"concept": "132653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Numbness of Foot",
+										"concept": "832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Weight loss",
 										"conceptMappings": []
 									},
 									{
@@ -2851,14 +3033,232 @@
 										]
 									},
 									{
-										"concept": "c15f7112-d140-49e7-a844-534e723d1bbf",
-										"label": "Other (Specify)",
+										"concept": "145455AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Chronic Cough",
 										"conceptMappings": [
 											{
-												"type": "OCT",
-												"value": "OtherSpecify"
+												"type": "IMO-ProblemIT",
+												"value": "41151"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1470"
+											},
+											{
+												"type": "ICPC2",
+												"value": "R05"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R05"
+											},
+											{
+												"type": "CIEL",
+												"value": "145455"
+											},
+											{
+												"type": "3BT",
+												"value": "10019016"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "68154008"
 											}
 										]
+									},
+									{
+										"concept": "133027AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Night sweats",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "6029"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50760"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "42984000"
+											},
+											{
+												"type": "ICPC2",
+												"value": "A09"
+											},
+											{
+												"type": "3BT",
+												"value": "10063085"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6029"
+											}
+										]
+									},
+									{
+										"concept": "151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Abdominal pain",
+										"conceptMappings": []
+									},
+									{
+										"concept": "132653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Numbness of Foot",
+										"conceptMappings": []
+									},
+									{
+										"concept": "df1123f0-80fd-40a1-a4ce-b1f83220178d",
+										"label": "STI symptoms",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other non-coded",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "6408"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "74964007"
+											}
+										]
+									},
+									{
+										"concept": "3011df15-6588-4354-8828-78f80ca5ae94",
+										"label": "Confusion symptom",
+										"conceptMappings": []
+									},
+									{
+										"concept": "2423abaf-6cd5-4409-8b39-2d90ca584fba",
+										"label": "Headache Symptom",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d25d832e-e3b6-4696-8dfe-0317a733d841",
+										"label": "Vomiting symptom",
+										"conceptMappings": []
+									},
+									{
+										"concept": "b78fe564-9af7-4475-a0d3-858d2ed6fe38",
+										"label": "Shortness of breath symptom",
+										"conceptMappings": []
+									},
+									{
+										"concept": "e0318c3d-2926-4958-8517-72f7b3c53eb1",
+										"label": "Hemoptysis symptom",
+										"conceptMappings": []
+									},
+									{
+										"concept": "120655AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Chronic fatigue",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "300212"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R53"
+											},
+											{
+												"type": "CIEL",
+												"value": "120655"
+											}
+										]
+									},
+									{
+										"concept": "0d51073d-99b9-4d66-95f4-d345756e6ba9",
+										"label": "Flu-like (URTI)",
+										"conceptMappings": []
+									},
+									{
+										"concept": "118789AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Dysphagia",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "881"
+											},
+											{
+												"type": "PIH",
+												"value": "1355"
+											},
+											{
+												"type": "3BT",
+												"value": "10027911"
+											},
+											{
+												"type": "CIEL",
+												"value": "118789"
+											},
+											{
+												"type": "ICPC2",
+												"value": "D21"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "R13"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "288939007"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "41555"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "40739000"
+											}
+										]
+									},
+									{
+										"concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Nausea",
+										"conceptMappings": []
 									}
 								]
 							},
