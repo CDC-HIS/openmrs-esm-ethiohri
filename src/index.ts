@@ -95,6 +95,28 @@ function setupOpenMRS() {
           }
         ),
       },
+      {
+        id: "test-patient-details-button",
+        slot: "patient-actions-slot",
+        load: getAsyncLifecycle(
+          () =>
+            import("./actions-buttons/test-patient-details-button.component"),
+          options
+        ),
+        online: true,
+        offline: true,
+      },
+      {
+        id: "test-attribute-tags",
+        slot: "patient-banner-tags-slot",
+        load: getAsyncLifecycle(
+          () => import("./patient-banner-tags/test-attribute-tags.component"),
+          {
+            featureName: "test-attribute-tags",
+            moduleName,
+          }
+        ),
+      },
     ],
   };
 }
