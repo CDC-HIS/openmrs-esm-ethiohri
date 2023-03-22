@@ -19,7 +19,7 @@
     "verify": "concurrently 'yarn:lint' 'yarn:test' 'yarn:typescript'",
     "coverage": "yarn test -- --coverage",
     "prepare": "husky install",
-    "publishh" : "npm publish"
+    "publishh": "npm publish"
   },
   "husky": {
     "hooks": {
@@ -61,7 +61,7 @@
   "devDependencies": {
     "@ohri/openmrs-esm-ohri-commons-lib": "next",
     "@ohri/openmrs-ohri-form-engine-lib": "next",
-    "@openmrs/esm-framework": "^4.0.3-pre.434",
+    "@openmrs/esm-framework": "next",
     "@openmrs/esm-patient-common-lib": "next",
     "@openmrs/esm-styleguide": "4.x",
     "@swc/cli": "^0.1.57",
@@ -90,7 +90,7 @@
     "jest": "^28.0.0",
     "jest-cli": "^28.0.0",
     "jest-environment-jsdom": "^28.1.2",
-    "openmrs": "^4.0.3-pre.434",
+    "openmrs": "next",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
     "react": "^18.2.0",
