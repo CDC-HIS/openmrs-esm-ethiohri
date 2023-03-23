@@ -79,7 +79,7 @@ jobs:
 #       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.140/" 'package.json'
       - run: yarn install
       - run: yarn build
-      - run: yarn publish --access public --tag next --no-git-tag-version
+      - run: yarn cipublish --access public --tag next --no-git-tag-version
 #       - run: yarn publish --tag next --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
