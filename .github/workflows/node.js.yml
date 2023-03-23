@@ -104,3 +104,21 @@ jobs:
               host: ${{ secrets.ETHIOHRI_HOST }}
               username: ${{ secrets.ETHIOHRI_USER }}
               privateKey: ${{ secrets.ETHIOHRI_DEV_PRIVATE_KEY}}
+  demo:
+      runs-on: ubuntu-20.04
+      needs: release
+
+      if: ${{ github.ref == 'refs/heads/develop' }}
+
+      steps:
+        - name: Download Artifacts
+          uses: actions/download-artifact@v3
+        - name: Compute Timestamp
+          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        - uses: garygrossgarten/github-action-ssh@release
+          name: Run the Update MicroFronEnd Script on Demo server
+          with:
+              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_modules.sh
+              host: ${{ secrets.ETHIOHRI_DEMO_HOST }}
+              username: ${{ secrets.ETHIOHRI_USER }}
+              privateKey: ${{ secrets.ETHIOHRI_DEV_PRIVATE_KEY}}  
