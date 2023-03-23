@@ -98,7 +98,7 @@ jobs:
         - name: Compute Timestamp
           run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
         - uses: garygrossgarten/github-action-ssh@release
-          name: Run the Update MicroFronEnd Script
+          name: Run the Update MicroFronEnd Script on dev server
           with:
               command: cd /usr/share/tomcat/frontendmodules/ && /bin/bash update_frontend_modules.sh
               host: ${{ secrets.ETHIOHRI_HOST }}
