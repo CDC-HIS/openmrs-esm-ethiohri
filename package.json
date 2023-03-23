@@ -19,7 +19,7 @@
     "verify": "concurrently 'yarn:lint' 'yarn:test' 'yarn:typescript'",
     "coverage": "yarn test -- --coverage",
     "prepare": "husky install",
-    "publish": "npm publish"
+    "cipublish": "npm publish"
   },
   "husky": {
     "hooks": {
