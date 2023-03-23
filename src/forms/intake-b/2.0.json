@@ -710,6 +710,15 @@
 								]
 							},
 							"id": "HIVRelatedOIs"
+						},
+						{
+							"label": "Other opportunistic illnesses",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8"
+							},
+							"id": "otherOpportunisticIllnesses"
 						}
 					]
 				},
@@ -3263,6 +3272,15 @@
 								]
 							},
 							"id": "presentingComplaints"
+						},
+						{
+							"label": "Other presenting complaints",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "a6408b87-6146-4b20-839f-e0ed70c62e5a"
+							},
+							"id": "otherPresentingComplaints"
 						}
 					]
 				},
