@@ -9,6 +9,7 @@ import {
   isEmpty,
   PreviousValueReview,
   OHRIFieldValueView,
+  ValidationResult,
 } from "@ohri/openmrs-ohri-form-engine-lib";
 import React, { useEffect, useMemo, useState } from "react";
 import "../../vendor/lib/jquery-calendars/css/jquery.calendars.picker.css";
@@ -30,6 +31,7 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
     fields,
   } = React.useContext(OHRIFormContext);
   const [errors, setErrors] = useState([]);
+  const [warnings, setWarnings] = useState([]);
   const [conceptName, setConceptName] = useState("Loading...");
   const isFieldRequiredError = useMemo(
     () => errors[0]?.errCode == fieldRequiredErrCode,
@@ -70,7 +72,7 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
         ? new Date(date.getTime() - date.getTimezoneOffset() * 60000)
         : savedDate;
     setFieldValue(question.id, gregDate);
-    onChange(question.id, refinedDate, setErrors);
+    onChange(question.id, refinedDate, setErrors, setWarnings);
     question.value = handler.handleFieldSubmission(
       question,
       refinedDate,
