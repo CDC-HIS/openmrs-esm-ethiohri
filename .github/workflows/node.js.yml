@@ -118,7 +118,7 @@ jobs:
         - uses: garygrossgarten/github-action-ssh@release
           name: Run the Update MicroFronEnd Script on Demo server
           with:
-              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_moduless.sh
+              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_modules.sh
               host: ${{ secrets.ETHIOHRI_DEMO_HOST }}
               username: ${{ secrets.ETHIOHRI_DEMO_USER }}
               privateKey: ${{ secrets.ETHIOHRI_DEMO_PRIVATE_KEY}}  
