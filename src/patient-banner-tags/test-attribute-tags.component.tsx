@@ -26,8 +26,6 @@ const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
     useState("Loading");
   const [patientTagARTEndDate, setpatientTagARTEndDate] = useState("Loading");
   fetchPatientObs(patientUuid).then((list) => {
-    console.log(list);
-
     var FollowupStatus = list.find((x) =>
       x.display.includes("Follow up status")
     );
