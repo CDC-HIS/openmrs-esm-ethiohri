@@ -7,7 +7,7 @@ import { moduleName } from "../../../index";
 const columns = [
   {
     key: "date",
-    header: "Enrolment Date",
+    header: "Enrollment Date",
     getValue: (encounter) => {
       return getData(encounter, "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
@@ -20,24 +20,17 @@ const columns = [
     },
   },
   {
-    key: "referralPoint",
-    header: "Facility Referral Point",
+    key: "testType",
+    header: "Test Type",
     getValue: (encounter) => {
-      return getData(encounter, "80bcc9c1-e328-47e8-affe-6d1bffe4adf1");
+      return getData(encounter, "a865a098-c9ee-4c51-a13b-5c5d574d036c");
     },
   },
   {
-    key: "externalRefPoint",
-    header: "External Ref Point",
+    key: "reasonForReferral",
+    header: "Reason for referral",
     getValue: (encounter) => {
-      return getData(encounter, "91eb14f1-c951-4d65-a4b4-6dbf9d88cd1a");
-    },
-  },
-  {
-    key: "disclosedHIVStatus",
-    header: "Disclosed HIV status",
-    getValue: (encounter) => {
-      return getData(encounter, "159423AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "2cb28f68-0277-48d7-8b38-8e6cf38a30a9");
     },
   },
   {
