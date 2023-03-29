@@ -16,7 +16,7 @@ const columns = [
     key: "stillOnTreatment",
     header: "Still On Treatment",
     getValue: (encounter) => {
-      return getData(encounter, "160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
@@ -30,7 +30,7 @@ const columns = [
     key: "presentingComplaints",
     header: "Presenting Complaints",
     getValue: (encounter) => {
-      return getData(encounter, "14718b2b-d38a-4f68-8e22-8bc739ae43f7", true);
+      return getData(encounter, "14718b2b-d38a-4f68-8e22-8bc739ae43f7");
     },
   },
   {
