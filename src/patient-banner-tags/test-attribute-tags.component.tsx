@@ -34,7 +34,7 @@ const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
     var NextVisitDate = list.find((x) => x.display.includes("Next visit date"));
     NextVisitDate ? setpatientTagNextVisitDate(NextVisitDate.display) : null;
 
-    var ARTEndDate = list.find((x) => x.display.includes("ART dispensed dose"));
+    var ARTEndDate = list.find((x) => x.display.includes("Treatment end date"));
     ARTEndDate ? setpatientTagARTEndDate(ARTEndDate.display) : null;
   });
 
