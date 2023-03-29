@@ -16,19 +16,19 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         getValue: (encounter) => {
           return getData(
             encounter,
-            "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "b8cd8630-56dd-495e-8c84-e36a636febe7",
             true
           );
         },
       },
       {
-        key: "vistiType",
+        key: "visitType",
         header: "Visit Type",
         getValue: (encounter) => {
           return getData(
             encounter,
             "b3f60308-cda4-41f9-af08-b98d2c1562c7",
-            true
+            false
           );
         },
       },
@@ -50,7 +50,7 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           return getData(
             encounter,
             "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            true
+            false
           );
         },
       },
