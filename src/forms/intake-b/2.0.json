@@ -2021,9 +2021,6 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
-								"calculate": {
-									"calculateExpression": "calcMonthsOnART('artStartDate')"
-								},
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"max": "",
 								"min": "",

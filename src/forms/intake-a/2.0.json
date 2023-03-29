@@ -143,7 +143,7 @@
 								"answers": [
 									{
 										"concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Male gender",
+										"label": "Male",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -169,7 +169,7 @@
 									},
 									{
 										"concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Female gender",
+										"label": "Female",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1343,7 +1343,7 @@
 								"answers": [
 									{
 										"concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Male gender",
+										"label": "Male",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -1369,7 +1369,7 @@
 									},
 									{
 										"concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Female gender",
+										"label": "Female",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",

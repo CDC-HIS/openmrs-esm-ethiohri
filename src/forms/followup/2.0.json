@@ -13,7 +13,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
-								"concept": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "b8cd8630-56dd-495e-8c84-e36a636febe7",
 								"weeksList": "",
 								"conceptMappings": [
 									{
@@ -12244,5 +12244,7 @@
 	],
 	"processor": "EncounterFormProcessor",
 	"uuid": "xxxx",
-	"referencedForms": []
+	"referencedForms": [],
+	"encounterType": "136b2ded-22a3-4831-a39a-088d35a50ef5",
+	"allowUnspecifiedAll": true
 }
