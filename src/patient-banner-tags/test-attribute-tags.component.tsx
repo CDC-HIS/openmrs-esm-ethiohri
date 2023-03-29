@@ -20,15 +20,39 @@ export function fetchPatientObs(patientUuid: string) {
 const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
   patientUuid,
 }) => {
-  const [patientTag, setpatientTag] = useState("Loading");
+  const [patientTagFollowupStatus, setpatientTagFollowupStatus] =
+    useState("Loading");
+  const [patientTagNextVisitDate, setpatientTagNextVisitDate] =
+    useState("Loading");
+  const [patientTagARTEndDate, setpatientTagARTEndDate] = useState("Loading");
   fetchPatientObs(patientUuid).then((list) => {
-    var HIVrelatedopportunisticinfections = list.find(
-      (x) => (x.uuid = "647db07d-8be5-4466-92a0-a7c46db589ba")
+    var FollowupStatus = list.find((x) =>
+      x.display.includes("Follow up status")
     );
-    setpatientTag(HIVrelatedopportunisticinfections.display);
+    FollowupStatus ? setpatientTagFollowupStatus(FollowupStatus.display) : null;
+
+    var NextVisitDate = list.find((x) =>
+      x.display.includes("Return visit date")
+    );
+    NextVisitDate ? setpatientTagNextVisitDate(NextVisitDate.display) : null;
+
+    var ARTEndDate = list.find((x) => x.display.includes("Treatment end date"));
+    ARTEndDate ? setpatientTagARTEndDate(ARTEndDate.display) : null;
   });
 
-  return patientTag != "Loading" ? <Tag type="gray">{patientTag}</Tag> : null;
+  return (
+    <>
+      {patientTagFollowupStatus != "Loading" ? (
+        <Tag type="gray">{patientTagFollowupStatus}</Tag>
+      ) : null}
+      {patientTagNextVisitDate != "Loading" ? (
+        <Tag type="gray">{patientTagNextVisitDate}</Tag>
+      ) : null}
+      {patientTagARTEndDate != "Loading" ? (
+        <Tag type="gray">{patientTagARTEndDate}</Tag>
+      ) : null}
+    </>
+  );
 };
 
 export default TestAttributeTags;
