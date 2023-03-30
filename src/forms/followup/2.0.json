@@ -443,6 +443,16 @@
 								]
 							},
 							"id": "monthsOnArt"
+						},
+						{
+							"label": "Treatment end date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "treatmentEndDate",
+							"validators": ""
 						}
 					]
 				}
