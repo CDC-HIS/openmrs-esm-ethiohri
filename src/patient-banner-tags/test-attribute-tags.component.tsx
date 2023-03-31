@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Tag } from "@carbon/react";
 import { openmrsFetch } from "@openmrs/esm-framework";
+import {
+  EthiopicCalendar,
+  toCalendar,
+  CalendarDate,
+} from "@internationalized/date";
+import moment from "moment";
 
 interface TestAttributeTagsProps {
   patientUuid: string;
@@ -16,6 +22,26 @@ export function fetchPatientObs(patientUuid: string) {
     }
   );
 }
+const gregToEth = (gregdate: any) => {
+  // gregdate = moment(gregdate).format("DD/MM/YYYY");
+  if (!gregdate) return null;
+  let dmy = gregdate.split("-");
+  if (dmy.length == 3) {
+    let year = parseInt(dmy[0], 10);
+    let month = parseInt(dmy[1], 10);
+    let day = parseInt(dmy[2], 10);
+    let gregorianDate = new CalendarDate(year, month, day);
+    let ethiopianDate = toCalendar(gregorianDate, new EthiopicCalendar());
+    let finalDate =
+      ethiopianDate.year + "-" + ethiopianDate.month + "-" + ethiopianDate.day;
+    return finalDate;
+  } else return null;
+};
+const splitAndJoin = (str: any) => {
+  var listText = str.split(":");
+  listText[1] = gregToEth(listText[1]);
+  return (listText = listText.join(":"));
+};
 
 const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
   patientUuid,
@@ -31,7 +57,9 @@ const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
     );
     FollowupStatus ? setpatientTagFollowupStatus(FollowupStatus.display) : null;
 
-    var NextVisitDate = list.find((x) => x.display.includes("Next visit date"));
+    var NextVisitDate = list.find((x) =>
+      x.display.includes("Return visit date")
+    );
     NextVisitDate ? setpatientTagNextVisitDate(NextVisitDate.display) : null;
 
     var ARTEndDate = list.find((x) => x.display.includes("Treatment end date"));
@@ -44,10 +72,10 @@ const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
         <Tag type="gray">{patientTagFollowupStatus}</Tag>
       ) : null}
       {patientTagNextVisitDate != "Loading" ? (
-        <Tag type="gray">{patientTagNextVisitDate}</Tag>
+        <Tag type="gray">{splitAndJoin(patientTagNextVisitDate)}</Tag>
       ) : null}
       {patientTagARTEndDate != "Loading" ? (
-        <Tag type="gray">{patientTagARTEndDate}</Tag>
+        <Tag type="gray">{splitAndJoin(patientTagARTEndDate)}</Tag>
       ) : null}
     </>
   );
