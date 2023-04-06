@@ -1395,6 +1395,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/charts-react@npm:^1.5.2":
+  version: 1.6.14
+  resolution: "@carbon/charts-react@npm:1.6.14"
+  dependencies:
+    "@carbon/charts": ^1.6.14
+    "@carbon/icons-react": ^10.49.0
+    "@carbon/telemetry": 0.1.0
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: eef0c932244884a36c4d477c1f6db1e1205932e09e1c547b998314f973326d44206cb69c8bd9db97e96fd3807776bbbc504c40d7d7bcd2362dc5784c52224cc3
+  languageName: node
+  linkType: hard
+
 "@carbon/charts@npm:^1.5.0":
   version: 1.6.3
   resolution: "@carbon/charts@npm:1.6.3"
@@ -1414,7 +1428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/charts@npm:^1.6.3":
+"@carbon/charts@npm:^1.6.14, @carbon/charts@npm:^1.6.3":
   version: 1.6.14
   resolution: "@carbon/charts@npm:1.6.14"
   dependencies:
@@ -1456,10 +1470,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/icon-helpers@npm:^10.28.0":
+  version: 10.39.0
+  resolution: "@carbon/icon-helpers@npm:10.39.0"
+  checksum: b99ed8f595045ca1d6cb41181dfc731e79aa8bc372af4613728d6edc15421ac8d692dc5947c2e56a6fc039c43ae5771e7228edefac6d157f22f99f354e650940
+  languageName: node
+  linkType: hard
+
 "@carbon/icon-helpers@npm:^10.37.0":
   version: 10.37.0
   resolution: "@carbon/icon-helpers@npm:10.37.0"
   checksum: b0f721505c93bb6e17619e943207e3f1615ea4c20693d0077f663927274bf797267391f17a2f0be130c6860c05b8697146d6e8524163a1079c6530ec9dd6e305
+  languageName: node
+  linkType: hard
+
+"@carbon/icons-react@npm:^10.49.0":
+  version: 10.49.0
+  resolution: "@carbon/icons-react@npm:10.49.0"
+  dependencies:
+    "@carbon/icon-helpers": ^10.28.0
+    "@carbon/telemetry": 0.1.0
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">=16"
+  checksum: dd3aec2718ba80a40100f9015aea60f3cc39aa2e08580c07fa342c36034053f29ee5575446b0641692ef2555ca27a3f305561f271a2de2e0ddab564030d94de7
   languageName: node
   linkType: hard
 
@@ -1710,6 +1744,7 @@ __metadata:
   resolution: "@icap-ethiopia/esm-ethiohri-app@workspace:."
   dependencies:
     "@adobe/react-spectrum": ^3.19.0
+    "@carbon/charts-react": ^1.5.2
     "@carbon/react": ^1.17.0
     "@ohri/openmrs-esm-ohri-commons-lib": next
     "@ohri/openmrs-ohri-form-engine-lib": next
@@ -1761,6 +1796,7 @@ __metadata:
   peerDependencies:
     "@openmrs/esm-framework": 4.x
     react: 18.x
+    react-i18next: 11.x
     rxjs: 6.x
   languageName: unknown
   linkType: soft
