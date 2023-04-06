@@ -117,6 +117,46 @@ function setupOpenMRS() {
           }
         ),
       },
+      {
+        id: "hiv-baseline-ext-et",
+        slot: "patient-chart-summary-dashboard-slot",
+        load: getAsyncLifecycle(
+          () => import("./views/hiv-baseline/hiv-baseline-summary.component"),
+          {
+            featureName: "hiv-baseline-summary",
+            moduleName,
+          }
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+      },
+      {
+        name: "active-medications-widget-et",
+        slot: "patient-chart-summary-dashboard-slot",
+        load: getAsyncLifecycle(
+          () => import("./views/medications/active-medications.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+        online: { showAddMedications: true },
+        offline: { showAddMedications: false },
+      },
+      {
+        name: "vitals-overview-widget-et",
+        slot: "patient-chart-summary-dashboard-slot",
+        load: getAsyncLifecycle(
+          () => import("./views/vitals/vitals-summary.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+        online: { showAddVitals: true },
+        offline: { showAddVitals: false },
+      },
     ],
   };
 }

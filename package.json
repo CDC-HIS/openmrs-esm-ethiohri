@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "@adobe/react-spectrum": "^3.19.0",
+    "@carbon/charts-react": "^1.5.2",
     "@carbon/react": "^1.17.0",
     "dayjs": "^1.8.16",
     "lodash-es": "^4.17.15",
@@ -56,6 +57,7 @@
   "peerDependencies": {
     "@openmrs/esm-framework": "4.x",
     "react": "18.x",
+    "react-i18next": "11.x",
     "rxjs": "6.x"
   },
   "devDependencies": {

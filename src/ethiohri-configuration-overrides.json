@@ -1,6 +1,13 @@
 {
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
+      "patient-chart-summary-dashboard-slot":{
+        "remove":[
+          "vitals-overview-widget",
+          "active-medications-widget",
+          "hiv-baseline-ext"
+        ]
+      },
       "program-management-summary-slot": {
         "remove": [
           "program-management-summary-ext"

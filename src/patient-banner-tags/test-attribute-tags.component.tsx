@@ -51,6 +51,9 @@ const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
   const [patientTagNextVisitDate, setpatientTagNextVisitDate] =
     useState("Loading");
   const [patientTagARTEndDate, setpatientTagARTEndDate] = useState("Loading");
+  const [patientTagPregnancyStatus, setpatientTagPregnancyStatus] =
+    useState("Loading");
+
   fetchPatientObs(patientUuid).then((list) => {
     var FollowupStatus = list.find((x) =>
       x.display.includes("Follow up status")
@@ -64,6 +67,13 @@ const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
 
     var ARTEndDate = list.find((x) => x.display.includes("Treatment end date"));
     ARTEndDate ? setpatientTagARTEndDate(ARTEndDate.display) : null;
+
+    var PregnancyStatus = list.find((x) =>
+      x.display.includes("Pregnancy status")
+    );
+    PregnancyStatus
+      ? setpatientTagPregnancyStatus(PregnancyStatus.display)
+      : null;
   });
 
   return (
@@ -76,6 +86,9 @@ const TestAttributeTags: React.FC<TestAttributeTagsProps> = ({
       ) : null}
       {patientTagARTEndDate != "Loading" ? (
         <Tag type="gray">{splitAndJoin(patientTagARTEndDate)}</Tag>
+      ) : null}
+      {patientTagPregnancyStatus != "Loading" ? (
+        <Tag type="gray">{patientTagPregnancyStatus}</Tag>
       ) : null}
     </>
   );
