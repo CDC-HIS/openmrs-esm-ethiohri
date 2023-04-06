@@ -30,7 +30,7 @@ const TestPatientDetailsButton: React.FC<TestPatientDetailsButtonProps> = ({
         onClick={handleClick}
       >
         <span className="cds--overflow-menu-options__option-content">
-          {t("Open Forms", "Test patient details")}
+          {t("testactionbutton", "Test patient details")}
         </span>
       </button>
     </li>
