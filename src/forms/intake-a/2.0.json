@@ -1408,49 +1408,50 @@
 							"id": "gender"
 						},
 						{
-							"label": "Relation",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "text",
-								"concept": "164352AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "302147001"
-									}
-								]
-							},
-							"id": "relation"
-						},
-						{
-							"label": "Relations",
+							"label": "Relationship",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "1560"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "303071001"
-									},
-									{
-										"type": "PIH",
-										"value": "6441"
-									}
-								],
 								"answers": [
 									{
-										"concept": "975AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Aunt",
+										"concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Spouse",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5617"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5617"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "127848009"
+											},
+											{
+												"type": "CIEL",
+												"value": "5617"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "127848009"
+											},
+											{
+												"type": "CIEL",
+												"value": "5617"
+											}
+										]
+									},
+									{
+										"concept": "971AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Father",
 										"conceptMappings": []
 									},
 									{
-										"concept": "160729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Brother",
+										"concept": "970AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Mother",
 										"conceptMappings": []
 									},
 									{
@@ -1480,178 +1481,9 @@
 										]
 									},
 									{
-										"concept": "160728AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Daughter",
+										"concept": "160729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Brother",
 										"conceptMappings": []
-									},
-									{
-										"concept": "971AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Father",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Grandfather",
-										"conceptMappings": []
-									},
-									{
-										"concept": "159772AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Grandmother",
-										"conceptMappings": []
-									},
-									{
-										"concept": "973AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Grandparent",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "38312007"
-											},
-											{
-												"type": "CIEL",
-												"value": "973"
-											},
-											{
-												"type": "AMPATH",
-												"value": "973"
-											}
-										]
-									},
-									{
-										"concept": "160724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Maternal grandfather",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Maternal grandmother",
-										"conceptMappings": []
-									},
-									{
-										"concept": "970AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Mother",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other family member",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Parent",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "1527"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "40683002"
-											},
-											{
-												"type": "PIH",
-												"value": "2173"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "40683002"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1672"
-											},
-											{
-												"type": "CIEL",
-												"value": "1527"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1672"
-											},
-											{
-												"type": "PIH",
-												"value": "2173"
-											}
-										]
-									},
-									{
-										"concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Partner or spouse",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5617"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5617"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "127848009"
-											},
-											{
-												"type": "CIEL",
-												"value": "5617"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "127848009"
-											},
-											{
-												"type": "CIEL",
-												"value": "5617"
-											}
-										]
-									},
-									{
-										"concept": "160725AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Paternal grandfather",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160726AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Paternal grandmother",
-										"conceptMappings": []
-									},
-									{
-										"concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sibling",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "972"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "375005"
-											},
-											{
-												"type": "PIH",
-												"value": "2178"
-											},
-											{
-												"type": "CIEL",
-												"value": "972"
-											},
-											{
-												"type": "AMPATH",
-												"value": "972"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "375005"
-											},
-											{
-												"type": "AMPATH",
-												"value": "972"
-											},
-											{
-												"type": "PIH",
-												"value": "2178"
-											}
-										]
 									},
 									{
 										"concept": "160730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1659,18 +1491,85 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "160727AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Son",
+										"concept": "974AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Extended family member",
 										"conceptMappings": []
 									},
 									{
-										"concept": "974AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Uncle",
+										"concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Friend/Colleague",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "972"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "375005"
+											},
+											{
+												"type": "PIH",
+												"value": "2178"
+											},
+											{
+												"type": "CIEL",
+												"value": "972"
+											},
+											{
+												"type": "AMPATH",
+												"value": "972"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "375005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "972"
+											},
+											{
+												"type": "PIH",
+												"value": "2178"
+											}
+										]
+									},
+									{
+										"concept": "5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other family member",
 										"conceptMappings": []
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "1560"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "303071001"
+									},
+									{
+										"type": "PIH",
+										"value": "6441"
 									}
 								]
 							},
-							"id": "relations"
+							"id": "relationship"
+						},
+						{
+							"label": "Other type of relationship",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "164352AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-CT",
+										"value": "302147001"
+									}
+								]
+							},
+							"id": "otherRelationship"
 						},
 						{
 							"label": "Address",
