@@ -18,8 +18,6 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           <Tab>Intake B</Tab>
           <Tab>Family Members</Tab>
           <Tab>PHDP</Tab>
-          <Tab>DSD</Tab>
-          <Tab>Outcomes</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -33,15 +31,6 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           </TabPanel>
           <TabPanel>
             <PHDPList patientUuid={patientUuid} />
-          </TabPanel>
-          <TabPanel>
-            <EmptyStateComingSoon displayText="DSD" headerTitle="DSD" />
-          </TabPanel>
-          <TabPanel>
-            <EmptyStateComingSoon
-              displayText="Outcomes"
-              headerTitle="Outcomes"
-            />
           </TabPanel>
         </TabPanels>
       </Tabs>
