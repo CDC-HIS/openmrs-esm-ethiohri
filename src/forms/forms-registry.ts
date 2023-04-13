@@ -2,7 +2,7 @@ import intake_a_1_0 from "./intake-a/2.0.json";
 import intake_b_1_0 from "./intake-b/2.0.json";
 import family_information_1_0 from "././family-members/1.0.json";
 import phdp_1_0 from "./phdp/1.0.json";
-import followup_1_0 from "./followup/2.0.json";
+import followup_1_0 from "./followup/2.1.json";
 
 export default {
   eth_hiv: {
