@@ -7356,7 +7356,7 @@
                     "isExpanded": "true",
                     "questions": [
                         {
-                            "label": "Followup status",
+                            "label": "Followup status *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -7812,7 +7812,7 @@
                     "isExpanded": "true",
                     "questions": [
                         {
-                            "label": "Dispense code",
+                            "label": "Dispense code *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -8527,7 +8527,7 @@
                             "id": "dispenseCode"
                         },
                         {
-                            "label": "Dispense dose",
+                            "label": "Dispense dose *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -10186,7 +10186,7 @@
                     "isExpanded": "true",
                     "questions": [
                         {
-                            "label": "Assessment date",
+                            "label": "Assessment date *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -10197,7 +10197,7 @@
                             "id": "assessmentDate"
                         },
                         {
-                            "label": "Assessment status",
+                            "label": "Assessment status *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -10229,7 +10229,7 @@
                             "id": "assessmnetStatus"
                         },
                         {
-                            "label": "DSD category",
+                            "label": "DSD category *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -10723,7 +10723,7 @@
                             "id": "isCxCaCounsellingGiven"
                         },
                         {
-                            "label": "Date counselling given (Visit date)",
+                            "label": "Date counselling given (Visit date) *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -10737,7 +10737,7 @@
                             "id": "dateCxCaCounsellingGiven"
                         },
                         {
-                            "label": "Accepted cervical cancer screening",
+                            "label": "Accepted cervical cancer screenin *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -10848,7 +10848,7 @@
                             "id": "acceptedCervicalCancerScreening"
                         },
                         {
-                            "label": "Date accepted CxCa screening",
+                            "label": "Date accepted CxCa screening *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -10985,7 +10985,7 @@
                             "id": "dateLinkedToCxCaScreeningUnit"
                         },
                         {
-                            "label": "CxCa Screening done",
+                            "label": "CxCa Screening done *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -11034,7 +11034,7 @@
                             "id": "screeningDone"
                         },
                         {
-                            "label": "Type of screening",
+                            "label": "Type of screening *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -11064,7 +11064,7 @@
                             "id": "typeOfScreening"
                         },
                         {
-                            "label": "Screening strategy",
+                            "label": "Screening strategy *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -11441,7 +11441,7 @@
                             "id": "hpvDnaResultReceivedDate"
                         },
                         {
-                            "label": "VIA screening result",
+                            "label": "VIA screening result *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -11563,7 +11563,7 @@
                             "id": "viaScreeningResult"
                         },
                         {
-                            "label": "VIA screening date",
+                            "label": "VIA screening date *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -11577,7 +11577,7 @@
                             "id": "viaScreeningDate"
                         },
                         {
-                            "label": "Cytology sample collection date",
+                            "label": "Cytology sample collection date *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -11591,7 +11591,7 @@
                             "id": "cytologySampleCollectionDate"
                         },
                         {
-                            "label": "Cytology result",
+                            "label": "Cytology result *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
@@ -11642,7 +11642,7 @@
                             "id": "cytologyResult"
                         },
                         {
-                            "label": "Cytology result received date",
+                            "label": "Cytology result received date *",
                             "type": "obs",
                             "required": "true",
                             "questionOptions": {
