@@ -99,3 +99,5 @@ export const encounterRepresentation =
   "patient:(uuid,display),encounterProviders:(uuid,provider:(uuid,name))," +
   "obs:(uuid,obsDatetime,voided,groupMembers,concept:(uuid,name:(uuid,name)),value:(uuid,name:(uuid,name)," +
   "names:(uuid,conceptNameType,name))))";
+export const POSITIVE_TRACKING_ENCOUNTER_TYPE =
+  "96a78a83-d92a-4da7-b68e-41791fb835d2";

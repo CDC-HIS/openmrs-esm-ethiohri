@@ -2,6 +2,7 @@ import intake_a_1_0 from "./intake-a/2.0.json";
 import intake_b_1_0 from "./intake-b/2.0.json";
 import family_information_1_0 from "././family-members/1.0.json";
 import phdp_1_0 from "./phdp/1.0.json";
+import positive_tracking_1_0 from "./positive-case-tracking/1.0.json";
 import followup_1_0 from "./followup/2.1.json";
 
 export default {
@@ -20,6 +21,9 @@ export default {
     },
     followup: {
       "1.0": followup_1_0,
+    },
+    positive_tracking: {
+      "1.0": positive_tracking_1_0,
     },
   },
 };
