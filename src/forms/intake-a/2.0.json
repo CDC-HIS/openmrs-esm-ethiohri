@@ -9,7 +9,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Enrollment Date",
+							"label": "Enrollment Date *",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
@@ -21,6 +21,7 @@
 									}
 								]
 							},
+							"required": "true",
 							"id": "enrollment_date"
 						},
 						{
@@ -48,8 +49,9 @@
 							"id": "unit_tb_no"
 						},
 						{
-							"label": "Client's Name",
+							"label": "Client's Name *",
 							"type": "obs",
+							"required": "true",
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -79,8 +81,9 @@
 							"id": "clients_name"
 						},
 						{
-							"label": "Father's Name",
+							"label": "Father's Name *",
 							"type": "obs",
+							"required": "true",
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -94,8 +97,9 @@
 							"id": "fathers_name"
 						},
 						{
-							"label": "Grand Father's Name",
+							"label": "Grand Father's Name *",
 							"type": "obs",
+							"required": "true",
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -125,8 +129,9 @@
 							"id": "grandfathers_name"
 						},
 						{
-							"label": "Gender",
+							"label": "Gender *",
 							"type": "obs",
+							"required": "true",
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -198,8 +203,9 @@
 							"id": "gender"
 						},
 						{
-							"label": "Date of Birth",
+							"label": "Date of Birth *",
 							"type": "obs",
+							"required": "true",
 							"questionOptions": {
 								"rendering": "eth-date",
 								"concept": "166575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -236,45 +242,6 @@
 							"id": "age"
 						},
 						{
-							"label": "Key Population Type",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "166432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"answers": [
-									{
-										"concept": "166431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Target population",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "166431"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "385436007"
-											}
-										]
-									},
-									{
-										"concept": "166430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "General population",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "166430"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "385436007"
-											}
-										]
-									}
-								]
-							},
-							"id": "key_population_type"
-						},
-						{
 							"label": "Client resides within catchment area",
 							"type": "obs",
 							"questionOptions": {
@@ -288,13 +255,13 @@
 								],
 								"answers": [
 									{
-										"concept": "160636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Lives outside of catchment area",
+										"concept": "160635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
 										"conceptMappings": []
 									},
 									{
-										"concept": "160635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Lives in catchment area",
+										"concept": "160636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
 										"conceptMappings": []
 									}
 								]
@@ -386,6 +353,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "catchment_area != '160636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "regular_followup"
 						}
 					]
@@ -393,9 +363,12 @@
 				{
 					"label": "For child < 5 years only",
 					"isExpanded": "true",
+					"hide": {
+						"hideWhenExpression": "calcAgeBasedOnDate('x') > 5"
+					},
 					"questions": [
 						{
-							"label": "Mother's Name",
+							"label": "Mother's first name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -410,7 +383,7 @@
 							"id": "mothers_name"
 						},
 						{
-							"label": "Mother's Father Name",
+							"label": "Mother's father name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -419,7 +392,7 @@
 							"id": "mothers_father_name"
 						},
 						{
-							"label": "Mother's Grandfather Name",
+							"label": "Mother's grandfather's name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -455,12 +428,12 @@
 									},
 									{
 										"concept": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health clinic/post",
+										"label": "Health facility",
 										"conceptMappings": []
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other non-coded",
+										"label": "Other",
 										"conceptMappings": [
 											{
 												"type": "PIH-Malawi",
@@ -541,7 +514,7 @@
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other non-coded",
+										"label": "Other",
 										"conceptMappings": [
 											{
 												"type": "PIH-Malawi",
@@ -604,7 +577,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Date confirmed",
+							"label": "Date confirmed HIV+/Retesting",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
@@ -631,7 +604,7 @@
 							"id": "date_confirmed"
 						},
 						{
-							"label": "Test type",
+							"label": "Type of HIV test",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -749,6 +722,51 @@
 					"isExpanded": "true",
 					"questions": [
 						{
+							"label": "Entry point",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "dd282c99-ea69-44e7-9252-aff0198cc1e8",
+								"conceptMappings": [
+									{
+										"type": "ETHIOHRI",
+										"value": "entryPoint"
+									}
+								],
+								"answers": [
+									{
+										"concept": "163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Within the facility",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "163266"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "257622000"
+											}
+										]
+									},
+									{
+										"concept": "164407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Outside the facility",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "4563007"
+											},
+											{
+												"type": "CIEL",
+												"value": "164407"
+											}
+										]
+									}
+								]
+							},
+							"id": "entryPoint"
+						},
+						{
 							"label": "Within the facility ",
 							"type": "obs",
 							"questionOptions": {
@@ -757,7 +775,7 @@
 								"answers": [
 									{
 										"concept": "160448AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "General medicine department",
+										"label": "Medical outpatient",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -775,7 +793,7 @@
 									},
 									{
 										"concept": "160457AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pediatric medicine department",
+										"label": "Pediatric outpatient",
 										"conceptMappings": []
 									},
 									{
@@ -790,17 +808,17 @@
 									},
 									{
 										"concept": "14497d04-ec43-4ac4-9cab-02007a0ff273",
-										"label": "PNC Client",
+										"label": "PNC",
 										"conceptMappings": []
 									},
 									{
 										"concept": "d1e97037-c599-47c3-93cb-c256b9c27fbc",
-										"label": "L&D Client",
+										"label": "L&D",
 										"conceptMappings": []
 									},
 									{
 										"concept": "160538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Prevention of maternal to child transmission program",
+										"label": "MCH (PMTCT)",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -830,12 +848,12 @@
 									},
 									{
 										"concept": "2959b6f7-1f9b-49cd-9f3a-1e42e87b4ae5",
-										"label": "ANC Client",
+										"label": "ANC",
 										"conceptMappings": []
 									},
 									{
 										"concept": "160546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sexually transmitted infection program/clinic",
+										"label": "STI clinic",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -865,12 +883,12 @@
 									},
 									{
 										"concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Voluntary counseling and testing center",
+										"label": "VCT",
 										"conceptMappings": []
 									},
 									{
 										"concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Inpatient care or hospitalization",
+										"label": "Adult IPD",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -908,7 +926,7 @@
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other non-coded",
+										"label": "Other",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -962,6 +980,9 @@
 									}
 								]
 							},
+							"hide": {
+                                "hideWhenExpression": "entryPoint !== '163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
 							"id": "within_the_facility"
 						},
 						{
@@ -977,6 +998,9 @@
 									}
 								]
 							},
+							"hide": {
+                                "hideWhenExpression": "entryPoint !== '163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !includes('within_the_facility','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                            },
 							"id": "otherEntryPointWithinTheFacility"
 						},
 						{
@@ -988,7 +1012,7 @@
 								"answers": [
 									{
 										"concept": "1589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Hospital",
+										"label": "Private hospital",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1001,34 +1025,8 @@
 										]
 									},
 									{
-										"concept": "160545AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Outreach program",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1785"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "43741000"
-											},
-											{
-												"type": "CIEL",
-												"value": "160545"
-											},
-											{
-												"type": "CIEL",
-												"value": "160545"
-											},
-											{
-												"type": "PIH",
-												"value": "1785"
-											}
-										]
-									},
-									{
 										"concept": "160479AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Private health care clinic/facility",
+										"label": "Private clinic",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1046,7 +1044,7 @@
 									},
 									{
 										"concept": "1275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health center hospital",
+										"label": "Health center",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -1080,7 +1078,7 @@
 									},
 									{
 										"concept": "163014AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Non-governmental organization-run health facility",
+										"label": "NGO/FBO hospital",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -1094,7 +1092,7 @@
 									},
 									{
 										"concept": "163488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Community",
+										"label": "Community referred",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1108,7 +1106,7 @@
 									},
 									{
 										"concept": "160480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Government-run health clinic/facility",
+										"label": "Public hospital",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1122,7 +1120,7 @@
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other non-coded",
+										"label": "Other",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -1181,6 +1179,9 @@
 									}
 								]
 							},
+							"hide": {
+                                "hideWhenExpression": "entryPoint !== '164407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
 							"id": "outside_the_facility"
 						},
 						{
@@ -1196,6 +1197,9 @@
 									}
 								]
 							},
+							"hide": {
+                                "hideWhenExpression": "entryPoint !== '164407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !includes('outside_the_facility','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                            },
 							"id": "otherEntryPointOutsideTheFacility"
 						},
 						{
@@ -1206,18 +1210,18 @@
 								"concept": "2cb28f68-0277-48d7-8b38-8e6cf38a30a9",
 								"answers": [
 									{
-										"concept": "cc786035-c6cf-49ac-b4fb-c849ea07eb33",
-										"label": "To be enrolled as transferred in Pre-ART client",
-										"conceptMappings": []
-									},
-									{
 										"concept": "30458643-b575-4a93-98e8-06a1011633ca",
-										"label": "To be enrolled in ART",
+										"label": "To be enrolled as transferred in ART client",
 										"conceptMappings": []
 									},
 									{
 										"concept": "cf055224-fe93-432b-8934-5a11a98ce999",
-										"label": "To be enrolled as new Pre-ART",
+										"label": "To be enrolled as new Pre-ART client",
+										"conceptMappings": []
+									},
+									{
+										"concept": "cc786035-c6cf-49ac-b4fb-c849ea07eb33",
+										"label": "To be enrolled as transferred in Pre-ART client",
 										"conceptMappings": []
 									}
 								]
@@ -1569,6 +1573,9 @@
 									}
 								]
 							},
+							"hide": {
+                                "hideWhenExpression": "relationship !== '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
 							"id": "otherRelationship"
 						},
 						{

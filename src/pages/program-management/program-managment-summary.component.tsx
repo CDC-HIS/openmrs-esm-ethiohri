@@ -4,6 +4,7 @@ import IntakeAEncounterList from "./tabs/intake-a.component";
 import IntakeBEncounterList from "./tabs/intake-b.component";
 import FamilyInformationList from "./tabs/family-information.component";
 import PHDPList from "./tabs/phdp.component";
+import PositiveTrackingList from "./tabs/positive-tracking.component";
 import styles from "./program-management.scss";
 import { EmptyStateComingSoon } from "@ohri/openmrs-esm-ohri-commons-lib";
 
@@ -18,6 +19,7 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           <Tab>Intake B</Tab>
           <Tab>Family Members</Tab>
           <Tab>PHDP</Tab>
+          <Tab>Positive Tracking</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -31,6 +33,9 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           </TabPanel>
           <TabPanel>
             <PHDPList patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <PositiveTrackingList patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>

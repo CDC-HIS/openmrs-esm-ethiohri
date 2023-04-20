@@ -287,6 +287,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "hivDisclosure != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "whoKnows"
 						},
 						{
@@ -498,7 +501,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
+								"max": "200",
 								"min": "",
 								"showDate": ""
 							},
@@ -1201,7 +1204,7 @@
 							"id": "artStarted"
 						},
 						{
-							"label": "ART Start Date",
+							"label": "Date started ART",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
