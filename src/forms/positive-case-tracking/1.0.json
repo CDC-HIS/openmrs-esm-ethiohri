@@ -12,7 +12,7 @@
 							"label": "Registraton date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -28,7 +28,7 @@
 							"label": "HIV positive date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -115,7 +115,7 @@
 							"label": "Entry point within the facility",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
 								"answers": [
 									{
@@ -431,7 +431,7 @@
 							"label": "Entry point outside the facility",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "73d76014-365e-484c-bf5b-0959add4e3f3",
 								"answers": [
 									{
@@ -692,7 +692,7 @@
 							"label": "Date linked to care and treatment ",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "902faabc-57bd-4fdf-bcaa-e3f8866ebbaf",
 								"weeksList": ""
 							},
@@ -845,7 +845,7 @@
 							"label": "Reason for not starting ART the same day ",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "d8ffb301-9a47-45ee-a465-f053cc060aab",
 								"answers": [
 									{
@@ -1028,7 +1028,7 @@
 							"label": "Plan for next step",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "e96ea7a2-5285-41d3-bb0d-4f199cf5b8ee",
 								"answers": [
 									{
@@ -1230,7 +1230,7 @@
 							"label": "Final outcome known date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302",
 								"weeksList": ""
 							},
@@ -1240,7 +1240,7 @@
 							"label": "Final outcome",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "413b265c-87ef-4988-a7bc-1bfc6b5e5528",
 								"answers": [
 									{
@@ -1474,5 +1474,7 @@
 	],
 	"processor": "EncounterFormProcessor",
 	"uuid": "xxxx",
-	"referencedForms": []
+	"referencedForms": [],
+	"encounterType": "96a78a83-d92a-4da7-b68e-41791fb835d2",
+	"allowUnspecifiedAll": true
 }
