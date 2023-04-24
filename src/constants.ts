@@ -6,6 +6,8 @@ export const PHDP_ENCOUNTER_TYPE = "f1b397c1-46bd-43e6-a23d-ae2cedaec881";
 export const FOLLOWUP_ENCOUNTER_TYPE = "136b2ded-22a3-4831-a39a-088d35a50ef5";
 export const POSITIVE_TRACKING_ENCOUNTER_TYPE =
   "96a78a83-d92a-4da7-b68e-41791fb835d2";
+export const RETEST_ENCOUNTER_TYPE = "1cd0c205-9a6b-418d-ae91-ec54913f5d36";
+
 //HIV Art Therapy
 export const art_Therapy_EncounterUUID = "74bf4fe6-8fdb-4228-be39-680a93a9cf6d";
 export const artTherapyDateTime_UUID = "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
