@@ -101,3 +101,4 @@ export const encounterRepresentation =
   "names:(uuid,conceptNameType,name))))";
 export const POSITIVE_TRACKING_ENCOUNTER_TYPE =
   "96a78a83-d92a-4da7-b68e-41791fb835d2";
+export const RETEST_ENCOUNTER_TYPE = "1cd0c205-9a6b-418d-ae91-ec54913f5d36";

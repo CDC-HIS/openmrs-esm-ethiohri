@@ -76,7 +76,7 @@
 							"label": "Entry point",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
 								"answers": [
 									{
@@ -430,7 +430,7 @@
 							"label": "Date of initial test",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "9182520e-24e8-4e84-aba7-6b56bdeb76d5",
 								"weeksList": ""
 							},
@@ -440,7 +440,7 @@
 							"label": "Date of retesting",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "3c588dc4-cd32-47e6-a919-806e254b66c7",
 								"weeksList": ""
 							},
@@ -474,7 +474,7 @@
 							"label": "Expiry date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "a9f3dbfc-b65d-4cd4-9c65-c52df1f9b65c",
 								"weeksList": ""
 							},
@@ -578,7 +578,7 @@
 							"label": "Expiry date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "06c4fcee-880f-40ce-89e2-b0958a8cea6d",
 								"weeksList": ""
 							},
@@ -682,7 +682,7 @@
 							"label": "Expiry date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "4e596473-d730-4535-875c-895d5f20b4c0",
 								"weeksList": ""
 							},
@@ -848,7 +848,7 @@
 							"label": "Action taken for discrepant",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "0a05f565-a39b-41dd-9998-df15b4cce45c",
 								"answers": [
 									{
@@ -1011,7 +1011,7 @@
 							"label": "Expiry date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "162502AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -1194,7 +1194,7 @@
 							"label": "ART start date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -1250,7 +1250,7 @@
 							"label": "Action taken ",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "3e8686f9-694f-496b-8f5c-565833d035d1",
 								"answers": [
 									{
@@ -1391,7 +1391,7 @@
 							"label": "Reason why ART not initiated the same day",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "d8ffb301-9a47-45ee-a465-f053cc060aab",
 								"answers": [
 									{
@@ -1591,7 +1591,7 @@
 							"label": "Plan for next steps",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "e96ea7a2-5285-41d3-bb0d-4f199cf5b8ee",
 								"answers": [
 									{
@@ -1620,5 +1620,7 @@
 	],
 	"processor": "EncounterFormProcessor",
 	"uuid": "xxxx",
-	"referencedForms": []
+	"referencedForms": [],
+	"encounterType": "1cd0c205-9a6b-418d-ae91-ec54913f5d36",
+	"allowUnspecifiedAll": true
 }

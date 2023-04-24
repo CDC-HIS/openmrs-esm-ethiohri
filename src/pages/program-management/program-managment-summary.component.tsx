@@ -5,6 +5,7 @@ import IntakeBEncounterList from "./tabs/intake-b.component";
 import FamilyInformationList from "./tabs/family-information.component";
 import PHDPList from "./tabs/phdp.component";
 import PositiveTrackingList from "./tabs/positive-tracking.component";
+import HivRetestList from "./tabs/retest.component";
 import styles from "./program-management.scss";
 import { EmptyStateComingSoon } from "@ohri/openmrs-esm-ohri-commons-lib";
 
@@ -19,7 +20,8 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           <Tab>Intake B</Tab>
           <Tab>Family Members</Tab>
           <Tab>PHDP</Tab>
-          <Tab>Positive Tracking</Tab>
+          <Tab>HIV Positive Tracking</Tab>
+          <Tab>HIV Retest</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -36,6 +38,9 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           </TabPanel>
           <TabPanel>
             <PositiveTrackingList patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <HivRetestList patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>
