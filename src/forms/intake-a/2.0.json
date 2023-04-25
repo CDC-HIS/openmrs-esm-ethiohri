@@ -13,13 +13,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
-								"concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "160555"
-									}
-								]
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
 							},
 							"required": "true",
 							"id": "enrollment_date"
