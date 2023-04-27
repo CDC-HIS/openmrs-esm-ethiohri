@@ -8,6 +8,7 @@ import PositiveTrackingList from "./tabs/positive-tracking.component";
 import HivRetestList from "./tabs/retest.component";
 import styles from "./program-management.scss";
 import { EmptyStateComingSoon } from "@ohri/openmrs-esm-ohri-commons-lib";
+import PostExposureProphylaxis from "./tabs/post-exposure.component";
 
 const ProgramManagment: React.FC<{ patientUuid: string }> = ({
   patientUuid,
@@ -22,6 +23,7 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           <Tab>PHDP</Tab>
           <Tab>HIV Positive Tracking</Tab>
           <Tab>HIV Retest</Tab>
+          <Tab>Post Exposure Prophylaxis</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -41,6 +43,9 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           </TabPanel>
           <TabPanel>
             <HivRetestList patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <PostExposureProphylaxis patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>
