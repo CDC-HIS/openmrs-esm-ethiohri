@@ -5,6 +5,8 @@ import phdp_1_0 from "./phdp/1.0.json";
 import positive_tracking_1_0 from "./positive-case-tracking/1.0.json";
 import followup_1_0 from "./followup/2.1.json";
 import retest_1_0 from "./re-test/1.0.json";
+import post_exposure_1_0 from "./post-exposure/1.0.json";
+import pre_exposure_screening_1_0 from "./pre-exposure-screening/1.0.json";
 
 export default {
   eth_hiv: {
@@ -28,6 +30,12 @@ export default {
     },
     retest: {
       "1.0": retest_1_0,
+    },
+    post_exposure: {
+      "1.0": post_exposure_1_0,
+    },
+    pre_exposure_screening: {
+      "1.0": pre_exposure_screening_1_0,
     },
   },
 };

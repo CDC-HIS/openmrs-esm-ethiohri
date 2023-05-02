@@ -46,6 +46,10 @@ export const otherEntryPoint = "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const encounterType_follow_UP = "136b2ded-22a3-4831-a39a-088d35a50ef5";
 export const encounterType_intake_A = "05add044-67f8-48c9-928d-79002ab19efe";
 export const encounterType_intake_B = "dc94a223-66bc-45b7-8e34-d13b8686f239";
+export const POST_EXPOSURE_ENCOUNTER_TYPE =
+  "1cd0c205-9a6b-418d-ae91-ec54913f5d36";
+export const PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE =
+  "69b60ded-868d-4b6a-8f49-b0c84c18cec6";
 // Clinical visit
 export const clinicalVisitEncounterType =
   "cb0a65a7-0587-477e-89b9-cf2fd144f1d4";

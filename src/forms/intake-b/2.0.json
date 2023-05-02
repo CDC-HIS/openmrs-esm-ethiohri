@@ -2277,7 +2277,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
-								"concept": "da7f89c4-537a-4c65-98ae-cccfee4e8fbc",
+								"concept": "76b45324-9920-4cb7-a8af-c135fb8deb77",
 								"max": "",
 								"min": "",
 								"showDate": ""
@@ -2413,24 +2413,10 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
-								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
 								"max": "",
 								"min": "",
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "PIH",
-										"value": "5090"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5090"
-									},
-									{
-										"type": "CIEL",
-										"value": "5090"
-									}
-								]
+								"showDate": ""
 							},
 							"id": "height"
 						},

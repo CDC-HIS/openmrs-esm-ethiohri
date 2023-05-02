@@ -524,48 +524,10 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
-								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
 								"max": "",
 								"min": "",
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "LOINC",
-										"value": "8302-2"
-									},
-									{
-										"type": "CIEL",
-										"value": "5090"
-									},
-									{
-										"type": "PIH",
-										"value": "5090"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "50373000"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5090"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5090"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "5090"
-									},
-									{
-										"type": "CIEL",
-										"value": "5090"
-									},
-									{
-										"type": "PIH",
-										"value": "5090"
-									}
-								]
+								"showDate": ""
 							},
 							"id": "height"
 						},
