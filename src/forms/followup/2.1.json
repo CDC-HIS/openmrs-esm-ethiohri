@@ -458,7 +458,7 @@
 								"rendering": "eth-date",
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"readonly": "true",
+							"readonly": "false",
 							"id": "treatmentEndDate"
 						}
 					]
