@@ -1,5 +1,3 @@
-import React from "react";
-
 // Template for adding new sidenav links
 // export const ethiohriDashboardMeta = {
 //   slot: "ethiohri-dashboard-slot",

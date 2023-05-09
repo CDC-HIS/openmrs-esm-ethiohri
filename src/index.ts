@@ -2,7 +2,6 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
-  getGlobalStore,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";

@@ -1,5 +1,3 @@
-import { Type, validator } from "@openmrs/esm-framework";
-
 /**
  * Define config schema
  */
