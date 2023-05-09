@@ -19,7 +19,6 @@ import {
   toCalendar,
   CalendarDate,
 } from "@internationalized/date";
-import moment from "moment";
 
 interface HivBaselineTabListProps {
   patientUuid: string;

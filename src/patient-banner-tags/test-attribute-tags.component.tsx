@@ -6,7 +6,6 @@ import {
   toCalendar,
   CalendarDate,
 } from "@internationalized/date";
-import moment from "moment";
 
 interface TestAttributeTagsProps {
   patientUuid: string;

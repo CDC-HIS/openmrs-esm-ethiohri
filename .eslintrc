@@ -1,7 +1,8 @@
 {
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "unused-imports"
   ],
   "extends": ["ts-react-important-stuff", "plugin:prettier/recommended"],
   "rules": {
@@ -28,7 +29,8 @@
           }
         ]
       }
-    ]
+    ],
+    "unused-imports/no-unused-imports" : "error"
   }
 }
 

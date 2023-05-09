@@ -5,7 +5,6 @@ import { EmptyState } from "../empty-state/empty-state.component";
 import { DataTableSkeleton } from "@carbon/react";
 import {
   encounterType_intake_B,
-  dateandtime,
   temperature,
   sbp,
   dbp,
@@ -20,7 +19,6 @@ import {
   toCalendar,
   CalendarDate,
 } from "@internationalized/date";
-import moment from "moment";
 
 interface HivBaselineTabListProps {
   patientUuid: string;
