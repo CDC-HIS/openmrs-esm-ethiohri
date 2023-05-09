@@ -10,7 +10,7 @@ import {
   PreviousValueReview,
   OHRIFieldValueView,
   ValidationResult,
-} from "@ohri/openmrs-ohri-form-engine-lib";
+} from "@openmrs/openmrs-form-engine-lib";
 import React, { useEffect, useMemo, useState } from "react";
 import "../../vendor/lib/jquery-calendars/css/jquery.calendars.picker.css";
 
