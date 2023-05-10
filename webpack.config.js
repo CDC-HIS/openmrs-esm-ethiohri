@@ -17,12 +17,13 @@ config.overrides.resolve = {
 config.module = {
   rules: [
     {
-      test: /\.(png|jpe?g|gif)$/i,
-      use: [
-        {
-          loader: "file-loader",
-        },
-      ],
+      test: /\.(png|jpe?g|gif|css)$/i,
+      // use: [
+      //   {
+      //     loader: "file-loader",
+      //   },
+      // ],
+      use: ["style-loader", "css-loader"],
     },
   ],
 };

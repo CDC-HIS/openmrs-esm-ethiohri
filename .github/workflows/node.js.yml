@@ -4,7 +4,7 @@ on:
   push:
     branches: [master,develop,etho_datepicker]
   pull_request:
-    branches: [master]
+    branches: [master, develop]
   release:
     types:
       - created
@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -36,34 +36,33 @@ jobs:
             dist
 
   pre_release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     needs: build
 
-    #if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop'}}
 
     steps:
-      - run: echo "Uncomment the lines below and delete this one."
-      # - uses: actions/checkout@v2
-      # - name: Download Artifacts
-      #   uses: actions/download-artifact@v2
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: "16.x"
-      #     registry-url: "https://registry.npmjs.org"
-      # - run: npm install
-      # - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      # - run: npm publish --access public --tag next
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: actions/checkout@v2
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: yarn
+      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
+      - run: yarn npm publish --access public --tag next
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     needs: build
 
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'release' }}
 
     steps:
       - uses: actions/checkout@v2
@@ -74,20 +73,13 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: 'https://registry.npmjs.org'
-
-      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-#       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.140/" 'package.json'
-      - run: yarn install
-      - run: yarn build
-      - run: yarn cipublish --access public --tag next --no-git-tag-version
-#       - run: yarn publish --tag next --no-git-tag-version
+      - run: yarn
+      - run: yarn config set npmAuthToken "${NODE_AUTH_TOKEN}" && yarn npm publish --access public --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-
   dev:
-      runs-on: ubuntu-20.04
-      #Test
+      runs-on: ubuntu-latest
       needs: release
 
       if: ${{ github.ref == 'refs/heads/develop' }}
@@ -105,7 +97,7 @@ jobs:
               username: ${{ secrets.ETHIOHRI_USER }}
               privateKey: ${{ secrets.ETHIOHRI_DEV_PRIVATE_KEY}}
   demo:
-      runs-on: ubuntu-20.04
+      runs-on: ubuntu-latest
       needs: release
 
       if: ${{ github.ref == 'refs/heads/develop' }}
