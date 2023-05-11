@@ -6,7 +6,7 @@ config.scriptRuleConfig.exclude =
     : /(node_modules[^\\@openmrs\/esm\-patient\-common\-lib, ^\\@ohri\/openmrs\-esm\-ohri\-commons\-lib])/;
 config.overrides.resolve = {
   extensions: [".tsx", ".ts", ".jsx", ".js", ".scss"],
-  modulesDirectories: ["node_modules"],
+  modules: ["node_modules"],
   alias: {
     "@openmrs/esm-framework": "@openmrs/esm-framework/src/internal",
     "@openmrs/openmrs-form-engine-lib":
@@ -27,10 +27,5 @@ config.module = {
     },
   ],
 };
-
-// Overrides to disable CSS Modules for non-scss scripts, this means
-// CSS Modules will only be supported with .scss scripts
-config.cssRuleConfig.use = ["style-loader", "css-loader"];
-config.cssRuleConfig.test = /\.css$/;
 
 module.exports = config;
