@@ -109,7 +109,10 @@ function setupOpenMRS() {
         id: "test-attribute-tags",
         slot: "patient-banner-tags-slot",
         load: getAsyncLifecycle(
-          () => import("./patient-banner-tags/test-attribute-tags.component"),
+          () =>
+            import(
+              "./components/patient-banner-tags/test-attribute-tags.component"
+            ),
           {
             featureName: "test-attribute-tags",
             moduleName,
@@ -120,7 +123,7 @@ function setupOpenMRS() {
         id: "hiv-baseline-ext-et",
         slot: "patient-chart-summary-dashboard-slot",
         load: getAsyncLifecycle(
-          () => import("./views/hiv-baseline/hiv-baseline-summary.component"),
+          () => import("./pages/hiv-baseline/hiv-baseline-summary.component"),
           {
             featureName: "hiv-baseline-summary",
             moduleName,
@@ -134,7 +137,7 @@ function setupOpenMRS() {
         name: "active-medications-widget-et",
         slot: "patient-chart-summary-dashboard-slot",
         load: getAsyncLifecycle(
-          () => import("./views/medications/active-medications.component"),
+          () => import("./pages/medications/active-medications.component"),
           options
         ),
         meta: {
@@ -147,7 +150,7 @@ function setupOpenMRS() {
         name: "vitals-overview-widget-et",
         slot: "patient-chart-summary-dashboard-slot",
         load: getAsyncLifecycle(
-          () => import("./views/vitals/vitals-summary.component"),
+          () => import("./pages/vitals/vitals-summary.component"),
           options
         ),
         meta: {
