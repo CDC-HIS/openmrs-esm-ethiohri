@@ -6,31 +6,31 @@ import { moduleName } from "../../../index";
 
 const columns = [
   {
-    key: "pastOI",
-    header: "Past OIs Recorded",
+    key: "bmi",
+    header: "Body Mass Index",
     getValue: (encounter) => {
-      return getData(encounter, "c52ecf45-bd6c-43ed-861b-9a2714878729");
+      return getData(encounter, "1cc8fe7f-fb70-49d8-9065-73654d852187");
     },
   },
   {
-    key: "lifeARTDate",
-    header: "Lifelong ART Start Date",
+    key: "stillOnTreatment",
+    header: "Still On Treatment",
     getValue: (encounter) => {
-      return getData(encounter, "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
-    key: "whoStaging",
-    header: "WHO Staging",
+    key: "functionalStatus",
+    header: "Functional Status",
     getValue: (encounter) => {
-      return getData(encounter, "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
-    key: "inhStartDate",
-    header: "INH Start Date",
+    key: "presentingComplaints",
+    header: "Presenting Complaints",
     getValue: (encounter) => {
-      return getData(encounter, "164852AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "14718b2b-d38a-4f68-8e22-8bc739ae43f7");
     },
   },
   {

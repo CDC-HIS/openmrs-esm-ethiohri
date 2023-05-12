@@ -16,34 +16,42 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         getValue: (encounter) => {
           return getData(
             encounter,
-            "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "b8cd8630-56dd-495e-8c84-e36a636febe7",
             true
           );
         },
       },
       {
-        key: "artStatus",
-        header: "ART Status",
-        getValue: (encounter) => {
-          return "---";
-        },
-      },
-      {
-        key: "artStartDate",
-        header: "ART Start Date",
+        key: "visitType",
+        header: "Visit Type",
         getValue: (encounter) => {
           return getData(
             encounter,
-            "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "b3f60308-cda4-41f9-af08-b98d2c1562c7",
+            false
+          );
+        },
+      },
+      {
+        key: "dateConfirmedHIVPositive",
+        header: "Date Confirmed HIV +",
+        getValue: (encounter) => {
+          return getData(
+            encounter,
+            "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             true
           );
         },
       },
       {
-        key: "followupStatus",
-        header: "Followup Status",
+        key: "monthsOnArt",
+        header: "Months On ART",
         getValue: (encounter) => {
-          return "---";
+          return getData(
+            encounter,
+            "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            false
+          );
         },
       },
       {

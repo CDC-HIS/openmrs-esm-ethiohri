@@ -2,20 +2,20 @@ name: Node.js CI
 
 on:
   push:
-    branches: [master,develop,etho_datepicker]
+    branches: [master, develop]
   pull_request:
-    branches: [master]
+    branches: [master, develop]
   release:
     types:
       - created
 
 env:
-  ESM_NAME: "@openmrs/esm-ethiohri-app"
+  ESM_NAME: "@icap-ethiopia/esm-ethiohri-app"
   JS_NAME: "openmrs-esm-ethiohri-app.js"
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -36,34 +36,33 @@ jobs:
             dist
 
   pre_release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     needs: build
 
-    #if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop'}}
 
     steps:
-      - run: echo "Uncomment the lines below and delete this one."
-      # - uses: actions/checkout@v2
-      # - name: Download Artifacts
-      #   uses: actions/download-artifact@v2
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v1
-      #   with:
-      #     node-version: "16.x"
-      #     registry-url: "https://registry.npmjs.org"
-      # - run: npm install
-      # - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      # - run: npm publish --access public --tag next
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: actions/checkout@v2
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+      - run: yarn
+      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
+      - run: yarn cipublish --access public --tag next --no-git-tag-version
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   release:
-    runs-on: ubuntu-20.04
-  
+    runs-on: ubuntu-latest
+
     needs: build
 
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'release' }}
 
     steps:
       - uses: actions/checkout@v2
@@ -74,18 +73,13 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: 'https://registry.npmjs.org'
-     
-      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      - run: yarn install
-      - run: yarn build
-      - run: yarn publish --access public --tag latest --no-git-tag-version 
+      - run: yarn
+      - run: yarn config set npmAuthToken "${NODE_AUTH_TOKEN}" && yarn cipublish --access public --tag latest
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
-    
-    
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
   dev:
-      runs-on: ubuntu-20.04
-      #Test
+      runs-on: ubuntu-latest
       needs: release
 
       if: ${{ github.ref == 'refs/heads/develop' }}
@@ -96,9 +90,27 @@ jobs:
         - name: Compute Timestamp
           run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
         - uses: garygrossgarten/github-action-ssh@release
-          name: Run the Update MicroFronEnd Script
+          name: Run the Update MicroFronEnd Script on dev server
           with:
               command: cd /usr/share/tomcat/frontendmodules/ && /bin/bash update_frontend_modules.sh
               host: ${{ secrets.ETHIOHRI_HOST }}
               username: ${{ secrets.ETHIOHRI_USER }}
               privateKey: ${{ secrets.ETHIOHRI_DEV_PRIVATE_KEY}}
+  demo:
+      runs-on: ubuntu-latest
+      needs: release
+
+      if: ${{ github.ref == 'refs/heads/develop' }}
+
+      steps:
+        - name: Download Artifacts
+          uses: actions/download-artifact@v3
+        - name: Compute Timestamp
+          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        - uses: garygrossgarten/github-action-ssh@release
+          name: Run the Update MicroFronEnd Script on Demo server
+          with:
+              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_modules.sh
+              host: ${{ secrets.ETHIOHRI_DEMO_HOST }}
+              username: ${{ secrets.ETHIOHRI_DEMO_USER }}
+              privateKey: ${{ secrets.ETHIOHRI_DEMO_PRIVATE_KEY}}

@@ -4,8 +4,11 @@ import IntakeAEncounterList from "./tabs/intake-a.component";
 import IntakeBEncounterList from "./tabs/intake-b.component";
 import FamilyInformationList from "./tabs/family-information.component";
 import PHDPList from "./tabs/phdp.component";
+import PositiveTrackingList from "./tabs/positive-tracking.component";
+import HivRetestList from "./tabs/retest.component";
 import styles from "./program-management.scss";
-import { EmptyStateComingSoon } from "@ohri/openmrs-esm-ohri-commons-lib";
+import PostExposureProphylaxis from "./tabs/post-exposure.component";
+import PreExposureScreeningList from "./tabs/pre-exposure-screening.component";
 
 const ProgramManagment: React.FC<{ patientUuid: string }> = ({
   patientUuid,
@@ -18,8 +21,10 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           <Tab>Intake B</Tab>
           <Tab>Family Members</Tab>
           <Tab>PHDP</Tab>
-          <Tab>DSD</Tab>
-          <Tab>Outcomes</Tab>
+          <Tab>HIV Positive Tracking</Tab>
+          <Tab>HIV Retest</Tab>
+          <Tab>Post Exposure Prophylaxis</Tab>
+          <Tab>Pre Exposure Screening</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -35,13 +40,16 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
             <PHDPList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <EmptyStateComingSoon displayText="DSD" headerTitle="DSD" />
+            <PositiveTrackingList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <EmptyStateComingSoon
-              displayText="Outcomes"
-              headerTitle="Outcomes"
-            />
+            <HivRetestList patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <PostExposureProphylaxis patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <PreExposureScreeningList patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>
