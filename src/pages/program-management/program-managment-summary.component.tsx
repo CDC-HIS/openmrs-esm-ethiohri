@@ -7,7 +7,6 @@ import PHDPList from "./tabs/phdp.component";
 import PositiveTrackingList from "./tabs/positive-tracking.component";
 import HivRetestList from "./tabs/retest.component";
 import styles from "./program-management.scss";
-import { EmptyStateComingSoon } from "@ohri/openmrs-esm-ohri-commons-lib";
 import PostExposureProphylaxis from "./tabs/post-exposure.component";
 import PreExposureScreeningList from "./tabs/pre-exposure-screening.component";
 
