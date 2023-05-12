@@ -1,0 +1,366 @@
+{
+    "name": "PMTCT",
+    "pages": [
+        {
+            "label": "HEI Enrollment",
+            "sections": [
+                {
+                    "label": "Infant Information",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Infants MRN",
+                            "type": "obs",
+                            "required": false,
+                            "id": "infantsMRN",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "162576AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "162576"
+                                    }
+                                ],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Enrollment date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "enrollmentDate",
+                            "questionOptions": {
+                                "rendering": "eth-date",
+                                "concept": "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "160555"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "HEI code",
+                            "type": "obs",
+                            "required": false,
+                            "id": "heiCode",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "162727AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "162727"
+                                    }
+                                ],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Infant referred",
+                            "type": "obs",
+                            "required": false,
+                            "id": "infantReferred",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "164849AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "164849"
+                                    }
+                                ],
+                                "answers": [
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    },
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Referring facility name",
+                            "type": "obs",
+                            "required": false,
+                            "id": "referringFacilityName",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "161550AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "NARROWER-THAN",
+                                        "type": "SNOMED-CT",
+                                        "value": "397670001"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "161550"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "hide": {
+                                "hideWhenExpression": "infantReferred != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "First name",
+                            "type": "obs",
+                            "required": false,
+                            "id": "firstName",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "2725"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "408677003"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "2725"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166102"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "408677003"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Middle name",
+                            "type": "obs",
+                            "required": false,
+                            "id": "middleName",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "716057004"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166574"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Last name",
+                            "type": "obs",
+                            "required": false,
+                            "id": "lastName",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "2724"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "397678008"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166103"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "397678008"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "2724"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Date of birth",
+                            "type": "obs",
+                            "required": false,
+                            "id": "dateOfBirth",
+                            "questionOptions": {
+                                "rendering": "eth-date",
+                                "concept": "166575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166575"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "184099003"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Place of birth",
+                            "type": "obs",
+                            "required": false,
+                            "id": "placeOfBirth",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "163531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "163531"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Age at Enrollment",
+                            "type": "obs",
+                            "required": false,
+                            "id": "ageAtEnrollment",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "160617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "423493009"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "160617"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Birth Wight",
+                            "type": "obs",
+                            "required": false,
+                            "id": "birthWeight",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "8ddaed89-5474-424a-a9e1-a8ad28b091fb",
+                                "conceptMappings": [],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Sex",
+                            "type": "obs",
+                            "required": false,
+                            "id": "sex",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "166025AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "NARROWER-THAN",
+                                        "type": "SNOMED-CT",
+                                        "value": "184100006"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166025"
+                                    }
+                                ],
+                                "answers": [
+                                    {
+                                        "concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Female gender"
+                                    },
+                                    {
+                                        "concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Male gender"
+                                    }
+                                ]
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "ARV Started",
+                            "type": "obs",
+                            "required": false,
+                            "id": "arvStarted",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "f6e38a71-c304-4835-984c-270e8d192218",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            },
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "processor": "EncounterFormProcessor",
+    "encounterType": "55fbd571-a8ec-4332-bd83-c6c5d4982d16",
+    "referencedForms": [],
+    "allowUnspecifiedAll": true
+}

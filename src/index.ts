@@ -3,6 +3,7 @@ import {
   defineConfigSchema,
   provide,
   getGlobalStore,
+  getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
@@ -12,6 +13,15 @@ import {
   registerControl,
 } from "@ohri/openmrs-ohri-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
+import {
+  createDashboardGroup,
+  createDashboardLink,
+} from "@openmrs/esm-patient-common-lib";
+import {
+  CHILD_HEALTH_SUMMARY,
+  MATERNAL_HEALTH_SUMMARY,
+  PMTCT_META,
+} from "./ethiohri-dashboard.meta";
 
 const importTranslation = require.context(
   "../translations",
@@ -156,6 +166,61 @@ function setupOpenMRS() {
         },
         online: { showAddVitals: true },
         offline: { showAddVitals: false },
+      },
+      {
+        id: "pmtct-ext",
+        slot: "patient-chart-dashboard-slot",
+        load: getSyncLifecycle(
+          createDashboardGroup({
+            title: "PMTCT",
+            slotName: "ethio-pmtct-slot",
+          }),
+          options
+        ),
+        meta: {
+          title: "PMTCT",
+          slotName: "ethio-pmtct-slot",
+        },
+      },
+      {
+        id: "maternal-health-ext",
+        slot: "ethio-pmtct-slot",
+        load: getSyncLifecycle(
+          createDashboardLink(MATERNAL_HEALTH_SUMMARY),
+          options
+        ),
+        meta: MATERNAL_HEALTH_SUMMARY,
+      },
+      {
+        id: "child-health-ext",
+        slot: "ethio-pmtct-slot",
+        load: getSyncLifecycle(
+          createDashboardLink(CHILD_HEALTH_SUMMARY),
+          options
+        ),
+        meta: CHILD_HEALTH_SUMMARY,
+      },
+      {
+        id: "maternal-health-chart-ext",
+        slot: "maternal-health-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/pmtct/maternal-health.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+      },
+      {
+        id: "child-health-chart-ext",
+        slot: "child-health-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/child-care/child-care.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
       },
     ],
   };
