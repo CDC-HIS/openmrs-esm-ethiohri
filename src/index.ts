@@ -2,7 +2,6 @@ import {
   getAsyncLifecycle,
   defineConfigSchema,
   provide,
-  getGlobalStore,
   getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
@@ -20,7 +19,6 @@ import {
 import {
   CHILD_HEALTH_SUMMARY,
   MATERNAL_HEALTH_SUMMARY,
-  PMTCT_META,
 } from "./ethiohri-dashboard.meta";
 
 const importTranslation = require.context(
