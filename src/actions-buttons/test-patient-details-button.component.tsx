@@ -1,7 +1,6 @@
 import React from "react";
 import { navigate } from "@openmrs/esm-framework";
 import { useTranslation } from "react-i18next";
-import styles from "./test-patient-details-button.component.scss";
 
 interface TestPatientDetailsButtonProps {
   onTransition?: () => void;
