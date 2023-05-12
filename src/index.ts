@@ -19,6 +19,7 @@ import {
 import {
   CHILD_HEALTH_SUMMARY,
   MATERNAL_HEALTH_SUMMARY,
+  PMTCT_META,
 } from "./ethiohri-dashboard.meta";
 
 const importTranslation = require.context(
@@ -168,17 +169,8 @@ function setupOpenMRS() {
       {
         id: "pmtct-ext",
         slot: "patient-chart-dashboard-slot",
-        load: getSyncLifecycle(
-          createDashboardGroup({
-            title: "PMTCT",
-            slotName: "ethio-pmtct-slot",
-          }),
-          options
-        ),
-        meta: {
-          title: "PMTCT",
-          slotName: "ethio-pmtct-slot",
-        },
+        load: getSyncLifecycle(createDashboardGroup(PMTCT_META), options),
+        meta: PMTCT_META,
       },
       {
         id: "maternal-health-ext",
