@@ -10,7 +10,7 @@ import ethiohriConfig from "./ethiohri-config";
 import {
   addToBaseFormsRegistry,
   registerControl,
-} from "@ohri/openmrs-ohri-form-engine-lib";
+} from "@openmrs/openmrs-form-engine-lib";
 import formsRegistry from "./forms/forms-registry";
 import {
   createDashboardGroup,
