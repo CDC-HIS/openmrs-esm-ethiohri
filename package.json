@@ -65,7 +65,7 @@
     "@openmrs/esm-framework": "next",
     "@openmrs/esm-patient-common-lib": "next",
     "@openmrs/esm-styleguide": "4.x",
-    "@openmrs/openmrs-form-engine-lib": "next",
+    "@openmrs/openmrs-form-engine-lib": "^1.0.0-pre.44",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.3.6",
     "@swc/jest": "^0.2.23",

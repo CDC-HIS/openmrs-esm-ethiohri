@@ -117,7 +117,10 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
   }, []);
 
   useEffect(() => {
-    if (encounterContext?.previousEncounter) {
+    if (
+      encounterContext?.previousEncounter &&
+      !isTrue(question.questionOptions.usePreviousValueDisabled)
+    ) {
       const prevValue = handler.getPreviousValue(
         question,
         encounterContext?.previousEncounter,
