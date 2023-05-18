@@ -55,6 +55,16 @@ function setupOpenMRS() {
     pages: [],
     extensions: [
       {
+        name: "reporting-db-link",
+        slot: "app-menu-slot",
+        load: getAsyncLifecycle(
+          () => import("./components/links/reporting-db-app-menu-link"),
+          options
+        ),
+        online: true,
+        offline: true,
+      },
+      {
         id: "ethiohri-program-summary-ext",
         slot: "program-management-summary-slot",
         load: getAsyncLifecycle(
