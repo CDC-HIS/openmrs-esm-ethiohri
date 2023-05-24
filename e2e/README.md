@@ -1,7 +1,7 @@
 # E2E Tests
 
 This directory contains an E2E test suite using the [Playwright](https://playwright.dev)
-framework. 
+framework. Check our [E2E guide](https://wiki.openmrs.org/display/docs/E2E+Tests) for more information about the E2E implementation. 
 
 ## Getting Started
 
