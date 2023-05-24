@@ -30,3 +30,28 @@ yarn start
 # OR to run on a different port for example 8090
 yarn start --port 8090
 ```
+
+## Running tests
+
+### Unit tests
+To run unit tests, use:
+
+```sh
+yarn test
+```
+
+### E2E tests
+
+To run E2E tests, make sure the dev server is running by using:
+
+```sh
+yarn start
+```
+
+Then, in a separate terminal, run:
+
+```sh
+yarn test-e2e --headed
+```
+
+Please read [our e2e docs](e2e/README.md) for more information about E2E testing.
