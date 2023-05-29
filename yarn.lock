@@ -1751,6 +1751,7 @@ __metadata:
     "@openmrs/esm-patient-common-lib": next
     "@openmrs/esm-styleguide": 4.x
     "@openmrs/openmrs-form-engine-lib": 1.0.0-pre.244
+    "@playwright/test": ^1.30.0
     "@swc/cli": ^0.1.57
     "@swc/core": ^1.3.6
     "@swc/jest": ^0.2.23
@@ -1768,6 +1769,7 @@ __metadata:
     concurrently: ^7.6.0
     css-loader: ^6.7.2
     dayjs: ^1.8.16
+    dotenv: ^16.0.3
     eslint: ^8.28.0
     eslint-config-prettier: ^8.5.0
     eslint-config-ts-react-important-stuff: ^3.0.0
@@ -3057,6 +3059,22 @@ __metadata:
   peerDependencies:
     webpack: 5.x
   checksum: 1e3bcbe413e91c131d702497c0715a1722e0338f18e8ac3096cffd8c1179a9ad5b3bb31af31a54d39ef2871f3588016e1f88246726d6cb6962b6f9f7b61f83ce
+  languageName: node
+  linkType: hard
+
+"@playwright/test@npm:^1.30.0":
+  version: 1.34.2
+  resolution: "@playwright/test@npm:1.34.2"
+  dependencies:
+    "@types/node": "*"
+    fsevents: 2.3.2
+    playwright-core: 1.34.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: 51e581386bebdd97a40c9d5304a04eb7e9ecf731206686a526e8990f2362174311ee681fa7cf4e58b103235e60232c326bfd6c764029ca9cbd69da55244cd2f9
   languageName: node
   linkType: hard
 
@@ -9942,6 +9960,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+  languageName: node
+  linkType: hard
+
 "download@npm:^7.1.0":
   version: 7.1.0
   resolution: "download@npm:7.1.0"
@@ -11505,7 +11530,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@npm:^2.3.2, fsevents@npm:~2.3.2":
+"fsevents@npm:2.3.2, fsevents@npm:^2.3.2, fsevents@npm:~2.3.2":
   version: 2.3.2
   resolution: "fsevents@npm:2.3.2"
   dependencies:
@@ -11515,7 +11540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
+"fsevents@patch:fsevents@2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
   resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
@@ -15862,6 +15887,15 @@ __metadata:
   dependencies:
     find-up: ^4.0.0
   checksum: 9863e3f35132bf99ae1636d31ff1e1e3501251d480336edb1c211133c8d58906bed80f154a1d723652df1fda91e01c7442c2eeaf9dc83157c7ae89087e43c8d6
+  languageName: node
+  linkType: hard
+
+"playwright-core@npm:1.34.2":
+  version: 1.34.2
+  resolution: "playwright-core@npm:1.34.2"
+  bin:
+    playwright: cli.js
+  checksum: 7902f973d47c3d6affb794f0120d9f318e9fb098606dc7152e18f254ed1ceb2bbeafc40620b12d48a14b628b31c1d7bd05cdfe920af085dadb21a51128684a4b
   languageName: node
   linkType: hard
 

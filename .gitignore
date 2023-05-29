@@ -67,6 +67,10 @@ dist/
 
 .DS_Store
 
+# Intellij integration
+*.iml
+.idea/
+
 # ignores for Yarn v3 w/o PNP
 .pnp.*
 .yarn/*
@@ -76,3 +80,9 @@ dist/
 !.yarn/sdks
 !.yarn/versions
 .yarn/install-state.gz
+
+# Playwright and e2e tests
+/test-results/
+/playwright-report/
+/playwright/.cache/
+e2e/storageState.json
