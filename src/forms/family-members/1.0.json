@@ -1269,7 +1269,7 @@
 		}
 	],
 	"processor": "EncounterFormProcessor",
-	"uuid": "xxxx",
+	"uuid": "8ea1c633-2582-42ca-8859-6cba03e72ac3",
 	"referencedForms": [],
 	"encounterType": "d384d248-04f8-42d3-9c49-3c44ab50f1d8",
 	"allowUnspecifiedAll": true

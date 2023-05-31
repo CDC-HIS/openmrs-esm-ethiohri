@@ -314,7 +314,7 @@
                             "required": false,
                             "id": "lmp",
                             "questionOptions": {
-                                "rendering": "date",
+                                "rendering": "eth-date",
                                 "concept": "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
                                     {
@@ -358,7 +358,7 @@
                             "required": false,
                             "id": "edd",
                             "questionOptions": {
-                                "rendering": "date",
+                                "rendering": "eth-date",
                                 "concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
                                     {
@@ -1038,7 +1038,7 @@
                             "required": false,
                             "id": "nextVisitDate",
                             "questionOptions": {
-                                "rendering": "date",
+                                "rendering": "eth-date",
                                 "concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
                                     {
@@ -1107,7 +1107,7 @@
         }
     ],
     "processor": "EncounterFormProcessor",
-    "uuid": "",
+    "uuid": "3329c50b-2cd2-44ab-af2b-06f3b914cc7e",
     "referencedForms": [],
     "encounterType": "df13ff58-d86a-42ec-ace1-5c3ad8045e2e",
     "allowUnspecifiedAll": true
