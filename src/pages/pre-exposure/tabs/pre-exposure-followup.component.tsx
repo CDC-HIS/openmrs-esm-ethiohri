@@ -7,31 +7,31 @@ import { moduleName } from "../../../index";
 
 const columns = [
   {
-    key: "hivTestResult",
-    header: "HIV Test Result",
+    key: "finalResult",
+    header: "Final Test Result",
     getValue: (encounter) => {
-      return getData(encounter, "159427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "e16b0068-b6a2-46b7-aba9-e3be00a7b4ab");
     },
   },
   {
-    key: "stiScreeningResult",
-    header: "STI Screening Result",
+    key: "followupStatus",
+    header: "Followup status",
     getValue: (encounter) => {
-      return getData(encounter, "7a643a93-3f11-4ad0-acfa-b15f2d7c8ddc");
+      return getData(encounter, "1f3a74f3-cafd-4bd0-9e3c-5251bd0c05e5");
     },
   },
   {
-    key: "hepititisBTestResult",
-    header: "Hepititis B Test Result",
+    key: "dispensedDose",
+    header: "Dispensed dose",
     getValue: (encounter) => {
-      return getData(encounter, "1322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "54e133c8-eaa7-4413-8442-5d1ed54a2db5");
     },
   },
   {
-    key: "prepStarted",
-    header: "PrEP Started",
+    key: "nextVisitDate",
+    header: "Next visit date",
     getValue: (encounter) => {
-      return getData(encounter, "3b4bc0b2-acbb-4fb5-82eb-6f0479915862");
+      return getData(encounter, "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   ,
