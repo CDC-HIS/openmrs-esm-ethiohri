@@ -18,8 +18,11 @@ import {
 } from "@openmrs/esm-patient-common-lib";
 import {
   CHILD_HEALTH_SUMMARY,
+  HIV_TESTING_SERVICE_META,
   MATERNAL_HEALTH_SUMMARY,
   PMTCT_META,
+  POST_META,
+  PREP_META,
 } from "./ethiohri-dashboard.meta";
 
 const importTranslation = require.context(
@@ -206,6 +209,63 @@ function setupOpenMRS() {
         slot: "child-health-slot",
         load: getAsyncLifecycle(
           () => import("./pages/child-care/child-care.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+      },
+      {
+        id: "prep-ext",
+        slot: "ohri-hiv-care-and-treatment-slot",
+        load: getSyncLifecycle(createDashboardLink(PREP_META), options),
+        meta: PREP_META,
+      },
+      {
+        id: "prep-chart-ext",
+        slot: "prep-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/pre-exposure/pre-exposure-summary.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+      },
+      {
+        id: "post-exposure-ext",
+        slot: "ohri-hiv-care-and-treatment-slot",
+        load: getSyncLifecycle(createDashboardLink(POST_META), options),
+        meta: POST_META,
+      },
+      {
+        id: "post-exposure-chart-ext",
+        slot: "post-exposure-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/post-exposure/post-exposure.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+      },
+      {
+        id: "hiv-testing-service-ext",
+        slot: "ohri-hiv-care-and-treatment-slot",
+        load: getSyncLifecycle(
+          createDashboardLink(HIV_TESTING_SERVICE_META),
+          options
+        ),
+        meta: HIV_TESTING_SERVICE_META,
+      },
+      {
+        id: "hiv-testing-chart-ext",
+        slot: "hiv-testing-service-slot",
+        load: getAsyncLifecycle(
+          () =>
+            import(
+              "./pages/hiv-testing-service/hiv-testing-service-summary.component"
+            ),
           options
         ),
         meta: {
