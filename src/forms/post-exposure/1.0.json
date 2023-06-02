@@ -157,8 +157,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 200,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -188,7 +188,7 @@
 								"answers": [
 									{
 										"concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Male gender",
+										"label": "Male",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -214,7 +214,7 @@
 									},
 									{
 										"concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Female gender",
+										"label": "Female",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -446,8 +446,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "162603AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -940,6 +940,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "arvRegimen"
 						},
 						{
@@ -948,10 +951,13 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "0885bb1e-6a2e-47d0-a597-8e8da07e4e59",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": ""
 							},
+							"hide": {
+								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "timeBetweenExposure"
 						}
 					]

@@ -306,6 +306,9 @@
                                     }
                                 ]
                             },
+                            "hide": {
+                                "hideWhenExpression": "sex !== 'F'"
+                            },
                             "validators": []
                         },
                         {
@@ -349,6 +352,9 @@
                                     }
                                 ],
                                 "answers": []
+                            },
+                            "hide": {
+                                "hideWhenExpression": "isClientPregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "validators": []
                         },
@@ -413,6 +419,9 @@
                                     }
                                 ],
                                 "answers": []
+                            },
+                            "hide": {
+                                "hideWhenExpression": "isClientPregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "validators": []
                         },
@@ -577,6 +586,9 @@
                                     }
                                 ]
                             },
+                            "hide": {
+                                "hideWhenExpression": "familyPlanningMethod !== '190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
                             "validators": []
                         },
                         {
@@ -693,6 +705,9 @@
                                         "label": "Other non-coded"
                                     }
                                 ]
+                            },
+                            "hide": {
+                                "hideWhenExpression": "screenedForSTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             }
                         },
                         {
@@ -721,6 +736,9 @@
                                     }
                                 ],
                                 "answers": []
+                            },
+                            "hide": {
+                                "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || isEmpty('screeningResultForSTI')"
                             },
                             "validators": []
                         },
@@ -787,6 +805,9 @@
                                     }
                                 ],
                                 "answers": []
+                            },
+                            "hide": {
+                                "hideWhenExpression": "screenedForTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "validators": []
                         },
@@ -888,6 +909,9 @@
                                     }
                                 ]
                             },
+                            "hide": {
+                                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
                             "validators": []
                         },
                         {
@@ -926,6 +950,9 @@
                                     }
                                 ]
                             },
+                            "hide": {
+                                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
                             "validators": []
                         },
                         {
@@ -951,6 +978,9 @@
                                         "label": "Unknown"
                                     }
                                 ]
+                            },
+                            "hide": {
+                                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "validators": []
                         },
@@ -985,6 +1015,9 @@
                                         "label": "Other non-coded"
                                     }
                                 ]
+                            },
+                            "hide": {
+                                "hideWhenExpression": "followupStatus !== '167155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "validators": []
                         },

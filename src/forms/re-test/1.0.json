@@ -424,6 +424,9 @@
 								"rendering": "text",
 								"concept": "07b06c66-7eaa-40d0-b9a5-1cbf167e97b6"
 							},
+							"hide": {
+								"hideWhenExpression": "entryPoint !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherEntryPoint"
 						},
 						{
@@ -953,6 +956,9 @@
 								"rendering": "text",
 								"concept": "c2d82408-ab97-4b5f-82c0-3819c2d36a46"
 							},
+							"hide": {
+								"hideWhenExpression": "actionTakenForDiscrepant !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherActionTakenForDiscrepent"
 						}
 					]
@@ -1576,6 +1582,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "actionTaken !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "reasonWhyArtNotInitiated"
 						},
 						{
@@ -1585,6 +1594,9 @@
 								"rendering": "text",
 								"concept": "0e10d5b1-ff3f-4c87-a6bb-0b5bbc8ebec2"
 							},
+							"hide": {
+								"hideWhenExpression": "reasonWhyArtNotInitiated !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherReasonArtNotInitiatedTheSameDay"
 						},
 						{
