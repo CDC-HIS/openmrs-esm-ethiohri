@@ -53,16 +53,16 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: yarn
       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      - run: yarn cipublish --access public --tag next --no-git-tag-version
+      - run: yarn config set npmAuthToken "${ICAP_ACCESS_TOKEN}" && yarn cipublish --access public --tag next --no-git-tag-version
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
 
   release:
     runs-on: ubuntu-latest
 
     needs: build
 
-    if: ${{ github.event_name == 'release' }}
+    if: ${{ github.event_name == 'release'}}
 
     steps:
       - uses: actions/checkout@v2
@@ -74,9 +74,10 @@ jobs:
           node-version: "16.x"
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
-      - run: yarn config set npmAuthToken "${NODE_AUTH_TOKEN}" && yarn cipublish --access public --tag latest
+      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
+      - run: yarn config set npmAuthToken "${ICAP_ACCESS_TOKEN}" && yarn cipublish --access public --tag latest --no-git-tag-version
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
 
   dev:
       runs-on: ubuntu-latest
