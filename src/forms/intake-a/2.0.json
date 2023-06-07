@@ -484,6 +484,22 @@
 				"id": "placeOfDelivery"
 			  },
 			  {
+				"label": "Other place of delivery",
+				"type": "obs",
+				"required": false,
+				"id": "otherPlaceOfDelivery",
+				"questionOptions": {
+				  "rendering": "text",
+				  "concept": "2f3c7d4f-198f-40ce-94d2-a968c8c4bea4",
+				  "conceptMappings": [],
+				  "answers": []
+				},
+				"hide": {
+					"hideWhenExpression": "placeOfDelivery !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  },
+				"validators": []
+			  },
+			  {
 				"label": "Mode of delivery",
 				"type": "obs",
 				"questionOptions": {
@@ -562,7 +578,23 @@
 					}
 				  ]
 				},
-				"id": "mode_of_delivery"
+				"id": "modeOfDelivery"
+			  },
+			  {
+				"label": "Other mode of delivery",
+				"type": "obs",
+				"required": false,
+				"id": "otherModeOfDelivery",
+				"questionOptions": {
+				  "rendering": "text",
+				  "concept": "ed73985e-cbab-4912-8275-0c037d5674a3",
+				  "conceptMappings": [],
+				  "answers": []
+				},
+				"hide": {
+					"hideWhenExpression": "modeOfDelivery !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  },
+				"validators": []
 			  }
 			]
 		  },
