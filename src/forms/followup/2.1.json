@@ -3540,51 +3540,78 @@
 				"id": "specimenSent"
 			  },
 			  {
-				"label": "Diagnostic test type",
+				"label": "LF-LAM result",
 				"type": "obs",
+				"required": false,
+				"id": "lfLamResult",
+				"questionOptions": {
+				  "rendering": "select",
+				  "concept": "98ff157c-c736-4078-8acd-847a74accb64",
+				  "conceptMappings": [],
+				  "answers": [
+					{
+					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Positive"
+					},
+					{
+					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+					  "label": "Negative"
+					}
+				  ]
+				},
+				"hide": {
+					"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  }
+			  },
+			  {
+				"label": "Gene-Xpert result",
+				"type": "obs",
+				"required": false,
+				"id": "geneXpertResult",
+				"questionOptions": {
+				  "rendering": "select",
+				  "concept": "a10a7db7-5ec5-4d62-9b35-cc9ac222a05c",
+				  "conceptMappings": [],
+				  "answers": [
+					{
+					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Positive"
+					},
+					{
+					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+					  "label": "Negative"
+					}
+				  ]
+				},
+				"hide": {
+					"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  }
+			  },
+			  {
+				"label": "Other TB diagnostic test",
+				"type": "obs",
+				"required": false,
+				"id": "diagnosticTest",
 				"questionOptions": {
 				  "rendering": "select",
 				  "concept": "002240c0-8672-4631-a32d-9bb9c34e4665",
 				  "answers": [
 					{
 					  "concept": "3a6f3d9d-623c-452b-8f96-bbdb8805aa97",
-					  "label": "Smear microscopy only",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "8fc383d0-7739-40ba-91a9-d0351c533284",
-					  "label": "Gene-Xpert(MTB/RIF assay) with other testing",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "d89ac55a-6c83-458b-a31d-2a28965955d5",
-					  "label": "Gene-Xpert(MTB/RIF assay) without other testing",
-					  "conceptMappings": []
+					  "label": "Smear microscopy"
 					},
 					{
 					  "concept": "9224c3c7-d2d7-4165-88cb-81e5aec30d70",
-					  "label": "Additional test other than Gene-Xpert",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "9f4d51da-b09f-4de7-ac55-678f700eadfd",
-					  "label": "LF-LAM with Gene-Xpert (MTB/RIF assay)",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "34e4571e-7950-42e8-9936-a204f5f01a5b",
-					  "label": "LF-LAM",
-					  "conceptMappings": []
+					  "label": "Additional test"
 					}
 				  ]
 				},
 				"hide": {
-				  "hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"id": "diagnosticTest"
+					"hideWhenExpression": "specimenSent !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  }
 			  },
 			  {
-				"label": "TB diagnostic test result",
+				"label": "Other TB diagnostic test result",
 				"type": "obs",
 				"questionOptions": {
 				  "rendering": "radio",
@@ -6554,14 +6581,14 @@
 			  {
 				"label": "Viral load status",
 				"type": "obs",
+				"required": false,
+				"id": "viralLoadStatus",
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
-				  "calculate": {
-					"calculateExpression": "calcViralLoadStatus('viralLoadCount')"
-				  },
 				  "conceptMappings": [
 					{
+					  "relationship": "SAME-AS",
 					  "type": "ETHIOHRI",
 					  "value": "viralLoadStatus"
 					}
@@ -6569,30 +6596,25 @@
 				  "answers": [
 					{
 					  "concept": "5d5e42cc-acc4-4069-b3a8-7163e0db5d96",
-					  "label": "Suppressed",
-					  "conceptMappings": [
-						{
-						  "type": "ETHIOHRI",
-						  "value": "suppressed"
-						}
-					  ]
+					  "label": "Suppressed (<=50)"
+					},
+					{
+					  "concept": "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Low Level Viremia (51-1000)"
+					},
+					{
+					  "concept": "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "High Viral Load (>1000 copies/ML)"
 					},
 					{
 					  "concept": "a6768be6-c08e-464d-8f53-5f4229508e54",
-					  "label": "Unsuppressed",
-					  "conceptMappings": [
-						{
-						  "type": "ETHIOHRI",
-						  "value": "unsuppressed"
-						}
-					  ]
+					  "label": "Unsuppressed"
 					}
 				  ]
 				},
 				"hide": {
-				  "hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"id": "viralLoadStatus"
+					"hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  }
 			  },
 			  {
 				"label": "Lab ID",
