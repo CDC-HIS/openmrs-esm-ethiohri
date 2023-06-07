@@ -128,169 +128,49 @@
 			  {
 				"label": "Who knows your/your child's HIV positive status",
 				"type": "obs",
+				"required": false,
+				"id": "whoKnows",
 				"questionOptions": {
 				  "rendering": "select",
 				  "concept": "de8937b6-6ebe-4302-a488-2198be481839",
 				  "conceptMappings": [
 					{
+					  "relationship": "SAME-AS",
 					  "type": "ETHIOHRI",
 					  "value": "whoKnowsChildsHIVPositiveStatus"
 					}
 				  ],
 				  "answers": [
 					{
-					  "concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Spouse",
-					  "conceptMappings": [
-						{
-						  "type": "AMPATH",
-						  "value": "5617"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5617"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "127848009"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "5617"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "127848009"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "5617"
-						}
-					  ]
-					},
-					{
-					  "concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Sibling(s)",
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "972"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "375005"
-						},
-						{
-						  "type": "PIH",
-						  "value": "2178"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "972"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "972"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "375005"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "972"
-						},
-						{
-						  "type": "PIH",
-						  "value": "2178"
-						}
-					  ]
-					},
-					{
-					  "concept": "54848ad0-6d2e-40b0-8143-57cabe3fc6e1",
-					  "label": "Relatives",
-					  "conceptMappings": [
-						{
-						  "type": "ETHIOHRI",
-						  "value": "relatives"
-						}
-					  ]
-					},
-					{
 					  "concept": "1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Parent(s)",
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "1527"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "40683002"
-						},
-						{
-						  "type": "PIH",
-						  "value": "2173"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "40683002"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1672"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1527"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1672"
-						},
-						{
-						  "type": "PIH",
-						  "value": "2173"
-						}
-					  ]
+					  "label": "Parent(s)"
+					},
+					{
+					  "concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Spouse"
 					},
 					{
 					  "concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Own child(ren)",
-					  "conceptMappings": [
-						{
-						  "type": "AMPATH",
-						  "value": "1565"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "410601007"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1671"
-						},
-						{
-						  "type": "PIH",
-						  "value": "6396"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1528"
-						}
-					  ]
+					  "label": "Own child(ren)"
 					},
 					{
 					  "concept": "5618AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Friends",
-					  "conceptMappings": []
+					  "label": "Friends"
+					},
+					{
+					  "concept": "54848ad0-6d2e-40b0-8143-57cabe3fc6e1",
+					  "label": "Relatives"
+					},
+					{
+					  "concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Sibling(s)"
+					},
+					{
+					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Other"
 					}
 				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "hivDisclosure != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"id": "whoKnows"
+				}
 			  },
 			  {
 				"label": "Other person that knows your/your child's HIV positive status",

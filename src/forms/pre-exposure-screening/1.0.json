@@ -304,8 +304,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -329,8 +329,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -360,8 +360,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             }
           ]
@@ -424,8 +424,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "hepatitisTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "hepatitisTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -794,8 +794,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "pregnancyStatus == '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "pregnancyStatus == '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             }
           ]
@@ -847,7 +847,11 @@
                   },
                   {
                     "concept": "153872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "female genital ulcer disease"
+                    "label": "Genital ulcer"
+                  },
+                  {
+                    "concept": "404a54d8-3ed2-4889-8331-e52beb6f1e70",
+                    "label": "Urethral discharge"
                   },
                   {
                     "concept": "123396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -859,7 +863,7 @@
                   },
                   {
                     "concept": "125203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Swelling of scrotum"
+                    "label": "Scrotal swelling"
                   },
                   {
                     "concept": "e5e4cb90-b6ee-4b15-b920-2efafc359ee3",
@@ -867,14 +871,10 @@
                   },
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other non-coded"
+                    "label": "Other"
                   }
                 ]
-              },
-              "hide": {
-								"hideWhenExpression": "screenedForSti !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-              "validators": []
+              }
             },
             {
               "label": "STI treatment started ",
@@ -897,8 +897,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "screeningResult == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || isEmpty('screeningResult')"
-							},
+                "hideWhenExpression": "screeningResult == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || isEmpty('screeningResult')"
+              },
               "validators": []
             },
             {
@@ -929,8 +929,8 @@
                 "answers": []
               },
               "hide": {
-								"hideWhenExpression": "stiTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "stiTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             }
           ]
@@ -1085,8 +1085,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1106,13 +1106,13 @@
                   {
                     "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "No"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
                   }
                 ]
-              },
-              "hide": {
-								"hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-              "validators": []
+              }
             },
             {
               "label": "How long has your partner been on treatment ",
@@ -1126,8 +1126,8 @@
                 "answers": []
               },
               "hide": {
-								"hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1137,7 +1137,7 @@
               "id": "lastViralLoadResultOfYourPartner",
               "questionOptions": {
                 "rendering": "select",
-                "concept": "167486AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "9eb17c98-d76d-4ee1-b706-b33641f63f99",
                 "conceptMappings": [
                   {
                     "relationship": "NARROWER-THAN",
@@ -1152,15 +1152,19 @@
                 ],
                 "answers": [
                   {
+                    "concept": "5d5e42cc-acc4-4069-b3a8-7163e0db5d96",
+                    "label": "Suppressed"
+                  },
+                  {
+                    "concept": "a6768be6-c08e-464d-8f53-5f4229508e54",
+                    "label": "Unsuppressed"
+                  },
+                  {
                     "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Unknown"
                   }
                 ]
-              },
-              "hide": {
-								"hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-              "validators": []
+              }
             },
             {
               "label": "Client at substantial risk  for HIV infection",
@@ -1397,8 +1401,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1433,8 +1437,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             }
           ]
@@ -1536,8 +1540,8 @@
                 "answers": []
               },
               "hide": {
-								"hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1565,8 +1569,8 @@
                 ]
               },
               "hide": {
-								"hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1592,8 +1596,8 @@
                 "answers": []
               },
               "hide": {
-								"hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1624,5 +1628,5 @@
   "uuid": "e7bce9e2-5ed6-4cbb-ab93-3531a4c33760",
   "referencedForms": [],
   "encounterType": "69b60ded-868d-4b6a-8f49-b0c84c18cec6",
-	"allowUnspecifiedAll": true
+  "allowUnspecifiedAll": true
 }
