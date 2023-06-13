@@ -75,7 +75,7 @@ jobs:
           node-version: "16.x"
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
-      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
+      - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }} + 1/" 'package.json'
       - run: yarn config set npmAuthToken "${ICAP_ACCESS_TOKEN}" && yarn cipublish --access public --tag latest --no-git-tag-version
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
