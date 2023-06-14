@@ -8,103 +8,116 @@
 					"label": "Issues Addressed",
 					"isExpanded": "true",
 					"questions": [
-						{
-							"label": "Date",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "160753"
-									},
-									{
-										"type": "CIEL",
-										"value": "160753"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "439771001"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "439771001"
-									}
-								]
-							},
-							"id": "datePHDP"
-						},
-								{
-									"label": "Issues Addressed",
-									"type": "obs",
-									"questionOptions": {
-										"rendering": "checkbox",
-										"concept": "bbcdc4d4-8e9e-41ab-b197-2b5d97c1a7e0",
-										"answers": [
-											{
-												"concept": "861a38bc-69cf-48f5-86a5-220d9c92c557",
-												"label": "Basic HIV & TB Transmission Education",
-												"conceptMappings": []
-											},
-											{
-												"concept": "00c38fb5-f6d3-4ecd-933d-84b8e7a2bc8b",
-												"label": "Prevention: Abstinence, Safer Sex, Condoms",
-												"conceptMappings": []
-											},
-											{
-												"concept": "379e9981-09db-495e-8809-ed3f5ecea7ae",
-												"label": "Positive Living",
-												"conceptMappings": []
-											},
-											{
-												"concept": "088303a1-8e4d-436e-b919-e3813f400221",
-												"label": "Progression of Disease",
-												"conceptMappings": []
-											},
-											{
-												"concept": "fbc970ba-044c-4d48-8114-0d6538560987",
-												"label": "Available  Treatment/  Prophylaxis CPT, IPT,FPT",
-												"conceptMappings": []
-											},
-											{
-												"concept": "53b65b6b-2f57-4955-997c-f7fe8b2e17f8",
-												"label": "Education on Essentials of ART",
-												"conceptMappings": []
-											},
-											{
-												"concept": "5dd7af11-8660-44ed-82e2-d9c259d381d7",
-												"label": "Why Complete Adherence Needed",
-												"conceptMappings": []
-											},
-											{
-												"concept": "7cf784f8-8995-4f0d-adf4-3a4911174548",
-												"label": "Explain Dose, When to Take",
-												"conceptMappings": []
-											},
-											{
-												"concept": "c747f426-b251-4c21-aced-30e48fda4a19",
-												"label": "What Side Effects & How to Manage",
-												"conceptMappings": []
-											},
-											{
-												"concept": "54bea05b-ccb7-457f-adda-3477c1ff69ec",
-												"label": "What to Do If One Forgets Dose",
-												"conceptMappings": []
-											}
-										]
-									},
-									"id": "issuesAddressed"
-								},
+						
 								{
 									"label": "Group 1",
 									"type": "obsGroup",
 									"questionOptions": {
 										"rendering": "group",
-										"concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a"
+										"concept": "246831e5-65e8-411f-aac9-57adcc4fb12c"
 									},
 									"id": "group1",
+									"questions": [
+										{
+											"label": "Date",
+											"type": "obs",
+											"questionOptions": {
+												"rendering": "eth-date",
+												"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+												"weeksList": "",
+												"conceptMappings": [
+													{
+														"type": "CIEL",
+														"value": "160753"
+													},
+													{
+														"type": "CIEL",
+														"value": "160753"
+													},
+													{
+														"type": "SNOMED-CT",
+														"value": "439771001"
+													},
+													{
+														"type": "SNOMED-CT",
+														"value": "439771001"
+													}
+												]
+											},
+											"id": "datePHDP"
+										},
+										{
+											"label": "Issues Addressed",
+											"type": "obs",
+											"questionOptions": {
+														"rendering": "checkbox",
+														"concept": "bbcdc4d4-8e9e-41ab-b197-2b5d97c1a7e0",
+														"answers": [
+															{
+																"concept": "861a38bc-69cf-48f5-86a5-220d9c92c557",
+																"label": "Basic HIV & TB Transmission Education",
+																"conceptMappings": []
+															},
+															{
+																"concept": "00c38fb5-f6d3-4ecd-933d-84b8e7a2bc8b",
+																"label": "Prevention: Abstinence, Safer Sex, Condoms",
+																"conceptMappings": []
+															},
+															{
+																"concept": "379e9981-09db-495e-8809-ed3f5ecea7ae",
+																"label": "Positive Living",
+																"conceptMappings": []
+															},
+															{
+																"concept": "088303a1-8e4d-436e-b919-e3813f400221",
+																"label": "Progression of Disease",
+																"conceptMappings": []
+															},
+															{
+																"concept": "fbc970ba-044c-4d48-8114-0d6538560987",
+																"label": "Available  Treatment/  Prophylaxis CPT, IPT,FPT",
+																"conceptMappings": []
+															},
+															{
+																"concept": "53b65b6b-2f57-4955-997c-f7fe8b2e17f8",
+																"label": "Education on Essentials of ART",
+																"conceptMappings": []
+															},
+															{
+																"concept": "5dd7af11-8660-44ed-82e2-d9c259d381d7",
+																"label": "Why Complete Adherence Needed",
+																"conceptMappings": []
+															},
+															{
+																"concept": "7cf784f8-8995-4f0d-adf4-3a4911174548",
+																"label": "Explain Dose, When to Take",
+																"conceptMappings": []
+															},
+															{
+																"concept": "c747f426-b251-4c21-aced-30e48fda4a19",
+																"label": "What Side Effects & How to Manage",
+																"conceptMappings": []
+															},
+															{
+																"concept": "54bea05b-ccb7-457f-adda-3477c1ff69ec",
+																"label": "What to Do If One Forgets Dose",
+																"conceptMappings": []
+															}
+														]
+											},
+											"id": "issuesAddressed"
+										}
+										
+									]
+								},
+								{
+									"label": "Group 2",
+									"type": "obsGroup",
+									"questionOptions": {
+										"rendering": "repeating",
+										"concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a"
+									},
+									"id": "group2",
 									"questions": [
 										{
 											"label": "Conclusion",
