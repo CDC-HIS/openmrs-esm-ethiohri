@@ -1,3 +1,8 @@
+export const HIV_CARE_AND_TREATMENT = {
+  title: "HIV Care and Treatment",
+  slotName: "hiv-care-and-treatment-slot",
+};
+
 export const PMTCT_META = {
   title: "PMTCT",
   slotName: "ethio-pmtct-slot",
@@ -26,4 +31,14 @@ export const POST_META = {
 export const HIV_TESTING_SERVICE_META = {
   title: "HIV Testing Service",
   slot: "hiv-testing-service-slot",
+};
+
+export const PROGRAM_MANAGEMENT_META = {
+  title: "Program Management",
+  slot: "program-management-slot",
+};
+
+export const CLINICAL_VISITS = {
+  title: "Clinical Visits",
+  slot: "clinical-visits-slot",
 };

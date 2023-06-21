@@ -32,7 +32,9 @@
           "offline-tools-patient-chart-actions-dashboard-link",
           "results-summary-dashboard",
           "test-results-summary-dashboard",
-          "ohri-covid"
+          "ohri-covid",
+          "ohri-hiv-care-and-treatment",
+          "ohri-hiv-prevention"
         ]
       }
     }
@@ -77,7 +79,11 @@
           "partner-notification-services",
           "lab-results-summary-dashboard",
           "medications-summary",
-          "appointments-summary"
+          "appointments-summary",
+          "program-management-summary",
+          "visits-summary",
+          "adherence-counselling-summary",
+          "hts-service-summary-dashboard"
         ]
       }
     }
