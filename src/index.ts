@@ -18,11 +18,14 @@ import {
 } from "@openmrs/esm-patient-common-lib";
 import {
   CHILD_HEALTH_SUMMARY,
+  CLINICAL_VISITS,
+  HIV_CARE_AND_TREATMENT,
   HIV_TESTING_SERVICE_META,
   MATERNAL_HEALTH_SUMMARY,
   PMTCT_META,
   POST_META,
   PREP_META,
+  PROGRAM_MANAGEMENT_META,
 } from "./ethiohri-dashboard.meta";
 
 const importTranslation = require.context(
@@ -57,56 +60,6 @@ function setupOpenMRS() {
   return {
     pages: [],
     extensions: [
-      {
-        id: "ethiohri-program-summary-ext",
-        slot: "program-management-summary-slot",
-        load: getAsyncLifecycle(
-          () =>
-            import(
-              "./pages/program-management/program-managment-summary.component"
-            ),
-          {
-            featureName: "program-summary-extension",
-            moduleName,
-          }
-        ),
-      },
-      {
-        id: "hts-service-summary-list-ext",
-        slot: "hts-service-summary-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/hiv-summary/hiv-patient-summary.component"),
-          {
-            featureName: "service-summary-extension",
-            moduleName,
-          }
-        ),
-      },
-      {
-        id: "ethiohri-visits-summary-ext",
-        slot: "visits-summary-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/visits/visits-summary.component"),
-          {
-            featureName: "visit-summary-extension",
-            moduleName,
-          }
-        ),
-      },
-      {
-        id: "ethiohri-adherence-counselling-summary-ext",
-        slot: "adherence-counselling-summary-slot",
-        load: getAsyncLifecycle(
-          () =>
-            import(
-              "./pages/adherence-counselling/adherence-counselling-summary.component"
-            ),
-          {
-            featureName: "adherence-summary-extension",
-            moduleName,
-          }
-        ),
-      },
       {
         id: "test-patient-details-button",
         slot: "patient-actions-slot",
@@ -170,6 +123,55 @@ function setupOpenMRS() {
         offline: { showAddVitals: false },
       },
       {
+        id: "hiv-care-and-treatment-ext",
+        slot: "patient-chart-dashboard-slot",
+        load: getSyncLifecycle(
+          createDashboardGroup(HIV_CARE_AND_TREATMENT),
+          options
+        ),
+        meta: HIV_CARE_AND_TREATMENT,
+      },
+      {
+        id: "program-management-ext",
+        slot: "hiv-care-and-treatment-slot",
+        load: getSyncLifecycle(
+          createDashboardLink(PROGRAM_MANAGEMENT_META),
+          options
+        ),
+        meta: PROGRAM_MANAGEMENT_META,
+      },
+      {
+        id: "program-management-chart-ext",
+        slot: "program-management-slot",
+        load: getAsyncLifecycle(
+          () =>
+            import(
+              "./pages/program-management/program-managment-summary.component"
+            ),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+      },
+      {
+        id: "clinical-visits-ext",
+        slot: "hiv-care-and-treatment-slot",
+        load: getSyncLifecycle(createDashboardLink(CLINICAL_VISITS), options),
+        meta: CLINICAL_VISITS,
+      },
+      {
+        id: "clinical-visits-chart-ext",
+        slot: "clinical-visits-slot",
+        load: getAsyncLifecycle(
+          () => import("./pages/visits/visits-summary.component"),
+          options
+        ),
+        meta: {
+          columnSpan: 4,
+        },
+      },
+      {
         id: "pmtct-ext",
         slot: "patient-chart-dashboard-slot",
         load: getSyncLifecycle(createDashboardGroup(PMTCT_META), options),
@@ -217,7 +219,7 @@ function setupOpenMRS() {
       },
       {
         id: "prep-ext",
-        slot: "ohri-hiv-care-and-treatment-slot",
+        slot: "hiv-care-and-treatment-slot",
         load: getSyncLifecycle(createDashboardLink(PREP_META), options),
         meta: PREP_META,
       },
@@ -234,7 +236,7 @@ function setupOpenMRS() {
       },
       {
         id: "post-exposure-ext",
-        slot: "ohri-hiv-care-and-treatment-slot",
+        slot: "hiv-care-and-treatment-slot",
         load: getSyncLifecycle(createDashboardLink(POST_META), options),
         meta: POST_META,
       },
@@ -251,7 +253,7 @@ function setupOpenMRS() {
       },
       {
         id: "hiv-testing-service-ext",
-        slot: "ohri-hiv-care-and-treatment-slot",
+        slot: "hiv-care-and-treatment-slot",
         load: getSyncLifecycle(
           createDashboardLink(HIV_TESTING_SERVICE_META),
           options
