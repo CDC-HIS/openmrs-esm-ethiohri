@@ -301,9 +301,6 @@
 					"rendering": "repeating",
 					"concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a"
 				},
-				"hide": {
-					"hideWhenExpression": "hasFamilyMember !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
 				"id": "group",
 				"questions": [
 					{
@@ -613,9 +610,6 @@
 						  "weeksList": "",
 						  "concept": "a4c7ffa9-ba89-4f7d-ae01-50c139527ce4"
 						},
-						"hide": {
-						  "hideWhenExpression": "counselledForHIV !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
 						"id": "counsellationDate"
 					  },
 					  {
@@ -718,9 +712,6 @@
 							  "value": "164400"
 							}
 						  ]
-						},
-						"hide": {
-						  "hideWhenExpression": "testedForHIV !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 						},
 						"id": "hivTestDate"
 					  },
@@ -900,9 +891,6 @@
 						  "rendering": "date",
 						  "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
 						},
-						"hide": {
-						  "hideWhenExpression": "enrolledInCare !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
 						"id": "dateEnrolledInCare"
 					  },
 					  {
@@ -1068,9 +1056,6 @@
 							}
 						  ]
 						},
-						"hide": {
-						  "hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
 						"id": "artStartDate"
 					  },
 					  {
@@ -1085,9 +1070,6 @@
 							  "value": "164402"
 							}
 						  ]
-						},
-						"hide": {
-						  "hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 						},
 						"id": "uniqueArtNumber"
 					  },
