@@ -8,6 +8,8 @@ import retest_1_0 from "./re-test/1.0.json";
 import post_exposure_1_0 from "./post-exposure/1.0.json";
 import pre_exposure_screening_1_0 from "./pre-exposure-screening/1.0.json";
 import pmtct_1_0 from "./pmtct/1.0.json";
+import pre_exposure_followup_1_0 from "./pre-exposure-followup/1.0.json";
+import followup_2_0 from "./followup/2.2.json";
 
 export default {
   eth_hiv: {
@@ -40,6 +42,12 @@ export default {
     },
     pmtct: {
       "1.0": pmtct_1_0,
+    },
+    pre_exposure_followup: {
+      "1.0": pre_exposure_followup_1_0,
+    },
+    followup2: {
+      "1.0": followup_2_0,
     },
   },
 };

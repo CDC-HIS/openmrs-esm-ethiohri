@@ -403,6 +403,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "entryPoint !== '163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "entryPointWithinTheFacility"
 						},
 						{
@@ -418,6 +421,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "entryPointWithinTheFacility !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherEntryPointWithinTheFacility"
 						},
 						{
@@ -551,6 +557,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "entryPoint !== '164407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "entryPointOutsideTheFacility"
 						},
 						{
@@ -566,6 +575,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "entryPointOutsideTheFacility !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherEntryPointOutsideTheFacility"
 						}
 					]
@@ -689,6 +701,9 @@
 								"concept": "902faabc-57bd-4fdf-bcaa-e3f8866ebbaf",
 								"weeksList": ""
 							},
+							"hide": {
+								"hideWhenExpression": "linkedToCareAndTreatment !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "dateLinkedToCareAndTreatment"
 						}
 					]
@@ -1006,6 +1021,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "startedArt !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "reasonForNotStartingArtTheSameDay"
 						},
 						{
@@ -1015,6 +1033,9 @@
 								"rendering": "text",
 								"concept": "0e10d5b1-ff3f-4c87-a6bb-0b5bbc8ebec2"
 							},
+							"hide": {
+								"hideWhenExpression": "reasonForNotStartingArtTheSameDay !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherReasonForNotStartingArtTheSameDay"
 						},
 						{
@@ -1104,6 +1125,9 @@
 								"rendering": "text",
 								"concept": "88db7cd8-3425-4189-9d7c-dd14d00308af"
 							},
+							"hide": {
+								"hideWhenExpression": "planForNextStep !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherPlanForNextStep"
 						}
 					]
@@ -1227,6 +1251,9 @@
 								"concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302",
 								"weeksList": ""
 							},
+							"hide": {
+								"hideWhenExpression": "finalOutcomeKnown !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "finalOutcomeKnownDate"
 						},
 						{
@@ -1406,6 +1433,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "finalOutcomeKnown !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "finalOutcome"
 						},
 						{
@@ -1425,6 +1455,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "finalOutcome !== '4de0ba18-205b-4df9-be26-bdd08d964e6a'"
+							  },
 							"id": "nameOfFacilityReferredTo"
 						},
 						{
@@ -1434,6 +1467,9 @@
 								"rendering": "text",
 								"concept": "bd4d94eb-e120-488b-bb5d-8551719646d5"
 							},
+							"hide": {
+								"hideWhenExpression": "finalOutcome !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherFinalOutcome"
 						},
 						{
@@ -1466,7 +1502,7 @@
 		}
 	],
 	"processor": "EncounterFormProcessor",
-	"uuid": "xxxx",
+	"uuid": "4d8b5416-29d7-4c8f-997a-c91a17378f18",
 	"referencedForms": [],
 	"encounterType": "96a78a83-d92a-4da7-b68e-41791fb835d2",
 	"allowUnspecifiedAll": true

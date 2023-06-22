@@ -10,7 +10,7 @@ import {
   isEmpty,
   PreviousValueReview,
   OHRIFieldValueView,
-} from "@ohri/openmrs-ohri-form-engine-lib";
+} from "@openmrs/openmrs-form-engine-lib";
 import styles from "../input/_input.scss";
 require("./ethiohri-date.scss");
 import { DatePicker, Provider, defaultTheme } from "@adobe/react-spectrum";
@@ -117,7 +117,10 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
   }, []);
 
   useEffect(() => {
-    if (encounterContext?.previousEncounter) {
+    if (
+      encounterContext?.previousEncounter &&
+      !isTrue(question.questionOptions.usePreviousValueDisabled)
+    ) {
       const prevValue = handler.getPreviousValue(
         question,
         encounterContext?.previousEncounter,

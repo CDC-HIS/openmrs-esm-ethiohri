@@ -48,7 +48,7 @@
               "required": false,
               "id": "registrationDate",
               "questionOptions": {
-                "rendering": "date",
+                "rendering": "eth-date",
                 "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
                 "conceptMappings": [],
                 "answers": []
@@ -119,7 +119,7 @@
               "required": false,
               "id": "screeningDate",
               "questionOptions": {
-                "rendering": "date",
+                "rendering": "eth-date",
                 "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
                 "conceptMappings": [],
                 "answers": []
@@ -303,6 +303,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -324,6 +327,9 @@
                     "label": "No"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -352,6 +358,9 @@
                     "label": "No"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             }
@@ -413,6 +422,9 @@
                     "label": "Negative"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "hepatitisTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -781,6 +793,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "pregnancyStatus == '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             }
           ]
@@ -832,7 +847,11 @@
                   },
                   {
                     "concept": "153872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "female genital ulcer disease"
+                    "label": "Genital ulcer"
+                  },
+                  {
+                    "concept": "404a54d8-3ed2-4889-8331-e52beb6f1e70",
+                    "label": "Urethral discharge"
                   },
                   {
                     "concept": "123396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -844,7 +863,7 @@
                   },
                   {
                     "concept": "125203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Swelling of scrotum"
+                    "label": "Scrotal swelling"
                   },
                   {
                     "concept": "e5e4cb90-b6ee-4b15-b920-2efafc359ee3",
@@ -852,11 +871,10 @@
                   },
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other non-coded"
+                    "label": "Other"
                   }
                 ]
-              },
-              "validators": []
+              }
             },
             {
               "label": "STI treatment started ",
@@ -878,6 +896,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "screeningResult == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || isEmpty('screeningResult')"
+              },
               "validators": []
             },
             {
@@ -886,7 +907,7 @@
               "required": false,
               "id": "stiTreatmentStartedDate",
               "questionOptions": {
-                "rendering": "date",
+                "rendering": "eth-date",
                 "concept": "1428AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
                   {
@@ -906,6 +927,9 @@
                   }
                 ],
                 "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "stiTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             }
@@ -1011,15 +1035,15 @@
                 "answers": [
                   {
                     "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Positive"
+                    "label": "Yes"
                   },
                   {
                     "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Negative"
+                    "label": "No"
                   },
                   {
                     "concept": "1138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Indeterminate"
+                    "label": "Unknown"
                   }
                 ]
               },
@@ -1060,6 +1084,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1079,10 +1106,13 @@
                   {
                     "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "No"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
                   }
                 ]
-              },
-              "validators": []
+              }
             },
             {
               "label": "How long has your partner been on treatment ",
@@ -1095,6 +1125,9 @@
                 "conceptMappings": [],
                 "answers": []
               },
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1104,7 +1137,7 @@
               "id": "lastViralLoadResultOfYourPartner",
               "questionOptions": {
                 "rendering": "select",
-                "concept": "167486AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "9eb17c98-d76d-4ee1-b706-b33641f63f99",
                 "conceptMappings": [
                   {
                     "relationship": "NARROWER-THAN",
@@ -1119,12 +1152,19 @@
                 ],
                 "answers": [
                   {
+                    "concept": "5d5e42cc-acc4-4069-b3a8-7163e0db5d96",
+                    "label": "Suppressed"
+                  },
+                  {
+                    "concept": "a6768be6-c08e-464d-8f53-5f4229508e54",
+                    "label": "Unsuppressed"
+                  },
+                  {
                     "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Unknown"
                   }
                 ]
-              },
-              "validators": []
+              }
             },
             {
               "label": "Client at substantial risk  for HIV infection",
@@ -1360,6 +1400,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1392,6 +1435,9 @@
                     "label": "No"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             }
@@ -1467,7 +1513,7 @@
               "required": false,
               "id": "prepStartDate",
               "questionOptions": {
-                "rendering": "date",
+                "rendering": "eth-date",
                 "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
                   {
@@ -1492,6 +1538,9 @@
                   }
                 ],
                 "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1519,6 +1568,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
@@ -1542,6 +1594,9 @@
                   }
                 ],
                 "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1570,8 +1625,8 @@
     }
   ],
   "processor": "EncounterFormProcessor",
-  "uuid": "xxxx",
+  "uuid": "e7bce9e2-5ed6-4cbb-ab93-3531a4c33760",
   "referencedForms": [],
   "encounterType": "69b60ded-868d-4b6a-8f49-b0c84c18cec6",
-	"allowUnspecifiedAll": true
+  "allowUnspecifiedAll": true
 }

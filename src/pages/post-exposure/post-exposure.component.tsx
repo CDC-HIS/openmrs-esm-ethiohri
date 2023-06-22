@@ -1,8 +1,8 @@
 import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { POST_EXPOSURE_ENCOUNTER_TYPE } from "../../../constants";
-import { getData } from "../../encounterUtils";
-import { moduleName } from "../../../index";
+import { POST_EXPOSURE_ENCOUNTER_TYPE } from "../../constants";
+import { getData } from "../encounterUtils";
+import { moduleName } from "../../index";
 
 const columns = [
   {

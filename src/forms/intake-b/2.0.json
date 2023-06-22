@@ -709,6 +709,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "opportunisticInfectionPresent !== '131768AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "HIVRelatedOIs"
 						},
 						{
@@ -717,6 +720,9 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8"
+							},
+							"hide": {
+								"hideWhenExpression": "!includes('HIVRelatedOIs', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
 							"id": "otherOpportunisticIllnesses"
 						}
@@ -900,6 +906,9 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "162724AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"hide": {
+								"hideWhenExpression": "ARVForPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "healthFacility"
 						},
@@ -1141,6 +1150,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "ARVForPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "regimenForMother"
 						},
@@ -1443,6 +1455,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "ARVForPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "regimenForBaby"
 						},
 						{
@@ -1642,6 +1657,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "arvTreatmentTaken"
 						},
@@ -2004,6 +2022,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "Regimen"
 						},
 						{
@@ -2014,6 +2035,9 @@
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "artStartDate"
 						},
 						{
@@ -2022,8 +2046,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 99,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -2051,6 +2075,9 @@
 										"value": "159368"
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "monthsOnART"
 						},
@@ -2209,6 +2236,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "stillonTreatment"
 						}
 					]
@@ -2228,8 +2258,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -2278,8 +2308,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "76b45324-9920-4cb7-a8af-c135fb8deb77",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": ""
 							},
 							"id": "heartRate"
@@ -2290,8 +2320,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -2320,8 +2350,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -2354,8 +2384,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -2414,8 +2444,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": ""
 							},
 							"id": "height"
@@ -2426,8 +2456,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -2452,8 +2482,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
-								"max": "",
-								"min": "",
+								"max": 999,
+								"min": 0,
 								"showDate": ""
 							},
 							"id": "bmi"
@@ -2493,24 +2523,15 @@
 								]
 							},
 							"id": "patientFunctionalStatus"
-						},
-						{
-							"label": "Percentage of lost body weight",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "90cf854e-2870-40d9-8d69-bb86597f74f8",
-								"max": "",
-								"min": "",
-								"showDate": ""
-							},
-							"id": "percentageOfLostBodyWeight"
 						}
 					]
 				},
 				{
 					"label": "For child only",
 					"isExpanded": "true",
+					"hide": {
+						"hideWhenExpression": "age > 5"
+					},
 					"questions": [
 						{
 							"label": "Head Circumference",
@@ -2518,8 +2539,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "",
-								"min": "",
+								"max": 99,
+								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
 									{
@@ -2680,16 +2701,14 @@
 							},
 							"id": "developmentalStatus"
 						}
-					],
-					"behaviours": [
-						{
-							"intent": "*"
-						}
 					]
 				},
 				{
 					"label": "Pregnancy status",
 					"isExpanded": "true",
+					"hide": {
+						"hideWhenExpression": "sex !== 'F'"
+					},
 					"questions": [
 						{
 							"label": "Pregnancy at Enrollment",
@@ -2856,6 +2875,9 @@
 								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
 								"weeksList": ""
 							},
+							"hide": {
+								"hideWhenExpression": "pregnancyAtEnrollment !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "LMP"
 						},
 						{
@@ -2865,6 +2887,9 @@
 								"rendering": "eth-date",
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
+							},
+							"hide": {
+								"hideWhenExpression": "pregnancyAtEnrollment !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "EDD"
 						}
@@ -3263,7 +3288,25 @@
 								"rendering": "text",
 								"concept": "a6408b87-6146-4b20-839f-e0ed70c62e5a"
 							},
+							"hide": {
+								"hideWhenExpression": "!includes('presentingComplaints', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							},
 							"id": "otherPresentingComplaints"
+						},
+						{
+							"label": "Percentage of lost body weight",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "90cf854e-2870-40d9-8d69-bb86597f74f8",
+								"max": 99,
+								"min": 0,
+								"showDate": ""
+							},
+							"hide": {
+								"hideWhenExpression": "!includes('presentingComplaints', '832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							},
+							"id": "percentageOfLostBodyWeight"
 						}
 					]
 				},
@@ -5180,6 +5223,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "eligibileForART !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "whyEligibleForART"
 						},
 						{
@@ -5188,6 +5234,9 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "7e4d2281-c8f7-4090-bc29-4ff2313946cc"
+							},
+							"hide": {
+								"hideWhenExpression": "whyEligibleForART !== '7e4d2281-c8f7-4090-bc29-4ff2313946cc'"
 							},
 							"id": "otherReasonWhyEligible"
 						}
@@ -5224,13 +5273,7 @@
 		}
 	],
 	"processor": "EncounterFormProcessor",
-	"availableIntents": [
-		{
-			"intent": "*",
-			"display": "Add Intake-B"
-		}
-	],
-	"uuid": "xxxx",
+	"uuid": "4d582871-22ab-41cd-a07c-5cc644d0b754",
 	"referencedForms": [],
 	"encounterType": "dc94a223-66bc-45b7-8e34-d13b8686f239",
 	"allowUnspecifiedAll": true

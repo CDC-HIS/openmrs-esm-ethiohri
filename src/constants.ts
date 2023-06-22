@@ -8,6 +8,12 @@ export const POSITIVE_TRACKING_ENCOUNTER_TYPE =
   "96a78a83-d92a-4da7-b68e-41791fb835d2";
 export const RETEST_ENCOUNTER_TYPE = "1cd0c205-9a6b-418d-ae91-ec54913f5d36";
 export const PMTCT_ENCOUNTER_TYPE = "55fbd571-a8ec-4332-bd83-c6c5d4982d16";
+export const POST_EXPOSURE_ENCOUNTER_TYPE =
+  "1cd0c205-9a6b-418d-ae91-ec54913f5d36";
+export const PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE =
+  "69b60ded-868d-4b6a-8f49-b0c84c18cec6";
+export const PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE =
+  "df13ff58-d86a-42ec-ace1-5c3ad8045e2e";
 
 //HIV Art Therapy
 export const art_Therapy_EncounterUUID = "74bf4fe6-8fdb-4228-be39-680a93a9cf6d";
@@ -104,7 +110,3 @@ export const encounterRepresentation =
   "patient:(uuid,display),encounterProviders:(uuid,provider:(uuid,name))," +
   "obs:(uuid,obsDatetime,voided,groupMembers,concept:(uuid,name:(uuid,name)),value:(uuid,name:(uuid,name)," +
   "names:(uuid,conceptNameType,name))))";
-export const POST_EXPOSURE_ENCOUNTER_TYPE =
-  "1cd0c205-9a6b-418d-ae91-ec54913f5d36";
-export const PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE =
-  "69b60ded-868d-4b6a-8f49-b0c84c18cec6";
