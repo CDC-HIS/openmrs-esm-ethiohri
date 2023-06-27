@@ -19,12 +19,12 @@ export const CHILD_HEALTH_SUMMARY = {
 };
 
 export const PREP_META = {
-  title: "Pre Exposure Prophylaxis",
+  title: "PrEP Prophylaxis",
   slot: "prep-slot",
 };
 
 export const POST_META = {
-  title: "Post Exposure Prophylaxis",
+  title: "PEP Prophylaxis",
   slot: "post-exposure-slot",
 };
 
