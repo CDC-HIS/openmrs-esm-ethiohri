@@ -1,28 +1,41 @@
-// Sync object
-/** @type {import('@jest/types').Config.InitialOptions} */
-const config = {
-  verbose: true,
-  collectCoverage: true,
-  coverageThreshold: {
-    global: {
-      branches: 10,
-      functions: 10,
-      lines: 10,
-    },
-  },
-  coverageReporters: ["json-summary", "lcov"],
-  collectCoverageFrom: ["./src/forms/**", "!./src/components/**/*.snap"],
+/**
+ * @returns {Promise<import('jest').Config>}
+ */
+module.exports = {
   transform: {
-    "^.+\\.tsx?$": "@swc/jest",
+    "^.+\\.(j|t)sx?$": "@swc/jest",
   },
   transformIgnorePatterns: ["/node_modules/(?!@openmrs)"],
   moduleNameMapper: {
     "\\.(s?css)$": "identity-obj-proxy",
     "@openmrs/esm-framework": "@openmrs/esm-framework/mock",
-    "react-i18next": "<rootDir>/__mocks__/react-i18next.js",
-    "lodash-es": "lodash",
-    "react-markdown": "<rootDir>/__mocks__/react-markdown.tsx",
+    "^lodash-es/(.*)$": "lodash/$1",
+    "^uuid$": "<rootDir>/node_modules/uuid/dist/index.js",
+    "^dexie$": require.resolve("dexie"),
+  },
+  collectCoverageFrom: [
+    "**/src/**/*.component.tsx",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+    "!**/src/**/*.test.*",
+    "!**/src/declarations.d.tsx",
+    "!**/e2e/**",
+  ],
+  coverageThreshold: {
+    global: {
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
+    },
+  },
+  setupFilesAfterEnv: ["<rootDir>/src/setup-tests.ts"],
+  testPathIgnorePatterns: [
+    "<rootDir>/packages/esm-form-entry-app",
+    "<rootDir>/e2e",
+  ],
+  testEnvironment: "jsdom",
+  testEnvironmentOptions: {
+    url: "http://localhost/",
   },
 };
-
-module.exports = config;
