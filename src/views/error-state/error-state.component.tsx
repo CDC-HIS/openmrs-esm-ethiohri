@@ -15,7 +15,7 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
   const { t } = useTranslation();
 
   return (
-    <Tile light className={styles.tile}>
+    <Tile className={styles.tile}>
       <h1 className={styles.heading}>{headerTitle}</h1>
       <p className={styles.errorMessage}>
         {t("error", "Error")} {`${error?.response?.status}: `}
