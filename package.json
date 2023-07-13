@@ -15,10 +15,10 @@
     "lint": "eslint src --ext  js,jsx,ts,tsx --fix",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
     "typescript": "tsc",
-    "test": "jest --config jest.config.js --passWithNoTests",
+    "test": "jest --config jest.config.js",
     "test-e2e": "playwright test",
     "verify": "concurrently 'yarn:lint' 'yarn:test' 'yarn:typescript'",
-    "coverage": "yarn test -- --coverage",
+    "coverage": "yarn test --coverage",
     "prepare": "husky install",
     "cipublish": "npm publish"
   },
