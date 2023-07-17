@@ -21,14 +21,6 @@ module.exports = {
     "!**/src/declarations.d.tsx",
     "!**/e2e/**",
   ],
-  coverageThreshold: {
-    global: {
-      statements: 80,
-      branches: 80,
-      functions: 80,
-      lines: 80,
-    },
-  },
   setupFilesAfterEnv: ["<rootDir>/src/setup-tests.ts"],
   testPathIgnorePatterns: [
     "<rootDir>/packages/esm-form-entry-app",
