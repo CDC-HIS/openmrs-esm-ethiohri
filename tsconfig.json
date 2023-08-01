@@ -19,5 +19,7 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "target": "esnext"
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.tsx", "src/**/*.outdated.tsx"]
 }
