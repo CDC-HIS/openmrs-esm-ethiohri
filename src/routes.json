@@ -19,17 +19,26 @@
     {
       "name": "hiv-baseline-ext-et",
       "slot": "patient-chart-summary-dashboard-slot",
-      "component": "hivBaseline"
+      "component": "hivBaseline",
+      "meta": {
+        "columns": 1
+      }
     },
     {
       "name": "active-medications-widget-et",
       "slot": "patient-chart-summary-dashboard-slot",
-      "component": "activeMedications"
+      "component": "activeMedications",
+      "meta": {
+        "columns": 1
+      }
     },
     {
       "name": "vitals-overview-widget-et",
       "slot": "patient-chart-summary-dashboard-slot",
-      "component": "vitalsOverview"
+      "component": "vitalsOverview",
+      "meta": {
+        "columns": 1
+      }
     },
     {
       "name": "hiv-care-and-treatment-ext",
@@ -43,7 +52,7 @@
       "meta" : {
         "title": "Program Management",
         "slot": "program-management-slot",
-        "path": "Program Management"
+        "path": "program-management"
       }
     },
     {
@@ -58,7 +67,7 @@
       "meta": {
         "title": "Clinical Visits",
         "slot": "clinical-visits-slot",
-        "path": "Clinical Visits"
+        "path": "clinical-visits"
       }
     },
     {
@@ -78,7 +87,7 @@
       "meta": {
         "title": "Maternal Health",
         "slot": "maternal-health-slot",
-        "path": "Maternal Health"
+        "path": "maternal-health"
       }
     },
     {
@@ -88,7 +97,7 @@
       "meta": {
         "title": "Child Health",
         "slot": "child-health-slot",
-        "path": "Child Health"
+        "path": "child-health"
       }
     },
     {
@@ -108,7 +117,7 @@
       "meta": {
         "title": "PrEP Prophylaxis",
         "slot": "prep-slot",
-        "path": "PrEP Prophylaxis"
+        "path": "prep-prophylaxis"
       }
     },
     {
@@ -123,7 +132,7 @@
       "meta": {
         "title": "PEP Prophylaxis",
         "slot": "post-exposure-slot",
-        "path": "PEP Prophylaxis"
+        "path": "pep-prophylaxis"
       }
     },
     {
@@ -138,7 +147,7 @@
       "meta": {
         "title": "HIV Testing Service",
         "slot": "hiv-testing-service-slot",
-        "path": "HIV Testing Service"
+        "path": "hiv-testing-service"
       }
     },
     {

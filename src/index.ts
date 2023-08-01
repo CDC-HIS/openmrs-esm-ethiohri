@@ -8,11 +8,7 @@ import {
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
 import ethiohriConfig from "./ethiohri-config";
-import {
-  addToBaseFormsRegistry,
-  registerControl,
-} from "@openmrs/openmrs-form-engine-lib";
-import formsRegistry from "./forms/forms-registry";
+import { registerControl } from "@openmrs/openmrs-form-engine-lib";
 import {
   createDashboardGroup,
   createDashboardLink,
@@ -44,8 +40,6 @@ export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
   provide(ethiohriConfigOverrides);
   provide(ethiohriConfig);
-
-  // addToBaseFormsRegistry(formsRegistry);
 
   registerControl({
     id: "eth-date",

@@ -62,12 +62,11 @@ const PositiveTrackingList: React.FC<{ patientUuid: string }> = ({
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={POSITIVE_TRACKING_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "positive_tracking" }}
+      encounterType={POSITIVE_TRACKING_ENCOUNTER_TYPE}
+      formList={[{ name: "positive_tracking" }]}
       columns={columns}
       description="Positive Tracking List"
       headerTitle="Positive Tracking"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

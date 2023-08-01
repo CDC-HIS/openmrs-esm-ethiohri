@@ -92,8 +92,8 @@ const PMTCT: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={PMTCT_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "pmtct" }}
+      encounterType={PMTCT_ENCOUNTER_TYPE}
+      formList={[{ name: "pmtct" }]}
       columns={columns}
       description="PMTCT Encounter List"
       headerTitle="PMTCT"

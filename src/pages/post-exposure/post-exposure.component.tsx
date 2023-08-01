@@ -62,12 +62,11 @@ const PostExposureProphylaxis: React.FC<{ patientUuid: string }> = ({
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={POST_EXPOSURE_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "post_exposure" }}
+      encounterType={POST_EXPOSURE_ENCOUNTER_TYPE}
+      formList={[{ name: "post_exposure" }]}
       columns={columns}
       description="Post Exposure Tracking List"
       headerTitle="Post Exposure"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

@@ -9,6 +9,7 @@
   "source": true,
   "scripts": {
     "start": "openmrs develop --backend https://ethiohri-dev.globalhealthapp.net",
+    "start-v5": "openmrs develop --backend https://ohri-dev.globalhealthapp.net",
     "serve": "webpack serve --mode=development",
     "build": "webpack --mode production",
     "analyze": "webpack --mode=production --env.analyze=true",
