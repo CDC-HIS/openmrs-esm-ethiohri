@@ -21,14 +21,16 @@
       "slot": "patient-chart-summary-dashboard-slot",
       "component": "hivBaseline",
       "meta": {
+        "title": "HIV Baseline",
         "columns": 1
       }
     },
     {
       "name": "active-medications-widget-et",
       "slot": "patient-chart-summary-dashboard-slot",
-      "component": "activeMedications",
+      "component": "ethiohriActiveMedications",
       "meta": {
+        "title": "Active Medications",
         "columns": 1
       }
     },
@@ -37,6 +39,7 @@
       "slot": "patient-chart-summary-dashboard-slot",
       "component": "vitalsOverview",
       "meta": {
+        "title": "Vitals Overview",
         "columns": 1
       }
     },
@@ -52,7 +55,8 @@
       "meta" : {
         "title": "Program Management",
         "slot": "program-management-slot",
-        "path": "program-management"
+        "path": "program-management",
+        "columns": 1
       }
     },
     {
@@ -67,7 +71,8 @@
       "meta": {
         "title": "Clinical Visits",
         "slot": "clinical-visits-slot",
-        "path": "clinical-visits"
+        "path": "clinical-visits",
+        "columns": 1
       }
     },
     {
@@ -87,7 +92,8 @@
       "meta": {
         "title": "Maternal Health",
         "slot": "maternal-health-slot",
-        "path": "maternal-health"
+        "path": "maternal-health",
+        "columns": 1
       }
     },
     {
@@ -97,7 +103,8 @@
       "meta": {
         "title": "Child Health",
         "slot": "child-health-slot",
-        "path": "child-health"
+        "path": "child-health",
+        "columns": 1
       }
     },
     {
@@ -117,7 +124,8 @@
       "meta": {
         "title": "PrEP Prophylaxis",
         "slot": "prep-slot",
-        "path": "prep-prophylaxis"
+        "path": "prep-prophylaxis",
+        "columns": 1
       }
     },
     {
@@ -132,7 +140,8 @@
       "meta": {
         "title": "PEP Prophylaxis",
         "slot": "post-exposure-slot",
-        "path": "pep-prophylaxis"
+        "path": "pep-prophylaxis",
+        "columns": 1
       }
     },
     {
@@ -147,7 +156,8 @@
       "meta": {
         "title": "HIV Testing Service",
         "slot": "hiv-testing-service-slot",
-        "path": "hiv-testing-service"
+        "path": "hiv-testing-service",
+        "columns": 1
       }
     },
     {

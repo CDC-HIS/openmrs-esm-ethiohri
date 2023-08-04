@@ -30,6 +30,7 @@ export const POST_META = {
   title: "PEP Prophylaxis",
   slot: "post-exposure-slot",
   path: "pep-prophylaxis",
+  columns: 1,
 };
 
 export const HIV_TESTING_SERVICE_META = {

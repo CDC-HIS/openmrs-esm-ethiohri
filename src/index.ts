@@ -67,7 +67,7 @@ export const hivBaseline = getAsyncLifecycle(
     moduleName,
   }
 );
-export const activeMedications = getAsyncLifecycle(
+export const ethiohriActiveMedications = getAsyncLifecycle(
   () => import("./views/medications/active-medications.component"),
   options
 );
