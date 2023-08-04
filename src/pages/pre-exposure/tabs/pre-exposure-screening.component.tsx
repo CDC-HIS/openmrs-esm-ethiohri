@@ -62,12 +62,11 @@ const PreExposureScreeningList: React.FC<{ patientUuid: string }> = ({
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "pre_exposure_screening" }}
+      encounterType={PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE}
+      formList={[{ name: "pre_exposure_screening" }]}
       columns={columns}
       description="Pre Exposure Screening Tracking List"
       headerTitle="Pre Exposure Screening"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

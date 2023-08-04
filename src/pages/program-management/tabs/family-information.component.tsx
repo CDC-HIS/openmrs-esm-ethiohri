@@ -82,12 +82,11 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={FAMILY_INFO_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "family_information" }}
+      encounterType={FAMILY_INFO_ENCOUNTER_TYPE}
+      formList={[{ name: "family_information" }]}
       columns={columns}
       description="Family Information List"
       headerTitle="Family Members"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

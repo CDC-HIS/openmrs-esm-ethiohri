@@ -92,8 +92,8 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={FOLLOWUP_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "followup2" }}
+      encounterType={FOLLOWUP_ENCOUNTER_TYPE}
+      formList={[{ name: "followup2" }]}
       columns={columns}
       description="Followup Encounter List"
       headerTitle="Followup"

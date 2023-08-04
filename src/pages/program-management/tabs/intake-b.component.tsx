@@ -61,12 +61,11 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={INTAKE_B_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "intake_b" }}
+      encounterType={INTAKE_B_ENCOUNTER_TYPE}
+      formList={[{ name: "intake_b" }]}
       columns={columns}
       description="Intake B Encounter List"
       headerTitle="Intake B"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

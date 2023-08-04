@@ -2,8 +2,8 @@ const path = require("path");
 const config = (module.exports = require("openmrs/default-webpack-config"));
 config.scriptRuleConfig.exclude =
   path.sep == "/"
-    ? /(node_modules[^\/@openmrs\/esm\-patient\-common\-lib, ^\/@ohri\/openmrs\-esm\-ohri\-commons\-lib])/
-    : /(node_modules[^\\@openmrs\/esm\-patient\-common\-lib, ^\\@ohri\/openmrs\-esm\-ohri\-commons\-lib])/;
+    ? /(node_modules[^\/@openmrs\/esm\-patient\-common\-lib])/
+    : /(node_modules[^\\@openmrs\/esm\-patient\-common\-lib])/;
 config.overrides.resolve = {
   extensions: [".tsx", ".ts", ".jsx", ".js", ".scss"],
   alias: {
@@ -29,7 +29,7 @@ config.module = {
 
 // Overrides to disable CSS Modules for non-scss scripts, this means
 // CSS Modules will only be supported with .scss scripts
-config.cssRuleConfig.use = ["style-loader", "css-loader"];
-config.cssRuleConfig.test = /\.css$/;
+// config.cssRuleConfig.use = ["css-loader"];
+// config.cssRuleConfig.test = /\.css$/;
 
 module.exports = config;

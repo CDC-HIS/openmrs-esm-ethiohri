@@ -60,12 +60,11 @@ const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={RETEST_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "retest" }}
+      encounterType={RETEST_ENCOUNTER_TYPE}
+      formList={[{ name: "retest" }]}
       columns={columns}
       description="HIV Retest List"
       headerTitle="HIV Retest"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

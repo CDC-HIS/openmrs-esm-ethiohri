@@ -8,11 +8,7 @@ import {
 import { configSchema } from "./config-schema";
 import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
 import ethiohriConfig from "./ethiohri-config";
-import {
-  addToBaseFormsRegistry,
-  registerControl,
-} from "@openmrs/openmrs-form-engine-lib";
-import formsRegistry from "./forms/forms-registry";
+import { registerControl } from "@openmrs/openmrs-form-engine-lib";
 import {
   createDashboardGroup,
   createDashboardLink,
@@ -42,16 +38,14 @@ export const importTranslation = require.context(
 
 export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
-  // provide(ethiohriConfigOverrides);
-  // provide(ethiohriConfig);
+  provide(ethiohriConfigOverrides);
+  provide(ethiohriConfig);
 
-  // addToBaseFormsRegistry(formsRegistry);
-
-  // registerControl({
-  //   id: "eth-date",
-  //   loadControl: () => import("./controls/date/ethiohri-date.component"),
-  //   type: "eth-date",
-  // });
+  registerControl({
+    id: "eth-date",
+    loadControl: () => import("./controls/date/ethiohri-date.component"),
+    type: "eth-date",
+  });
 }
 
 export const patientDetailsButton = getAsyncLifecycle(
@@ -73,7 +67,7 @@ export const hivBaseline = getAsyncLifecycle(
     moduleName,
   }
 );
-export const activeMedications = getAsyncLifecycle(
+export const ethiohriActiveMedications = getAsyncLifecycle(
   () => import("./views/medications/active-medications.component"),
   options
 );
@@ -86,16 +80,23 @@ export const hivCareAndTreatmentMenu = getSyncLifecycle(
   options
 );
 export const programManagementMenu = getSyncLifecycle(
-  createDashboardLink(PROGRAM_MANAGEMENT_META),
+  createDashboardLink({
+    ...PROGRAM_MANAGEMENT_META,
+    moduleName,
+  }),
   options
 );
+
 export const programManagementChart = getAsyncLifecycle(
   () =>
     import("./pages/program-management/program-managment-summary.component"),
   options
 );
 export const clinicalVisitsMenu = getSyncLifecycle(
-  createDashboardLink(CLINICAL_VISITS),
+  createDashboardLink({
+    ...CLINICAL_VISITS,
+    moduleName,
+  }),
   options
 );
 export const clinicalVisitsChart = getAsyncLifecycle(
@@ -107,7 +108,10 @@ export const pmtctMenu = getSyncLifecycle(
   options
 );
 export const maternalHealthMenu = getSyncLifecycle(
-  createDashboardLink(MATERNAL_HEALTH_SUMMARY),
+  createDashboardLink({
+    ...MATERNAL_HEALTH_SUMMARY,
+    moduleName,
+  }),
   options
 );
 export const maternalHealthChart = getAsyncLifecycle(
@@ -115,7 +119,10 @@ export const maternalHealthChart = getAsyncLifecycle(
   options
 );
 export const childHealthMenu = getSyncLifecycle(
-  createDashboardLink(CHILD_HEALTH_SUMMARY),
+  createDashboardLink({
+    ...CHILD_HEALTH_SUMMARY,
+    moduleName,
+  }),
   options
 );
 export const childHealthChart = getAsyncLifecycle(
@@ -123,7 +130,10 @@ export const childHealthChart = getAsyncLifecycle(
   options
 );
 export const prepMenu = getSyncLifecycle(
-  createDashboardLink(PREP_META),
+  createDashboardLink({
+    ...PREP_META,
+    moduleName,
+  }),
   options
 );
 export const prepChart = getAsyncLifecycle(
@@ -131,7 +141,10 @@ export const prepChart = getAsyncLifecycle(
   options
 );
 export const pepMenu = getSyncLifecycle(
-  createDashboardLink(POST_META),
+  createDashboardLink({
+    ...POST_META,
+    moduleName,
+  }),
   options
 );
 export const pepChart = getAsyncLifecycle(
@@ -139,7 +152,10 @@ export const pepChart = getAsyncLifecycle(
   options
 );
 export const hivTestingServiceMenu = getSyncLifecycle(
-  createDashboardLink(HIV_TESTING_SERVICE_META),
+  createDashboardLink({
+    ...HIV_TESTING_SERVICE_META,
+    moduleName,
+  }),
   options
 );
 export const hivTestingServiceChart = getAsyncLifecycle(

@@ -53,12 +53,11 @@ const PHDPList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={PHDP_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "phdp" }}
+      encounterType={PHDP_ENCOUNTER_TYPE}
+      formList={[{ name: "phdp" }]}
       columns={columns}
       description="PHDP List"
       headerTitle="PHDP"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

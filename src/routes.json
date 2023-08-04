@@ -1,178 +1,170 @@
 {
-    "$schema": "https://json.openmrs.org/routes.schema.json",
-    "backendDependencies": {
-        "fhir2": "^1.2.0",
-        "webservices.rest": "^2.2.0"
+  "$schema": "https://json.openmrs.org/routes.schema.json",
+  "backendDependencies": {
+      "fhir2": "^1.2.0",
+      "webservices.rest": "^2.2.0"
+  },
+  "pages": [],
+  "extensions": [
+    {
+      "name": "test-patient-details-button",
+      "slot": "patient-actions-slot",
+      "component": "patientDetailsButton"
     },
-    "pages": [],
-    "extensions": [
-       { 
-        "name": "test-patient-details-button",
-        "slot": "patient-actions-slot",
-        "component": "patientDetailsButton",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "test-attribute-tags",
-        "slot": "patient-banner-tags-slot",
-        "component": "attributeTags",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "hiv-baseline-ext-et",
-        "slot": "patient-chart-summary-dashboard-slot",
-        "component": "hivBaseline",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "active-medications-widget-et",
-        "slot": "patient-chart-summary-dashboard-slot",
-        "component": "activeMedications",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "vitals-overview-widget-et",
-        "slot": "patient-chart-summary-dashboard-slot",
-        "component": "vitalsOverview",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "hiv-care-and-treatment-ext",
-        "slot": "patient-chart-dashboard-slot",
-        "component": "hivCareAndTreatmentMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "program-management-ext",
-        "slot": "hiv-care-and-treatment-slot",
-        "component": "programManagementMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "program-management-chart-ext",
+    {
+      "name": "test-attribute-tags",
+      "slot": "patient-banner-tags-slot",
+      "component": "attributeTags"
+    },
+    {
+      "name": "hiv-baseline-ext-et",
+      "slot": "patient-chart-summary-dashboard-slot",
+      "component": "hivBaseline",
+      "meta": {
+        "title": "HIV Baseline",
+        "columns": 1
+      }
+    },
+    {
+      "name": "active-medications-widget-et",
+      "slot": "patient-chart-summary-dashboard-slot",
+      "component": "ethiohriActiveMedications",
+      "meta": {
+        "title": "Active Medications",
+        "columns": 1
+      }
+    },
+    {
+      "name": "vitals-overview-widget-et",
+      "slot": "patient-chart-summary-dashboard-slot",
+      "component": "vitalsOverview",
+      "meta": {
+        "title": "Vitals Overview",
+        "columns": 1
+      }
+    },
+    {
+      "name": "hiv-care-and-treatment-ext",
+      "slot": "patient-chart-dashboard-slot",
+      "component": "hivCareAndTreatmentMenu"
+    },
+    {
+      "name": "program-management-ext",
+      "slot": "hiv-care-and-treatment-slot",
+      "component": "programManagementMenu",
+      "meta" : {
+        "title": "Program Management",
         "slot": "program-management-slot",
-        "component": "programManagementChart",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "clinical-visits-ext",
-        "slot": "hiv-care-and-treatment-slot",
-        "component": "clinicalVisitsMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "clinical-visits-chart-ext",
+        "path": "program-management",
+        "columns": 1
+      }
+    },
+    {
+      "name": "program-management-chart-ext",
+      "slot": "program-management-slot",
+      "component": "programManagementChart"
+    },
+    {
+      "name": "clinical-visits-ext",
+      "slot": "hiv-care-and-treatment-slot",
+      "component": "clinicalVisitsMenu",
+      "meta": {
+        "title": "Clinical Visits",
         "slot": "clinical-visits-slot",
-        "component": "clinicalVisitsChart",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "pmtct-ext",
-        "slot": "patient-chart-dashboard-slot",
-        "component": "pmtctMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "maternal-health-ext",
-        "slot": "ethio-pmtct-slot",
-        "component": "maternalHealthMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "child-health-ext",
-        "slot": "ethio-pmtct-slot",
-        "component": "childHealthMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "maternal-health-chart-ext",
+        "path": "clinical-visits",
+        "columns": 1
+      }
+    },
+    {
+      "name": "clinical-visits-chart-ext",
+      "slot": "clinical-visits-slot",
+      "component": "clinicalVisitsChart"
+    },
+    {
+      "name": "pmtct-ext",
+      "slot": "patient-chart-dashboard-slot",
+      "component": "pmtctMenu"
+    },
+    {
+      "name": "maternal-health-ext",
+      "slot": "ethio-pmtct-slot",
+      "component": "maternalHealthMenu",
+      "meta": {
+        "title": "Maternal Health",
         "slot": "maternal-health-slot",
-        "component": "maternalHealthChart",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "child-health-chart-ext",
+        "path": "maternal-health",
+        "columns": 1
+      }
+    },
+    {
+      "name": "child-health-ext",
+      "slot": "ethio-pmtct-slot",
+      "component": "childHealthMenu",
+      "meta": {
+        "title": "Child Health",
         "slot": "child-health-slot",
-        "component": "childHealthChart",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "prep-ext",
-        "slot": "hiv-care-and-treatment-slot",
-        "component": "prepMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "prep-chart-ext",
+        "path": "child-health",
+        "columns": 1
+      }
+    },
+    {
+      "name": "maternal-health-chart-ext",
+      "slot": "maternal-health-slot",
+      "component": "maternalHealthChart"
+    },
+    {
+      "name": "child-health-chart-ext",
+      "slot": "child-health-slot",
+      "component": "childHealthChart"
+    },
+    {
+      "name": "prep-ext",
+      "slot": "hiv-care-and-treatment-slot",
+      "component": "prepMenu",
+      "meta": {
+        "title": "PrEP Prophylaxis",
         "slot": "prep-slot",
-        "component": "prepChart",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "post-exposure-ext",
-        "slot": "hiv-care-and-treatment-slot",
-        "component": "pepMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "post-exposure-chart-ext",
+        "path": "prep-prophylaxis",
+        "columns": 1
+      }
+    },
+    {
+      "name": "prep-chart-ext",
+      "slot": "prep-slot",
+      "component": "prepChart"
+    },
+    {
+      "name": "post-exposure-ext",
+      "slot": "hiv-care-and-treatment-slot",
+      "component": "pepMenu",
+      "meta": {
+        "title": "PEP Prophylaxis",
         "slot": "post-exposure-slot",
-        "component": "pepChart",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "hiv-testing-service-ext",
-        "slot": "hiv-care-and-treatment-slot",
-        "component": "hivTestingServiceMenu",
-        "online": true,
-        "offline": true
-       },
-
-       { 
-        "name": "hiv-testing-chart-ext",
+        "path": "pep-prophylaxis",
+        "columns": 1
+      }
+    },
+    {
+      "name": "post-exposure-chart-ext",
+      "slot": "post-exposure-slot",
+      "component": "pepChart"
+    },
+    {
+      "name": "hiv-testing-service-ext",
+      "slot": "hiv-care-and-treatment-slot",
+      "component": "hivTestingServiceMenu",
+      "meta": {
+        "title": "HIV Testing Service",
         "slot": "hiv-testing-service-slot",
-        "component": "hivTestingServiceChart",
-        "online": true,
-        "offline": true
-       }
-
-    ]
+        "path": "hiv-testing-service",
+        "columns": 1
+      }
+    },
+    {
+      "name": "hiv-testing-chart-ext",
+      "slot": "hiv-testing-service-slot",
+      "component": "hivTestingServiceChart"
+    }
+  ]
 }
+

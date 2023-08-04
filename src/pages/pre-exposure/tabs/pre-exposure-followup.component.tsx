@@ -63,12 +63,11 @@ const PreExposureFollowupList: React.FC<{ patientUuid: string }> = ({
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterUuid={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
-      form={{ package: "eth_hiv", name: "pre_exposure_followup" }}
+      encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
+      formList={[{ name: "pre_exposure_followup" }]}
       columns={columns}
       description="Pre Exposure Followup Tracking List"
       headerTitle="Pre Exposure Followup"
-      dropdownText="Add"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

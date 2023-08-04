@@ -11,34 +11,42 @@ export const PMTCT_META = {
 export const MATERNAL_HEALTH_SUMMARY = {
   title: "Maternal Health",
   slot: "maternal-health-slot",
+  path: "maternal-health",
 };
 
 export const CHILD_HEALTH_SUMMARY = {
   title: "Child Health",
   slot: "child-health-slot",
+  path: "child-health",
 };
 
 export const PREP_META = {
   title: "PrEP Prophylaxis",
   slot: "prep-slot",
+  path: "prep-prophylaxis",
 };
 
 export const POST_META = {
   title: "PEP Prophylaxis",
   slot: "post-exposure-slot",
+  path: "pep-prophylaxis",
+  columns: 1,
 };
 
 export const HIV_TESTING_SERVICE_META = {
   title: "HIV Testing Service",
   slot: "hiv-testing-service-slot",
+  path: "hiv-testing-service",
 };
 
 export const PROGRAM_MANAGEMENT_META = {
   title: "Program Management",
   slot: "program-management-slot",
+  path: "program-management",
 };
 
 export const CLINICAL_VISITS = {
   title: "Clinical Visits",
   slot: "clinical-visits-slot",
+  path: "clinical-visits",
 };
