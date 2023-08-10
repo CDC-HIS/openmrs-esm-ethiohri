@@ -38,14 +38,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "intake_a", package: "eth_hiv" },
+        form: { name: "POC Intake-A", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View Intake-A",
         mode: "view",
       },
       {
-        form: { name: "intake_a", package: "eth_hiv" },
+        form: { name: "POC Intake-A", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit Intake-A",
@@ -62,7 +62,7 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
     <EncounterList
       patientUuid={patientUuid}
       encounterType={INTAKE_A_ENCOUNTER_TYPE}
-      formList={[{ name: "intake_a" }]}
+      formList={[{ name: "POC Intake-A" }]}
       columns={columns}
       description="Intake A Encounter List"
       headerTitle="Intake A"
