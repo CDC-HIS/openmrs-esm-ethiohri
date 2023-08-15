@@ -11,13 +11,14 @@ interface TestAttributeTagsProps {
   patientUuid: string;
 }
 const BASE_WS_API_URL = "/ws/rest/v1/";
+
 export function fetchPatientObs(patientUuid: string) {
   return openmrsFetch(`${BASE_WS_API_URL}obs?patient=${patientUuid}`).then(
     ({ data }) => {
       if (data.results.length) {
         return data.results;
       }
-      return null;
+      return [];
     }
   );
 }
