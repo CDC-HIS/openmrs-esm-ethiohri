@@ -6,8 +6,6 @@ import {
   getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
-import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
-import ethiohriConfig from "./ethiohri-config";
 import { registerControl } from "@openmrs/openmrs-form-engine-lib";
 import {
   createDashboardGroup,
@@ -38,8 +36,6 @@ export const importTranslation = require.context(
 
 export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
-  provide(ethiohriConfigOverrides);
-  provide(ethiohriConfig);
 
   registerControl({
     id: "eth-date",
