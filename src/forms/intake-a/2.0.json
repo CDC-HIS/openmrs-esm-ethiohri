@@ -1562,60 +1562,6 @@
 				"id": "otherRelationship"
 			  },
 			  {
-				"label": "Address",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": ""
-				},
-				"id": "address"
-			  },
-			  {
-				"label": "Region",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": ""
-				},
-				"id": "region"
-			  },
-			  {
-				"label": "Zone/Subcity",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": ""
-				},
-				"id": "zone"
-			  },
-			  {
-				"label": "Woreda",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": ""
-				},
-				"id": "woreda"
-			  },
-			  {
-				"label": "Kebele",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": ""
-				},
-				"id": "kebele"
-			  },
-			  {
-				"label": "House No.",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": ""
-				},
-				"id": "house_no"
-			  },
-			  {
 				"label": "Phone Number",
 				"type": "obs",
 				"questionOptions": {
