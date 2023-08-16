@@ -32,14 +32,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "phdp", package: "eth_hiv" },
+        form: { name: "POC PHDP Form", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View PHDP",
         mode: "view",
       },
       {
-        form: { name: "phdp", package: "eth_hiv" },
+        form: { name: "POC PHDP Form", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit PHDP",
@@ -54,7 +54,7 @@ const PHDPList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
     <EncounterList
       patientUuid={patientUuid}
       encounterType={PHDP_ENCOUNTER_TYPE}
-      formList={[{ name: "phdp" }]}
+      formList={[{ name: "POC PHDP Form" }]}
       columns={columns}
       description="PHDP List"
       headerTitle="PHDP"

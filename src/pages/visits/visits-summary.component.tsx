@@ -70,14 +70,14 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         header: "Actions",
         getValue: (encounter) => [
           {
-            form: { name: "followup", package: "eth_hiv" },
+            form: { name: "POC Followup Form", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
             label: "View Followup",
             mode: "view",
           },
           {
-            form: { name: "followup", package: "eth_hiv" },
+            form: { name: "POC Followup Form", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
             label: "Edit Followup",
@@ -93,7 +93,7 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
     <EncounterList
       patientUuid={patientUuid}
       encounterType={FOLLOWUP_ENCOUNTER_TYPE}
-      formList={[{ name: "followup" }]}
+      formList={[{ name: "POC Followup Form" }]}
       columns={columns}
       description="Followup Encounter List"
       headerTitle="Followup"
