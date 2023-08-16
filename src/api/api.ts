@@ -11,6 +11,10 @@ import {
 const BASE_WS_API_URL = "/ws/rest/v1/";
 const BASE_FHIR_API_URL = "/ws/fhir2/R4/";
 
+export function fetchLocation() {
+  return openmrsFetch(`/ws/rest/v1/location?q=&v=default`);
+}
+
 export function fetchLastVisit(uuid: string) {
   return openmrsFetch(
     `/ws/fhir2/R4/Encounter?patient=${uuid}&_sort=-date&_count=1`

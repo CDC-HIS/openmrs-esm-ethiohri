@@ -14,6 +14,7 @@ import {
 import {
   CHILD_HEALTH_SUMMARY,
   CLINICAL_VISITS,
+  FACILITY_NAME,
   HIV_CARE_AND_TREATMENT,
   HIV_TESTING_SERVICE_META,
   MATERNAL_HEALTH_SUMMARY,
@@ -73,6 +74,10 @@ export const vitalsOverview = getAsyncLifecycle(
 );
 export const hivCareAndTreatmentMenu = getSyncLifecycle(
   createDashboardGroup(HIV_CARE_AND_TREATMENT),
+  options
+);
+export const facilityName = getAsyncLifecycle(
+  () => import("./views/navbar/facility-name.component"),
   options
 );
 export const programManagementMenu = getSyncLifecycle(

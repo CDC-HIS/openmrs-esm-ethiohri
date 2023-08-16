@@ -1,0 +1,38 @@
+@use "@carbon/styles/scss/spacing";
+@import "../../root.scss";
+
+.topNavActionsSlot {
+    display: flex;
+    align-items: center;
+  }
+
+.navDivider {
+    background-color: #f4f4f4;
+    width: 0.07rem;
+    height: 2.25rem;
+  }
+  
+  .patientDetails {
+    display: flex;
+    align-items: center;
+    color: $ui-02;
+    padding: 0 spacing.$spacing-05;
+  
+    &:hover {
+      background-color: #032a30;
+    }
+  
+    .patientName {
+      // @include type.type-style('heading-compact-01');
+      margin-right: spacing.$spacing-05;
+      color: $ui-02;
+      margin: spacing.$spacing-04 0;
+      padding-right: 0.5rem;
+    }
+  
+    .patientInfo {
+      color: $color-gray-30;
+      // @include type.type-style('body-compact-01');
+      margin: 0 spacing.$spacing-05 0;
+    }
+  }

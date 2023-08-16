@@ -81,6 +81,11 @@
       "component": "clinicalVisitsChart"
     },
     {
+      "name": "facility-name-ext",
+      "slot": "top-nav-info-slot",
+      "component": "facilityName"
+    },
+    {
       "name": "pmtct-ext",
       "slot": "patient-chart-dashboard-slot",
       "component": "pmtctMenu"
