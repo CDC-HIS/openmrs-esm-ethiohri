@@ -40,14 +40,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "pre_exposure_followup", package: "eth_hiv" },
+        form: { name: "Pre Exposure Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View Pre Exposure Followup",
         mode: "view",
       },
       {
-        form: { name: "pre_exposure_followup", package: "eth_hiv" },
+        form: { name: "Pre Exposure Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit Pre Exposure Followup",
@@ -64,7 +64,7 @@ const PreExposureFollowupList: React.FC<{ patientUuid: string }> = ({
     <EncounterList
       patientUuid={patientUuid}
       encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
-      formList={[{ name: "pre_exposure_followup" }]}
+      formList={[{ name: "Pre Exposure Followup" }]}
       columns={columns}
       description="Pre Exposure Followup Tracking List"
       headerTitle="Pre Exposure Followup"
