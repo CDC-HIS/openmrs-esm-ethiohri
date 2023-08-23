@@ -43,6 +43,12 @@ export const HIV_TESTING_SERVICE_META = {
   path: "hiv-testing-service",
 };
 
+export const INDEX_CASE_TESTING_META = {
+  title: "Index Case Testing",
+  slot: "index-case-testing-slot",
+  path: "index-case-testing",
+};
+
 export const PROGRAM_MANAGEMENT_META = {
   title: "Program Management",
   slot: "program-management-slot",
