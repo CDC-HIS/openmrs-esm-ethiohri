@@ -5,7 +5,7 @@
         "label": "Followup",
         "sections": [
           {
-            "label": "Reapeat HIV Test",
+            "label": "Repeat HIV Test",
             "isExpanded": "true",
             "questions": [
               {
@@ -79,7 +79,7 @@
                 "id": "finalTestResult",
                 "questionOptions": {
                   "rendering": "select",
-                  "concept": "e16b0068-b6a2-46b7-aba9-e3be00a7b4ab",
+                  "concept": "40d1c129-5373-4005-95b1-409e56db9743",
                   "conceptMappings": [],
                   "answers": [
                     {
@@ -87,8 +87,8 @@
                       "label": "Positive"
                     },
                     {
-                      "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                      "label": "Negative result"
+                      "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Negative"
                     }
                   ]
                 }

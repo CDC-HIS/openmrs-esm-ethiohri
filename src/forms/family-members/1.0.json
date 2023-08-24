@@ -294,15 +294,6 @@
 				},
 				"id": "hasFamilyMember"
 			  },
-			  {
-				"label": "Family member details",
-				"type": "obsGroup",
-				"questionOptions": {
-					"rendering": "repeating",
-					"concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a"
-				},
-				"id": "group",
-				"questions": [
 					{
 						"label": "Relationship type",
 						"type": "obs",
@@ -399,57 +390,34 @@
 					  {
 						"label": "Gender",
 						"type": "obs",
+						"required": false,
+						"id": "familyMemberGender",
 						"questionOptions": {
 						  "rendering": "radio",
-						  "concept": "ec4ceae1-36cf-40eb-8b68-67f8145ef324",
+						  "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "conceptMappings": [
+							{
+							  "relationship": "SAME-AS",
+							  "type": "LOINC",
+							  "value": "72143-4"
+							},
+							{
+							  "relationship": "SAME-AS",
+							  "type": "CIEL",
+							  "value": "1533"
+							}
+						  ],
 						  "answers": [
 							{
 							  "concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Male",
-							  "conceptMappings": [
-								{
-								  "type": "SNOMED-CT",
-								  "value": "248153007"
-								},
-								{
-								  "type": "SNOMED-CT",
-								  "value": "248153007"
-								},
-								{
-								  "type": "PIH",
-								  "value": "2843"
-								},
-								{
-								  "type": "PIH",
-								  "value": "2843"
-								}
-							  ]
+							  "label": "Male"
 							},
 							{
 							  "concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Female",
-							  "conceptMappings": [
-								{
-								  "type": "PIH",
-								  "value": "2844"
-								},
-								{
-								  "type": "SNOMED-CT",
-								  "value": "248152002"
-								},
-								{
-								  "type": "SNOMED-CT",
-								  "value": "248152002"
-								},
-								{
-								  "type": "PIH",
-								  "value": "2844"
-								}
-							  ]
+							  "label": "Female"
 							}
 						  ]
-						},
-						"id": "familyMemberGender"
+						}
 					  },
 					  {
 						"label": "Health status",
@@ -480,127 +448,22 @@
 					  {
 						"label": "Counseled for HIV",
 						"type": "obs",
+						"required": false,
+						"id": "counselledForHIV",
 						"questionOptions": {
 						  "rendering": "radio",
-						  "concept": "de32152d-93b0-412a-908a-20af0c46f215",
+						  "concept": "ff9eccda-485e-4044-ad92-414e97b279c0",
 						  "answers": [
 							{
 							  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Yes",
-							  "conceptMappings": [
-								{
-								  "type": "AMPATH",
-								  "value": "1065"
-								},
-								{
-								  "type": "SNOMED CT",
-								  "value": "CT: 373066001"
-								},
-								{
-								  "type": "PIH",
-								  "value": "1065"
-								},
-								{
-								  "type": "CIEL",
-								  "value": "1065"
-								},
-								{
-								  "type": "PIH",
-								  "value": "1065"
-								},
-								{
-								  "type": "SNOMED-CT",
-								  "value": "373066001"
-								},
-								{
-								  "type": "PIH-Malawi",
-								  "value": "1065"
-								},
-								{
-								  "type": "AMPATH",
-								  "value": "1065"
-								}
-							  ]
+							  "label": "Yes"
 							},
 							{
 							  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "No",
-							  "conceptMappings": [
-								{
-								  "type": "PIH",
-								  "value": "1066"
-								},
-								{
-								  "type": "PIH-Malawi",
-								  "value": "1066"
-								},
-								{
-								  "type": "SNOMED-CT",
-								  "value": "373067005"
-								},
-								{
-								  "type": "AMPATH",
-								  "value": "1066"
-								},
-								{
-								  "type": "PIH-Malawi",
-								  "value": "1066"
-								},
-								{
-								  "type": "AMPATH",
-								  "value": "1066"
-								},
-								{
-								  "type": "SNOMED-CT",
-								  "value": "373067005"
-								},
-								{
-								  "type": "PIH",
-								  "value": "1066"
-								}
-							  ]
-							},
-							{
-							  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Unknown",
-							  "conceptMappings": [
-								{
-								  "type": "AMPATH",
-								  "value": "1067"
-								},
-								{
-								  "type": "CIEL",
-								  "value": "1067"
-								},
-								{
-								  "type": "SNOMED-CT",
-								  "value": "261665006"
-								},
-								{
-								  "type": "PIH",
-								  "value": "1067"
-								},
-								{
-								  "type": "org.openmrs.module.mdrtb",
-								  "value": "UNKNOWN"
-								},
-								{
-								  "type": "AMPATH",
-								  "value": "1067"
-								},
-								{
-								  "type": "PIH",
-								  "value": "1067"
-								},
-								{
-								  "type": "SNOMED CT",
-								  "value": "CT: 261665006"
-								}
-							  ]
+							  "label": "No"
 							}
 						  ]
-						},
-						"id": "counselledForHIV"
+						}
 					  },
 					  {
 						"label": "Counselation date",
@@ -1097,8 +960,6 @@
 						},
 						"id": "remark"
 					  }
-				]
-			  }
 			]
 		  }
 		]

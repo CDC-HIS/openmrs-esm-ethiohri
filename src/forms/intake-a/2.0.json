@@ -1231,28 +1231,25 @@
 			  {
 				"label": "Reason for referral",
 				"type": "obs",
+				"id": "reason_for_referral",
 				"questionOptions": {
 				  "rendering": "radio",
-				  "concept": "2cb28f68-0277-48d7-8b38-8e6cf38a30a9",
+				  "concept": "5f34e705-3574-4b44-b455-d815962026a1",
 				  "answers": [
 					{
-					  "concept": "30458643-b575-4a93-98e8-06a1011633ca",
-					  "label": "To be enrolled as transferred in ART client",
-					  "conceptMappings": []
+					  "concept": "159811AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "To be enrolled as transferred in ART client"
 					},
 					{
-					  "concept": "cf055224-fe93-432b-8934-5a11a98ce999",
-					  "label": "To be enrolled as new Pre-ART client",
-					  "conceptMappings": []
+					  "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "To be enrolled as new Pre-ART client"
 					},
 					{
-					  "concept": "cc786035-c6cf-49ac-b4fb-c849ea07eb33",
-					  "label": "To be enrolled as transferred in Pre-ART client",
-					  "conceptMappings": []
+					  "concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "To be enrolled as transferred in Pre-ART client"
 					}
 				  ]
-				},
-				"id": "reason_for_referral"
+				}
 			  }
 			]
 		  }
@@ -1368,15 +1365,18 @@
 				"label": "Gender",
 				"type": "obs",
 				"required": false,
+				"id": "careGiverGender",
 				"questionOptions": {
 				  "rendering": "radio",
-				  "concept": "ec4ceae1-36cf-40eb-8b68-67f8145ef324",
+				  "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "conceptMappings": [
 					{
+					  "relationship": "SAME-AS",
 					  "type": "LOINC",
 					  "value": "72143-4"
 					},
 					{
+					  "relationship": "SAME-AS",
 					  "type": "CIEL",
 					  "value": "1533"
 					}
@@ -1391,8 +1391,7 @@
 					  "label": "Female"
 					}
 				  ]
-				},
-				"id": "careGiverGender"
+				}
 			  },
 			  {
 				"label": "Relationship",

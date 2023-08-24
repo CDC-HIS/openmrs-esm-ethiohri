@@ -422,7 +422,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "07b06c66-7eaa-40d0-b9a5-1cbf167e97b6"
+								"concept": "a0285e3d-0ded-4dd2-9e4c-8588de3a052d"
 							},
 							"hide": {
 								"hideWhenExpression": "entryPoint !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"

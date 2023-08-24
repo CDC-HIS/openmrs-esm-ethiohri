@@ -3208,125 +3208,19 @@
 				"label": "TB screened ?",
 				"type": "obs",
 				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "f8868467-bd15-4576-9da8-bfb8ef64ea17",
-				  "conceptMappings": [
-					{
-					  "type": "SNOMED-CT",
-					  "value": "171126009"
-					},
-					{
-					  "type": "OCT",
-					  "value": "TuberculosisScreening"
-					},
-					{
-					  "type": "CIEL",
-					  "value": "164800"
-					},
-					{
-					  "type": "SNOMED-CT",
-					  "value": "171126009"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes",
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "SNOMED CT",
-						  "value": "CT: 373066001"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						}
-					  ]
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No",
-					  "conceptMappings": [
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						}
-					  ]
-					}
-				  ]
-				},
+					"rendering": "radio",
+					"concept": "feebf47b-c11e-4fa7-bb4b-1a9fc444bcc9",
+					"answers": [
+					  {
+						"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Yes"
+					  },
+					  {
+						"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "No"
+					  }
+					]
+				  },
 				"id": "tbScreened"
 			  },
 			  {
@@ -6592,7 +6486,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "rendering": "eth-date",
-				  "concept": "c541f044-4cdb-4302-b15c-b9901b22f20e",
+				  "concept": "beeede36-cae4-4f6e-b4b9-e39e37353a82",
 				  "weeksList": ""
 				},
 				"hide": {
@@ -10116,26 +10010,23 @@
 				"label": "Stage of HIV disclosure for child",
 				"type": "obs",
 				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "573f93e2-12f6-483e-aa6e-14e9b76b311a",
-				  "answers": [
-					{
-					  "concept": "761c9ffb-8a75-44c6-bad3-b62cd700d41c",
-					  "label": "DS1",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "13784dde-37e1-4e40-b224-dbc9701bc605",
-					  "label": "DS2",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "708acbc1-d493-499c-b3e7-67abd685a943",
-					  "label": "DS3",
-					  "conceptMappings": []
-					}
-				  ]
-				},
+					"rendering": "radio",
+					"concept": "685eaed5-b695-499e-96c5-d9ce95d8b7df",
+					"answers": [
+					  {
+						"concept": "f0b327f3-0566-43a3-9514-18c7c0eec1ea",
+						"label": "DS1"
+					  },
+					  {
+						"concept": "f8f8edc0-ae0a-4ad3-9b8b-a0130bba1340",
+						"label": "DS2"
+					  },
+					  {
+						"concept": "c0dceb55-b133-47e4-a131-3c9fd377dbfc",
+						"label": "DS3"
+					  }
+					]
+				  },
 				"hide": {
 				  "hideWhenExpression": "age > 15"
 				},
@@ -10151,107 +10042,19 @@
 				"label": "Is the client enrolled to OTZ program",
 				"type": "obs",
 				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "bb251925-c706-420a-a1d1-58fa2b0e0a7e",
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes",
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "SNOMED CT",
-						  "value": "CT: 373066001"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						}
-					  ]
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No",
-					  "conceptMappings": [
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						}
-					  ]
-					}
-				  ]
-				},
+					"rendering": "radio",
+					"concept": "d61f6440-5d4a-4389-a162-61c1ba13963e",
+					"answers": [
+					  {
+						"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Yes"
+					  },
+					  {
+						"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "No"
+					  }
+					]
+				  },
 				"hide": {
 				  "hideWhenExpression": "age < 15"
 				},
@@ -10718,107 +10521,19 @@
 				"label": "Is CxCa screening counselling given ?",
 				"type": "obs",
 				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "d22184d3-be1d-43f0-834b-3cedd0b0f6bf",
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes",
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "SNOMED CT",
-						  "value": "CT: 373066001"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						}
-					  ]
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No",
-					  "conceptMappings": [
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						}
-					  ]
-					}
-				  ]
-				},
+					"rendering": "radio",
+					"concept": "fc5ec0e6-8e56-4a23-8bf9-fbe464da12c7",
+					"answers": [
+					  {
+						"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Yes"
+					  },
+					  {
+						"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "No"
+					  }
+					]
+				  },
 				"id": "isCxCaCounsellingGiven"
 			  },
 			  {
@@ -10836,111 +10551,23 @@
 				"id": "dateCxCaCounsellingGiven"
 			  },
 			  {
-				"label": "Accepted cervical cancer screenin *",
+				"label": "Accepted cervical cancer screening *",
 				"type": "obs",
 				"required": "true",
 				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "fa3c067f-89f3-4e34-a388-b1fb8b7c3cb2",
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes",
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1065"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373066001"
-						},
-						{
-						  "type": "SNOMED CT",
-						  "value": "CT: 373066001"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1065"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1065"
-						}
-					  ]
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No",
-					  "conceptMappings": [
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1066"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "373067005"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1066"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1066"
-						}
-					  ]
-					}
-				  ]
-				},
+					"rendering": "radio",
+					"concept": "1b1dc36e-fe65-4f4b-8304-09fbd9c106ad",
+					"answers": [
+					  {
+						"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Yes"
+					  },
+					  {
+						"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "No"
+					  }
+					]
+				  },
 				"hide": {
 				  "hideWhenExpression": "isCxCaCounsellingGiven !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
@@ -10952,7 +10579,7 @@
 				"required": "true",
 				"questionOptions": {
 				  "rendering": "eth-date",
-				  "concept": "8cb69148-cdce-448e-90c6-f582b5c169da",
+				  "concept": "c7ecf767-325a-41c2-80a7-79c91762ab3e",
 				  "weeksList": ""
 				},
 				"hide": {
@@ -11088,45 +10715,25 @@
 				"type": "obs",
 				"required": "true",
 				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "e5e99fc7-ff2d-4306-aefd-b87a07fc9ab4",
-				  "conceptMappings": [
-					{
-					  "type": "OCT",
-					  "value": "CervicalCancerScreeening_ConvSet"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes",
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "165619"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "268543007"
-						}
-					  ]
-					},
-					{
-					  "concept": "165618AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No",
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "4461000175108"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "165618"
-						}
-					  ]
-					}
-				  ]
-				},
+					"rendering": "radio",
+					"concept": "01c546b4-e08a-4c0c-82ef-d387cab6bbbf",
+					"conceptMappings": [
+					  {
+						"type": "OCT",
+						"value": "CervicalCancerScreeening_ConvSet"
+					  }
+					],
+					"answers": [
+					  {
+						"concept": "165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Yes"
+					  },
+					  {
+						"concept": "165618AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "No"
+					  }
+					]
+				  },
 				"hide": {
 				  "hideWhenExpression": "acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
@@ -11137,26 +10744,23 @@
 				"type": "obs",
 				"required": "true",
 				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "9bd94bd2-059c-4273-8b6b-31a8e02c6f02",
-				  "answers": [
-					{
-					  "concept": "3a8bb4b4-7496-415d-a327-57ae3711d4eb",
-					  "label": "1st time screening",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "13c3ee77-4e7c-4224-ae40-0b2727932a0f",
-					  "label": "Re-Screening after previous negative result",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "3f4a6148-39c1-4980-81c6-6d703367c4a6",
-					  "label": "Post-treatment follow-up screening",
-					  "conceptMappings": []
-					}
-				  ]
-				},
+					"rendering": "select",
+					"concept": "2c6f75a8-f35c-4671-939e-ebcc680c48a0",
+					"answers": [
+					  {
+						"concept": "165269AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "1st time screening"
+					  },
+					  {
+						"concept": "95b18d5a-c722-4312-bb29-d561f909e596",
+						"label": "Re-Screening after previous negative result"
+					  },
+					  {
+						"concept": "d4fd9773-8886-487e-aa59-9a0dd7fb948c",
+						"label": "Post-treatment follow-up screening"
+					  }
+					]
+				  },
 				"hide": {
 				  "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
@@ -11167,67 +10771,23 @@
 				"type": "obs",
 				"required": "true",
 				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "53ff5cd0-0f37-4190-87b1-9eb439a15e94",
-				  "answers": [
-					{
-					  "concept": "9580690a-0e84-451a-ada9-c4478d999dc2",
-					  "label": "HPV DNA screening & VIA triage",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "8304ffef-ac7b-425c-af3b-6ddc4d052ca8",
-					  "label": "VIA",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Cytology",
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "90226004"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "885"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "41"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "885"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "41"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "885"
-						},
-						{
-						  "type": "IMO-ProcedureIT",
-						  "value": "1064218"
-						},
-						{
-						  "type": "IMO-ProcedureIT",
-						  "value": "1064218"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "885"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "90226004"
-						}
-					  ]
-					}
-				  ]
-				},
+					"rendering": "select",
+					"concept": "c842a287-f94c-48ee-a370-bd6540a0d1af",
+					"answers": [
+					  {
+						"concept": "d3989991-4f6d-4336-9f84-cb4208d39ae6",
+						"label": "HPV DNA screening & VIA triage"
+					  },
+					  {
+						"concept": "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1",
+						"label": "VIA"
+					  },
+					  {
+						"concept": "885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Cytology"
+					  }
+					]
+				  },
 				"hide": {
 				  "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
@@ -11321,7 +10881,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "rendering": "eth-date",
-				  "concept": "2a7bb0f3-1f7a-4815-9ee6-363d504637e1",
+				  "concept": "8b57d62c-c9a3-454a-b1af-929ca69603ce",
 				  "weeksList": ""
 				},
 				"hide": {
@@ -11667,7 +11227,7 @@
 				"required": "true",
 				"questionOptions": {
 				  "rendering": "eth-date",
-				  "concept": "b7158b64-a1c8-43bc-a907-0962f202e1bd",
+				  "concept": "f46c7ed3-65c3-451c-a8e1-4c615f795db1",
 				  "weeksList": ""
 				},
 				"hide": {
@@ -11927,51 +11487,27 @@
 				"label": "Colposcopy exam finding",
 				"type": "obs",
 				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "9096a18e-c009-4f4c-b0ba-0605e0f16578",
-				  "answers": [
-					{
-					  "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Normal / Negative",
-					  "conceptMappings": [
-						{
-						  "type": "AMPATH",
-						  "value": "1115"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "17621005"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1115"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "17621005"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1115"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1115"
-						}
-					  ]
-					},
-					{
-					  "concept": "7fe8d523-fb0d-4435-9c77-547342b1a04f",
-					  "label": "Low grade SIL / Positive",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "0e663529-b62f-4680-b886-bc37ca008d60",
-					  "label": "High Grade SIL / Suspicious cancer",
-					  "conceptMappings": []
-					}
-				  ]
-				},
+					"rendering": "select",
+					"concept": "93bf2a3e-1675-44c9-b7ee-b8ba9cb32b22",
+					"answers": [
+					  {
+						"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Normal / Negative"
+					  },
+					  {
+						"concept": "f0f52e6c-56fa-44c6-a81e-a3a7ac8548c4",
+						"label": "Low grade SIL / Positive"
+					  },
+					  {
+						"concept": "7276fa8a-3bab-4bd7-b647-8e9c8536ef30",
+						"label": "High Grade SIL / Suspicious cancer"
+					  },
+					  {
+						"concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Not done"
+					  }
+					]
+				  },
 				"hide": {
 				  "hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
 				},
@@ -11991,7 +11527,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "rendering": "select",
-				  "concept": "3a8bb4b4-7496-415d-a327-57ae3711d4eb",
+				  "concept": "c7ca4fc7-8944-4824-84b0-c299d59a89c0",
 				  "answers": [
 					{
 					  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
