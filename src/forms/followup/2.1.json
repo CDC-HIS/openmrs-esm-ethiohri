@@ -1,5 +1,9 @@
 {
-	"name": "",
+	"name": "POC Followup Form",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Follow Up",
 	"pages": [
 	  {
 		"label": "General Information",

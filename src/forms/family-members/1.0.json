@@ -1,5 +1,9 @@
 {
 	"name": "Family Information",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Family Information",
 	"pages": [
 	  {
 		"label": "Family Information",

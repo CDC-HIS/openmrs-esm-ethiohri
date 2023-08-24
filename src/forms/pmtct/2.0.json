@@ -1,5 +1,9 @@
 {
     "name": "HEI Follow Up Form",
+    "version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "PMTCT",
     "pages": [
         {
             "label": "HEI Follow Up",
@@ -616,7 +620,8 @@
         }
     ],
     "processor": "EncounterFormProcessor",
-    "encounterType": "55fbd571-a8ec-4332-bd83-c6c5d4982d16",
+    "uuid": "1e3aeb30-e55b-47d1-bf17-1pmtctc351d1",
+    "encounterType": "776544d5-be3c-41ae-bef4-de83eb82ec2a ",
     "referencedForms": [],
     "allowUnspecifiedAll": true
 }

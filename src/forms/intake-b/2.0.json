@@ -1,5 +1,9 @@
 {
 	"name": "POC Intake-B",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Intake B",
 	"pages": [
 		{
 			"label": "Past OIs and Treatment",

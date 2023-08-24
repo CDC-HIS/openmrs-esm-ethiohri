@@ -1,5 +1,9 @@
 {
-	"name": "",
+	"name": "Re-test",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Re-test",
 	"pages": [
 		{
 			"label": "Registration",
@@ -1633,6 +1637,6 @@
 	"processor": "EncounterFormProcessor",
 	"uuid": "3319f156-e639-4cf0-a80b-e90bc4590e66",
 	"referencedForms": [],
-	"encounterType": "1cd0c205-9a6b-418d-ae91-ec54913f5d36",
+	"encounterType": "aedaa1d0-1c03-425b-a49d-864a4981cf2f",
 	"allowUnspecifiedAll": true
 }

@@ -1,5 +1,9 @@
 {
-    "name": "Pre Exposure Followup",
+  "name": "Pre Exposure Followup",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "Pre Exposure Followup",
     "pages": [
       {
         "label": "Followup",
@@ -1143,6 +1147,6 @@
     "processor": "EncounterFormProcessor",
     "uuid": "3329c50b-2cd2-44ab-af2b-06f3b914cc7e",
     "referencedForms": [],
-    "encounterType": "df13ff58-d86a-42ec-ace1-5c3ad8045e2e",
+    "encounterType": "bc423d48-af6f-4354-af22-fec8ff1c0308",
     "allowUnspecifiedAll": true
   }

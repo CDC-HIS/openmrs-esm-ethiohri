@@ -1,5 +1,9 @@
 {
 	"name": "POC Intake-A",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Intake A",
 	"pages": [
 	  {
 		"label": "General Information",

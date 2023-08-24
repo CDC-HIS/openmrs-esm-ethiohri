@@ -1,10 +1,15 @@
 {
-  "encounterType": "",
+  
   "name": "POC Index Case Testing",
+  "version": "1.0",
+  "published": true,
+	"retired": false,
+  "encounter": "Index Case Testing",
   "processor": "EncounterFormProcessor",
   "referencedForms": [],
   "uuid": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
-  "version": "1.0",
+  "encounterType": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
+  "allowUnspecifiedAll": true,
   "pages": [
     {
       "label": "POC Index Case Testing",

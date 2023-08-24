@@ -1,5 +1,9 @@
 {
   "name": "Prep",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "Pre Exposure Screening",
   "pages": [
     {
       "label": "Patient Information",
@@ -1627,6 +1631,6 @@
   "processor": "EncounterFormProcessor",
   "uuid": "e7bce9e2-5ed6-4cbb-ab93-3531a4c33760",
   "referencedForms": [],
-  "encounterType": "69b60ded-868d-4b6a-8f49-b0c84c18cec6",
+  "encounterType": "8c2b6a9b-4795-417d-affe-2530a753b715",
   "allowUnspecifiedAll": true
 }

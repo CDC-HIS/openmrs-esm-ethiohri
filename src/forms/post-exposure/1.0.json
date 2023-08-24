@@ -1,5 +1,9 @@
 {
-	"name": "",
+	"name": "Exposed Person Information",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Exposed Person Information",
 	"pages": [
 	  {
 		"label": "Exposed Person Information",
@@ -1095,6 +1099,6 @@
 	"processor": "EncounterFormProcessor",
 	"uuid": "0937d863-6940-40d2-9c7f-779c427fd766",
 	"referencedForms": [],
-	"encounterType": "3fbbab92-ad31-4584-91a7-c7c12dd6c663",
+	"encounterType": "de4cef7c-0aca-4593-9b5f-64a51c841c9d",
 	"allowUnspecifiedAll": true
   }
