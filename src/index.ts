@@ -17,6 +17,7 @@ import {
   FACILITY_NAME,
   HIV_CARE_AND_TREATMENT,
   HIV_TESTING_SERVICE_META,
+  INDEX_CASE_TESTING_META,
   MATERNAL_HEALTH_SUMMARY,
   PMTCT_META,
   POST_META,
@@ -162,5 +163,12 @@ export const hivTestingServiceMenu = getSyncLifecycle(
 export const hivTestingServiceChart = getAsyncLifecycle(
   () =>
     import("./pages/hiv-testing-service/hiv-testing-service-summary.component"),
+  options
+);
+export const indexCaseTestingMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...INDEX_CASE_TESTING_META,
+    moduleName,
+  }),
   options
 );
