@@ -5,7 +5,7 @@ import styles from "../program-management/program-management.scss";
 import ICTGeneral from "./tabs/ict-general.component";
 import IndexContactFollowup from "./tabs/index-contact-followup.component";
 
-const ICT: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <div className={styles.tabContainer}>
       <Tabs>
@@ -26,4 +26,4 @@ const ICT: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 };
 
-export default ICT;
+export default IndexCaseTesting;
