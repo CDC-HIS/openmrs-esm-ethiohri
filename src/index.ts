@@ -172,3 +172,8 @@ export const indexCaseTestingMenu = getSyncLifecycle(
   }),
   options
 );
+export const indexCaseTestingChart = getAsyncLifecycle(
+  () =>
+    import("./pages/ict/ict.component"),
+  options
+);

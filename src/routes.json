@@ -180,6 +180,11 @@
         "path": "index-case-testing",
         "columns": 1
       }
+    },
+    {
+      "name": "index-case-testing-ext",
+      "slot": "index-case-testing-slot",
+      "component": "indexCaseTestingChart"
     }
   ]
 }
