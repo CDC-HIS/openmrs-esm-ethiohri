@@ -10,8 +10,8 @@ const ICT: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
     <div className={styles.tabContainer}>
       <Tabs>
         <TabList contained>
-          <Tab>HEI Enrollment</Tab>
-          <Tab>HEI Followup</Tab>
+          <Tab>ICT General</Tab>
+          <Tab>Index Contact Followup</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
