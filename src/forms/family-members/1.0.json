@@ -491,7 +491,7 @@
 							"label": "Counselation date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"weeksList": "",
 								"concept": "a4c7ffa9-ba89-4f7d-ae01-50c139527ce4"
 							},
@@ -591,7 +591,7 @@
 							"label": "HIV test date",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -782,7 +782,7 @@
 							"label": "Date enrolled in care",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
 							},
 							"hide": {
@@ -931,7 +931,7 @@
 							"label": "Date started ART",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
