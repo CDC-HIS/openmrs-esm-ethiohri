@@ -1,0 +1,1036 @@
+{
+    "name": "POC ICT General",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "ICT General",
+    "processor": "EncounterFormProcessor",
+    "referencedForms": [],
+    "uuid": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
+    "encounterType": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
+    "allowUnspecifiedAll": true,
+    "pages": [
+        {
+            "label": "POC ICT General",
+            "sections": [
+                {
+                    "label": "ICT General",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Linked to App. service",
+                            "type": "obs",
+                            "required": false,
+                            "id": "linkedToApp",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "bb6e58c7-2691-4f22-9b6f-4d45e3606184",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "ICT Serial Number",
+                            "type": "obs",
+                            "required": true,
+                            "id": "ictNumber",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "b35f9632-9ff8-410f-bfcb-f497023bbcf9",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Index first name",
+                            "type": "obs",
+                            "required": false,
+                            "id": "indexFirstName",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "2725"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166102"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "408677003"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Index middle name",
+                            "type": "obs",
+                            "required": false,
+                            "id": "indexMiddleName",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "716057004"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166574"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Index last name",
+                            "type": "obs",
+                            "required": false,
+                            "id": "indexLastName",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "2724"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "397678008"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166103"
+                                    }
+                                ],
+                                "answers": []
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Marital status",
+                            "type": "obs",
+                            "required": false,
+                            "id": "maritalStatus",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "AMPATH",
+                                        "value": "1054"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH-Malawi",
+                                        "value": "1054"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "1054"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH-Malawi",
+                                        "value": "1054"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "AMPATH",
+                                        "value": "1054"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "3350"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "365581002"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "3350"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "365581002"
+                                    }
+                                ],
+                                "answers": [
+                                    {
+                                        "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Divorced"
+                                    },
+                                    {
+                                        "concept": "135704AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Lives alone"
+                                    },
+                                    {
+                                        "concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Living with partner"
+                                    },
+                                    {
+                                        "concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Married"
+                                    },
+                                    {
+                                        "concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Never married"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other non-coded"
+                                    },
+                                    {
+                                        "concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Separated"
+                                    },
+                                    {
+                                        "concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Widowed"
+                                    }
+                                ]
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Do you know about HIVST?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hivst",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "6949f032-06d5-4019-abce-dba4bb46e192",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "If yes, have you ever recommended your friends for HIVST?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "recommendedHivst",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "0bc4754a-473f-4929-826e-8b11bee4ea0e",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Have you ever tested using HIVST?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "testedUsingHivst",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "166464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "166464"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "KenyaEMR",
+                                        "value": "164952"
+                                    }
+                                ],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    },
+                                    {
+                                        "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Unknown"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Case finding strategy",
+                            "type": "obs",
+                            "required": false,
+                            "id": "caseFindingStrategy",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "f81ddad3-ba72-4670-91d4-1dbed708958b",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "9d0e9067-33a0-4d14-ad18-0baa4eab4297",
+                                        "label": "PICT (Provider-initiated counseling and testing)"
+                                    },
+                                    {
+                                        "concept": "160539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Voluntary counseling and testing program"
+                                    },
+                                    {
+                                        "concept": "160526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Early Infant Diagnosis Visit"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "If PICT,",
+                            "type": "obs",
+                            "required": false,
+                            "id": "ifPict",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "e5d1cf7c-d14a-49d2-bbdc-621804269115",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "6b4d8d21-a278-4649-963f-985025b28806",
+                                        "label": "ANC (Absolute neutrophil count)"
+                                    },
+                                    {
+                                        "concept": "afcd8ca6-4706-4a0f-8d3b-bb46781a1698",
+                                        "label": "HRST (HIV risk screening tool)"
+                                    },
+                                    {
+                                        "concept": "ca7df214-3fef-48d6-b8d7-16da8e921c4c",
+                                        "label": "ICT (Index-client testing)"
+                                    },
+                                    {
+                                        "concept": "41a9a67e-ce27-4a33-be91-0725209c69b0",
+                                        "label": "KP (Key population)"
+                                    },
+                                    {
+                                        "concept": "8d560b25-6860-44fb-bf16-d21672435c6d",
+                                        "label": "SNS (Social network strategy)"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Entry point (Service delivery point for HIV testing)",
+                            "type": "obs",
+                            "required": false,
+                            "id": "entryPoint",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "1201b688-45f8-4e56-b089-0b31138a19dd",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "TB"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "OPD1"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "OPD2"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "OPD3"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "OPD4"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "STI"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Derma"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Pedi OPD1"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Pedi OPD2"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Malnutrition"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other OPD"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "VCT"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "ANC Client"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "ANC Partner"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "L&D Client"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "L&D Partner"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "PNC Client"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "PNC Partner"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "HEI"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Medical Ward"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Pedi Ward"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Gyn Ward"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "ICT Children"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "ICT Partner"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Outreach testing"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Referred from community"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Public HF"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Private HF"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "NGO"
+                                    }
+                                ]
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Priority Criteria",
+                            "type": "obs",
+                            "required": false,
+                            "id": "priorityCriteria",
+                            "questionOptions": {
+                                "rendering": "multiCheckbox",
+                                "concept": "8534a956-49e8-42d9-82c4-33e51429265d",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "bde58790-d3fc-40d6-bcce-f728105f91cf",
+                                        "label": "PLHIV (People living with HIV) restart ART & adult"
+                                    },
+                                    {
+                                        "concept": "c1c0c92c-521c-454c-bfd2-52db5b308f6a",
+                                        "label": "PLHIV (People living with HIV) incare with STI"
+                                    },
+                                    {
+                                        "concept": "4693bef1-4d6b-4546-b2c9-1a3409b6158f",
+                                        "label": "Newly diagnosed"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
+                                    },
+                                    {
+                                        "concept": "41a9a67e-ce27-4a33-be91-0725209c69b0",
+                                        "label": "KP (Key population)"
+                                    },
+                                    {
+                                        "concept": "cd44c2af-e628-455f-8826-7aab004bd100",
+                                        "label": "Enrolled at PMTCT (Prevention of mother-to-child transmission of HIV)"
+                                    },
+                                    {
+                                        "concept": "f21b86a8-95b6-4ef6-ad36-d6f9ee92e1d9",
+                                        "label": "30"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Target population",
+                            "type": "obs",
+                            "required": false,
+                            "id": "targetPopulation",
+                            "questionOptions": {
+                                "rendering": "multiCheckbox",
+                                "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "e916113e-8d95-43f5-a07c-a21a8aca9bed",
+                                        "label": "Children of PLHIV (People living with HIV)"
+                                    },
+                                    {
+                                        "concept": "166430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "General population"
+                                    },
+                                    {
+                                        "concept": "162198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Long distance truck driver"
+                                    },
+                                    {
+                                        "concept": "9fb6c25b-4765-463b-9f26-7cc3addf1105",
+                                        "label": "Mobile worker/Daily laborer"
+                                    },
+                                    {
+                                        "concept": "2453316b-2e88-43d7-87c9-32ef4725ec5d",
+                                        "label": "Other MARPS-Wido-Divo-Sepa"
+                                    },
+                                    {
+                                        "concept": "b696f324-05a5-49ba-8577-6172195473fc",
+                                        "label": "OVC (Orphans and vulnerable children)"
+                                    },
+                                    {
+                                        "concept": "360d3b35-4946-454c-86e6-815fed0723f2",
+                                        "label": "Partner of PLHIV (People living with HIV)"
+                                    },
+                                    {
+                                        "concept": "e53cf0d0-86ed-4b20-aa93-58546b970c63",
+                                        "label": "Prisoners"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "HIV test date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hivTestDate",
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "164400"
+                                    }
+                                ],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "ART status",
+                            "type": "obs",
+                            "required": false,
+                            "id": "artStatus",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "944db041-06ff-4775-8739-540c74e8e0f7",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "7e305664-b939-4a24-bf7b-2d533cd16b0a",
+                                        "label": "Tested HIV+ (HIV Positive)"
+                                    },
+                                    {
+                                        "concept": "ed799b96-4e99-4abd-ac9d-87670bcf050c",
+                                        "label": "Started"
+                                    },
+                                    {
+                                        "concept": "167156AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Refused"
+                                    },
+                                    {
+                                        "concept": "5b0bd7f0-6792-4e9b-b250-7589ffc4db0b",
+                                        "label": "Referred"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
+                                    },
+                                    {
+                                        "concept": "f6ce58c8-1346-48ab-8f62-74edd9b8a7b7",
+                                        "label": "On OI management"
+                                    },
+                                    {
+                                        "concept": "d0409cbe-1932-446a-a2d6-149922204080",
+                                        "label": "On adherence preparation"
+                                    },
+                                    {
+                                        "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Died"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "ART start date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "artStartDate",
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "NARROWER-THAN",
+                                        "type": "AMPATH",
+                                        "value": "5869"
+                                    },
+                                    {
+                                        "relationship": "NARROWER-THAN",
+                                        "type": "AMPATH",
+                                        "value": "1499"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH",
+                                        "value": "2516"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "159599"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "PIH-Malawi",
+                                        "value": "2516"
+                                    },
+                                    {
+                                        "relationship": "NARROWER-THAN",
+                                        "type": "SNOMED-CT",
+                                        "value": "413946009"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-MVP",
+                                        "value": "1595991000105005"
+                                    }
+                                ],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "UAN",
+                            "type": "obs",
+                            "required": false,
+                            "id": "uan",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "c8d98ef1-5e58-417c-a7c3-7f30f76a7155",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "164402"
+                                    }
+                                ],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "If not, reasons",
+                            "type": "obs",
+                            "required": false,
+                            "id": "artNotInitiated",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "0692893e-95bd-4749-a7fe-b0ca96a79407",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Referred"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Declined"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Died"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Known +ve"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "On adherence"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "On OIs"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other, specify"
+                                    }
+                                ]
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Plan for next step",
+                            "type": "obs",
+                            "required": false,
+                            "id": "planForNextStep",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "1201b688-45f8-4e56-b089-0b31138a19dd",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Linked to case managers for further counseling and tracking"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Address adherence barriers"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Initiate ART when the patient is ready after OI manaagement"
+                                    }
+                                ]
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Outcome of non-initiated clients",
+                            "type": "obs",
+                            "required": false,
+                            "id": "outcomeOfNoninitiatedClients",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "1201b688-45f8-4e56-b089-0b31138a19dd",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Started ART"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Declined"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Died"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Confirmed referral and started ART in other facility"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Lost to follow up"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
+                                    }
+                                ]
+                            },
+                            "validators": []
+                        },
+                        {
+                            "label": "Is CRF completed?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "crf",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "f387c69d-ccb0-4f5b-b260-c51e23a491d9",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Test for recency",
+                            "type": "obs",
+                            "required": false,
+                            "id": "testForRecency",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "63ffc936-492f-4ee3-b24e-d6d8a72674a9",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Recency result",
+                            "type": "obs",
+                            "required": false,
+                            "id": "recencyResult",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "3e0c5f07-cea4-4da5-8091-854c4d343bc0",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "07896600-8646-4f15-9a5b-92593ee5008f",
+                                        "label": "IR (Incident/Intermittent Infection)"
+                                    },
+                                    {
+                                        "concept": "c0b85e2c-8c7e-456e-a0d5-1280c8bfa7d4",
+                                        "label": "LT (Long-Term Infection)"
+                                    },
+                                    {
+                                        "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Recent"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Case classification",
+                            "type": "obs",
+                            "required": false,
+                            "id": "caseClassification",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "165793AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "NARROWER-THAN",
+                                        "type": "SNOMED-CT",
+                                        "value": "406221003"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "165793"
+                                    }
+                                ],
+                                "answers": [
+                                    {
+                                        "concept": "165792AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Confirmed present"
+                                    },
+                                    {
+                                        "concept": "162863AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Probable"
+                                    },
+                                    {
+                                        "concept": "162743AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Suspected"
+                                    },
+                                    {
+                                        "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Unknown"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Is index TI?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "indexTi",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "0f7f772e-90e1-4980-a448-178a46111df7",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Screened for AE",
+                            "type": "obs",
+                            "required": false,
+                            "id": "screenedForAE",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "cfb99cde-34ba-4c6b-b89c-df5672ceb138",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Adverse event type",
+                            "type": "obs",
+                            "required": false,
+                            "id": "adverseEventType",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "e0e6d06a-fec6-4ae9-aec5-6d2ffda07f40",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Divorced"
+                                    },
+                                    {
+                                        "concept": "8da00bae-4655-46ba-b442-e3ca50b8bf96",
+                                        "label": "Job loss"
+                                    },
+                                    {
+                                        "concept": "807fa6a8-a2ff-45db-9b41-72949fd9401d",
+                                        "label": "Loneliness"
+                                    },
+                                    {
+                                        "concept": "74f8c5a5-be94-4605-947f-2eb2cac3c187",
+                                        "label": "Loss of relationship"
+                                    },
+                                    {
+                                        "concept": "c405b20b-0845-4721-b09b-d067fd36a594",
+                                        "label": "Loss of support"
+                                    },
+                                    {
+                                        "concept": "b47f53d9-e053-4caf-ac1e-f7fee48d89fc",
+                                        "label": "No AE (Adverse event)"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
+                                    },
+                                    {
+                                        "concept": "152292AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Physical Abuse"
+                                    },
+                                    {
+                                        "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Sexual abstinence"
+                                    },
+                                    {
+                                        "concept": "0f27a4b6-5f19-4c44-9d6d-abcdd9fd8d30",
+                                        "label": "Stigma"
+                                    },
+                                    {
+                                        "concept": "0ef9b5ba-8690-4c63-8b38-ed9a6a263a39",
+                                        "label": "Taking away access to children"
+                                    },
+                                    {
+                                        "concept": "a9cd93c0-fcd4-46d3-80aa-12d1a74fc8d4",
+                                        "label": "Verbal abuse"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Linked to App. service",
+                            "type": "obs",
+                            "required": false,
+                            "id": "linkedToApp",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "bb6e58c7-2691-4f22-9b6f-4d45e3606184",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -182,7 +182,7 @@
       }
     },
     {
-      "name": "index-case-testing-ext",
+      "name": "index-case-testing-chart-ext",
       "slot": "index-case-testing-slot",
       "component": "indexCaseTestingChart"
     }
