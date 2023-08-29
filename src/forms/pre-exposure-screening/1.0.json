@@ -839,6 +839,9 @@
               "label": "STI screening result",
               "type": "obs",
               "required": false,
+              "hide": {
+                "hideWhenExpression": "screenedForSti !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "id": "screeningResult",
               "questionOptions": {
                 "rendering": "select",
@@ -1097,6 +1100,9 @@
               "label": "Is your partner adherent to ART medications",
               "type": "obs",
               "required": false,
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "id": "isYourPartnerAdherentToARTMedications",
               "questionOptions": {
                 "rendering": "radio",
@@ -1138,6 +1144,9 @@
               "label": "Last viral load result of your partner",
               "type": "obs",
               "required": false,
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "id": "lastViralLoadResultOfYourPartner",
               "questionOptions": {
                 "rendering": "select",
