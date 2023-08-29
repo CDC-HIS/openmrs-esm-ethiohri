@@ -18,18 +18,6 @@
                     "isExpanded": "true",
                     "questions": [
                         {
-                            "label": "Linked to App. service",
-                            "type": "obs",
-                            "required": false,
-                            "id": "linkedToApp",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "bb6e58c7-2691-4f22-9b6f-4d45e3606184",
-                                "conceptMappings": [],
-                                "answers": []
-                            }
-                        },
-                        {
                             "label": "ICT Serial Number",
                             "type": "obs",
                             "required": true,
@@ -129,7 +117,7 @@
                             "required": false,
                             "id": "maritalStatus",
                             "questionOptions": {
-                                "rendering": "radio",
+                                "rendering": "select",
                                 "concept": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
                                     {
@@ -212,8 +200,7 @@
                                         "label": "Widowed"
                                     }
                                 ]
-                            },
-                            "validators": []
+                            }
                         },
                         {
                             "label": "Do you know about HIVST?",
@@ -240,6 +227,9 @@
                             "label": "If yes, have you ever recommended your friends for HIVST?",
                             "type": "obs",
                             "required": false,
+                            "hide": {
+                                "hideWhenExpression": "hivst !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
                             "id": "recommendedHivst",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -322,9 +312,12 @@
                             "label": "If PICT,",
                             "type": "obs",
                             "required": false,
+                            "hide": {
+                                "hideWhenExpression": "caseFindingStrategy !== '9d0e9067-33a0-4d14-ad18-0baa4eab4297'"
+                            },
                             "id": "ifPict",
                             "questionOptions": {
-                                "rendering": "radio",
+                                "rendering": "select",
                                 "concept": "e5d1cf7c-d14a-49d2-bbdc-621804269115",
                                 "conceptMappings": [],
                                 "answers": [
@@ -361,7 +354,7 @@
                             "required": false,
                             "id": "entryPoint",
                             "questionOptions": {
-                                "rendering": "radio",
+                                "rendering": "select",
                                 "concept": "1201b688-45f8-4e56-b089-0b31138a19dd",
                                 "conceptMappings": [],
                                 "answers": [
@@ -482,8 +475,7 @@
                                         "label": "NGO"
                                     }
                                 ]
-                            },
-                            "validators": []
+                            }
                         },
                         {
                             "label": "Priority Criteria",
@@ -577,7 +569,7 @@
                             "required": false,
                             "id": "hivTestDate",
                             "questionOptions": {
-                                "rendering": "date",
+                                "rendering": "eth-date",
                                 "concept": "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
                                     {
@@ -595,7 +587,7 @@
                             "required": false,
                             "id": "artStatus",
                             "questionOptions": {
-                                "rendering": "radio",
+                                "rendering": "select",
                                 "concept": "944db041-06ff-4775-8739-540c74e8e0f7",
                                 "conceptMappings": [],
                                 "answers": [
@@ -638,9 +630,12 @@
                             "label": "ART start date",
                             "type": "obs",
                             "required": false,
+                            "hide": {
+                                "hideWhenExpression": "artStatus !== 'ed799b96-4e99-4abd-ac9d-87670bcf050c'"
+                            },
                             "id": "artStartDate",
                             "questionOptions": {
-                                "rendering": "date",
+                                "rendering": "eth-date",
                                 "concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
                                     {
@@ -686,6 +681,9 @@
                             "label": "UAN",
                             "type": "obs",
                             "required": false,
+                            "hide": {
+                                "hideWhenExpression": "artStatus !== 'ed799b96-4e99-4abd-ac9d-87670bcf050c'"
+                            },
                             "id": "uan",
                             "questionOptions": {
                                 "rendering": "text",
@@ -699,112 +697,6 @@
                                 ],
                                 "answers": []
                             }
-                        },
-                        {
-                            "label": "If not, reasons",
-                            "type": "obs",
-                            "required": false,
-                            "id": "artNotInitiated",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "0692893e-95bd-4749-a7fe-b0ca96a79407",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Referred"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Declined"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Died"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Known +ve"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "On adherence"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "On OIs"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Other, specify"
-                                    }
-                                ]
-                            },
-                            "validators": []
-                        },
-                        {
-                            "label": "Plan for next step",
-                            "type": "obs",
-                            "required": false,
-                            "id": "planForNextStep",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "1201b688-45f8-4e56-b089-0b31138a19dd",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Linked to case managers for further counseling and tracking"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Address adherence barriers"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Initiate ART when the patient is ready after OI manaagement"
-                                    }
-                                ]
-                            },
-                            "validators": []
-                        },
-                        {
-                            "label": "Outcome of non-initiated clients",
-                            "type": "obs",
-                            "required": false,
-                            "id": "outcomeOfNoninitiatedClients",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "1201b688-45f8-4e56-b089-0b31138a19dd",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Started ART"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Declined"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Died"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Confirmed referral and started ART in other facility"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Lost to follow up"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Other"
-                                    }
-                                ]
-                            },
-                            "validators": []
                         },
                         {
                             "label": "Is CRF completed?",
@@ -852,6 +744,9 @@
                             "label": "Recency result",
                             "type": "obs",
                             "required": false,
+                            "hide": {
+                                "hideWhenExpression": "testForRecency !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
                             "id": "recencyResult",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -959,9 +854,12 @@
                             "label": "Adverse event type",
                             "type": "obs",
                             "required": false,
+                            "hide": {
+                                "hideWhenExpression": "screenedForAE !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
                             "id": "adverseEventType",
                             "questionOptions": {
-                                "rendering": "radio",
+                                "rendering": "select",
                                 "concept": "e0e6d06a-fec6-4ae9-aec5-6d2ffda07f40",
                                 "conceptMappings": [],
                                 "answers": [
