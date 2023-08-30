@@ -32,7 +32,7 @@
                   "required": false,
                   "id": "elicitedDate",
                   "questionOptions": {
-                    "rendering": "date",
+                    "rendering": "eth-date",
                     "concept": "58abd286-8f57-4717-aa41-efd8e93d5902",
                     "conceptMappings": [],
                     "answers": []
@@ -77,7 +77,7 @@
                   "required": false,
                   "id": "currentTestDate",
                   "questionOptions": {
-                    "rendering": "date",
+                    "rendering": "eth-date",
                     "concept": "76b355ac-5708-4e2e-ab5c-7b21d5c62405",
                     "conceptMappings": [],
                     "answers": []
@@ -261,7 +261,7 @@
                   "required": false,
                   "id": "contactBirthDate",
                   "questionOptions": {
-                    "rendering": "date",
+                    "rendering": "eth-date",
                     "concept": "166575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "conceptMappings": [
                       {
@@ -369,6 +369,9 @@
                   "label": "IPV risk outcome",
                   "type": "obs",
                   "required": false,
+                  "hide": {
+                    "hideWhenExpression": "ipvRisk !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
                   "id": "ipvRiskOutcome",
                   "questionOptions": {
                     "rendering": "multiCheckbox",
@@ -425,7 +428,7 @@
                   "required": false,
                   "id": "notificationPlan",
                   "questionOptions": {
-                    "rendering": "radio",
+                    "rendering": "select",
                     "concept": "4d789ec1-9ea9-4b5e-bc27-a0611c4f8310",
                     "conceptMappings": [],
                     "answers": [
@@ -490,7 +493,7 @@
                   "required": false,
                   "id": "contactTrialsOutcome",
                   "questionOptions": {
-                    "rendering": "radio",
+                    "rendering": "select",
                     "concept": "8d36d055-439b-4ad6-9744-c7720557f6cb",
                     "conceptMappings": [],
                     "answers": [
@@ -550,6 +553,9 @@
                   "label": "Prior HIV test result",
                   "type": "obs",
                   "required": false,
+                  "hide": {
+                    "hideWhenExpression": "testedBefore !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
                   "id": "priorHivTestResult",
                   "questionOptions": {
                     "rendering": "radio",
@@ -576,8 +582,11 @@
                   "type": "obs",
                   "required": false,
                   "id": "priorTestDate",
+                  "hide": {
+                    "hideWhenExpression": "testedBefore !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
                   "questionOptions": {
-                    "rendering": "date",
+                    "rendering": "eth-date",
                     "concept": "67e5e461-c1bd-44fc-8b74-5929a388df9a",
                     "conceptMappings": [],
                     "answers": []
@@ -589,7 +598,7 @@
                   "required": false,
                   "id": "hivstKit",
                   "questionOptions": {
-                    "rendering": "date",
+                    "rendering": "eth-date",
                     "concept": "947073ef-aa76-42cb-a361-1641149a8100",
                     "conceptMappings": [],
                     "answers": []
@@ -622,7 +631,7 @@
                   "required": false,
                   "id": "hivstReportDate",
                   "questionOptions": {
-                    "rendering": "date",
+                    "rendering": "eth-date",
                     "concept": "70e43194-c463-444d-a631-db938fbc1bdc",
                     "conceptMappings": [],
                     "answers": []
@@ -686,9 +695,12 @@
                   "label": "Date oral PrEP started",
                   "type": "obs",
                   "required": false,
+                  "hide": {
+                    "hideWhenExpression": "startedOralPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
                   "id": "dateOralPrepStarted",
                   "questionOptions": {
-                    "rendering": "date",
+                    "rendering": "eth-date",
                     "concept": "5810b330-1003-4619-9e4f-c8a1f25fd12c",
                     "conceptMappings": [],
                     "answers": []

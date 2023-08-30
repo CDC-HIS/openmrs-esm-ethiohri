@@ -2027,7 +2027,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arvTreatmentTaken !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "Regimen"
 						},
@@ -2040,7 +2040,7 @@
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arvTreatmentTaken !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "artStartDate"
 						},
@@ -2081,7 +2081,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arvTreatmentTaken !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "monthsOnART"
 						},
@@ -2241,7 +2241,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "lifelongARTTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arvTreatmentTaken !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "stillonTreatment"
 						}
@@ -2875,7 +2875,7 @@
 							"label": "LMP",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "eth-date",
+								"rendering": "",
 								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
 								"weeksList": ""
 							},
@@ -2888,7 +2888,7 @@
 							"label": "EDD",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "eth-date",
+								"rendering": "",
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
@@ -4054,6 +4054,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "heentExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "heentExaminationComment"
 						},
 						{
@@ -4182,6 +4185,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "lymphNodesExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "lymphNodesExaminationComment"
 						},
 						{
@@ -4288,6 +4294,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "chestExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "chestExaminationComment"
 						},
 						{
@@ -4389,6 +4398,9 @@
 										"value": "271910006"
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "heartExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "heartExaminationComment"
 						},
@@ -4496,6 +4508,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "abdomenExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "abdomenExaminationComment"
 						},
 						{
@@ -4583,6 +4598,9 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "1854b210-5a4b-4c7f-a591-f3eddbbae649"
+							},
+							"hide": {
+								"hideWhenExpression": "genitourinarySystemExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "genitourinarySystemExaminationComment"
 						},
@@ -4686,6 +4704,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "musculoskeletalSystemExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "musculoskeletalSystemExaminationComment"
 						},
 						{
@@ -4788,6 +4809,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "skinExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "skinExaminationComment"
 						},
 						{
@@ -4889,6 +4913,9 @@
 										"value": "163109"
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "nervousSystemExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "nervousSystemExaminationComment"
 						},
