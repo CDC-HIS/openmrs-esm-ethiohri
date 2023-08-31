@@ -463,6 +463,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
+								"calculate": {
+									"calculateExpression": "calcTreatmentEndDate('followupDate','arvDispensedInDays', 'followupStatus'))"
+								},
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"readonly": "false",
@@ -2712,7 +2715,7 @@
 							"label": "LMP",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "",
+								"rendering": "eth-date",
 								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
 								"weeksList": ""
 							},
@@ -2725,7 +2728,10 @@
 							"label": "EDD",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "",
+								"rendering": "eth-date",
+								"calculate": {
+									"calculateExpression": "calcEDD('lmp')"
+								},
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [
@@ -6567,6 +6573,9 @@
 							"id": "viralLoadStatus",
 							"questionOptions": {
 								"rendering": "radio",
+								"calculate": {
+									"calculateExpression": "calcViralLoadStatus('viralLoadCount')"
+								},
 								"concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
 								"conceptMappings": [
 									{
@@ -8539,7 +8548,7 @@
 							"hide": {
 								"hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "arvDispensedDose"
+							"id": "arvDispensedInDays"
 						},
 						{
 							"label": "Side effects",
@@ -9822,6 +9831,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
+								"calculate": {
+									"calculateExpression": "calcNextVisitDate('followupDate','arvDispensedInDays'))"
+								},
 								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
 								"conceptMappings": [

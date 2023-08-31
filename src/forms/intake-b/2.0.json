@@ -2049,6 +2049,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
+								"calculate": {
+									"calculateExpression": "Math.round(calcMonthsOnART('artStartDate'))"
+								},
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"max": 99,
 								"min": 0,
@@ -2878,7 +2881,7 @@
 							"label": "LMP",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "",
+								"rendering": "eth-date",
 								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
 								"weeksList": ""
 							},
@@ -2891,7 +2894,10 @@
 							"label": "EDD",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "",
+								"rendering": "eth-date",
+								"calculate": {
+									"calculateExpression": "calcEDD('LMP')"
+								},
 								"concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
