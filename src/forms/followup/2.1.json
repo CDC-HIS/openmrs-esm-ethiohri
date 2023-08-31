@@ -464,7 +464,7 @@
 							"questionOptions": {
 								"rendering": "eth-date",
 								"calculate": {
-									"calculateExpression": "calcTreatmentEndDate('followupDate','arvDispensedInDays', 'followupStatus'))"
+									"calculateExpression": "calcTreatmentEndDate('followupDate','arvDispensedInDays', 'followupStatus')"
 								},
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
@@ -9832,7 +9832,7 @@
 							"questionOptions": {
 								"rendering": "eth-date",
 								"calculate": {
-									"calculateExpression": "calcNextVisitDate('followupDate','arvDispensedInDays'))"
+									"calculateExpression": "calcNextVisitDate('followupDate','arvDispensedInDays')"
 								},
 								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
