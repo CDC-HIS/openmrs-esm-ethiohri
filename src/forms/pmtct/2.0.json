@@ -296,7 +296,7 @@
                             "required": false,
                             "id": "oralCandidiasis",
                             "questionOptions": {
-                                "rendering": "multiCheckbox",
+                                "rendering": "checkbox",
                                 "concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
                                     {

@@ -107,7 +107,7 @@
                                     },
                                     "id": "notAccepted",
                                     "questionOptions": {
-                                        "rendering": "multiCheckbox",
+                                        "rendering": "checkbox",
                                         "concept": "59fa6f41-a1d0-45bc-af79-643b2e7dcd23",
                                         "conceptMappings": [],
                                         "answers": [

@@ -477,7 +477,7 @@
 							"required": false,
 							"id": "observationsConductedDuringCurrentVisit",
 							"questionOptions": {
-								"rendering": "multiCheckbox",
+								"rendering": "checkbox",
 								"concept": "7d175fa9-e64c-4923-ae6d-e35512be07a3",
 								"conceptMappings": [],
 								"answers": [

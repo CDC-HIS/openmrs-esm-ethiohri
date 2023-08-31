@@ -374,7 +374,7 @@
                   },
                   "id": "ipvRiskOutcome",
                   "questionOptions": {
-                    "rendering": "multiCheckbox",
+                    "rendering": "checkbox",
                     "concept": "d9843fda-3799-4727-8695-02292f4a90b4",
                     "conceptMappings": [],
                     "answers": [

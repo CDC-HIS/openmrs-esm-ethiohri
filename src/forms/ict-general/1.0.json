@@ -483,7 +483,7 @@
                             "required": false,
                             "id": "priorityCriteria",
                             "questionOptions": {
-                                "rendering": "multiCheckbox",
+                                "rendering": "checkbox",
                                 "concept": "8534a956-49e8-42d9-82c4-33e51429265d",
                                 "conceptMappings": [],
                                 "answers": [
@@ -524,7 +524,7 @@
                             "required": false,
                             "id": "targetPopulation",
                             "questionOptions": {
-                                "rendering": "multiCheckbox",
+                                "rendering": "checkbox",
                                 "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016",
                                 "conceptMappings": [],
                                 "answers": [
