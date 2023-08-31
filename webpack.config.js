@@ -29,7 +29,7 @@ config.module = {
 
 // Overrides to disable CSS Modules for non-scss scripts, this means
 // CSS Modules will only be supported with .scss scripts
-// config.cssRuleConfig.use = ["css-loader"];
-// config.cssRuleConfig.test = /\.css$/;
+config.cssRuleConfig.use = ["style-loader", "css-loader"];
+config.cssRuleConfig.test = /\.css$/;
 
 module.exports = config;

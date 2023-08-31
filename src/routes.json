@@ -6,43 +6,7 @@
   },
   "pages": [],
   "extensions": [
-    {
-      "name": "test-patient-details-button",
-      "slot": "patient-actions-slot",
-      "component": "patientDetailsButton"
-    },
-    {
-      "name": "test-attribute-tags",
-      "slot": "patient-banner-tags-slot",
-      "component": "attributeTags"
-    },
-    {
-      "name": "hiv-baseline-ext-et",
-      "slot": "patient-chart-summary-dashboard-slot",
-      "component": "hivBaseline",
-      "meta": {
-        "title": "HIV Baseline",
-        "columns": 1
-      }
-    },
-    {
-      "name": "active-medications-widget-et",
-      "slot": "patient-chart-summary-dashboard-slot",
-      "component": "ethiohriActiveMedications",
-      "meta": {
-        "title": "Active Medications",
-        "columns": 1
-      }
-    },
-    {
-      "name": "vitals-overview-widget-et",
-      "slot": "patient-chart-summary-dashboard-slot",
-      "component": "vitalsOverview",
-      "meta": {
-        "title": "Vitals Overview",
-        "columns": 1
-      }
-    },
+    
     {
       "name": "hiv-care-and-treatment-ext",
       "slot": "patient-chart-dashboard-slot",

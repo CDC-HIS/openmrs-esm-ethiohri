@@ -6,7 +6,9 @@ import ICTGeneral from "./tabs/ict-general.component";
 import ICTOffer from "./tabs/ict-offer.component";
 import IndexContactFollowup from "./tabs/index-contact-followup.component";
 
-const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
+  patientUuid,
+}) => {
   return (
     <div className={styles.tabContainer}>
       <Tabs>
