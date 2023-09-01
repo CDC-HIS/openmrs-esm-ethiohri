@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { useField } from "formik";
 import {
   OHRIFormFieldProps,
   OHRIFormContext,
@@ -27,6 +26,7 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
   question,
   onChange,
   handler,
+  useField,
 }) => {
   const [field, meta] = useField(question.id);
   const {
