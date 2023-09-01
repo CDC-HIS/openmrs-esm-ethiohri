@@ -45,14 +45,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "ICT General", package: "eth_hiv" },
+        form: { name: "POC ICT General", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View ICT General",
         mode: "view",
       },
       {
-        form: { name: "ICT General", package: "eth_hiv" },
+        form: { name: "POC ICT General", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit ICT General",
@@ -69,7 +69,7 @@ const ICTGeneral: React.FC<{ patientUuid: string }> = ({
     <EncounterList
       patientUuid={patientUuid}
       encounterType={ICT_GENERAL_ENCOUNTER_TYPE}
-      formList={[{ name: "ICT General" }]}
+      formList={[{ name: "POC ICT General" }]}
       columns={columns}
       description="ICT General List"
       headerTitle="ICT General"

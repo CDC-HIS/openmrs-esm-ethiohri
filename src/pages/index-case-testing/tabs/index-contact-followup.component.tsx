@@ -38,14 +38,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "Index Contact Followup", package: "eth_hiv" },
+        form: { name: "POC Index Contact Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View Index Contact Followup",
         mode: "view",
       },
       {
-        form: { name: "Index Contact Followup", package: "eth_hiv" },
+        form: { name: "POC Index Contact Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit Index Contact Followup",
@@ -62,7 +62,7 @@ const IndexContactFollowup: React.FC<{ patientUuid: string }> = ({
     <EncounterList
       patientUuid={patientUuid}
       encounterType={INDEX_CONTACT_FOLLOWUP_ENCOUNTER_TYPE}
-      formList={[{ name: "Index Contact Followup" }]}
+      formList={[{ name: "POC Index Contact Followup" }]}
       columns={columns}
       description="Index Contact Followup List"
       headerTitle="Index Contact Followup"
