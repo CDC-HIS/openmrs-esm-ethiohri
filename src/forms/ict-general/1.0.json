@@ -354,8 +354,8 @@
                             "required": false,
                             "id": "entryPoint",
                             "questionOptions": {
-                                "rendering": "select",
-                                "concept": "1201b688-45f8-4e56-b089-0b31138a19dd",
+                                "rendering": "checkbox",
+                                "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
                                 "conceptMappings": [],
                                 "answers": [
                                     {
@@ -921,10 +921,20 @@
                             "id": "linkedToApp",
                             "questionOptions": {
                                 "rendering": "radio",
-                                "concept": "bb6e58c7-2691-4f22-9b6f-4d45e3606184",
+                                "concept": "f4817ca2-a67f-46e3-8c97-864612ccbb47",
                                 "conceptMappings": [],
-                                "answers": []
-                            }
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            },
+                            "validators": []
                         }
                     ]
                 }
