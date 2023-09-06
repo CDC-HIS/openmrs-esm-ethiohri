@@ -430,7 +430,7 @@
 							},
 							"hide": {
 								"hideWhenExpression": "entryPoint !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							  },
+							},
 							"id": "otherEntryPoint"
 						},
 						{
@@ -962,7 +962,7 @@
 							},
 							"hide": {
 								"hideWhenExpression": "actionTakenForDiscrepant !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							  },
+							},
 							"id": "otherActionTakenForDiscrepent"
 						}
 					]
@@ -1205,7 +1205,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
-								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "ae329187-6232-4142-aa91-22c85bc8e5b5",
 								"weeksList": "",
 								"conceptMappings": [
 									{
@@ -1588,7 +1588,7 @@
 							},
 							"hide": {
 								"hideWhenExpression": "actionTaken !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							  },
+							},
 							"id": "reasonWhyArtNotInitiated"
 						},
 						{
@@ -1600,7 +1600,7 @@
 							},
 							"hide": {
 								"hideWhenExpression": "reasonWhyArtNotInitiated !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							  },
+							},
 							"id": "otherReasonArtNotInitiatedTheSameDay"
 						},
 						{

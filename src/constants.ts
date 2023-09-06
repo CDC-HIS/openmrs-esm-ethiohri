@@ -20,7 +20,7 @@ export const PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE =
 
 //HIV Art Therapy
 export const art_Therapy_EncounterUUID = "74bf4fe6-8fdb-4228-be39-680a93a9cf6d";
-export const artTherapyDateTime_UUID = "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const artTherapyDateTime_UUID = "ae329187-6232-4142-aa91-22c85bc8e5b5";
 export const regimenLine_UUID = "164515AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const regimen_UUID = "dfbe256e-30ba-4033-837a-2e8477f2e7cd";
 export const refusedTreatment_UUID = "ac4f3fd1-8a2a-4c5e-a335-3f675b82dd78";
@@ -49,7 +49,7 @@ export const priorityPopulationTypeConcept =
 export const dateOfHIVDiagnosisConcept = "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const dateOfHIVConfirmation = "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const regimen = "6d7d0327-e1f8-4246-bfe5-be1e82d94b14";
-export const artStartdate = "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const artStartdate = "ae329187-6232-4142-aa91-22c85bc8e5b5";
 export const entryPointConcept = "160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const re_enrolmentDateConcept = "20efadf9-86d3-4498-b3ab-7da4dad9c429";
 export const otherEntryPoint = "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";

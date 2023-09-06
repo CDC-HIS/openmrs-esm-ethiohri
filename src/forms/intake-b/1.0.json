@@ -1696,7 +1696,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
-								"concept": "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "ae329187-6232-4142-aa91-22c85bc8e5b5",
 								"conceptMappings": [
 									{
 										"type": "AMPATH",
@@ -2202,8 +2202,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"calculate": {
-                                    "calculateExpression": "Math.round(calcBMI('height','weight'))"
-                                },
+									"calculateExpression": "Math.round(calcBMI('height','weight'))"
+								},
 								"concept": "cfce59f0-0ddd-4722-8eea-1ce5efaffc8b",
 								"max": "",
 								"min": "",
@@ -4052,11 +4052,11 @@
 	],
 	"processor": "EncounterFormProcessor",
 	"availableIntents": [
-        {
-        "intent": "*",
-        "display": "Add Intake-B"
-        }
-        ],
+		{
+			"intent": "*",
+			"display": "Add Intake-B"
+		}
+	],
 	"uuid": "xxxx",
 	"referencedForms": [],
 	"encounterType": "dc94a223-66bc-45b7-8e34-d13b8686f239",

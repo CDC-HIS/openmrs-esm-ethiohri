@@ -30,7 +30,7 @@ const columns = [
     key: "artStartDate",
     header: "ART start date",
     getValue: (encounter) => {
-      return getData(encounter, "159599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "ae329187-6232-4142-aa91-22c85bc8e5b5");
     },
   },
   ,
