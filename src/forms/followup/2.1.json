@@ -419,7 +419,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "calcMonthsOnART('artStartDate')"
+									"calculateExpression": "Math.round(calcMonthsOnART('artStartDate'))"
 								},
 								"rendering": "number",
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
