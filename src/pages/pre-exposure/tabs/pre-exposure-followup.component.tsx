@@ -24,7 +24,7 @@ const columns = [
     key: "dispensedDose",
     header: "Dispensed dose",
     getValue: (encounter) => {
-      return getData(encounter, "54e133c8-eaa7-4413-8442-5d1ed54a2db5");
+      return getData(encounter, "f3911009-1a8f-42ee-bdfc-1e343c2839aa");
     },
   },
   {
