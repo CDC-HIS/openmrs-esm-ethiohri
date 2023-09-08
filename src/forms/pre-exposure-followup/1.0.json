@@ -1073,64 +1073,7 @@
               "id": "nextVisitDate",
               "questionOptions": {
                 "rendering": "eth-date",
-                "concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5096"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-MVP",
-                    "value": "50961000105000"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-MVP",
-                    "value": "50961000105000"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "RETURN VISIT DATE"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5096"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5096"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "RETURN VISIT DATE"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH-Malawi",
-                    "value": "5096"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH-Malawi",
-                    "value": "5096"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5096"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED-CT",
-                    "value": "406543005"
-                  }
-                ],
+                "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
                 "answers": []
               },
               "validators": []

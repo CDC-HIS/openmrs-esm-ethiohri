@@ -9834,54 +9834,8 @@
 								"calculate": {
 									"calculateExpression": "calcNextVisitDate('followupDate','arvDispensedInDays')"
 								},
-								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "AMPATH",
-										"value": "5096"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "50961000105000"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "50961000105000"
-									},
-									{
-										"type": "org.openmrs.module.mdrtb",
-										"value": "RETURN VISIT DATE"
-									},
-									{
-										"type": "CIEL",
-										"value": "5096"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5096"
-									},
-									{
-										"type": "org.openmrs.module.mdrtb",
-										"value": "RETURN VISIT DATE"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "5096"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "5096"
-									},
-									{
-										"type": "CIEL",
-										"value": "5096"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "406543005"
-									}
-								]
+								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+								"weeksList": ""
 							},
 							"hide": {
 								"hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -10130,24 +10084,12 @@
 								"concept": "e6e24c87-d3a0-4a38-bd04-560b13f92298",
 								"answers": [
 									{
-										"concept": "b45e6593-8964-4e6d-8e9b-fe69084157b6",
-										"label": "Stable",
-										"conceptMappings": [
-											{
-												"type": "OCT",
-												"value": "Stable"
-											}
-										]
+										"concept": "564d389c-f131-45b9-a8e6-ecc4888b46b2",
+										"label": "Stable"
 									},
 									{
-										"concept": "d4bc223e-0caf-4ee7-a177-4e9dbccca9dc",
-										"label": "Unstable",
-										"conceptMappings": [
-											{
-												"type": "OCT",
-												"value": "Unstable"
-											}
-										]
+										"concept": "eb5b1d5e-ffee-4887-9e3b-bf3ea627badf",
+										"label": "Unstable"
 									}
 								]
 							},

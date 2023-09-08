@@ -60,7 +60,7 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         getValue: (encounter) => {
           return getData(
             encounter,
-            "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
             true
           );
         },

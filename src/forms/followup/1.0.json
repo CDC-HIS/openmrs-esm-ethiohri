@@ -6195,7 +6195,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
-								"concept": "3a0709e9-d7a8-44b9-9512-111db5ce3989",
+								"concept": "54e133c8-eaa7-4413-8442-5d1ed54a2db5",
 								"max": "180",
 								"min": "30",
 								"showDate": ""
@@ -6755,7 +6755,7 @@
 								"calculate": {
 									"calculateExpression": "calcNextVisitDate('followupDate', 'arvDispensedInDays')"
 								},
-								"concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
 							},
 							"id": "nextVisitDate"
 						},

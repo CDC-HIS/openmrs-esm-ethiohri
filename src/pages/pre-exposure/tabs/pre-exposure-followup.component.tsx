@@ -31,7 +31,7 @@ const columns = [
     key: "nextVisitDate",
     header: "Next visit date",
     getValue: (encounter) => {
-      return getData(encounter, "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "c596f199-4d76-4eca-b3c4-ffa631c0aee9");
     },
   },
   ,

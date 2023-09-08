@@ -64,7 +64,7 @@ export const visitTypeConcept = "8a9809e9-8a0b-4e0e-b1f6-80b0cbbe361b";
 export const regimenConcept = "dfbe256e-30ba-4033-837a-2e8477f2e7cd";
 export const expressCareProgramStatusConcept =
   "159832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // differentiated Care Services
-export const returnVisitDateConcept = "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Next Appointment Date
+export const returnVisitDateConcept = "c596f199-4d76-4eca-b3c4-ffa631c0aee9"; // Next Appointment Date
 export const tbScreeningOutcome = "160108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const opportunisticInfectionConcept =
   "c52ecf45-bd6c-43ed-861b-9a2714878729";
