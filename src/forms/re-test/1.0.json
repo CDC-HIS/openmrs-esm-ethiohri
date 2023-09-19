@@ -1257,7 +1257,7 @@
 							"id": "artStartDate"
 						},
 						{
-							"label": "Action taken ",
+							"label": "Action taken",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -1396,6 +1396,22 @@
 								]
 							},
 							"id": "actionTaken"
+						},
+						{
+							"label": "Other action taken",
+							"type": "obs",
+							"required": false,
+							"id": "otherActionTaken",
+							"hide": {
+								"hideWhenExpression": "actionTaken !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "c263bf7c-cdc0-4e35-8238-bfdc1d29b468",
+								"conceptMappings": [],
+								"answers": []
+							},
+							"validators": []
 						},
 						{
 							"label": "Reason why ART not initiated the same day",
@@ -1585,9 +1601,6 @@
 										]
 									}
 								]
-							},
-							"hide": {
-								"hideWhenExpression": "actionTaken !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "reasonWhyArtNotInitiated"
 						},

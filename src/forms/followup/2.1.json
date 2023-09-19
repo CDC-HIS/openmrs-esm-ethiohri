@@ -463,9 +463,6 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
-								"calculate": {
-									"calculateExpression": "calcTreatmentEndDate('followupDate','arvDispensedInDays', 'followupStatus')"
-								},
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"readonly": "false",
@@ -9831,12 +9828,10 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
-								"calculate": {
-									"calculateExpression": "calcNextVisitDate('followupDate','arvDispensedInDays')"
-								},
 								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
 								"weeksList": ""
 							},
+							"readonly": "false",
 							"hide": {
 								"hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
