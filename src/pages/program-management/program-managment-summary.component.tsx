@@ -13,7 +13,7 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
   return (
     <div className={styles.tabContainer}>
       <Tabs>
-        <TabList contained>
+        <TabList contained aria-label={""}>
           <Tab>Intake A</Tab>
           <Tab>Intake B</Tab>
           <Tab>Family Members</Tab>

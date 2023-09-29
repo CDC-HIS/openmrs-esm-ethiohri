@@ -10,7 +10,7 @@ const HIVTestingService: React.FC<{ patientUuid: string }> = ({
   return (
     <div className={styles.tabContainer}>
       <Tabs>
-        <TabList contained>
+        <TabList contained aria-label={""}>
           <Tab>HIV Positive Tracking</Tab>
           <Tab>HIV Retest</Tab>
         </TabList>

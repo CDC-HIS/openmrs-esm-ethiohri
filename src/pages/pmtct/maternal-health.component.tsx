@@ -8,32 +8,32 @@ import LabourAndDelivery from "./tabs/l&d.component";
 import PostNatalCare from "./tabs/postnatal-care.component";
 
 const MaternalHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
-    return (
-        <div className={styles.tabContainer}>
-            <Tabs>
-                <TabList contained>
-                    <Tab>Initial Evaluation</Tab>
-                    <Tab>ANC</Tab>
-                    <Tab>Labour & Delivery</Tab>
-                    <Tab>Postnatal Care</Tab>
-                </TabList>
-                <TabPanels>
-                    <TabPanel>
-                        <InitialEvaluation patientUuid={patientUuid} />
-                    </TabPanel>
-                    <TabPanel>
-                        <ANC patientUuid={patientUuid} />
-                    </TabPanel>
-                    <TabPanel>
-                        <LabourAndDelivery patientUuid={patientUuid} />
-                    </TabPanel>
-                    <TabPanel>
-                        <PostNatalCare patientUuid={patientUuid} />
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
-        </div>
-    );
+  return (
+    <div className={styles.tabContainer}>
+      <Tabs>
+        <TabList contained aria-label={""}>
+          <Tab>Initial Evaluation</Tab>
+          <Tab>ANC</Tab>
+          <Tab>Labour & Delivery</Tab>
+          <Tab>Postnatal Care</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <InitialEvaluation patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <ANC patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <LabourAndDelivery patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <PostNatalCare patientUuid={patientUuid} />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </div>
+  );
 };
 
 export default MaternalHealth;

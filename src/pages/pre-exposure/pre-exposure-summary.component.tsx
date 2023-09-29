@@ -8,7 +8,7 @@ const PreExposure: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <div className={styles.tabContainer}>
       <Tabs>
-        <TabList contained>
+        <TabList contained aria-label={""}>
           <Tab>Pre Exposure Screening</Tab>
           <Tab>Pre Exposure Followup</Tab>
         </TabList>

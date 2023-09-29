@@ -9,7 +9,7 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <div className={styles.tabContainer}>
       <Tabs>
-        <TabList contained>
+        <TabList contained aria-label={""}>
           <Tab>HEI Enrollment</Tab>
           <Tab>HEI Followup</Tab>
         </TabList>

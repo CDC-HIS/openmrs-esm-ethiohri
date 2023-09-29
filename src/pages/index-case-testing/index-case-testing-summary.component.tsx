@@ -12,7 +12,7 @@ const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
   return (
     <div className={styles.tabContainer}>
       <Tabs>
-        <TabList contained>
+        <TabList contained aria-label={""}>
           <Tab>ICT General</Tab>
           <Tab>ICT Offer</Tab>
           <Tab>Index Contact Followup</Tab>
