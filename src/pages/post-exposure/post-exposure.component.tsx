@@ -1,78 +1,28 @@
+import { Tab, Tabs, TabList, TabPanels, TabPanel } from "@carbon/react";
 import React from "react";
-import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { POST_EXPOSURE_ENCOUNTER_TYPE } from "../../constants";
-import { getData } from "../encounterUtils";
-import { moduleName } from "../../index";
+import styles from "../program-management/program-management.scss";
+import PostExposureRegistrationList from "./tabs/post-exposure-registration.component";
+import PostExposureFollowupList from "./tabs/post-exposure-followup.component";
 
-const columns = [
-  {
-    key: "registrationDate",
-    header: "Registration Date",
-    getValue: (encounter) => {
-      return getData(encounter, "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
-    },
-  },
-  {
-    key: "entryPoint",
-    header: "Entry point",
-    getValue: (encounter) => {
-      return getData(encounter, "dd282c99-ea69-44e7-9252-aff0198cc1e8");
-    },
-  },
-  {
-    key: "startedART",
-    header: "Started ART",
-    getValue: (encounter) => {
-      return getData(encounter, "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    },
-  },
-  {
-    key: "finalOutcome",
-    header: "Final outcome",
-    getValue: (encounter) => {
-      return getData(encounter, "413b265c-87ef-4988-a7bc-1bfc6b5e5528");
-    },
-  },
-  ,
-  {
-    key: "actions",
-    header: "Actions",
-    getValue: (encounter) => [
-      {
-        form: { name: "Exposed Person Information", package: "eth_hiv" },
-        encounterUuid: encounter.uuid,
-        intent: "*",
-        label: "View Positive Tracking",
-        mode: "view",
-      },
-      {
-        form: { name: "Exposed Person Information", package: "eth_hiv" },
-        encounterUuid: encounter.uuid,
-        intent: "*",
-        label: "Edit Positive Tracking",
-        mode: "edit",
-      },
-    ],
-  },
-];
-
-const PostExposureProphylaxis: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const PostExposure: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={POST_EXPOSURE_ENCOUNTER_TYPE}
-      formList={[{ name: "Exposed Person Information" }]}
-      columns={columns}
-      description="Post Exposure Tracking List"
-      headerTitle="Post Exposure"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <div className={styles.tabContainer}>
+      <Tabs>
+        <TabList contained aria-label={""}>
+          <Tab>Post Exposure Registration</Tab>
+          <Tab>Post Exposure Followup</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <PostExposureRegistrationList patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <PostExposureFollowupList patientUuid={patientUuid} />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </div>
   );
 };
 
-export default PostExposureProphylaxis;
+export default PostExposure;

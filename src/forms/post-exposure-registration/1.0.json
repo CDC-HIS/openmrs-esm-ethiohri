@@ -63,6 +63,22 @@
 							"id": "firstName"
 						},
 						{
+							"label": "Father's Name *",
+							"type": "obs",
+							"required": "true",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+							  "conceptMappings": [
+								{
+								  "type": "CIEL",
+								  "value": "1594"
+								}
+							  ]
+							},
+							"id": "fatherName"
+						  },
+						{
 							"label": "Grandfather's name",
 							"type": "obs",
 							"required": false,
@@ -786,7 +802,7 @@
 								"answers": [
 									{
 										"concept": "5415f1b1-a680-4870-89c5-3324d42da408",
-										"label": "6a - DRVr+RAL+AZT+3TC",
+										"label": "AZT+3TC",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -796,7 +812,7 @@
 									},
 									{
 										"concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
-										"label": "6b - DRVr+RAL+TDF+3TC",
+										"label": "TDF+3TC",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -806,7 +822,7 @@
 									},
 									{
 										"concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
-										"label": "4e - TDF+3TC+EFV",
+										"label": "TDF+3TC+EFV (TLE)",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -816,7 +832,7 @@
 									},
 									{
 										"concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
-										"label": "4d - AZT+3TC+EFV",
+										"label": "AZT+3TC+EFV",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -826,7 +842,7 @@
 									},
 									{
 										"concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
-										"label": "4f - AZT+3TC+LPVr",
+										"label": "AZT+3TC+LPV/r",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -836,11 +852,51 @@
 									},
 									{
 										"concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
-										"label": "2g - TDF+3TC+LPVr",
+										"label": "TDF+3TC+LPV/r",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
 												"value": "2g"
+											}
+										]
+									},
+									{
+										"concept": "2a811ceb-3c34-47ff-943a-425b41651784",
+										"label": "TDF+3TC+DTG (TLD)",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1j"
+											}
+										]
+									},
+									{
+										"concept": "c56be3a9-d678-4693-9566-84430239a2f5",
+										"label": "AZT+3TC+DTG",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "1k"
+											}
+										]
+									},
+									{
+										"concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
+										"label": "TDF+3TC+ATV/r",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2h"
+											}
+										]
+									},
+									{
+										"concept": "891bf06e-298a-40ee-8970-2311d18fed48",
+										"label": "AZT+3TC+ATV/r",
+										"conceptMappings": [
+											{
+												"type": "ETHIOHRI",
+												"value": "2f"
 											}
 										]
 									}
@@ -865,232 +921,6 @@
 								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "timeBetweenExposure"
-						}
-					]
-				},
-				{
-					"label": "Exposed person followup",
-					"isExpanded": "true",
-					"questions": [
-						{
-							"label": "Visit date",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "163260"
-									}
-								]
-							},
-							"id": "visitDate"
-						},
-						{
-							"label": "Adherence",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "b1a646d3-78ff-4dd5-823a-5bef7d69ff3d",
-								"answers": [
-									{
-										"concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Good",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "6343"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "20572008"
-											},
-											{
-												"type": "CIEL",
-												"value": "159405"
-											},
-											{
-												"type": "CIEL",
-												"value": "159405"
-											},
-											{
-												"type": "PIH",
-												"value": "1897"
-											}
-										]
-									},
-									{
-										"concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Fair",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159406"
-											},
-											{
-												"type": "CIEL",
-												"value": "159406"
-											},
-											{
-												"type": "PIH",
-												"value": "1898"
-											}
-										]
-									},
-									{
-										"concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Poor",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1899"
-											},
-											{
-												"type": "AMPATH",
-												"value": "6344"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "255351007"
-											},
-											{
-												"type": "CIEL",
-												"value": "159407"
-											},
-											{
-												"type": "CIEL",
-												"value": "159407"
-											}
-										]
-									}
-								]
-							},
-							"id": "adherence"
-						},
-						{
-							"label": "Final post PEP HIV status",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "21ea1d83-acd7-4c99-b4cc-33a90e6dd7d7",
-								"answers": [
-									{
-										"concept": "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Reactive",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Non-reactive",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B6.DE2"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "unknown"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											}
-										]
-									}
-								]
-							},
-							"id": "finalPostStatus"
-						},
-						{
-							"label": "Side effect ",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"rows": "",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "401207004"
-									},
-									{
-										"type": "CIEL",
-										"value": "164377"
-									}
-								]
-							},
-							"id": "sideEffect"
-						},
-						{
-							"label": "Remark",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"rows": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "161011"
-									},
-									{
-										"type": "LOINC",
-										"value": "48767-8"
-									},
-									{
-										"type": "CIEL",
-										"value": "161011"
-									}
-								]
-							},
-							"id": "remark "
 						}
 					]
 				}
