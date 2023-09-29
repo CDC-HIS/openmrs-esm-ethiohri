@@ -2900,7 +2900,7 @@
 							"label": "Family planning methods",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
 									{
@@ -3196,6 +3196,72 @@
 											{
 												"type": "CIEL",
 												"value": "159589"
+											}
+										]
+									},
+									{
+										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "None",
+										"conceptMappings": [
+											{
+												"type": "HL7-ActSubstanceAdminSubstitutionCode",
+												"value": "N"
+											},
+											{
+												"type": "CIEL",
+												"value": "1107"
+											},
+											{
+												"type": "ANC-DAK",
+												"value": "ANC.B8.DE28"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1107"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1107"
+											},
+											{
+												"type": "ANC-DAK",
+												"value": "ANC.B5.DE49"
+											},
+											{
+												"type": "PIH",
+												"value": "1107"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "260413007"
+											},
+											{
+												"type": "PIH",
+												"value": "1107"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "NONE"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1107"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1107"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "260413007"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "NONE"
+											},
+											{
+												"type": "CIEL",
+												"value": "1107"
 											}
 										]
 									}
