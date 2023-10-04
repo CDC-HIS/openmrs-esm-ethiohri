@@ -432,7 +432,7 @@
               "required": false,
               "id": "sideEffects",
               "questionOptions": {
-                "rendering": "select",
+                "rendering": "checkbox",
                 "concept": "67cc07e3-15bc-4175-8e14-f7f74e065b29",
                 "conceptMappings": [],
                 "answers": [
@@ -531,369 +531,369 @@
                   }
                 ],
                 "answers": [
-									{
-										"concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Condoms",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "706506000"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5270"
-											},
-											{
-												"type": "PIH",
-												"value": "190"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5270"
-											},
-											{
-												"type": "CIEL",
-												"value": "190"
-											},
-											{
-												"type": "AMPATH",
-												"value": "190"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "706506000"
-											},
-											{
-												"type": "PIH",
-												"value": "190"
-											},
-											{
-												"type": "AMPATH",
-												"value": "190"
-											}
-										]
-									},
-									{
-										"concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oral contraceptive pill",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "5935008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "780"
-											},
-											{
-												"type": "CIEL",
-												"value": "780"
-											},
-											{
-												"type": "AMPATH",
-												"value": "13"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "5935008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "13"
-											},
-											{
-												"type": "AMPATH",
-												"value": "780"
-											}
-										]
-									},
-									{
-										"concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Injectable",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "5279"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "169552007"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "52791000105008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5279"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "52791000105008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5279"
-											}
-										]
-									},
-									{
-										"concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Diaphragm/cervical cap",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "5278"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "368441006"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5278"
-											},
-											{
-												"type": "CIEL",
-												"value": "5278"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5278"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "368441006"
-											}
-										]
-									},
-									{
-										"concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Intrauterine device",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "312081001"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "312081001"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "268460000"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5275"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "268460000"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5275"
-											},
-											{
-												"type": "CIEL",
-												"value": "5275"
-											}
-										]
-									},
-									{
-										"concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Vasectomy/tubal legation",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProcedureIT",
-												"value": "1848460"
-											},
-											{
-												"type": "IMO-ProcedureIT",
-												"value": "1809386"
-											},
-											{
-												"type": "IMO-ProcedureIT",
-												"value": "1809386"
-											},
-											{
-												"type": "CIEL",
-												"value": "1489"
-											},
-											{
-												"type": "IMO-ProcedureIT",
-												"value": "1848460"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "22523008"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "22523008"
-											},
-											{
-												"type": "PIH",
-												"value": "1721"
-											},
-											{
-												"type": "CIEL",
-												"value": "1489"
-											},
-											{
-												"type": "PIH",
-												"value": "1721"
-											}
-										]
-									},
-									{
-										"concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Abstinence",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "6219"
-											},
-											{
-												"type": "CIEL",
-												"value": "159524"
-											},
-											{
-												"type": "PIH",
-												"value": "1274"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "162171002"
-											},
-											{
-												"type": "PIH",
-												"value": "1274"
-											},
-											{
-												"type": "CIEL",
-												"value": "159524"
-											},
-											{
-												"type": "PIH",
-												"value": "1720"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "3628"
-											},
-											{
-												"type": "PIH",
-												"value": "1720"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "3628"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "162171002"
-											}
-										]
-									},
-									{
-										"concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Implantable hormone",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159589"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "428987008"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "169552007"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "169552007"
-											},
-											{
-												"type": "AMPATH",
-												"value": "6220"
-											},
-											{
-												"type": "CIEL",
-												"value": "159589"
-											}
-										]
-									},
-									{
-										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "None",
-										"conceptMappings": [
-											{
-												"type": "HL7-ActSubstanceAdminSubstitutionCode",
-												"value": "N"
-											},
-											{
-												"type": "CIEL",
-												"value": "1107"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B8.DE28"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1107"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1107"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B5.DE49"
-											},
-											{
-												"type": "PIH",
-												"value": "1107"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260413007"
-											},
-											{
-												"type": "PIH",
-												"value": "1107"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NONE"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1107"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1107"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260413007"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NONE"
-											},
-											{
-												"type": "CIEL",
-												"value": "1107"
-											}
-										]
-									}
-								]
+                  {
+                    "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Condoms",
+                    "conceptMappings": [
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "706506000"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5270"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "190"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5270"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "190"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "190"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "706506000"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "190"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "190"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Oral contraceptive pill",
+                    "conceptMappings": [
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "5935008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "780"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "780"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "13"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "5935008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "13"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "780"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Injectable",
+                    "conceptMappings": [
+                      {
+                        "type": "CIEL",
+                        "value": "5279"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "169552007"
+                      },
+                      {
+                        "type": "SNOMED-MVP",
+                        "value": "52791000105008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5279"
+                      },
+                      {
+                        "type": "SNOMED-MVP",
+                        "value": "52791000105008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5279"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Diaphragm/cervical cap",
+                    "conceptMappings": [
+                      {
+                        "type": "CIEL",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "368441006"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "368441006"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Intrauterine device",
+                    "conceptMappings": [
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "312081001"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "312081001"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "268460000"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5275"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "268460000"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5275"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "5275"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Vasectomy/tubal legation",
+                    "conceptMappings": [
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1848460"
+                      },
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1809386"
+                      },
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1809386"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1489"
+                      },
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1848460"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "22523008"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "22523008"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1721"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1489"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1721"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Abstinence",
+                    "conceptMappings": [
+                      {
+                        "type": "AMPATH",
+                        "value": "6219"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "159524"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1274"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "162171002"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1274"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "159524"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1720"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "3628"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1720"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "3628"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "162171002"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Implantable hormone",
+                    "conceptMappings": [
+                      {
+                        "type": "CIEL",
+                        "value": "159589"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "428987008"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "169552007"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "169552007"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "6220"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "159589"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "None",
+                    "conceptMappings": [
+                      {
+                        "type": "HL7-ActSubstanceAdminSubstitutionCode",
+                        "value": "N"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "ANC-DAK",
+                        "value": "ANC.B8.DE28"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "ANC-DAK",
+                        "value": "ANC.B5.DE49"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "260413007"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "org.openmrs.module.mdrtb",
+                        "value": "NONE"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "260413007"
+                      },
+                      {
+                        "type": "org.openmrs.module.mdrtb",
+                        "value": "NONE"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1107"
+                      }
+                    ]
+                  }
+                ]
               },
               "validators": []
             },
