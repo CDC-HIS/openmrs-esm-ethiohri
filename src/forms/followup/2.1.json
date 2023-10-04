@@ -423,7 +423,7 @@
 								},
 								"rendering": "number",
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 99,
+								"max": 9999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -462,6 +462,9 @@
 							"label": "Treatment end date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
+								},
 								"rendering": "eth-date",
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
@@ -618,7 +621,7 @@
 								},
 								"rendering": "number",
 								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
-								"max": 999,
+								"max": 999999,
 								"min": 0,
 								"showDate": ""
 							},
@@ -1705,7 +1708,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 99,
+								"max": 999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -9893,6 +9896,9 @@
 							"label": "Next visit date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays')"
+								},
 								"rendering": "eth-date",
 								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
 								"weeksList": ""
@@ -9906,11 +9912,11 @@
 					]
 				},
 				{
-					"label": "TO Reminder",
+					"label": "Transfer-Out(TO) Reminder",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "TO date",
+							"label": "Transfer-Out(TO) date",
 							"type": "obs",
 							"required": false,
 							"id": "toDate",

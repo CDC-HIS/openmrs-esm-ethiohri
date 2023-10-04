@@ -1,9 +1,9 @@
 {
+	"name": "POC PHDP Form",
 	"version": "1.0",
 	"published": true,
 	"retired": false,
 	"encounter": "PHDP",
-	"name": "POC PHDP Form",
 	"pages": [
 		{
 			"label": "PHDP",
@@ -12,95 +12,80 @@
 					"label": "Issues Addressed",
 					"isExpanded": "true",
 					"questions": [
-										{
-											"label": "Date",
-											"type": "obs",
-											"questionOptions": {
-												"rendering": "eth-date",
-												"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-												"weeksList": "",
-												"conceptMappings": [
-													{
-														"type": "CIEL",
-														"value": "160753"
-													},
-													{
-														"type": "CIEL",
-														"value": "160753"
-													},
-													{
-														"type": "SNOMED-CT",
-														"value": "439771001"
-													},
-													{
-														"type": "SNOMED-CT",
-														"value": "439771001"
-													}
-												]
-											},
-											"id": "datePHDP"
-										},
-										{
-											"label": "Issues Addressed",
-											"type": "obs",
-											"required": false,
-											"id": "issuesAddressed",
-											"questionOptions": {
-											  "rendering": "checkbox",
-											  "concept": "5e8e03b1-d6ad-4362-a99a-f610af940f57",
-											  "answers": [
-												{
-												  "concept": "bca15fd1-2449-4eb2-9be5-576a5da654a8",
-												  "label": "What to do if one forgets dose"
-												},
-												{
-												  "concept": "7c7c22aa-9ec8-4806-b196-fa654febedfa",
-												  "label": "What side effects and How to manage"
-												},
-												{
-												  "concept": "5226a9de-0171-45ea-bd2d-6479cde1647a",
-												  "label": "Why complete adherence needed"
-												},
-												{
-												  "concept": "8b428610-e187-49dd-a00a-1d1317c2c129",
-												  "label": "Progression of disease"
-												},
-												{
-												  "concept": "92f0adc7-b087-4cc2-97d7-bc9706659cfc",
-												  "label": "Prevention: Abstinence, Safer sex and Condoms"
-												},
-												{
-												  "concept": "35c006b3-6ff3-4155-a367-8a50e37109ea",
-												  "label": "Positive living"
-												},
-												{
-												  "concept": "b5a43c78-660c-4fb4-9488-01ed5c2ceaaa",
-												  "label": "Explain dose, When to take"
-												},
-												{
-												  "concept": "a4674c1b-af47-4c9b-a8e7-d1c6efc6103a",
-												  "label": "Education on essentials of ART"
-												},
-												{
-												  "concept": "6c5fd1d8-8b2a-43e8-a5f6-d3aac54f72b5",
-												  "label": "Basic HIV and TB transmission education"
-												},
-												{
-												  "concept": "7e2703cc-bb5a-4f16-80c4-a14c51f6fd93",
-												  "label": "Available treatment/Prophylaxis CPT, IPT, FPT"
-												}
-											  ]
-											}
-										  },
-										{
-											"label": "Conclusion",
-											"type": "obs",
-											"questionOptions": {
-												"rendering": "textarea",
-												"concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											"id": "conclusion"
-										}
+						{
+							"label": "Date PHDP issues addressed",
+							"type": "obs",
+							"required": false,
+							"id": "phdpDate",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "2c4db7e7-1ece-49a6-a075-d466e6d9b27d",
+								"conceptMappings": [],
+								"answers": []
+							},
+							"validators": []
+						},
+						{
+							"label": "Issues Addressed",
+							"type": "obs",
+							"required": false,
+							"id": "issuesAddressed",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "5e8e03b1-d6ad-4362-a99a-f610af940f57",
+								"answers": [
+									{
+										"concept": "bca15fd1-2449-4eb2-9be5-576a5da654a8",
+										"label": "What to do if one forgets dose"
+									},
+									{
+										"concept": "7c7c22aa-9ec8-4806-b196-fa654febedfa",
+										"label": "What side effects and How to manage"
+									},
+									{
+										"concept": "5226a9de-0171-45ea-bd2d-6479cde1647a",
+										"label": "Why complete adherence needed"
+									},
+									{
+										"concept": "8b428610-e187-49dd-a00a-1d1317c2c129",
+										"label": "Progression of disease"
+									},
+									{
+										"concept": "92f0adc7-b087-4cc2-97d7-bc9706659cfc",
+										"label": "Prevention: Abstinence, Safer sex and Condoms"
+									},
+									{
+										"concept": "35c006b3-6ff3-4155-a367-8a50e37109ea",
+										"label": "Positive living"
+									},
+									{
+										"concept": "b5a43c78-660c-4fb4-9488-01ed5c2ceaaa",
+										"label": "Explain dose, When to take"
+									},
+									{
+										"concept": "a4674c1b-af47-4c9b-a8e7-d1c6efc6103a",
+										"label": "Education on essentials of ART"
+									},
+									{
+										"concept": "6c5fd1d8-8b2a-43e8-a5f6-d3aac54f72b5",
+										"label": "Basic HIV and TB transmission education"
+									},
+									{
+										"concept": "7e2703cc-bb5a-4f16-80c4-a14c51f6fd93",
+										"label": "Available treatment/Prophylaxis CPT, IPT, FPT"
+									}
+								]
+							}
+						},
+						{
+							"label": "Conclusion",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "conclusion"
+						}
 					]
 				}
 			]
@@ -110,5 +95,5 @@
 	"uuid": "1e3aeb30-e55b-47d1-bf17-123550c351d1",
 	"referencedForms": [],
 	"encounterType": "f1b397c1-46bd-43e6-a23d-ae2cedaec881",
-    "allowUnspecifiedAll": true
+	"allowUnspecifiedAll": true
 }

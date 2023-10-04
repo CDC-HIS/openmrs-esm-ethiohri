@@ -23,7 +23,7 @@ const columns = [
     key: "Sex",
     header: "Sex",
     getValue: (encounter) => {
-      return getData(encounter, "ec4ceae1-36cf-40eb-8b68-67f8145ef324");
+      return getData(encounter, "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
@@ -37,7 +37,7 @@ const columns = [
     key: "counselledforhiv",
     header: "Counselled for HIV",
     getValue: (encounter) => {
-      return getData(encounter, "de32152d-93b0-412a-908a-20af0c46f215");
+      return getData(encounter, "ff9eccda-485e-4044-ad92-414e97b279c0");
     },
   },
   {

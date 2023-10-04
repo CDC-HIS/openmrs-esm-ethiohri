@@ -9,7 +9,7 @@ const columns = [
     key: "date",
     header: "Enrollment Date",
     getValue: (encounter) => {
-      return getData(encounter, "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
     },
   },
   {
@@ -30,7 +30,7 @@ const columns = [
     key: "reasonForReferral",
     header: "Reason for referral",
     getValue: (encounter) => {
-      return getData(encounter, "2cb28f68-0277-48d7-8b38-8e6cf38a30a9");
+      return getData(encounter, "5f34e705-3574-4b44-b455-d815962026a1");
     },
   },
   {
