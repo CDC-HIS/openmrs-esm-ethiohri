@@ -6,7 +6,7 @@ import {
   getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
-import { registerControl } from "@openmrs/openmrs-form-engine-lib";
+import { registerControl, registerExpressionHelper } from "@openmrs/openmrs-form-engine-lib";
 import {
   createDashboardGroup,
   createDashboardLink,
@@ -36,14 +36,58 @@ export const importTranslation = require.context(
   "lazy"
 );
 
+function DispensedDoseInNumber(arvDispensedInDays: string) {
+  if (arvDispensedInDays == 'fba421cf-a483-4329-b8b1-6a3ef16081bc') {
+    return 30;
+  } else if (arvDispensedInDays == '75d94023-7804-44f8-9998-9d678488af3e') {
+    return 60;
+  } else if (arvDispensedInDays == '4abbd98d-0c07-42f4-920c-7bbf0f5824dc') {
+    return 90;
+  } else if (arvDispensedInDays == '684c450f-878b-4b96-ab1b-2b539c30f033') {
+    return 120;
+  } else if (arvDispensedInDays == 'e5f7cc4d-922a-4838-8c75-af9bdbb59bc8') {
+    return 180;
+  }
+  else {
+    return 0;
+  }
+}
+
+function CalcNextVisitDate(followupDate: Date, arvDispensedInDays: string) {
+  let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
+  let resultNextVisitDate = {};
+  if (followupDate && arvDispensedInDays) {
+    resultNextVisitDate = new Date(followupDate.getTime() + dispensedDoseReturned * 24 * 60 * 60 * 1000);
+  }
+  return followupDate && arvDispensedInDays
+    ? resultNextVisitDate
+    : null;
+};
+
+function CalcTreatmentEndDate(followupDate: Date, arvDispensedInDays: string, followupStatus: string) {
+  let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
+  let resultTreatmentEndDate = {};
+  let extraDaysAdded = 30 + dispensedDoseReturned;
+  if (followupDate && arvDispensedInDays && followupStatus == '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') {
+    resultTreatmentEndDate = new Date(followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000);
+  }
+  return followupDate && arvDispensedInDays && followupStatus == '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+    ? resultTreatmentEndDate
+    : null;
+};
+
+export const CustomControlEthio = ({
+  name: "eth-date",
+  load: () => import("./controls/date/ethiohri-date.component"),
+  type: "eth-date",
+});
+
 export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
+  registerExpressionHelper('CustomNextVisitDateCalc', CalcNextVisitDate);
+  registerExpressionHelper('CustomTreatmentEndDateCalc', CalcTreatmentEndDate);
 
-  registerControl({
-    id: "eth-date",
-    loadControl: () => import("./controls/date/ethiohri-date.component"),
-    type: "eth-date",
-  });
+  registerControl(CustomControlEthio);
 }
 
 export const patientDetailsButton = getAsyncLifecycle(
