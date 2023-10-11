@@ -76,18 +76,16 @@ function CalcTreatmentEndDate(followupDate: Date, arvDispensedInDays: string, fo
     : null;
 };
 
-export const CustomControlEthio = ({
-  name: "eth-date",
-  load: () => import("./controls/date/ethiohri-date.component"),
-  type: "eth-date",
-});
-
 export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper('CustomNextVisitDateCalc', CalcNextVisitDate);
   registerExpressionHelper('CustomTreatmentEndDateCalc', CalcTreatmentEndDate);
 
-  registerControl(CustomControlEthio);
+  registerControl({
+    name: "eth-date",
+    load: () => import("./controls/date/ethiohri-date.component"),
+    type: "eth-date",
+  });
 }
 
 export const patientDetailsButton = getAsyncLifecycle(
