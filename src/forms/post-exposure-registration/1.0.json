@@ -67,17 +67,17 @@
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
-							  "rendering": "text",
-							  "concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "conceptMappings": [
-								{
-								  "type": "CIEL",
-								  "value": "1594"
-								}
-							  ]
+								"rendering": "text",
+								"concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "1594"
+									}
+								]
 							},
 							"id": "fatherName"
-						  },
+						},
 						{
 							"label": "Grandfather's name",
 							"type": "obs",
@@ -365,7 +365,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "162603AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -913,7 +913,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "0885bb1e-6a2e-47d0-a597-8e8da07e4e59",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": ""
 							},

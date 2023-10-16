@@ -549,7 +549,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -606,7 +606,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
-								"max": 999,
+								"max": 999999,
 								"min": 0,
 								"showDate": ""
 							},
@@ -675,7 +675,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -1690,7 +1690,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "78230f35-d01c-48de-9ce3-8a0065a305bb",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": ""
 							},
@@ -1708,7 +1708,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [

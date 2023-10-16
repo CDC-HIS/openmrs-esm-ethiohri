@@ -2053,7 +2053,7 @@
 									"calculateExpression": "Math.round(calcMonthsOnART('artStartDate'))"
 								},
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 99,
+								"max": 999999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -2265,7 +2265,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 9999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -2315,7 +2315,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "76b45324-9920-4cb7-a8af-c135fb8deb77",
-								"max": 999,
+								"max": 9999999,
 								"min": 0,
 								"showDate": ""
 							},
@@ -2327,7 +2327,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 9999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -2357,7 +2357,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -2391,7 +2391,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -2451,7 +2451,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
-								"max": 999,
+								"max": 9999999,
 								"min": 0,
 								"showDate": ""
 							},
@@ -2463,7 +2463,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
+								"max": 999999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -2492,7 +2492,7 @@
 								},
 								"rendering": "number",
 								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
-								"max": 999,
+								"max": 99999999,
 								"min": 0,
 								"showDate": ""
 							},
@@ -2549,7 +2549,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 99,
+								"max": 99999999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -3312,7 +3312,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "90cf854e-2870-40d9-8d69-bb86597f74f8",
-								"max": 99,
+								"max": 99999999,
 								"min": 0,
 								"showDate": ""
 							},
