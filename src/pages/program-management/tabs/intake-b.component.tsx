@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { INTAKE_B_ENCOUNTER_TYPE } from "../../../constants";
+import {
+  INTAKE_A_ENCOUNTER_TYPE,
+  INTAKE_B_ENCOUNTER_TYPE,
+} from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
+import { getPatientEncounters } from "../../../api/api";
 
 const columns = [
   {
@@ -58,6 +62,18 @@ const columns = [
 const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        INTAKE_A_ENCOUNTER_TYPE
+      );
+      if (previousEncounters.length) {
+        setHasPreviousEncounter(true);
+      }
+    })();
+  });
   return (
     <EncounterList
       patientUuid={patientUuid}
@@ -69,6 +85,7 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,
+        hideFormLauncher: hasPreviousEncounter,
       }}
     />
   );

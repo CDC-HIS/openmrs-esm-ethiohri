@@ -11,6 +11,14 @@ import {
 const BASE_WS_API_URL = "/ws/rest/v1/";
 const BASE_FHIR_API_URL = "/ws/fhir2/R4/";
 
+export function getPatientEncounters(patientUUID, encounterUUID) {
+  return openmrsFetch(
+    `${BASE_WS_API_URL}encounter?encounterType=${encounterUUID}&patient=${patientUUID}`
+  ).then(({ data }) => {
+    return data.results;
+  });
+}
+
 export function fetchIdentifiers(patientUUID) {
   return openmrsFetch(
     `${BASE_WS_API_URL}patient/${patientUUID}/identifier`
