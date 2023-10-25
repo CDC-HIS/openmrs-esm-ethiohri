@@ -459,22 +459,6 @@
 							"id": "monthsOnArt"
 						},
 						{
-							"label": "Treatment end date",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
-								},
-								"rendering": "eth-date",
-								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-							},
-							"readonly": "false",
-							"hide": {
-								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							"id": "treatmentEndDate"
-						},
-						{
 							"label": "Observations conducted during current visit",
 							"type": "obs",
 							"required": false,
@@ -9926,6 +9910,22 @@
 								"hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "reasonForPoorARVAdherence"
+						},
+						{
+							"label": "Treatment end date",
+							"type": "obs",
+							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
+								},
+								"rendering": "eth-date",
+								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"readonly": "false",
+							"hide": {
+								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "treatmentEndDate"
 						},
 						{
 							"label": "Next visit date",
