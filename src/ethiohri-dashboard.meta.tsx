@@ -2,10 +2,6 @@ export const HIV_CARE_AND_TREATMENT = {
   title: "HIV Care and Treatment",
   slotName: "hiv-care-and-treatment-slot",
 };
-export const FACILITY_NAME = {
-  title: "Facility Name",
-  slotName: "facility-name-slot",
-};
 
 export const PMTCT_META = {
   title: "PMTCT",
