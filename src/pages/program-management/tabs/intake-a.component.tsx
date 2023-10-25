@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { INTAKE_A_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
+import { fetchIdentifiers } from "../../../api/api";
 
 const columns = [
   {
@@ -58,19 +59,41 @@ const columns = [
 const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasMRN, setHasMRN] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers.find((e) => e.identifierType.display === "MRN")) {
+        setHasMRN(true);
+      }
+    })();
+  });
+
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={INTAKE_A_ENCOUNTER_TYPE}
-      formList={[{ name: "POC Intake-A" }]}
-      columns={columns}
-      description="Intake A Encounter List"
-      headerTitle="Intake A"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <>
+      <EncounterList
+        patientUuid={patientUuid}
+        encounterType={INTAKE_A_ENCOUNTER_TYPE}
+        formList={[{ name: "POC Intake-A" }]}
+        columns={columns}
+        description="Intake A Encounter List"
+        headerTitle="Intake A"
+        launchOptions={{
+          displayText: "Add",
+          moduleName: moduleName,
+          hideFormLauncher: !hasMRN,
+          //TODO:insert function to run when requirements aren't met
+          // runIfFailed:  isUANNotEmpty ? myFunction() : undefined
+        }}
+      />
+      //TODO: Insert proper warning component
+      {!hasMRN && (
+        <h1>
+          Patient needs to have a registered MRN before Intake-A form can be
+          filled
+        </h1>
+      )}
+    </>
   );
 };
 
