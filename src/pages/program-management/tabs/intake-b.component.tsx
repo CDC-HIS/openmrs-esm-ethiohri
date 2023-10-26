@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  INTAKE_A_ENCOUNTER_TYPE,
-  INTAKE_B_ENCOUNTER_TYPE,
-} from "../../../constants";
+import { INTAKE_B_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import { getPatientEncounters } from "../../../api/api";
@@ -67,7 +64,7 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
     (async () => {
       const previousEncounters = await getPatientEncounters(
         patientUuid,
-        INTAKE_A_ENCOUNTER_TYPE
+        INTAKE_B_ENCOUNTER_TYPE
       );
       if (previousEncounters.length) {
         setHasPreviousEncounter(true);

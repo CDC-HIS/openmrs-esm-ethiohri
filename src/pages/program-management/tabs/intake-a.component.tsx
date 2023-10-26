@@ -86,7 +86,7 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
           // runIfFailed:  isUANNotEmpty ? myFunction() : undefined
         }}
       />
-      //TODO: Insert proper warning component
+      {/* //TODO: Insert proper warning component */}
       {!hasMRN && (
         <h1>
           Patient needs to have a registered MRN before Intake-A form can be
