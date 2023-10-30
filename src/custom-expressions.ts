@@ -1,11 +1,13 @@
 import {
+  female,
+  male,
   ninety,
   oneHundredEighty,
   oneHundredTwenty,
   sixty,
   thirty,
 } from "./constants";
-import { fetchPatientInfo, fetchPatientLastEncounter } from "./api/api";
+import { fetchPatientLastEncounter } from "./api/api";
 
 export function DispensedDoseInNumber(arvDispensedInDays: string) {
   switch (arvDispensedInDays) {
@@ -62,9 +64,16 @@ export function CalcTreatmentEndDate(
     : null;
 }
 
-export async function getAge() {
-  const patientInfo: any = fetchPatientInfo("patient");
-  return patientInfo.age;
+export async function getGender(patient) {
+  if (patient.gender === "male") {
+    return male;
+  }
+
+  if (patient.gender === "female") {
+    return female;
+  }
+
+  return null;
 }
 
 export async function getPreviousValue() {

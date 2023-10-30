@@ -25,7 +25,11 @@ import {
   PREP_META,
   PROGRAM_MANAGEMENT_META,
 } from "./ethiohri-dashboard.meta";
-import { CalcNextVisitDate, CalcTreatmentEndDate } from "./custom-expressions";
+import {
+  CalcNextVisitDate,
+  CalcTreatmentEndDate,
+  getGender,
+} from "./custom-expressions";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -40,6 +44,7 @@ export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
+  registerExpressionHelper("getGender", getGender);
 
   registerControl({
     name: "eth-date",

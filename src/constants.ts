@@ -22,6 +22,10 @@ export const PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE =
 export const PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE =
   "df13ff58-d86a-42ec-ace1-5c3ad8045e2e";
 
+//Intake A concepts
+export const male = "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const female = "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
 //HIV Art Therapy
 export const art_Therapy_EncounterUUID = "74bf4fe6-8fdb-4228-be39-680a93a9cf6d";
 export const artTherapyDateTime_UUID = "ae329187-6232-4142-aa91-22c85bc8e5b5";
