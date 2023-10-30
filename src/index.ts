@@ -29,6 +29,7 @@ import {
   CalcNextVisitDate,
   CalcTreatmentEndDate,
   getGender,
+  getIdentifier,
 } from "./custom-expressions";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
@@ -45,6 +46,7 @@ export function startupApp() {
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
   registerExpressionHelper("getGender", getGender);
+  registerExpressionHelper("getIdentifier", getIdentifier);
 
   registerControl({
     name: "eth-date",

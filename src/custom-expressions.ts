@@ -7,7 +7,6 @@ import {
   sixty,
   thirty,
 } from "./constants";
-import { fetchPatientLastEncounter } from "./api/api";
 
 export function DispensedDoseInNumber(arvDispensedInDays: string) {
   switch (arvDispensedInDays) {
@@ -76,10 +75,9 @@ export async function getGender(patient) {
   return null;
 }
 
-export async function getPreviousValue() {
-  const encounterInfo = fetchPatientLastEncounter(
-    "patientUUID",
-    "EncounterUUID"
+export async function getIdentifier(patient, identifierType) {
+  const identifierValue = patient?.identifier?.find(
+    (e) => e.id === identifierType
   );
-  return;
+  return identifierValue.value;
 }
