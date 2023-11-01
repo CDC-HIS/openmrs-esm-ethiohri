@@ -37,6 +37,9 @@
 							"label": "Visit type",
 							"type": "obs",
 							"questionOptions": {
+							  "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'b3f60308-cda4-41f9-af08-b98d2c1562c7'))?.valueCodeableConcept?.coding[0]?.code"
+                },
 								"rendering": "radio",
 								"concept": "b3f60308-cda4-41f9-af08-b98d2c1562c7",
 								"answers": [
@@ -3854,6 +3857,9 @@
 							"label": "Active TB diagnosed date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -4013,6 +4019,9 @@
 							"label": "TB treatment start date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -4141,6 +4150,9 @@
 							"label": "Date active TB treatment completed",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'd4a98e9e-26b0-429b-82cb-e6a2197eeb05'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "d4a98e9e-26b0-429b-82cb-e6a2197eeb05",
 								"weeksList": ""
@@ -4151,6 +4163,9 @@
 							"label": "Date active TB treatment discontinued",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '93c114b1-ddcb-41eb-bca5-0c08a2a8c349'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "93c114b1-ddcb-41eb-bca5-0c08a2a8c349",
 								"weeksList": ""
@@ -4338,6 +4353,9 @@
 							"label": "TPT start date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -4361,6 +4379,9 @@
 							"label": "TB prophylaxis type",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '54084c9e-bc87-4d95-89fc-eb9a2cffb592'))?.valueCodeableConcept?.coding[0]?.code"
+								  },
 								"rendering": "radio",
 								"concept": "54084c9e-bc87-4d95-89fc-eb9a2cffb592",
 								"answers": [
@@ -4405,6 +4426,9 @@
 							"label": "Alternate TB prophylaxis type",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f18eded5-67a9-4f02-b131-9a6230e64d18'))?.valueCodeableConcept?.coding[0]?.code"
+								  },
 								"rendering": "radio",
 								"concept": "f18eded5-67a9-4f02-b131-9a6230e64d18",
 								"answers": [
@@ -4809,6 +4833,9 @@
 							"label": "Date TPT completed",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
