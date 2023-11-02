@@ -1,4 +1,6 @@
 import {
+  female,
+  male,
   ninety,
   oneHundredEighty,
   oneHundredTwenty,
@@ -59,4 +61,23 @@ export function CalcTreatmentEndDate(
     followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     ? resultTreatmentEndDate
     : null;
+}
+
+export async function getGender(patient) {
+  if (patient.gender === "male") {
+    return male;
+  }
+
+  if (patient.gender === "female") {
+    return female;
+  }
+
+  return null;
+}
+
+export async function getIdentifier(patient, identifierType) {
+  const identifierValue = patient?.identifier?.find(
+    (e) => e.id === identifierType
+  );
+  return identifierValue.value;
 }
