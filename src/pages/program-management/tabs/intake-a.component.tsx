@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { INTAKE_A_ENCOUNTER_TYPE } from "../../../constants";
+import {
+  INTAKE_A_ENCOUNTER_TYPE,
+  INTAKE_B_ENCOUNTER_TYPE,
+  MRN_NULL_WARNING,
+} from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
-import { fetchIdentifiers } from "../../../api/api";
+import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
+import styles from "../../../root.scss";
 
 const columns = [
   {
@@ -59,11 +64,21 @@ const columns = [
 const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   const [hasMRN, setHasMRN] = useState(false);
   useEffect(() => {
     (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        INTAKE_B_ENCOUNTER_TYPE
+      );
+      if (previousEncounters.length) {
+        setHasPreviousEncounter(true);
+      }
+    })();
+    (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers.find((e) => e.identifierType.display === "MRN")) {
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
         setHasMRN(true);
       }
     })();
@@ -81,18 +96,12 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
+          hideFormLauncher: !hasMRN || hasPreviousEncounter,
           //TODO:insert function to run when requirements aren't met
           // runIfFailed:  isUANNotEmpty ? myFunction() : undefined
         }}
       />
-      {/* //TODO: Insert proper warning component */}
-      {!hasMRN && (
-        <h1>
-          Patient needs to have a registered MRN before Intake-A form can be
-          filled
-        </h1>
-      )}
+      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
   );
 };

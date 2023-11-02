@@ -5,7 +5,6 @@ import IntakeBEncounterList from "./tabs/intake-b.component";
 import FamilyInformationList from "./tabs/family-information.component";
 import PHDPList from "./tabs/phdp.component";
 import styles from "./program-management.scss";
-import Followup from "./tabs/followup.component";
 
 const ProgramManagment: React.FC<{ patientUuid: string }> = ({
   patientUuid,
@@ -18,7 +17,6 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           <Tab>Intake B</Tab>
           <Tab>Family Members</Tab>
           <Tab>PHDP</Tab>
-          <Tab>Followup</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -32,9 +30,6 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
           </TabPanel>
           <TabPanel>
             <PHDPList patientUuid={patientUuid} />
-          </TabPanel>
-          <TabPanel>
-            <Followup patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>
