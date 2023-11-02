@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { INDEX_CONTACT_FOLLOWUP_ENCOUNTER_TYPE } from "../../../constants";
+import {
+  INDEX_CONTACT_FOLLOWUP_ENCOUNTER_TYPE,
+  MRN_NULL_WARNING,
+} from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
+import styles from "../../../root.scss";
+import { fetchIdentifiers } from "../../../api/api";
 
 const columns = [
   {
@@ -58,19 +63,32 @@ const columns = [
 const IndexContactFollowup: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasMRN, setHasMRN] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
+        setHasMRN(true);
+      }
+    })();
+  });
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={INDEX_CONTACT_FOLLOWUP_ENCOUNTER_TYPE}
-      formList={[{ name: "POC Index Contact Followup" }]}
-      columns={columns}
-      description="Index Contact Followup List"
-      headerTitle="Index Contact Followup"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <>
+      <EncounterList
+        patientUuid={patientUuid}
+        encounterType={INDEX_CONTACT_FOLLOWUP_ENCOUNTER_TYPE}
+        formList={[{ name: "POC Index Contact Followup" }]}
+        columns={columns}
+        description="Index Contact Followup List"
+        headerTitle="Index Contact Followup"
+        launchOptions={{
+          displayText: "Add",
+          moduleName: moduleName,
+          hideFormLauncher: !hasMRN,
+        }}
+      />
+      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+    </>
   );
 };
 

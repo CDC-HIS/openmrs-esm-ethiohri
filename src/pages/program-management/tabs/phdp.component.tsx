@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { PHDP_ENCOUNTER_TYPE } from "../../../constants";
+import { MRN_NULL_WARNING, PHDP_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
+import { fetchIdentifiers } from "../../../api/api";
+import styles from "../../../root.scss";
 
 const columns = [
   {
@@ -50,19 +52,32 @@ const columns = [
 ];
 
 const PHDPList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+  const [hasMRN, setHasMRN] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
+        setHasMRN(true);
+      }
+    })();
+  });
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={PHDP_ENCOUNTER_TYPE}
-      formList={[{ name: "POC PHDP Form" }]}
-      columns={columns}
-      description="PHDP List"
-      headerTitle="PHDP"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <>
+      <EncounterList
+        patientUuid={patientUuid}
+        encounterType={PHDP_ENCOUNTER_TYPE}
+        formList={[{ name: "POC PHDP Form" }]}
+        columns={columns}
+        description="PHDP List"
+        headerTitle="PHDP"
+        launchOptions={{
+          displayText: "Add",
+          moduleName: moduleName,
+          hideFormLauncher: !hasMRN,
+        }}
+      />
+      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+    </>
   );
 };
 

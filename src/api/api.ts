@@ -15,6 +15,22 @@ export function fetchPatientInfo(patientUUID: string) {
   return openmrsFetch(`/ws/rest/v1/person/${patientUUID}?v=full`);
 }
 
+export function getPatientEncounters(patientUUID, encounterUUID) {
+  return openmrsFetch(
+    `${BASE_WS_API_URL}encounter?encounterType=${encounterUUID}&patient=${patientUUID}`
+  ).then(({ data }) => {
+    return data.results;
+  });
+}
+
+export function fetchIdentifiers(patientUUID) {
+  return openmrsFetch(
+    `${BASE_WS_API_URL}patient/${patientUUID}/identifier`
+  ).then(({ data }) => {
+    return data.results;
+  });
+}
+
 export function fetchLocation() {
   return openmrsFetch(`/ws/rest/v1/location?q=&v=default`);
 }

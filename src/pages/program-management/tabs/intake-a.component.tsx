@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { INTAKE_A_ENCOUNTER_TYPE } from "../../../constants";
+import {
+  INTAKE_A_ENCOUNTER_TYPE,
+  INTAKE_B_ENCOUNTER_TYPE,
+  MRN_NULL_WARNING,
+} from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
+import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
+import styles from "../../../root.scss";
 
 const columns = [
   {
@@ -58,19 +64,45 @@ const columns = [
 const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
+  const [hasMRN, setHasMRN] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        INTAKE_B_ENCOUNTER_TYPE
+      );
+      if (previousEncounters.length) {
+        setHasPreviousEncounter(true);
+      }
+    })();
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
+        setHasMRN(true);
+      }
+    })();
+  });
+
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={INTAKE_A_ENCOUNTER_TYPE}
-      formList={[{ name: "POC Intake-A" }]}
-      columns={columns}
-      description="Intake A Encounter List"
-      headerTitle="Intake A"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <>
+      <EncounterList
+        patientUuid={patientUuid}
+        encounterType={INTAKE_A_ENCOUNTER_TYPE}
+        formList={[{ name: "POC Intake-A" }]}
+        columns={columns}
+        description="Intake A Encounter List"
+        headerTitle="Intake A"
+        launchOptions={{
+          displayText: "Add",
+          moduleName: moduleName,
+          hideFormLauncher: !hasMRN || hasPreviousEncounter,
+          //TODO:insert function to run when requirements aren't met
+          // runIfFailed:  isUANNotEmpty ? myFunction() : undefined
+        }}
+      />
+      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+    </>
   );
 };
 

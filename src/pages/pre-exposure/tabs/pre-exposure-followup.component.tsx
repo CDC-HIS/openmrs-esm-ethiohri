@@ -1,9 +1,14 @@
 /* eslint-disable prettier/prettier */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE } from "../../../constants";
+import {
+  MRN_NULL_WARNING,
+  PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE,
+} from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
+import { fetchIdentifiers } from "../../../api/api";
+import styles from "../../../root.scss";
 
 const columns = [
   {
@@ -60,19 +65,32 @@ const columns = [
 const PreExposureFollowupList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasMRN, setHasMRN] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
+        setHasMRN(true);
+      }
+    })();
+  });
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
-      formList={[{ name: "Pre Exposure Followup" }]}
-      columns={columns}
-      description="Pre Exposure Followup Tracking List"
-      headerTitle="Pre Exposure Followup"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <>
+      <EncounterList
+        patientUuid={patientUuid}
+        encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
+        formList={[{ name: "Pre Exposure Followup" }]}
+        columns={columns}
+        description="Pre Exposure Followup Tracking List"
+        headerTitle="Pre Exposure Followup"
+        launchOptions={{
+          displayText: "Add",
+          moduleName: moduleName,
+          hideFormLauncher: !hasMRN,
+        }}
+      />
+      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+    </>
   );
 };
 
