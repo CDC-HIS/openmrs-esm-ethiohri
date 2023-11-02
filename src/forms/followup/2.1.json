@@ -535,13 +535,12 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Weight (in kg) *",
+							"label": "Weight (in kg)",
 							"type": "obs",
-							"required": "true",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 99999999,
+								"max": 999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -598,7 +597,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
-								"max": 999999,
+								"max": 999,
 								"min": 0,
 								"showDate": ""
 							},
