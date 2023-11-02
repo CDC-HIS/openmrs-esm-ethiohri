@@ -2451,7 +2451,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
-								"max": 9999999,
+								"max": 999,
 								"min": 0,
 								"showDate": ""
 							},
@@ -2463,7 +2463,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999999999,
+								"max": 999,
 								"min": 0,
 								"showDate": "",
 								"conceptMappings": [
@@ -3307,19 +3307,20 @@
 							"id": "otherPresentingComplaints"
 						},
 						{
-							"label": "Percentage of lost body weight",
+							"label": "Percent (%) of lost body weight",
 							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "90cf854e-2870-40d9-8d69-bb86597f74f8",
-								"max": 99999999,
-								"min": 0,
-								"showDate": ""
-							},
+							"required": false,
 							"hide": {
 								"hideWhenExpression": "!includes('presentingComplaints', '832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
-							"id": "percentageOfLostBodyWeight"
+							"id": "percentOfLostBodyWeight",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "91ee36b1-4018-4e4c-bf56-6394c752654f",
+								"conceptMappings": [],
+								"answers": []
+							},
+							"validators": []
 						}
 					]
 				},
@@ -5059,13 +5060,228 @@
 							"id": "WHOStaging"
 						},
 						{
-							"label": "Why",
+							"label": "Why WHO Stage 1",
 							"type": "obs",
-							"questionOptions": {
-								"rendering": "text",
-								"concept": "b0caed70-3261-47a0-8ffe-37244e27d79b"
+							"required": false,
+							"hide": {
+								"hideWhenExpression": "WHOStaging !== '1204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "whyCurrentWHOStageChosen"
+							"id": "whoOneWhy",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "8b63295c-dbb6-4836-8eb0-014ae244a521",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
+										"label": "Clinically asymptomatic client"
+									},
+									{
+										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
+										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+									}
+								]
+							},
+							"validators": []
+						},
+						{
+							"label": "Why WHO Stage 2",
+							"type": "obs",
+							"required": false,
+							"id": "whoTwoWhy",
+							"hide": {
+								"hideWhenExpression": "WHOStaging !== '1205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "78bed5e2-ebc1-4ed3-a959-35c6fbc35562",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "3471dcf1-7c5a-460e-a05e-c3fbf93c25d3",
+										"label": "5 - 10% body weight loss"
+									},
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Herpes zoster"
+									},
+									{
+										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HIV staging - minor mucocutaneous manifestations"
+									},
+									{
+										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Recurrent Upper Respiratory Tract Infection"
+									}
+								]
+							},
+							"validators": []
+						},
+						{
+							"label": "Why WHO Stage 3",
+							"type": "obs",
+							"required": false,
+							"id": "whoThreeWhy",
+							"hide": {
+								"hideWhenExpression": "WHOStaging !== '1206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "8d86ab16-ae00-47b7-b5cc-5d3a2557c8ed",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bacterial pneumonia"
+									},
+									{
+										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Candidiasis, oral"
+									},
+									{
+										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
+										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
+									},
+									{
+										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
+										"label": "Oral Hair Leukoplakia"
+									},
+									{
+										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
+										"label": "Other sever bacterial infections (E.g: Pyomositis)"
+									},
+									{
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis (TB)"
+									},
+									{
+										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
+										"label": "Unexplained Anemia (< 8 g/dl)"
+									},
+									{
+										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
+										"label": "Unexplained Chronic Diarrhea (>1 month)"
+									},
+									{
+										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
+										"label": "Unexplained Prolonged Fever (>1 month)"
+									},
+									{
+										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Weight loss greater than ten percent"
+									}
+								]
+							},
+							"validators": []
+						},
+						{
+							"label": "Why WHO Stage 4",
+							"type": "obs",
+							"required": false,
+							"id": "whoFourWhy",
+							"hide": {
+								"hideWhenExpression": "WHOStaging !== '1207AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "3bb2b035-fa5d-4abf-8d47-5f28fb9cf333",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "8c035eeb-4760-4ba5-9116-c5f26f1ed54d",
+										"label": "Atypical disseminated lesihmaniasis"
+									},
+									{
+										"concept": "61da1b11-7bc4-4fd6-b263-bdf87de8d870",
+										"label": "Atypical Myco-bacteriosis"
+									},
+									{
+										"concept": "48cd6b34-1a0d-4963-b48b-3f7bbc75bf84",
+										"label": "Candidiasis (Esophagus, Trachea, Bronchi or Lungs)"
+									},
+									{
+										"concept": "57fb79df-5668-464e-ac38-2d4f1585fd45",
+										"label": "CMV Disease (other than Liver, Spleen, Lymph nodes)"
+									},
+									{
+										"concept": "fd853cea-e306-4dd7-8731-b46dd87ddd4b",
+										"label": "Cryptosporidiosis with diarrhea (>1 month)"
+									},
+									{
+										"concept": "f5194b9d-eee8-41e3-b58f-8f0fbb05053b",
+										"label": "Disseminated (i.e. Histoplasma, Coccidioides)"
+									},
+									{
+										"concept": "7ad72b79-f35d-4d47-aec4-00ec6ca3d06d",
+										"label": "Herpes Simplex (Mucocutaneous >1 month, or visceral)"
+									},
+									{
+										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
+										"label": "Extra Pulmonary Tuberculosis (TB)"
+									},
+									{
+										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "HIV encephalopathy"
+									},
+									{
+										"concept": "17e3f152-863b-4778-b7ed-341a5b1c907b",
+										"label": "HIV Wasting Syndrome"
+									},
+									{
+										"concept": "22690c1f-444b-40b8-b461-b473873d1e90",
+										"label": "Invasive cervical carcinoma"
+									},
+									{
+										"concept": "77ab6c51-3694-4ba9-9c41-6fa7475250cf",
+										"label": "Karposi's Sarcoma"
+									},
+									{
+										"concept": "00a8521a-b621-49b4-85b0-6ff5f0ff7edf",
+										"label": "Lymphoma"
+									},
+									{
+										"concept": "6396014f-ac6f-4567-a0e3-4df49144f5a3",
+										"label": "Mycosis"
+									},
+									{
+										"concept": "06a09c1f-636a-43fb-bbac-d75d13f0b9f3",
+										"label": "Nephropathy or Cardiomyopathy"
+									},
+									{
+										"concept": "6e2b911f-1ba1-4a5a-b351-0c1b3eff6de2",
+										"label": "Non-typhoid"
+									},
+									{
+										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
+										"label": "Oral Hair Leukoplakia"
+									},
+									{
+										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
+										"label": "Pneumocystis Carinii Pneumonia (PCP)"
+									},
+									{
+										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
+										"label": "Progressive multifocal leukocencephalopathy (PML)"
+									},
+									{
+										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pulmonary Cryptococcosis"
+									},
+									{
+										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Salmonella Septicaemia"
+									},
+									{
+										"concept": "b393fcd2-c410-465b-866d-751f8c90df25",
+										"label": "Symptomatic HIV- associated"
+									},
+									{
+										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis, central nervous system"
+									}
+								]
+							},
+							"validators": []
 						}
 					]
 				}
