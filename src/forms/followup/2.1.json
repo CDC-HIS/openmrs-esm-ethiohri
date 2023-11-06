@@ -536,6 +536,7 @@
 					"questions": [
 						{
 							"label": "Weight (in kg)",
+							"required": true,
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
