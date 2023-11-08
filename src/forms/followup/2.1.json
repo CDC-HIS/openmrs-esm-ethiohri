@@ -467,54 +467,57 @@
 							"required": false,
 							"id": "observationsConductedDuringCurrentVisit",
 							"questionOptions": {
-								"rendering": "checkbox",
-								"concept": "7d175fa9-e64c-4923-ae6d-e35512be07a3",
-								"conceptMappings": [],
-								"answers": [
-									{
-										"concept": "d7098e8d-601f-472c-8914-0632930818a8",
-										"label": "Nutrition observation"
+							  "rendering": "checkbox",
+							  "concept": "7d175fa9-e64c-4923-ae6d-e35512be07a3",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "d7098e8d-601f-472c-8914-0632930818a8",
+								  "label": "Nutrition observation"
+								},
+								{
+								  "concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
+								  "label": "Pregnancy and family information observation"
+								},
+								{
+								  "concept": "246831e5-65e8-411f-aac9-57adcc4fb12c",
+								  "label": "TB screening observation"
+								},
+								{
+								  "concept": "3150e1a6-2d57-43f8-8e35-8b36fcbdceb3",
+								  "label": "OI and pain management observation"
+								},
+								{
+								  "concept": "42ca808f-4231-46f6-90a4-80ff22cb3aa2",
+								  "label": "Lab results observation"
+								},
+								{
+								  "concept": "98ed68a9-9596-45dc-8015-2289a969c6fe",
+								  "label": "Cotrimoxazole preventive therapy observation"
+								},
+								{
+								"hide": {
+										"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
-									{
-										"concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
-										"label": "Pregnancy and family information observation"
-									},
-									{
-										"concept": "246831e5-65e8-411f-aac9-57adcc4fb12c",
-										"label": "TB screening observation"
-									},
-									{
-										"concept": "3150e1a6-2d57-43f8-8e35-8b36fcbdceb3",
-										"label": "OI and pain management observation"
-									},
-									{
-										"concept": "42ca808f-4231-46f6-90a4-80ff22cb3aa2",
-										"label": "Lab results observation"
-									},
-									{
-										"concept": "98ed68a9-9596-45dc-8015-2289a969c6fe",
-										"label": "Cotrimoxazole preventive therapy observation"
-									},
-									{
-										"concept": "2889d127-3b82-4978-ad2a-97ddf16bcc81",
-										"label": "ARV drugs observation"
-									},
-									{
-										"concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
-										"label": "HIV prevention plan observation"
-									},
-									{
-										"concept": "98b00c1a-d81c-4648-be6f-86793d0ae23f",
-										"label": "DSD observation"
-									},
-									{
-										"concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
-										"label": "Cervical cancer observation"
-									}
-								]
+								  "concept": "2889d127-3b82-4978-ad2a-97ddf16bcc81",
+								  "label": "ARV drugs observation"
+								},
+								{
+								  "concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
+								  "label": "HIV prevention plan observation"
+								},
+								{
+								  "concept": "98b00c1a-d81c-4648-be6f-86793d0ae23f",
+								  "label": "DSD observation"
+								},
+								{
+								  "concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
+								  "label": "Cervical cancer observation"
+								}
+							  ]
 							},
 							"validators": []
-						}
+						  }
 					]
 				}
 			]
