@@ -79,5 +79,5 @@ export async function getIdentifier(patient, identifierType) {
   const identifierValue = patient?.identifier?.find(
     (e) => e.id === identifierType
   );
-  return identifierValue.value;
+  return identifierValue?.value;
 }
