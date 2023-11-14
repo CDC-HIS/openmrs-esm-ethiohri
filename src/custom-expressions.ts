@@ -75,9 +75,9 @@ export async function getGender(patient) {
   return null;
 }
 
-export async function getIdentifier(patient, identifierType) {
+export async function getIdentifier(patient, identifierName) {
   const identifierValue = patient?.identifier?.find(
-    (e) => e.id === identifierType
+    (e) => e?.type?.text === identifierName
   );
   return identifierValue?.value;
 }

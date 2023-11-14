@@ -27,7 +27,7 @@
 							"type": "obs",
 							"questionOptions": {
                                 "calculate": {
-                                    "calculateExpression": "getIdentifier(patient, 'c4235b37-9162-40e7-b6dc-068a8f8a01a3')"
+                                    "calculateExpression": "getIdentifier(patient, 'MRN')"
                                 },
 								"rendering": "text",
 								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
