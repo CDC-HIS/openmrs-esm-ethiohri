@@ -158,6 +158,27 @@
           "isExpanded": "true",
           "questions": [
             {
+							"label": "Follow-up date *",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "b8cd8630-56dd-495e-8c84-e36a636febe7",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "163137"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "364713004"
+									}
+								]
+							},
+							"required": "true",
+							"id": "followupDate"
+						},
+            {
               "label": "Sign and symptoms of acute HIV infection present",
               "type": "obs",
               "required": false,
@@ -491,32 +512,12 @@
                 "conceptMappings": [
                   {
                     "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "374"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "374"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "13197004"
-                  },
-                  {
-                    "relationship": "SAME-AS",
                     "type": "SNOMED-CT",
                     "value": "13197004"
                   },
                   {
                     "relationship": "SAME-AS",
                     "type": "CIEL",
-                    "value": "374"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
                     "value": "374"
                   },
                   {
@@ -533,365 +534,103 @@
                 "answers": [
                   {
                     "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Condoms",
-                    "conceptMappings": [
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "706506000"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5270"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "190"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5270"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "190"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "190"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "706506000"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "190"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "190"
-                      }
-                    ]
+                    "label": "Condoms"
                   },
                   {
-                    "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Oral contraceptive pill",
-                    "conceptMappings": [
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "5935008"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "780"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "780"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "13"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "5935008"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "13"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "780"
-                      }
-                    ]
-                  },
-                  {
-                    "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Injectable",
-                    "conceptMappings": [
-                      {
-                        "type": "CIEL",
-                        "value": "5279"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "169552007"
-                      },
-                      {
-                        "type": "SNOMED-MVP",
-                        "value": "52791000105008"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5279"
-                      },
-                      {
-                        "type": "SNOMED-MVP",
-                        "value": "52791000105008"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5279"
-                      }
-                    ]
+                    "concept": "162332AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Contraception method undecided"
                   },
                   {
                     "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Diaphragm/cervical cap",
-                    "conceptMappings": [
-                      {
-                        "type": "CIEL",
-                        "value": "5278"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "368441006"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5278"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "5278"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5278"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "368441006"
-                      }
-                    ]
+                    "label": "Diaphragm"
                   },
                   {
-                    "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Intrauterine device",
-                    "conceptMappings": [
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "312081001"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "312081001"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "268460000"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5275"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "268460000"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "5275"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "5275"
-                      }
-                    ]
+                    "concept": "160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Emergency contraceptive pills"
                   },
                   {
-                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Vasectomy/tubal legation",
-                    "conceptMappings": [
-                      {
-                        "type": "IMO-ProcedureIT",
-                        "value": "1848460"
-                      },
-                      {
-                        "type": "IMO-ProcedureIT",
-                        "value": "1809386"
-                      },
-                      {
-                        "type": "IMO-ProcedureIT",
-                        "value": "1809386"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "1489"
-                      },
-                      {
-                        "type": "IMO-ProcedureIT",
-                        "value": "1848460"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "22523008"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "22523008"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1721"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "1489"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1721"
-                      }
-                    ]
+                    "concept": "164814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Female condom"
                   },
                   {
-                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Abstinence",
-                    "conceptMappings": [
-                      {
-                        "type": "AMPATH",
-                        "value": "6219"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "159524"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1274"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "162171002"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1274"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "159524"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1720"
-                      },
-                      {
-                        "type": "PIH-Malawi",
-                        "value": "3628"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1720"
-                      },
-                      {
-                        "type": "PIH-Malawi",
-                        "value": "3628"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "162171002"
-                      }
-                    ]
+                    "concept": "5276AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Female sterilization"
+                  },
+                  {
+                    "concept": "159837AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hysterectomy"
                   },
                   {
                     "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Implantable hormone",
-                    "conceptMappings": [
-                      {
-                        "type": "CIEL",
-                        "value": "159589"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "428987008"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "169552007"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "169552007"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "6220"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "159589"
-                      }
-                    ]
+                    "label": "Implantable contraceptive (unspecified type)"
+                  },
+                  {
+                    "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Injectable contraceptives"
+                  },
+                  {
+                    "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Intrauterine device"
+                  },
+                  {
+                    "concept": "136452AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "IUD Contraception"
+                  },
+                  {
+                    "concept": "136163AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lactational amenorrhea"
+                  },
+                  {
+                    "concept": "78796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Levonorgestrel"
+                  },
+                  {
+                    "concept": "164813AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Male condom"
+                  },
+                  {
+                    "concept": "907AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Medroxyprogesterone acetate"
+                  },
+                  {
+                    "concept": "5277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Natural family planning"
                   },
                   {
                     "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "None",
-                    "conceptMappings": [
-                      {
-                        "type": "HL7-ActSubstanceAdminSubstitutionCode",
-                        "value": "N"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "1107"
-                      },
-                      {
-                        "type": "ANC-DAK",
-                        "value": "ANC.B8.DE28"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "1107"
-                      },
-                      {
-                        "type": "PIH-Malawi",
-                        "value": "1107"
-                      },
-                      {
-                        "type": "ANC-DAK",
-                        "value": "ANC.B5.DE49"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1107"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "260413007"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "1107"
-                      },
-                      {
-                        "type": "org.openmrs.module.mdrtb",
-                        "value": "NONE"
-                      },
-                      {
-                        "type": "PIH-Malawi",
-                        "value": "1107"
-                      },
-                      {
-                        "type": "AMPATH",
-                        "value": "1107"
-                      },
-                      {
-                        "type": "SNOMED-CT",
-                        "value": "260413007"
-                      },
-                      {
-                        "type": "org.openmrs.module.mdrtb",
-                        "value": "NONE"
-                      },
-                      {
-                        "type": "CIEL",
-                        "value": "1107"
-                      }
-                    ]
+                    "label": "None"
+                  },
+                  {
+                    "concept": "1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Norplant (implantable contraceptive)"
+                  },
+                  {
+                    "concept": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not applicable"
+                  },
+                  {
+                    "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Oral contraception"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Sexual abstinence"
+                  },
+                  {
+                    "concept": "1472AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Tubal ligation procedure"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Unknown"
+                  },
+                  {
+                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Vasectomy"
                   }
                 ]
               },
@@ -1129,7 +868,7 @@
               "required": false,
               "id": "screeningResultForTB",
               "questionOptions": {
-                "rendering": "select",
+                "rendering": "radio",
                 "concept": "160108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
                   {
@@ -1144,16 +883,20 @@
                   },
                   {
                     "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "160108"
-                  },
-                  {
-                    "relationship": "SAME-AS",
                     "type": "PIH",
                     "value": "2136"
                   }
                 ],
-                "answers": []
+                "answers": [
+                  {
+                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  }
+                ]
               },
               "hide": {
                 "hideWhenExpression": "screenedForTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -1271,7 +1014,7 @@
               "label": "Dispensed dose",
               "type": "obs",
               "required": false,
-              "id": "dispensedDose",
+              "id": "arvDispensedInDays",
               "questionOptions": {
                 "rendering": "select",
                 "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
@@ -1421,17 +1164,19 @@
               }
             },
             {
-              "label": "Next visit date",
-              "type": "obs",
-              "required": false,
-              "id": "nextVisitDate",
-              "questionOptions": {
-                "rendering": "eth-date",
-                "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
-                "answers": []
-              },
-              "validators": []
-            }
+							"label": "Next visit date",
+							"type": "obs",
+							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays')"
+								},
+								"rendering": "eth-date",
+								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+								"weeksList": ""
+							},
+							"readonly": "false",
+							"id": "nextVisitDate"
+						}
           ]
         }
       ]

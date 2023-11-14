@@ -739,32 +739,12 @@
                 "conceptMappings": [
                   {
                     "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "374"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "374"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "13197004"
-                  },
-                  {
-                    "relationship": "SAME-AS",
                     "type": "SNOMED-CT",
                     "value": "13197004"
                   },
                   {
                     "relationship": "SAME-AS",
                     "type": "CIEL",
-                    "value": "374"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
                     "value": "374"
                   },
                   {
@@ -784,16 +764,100 @@
                     "label": "Condoms"
                   },
                   {
-                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Vasectomy"
+                    "concept": "162332AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Contraception method undecided"
+                  },
+                  {
+                    "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Diaphragm"
+                  },
+                  {
+                    "concept": "160570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Emergency contraceptive pills"
+                  },
+                  {
+                    "concept": "164814AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Female condom"
+                  },
+                  {
+                    "concept": "5276AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Female sterilization"
+                  },
+                  {
+                    "concept": "159837AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hysterectomy"
+                  },
+                  {
+                    "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Implantable contraceptive (unspecified type)"
+                  },
+                  {
+                    "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Injectable contraceptives"
+                  },
+                  {
+                    "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Intrauterine device"
+                  },
+                  {
+                    "concept": "136452AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "IUD Contraception"
+                  },
+                  {
+                    "concept": "136163AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lactational amenorrhea"
+                  },
+                  {
+                    "concept": "78796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Levonorgestrel"
+                  },
+                  {
+                    "concept": "164813AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Male condom"
+                  },
+                  {
+                    "concept": "907AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Medroxyprogesterone acetate"
+                  },
+                  {
+                    "concept": "5277AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Natural family planning"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "None"
+                  },
+                  {
+                    "concept": "1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Norplant (implantable contraceptive)"
+                  },
+                  {
+                    "concept": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not applicable"
+                  },
+                  {
+                    "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Oral contraception"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
                   },
                   {
                     "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Sexual abstinence"
                   },
                   {
-                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "None"
+                    "concept": "1472AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Tubal ligation procedure"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Unknown"
+                  },
+                  {
+                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Vasectomy"
                   }
                 ]
               },

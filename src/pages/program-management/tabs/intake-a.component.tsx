@@ -11,14 +11,14 @@ const columns = [
     key: "date",
     header: "Enrollment Date",
     getValue: (encounter) => {
-      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
+      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d");
     },
   },
   {
     key: "dateConfirmed",
     header: "Date Confirmed",
     getValue: (encounter) => {
-      return getData(encounter, "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
