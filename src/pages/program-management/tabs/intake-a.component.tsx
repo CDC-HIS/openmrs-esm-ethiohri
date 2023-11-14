@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  INTAKE_A_ENCOUNTER_TYPE,
-  INTAKE_B_ENCOUNTER_TYPE,
-  MRN_NULL_WARNING,
-} from "../../../constants";
+import { INTAKE_A_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
@@ -70,7 +66,7 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
     (async () => {
       const previousEncounters = await getPatientEncounters(
         patientUuid,
-        INTAKE_B_ENCOUNTER_TYPE
+        INTAKE_A_ENCOUNTER_TYPE
       );
       if (previousEncounters.length) {
         setHasPreviousEncounter(true);
@@ -78,7 +74,7 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
     })();
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
+      if (identifiers?.some((e) => e.identifierType.display === "MRN")) {
         setHasMRN(true);
       }
     })();
