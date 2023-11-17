@@ -14,7 +14,7 @@ const columns = [
     key: "contactFirstName",
     header: "Contact First Name",
     getValue: (encounter) => {
-      return getData(encounter, "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {

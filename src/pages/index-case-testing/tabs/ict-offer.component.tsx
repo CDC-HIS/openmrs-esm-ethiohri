@@ -11,14 +11,14 @@ const columns = [
     key: "offered",
     header: "Offered",
     getValue: (encounter) => {
-      return getData(encounter, "eef33554-8844-48ed-abec-a06e4918b7fe", true);
+      return getData(encounter, "eef33554-8844-48ed-abec-a06e4918b7fe");
     },
   },
   {
     key: "offeredDate",
     header: "Offered Date",
     getValue: (encounter) => {
-      return getData(encounter, "a7c606b1-9f3e-4095-815a-3a623dc738e1");
+      return getData(encounter, "a7c606b1-9f3e-4095-815a-3a623dc738e1", true);
     },
   },
   {
@@ -32,7 +32,7 @@ const columns = [
     key: "acceptedDate",
     header: "Accepted Date",
     getValue: (encounter) => {
-      return getData(encounter, "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4");
+      return getData(encounter, "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4", true);
     },
   },
   {

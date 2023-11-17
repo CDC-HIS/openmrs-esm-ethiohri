@@ -14,7 +14,7 @@ const columns = [
     key: "ictNumber",
     header: "ICT Serial Number",
     getValue: (encounter) => {
-      return getData(encounter, "b35f9632-9ff8-410f-bfcb-f497023bbcf9", true);
+      return getData(encounter, "b35f9632-9ff8-410f-bfcb-f497023bbcf9");
     },
   },
   {

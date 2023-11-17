@@ -18,7 +18,7 @@ const columns = [
     key: "dateOfRetesting",
     header: "Date of retesting",
     getValue: (encounter) => {
-      return getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7");
+      return getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7", true);
     },
   },
   {
@@ -32,7 +32,7 @@ const columns = [
     key: "artStartDate",
     header: "ART start date",
     getValue: (encounter) => {
-      return getData(encounter, "ae329187-6232-4142-aa91-22c85bc8e5b5");
+      return getData(encounter, "ae329187-6232-4142-aa91-22c85bc8e5b5", true);
     },
   },
   ,

@@ -27,11 +27,7 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "visitType",
         header: "Visit Type",
         getValue: (encounter) => {
-          return getData(
-            encounter,
-            "b3f60308-cda4-41f9-af08-b98d2c1562c7",
-            false
-          );
+          return getData(encounter, "b3f60308-cda4-41f9-af08-b98d2c1562c7");
         },
       },
       {
@@ -49,11 +45,7 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "monthsOnArt",
         header: "Months On ART",
         getValue: (encounter) => {
-          return getData(
-            encounter,
-            "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            false
-          );
+          return getData(encounter, "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         },
       },
       {
