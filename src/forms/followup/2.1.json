@@ -16,6 +16,7 @@
 							"label": "Follow-up date *",
 							"type": "obs",
 							"questionOptions": {
+								"usePreviousValueDisabled": "true",
 								"rendering": "eth-date",
 								"concept": "b8cd8630-56dd-495e-8c84-e36a636febe7",
 								"weeksList": "",
@@ -37,9 +38,7 @@
 							"label": "Visit type",
 							"type": "obs",
 							"questionOptions": {
-							  "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'b3f60308-cda4-41f9-af08-b98d2c1562c7'))?.valueCodeableConcept?.coding[0]?.code"
-                },
+								"usePreviousValueDisabled": "true",
 								"rendering": "radio",
 								"concept": "b3f60308-cda4-41f9-af08-b98d2c1562c7",
 								"answers": [
@@ -78,6 +77,9 @@
 							"label": "Date confirmed HIV+ (Retesting)",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -114,6 +116,9 @@
 							"label": "Type of HIV test",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5583b0a6-f390-446d-ab39-d98584ee330c'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "5583b0a6-f390-446d-ab39-d98584ee330c",
 								"answers": [
@@ -148,6 +153,9 @@
 							"label": "Eligibility status",
 							"type": "obs",
 							"questionOptions": {
+							  "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '9ed5856a-a20a-44d2-bc8e-2acaa68cf11b'))?.valueCodeableConcept?.coding?"
+								},
 								"rendering": "checkbox",
 								"concept": "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b",
 								"answers": [
@@ -169,6 +177,9 @@
 							"label": "Eligibility date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -185,6 +196,9 @@
 							"label": "Why eligible",
 							"type": "obs",
 							"questionOptions": {
+							  							  "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b'))?.valueCodeableConcept?.coding?"
+								},
 								"rendering": "checkbox",
 								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
 								"answers": [
@@ -225,6 +239,9 @@
 							"label": "ART started ?",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -362,6 +379,9 @@
 							"label": "ART start date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ae329187-6232-4142-aa91-22c85bc8e5b5'))?.valueDateTime"
+								},
 								"rendering": "eth-date",
 								"concept": "ae329187-6232-4142-aa91-22c85bc8e5b5",
 								"weeksList": "",
@@ -599,6 +619,9 @@
 								"hideWhenExpression": "age < 18"
 							},
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f980e9d2-e85c-483e-ae93-980623114e6f'))?.valueQuantity?.value"
+								},
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
 								"max": 999,

@@ -48,10 +48,10 @@
     "url": "https://github.com/CDC-HIS/openmrs-esm-ethiohri/issues"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "^3.19.0",
+    "@adobe/react-spectrum": "^3.32.0",
     "@carbon/charts-react": "^1.5.2",
     "@carbon/react": "^1.13.0",
-    "dayjs": "^1.8.16",
+    "dayjs": "^1.11.10",
     "lodash-es": "^4.17.15",
     "swr": "^2.0.1"
   },
