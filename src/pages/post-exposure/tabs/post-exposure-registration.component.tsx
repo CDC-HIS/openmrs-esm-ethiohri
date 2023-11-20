@@ -11,33 +11,33 @@ import { fetchIdentifiers } from "../../../api/api";
 
 const columns = [
   {
-    key: "registrationDate",
-    header: "Registration Date",
+    key: "reportingDate",
+    header: "Reporting Date",
     getValue: (encounter) => {
-      return getData(encounter, "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "4285d9e8-3ab4-4a94-bd4e-4dd92855795c", true);
     },
   },
   {
-    key: "entryPoint",
-    header: "Entry point",
+    key: "exposureType",
+    header: "Exposure Type",
     getValue: (encounter) => {
-      return getData(encounter, "dd282c99-ea69-44e7-9252-aff0198cc1e8");
+      return getData(encounter, "916eebc3-1141-40e6-beaa-ad2b5685956b");
     },
   },
   {
-    key: "startedART",
-    header: "Started ART",
+    key: "sourceOfExposure",
+    header: "Source of Exposure",
     getValue: (encounter) => {
-      return getData(encounter, "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "1c92b574-953a-458e-9fa7-82f5538d8aee");
     },
   },
   {
-    key: "finalOutcome",
-    header: "Final outcome",
+    key: "eligible",
+    header: "Eligible",
     getValue: (encounter) => {
-      return getData(encounter, "413b265c-87ef-4988-a7bc-1bfc6b5e5528");
+      return getData(encounter, "78dc1be4-4668-4170-b994-fc5e9a697e56");
     },
-  },
+  }
   ,
   {
     key: "actions",
