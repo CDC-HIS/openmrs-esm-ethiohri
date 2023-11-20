@@ -9,7 +9,14 @@ const columns = [
     key: "registrationDate",
     header: "Registration Date",
     getValue: (encounter) => {
-      return getData(encounter, "160555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
+    },
+  },
+  {
+    key: "hivPositiveDate",
+    header: "HIV Positive Date",
+    getValue: (encounter) => {
+      return getData(encounter, "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
@@ -27,13 +34,12 @@ const columns = [
     },
   },
   {
-    key: "finalOutcome",
-    header: "Final outcome",
+    key: "finalOutcomeKnown",
+    header: "Final Outcome Known",
     getValue: (encounter) => {
-      return getData(encounter, "413b265c-87ef-4988-a7bc-1bfc6b5e5528");
+      return getData(encounter, "4599ebf7-6120-4593-80f0-72458b9fadad");
     },
   },
-  ,
   {
     key: "actions",
     header: "Actions",
