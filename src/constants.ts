@@ -30,7 +30,7 @@ export const female = "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const art_Therapy_EncounterUUID = "74bf4fe6-8fdb-4228-be39-680a93a9cf6d";
 export const artTherapyDateTime_UUID = "ae329187-6232-4142-aa91-22c85bc8e5b5";
 export const regimenLine_UUID = "164515AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-export const regimen_UUID = "dfbe256e-30ba-4033-837a-2e8477f2e7cd";
+export const regimen_UUID = "6d7d0327-e1f8-4246-bfe5-be1e82d94b14";
 export const refusedTreatment_UUID = "ac4f3fd1-8a2a-4c5e-a335-3f675b82dd78";
 export const therapyPlanConcept = "7557d77c-172b-4673-9335-67a38657dd01";
 export const artStopDateUUID = "162572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -69,7 +69,7 @@ export const clinicalVisitEncounterType =
   "cb0a65a7-0587-477e-89b9-cf2fd144f1d4";
 export const dateOfEncounterConcept = "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const visitTypeConcept = "8a9809e9-8a0b-4e0e-b1f6-80b0cbbe361b";
-export const regimenConcept = "dfbe256e-30ba-4033-837a-2e8477f2e7cd";
+export const regimenConcept = "6d7d0327-e1f8-4246-bfe5-be1e82d94b14";
 export const expressCareProgramStatusConcept =
   "159832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // differentiated Care Services
 export const returnVisitDateConcept = "c596f199-4d76-4eca-b3c4-ffa631c0aee9"; // Next Appointment Date

@@ -9,7 +9,7 @@
 			"label": "Post Exposure Followup",
 			"sections": [
 				{
-					"label": "Exposed person followup",
+					"label": "Exposed Person Followup",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -29,7 +29,7 @@
 							"id": "visitDate"
 						},
                         {
-                            "label": "Visit Period",
+                            "label": "Visit period",
                             "type": "obs",
                             "required": false,
                             "id": "visitPeriod",
@@ -223,7 +223,7 @@
 							"id": "finalPostStatus"
 						},
 						{
-							"label": "Side effect ",
+							"label": "Side effects",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "textarea",

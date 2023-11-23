@@ -9,55 +9,97 @@
 			"label": "PEP Followup Register",
 			"sections": [
 				{
-					"label": "Exposed person info",
+					"label": "Exposed Person Information",
 					"isExpanded": "true",
 					"questions": [
 						{
 							"label": "Occupation",
 							"type": "obs",
 							"required": false,
-							"id": "occupation",
+							"id": "occupations",
 							"questionOptions": {
-								"rendering": "select",
-								"concept": "6b28ccbd-3cea-4d7f-81a7-25c770e45c32",
-								"answers": [
-									{
-										"concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Physician"
-									},
-									{
-										"concept": "164969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health officer"
-									},
-									{
-										"concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Nurse"
-									},
-									{
-										"concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health Assistant"
-									},
-									{
-										"concept": "165796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Laboratory professional"
-									},
-									{
-										"concept": "164832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cleaner"
-									},
-									{
-										"concept": "164833AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sanitarian"
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other"
-									}
-								]
-							}
-						},
+							  "rendering": "select",
+							  "concept": "6b28ccbd-3cea-4d7f-81a7-25c770e45c32",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "159613AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Casual labor"
+								},
+								{
+								  "concept": "164832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Cleaner"
+								},
+								{
+								  "concept": "159466AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Driver"
+								},
+								{
+								  "concept": "1538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Farmer"
+								},
+								{
+								  "concept": "166513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Female sex worker"
+								},
+								{
+								  "concept": "160295AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Housewife"
+								},
+								{
+								  "concept": "159464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Housework"
+								},
+								{
+								  "concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Medical Assistant"
+								},
+								{
+								  "concept": "165796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Medical laboratory technician"
+								},
+								{
+								  "concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Medical Officer/Doctor"
+								},
+								{
+								  "concept": "5217316b-3c4a-4716-8137-466c08bb4c23",
+								  "label": "Non-governmental organisation"
+								},
+								{
+								  "concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Nurse"
+								},
+								{
+								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Other"
+								},
+								{
+								  "concept": "164969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Responsible medical officer"
+								},
+								{
+								  "concept": "164833AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Sanitarian"
+								},
+								{
+								  "concept": "159673AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Small business owner"
+								},
+								{
+								  "concept": "159465AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Student"
+								},
+								{
+								  "concept": "123801AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Unemployed"
+								}
+							  ]
+							},
+							"validators": []
+						  },
 						{
-							"label": "Case team",
+							"label": "Case Team",
 							"type": "obs",
 							"required": false,
 							"id": "caseTeam",
@@ -95,7 +137,7 @@
 					]
 				},
 				{
-					"label": "Exposure detail ",
+					"label": "Exposure Detail",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -537,7 +579,7 @@
 							"id": "eligible"
 						},
 						{
-							"label": "ARV regimens",
+							"label": "ARV Regimens",
 							"type": "obs",
 							"required": false,
 							"id": "arvRegimen",
@@ -690,12 +732,12 @@
 								  "label": "4d - AZT+3TC+EFV"
 								},
 								{
-								  "concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
-								  "label": "4f - AZT+3TC+LPVr"
-								},
-								{
 								  "concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
 								  "label": "4e - TDF+3TC+EFV"
+								},
+								{
+								  "concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
+								  "label": "4f - AZT+3TC+LPVr"
 								},
 								{
 								  "concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
