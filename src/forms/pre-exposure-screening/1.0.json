@@ -13,40 +13,6 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Patient name ",
-              "type": "obs",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "type": "PIH",
-                    "value": "2725"
-                  },
-                  {
-                    "type": "SNOMED CT",
-                    "value": "CT: 408677003"
-                  }
-                ]
-              },
-              "id": "patentName"
-            },
-            {
-              "label": "MRN",
-              "type": "obs",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "type": "CIEL",
-                    "value": "162054"
-                  }
-                ]
-              },
-              "id": "mrn"
-            },
-            {
               "label": "Registration date",
               "type": "obs",
               "required": false,
@@ -55,64 +21,6 @@
                 "rendering": "eth-date",
                 "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
                 "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
-              "label": "Sex",
-              "type": "obs",
-              "questionOptions": {
-                "rendering": "radio",
-                "concept": "166025AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "answers": [
-                  {
-                    "concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Male gender",
-                    "conceptMappings": [
-                      {
-                        "type": "PIH",
-                        "value": "2843"
-                      },
-                      {
-                        "type": "SNOMED CT",
-                        "value": "CT: 248153007"
-                      }
-                    ]
-                  },
-                  {
-                    "concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Female gender",
-                    "conceptMappings": [
-                      {
-                        "type": "SNOMED CT",
-                        "value": "CT: 248152002"
-                      },
-                      {
-                        "type": "PIH",
-                        "value": "2844"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "id": "sex"
-            },
-            {
-              "label": "Age",
-              "type": "obs",
-              "required": false,
-              "id": "age",
-              "questionOptions": {
-                "rendering": "number",
-                "concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "1532"
-                  }
-                ],
                 "answers": []
               },
               "validators": []
