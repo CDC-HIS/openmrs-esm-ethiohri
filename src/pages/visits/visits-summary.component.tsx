@@ -24,37 +24,54 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         },
       },
       {
-        key: "visitType",
-        header: "Visit Type",
+        key: "artRegimen",
+        header: "ART Regimen",
         getValue: (encounter) => {
-          return getData(encounter, "b3f60308-cda4-41f9-af08-b98d2c1562c7");
+          return getData(encounter, "6d7d0327-e1f8-4246-bfe5-be1e82d94b14");
         },
       },
       {
-        key: "dateConfirmedHIVPositive",
-        header: "Date Confirmed HIV +",
+        key: "followUpStatus",
+        header: "Follow Up Status",
+        getValue: (encounter) => {
+          return getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
+        },
+      },
+      {
+        key: "weight",
+        header: "Weight",
+        getValue: (encounter) => {
+          return getData(encounter, "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        },
+      },
+      {
+        key: "viralLoadCount",
+        header: "Viral Load Count",
+        getValue: (encounter) => {
+          return getData(encounter, "856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        },
+      },
+      {
+        key: "vlStatus",
+        header: "VL Status",
+        getValue: (encounter) => {
+          return getData(encounter, "2dc9ee04-4d12-4606-ae0f-86895bf14a44");
+        },
+      },
+      {
+        key: "dsdCategory",
+        header: "DSD Category",
+        getValue: (encounter) => {
+          return getData(encounter, "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2");
+        },
+      },
+      {
+        key: "cxcaCounsellingDate",
+        header: "CXCA Counselling Date",
         getValue: (encounter) => {
           return getData(
             encounter,
-            "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            true
-          );
-        },
-      },
-      {
-        key: "monthsOnArt",
-        header: "Months On ART",
-        getValue: (encounter) => {
-          return getData(encounter, "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        },
-      },
-      {
-        key: "nextVisitDate",
-        header: "Next visit date",
-        getValue: (encounter) => {
-          return getData(
-            encounter,
-            "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+            "72a28ebe-77ba-4592-9291-ac91e46ea770",
             true
           );
         },
