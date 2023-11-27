@@ -1717,7 +1717,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"calculate": {
-									"calculateExpression": "Math.round(calcMonthsOnART('artStartDate'))"
+									"calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
 								},
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"max": 999999999,

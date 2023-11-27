@@ -28,6 +28,8 @@ import {
 import {
   CalcNextVisitDate,
   CalcTreatmentEndDate,
+  CalcMonthsOnART,
+  CalcViralLoadStatus,
   getGender,
   getIdentifier,
 } from "./custom-expressions";
@@ -45,6 +47,8 @@ export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
+  registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
+  registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
   registerExpressionHelper("getGender", getGender);
   registerExpressionHelper("getIdentifier", getIdentifier);
 

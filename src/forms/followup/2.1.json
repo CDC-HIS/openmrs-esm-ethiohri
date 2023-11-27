@@ -442,7 +442,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "Math.round(calcMonthsOnART('artStartDate'))"
+									"calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
 								},
 								"rendering": "number",
 								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6702,7 +6702,7 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"calculate": {
-									"calculateExpression": "calcViralLoadStatus('viralLoadCount')"
+									"calculateExpression": "CustomViralLoadStatusCalc('viralLoadCount')"
 								},
 								"concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
 								"conceptMappings": [
@@ -9535,7 +9535,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
+									"calculateExpression": "CustomTreatmentEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
 								},
 								"rendering": "eth-date",
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
