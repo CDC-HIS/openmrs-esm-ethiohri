@@ -69,13 +69,11 @@ export function CalcMonthsOnART(
   let today = new Date();
   let resultMonthsOnART: number;
   let artInDays = Math.round((today.getTime() - artStartDate.getTime?.()) / 86400000);
-  if (artStartDate) {
-    if (artInDays < 30) {
+  if (artStartDate && artInDays < 30) {
       resultMonthsOnART = 0;
-    } else {
+    } else if (artStartDate && artInDays >= 30) {
       resultMonthsOnART = Math.floor(artInDays / 30);
     }
-  }
   return artStartDate ? resultMonthsOnART : 0;
 };
 
