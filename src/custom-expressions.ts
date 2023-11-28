@@ -76,7 +76,7 @@ export function CalcMonthsOnART(
       resultMonthsOnART = Math.floor(artInDays / 30);
     }
   }
-  return artStartDate ? resultMonthsOnART : null;
+  return artStartDate ? resultMonthsOnART : 0;
 };
 
 export function CalcViralLoadStatus(
