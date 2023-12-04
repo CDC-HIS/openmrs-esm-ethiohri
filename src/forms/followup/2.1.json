@@ -440,46 +440,20 @@
 						{
 							"label": "Months on ART",
 							"type": "obs",
+							"id": "monthsOnArt",
 							"questionOptions": {
+								"rendering": "text",
+								"concept": "0503b8d4-e6db-4a87-ba42-8ef892791dba",
 								"calculate": {
-									"calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
+								  "calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
 								},
-								"rendering": "number",
-								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 9999999,
-								"min": 0,
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "159368"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "CIEL",
-										"value": "159368"
-									}
-								]
-							},
+								"conceptMappings": [],
+								"answers": []
+							  },
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "monthsOnArt"
+							"validators": []
 						},
 						{
 							"label": "Observations conducted during current visit",
@@ -4789,72 +4763,65 @@
 							"id": "tptAdherence"
 						},
 						{
-							"label": "TPT Dispensed dose (INH)",
+							"label": "TPT dispensed dose in days (INH)",
 							"type": "obs",
+							"required": false,
+							"id": "tptDispensedDose",
 							"questionOptions": {
-								"rendering": "select",
-								"concept": "ad542a8d-cd7c-4d70-8ef3-829b89c05009",
-								"answers": [
-									{
-										"concept": "f21b86a8-95b6-4ef6-ad36-d6f9ee92e1d9",
-										"label": "30",
-										"conceptMappings": []
-									},
-									{
-										"concept": "b8089716-0f10-40cb-b3a6-2974cc9bb760",
-										"label": "60",
-										"conceptMappings": []
-									},
-									{
-										"concept": "957f6483-9a63-4507-a35e-e5ce03084c97",
-										"label": "90",
-										"conceptMappings": []
-									},
-									{
-										"concept": "12822d43-7b58-4409-ae33-339a5f8ed6f5",
-										"label": "120",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1b00b65e-d720-4c8e-932d-d3a73d006a3d",
-										"label": "150",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a3a2bb3f-748d-417a-bdb3-7d3b1a747ba2",
-										"label": "180",
-										"conceptMappings": []
-									}
-								]
+							  "rendering": "select",
+							  "concept": "ad542a8d-cd7c-4d70-8ef3-829b89c05009",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+								  "label": "30"
+								},
+								{
+								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+								  "label": "60"
+								},
+								{
+								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+								  "label": "90"
+								},
+								{
+								  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+								  "label": "180"
+								},
+								{
+								  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+								  "label": "120"
+								}
+							  ]
 							},
-							"id": "tptDispensedDose"
-						},
-						{
-							"label": "TPT dispensed dose (Alternate)",
+							"validators": []
+						  },
+						  {
+							"label": "TPT dispensed dose in days (Alternate)",
 							"type": "obs",
+							"required": false,
+							"id": "tptDispensedDoseAlternate",
 							"questionOptions": {
-								"rendering": "select",
-								"concept": "cc80b9ac-2ed1-4fd5-969a-9e324e91e95e",
-								"answers": [
-									{
-										"concept": "f21b86a8-95b6-4ef6-ad36-d6f9ee92e1d9",
-										"label": "30",
-										"conceptMappings": []
-									},
-									{
-										"concept": "b8089716-0f10-40cb-b3a6-2974cc9bb760",
-										"label": "60",
-										"conceptMappings": []
-									},
-									{
-										"concept": "957f6483-9a63-4507-a35e-e5ce03084c97",
-										"label": "90",
-										"conceptMappings": []
-									}
-								]
+							  "rendering": "select",
+							  "concept": "cc80b9ac-2ed1-4fd5-969a-9e324e91e95e",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+								  "label": "30"
+								},
+								{
+								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+								  "label": "60"
+								},
+								{
+								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+								  "label": "90"
+								}
+							  ]
 							},
-							"id": "tptDispensedDoseAlternate"
-						},
+							"validators": []
+						  },
 						{
 							"label": "Date TPT completed",
 							"type": "obs",
@@ -7171,49 +7138,42 @@
 							"id": "cotrimoxazoleStopDate"
 						},
 						{
-							"label": "Dispensed dose",
+							"label": "Cotrimoxazole dispensed dose in days",
 							"type": "obs",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "ddf10471-2e25-4010-b539-fff2c2900780",
-								"answers": [
-									{
-										"concept": "f21b86a8-95b6-4ef6-ad36-d6f9ee92e1d9",
-										"label": "30",
-										"conceptMappings": []
-									},
-									{
-										"concept": "b8089716-0f10-40cb-b3a6-2974cc9bb760",
-										"label": "60",
-										"conceptMappings": []
-									},
-									{
-										"concept": "957f6483-9a63-4507-a35e-e5ce03084c97",
-										"label": "90",
-										"conceptMappings": []
-									},
-									{
-										"concept": "12822d43-7b58-4409-ae33-339a5f8ed6f5",
-										"label": "120",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1b00b65e-d720-4c8e-932d-d3a73d006a3d",
-										"label": "150",
-										"conceptMappings": []
-									},
-									{
-										"concept": "a3a2bb3f-748d-417a-bdb3-7d3b1a747ba2",
-										"label": "180",
-										"conceptMappings": []
-									}
-								]
-							},
+							"required": false,
+							"id": "cotrimoxazoleDIspensedDose",
 							"hide": {
 								"hideWhenExpression": "cotrimoxazoleStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "cotrimoxazoleDIspensedDose"
-						},
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "629c6f5d-a10d-408a-9daa-d44383c8d653",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+								  "label": "30"
+								},
+								{
+								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+								  "label": "60"
+								},
+								{
+								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+								  "label": "90"
+								},
+								{
+								  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+								  "label": "180"
+								},
+								{
+								  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+								  "label": "120"
+								}
+							  ]
+							},
+							"validators": []
+						  },
 						{
 							"label": "CPT adherence level",
 							"type": "obs",

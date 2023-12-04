@@ -63,33 +63,31 @@ export function CalcTreatmentEndDate(
     : null;
 }
 
-export function CalcMonthsOnART(
-  artStartDate: Date
-  ) {
+export function CalcMonthsOnART(artStartDate: Date) {
   let today = new Date();
-  let resultMonthsOnART: number;
-  let artInDays = Math.round((today.getTime() - artStartDate.getTime?.()) / 86400000);
+  let resultMonthsOnART: string;
+  let artInDays = Math.round(
+    (today.getTime() - artStartDate.getTime?.()) / 86400000
+  );
   if (artStartDate && artInDays < 30) {
-      resultMonthsOnART = 0;
-    } else if (artStartDate && artInDays >= 30) {
-      resultMonthsOnART = Math.floor(artInDays / 30);
-    }
-  return artStartDate ? resultMonthsOnART : 0;
-};
+    resultMonthsOnART = "0 months";
+  } else if (artStartDate && artInDays >= 30) {
+    resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
+  }
+  return artStartDate ? resultMonthsOnART : "0 months";
+}
 
-export function CalcViralLoadStatus(
-  viralLoadCount: number
-  ) {
+export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
     if (viralLoadCount > 50) {
-      resultViralLoadStatus = 'a6768be6-c08e-464d-8f53-5f4229508e54';
+      resultViralLoadStatus = "a6768be6-c08e-464d-8f53-5f4229508e54";
     } else {
-      resultViralLoadStatus = '5d5e42cc-acc4-4069-b3a8-7163e0db5d96';
+      resultViralLoadStatus = "5d5e42cc-acc4-4069-b3a8-7163e0db5d96";
     }
   }
   return resultViralLoadStatus ?? null;
-};
+}
 
 export async function getGender(patient) {
   if (patient.gender === "male") {

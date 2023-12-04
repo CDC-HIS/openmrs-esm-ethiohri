@@ -1714,46 +1714,20 @@
 						{
 							"label": "Months on ART",
 							"type": "obs",
+							"id": "monthsOnART",
 							"questionOptions": {
-								"rendering": "number",
+								"rendering": "text",
+								"concept": "0503b8d4-e6db-4a87-ba42-8ef892791dba",
 								"calculate": {
-									"calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
+								  "calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
 								},
-								"concept": "159368AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999999999,
-								"min": 0,
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "159368"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "261774000"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1897"
-									},
-									{
-										"type": "CIEL",
-										"value": "159368"
-									}
-								]
-							},
+								"conceptMappings": [],
+								"answers": []
+							  },
 							"hide": {
 								"hideWhenExpression": "arvTreatmentTaken !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "monthsOnART"
+							"validators": []
 						},
 						{
 							"label": "Still on Treatment",

@@ -454,43 +454,39 @@
                             "validators": []
                         },
                         {
-                            "label": "Cotrimoxazole Dose",
+                            "label": "Cotrimoxazole dispensed dose in days",
                             "type": "obs",
                             "required": false,
                             "id": "cotrimoxazoleDose",
                             "questionOptions": {
-                                "rendering": "number",
-                                "concept": "ddf10471-2e25-4010-b539-fff2c2900780",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "f21b86a8-95b6-4ef6-ad36-d6f9ee92e1d9",
-                                        "label": "30"
-                                    },
-                                    {
-                                        "concept": "b8089716-0f10-40cb-b3a6-2974cc9bb760",
-                                        "label": "60"
-                                    },
-                                    {
-                                        "concept": "957f6483-9a63-4507-a35e-e5ce03084c97",
-                                        "label": "90"
-                                    },
-                                    {
-                                        "concept": "12822d43-7b58-4409-ae33-339a5f8ed6f5",
-                                        "label": "120"
-                                    },
-                                    {
-                                        "concept": "1b00b65e-d720-4c8e-932d-d3a73d006a3d",
-                                        "label": "150"
-                                    },
-                                    {
-                                        "concept": "a3a2bb3f-748d-417a-bdb3-7d3b1a747ba2",
-                                        "label": "180"
-                                    }
-                                ]
+                              "rendering": "select",
+                              "concept": "629c6f5d-a10d-408a-9daa-d44383c8d653",
+                              "conceptMappings": [],
+                              "answers": [
+                                {
+                                  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+                                  "label": "30"
+                                },
+                                {
+                                  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+                                  "label": "60"
+                                },
+                                {
+                                  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+                                  "label": "90"
+                                },
+                                {
+                                  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+                                  "label": "180"
+                                },
+                                {
+                                  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+                                  "label": "120"
+                                }
+                              ]
                             },
                             "validators": []
-                        },
+                          },
                         {
                             "label": "Cotrimoxazole Adherence",
                             "type": "obs",
