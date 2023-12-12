@@ -110,7 +110,8 @@
     "webpack-dev-server": "^4.8.1"
   },
   "resolutions": {
-    "@carbon/react": "1.13.0"
+    "@carbon/react": "1.13.0",
+    "@carbon/icons-react": "11.26.0"
   },
   "packageManager": "yarn@3.2.2"
 }
