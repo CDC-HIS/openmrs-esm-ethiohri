@@ -3,7 +3,7 @@ import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { IMMUNIZATION_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
-import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
+import { fetchIdentifiers } from "../../../api/api";
 import styles from "../../../root.scss";
 
 const columns = [
@@ -82,31 +82,20 @@ const columns = [
       },
     ],
   },
-];
+];  
 
 const ImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
-  const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   const [hasMRN, setHasMRN] = useState(false);
   useEffect(() => {
     (async () => {
-      const previousEncounters = await getPatientEncounters(
-        patientUuid,
-        IMMUNIZATION_ENCOUNTER_TYPE
-      );
-      if (previousEncounters.length) {
-        setHasPreviousEncounter(true);
-      }
-    })();
-    (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.some((e) => e.identifierType.display === "MRN")) {
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
         setHasMRN(true);
       }
     })();
   });
-
   return (
     <>
       <EncounterList
@@ -119,9 +108,7 @@ const ImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN || hasPreviousEncounter,
-          //TODO:insert function to run when requirements aren't met
-          // runIfFailed:  isUANNotEmpty ? myFunction() : undefined
+          hideFormLauncher: !hasMRN,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}

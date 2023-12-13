@@ -1,725 +1,779 @@
 {
-    "name": "POC Immunization",
-    "version": "1.0",
-    "published": true,
-    "retired": false,
-    "encounter": "Immunization",
-    "encounterType": "76a2a5ee-95bd-11ee-b9d1-0242ac120002",
-    "processor": "EncounterFormProcessor",
-    "referencedForms": [],
-    "uuid": "7e558cca-95bd-11ee-b9d1-0242ac120002",
-    "pages": [
+  "name": "POC Immunization",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "Immunization",
+  "encounterType": "76a2a5ee-95bd-11ee-b9d1-0242ac120002",
+  "processor": "EncounterFormProcessor",
+  "referencedForms": [],
+  "uuid": "7e558cca-95bd-11ee-b9d1-0242ac120002",
+  "pages": [
+    {
+      "label": "Immunization",
+      "sections": [
         {
-          "label": "Immunization",
-          "sections": [
+          "label": "BCG & IPV",
+          "isExpanded": "true",
+          "questions": [
             {
-              "label": "BCG & IPV",
-              "isExpanded": "true",
-              "questions": [
-                {
-                  "label": "BCG",
-                  "type": "obs",
-                  "required": false,
-                  "id": "bcg",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "conceptMappings": [
-                      {
-                        "relationship": "SAME-AS",
-                        "type": "CIEL",
-                        "value": "886"
-                      },
-                      {
-                        "relationship": "NARROWER-THAN",
-                        "type": "HL-7-CVX",
-                        "value": "19"
-                      },
-                      {
-                        "relationship": "SAME-AS",
-                        "type": "AMPATH",
-                        "value": "886"
-                      },
-                      {
-                        "relationship": "NARROWER-THAN",
-                        "type": "SNOMED-CT",
-                        "value": "418268006"
-                      },
-                      {
-                        "relationship": "SAME-AS",
-                        "type": "SNOMED-CT",
-                        "value": "42284007"
-                      },
-                      {
-                        "relationship": "SAME-AS",
-                        "type": "WHOATC",
-                        "value": "L03AX03"
-                      },
-                      {
-                        "relationship": "SAME-AS",
-                        "type": "IMO-ProcedureIT",
-                        "value": "802747"
-                      },
-                      {
-                        "relationship": "SAME-AS",
-                        "type": "AMPATH",
-                        "value": "5257"
-                      }
-                    ],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
+              "label": "BCG",
+              "type": "obs",
+              "required": false,
+              "id": "bcg",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "886"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "BCG taken date",
-                  "type": "obs",
-                  "required": false,
-                  "id": "bcgDate",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "f056ec09-ef1a-4675-bbaa-4433f05550c1",
-                    "conceptMappings": [],
-                    "answers": []
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "HL-7-CVX",
+                    "value": "19"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "IPV",
-                  "type": "obs",
-                  "required": false,
-                  "id": "ipv",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "923b4623-ac8d-4e65-a55a-aa4715752a14",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "886"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "IPV taken date",
-                  "type": "obs",
-                  "required": false,
-                  "id": "ipvDate",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "237ae1a9-5009-44d5-9561-28c7e0ec8f00",
-                    "conceptMappings": [],
-                    "answers": []
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "418268006"
                   },
-                  "validators": []
-                }
-              ]
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "42284007"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "WHOATC",
+                    "value": "L03AX03"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "IMO-ProcedureIT",
+                    "value": "802747"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "5257"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
             },
             {
-              "label": "OPV",
-              "isExpanded": "true",
-              "questions": [
-                {
-                  "label": "OPV 0 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv0",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "14369b36-910a-4996-813c-2312d234f5cf",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date OPV 0 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv0Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "34f667f5-f691-4f40-8f6c-00a686ed32a4",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "OPV 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv1",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "1c60218e-6285-460b-94ed-205cdf0afe20",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date OPV 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv1Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "01b023ae-c0b7-41aa-a742-4f6b8c4dd19c",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "OPV 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv2",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "1f25b4b6-bad6-4d39-b11a-6b76ea781958",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date OPV 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv2Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "14dc1720-d276-48ff-966a-35650328e753",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "OPV 3 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv3",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "50c23a47-40ae-469d-b7a2-0f88b8e2c915",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date OPV 3 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "opv3Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "f309eec5-1d37-4c68-a61e-5c8482b0e968",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                }
-              ]
+              "label": "BCG taken date",
+              "type": "obs",
+              "required": false,
+              "id": "bcgDate",
+              "hide": {
+                "hideWhenExpression": "bcg != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "f056ec09-ef1a-4675-bbaa-4433f05550c1",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
             },
             {
-              "label": "Penta",
-              "isExpanded": "true",
-              "questions": [
-                {
-                  "label": "Penta 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "penta1",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "816f85a6-ea0c-46c0-8757-4de4b77393c7",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
+              "label": "IPV",
+              "type": "obs",
+              "required": false,
+              "id": "ipv",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "923b4623-ac8d-4e65-a55a-aa4715752a14",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "Date Penta 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "penta1Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "1d20ba5b-0ce6-4269-8a36-be3b9edd8657",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Penta 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "penta2",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "60ec146f-946f-4ea0-8719-133e22aa108b",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      },
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date Penta 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "penta2Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "7a300cab-94c2-412b-bfc2-ae183b4a662b",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Penta 3 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "penta3",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "698adfa3-2b38-4d83-83a0-0811d7d90bb5",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date Penta 3 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "penta3Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "1329fa59-c00c-4a0c-83ed-3ca470ab07f8",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                }
-              ]
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
             },
             {
-              "label": "Rota",
-              "isExpanded": "true",
-              "questions": [
-                {
-                  "label": "Rota 0 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "rota0",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "350c872f-2614-4c7c-b164-ce0c2384cd94",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
+              "label": "IPV taken date",
+              "type": "obs",
+              "required": false,
+              "id": "ipvDate",
+              "hide": {
+                "hideWhenExpression": "ipv != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "237ae1a9-5009-44d5-9561-28c7e0ec8f00",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "OPV",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "OPV 0 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv0",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "14369b36-910a-4996-813c-2312d234f5cf",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "Date Rota 0 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "rota0Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "31ec6e43-a240-4940-b915-6013850836b8",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Rota 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "rota1",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "50891e28-ec90-405d-8368-339004f1dc08",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date Rota 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "rota1Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "f4a2918e-dc25-4b24-998a-8536b3ec1590",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Rota 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "rota2",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "6236db83-5d44-4bb8-8032-472b4e6c24f0",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date Rota 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "rota2Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "d0dfb8f5-9762-4be1-a138-40828771540b",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                }
-              ]
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
             },
             {
-              "label": "PCV",
-              "isExpanded": "true",
-              "questions": [
-                {
-                  "label": "PCV 0 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv0",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "1e92a776-0dbf-4db0-8b08-2cc9fb62bbfc",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date PCV 0 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv0Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "7ac09edd-b001-4166-be6b-b698f66122cd",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "PCV 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv1",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "028b0972-2aad-45e0-b31d-e622922d3d47",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date PCV 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv1Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "2046d321-cb6d-4e20-83c5-b4d675edc1fb",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "PCV 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv2",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "1d7acfc4-29b9-4b42-a6b7-7ea8cbd5e883",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date PCV 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv2Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "c6db2ee8-b037-4ed2-bd88-c0c3d6b8569a",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "PCV 3 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv3",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "e0287c59-984a-40ae-a449-446576a7ee27",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  },
-                  "validators": []
-                },
-                {
-                  "label": "Date PCV 3 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "pcv3Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "fa204f55-f951-49e9-b8a4-36ddbef88b22",
-                    "conceptMappings": [],
-                    "answers": []
-                  },
-                  "validators": []
-                }
-              ]
+              "label": "Date OPV 0 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv0Date",
+              "hide": {
+                "hideWhenExpression": "opv0 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "34f667f5-f691-4f40-8f6c-00a686ed32a4",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
             },
             {
-              "label": "MCV",
-              "isExpanded": "true",
-              "questions": [
-                {
-                  "label": "MCV 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "mcv1",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "448e17a0-4f7e-40e4-9980-93ce52a6987c",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
+              "label": "OPV 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv1",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "1c60218e-6285-460b-94ed-205cdf0afe20",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "Date MCV 1 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "mcv1Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "dcaf501f-49bb-49cb-b8c2-12197fab1fd3",
-                    "conceptMappings": [],
-                    "answers": []
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date OPV 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv1Date",
+              "hide": {
+                "hideWhenExpression": "opv1 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "01b023ae-c0b7-41aa-a742-4f6b8c4dd19c",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "OPV 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv2",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "1f25b4b6-bad6-4d39-b11a-6b76ea781958",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "MCV 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "mcv2",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "025f8bb8-96ce-4e4a-b38c-4a27e77a2f4a",
-                    "conceptMappings": [],
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date OPV 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv2Date",
+              "hide": {
+                "hideWhenExpression": "opv2 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "14dc1720-d276-48ff-966a-35650328e753",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "OPV 3 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv3",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "50c23a47-40ae-469d-b7a2-0f88b8e2c915",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
                   },
-                  "validators": []
-                },
-                {
-                  "label": "Date MCV 2 taken",
-                  "type": "obs",
-                  "required": false,
-                  "id": "mcv2Date",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "4e3b05b4-24e6-4fd8-8926-94717507b65c",
-                    "conceptMappings": [],
-                    "answers": []
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date OPV 3 taken",
+              "type": "obs",
+              "required": false,
+              "id": "opv3Date",
+              "hide": {
+                "hideWhenExpression": "opv3 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "f309eec5-1d37-4c68-a61e-5c8482b0e968",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Penta",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Penta 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "penta1",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "816f85a6-ea0c-46c0-8757-4de4b77393c7",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
                   },
-                  "validators": []
-                }
-              ]
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date Penta 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "penta1Date",
+              "hide": {
+                "hideWhenExpression": "penta1 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "1d20ba5b-0ce6-4269-8a36-be3b9edd8657",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Penta 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "penta2",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "60ec146f-946f-4ea0-8719-133e22aa108b",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  },
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date Penta 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "penta2Date",
+              "hide": {
+                "hideWhenExpression": "penta2 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "7a300cab-94c2-412b-bfc2-ae183b4a662b",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Penta 3 taken",
+              "type": "obs",
+              "required": false,
+              "id": "penta3",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "698adfa3-2b38-4d83-83a0-0811d7d90bb5",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date Penta 3 taken",
+              "type": "obs",
+              "required": false,
+              "id": "penta3Date",
+              "hide": {
+                "hideWhenExpression": "penta3 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "1329fa59-c00c-4a0c-83ed-3ca470ab07f8",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Rota",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Rota 0 taken",
+              "type": "obs",
+              "required": false,
+              "id": "rota0",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "350c872f-2614-4c7c-b164-ce0c2384cd94",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date Rota 0 taken",
+              "type": "obs",
+              "required": false,
+              "id": "rota0Date",
+              "hide": {
+                "hideWhenExpression": "rota0 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "31ec6e43-a240-4940-b915-6013850836b8",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Rota 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "rota1",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "50891e28-ec90-405d-8368-339004f1dc08",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date Rota 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "rota1Date",
+              "hide": {
+                "hideWhenExpression": "rota1 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "f4a2918e-dc25-4b24-998a-8536b3ec1590",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Rota 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "rota2",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "6236db83-5d44-4bb8-8032-472b4e6c24f0",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date Rota 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "rota2Date",
+              "hide": {
+                "hideWhenExpression": "rota2 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "d0dfb8f5-9762-4be1-a138-40828771540b",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "PCV",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "PCV 0 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv0",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "1e92a776-0dbf-4db0-8b08-2cc9fb62bbfc",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date PCV 0 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv0Date",
+              "hide": {
+                "hideWhenExpression": "pcv0 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "7ac09edd-b001-4166-be6b-b698f66122cd",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "PCV 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv1",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "028b0972-2aad-45e0-b31d-e622922d3d47",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date PCV 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv1Date",
+              "hide": {
+                "hideWhenExpression": "pcv1 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "2046d321-cb6d-4e20-83c5-b4d675edc1fb",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "PCV 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv2",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "1d7acfc4-29b9-4b42-a6b7-7ea8cbd5e883",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date PCV 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv2Date",
+              "hide": {
+                "hideWhenExpression": "pcv2 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "c6db2ee8-b037-4ed2-bd88-c0c3d6b8569a",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "PCV 3 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv3",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "e0287c59-984a-40ae-a449-446576a7ee27",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date PCV 3 taken",
+              "type": "obs",
+              "required": false,
+              "id": "pcv3Date",
+              "hide": {
+                "hideWhenExpression": "pcv3 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "fa204f55-f951-49e9-b8a4-36ddbef88b22",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "MCV",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "MCV 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "mcv1",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "448e17a0-4f7e-40e4-9980-93ce52a6987c",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date MCV 1 taken",
+              "type": "obs",
+              "required": false,
+              "id": "mcv1Date",
+              "hide": {
+                "hideWhenExpression": "mcv1 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "dcaf501f-49bb-49cb-b8c2-12197fab1fd3",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "MCV 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "mcv2",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "025f8bb8-96ce-4e4a-b38c-4a27e77a2f4a",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date MCV 2 taken",
+              "type": "obs",
+              "required": false,
+              "id": "mcv2Date",
+              "hide": {
+                "hideWhenExpression": "mcv2 != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "4e3b05b4-24e6-4fd8-8926-94717507b65c",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
             }
           ]
         }
       ]
     }
+  ]
+}

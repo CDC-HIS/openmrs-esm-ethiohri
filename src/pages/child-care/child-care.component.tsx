@@ -12,18 +12,18 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       <Tabs>
         <TabList contained aria-label={""}>
           <Tab>HEI Registration</Tab>
-          <Tab>HEI Followup</Tab>
           <Tab>Immunization</Tab>
+          <Tab>HEI Followup</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
             <HEIRegistrationEncounterList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <HEIFollowup patientUuid={patientUuid} />
+            <ImmunizationEncounterList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <ImmunizationEncounterList patientUuid={patientUuid} />
+            <HEIFollowup patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>
