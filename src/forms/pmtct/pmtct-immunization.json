@@ -1,13 +1,9 @@
 {
-  "name": "POC Immunization",
-  "version": "1.0",
-  "published": true,
-  "retired": false,
-  "encounter": "Immunization",
-  "encounterType": "76a2a5ee-95bd-11ee-b9d1-0242ac120002",
-  "processor": "EncounterFormProcessor",
-  "referencedForms": [],
-  "uuid": "7e558cca-95bd-11ee-b9d1-0242ac120002",
+  "name": "PMTCT Immunization",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "PMTCT Immunization",
   "pages": [
     {
       "label": "Immunization",
@@ -775,5 +771,10 @@
         }
       ]
     }
-  ]
+  ],
+  "processor": "EncounterFormProcessor",
+	"uuid": "5e353ae4-f834-4de0-bc7a-2c30ea8840ad",
+	"referencedForms": [],
+	"encounterType": "1a548c84-2170-47d5-9a23-56fcad902f63",
+	"allowUnspecifiedAll": true
 }

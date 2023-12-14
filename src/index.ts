@@ -19,7 +19,6 @@ import {
   HIV_CARE_AND_TREATMENT,
   HIV_TESTING_SERVICE_META,
   INDEX_CASE_TESTING_META,
-  MATERNAL_HEALTH_SUMMARY,
   PMTCT_META,
   POST_META,
   PREP_META,
@@ -122,17 +121,6 @@ export const pmtctMenu = getSyncLifecycle(
   createDashboardGroup(PMTCT_META),
   options
 );
-export const maternalHealthMenu = getSyncLifecycle(
-  createDashboardLink({
-    ...MATERNAL_HEALTH_SUMMARY,
-    moduleName,
-  }),
-  options
-);
-export const maternalHealthChart = getAsyncLifecycle(
-  () => import("./pages/pmtct/maternal-health.component"),
-  options
-);
 export const childHealthMenu = getSyncLifecycle(
   createDashboardLink({
     ...CHILD_HEALTH_SUMMARY,
@@ -141,7 +129,7 @@ export const childHealthMenu = getSyncLifecycle(
   options
 );
 export const childHealthChart = getAsyncLifecycle(
-  () => import("./pages/child-care/child-care.component"),
+  () => import("./pages/pmtct/pmtct.component"),
   options
 );
 export const prepMenu = getSyncLifecycle(

@@ -55,31 +55,15 @@
       "component": "pmtctMenu"
     },
     {
-      "name": "maternal-health-ext",
-      "slot": "ethio-pmtct-slot",
-      "component": "maternalHealthMenu",
-      "meta": {
-        "title": "Maternal Health",
-        "slot": "maternal-health-slot",
-        "path": "maternal-health",
-        "columns": 1
-      }
-    },
-    {
       "name": "child-health-ext",
       "slot": "ethio-pmtct-slot",
       "component": "childHealthMenu",
       "meta": {
-        "title": "Child Health",
+        "title": "PMTCT",
         "slot": "child-health-slot",
         "path": "child-health",
         "columns": 1
       }
-    },
-    {
-      "name": "maternal-health-chart-ext",
-      "slot": "maternal-health-slot",
-      "component": "maternalHealthChart"
     },
     {
       "name": "child-health-chart-ext",

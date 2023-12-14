@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { HEI_REGISTRATION_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../../constants";
+import {
+  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  MRN_NULL_WARNING,
+} from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import { fetchIdentifiers } from "../../../api/api";
@@ -11,55 +14,35 @@ const columns = [
     key: "heiDate",
     header: "HEI Code",
     getValue: (encounter) => {
-      return getData(
-        encounter,
-        "2b30a270-be1f-4cce-9949-7d7eaba349be",
-        true
-      );
+      return getData(encounter, "2b30a270-be1f-4cce-9949-7d7eaba349be", true);
     },
   },
   {
     key: "arvStarted",
     header: "ARV started",
     getValue: (encounter) => {
-      return getData(
-        encounter,
-        "b7f50074-b9f2-4b0d-9f20-d18b646d822e",
-        false
-      );
+      return getData(encounter, "b7f50074-b9f2-4b0d-9f20-d18b646d822e", false);
     },
   },
   {
     key: "infantReferred",
     header: "Infant Referred",
     getValue: (encounter) => {
-      return getData(
-        encounter,
-        "a0b16ce2-80a8-4b26-9168-74a6f64adb09",
-        false
-      );
+      return getData(encounter, "a0b16ce2-80a8-4b26-9168-74a6f64adb09", false);
     },
   },
   {
     key: "placeOfDelivery",
     header: "Place of Delivery",
     getValue: (encounter) => {
-      return getData(
-        encounter,
-        "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        false
-      );
+      return getData(encounter, "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
     },
   },
   {
     key: "modeOfDelivery",
     header: "Mode of Delivery",
     getValue: (encounter) => {
-      return getData(
-        encounter,
-        "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        false
-      );
+      return getData(encounter, "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
     },
   },
   {
@@ -67,24 +50,24 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "POC HEI Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Registration", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View HEI Registration",
+        label: "View PMTCT Registration",
         mode: "view",
       },
       {
-        form: { name: "POC HEI Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Registration", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit HEI Registration",
+        label: "Edit PMTCT Registration",
         mode: "edit",
       },
     ],
   },
-]; 
+];
 
-const HEIRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
+const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
   const [hasMRN, setHasMRN] = useState(false);
@@ -101,15 +84,14 @@ const HEIRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
     <>
       <EncounterList
         patientUuid={patientUuid}
-        encounterType={HEI_REGISTRATION_ENCOUNTER_TYPE}
-        formList={[{ name: "POC HEI Registration" }]}
+        encounterType={PMTCT_REGISTRATION_ENCOUNTER_TYPE}
+        formList={[{ name: "PMTCT Registration" }]}
         columns={columns}
-        description="HEI Registration Encounter List"
-        headerTitle="HEI Registration"
+        description="PMTCT Registration Encounter List"
+        headerTitle="PMTCT Registration"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
@@ -117,4 +99,4 @@ const HEIRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
   );
 };
 
-export default HEIRegistrationEncounterList;
+export default PMTCTRegistrationEncounterList;

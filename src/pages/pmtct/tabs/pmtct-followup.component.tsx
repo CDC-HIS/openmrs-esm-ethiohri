@@ -4,11 +4,13 @@ import {
   EncounterList,
   EncounterListColumn,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { PMTCT_ENCOUNTER_TYPE } from "../../../constants";
+import { PMTCT_FOLLOWUP_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 
-const HEIFollowup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
+  patientUuid,
+}) => {
   const columns: EncounterListColumn[] = useMemo(
     () => [
       {
@@ -71,14 +73,14 @@ const HEIFollowup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         header: "Actions",
         getValue: (encounter) => [
           {
-            form: { name: "pmtct", package: "eth_hiv" },
+            form: { name: "PMTCT Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
             label: "View HEI Followup",
             mode: "view",
           },
           {
-            form: { name: "pmtct", package: "eth_hiv" },
+            form: { name: "PMTCT Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
             label: "Edit HEI Followup",
@@ -93,11 +95,11 @@ const HEIFollowup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <EncounterList
       patientUuid={patientUuid}
-      encounterType={PMTCT_ENCOUNTER_TYPE}
-      formList={[{ name: "eth_hiv" }]}
+      encounterType={PMTCT_FOLLOWUP_ENCOUNTER_TYPE}
+      formList={[{ name: "PMTCT Followup" }]}
       columns={columns}
-      description="HEI Followup Encounter List"
-      headerTitle="HEI Followup"
+      description="PMTCT Followup Encounter List"
+      headerTitle="PMTCT Followup"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,
@@ -106,4 +108,4 @@ const HEIFollowup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 };
 
-export default HEIFollowup;
+export default PMTCTFollowupEncounterList;

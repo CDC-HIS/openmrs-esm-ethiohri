@@ -8,14 +8,8 @@ export const PMTCT_META = {
   slotName: "ethio-pmtct-slot",
 };
 
-export const MATERNAL_HEALTH_SUMMARY = {
-  title: "Maternal Health",
-  slot: "maternal-health-slot",
-  path: "maternal-health",
-};
-
 export const CHILD_HEALTH_SUMMARY = {
-  title: "Child Health",
+  title: "PMTCT",
   slot: "child-health-slot",
   path: "child-health",
 };

@@ -1,13 +1,9 @@
 {
-  "name": "POC HEI Registration",
-  "version": "1.0",
-  "published": true,
-  "retired": false,
-  "encounter": "HEI Registration",
-  "encounterType": "913d3156-95ba-11ee-b9d1-0242ac120002",
-  "processor": "EncounterFormProcessor",
-  "referencedForms": [],
-  "uuid": "b8a578fa-95bc-11ee-b9d1-0242ac120002",
+  "name": "PMTCT Registration",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "PMTCT Registration",
   "pages": [
     {
       "label": "HEI Registration",
@@ -1029,5 +1025,10 @@
         }
       ]
     }
-  ]
+  ],
+  "processor": "EncounterFormProcessor",
+	"uuid": "1c19ae8a-c896-4596-8e6f-808ea2a60baa",
+	"referencedForms": [],
+	"encounterType": "ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97",
+	"allowUnspecifiedAll": true
 }

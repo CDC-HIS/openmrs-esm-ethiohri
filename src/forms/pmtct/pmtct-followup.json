@@ -1,10 +1,9 @@
 {
-  "encounterType": "",
   "name": "PMTCT Followup",
-  "processor": "EncounterFormProcessor",
-  "referencedForms": [],
-  "uuid": "",
-  "version": "1.0",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "PMTCT Followup",
   "pages": [
     {
       "label": "Infant Status",
@@ -876,5 +875,11 @@
         }
       ]
     }
-  ]
+  ],
+
+  "processor": "EncounterFormProcessor",
+	"uuid": "a6350beb-5964-4437-8071-ce2ef39ac362",
+	"referencedForms": [],
+	"encounterType": "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d",
+	"allowUnspecifiedAll": true
 }
