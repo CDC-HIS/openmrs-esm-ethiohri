@@ -59,7 +59,7 @@
       "slot": "ethio-pmtct-slot",
       "component": "childHealthMenu",
       "meta": {
-        "title": "PMTCT",
+        "title": "Child Health",
         "slot": "child-health-slot",
         "path": "child-health",
         "columns": 1
@@ -69,6 +69,22 @@
       "name": "child-health-chart-ext",
       "slot": "child-health-slot",
       "component": "childHealthChart"
+    },
+    {
+      "name": "mother-health-ext",
+      "slot": "ethio-pmtct-slot",
+      "component": "motherHealthMenu",
+      "meta": {
+        "title": "Mother Health",
+        "slot": "mother-health-slot",
+        "path": "mother-health",
+        "columns": 1
+      }
+    },
+    {
+      "name": "mother-health-chart-ext",
+      "slot": "mother-health-slot",
+      "component": "motherHealthChart"
     },
     {
       "name": "prep-ext",

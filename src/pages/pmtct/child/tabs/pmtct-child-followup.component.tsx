@@ -4,9 +4,9 @@ import {
   EncounterList,
   EncounterListColumn,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { PMTCT_FOLLOWUP_ENCOUNTER_TYPE } from "../../../constants";
-import { getData } from "../../encounterUtils";
-import { moduleName } from "../../../index";
+import { PMTCT_FOLLOWUP_ENCOUNTER_TYPE } from "../../../../constants";
+import { getData } from "../../../encounterUtils";
+import { moduleName } from "../../../../index";
 
 const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,

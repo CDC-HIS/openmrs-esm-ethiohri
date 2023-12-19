@@ -23,6 +23,7 @@ import {
   POST_META,
   PREP_META,
   PROGRAM_MANAGEMENT_META,
+  MOTHER_HEALTH_SUMMARY,
 } from "./ethiohri-dashboard.meta";
 import {
   CalcNextVisitDate,
@@ -129,7 +130,18 @@ export const childHealthMenu = getSyncLifecycle(
   options
 );
 export const childHealthChart = getAsyncLifecycle(
-  () => import("./pages/pmtct/pmtct.component"),
+  () => import("./pages/pmtct/child/pmtct-child.component"),
+  options
+);
+export const motherHealthMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...MOTHER_HEALTH_SUMMARY,
+    moduleName,
+  }),
+  options
+);
+export const motherHealthChart = getAsyncLifecycle(
+  () => import("./pages/pmtct/mother/pmtct-mother.component"),
   options
 );
 export const prepMenu = getSyncLifecycle(

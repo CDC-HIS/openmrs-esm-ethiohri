@@ -3,11 +3,11 @@ import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   PMTCT_REGISTRATION_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
-} from "../../../constants";
-import { getData } from "../../encounterUtils";
-import { moduleName } from "../../../index";
-import { fetchIdentifiers } from "../../../api/api";
-import styles from "../../../root.scss";
+} from "../../../../constants";
+import { getData } from "../../../encounterUtils";
+import { moduleName } from "../../../../index";
+import { fetchIdentifiers } from "../../../../api/api";
+import styles from "../../../../root.scss";
 
 const columns = [
   {

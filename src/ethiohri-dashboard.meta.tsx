@@ -9,9 +9,15 @@ export const PMTCT_META = {
 };
 
 export const CHILD_HEALTH_SUMMARY = {
-  title: "PMTCT",
+  title: "Child Health Summary",
   slot: "child-health-slot",
   path: "child-health",
+};
+
+export const MOTHER_HEALTH_SUMMARY = {
+  title: "Mother Health Summary",
+  slot: "mother-health-slot",
+  path: "mother-health",
 };
 
 export const PREP_META = {
