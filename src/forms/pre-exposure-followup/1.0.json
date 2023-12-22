@@ -1070,6 +1070,9 @@
                 "conceptMappings": [],
                 "answers": []
               },
+              "hide": {
+                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "validators": []
             },
             {
