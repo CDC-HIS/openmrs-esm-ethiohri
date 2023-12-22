@@ -9504,7 +9504,7 @@
 								"rendering": "eth-date",
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"readonly": "false",
+							"readonly": "true",
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},

@@ -1056,6 +1056,23 @@
               }
             },
             {
+              "label": "PrEP dose end date",
+              "type": "obs",
+              "required": false,
+              "id": "prepDoseEndDate",
+              "readonly": "true",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
+                "calculate": {
+									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays')"
+								},
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
               "label": "Number of missed tablets in the past 30 days",
               "type": "obs",
               "required": false,
@@ -1174,7 +1191,7 @@
 								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
 								"weeksList": ""
 							},
-							"readonly": "false",
+							"readonly": "true",
 							"id": "nextVisitDate"
 						}
           ]
