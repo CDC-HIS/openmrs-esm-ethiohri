@@ -1,0 +1,51 @@
+{
+    "name": "PMTCT Mother Final Outcome",
+    "pages": [
+      {
+        "label": "Final Outcome",
+        "sections": [
+          {
+            "label": "Final Outcome",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Final outcome",
+                "type": "obs",
+                "required": false,
+                "id": "finalOutcome",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Alive on ART"
+                    },
+                    {
+                      "concept": "1693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "TO"
+                    },
+                    {
+                      "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Died"
+                    },
+                    {
+                      "concept": "5240AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Lost"
+                    }
+                  ]
+                },
+                "validators": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "encounterType": "",
+    "referencedForms": [],
+    "uuid": "",
+    "description": "PMTCT Maternal Final Outcome"
+  }

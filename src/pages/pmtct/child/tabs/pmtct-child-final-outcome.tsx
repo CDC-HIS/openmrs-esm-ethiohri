@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   MRN_NULL_WARNING,
-  PMTCT_IMMUNIZATION_ENCOUNTER_TYPE,
+  PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE,
 } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
@@ -11,38 +11,38 @@ import styles from "../../../../root.scss";
 
 const columns = [
   {
-    key: "bcg",
-    header: "BCG",
+    key: "heiDate",
+    header: "HEI Code",
     getValue: (encounter) => {
-      return getData(encounter, "886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "2b30a270-be1f-4cce-9949-7d7eaba349be", true);
     },
   },
   {
-    key: "ipv",
-    header: "IPV",
+    key: "arvStarted",
+    header: "ARV started",
     getValue: (encounter) => {
-      return getData(encounter, "923b4623-ac8d-4e65-a55a-aa4715752a14", false);
+      return getData(encounter, "b7f50074-b9f2-4b0d-9f20-d18b646d822e", false);
     },
   },
   {
-    key: "opv0",
-    header: "OPV 0 Taken",
+    key: "infantReferred",
+    header: "Infant Referred",
     getValue: (encounter) => {
-      return getData(encounter, "14369b36-910a-4996-813c-2312d234f5cf", false);
+      return getData(encounter, "a0b16ce2-80a8-4b26-9168-74a6f64adb09", false);
     },
   },
   {
-    key: "opv1",
-    header: "OPV 1 Taken",
+    key: "placeOfDelivery",
+    header: "Place of Delivery",
     getValue: (encounter) => {
-      return getData(encounter, "1c60218e-6285-460b-94ed-205cdf0afe20", false);
+      return getData(encounter, "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
     },
   },
   {
-    key: "opv2",
-    header: "OPV 2 Taken",
+    key: "modeOfDelivery",
+    header: "Mode of Delivery",
     getValue: (encounter) => {
-      return getData(encounter, "1f25b4b6-bad6-4d39-b11a-6b76ea781958", false);
+      return getData(encounter, "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
     },
   },
   {
@@ -50,26 +50,26 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Immunization", package: "eth_hiv" },
+        form: { name: "PMTCT Registration", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Child's Immunization",
+        label: "View Child's Final Outcome",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Immunization", package: "eth_hiv" },
+        form: { name: "PMTCT Registration", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Child's Immunization",
+        label: "Edit Child's Final Outcome",
         mode: "edit",
       },
     ],
   },
 ];
 
-const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const PMTCTChildFinalOutcomeEncounterList: React.FC<{
+  patientUuid: string;
+}> = ({ patientUuid }) => {
   const [hasMRN, setHasMRN] = useState(false);
   useEffect(() => {
     (async () => {
@@ -79,15 +79,16 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
       }
     })();
   });
+
   return (
     <>
       <EncounterList
         patientUuid={patientUuid}
-        encounterType={PMTCT_IMMUNIZATION_ENCOUNTER_TYPE}
-        formList={[{ name: "PMTCT Immunization" }]}
+        encounterType={PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE}
+        formList={[{ name: "PMTCT Child Final Outcome" }]}
         columns={columns}
-        description="Child's Immunization Encounter List"
-        headerTitle="Child's Immunization"
+        description="Child's Final Outcome Encounter List"
+        headerTitle="Child's Final Outcome"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
@@ -98,4 +99,4 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
   );
 };
 
-export default PMTCTImmunizationEncounterList;
+export default PMTCTChildFinalOutcomeEncounterList;

@@ -2,9 +2,9 @@
 import { Tab, Tabs, TabList, TabPanels, TabPanel } from "@carbon/react";
 import React from "react";
 import styles from "../../program-management/program-management.scss";
-import PMTCTRegistrationEncounterList from "../child/tabs/pmtct-child-registration.component";
-import PMTCTImmunizationEncounterList from "../child/tabs/pmtct-child-immunization.component";
-import PMTCTFollowupEncounterList from "../child/tabs/pmtct-child-followup.component";
+import PMTCTMotherFinalOutcomeEncounterList from "./tabs/pmtct-mother-final-outcome";
+import PMTCTMotherEnrollmentEncounterList from "./tabs/pmtct-mother-enrollment";
+import PMTCTMotherFollowup from "./tabs/pmtct-mother-followup";
 
 const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
@@ -13,17 +13,17 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         <TabList contained aria-label={""}>
           <Tab>Mother's Initial Registration</Tab>
           <Tab>Mother's Followup</Tab>
-          <Tab>Mother's Discharge Information</Tab>
+          <Tab>Mother's Final Outcome</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
-            <PMTCTRegistrationEncounterList patientUuid={patientUuid} />
+            <PMTCTMotherEnrollmentEncounterList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <PMTCTImmunizationEncounterList patientUuid={patientUuid} />
+            <PMTCTMotherFollowup patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <PMTCTFollowupEncounterList patientUuid={patientUuid} />
+            <PMTCTMotherFinalOutcomeEncounterList patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>

@@ -1,0 +1,43 @@
+{
+    "name": "PMTCT Child Final Outcome",
+    "pages": [
+      {
+        "label": "Final Outcome",
+        "sections": [
+          {
+            "label": "Final Outcome",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Final Outcome",
+                "type": "obs",
+                "required": false,
+                "id": "finalOutcome",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "413b265c-87ef-4988-a7bc-1bfc6b5e5528",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "4de0ba18-205b-4df9-be26-bdd08d964e6a",
+                      "label": "Started ART in other health facility"
+                    },
+                    {
+                      "concept": "4680464a-47ba-4b9c-bd62-ec228c2c1822",
+                      "label": "Confirmed referral"
+                    }
+                  ]
+                },
+                "validators": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "encounterType": "",
+    "referencedForms": [],
+    "uuid": "",
+    "description": "PMTCT Child Final Outcome"
+  }

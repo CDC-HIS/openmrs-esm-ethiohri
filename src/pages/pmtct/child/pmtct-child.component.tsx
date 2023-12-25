@@ -5,6 +5,7 @@ import styles from "../../program-management/program-management.scss";
 import PMTCTRegistrationEncounterList from "./tabs/pmtct-child-registration.component";
 import PMTCTImmunizationEncounterList from "./tabs/pmtct-child-immunization.component";
 import PMTCTFollowupEncounterList from "./tabs/pmtct-child-followup.component";
+import PMTCTChildFinalOutcomeEncounterList from "./tabs/pmtct-child-final-outcome";
 
 const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
@@ -14,6 +15,7 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           <Tab>Child Registration</Tab>
           <Tab>Child Immunization</Tab>
           <Tab>Child Followup</Tab>
+          <Tab>Child Final Outcome</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -24,6 +26,9 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           </TabPanel>
           <TabPanel>
             <PMTCTFollowupEncounterList patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <PMTCTChildFinalOutcomeEncounterList patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>

@@ -76,14 +76,14 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
             form: { name: "PMTCT Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
-            label: "View HEI Followup",
+            label: "View Child's Followup",
             mode: "view",
           },
           {
             form: { name: "PMTCT Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
-            label: "Edit HEI Followup",
+            label: "Edit Child's Followup",
             mode: "edit",
           },
         ],
@@ -98,8 +98,8 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
       encounterType={PMTCT_FOLLOWUP_ENCOUNTER_TYPE}
       formList={[{ name: "PMTCT Followup" }]}
       columns={columns}
-      description="PMTCT Followup Encounter List"
-      headerTitle="PMTCT Followup"
+      description="Child's Followup Encounter List"
+      headerTitle="Child's Followup"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

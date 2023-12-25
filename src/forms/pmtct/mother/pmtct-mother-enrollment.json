@@ -1,0 +1,86 @@
+{
+    "name": "PMTCT Mother Inital Registration",
+    "pages": [
+      {
+        "label": "PMTCT Referral",
+        "sections": [
+          {
+            "label": "Referral",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Status at enrollment",
+                "type": "obs",
+                "required": false,
+                "id": "referredFrom",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "ab192dd0-bb1c-4417-b8f9-4c35dc991b55",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "90f138a5-9a94-488a-b5c9-6daf8b2400d1",
+                      "label": "Linked from ART Clinic"
+                    },
+                    {
+                      "concept": "1726AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "New from ANC"
+                    },
+                    {
+                      "concept": "541f72cb-b3e1-43ad-9086-24d32467dfa5",
+                      "label": "New from PNC"
+                    },
+                    {
+                      "concept": "164835AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "New from L&D"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Linked from other facility"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Date of referral",
+                "type": "obs",
+                "required": false,
+                "id": "dateOfReferral",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "conceptMappings": [
+                    {
+                      "relationship": "SAME-AS",
+                      "type": "CIEL",
+                      "value": "161561"
+                    }
+                  ],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Date of enrollment / booking",
+                "type": "obs",
+                "required": true,
+                "id": "dateOfEnrollment",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "encounterType": "",
+    "referencedForms": [],
+    "uuid": "",
+    "description": "PMTCT Inital Registration"
+  }
