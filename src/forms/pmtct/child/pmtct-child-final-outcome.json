@@ -1,43 +1,58 @@
 {
-    "name": "PMTCT Child Final Outcome",
-    "pages": [
-      {
-        "label": "Final Outcome",
-        "sections": [
-          {
-            "label": "Final Outcome",
-            "isExpanded": "true",
-            "questions": [
-              {
-                "label": "Final Outcome",
-                "type": "obs",
-                "required": false,
-                "id": "finalOutcome",
-                "questionOptions": {
-                  "rendering": "radio",
-                  "concept": "413b265c-87ef-4988-a7bc-1bfc6b5e5528",
-                  "conceptMappings": [],
-                  "answers": [
-                    {
-                      "concept": "4de0ba18-205b-4df9-be26-bdd08d964e6a",
-                      "label": "Started ART in other health facility"
-                    },
-                    {
-                      "concept": "4680464a-47ba-4b9c-bd62-ec228c2c1822",
-                      "label": "Confirmed referral"
-                    }
-                  ]
-                },
-                "validators": []
+  "name": "PMTCT Child Final Outcome",
+  "pages": [
+    {
+      "label": "Final Outcome",
+      "sections": [
+        {
+          "label": "Final Outcome",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Final Outcome",
+              "type": "obs",
+              "required": false,
+              "id": "finalOutcome",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "2171d944-a027-417f-a0af-f9c4a88a5ffe",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "4a00b6e5-8ea1-4d8b-ba40-0b204bf69c01",
+                    "label": "Still on BF/Exposed"
+                  },
+                  {
+                    "concept": "34a4c62c-4c5c-4e4b-bc13-f68e07eea076",
+                    "label": "Lost to Follow-up"
+                  },
+                  {
+                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "80782b25-98a1-4920-a676-a039908f3ed1",
+                    "label": "TO"
+                  },
+                  {
+                    "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Died"
+                  }
+                ]
               }
-            ]
-          }
-        ]
-      }
-    ],
-    "processor": "EncounterFormProcessor",
-    "encounterType": "",
-    "referencedForms": [],
-    "uuid": "",
-    "description": "PMTCT Child Final Outcome"
-  }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "processor": "EncounterFormProcessor",
+  "encounterType": "",
+  "referencedForms": [],
+  "uuid": "",
+  "description": "PMTCT Child Final Outcome"
+}
