@@ -685,24 +685,24 @@
 							  "conceptMappings": [],
 							  "answers": [
 								{
-								  "concept": "145047AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Clinical Infection"
+								  "concept": "97c667c6-567b-4b7b-adc1-12f06c584cd4",
+								  "label": "Referred TX not initiated"
 								},
 								{
 								  "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Died"
 								},
 								{
-								  "concept": "141537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Economic problem"
+								  "concept": "127750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Declined"
+								},
+								{
+								  "concept": "95daa4f8-b45d-4dee-b5d0-5f9446d22c19",
+								  "label": "Known positive(+) on ART"
 								},
 								{
 								  "concept": "d0409cbe-1932-446a-a2d6-149922204080",
 								  "label": "On adherence preparation"
-								},
-								{
-								  "concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "On antiretroviral therapy"
 								},
 								{
 								  "concept": "f6ce58c8-1346-48ab-8f62-74edd9b8a7b7",
@@ -711,14 +711,6 @@
 								{
 								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Other"
-								},
-								{
-								  "concept": "97c667c6-567b-4b7b-adc1-12f06c584cd4",
-								  "label": "Referred TX not initiated"
-								},
-								{
-								  "concept": "127750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Refusal of treatment by patient"
 								}
 							  ]
 							},
