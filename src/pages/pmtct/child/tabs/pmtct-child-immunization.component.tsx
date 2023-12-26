@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  MRN_NULL_WARNING,
-  PMTCT_IMMUNIZATION_ENCOUNTER_TYPE,
-} from "../../../../constants";
+import { PMTCT_IMMUNIZATION_ENCOUNTER_TYPE } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { fetchIdentifiers } from "../../../../api/api";
-import styles from "../../../../root.scss";
 
 const columns = [
   {
@@ -50,14 +45,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Immunization", package: "eth_hiv" },
+        form: { name: "HEI Immunization", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View Child's Immunization",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Immunization", package: "eth_hiv" },
+        form: { name: "HEI Immunization", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit Child's Immunization",
@@ -70,21 +65,12 @@ const columns = [
 const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
-  const [hasMRN, setHasMRN] = useState(false);
-  useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-  });
   return (
     <>
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PMTCT_IMMUNIZATION_ENCOUNTER_TYPE}
-        formList={[{ name: "PMTCT Immunization" }]}
+        formList={[{ name: "HEI Immunization" }]}
         columns={columns}
         description="Child's Immunization Encounter List"
         headerTitle="Child's Immunization"
@@ -93,7 +79,6 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
           moduleName: moduleName,
         }}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
   );
 };

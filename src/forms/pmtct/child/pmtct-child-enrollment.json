@@ -1,12 +1,12 @@
 {
-  "name": "PMTCT Registration",
-	"version": "1.0",
-	"published": true,
-	"retired": false,
-	"encounter": "PMTCT Registration",
+  "name": "HEI Enrollment",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "HEI Enrollment",
   "pages": [
     {
-      "label": "HEI Registration",
+      "label": "HEI Enrollment",
       "sections": [
         {
           "label": "Infant Information",
@@ -821,10 +821,10 @@
               "validators": []
             },
             {
-              "label": "ART start date",
+              "label": "ART start eth-date",
               "type": "obs",
               "required": false,
-              "id": "artStartDate",
+              "id": "artStarteth-date",
               "hide": {
                 "hideWhenExpression": "mothersPmtct != '1a259ed4-15b5-4e23-8382-972f89be84c8'"
               },
@@ -1027,8 +1027,8 @@
     }
   ],
   "processor": "EncounterFormProcessor",
-	"uuid": "1c19ae8a-c896-4596-8e6f-808ea2a60baa",
-	"referencedForms": [],
-	"encounterType": "ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97",
-	"allowUnspecifiedAll": true
+  "uuid": "1c19ae8a-c896-4596-8e6f-808ea2a60baa",
+  "referencedForms": [],
+  "encounterType": "ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97",
+  "allowUnspecifiedAll": true
 }

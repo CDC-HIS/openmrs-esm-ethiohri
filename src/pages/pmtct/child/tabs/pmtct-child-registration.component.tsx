@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
-  MRN_NULL_WARNING,
-} from "../../../../constants";
+import { PMTCT_REGISTRATION_ENCOUNTER_TYPE } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { fetchIdentifiers } from "../../../../api/api";
-import styles from "../../../../root.scss";
 
 const columns = [
   {
@@ -50,17 +45,17 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Registration", package: "eth_hiv" },
+        form: { name: "HEI Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Child's Registration",
+        label: "View Child's Enrollment",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Registration", package: "eth_hiv" },
+        form: { name: "HEI Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Child's Registration",
+        label: "Edit Child's Enrollment",
         mode: "edit",
       },
     ],
@@ -70,31 +65,20 @@ const columns = [
 const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
-  const [hasMRN, setHasMRN] = useState(false);
-  useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-  });
-
   return (
     <>
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PMTCT_REGISTRATION_ENCOUNTER_TYPE}
-        formList={[{ name: "PMTCT Registration" }]}
+        formList={[{ name: "HEI Enrollment" }]}
         columns={columns}
-        description="Child's Registration Encounter List"
-        headerTitle="Child's Registration"
+        description="Child's Enrollment Encounter List"
+        headerTitle="Child's Enrollment"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
         }}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
   );
 };

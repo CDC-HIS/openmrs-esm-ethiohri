@@ -78,7 +78,7 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
         setHasMRN(true);
       }
     })();
-  });
+  }, []);
   return (
     <>
       <EncounterList

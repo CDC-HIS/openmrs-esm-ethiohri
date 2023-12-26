@@ -147,3 +147,9 @@ export const MRNIdentifierUUID = "c4235b37-9162-40e7-b6dc-068a8f8a01a3";
 
 export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN before an Intake form can be filled ! Please add an MRN on patient details.";
+
+export const AGE_ABOVE_THREE_WARNING =
+  "* Children above three years old are not eligible for PMTCT !";
+
+export const GENDER_PMTCT_WARNING =
+  "* Male patients are not eligible for PMTCT !";

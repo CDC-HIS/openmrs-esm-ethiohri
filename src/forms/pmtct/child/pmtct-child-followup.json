@@ -1,9 +1,9 @@
 {
-  "name": "PMTCT Followup",
+  "name": "HEI Followup",
 	"version": "1.0",
 	"published": true,
 	"retired": false,
-	"encounter": "PMTCT Followup",
+	"encounter": "HEI Followup",
   "pages": [
     {
       "label": "Infant Status",

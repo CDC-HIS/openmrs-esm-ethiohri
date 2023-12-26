@@ -1,8 +1,8 @@
 {
-  "name": "PMTCT Child Final Outcome",
+  "name": "HEI Child Final Outcome",
   "pages": [
     {
-      "label": "Final Outcome",
+      "label": "HEI Final Outcome",
       "sections": [
         {
           "label": "Final Outcome",
@@ -44,6 +44,19 @@
                   }
                 ]
               }
+            },
+            {
+              "label": "Date of final outcome",
+              "type": "obs",
+              "required": false,
+              "id": "dateOfFinalOutcome",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
             }
           ]
         }

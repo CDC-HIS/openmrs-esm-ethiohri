@@ -1,9 +1,9 @@
 {
-  "name": "PMTCT Immunization",
+  "name": "HEI Immunization",
 	"version": "1.0",
 	"published": true,
 	"retired": false,
-	"encounter": "PMTCT Immunization",
+	"encounter": "HEI Immunization",
   "pages": [
     {
       "label": "Immunization",

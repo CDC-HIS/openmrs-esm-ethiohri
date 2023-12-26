@@ -73,14 +73,14 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
         header: "Actions",
         getValue: (encounter) => [
           {
-            form: { name: "PMTCT Followup", package: "eth_hiv" },
+            form: { name: "HEI Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
             label: "View Child's Followup",
             mode: "view",
           },
           {
-            form: { name: "PMTCT Followup", package: "eth_hiv" },
+            form: { name: "HEI Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
             intent: "*",
             label: "Edit Child's Followup",
@@ -96,7 +96,7 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
     <EncounterList
       patientUuid={patientUuid}
       encounterType={PMTCT_FOLLOWUP_ENCOUNTER_TYPE}
-      formList={[{ name: "PMTCT Followup" }]}
+      formList={[{ name: "HEI Followup" }]}
       columns={columns}
       description="Child's Followup Encounter List"
       headerTitle="Child's Followup"

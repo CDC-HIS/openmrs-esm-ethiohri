@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  MRN_NULL_WARNING,
-  PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE,
-} from "../../../../constants";
+import { PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { fetchIdentifiers } from "../../../../api/api";
-import styles from "../../../../root.scss";
 
 const columns = [
   {
@@ -50,14 +45,14 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Registration", package: "eth_hiv" },
+        form: { name: "HEI Child Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View Child's Final Outcome",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Registration", package: "eth_hiv" },
+        form: { name: "HEI Child Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit Child's Final Outcome",
@@ -70,22 +65,12 @@ const columns = [
 const PMTCTChildFinalOutcomeEncounterList: React.FC<{
   patientUuid: string;
 }> = ({ patientUuid }) => {
-  const [hasMRN, setHasMRN] = useState(false);
-  useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-  });
-
   return (
     <>
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE}
-        formList={[{ name: "PMTCT Child Final Outcome" }]}
+        formList={[{ name: "HEI Child Final Outcome" }]}
         columns={columns}
         description="Child's Final Outcome Encounter List"
         headerTitle="Child's Final Outcome"
@@ -94,7 +79,6 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
           moduleName: moduleName,
         }}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
   );
 };
