@@ -48,14 +48,14 @@ const columns = [
         form: { name: "HEI Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Child's Enrollment",
+        label: "View HEI Enrollment",
         mode: "view",
       },
       {
         form: { name: "HEI Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Child's Enrollment",
+        label: "Edit HEI Enrollment",
         mode: "edit",
       },
     ],
@@ -72,8 +72,8 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
         encounterType={PMTCT_REGISTRATION_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Enrollment" }]}
         columns={columns}
-        description="Child's Enrollment Encounter List"
-        headerTitle="Child's Enrollment"
+        description="HEI Enrollment Encounter List"
+        headerTitle="HEI Enrollment"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,

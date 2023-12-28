@@ -48,14 +48,14 @@ const columns = [
         form: { name: "HEI Child Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Child's Final Outcome",
+        label: "View HEI Final Outcome",
         mode: "view",
       },
       {
         form: { name: "HEI Child Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Child's Final Outcome",
+        label: "Edit HEI Final Outcome",
         mode: "edit",
       },
     ],
@@ -72,8 +72,8 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
         encounterType={PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Child Final Outcome" }]}
         columns={columns}
-        description="Child's Final Outcome Encounter List"
-        headerTitle="Child's Final Outcome"
+        description="HEI Final Outcome Encounter List"
+        headerTitle="HEI Final Outcome"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,

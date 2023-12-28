@@ -10,24 +10,24 @@ import { fetchPatientInfo } from "../../../api/api";
 import { AGE_ABOVE_THREE_WARNING } from "../../../constants";
 
 const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
-  const [age, setAge] = useState(null);
+  const [showTabs, setShowTabs] = useState(false);
   useEffect(() => {
     (async () => {
       const patientInfo = await fetchPatientInfo(patientUuid);
-      setAge(patientInfo.data.age);
+      setShowTabs(patientInfo.data.age <= 3);
     })();
   }, []);
 
   return (
     <>
-      {age && age <= 3 ? (
+      {showTabs ? (
         <div className={styles.tabContainer}>
           <Tabs>
             <TabList contained aria-label={""}>
-              <Tab>Child Registration</Tab>
-              <Tab>Child Immunization</Tab>
-              <Tab>Child Followup</Tab>
-              <Tab>Child Final Outcome</Tab>
+              <Tab>HEI Enrollment</Tab>
+              <Tab>HEI Immunization</Tab>
+              <Tab>HEI Followup</Tab>
+              <Tab>HEI Final Outcome</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
@@ -48,7 +48,7 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           </Tabs>
         </div>
       ) : (
-        age && <p className={style.patientName}>{AGE_ABOVE_THREE_WARNING}</p>
+        <p className={style.patientName}>{AGE_ABOVE_THREE_WARNING}</p>
       )}
     </>
   );

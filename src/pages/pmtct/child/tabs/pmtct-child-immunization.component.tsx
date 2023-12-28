@@ -48,14 +48,14 @@ const columns = [
         form: { name: "HEI Immunization", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Child's Immunization",
+        label: "View HEI Immunization",
         mode: "view",
       },
       {
         form: { name: "HEI Immunization", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Child's Immunization",
+        label: "Edit HEI Immunization",
         mode: "edit",
       },
     ],
@@ -72,8 +72,8 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
         encounterType={PMTCT_IMMUNIZATION_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Immunization" }]}
         columns={columns}
-        description="Child's Immunization Encounter List"
-        headerTitle="Child's Immunization"
+        description="HEI Immunization Encounter List"
+        headerTitle="HEI Immunization"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,

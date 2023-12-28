@@ -8,17 +8,17 @@ import { fetchPatientInfo } from "../../../api/api";
 import { GENDER_PMTCT_WARNING } from "../../../constants";
 
 const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
-  const [gender, setGender] = useState(null);
+  const [showTabs, setShowTabs] = useState(null);
   useEffect(() => {
     (async () => {
       const patientInfo = await fetchPatientInfo(patientUuid);
-      setGender(patientInfo.data.gender);
+      setShowTabs(patientInfo.data.gender === "F");
     })();
   }, []);
 
   return (
     <>
-      {gender && gender === "F" ? (
+      {showTabs ? (
         <div className={styles.tabContainer}>
           <Tabs>
             <TabList contained aria-label={""}>
@@ -38,7 +38,7 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           </Tabs>
         </div>
       ) : (
-        gender && <p className={style.patientName}>{GENDER_PMTCT_WARNING}</p>
+        <p className={style.patientName}>{GENDER_PMTCT_WARNING}</p>
       )}
     </>
   );
