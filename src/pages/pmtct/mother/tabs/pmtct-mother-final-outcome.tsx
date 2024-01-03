@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  MRN_NULL_WARNING,
-  PMTCT_MOTHER_FINAL_OUTCOME_ENCOUNTER_TYPE,
-} from "../../../../constants";
+import { PMTCT_MOTHER_FINAL_OUTCOME_ENCOUNTER_TYPE } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { fetchIdentifiers } from "../../../../api/api";
-import styles from "../../../../root.scss";
 
 const columns = [
   {
@@ -50,17 +45,17 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Mother Inital Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Mother's Inital Registration",
+        label: "View Mother's Final Outcome",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Mother Inital Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Mother's Inital Registration",
+        label: "Edit Mother's Final Outcome",
         mode: "edit",
       },
     ],
@@ -70,22 +65,12 @@ const columns = [
 const PMTCTMotherFinalOutcomeEncounterList: React.FC<{
   patientUuid: string;
 }> = ({ patientUuid }) => {
-  const [hasMRN, setHasMRN] = useState(false);
-  useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-  });
-
   return (
     <>
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PMTCT_MOTHER_FINAL_OUTCOME_ENCOUNTER_TYPE}
-        formList={[{ name: "PMTCT Mother Final Outcome" }]}
+        formList={[{ name: "PMTCT Final Outcome" }]}
         columns={columns}
         description="Mother's Final Outcome Encounter List"
         headerTitle="Mother's Final Outcome"
@@ -94,7 +79,6 @@ const PMTCTMotherFinalOutcomeEncounterList: React.FC<{
           moduleName: moduleName,
         }}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
   );
 };

@@ -1,5 +1,9 @@
 {
   "name": "HEI Child Final Outcome",
+  "encounter": "HEI Child Final Outcome",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
   "pages": [
     {
       "label": "HEI Final Outcome",
@@ -64,8 +68,8 @@
     }
   ],
   "processor": "EncounterFormProcessor",
-  "encounterType": "",
+  "encounterType": "a25df415-cebb-4873-a211-96fc29b4b045",
   "referencedForms": [],
-  "uuid": "",
-  "description": "PMTCT Child Final Outcome"
+  "uuid": "4b3b8a24-3b8b-48e6-a858-d26444bd732b",
+	"allowUnspecifiedAll": true
 }

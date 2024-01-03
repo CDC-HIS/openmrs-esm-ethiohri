@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  MRN_NULL_WARNING,
-  PMTCT_MOTHER_ENROLLMENT_ENCOUNTER_TYPE,
-} from "../../../../constants";
+import { PMTCT_MOTHER_ENROLLMENT_ENCOUNTER_TYPE } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { fetchIdentifiers } from "../../../../api/api";
-import styles from "../../../../root.scss";
 
 const columns = [
   {
@@ -50,17 +45,17 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Mother Inital Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Mother Initial Registration", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Mother's Inital Registration",
+        label: "View Mother's Initial Registration",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Mother Inital Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Mother Initial Registration", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Mother's Inital Registration",
+        label: "Edit Mother's Initial Registration",
         mode: "edit",
       },
     ],
@@ -70,31 +65,20 @@ const columns = [
 const PMTCTMotherEnrollmentEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
-  const [hasMRN, setHasMRN] = useState(false);
-  useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-  });
-
   return (
     <>
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PMTCT_MOTHER_ENROLLMENT_ENCOUNTER_TYPE}
-        formList={[{ name: "PMTCT Mother Inital Registration" }]}
+        formList={[{ name: "PMTCT Mother Initial Registration" }]}
         columns={columns}
-        description="Mother's Inital Registration Encounter List"
-        headerTitle="Mother's Inital Registration"
+        description="Mother's Initial Registration Encounter List"
+        headerTitle="Mother's Initial Registration"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
         }}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
   );
 };

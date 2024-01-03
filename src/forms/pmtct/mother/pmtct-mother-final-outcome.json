@@ -1,5 +1,9 @@
 {
-    "name": "PMTCT Mother Final Outcome",
+    "name": "PMTCT Final Outcome",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "PMTCT Final Outcome",
     "pages": [
       {
         "label": "Final Outcome",
@@ -57,8 +61,8 @@
       }
     ],
     "processor": "EncounterFormProcessor",
-    "encounterType": "",
+    "encounterType": "974bff5e-4c7d-4635-8514-c85810af0aa6",
     "referencedForms": [],
-    "uuid": "",
-    "description": "PMTCT Maternal Final Outcome"
+    "uuid": "068484b2-91a1-4392-942b-435c815f5828",
+    "allowUnspecifiedAll": true
   }
