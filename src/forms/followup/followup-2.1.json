@@ -7488,14 +7488,9 @@
 										]
 									},
 									{
-										"concept": "5240AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
 										"label": "Lost",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "5240"
-											}
-										]
+										"conceptMappings": []
 									},
 									{
 										"concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -10026,14 +10021,9 @@
 										]
 									},
 									{
-										"concept": "5240AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
 										"label": "Default / LTFU",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "5240"
-											}
-										]
+										"conceptMappings": []
 									},
 									{
 										"concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
