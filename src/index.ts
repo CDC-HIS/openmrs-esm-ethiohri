@@ -33,6 +33,10 @@ import {
   getGender,
   getIdentifier,
 } from "./custom-expressions";
+import {
+  createConditionalDashboardGroup,
+  createConditionalDashboardLink,
+} from "@ohri/openmrs-esm-ohri-commons-lib";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -118,12 +122,13 @@ export const clinicalVisitsChart = getAsyncLifecycle(
   () => import("./pages/visits/visits-summary.component"),
   options
 );
+
 export const pmtctMenu = getSyncLifecycle(
-  createDashboardGroup(PMTCT_META),
+  createConditionalDashboardGroup(PMTCT_META),
   options
 );
 export const childHealthMenu = getSyncLifecycle(
-  createDashboardLink({
+  createConditionalDashboardLink({
     ...CHILD_HEALTH_SUMMARY,
     moduleName,
   }),
@@ -134,7 +139,7 @@ export const childHealthChart = getAsyncLifecycle(
   options
 );
 export const motherHealthMenu = getSyncLifecycle(
-  createDashboardLink({
+  createConditionalDashboardLink({
     ...MOTHER_HEALTH_SUMMARY,
     moduleName,
   }),
