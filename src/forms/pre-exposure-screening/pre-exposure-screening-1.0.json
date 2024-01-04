@@ -206,7 +206,7 @@
                     "label": "Positive"
                   },
                   {
-                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15s",
                     "label": "Negative"
                   },
                   {
@@ -330,7 +330,7 @@
                     "label": "Positive"
                   },
                   {
-                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
                     "label": "Negative"
                   }
                 ]
@@ -1017,7 +1017,7 @@
                     "label": "Yes"
                   },
                   {
-                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
                     "label": "No"
                   },
                   {

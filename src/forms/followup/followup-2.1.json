@@ -3400,58 +3400,9 @@
 										]
 									},
 									{
-										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
 										"label": "Negative",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "665"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260385009"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NEGATIVE"
-											},
-											{
-												"type": "CIEL",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "664"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260385009"
-											},
-											{
-												"type": "PIH",
-												"value": "664"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NEGATIVE"
-											},
-											{
-												"type": "PIH",
-												"value": "664"
-											},
-											{
-												"type": "CIEL",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "665"
-											}
-										]
+										"conceptMappings": []
 									}
 								]
 							},
@@ -4278,7 +4229,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
 							},
 							"id": "eligibleForTPT"
 						},
@@ -4371,7 +4322,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
 							},
 							"id": "tptStartDate"
 						},
@@ -10630,58 +10581,9 @@
 										]
 									},
 									{
-										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
 										"label": "Negative",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "665"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260385009"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NEGATIVE"
-											},
-											{
-												"type": "CIEL",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "664"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260385009"
-											},
-											{
-												"type": "PIH",
-												"value": "664"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NEGATIVE"
-											},
-											{
-												"type": "PIH",
-												"value": "664"
-											},
-											{
-												"type": "CIEL",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "665"
-											}
-										]
+										"conceptMappings": []
 									},
 									{
 										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
