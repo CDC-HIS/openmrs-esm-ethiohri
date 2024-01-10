@@ -22,7 +22,7 @@ const columns = [
     key: "followupStatus",
     header: "Followup status",
     getValue: (encounter) => {
-      return getData(encounter, "1f3a74f3-cafd-4bd0-9e3c-5251bd0c05e5");
+      return getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
     },
   },
   {

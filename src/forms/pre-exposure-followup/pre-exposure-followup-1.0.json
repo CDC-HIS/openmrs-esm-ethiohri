@@ -936,13 +936,13 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Follow up status",
+              "label": "Followup Status",
               "type": "obs",
               "required": false,
               "id": "followupStatus",
               "questionOptions": {
                 "rendering": "select",
-                "concept": "1f3a74f3-cafd-4bd0-9e3c-5251bd0c05e5",
+                "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
                 "conceptMappings": [],
                 "answers": [
                   {
@@ -950,7 +950,7 @@
                     "label": "Newly started"
                   },
                   {
-                    "concept": "166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "On PrEP"
                   },
                   {
@@ -958,7 +958,7 @@
                     "label": "Loss to follow-up (LTFU)"
                   },
                   {
-                    "concept": "167155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Discontinued/Stop"
                   },
                   {
@@ -966,7 +966,7 @@
                     "label": "Dead"
                   },
                   {
-                    "concept": "de4bd0d5-f826-4556-9e30-fa8e91c4c398",
+                    "concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Restart"
                   },
                   {
@@ -975,7 +975,7 @@
                   },
                   {
                     "concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Transfer in (started in another facility)"
+                    "label": "Transfer in (Started in other Facility)"
                   }
                 ]
               },
@@ -1006,7 +1006,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1052,7 +1052,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -1065,13 +1065,13 @@
                 "rendering": "date",
                 "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
                 "calculate": {
-									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays')"
+									"calculateExpression": "CustomTreatmentEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
 								},
                 "conceptMappings": [],
                 "answers": []
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1100,7 +1100,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== 'de4bd0d5-f826-4556-9e30-fa8e91c4c398' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '166536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1137,7 +1137,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '167155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },

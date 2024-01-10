@@ -50,7 +50,7 @@ export function CalcTreatmentEndDate(
   if (
     followupDate &&
     arvDispensedInDays &&
-    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   ) {
     resultTreatmentEndDate = new Date(
       followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000
@@ -58,7 +58,7 @@ export function CalcTreatmentEndDate(
   }
   return followupDate &&
     arvDispensedInDays &&
-    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     ? resultTreatmentEndDate
     : null;
 }

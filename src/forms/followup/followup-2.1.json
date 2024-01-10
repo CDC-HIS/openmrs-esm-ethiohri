@@ -7388,84 +7388,47 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Followup status *",
+							"label": "Followup Status",
 							"type": "obs",
-							"required": "true",
+							"required": false,
+							"id": "followupStatus",
 							"questionOptions": {
-								"rendering": "radio",
-								"concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
-								"answers": [
-									{
-										"concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "TO",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stop",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1260"
-											},
-											{
-												"type": "CIEL",
-												"value": "1260"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1260"
-											}
-										]
-									},
-									{
-										"concept": "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Drop",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "160431"
-											}
-										]
-									},
-									{
-										"concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Alive on ART",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "160429"
-											}
-										]
-									},
-									{
-										"concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
-										"label": "Lost",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Dead",
-										"conceptMappings": []
-									},
-									{
-										"concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Restart",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "162904"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "182837001"
-											}
-										]
-									}
-								]
+							  "rendering": "select",
+							  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "80782b25-98a1-4920-a676-a039908f3ed1",
+								  "label": "TO"
+								},
+								{
+								  "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Stop"
+								},
+								{
+								  "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
+								  "label": "Lost"
+								},
+								{
+								  "concept": "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Drop"
+								},
+								{
+								  "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Dead"
+								},
+								{
+								  "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Alive on ART"
+								},
+								{
+								  "concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Restart"
+								}
+							  ]
 							},
-							"id": "followupStatus"
-						},
+							"validators": []
+						  },
 						{
 							"label": "Reason ART regimen stopped",
 							"type": "obs",
@@ -9436,7 +9399,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "reasonForPoorARVAdherence"
 						},
