@@ -79,8 +79,8 @@
       }
     ],
     "processor": "EncounterFormProcessor",
-    "encounterType": "",
+    "encounterType": "1914ed4a-86fe-43d2-8338-2be2937ff11e",
     "referencedForms": [],
-    "uuid": "",
+    "uuid": "1a5ea870-1e0a-4cd9-8897-87ada3bcaa74",
     "description": "PMTCT Inital Registration"
   }
