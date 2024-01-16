@@ -25,7 +25,7 @@ const columns = [
     key: "finalResult",
     header: "Final result",
     getValue: (encounter) => {
-      return getData(encounter, "159427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "2e770be1-7397-4684-bea6-6632c23b00d7");
     },
   },
   {

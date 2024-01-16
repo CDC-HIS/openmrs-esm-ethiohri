@@ -615,66 +615,26 @@
 								"hideWhenExpression": "testedForHIV !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
-								"rendering": "select",
-								"concept": "159427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"relationship": "SAME-AS",
-										"type": "CIEL",
-										"value": "159427"
-									},
-									{
-										"relationship": "SAME-AS",
-										"type": "PIH",
-										"value": "2169"
-									},
-									{
-										"relationship": "SAME-AS",
-										"type": "PIH",
-										"value": "2169"
-									},
-									{
-										"relationship": "SAME-AS",
-										"type": "org.openmrs.module.mdrtb",
-										"value": "RESULT OF HIV TEST"
-									},
-									{
-										"relationship": "SAME-AS",
-										"type": "SNOMED-MVP",
-										"value": "1594271000105002"
-									},
-									{
-										"relationship": "SAME-AS",
-										"type": "org.openmrs.module.mdrtb",
-										"value": "RESULT OF HIV TEST"
-									},
-									{
-										"relationship": "SAME-AS",
-										"type": "SNOMED-MVP",
-										"value": "1594271000105002"
-									},
-									{
-										"relationship": "NARROWER-THAN",
-										"type": "SNOMED-CT",
-										"value": "31676001"
-									}
-								],
-								"answers": [
-									{
-										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Reactive"
-									},
-									{
-										"concept": "1229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Non-Reactive"
-									},
-									{
-										"concept": "1138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Inconclusive"
-									}
-								]
-							}
-						},
+							  "rendering": "select",
+							  "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Positive"
+								},
+								{
+								  "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Negative"
+								},
+								{
+								  "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Inconclusive"
+								}
+							  ]
+							},
+							"validators": []
+						  },
 						{
 							"label": "Enrolled in care",
 							"type": "obs",

@@ -339,42 +339,10 @@
               "required": false,
               "id": "lmp",
               "questionOptions": {
-                "rendering": "eth-date",
-                "concept": "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "LOINC",
-                    "value": "8665-2"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "1836"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "21840007"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "1427"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH-Malawi",
-                    "value": "968"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "968"
-                  }
-                ],
-                "answers": []
-              },
+								"rendering": "eth-date",
+								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
+								"weeksList": ""
+							},
               "hide": {
                 "hideWhenExpression": "isClientPregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
@@ -482,7 +450,7 @@
                     "label": "Fatigue"
                   },
                   {
-                    "concept": "139084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "2423abaf-6cd5-4409-8b39-2d90ca584fba",
                     "label": "Headache"
                   },
                   {
@@ -768,11 +736,11 @@
                     "label": "No STI"
                   },
                   {
-                    "concept": "153872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
                     "label": "Genital ulcer"
                   },
                   {
-                    "concept": "404a54d8-3ed2-4889-8331-e52beb6f1e70",
+                    "concept": "b3855356-bedc-492e-bec5-2d19bfabcced",
                     "label": "Urethral discharge"
                   },
                   {
@@ -992,16 +960,16 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "84797AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Tenofovir disoproxil fumarate"
-                  },
-                  {
-                    "concept": "b1ebefcb-1bc4-45ec-83e0-6f16e37e8eae",
-                    "label": "TDF/3TC (tenofovir disoproxil fumarate/lamivudine)"
-                  },
-                  {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other non-coded"
+                    "label": "Other"
+                  },
+                  {
+                    "concept": "ff27e3c2-1453-4819-ba89-74bd70749848",
+                    "label": "TDF"
+                  },
+                  {
+                    "concept": "97d14de6-89c4-49cb-9553-55de5cbc9b03",
+                    "label": "TDF/3TC"
                   }
                 ]
               },

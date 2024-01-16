@@ -25,7 +25,7 @@ const columns = [
     key: "functionalStatus",
     header: "Functional Status",
     getValue: (encounter) => {
-      return getData(encounter, "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "2b7b8471-b19e-4d55-b2a4-4fe5b80f889a");
     },
   },
   {
