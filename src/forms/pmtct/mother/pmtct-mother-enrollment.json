@@ -1,5 +1,9 @@
 {
     "name": "PMTCT Mother Initial Registration",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "PMTCT Enrollment",
     "pages": [
       {
         "label": "PMTCT Referral",

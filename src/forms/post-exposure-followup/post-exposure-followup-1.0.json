@@ -1,279 +1,292 @@
 {
-	"name": "Exposed Person Followup",
+	"name": "Post Exposure Followup",
 	"version": "1.0",
 	"published": true,
 	"retired": false,
-	"encounter": "Exposed Person Followup",
+	"encounter": "Post Exposure Followup",
 	"pages": [
-		{
-			"label": "Post Exposure Followup",
-			"sections": [
+	  {
+		"label": "Post Exposure Followup",
+		"sections": [
+		  {
+			"label": "Exposed Person Followup",
+			"isExpanded": "true",
+			"questions": [
 				{
-					"label": "Exposed Person Followup",
-					"isExpanded": "true",
-					"questions": [
-						{
-							"label": "Visit date",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "163260"
-									}
-								]
-							},
-							"id": "visitDate"
+					"label": "Reporting date",
+					"type": "obs",
+					"questionOptions": {
+						"calculate": {
+							"calculateExpression": "resolve(api.getLatestObs(patient.id, '4285d9e8-3ab4-4a94-bd4e-4dd92855795c', 'de4cef7c-0aca-4593-9b5f-64a51c841c9d'))?.valueDateTime"
 						},
-                        {
-                            "label": "Visit period",
-                            "type": "obs",
-                            "required": false,
-                            "id": "visitPeriod",
-                            "questionOptions": {
-                              "rendering": "select",
-                              "concept": "957a79b4-e771-4ab8-bcc6-e77f7dbcfd9d",
-                              "conceptMappings": [],
-                              "answers": [
-                                {
-                                  "concept": "bdbf6e4c-1220-4127-895f-e973f14e19b4",
-                                  "label": "2 weeks"
-                                },
-                                {
-                                  "concept": "aaa46f5c-e2d4-49c8-9ffd-8fad7c9d428b",
-                                  "label": "4 weeks"
-                                },
-                                {
-                                  "concept": "ced31074-6e31-4bac-90c7-945f83985f63",
-                                  "label": "6 weeks"
-                                },
-                                {
-                                  "concept": "1ff1eae4-b786-468b-bea1-14a0061d2725",
-                                  "label": "3 months"
-                                },
-                                {
-                                  "concept": "ae68ba55-9fa8-4df4-8790-411cc7a6fd0b",
-                                  "label": "6 months"
-                                }
-                              ]
-                            },
-                            "validators": []
-                        },
+						"rendering": "eth-date",
+						"concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c",
+						"weeksList": ""
+					},
+					"id": "reportingDate"
+				},
+			  {
+				"label": "Visit date",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "date",
+				  "concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+				  "weeksList": "",
+				  "conceptMappings": [
+					{
+					  "type": "CIEL",
+					  "value": "163260"
+					}
+				  ]
+				},
+				"id": "visitDate"
+			  },
+			  {
+				"label": "Visit period",
+				"type": "obs",
+				"required": false,
+				"id": "visitPeriod",
+				"questionOptions": {
+				  "rendering": "select",
+				  "concept": "957a79b4-e771-4ab8-bcc6-e77f7dbcfd9d",
+				  "conceptMappings": [],
+				  "answers": [
+					{
+					  "concept": "bdbf6e4c-1220-4127-895f-e973f14e19b4",
+					  "label": "2 weeks"
+					},
+					{
+					  "concept": "aaa46f5c-e2d4-49c8-9ffd-8fad7c9d428b",
+					  "label": "4 weeks"
+					},
+					{
+					  "concept": "ced31074-6e31-4bac-90c7-945f83985f63",
+					  "label": "6 weeks"
+					},
+					{
+					  "concept": "1ff1eae4-b786-468b-bea1-14a0061d2725",
+					  "label": "3 months"
+					},
+					{
+					  "concept": "ae68ba55-9fa8-4df4-8790-411cc7a6fd0b",
+					  "label": "6 months"
+					}
+				  ]
+				},
+				"validators": []
+			  },
+			  {
+				"label": "Adherence",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "select",
+				  "concept": "b1a646d3-78ff-4dd5-823a-5bef7d69ff3d",
+				  "answers": [
+					{
+					  "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Good",
+					  "conceptMappings": [
 						{
-							"label": "Adherence",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "b1a646d3-78ff-4dd5-823a-5bef7d69ff3d",
-								"answers": [
-									{
-										"concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Good",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "6343"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "20572008"
-											},
-											{
-												"type": "CIEL",
-												"value": "159405"
-											},
-											{
-												"type": "CIEL",
-												"value": "159405"
-											},
-											{
-												"type": "PIH",
-												"value": "1897"
-											}
-										]
-									},
-									{
-										"concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Fair",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159406"
-											},
-											{
-												"type": "CIEL",
-												"value": "159406"
-											},
-											{
-												"type": "PIH",
-												"value": "1898"
-											}
-										]
-									},
-									{
-										"concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Poor",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1899"
-											},
-											{
-												"type": "AMPATH",
-												"value": "6344"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "255351007"
-											},
-											{
-												"type": "CIEL",
-												"value": "159407"
-											},
-											{
-												"type": "CIEL",
-												"value": "159407"
-											}
-										]
-									}
-								]
-							},
-							"id": "adherence"
+						  "type": "AMPATH",
+						  "value": "6343"
 						},
 						{
-							"label": "HIV status",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "21ea1d83-acd7-4c99-b4cc-33a90e6dd7d7",
-								"answers": [
-									{
-										"concept": "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Reactive",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Non-reactive",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B6.DE2"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "unknown"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											}
-										]
-									}
-								]
-							},
-							"id": "finalPostStatus"
+						  "type": "SNOMED-CT",
+						  "value": "20572008"
 						},
 						{
-							"label": "Side effects",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"rows": "",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "401207004"
-									},
-									{
-										"type": "CIEL",
-										"value": "164377"
-									}
-								]
-							},
-							"id": "sideEffect"
+						  "type": "CIEL",
+						  "value": "159405"
 						},
 						{
-							"label": "Remark",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"rows": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "161011"
-									},
-									{
-										"type": "LOINC",
-										"value": "48767-8"
-									},
-									{
-										"type": "CIEL",
-										"value": "161011"
-									}
-								]
-							},
-							"id": "remark "
+						  "type": "CIEL",
+						  "value": "159405"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1897"
 						}
-					]
-				}
+					  ]
+					},
+					{
+					  "concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Fair",
+					  "conceptMappings": [
+						{
+						  "type": "CIEL",
+						  "value": "159406"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "159406"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1898"
+						}
+					  ]
+					},
+					{
+					  "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Poor",
+					  "conceptMappings": [
+						{
+						  "type": "PIH",
+						  "value": "1899"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "6344"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "255351007"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "159407"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "159407"
+						}
+					  ]
+					}
+				  ]
+				},
+				"id": "adherence"
+			  },
+			  {
+				"label": "HIV status",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "select",
+				  "concept": "21ea1d83-acd7-4c99-b4cc-33a90e6dd7d7",
+				  "answers": [
+					{
+					  "concept": "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Reactive",
+					  "conceptMappings": []
+					},
+					{
+					  "concept": "1229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Non-reactive",
+					  "conceptMappings": []
+					},
+					{
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Unknown",
+					  "conceptMappings": [
+						{
+						  "type": "SNOMED CT",
+						  "value": "CT: 261665006"
+						},
+						{
+						  "type": "ANC-DAK",
+						  "value": "ANC.B6.DE2"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "1067"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1067"
+						},
+						{
+						  "type": "HL7-MedicationDispenseStatus",
+						  "value": "unknown"
+						},
+						{
+						  "type": "org.openmrs.module.mdrtb",
+						  "value": "UNKNOWN"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "1067"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "1067"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1067"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "261665006"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "1067"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "261665006"
+						},
+						{
+						  "type": "org.openmrs.module.mdrtb",
+						  "value": "UNKNOWN"
+						}
+					  ]
+					}
+				  ]
+				},
+				"id": "finalPostStatus"
+			  },
+			  {
+				"label": "Side effects",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "textarea",
+				  "concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+				  "rows": "",
+				  "conceptMappings": [
+					{
+					  "type": "SNOMED-CT",
+					  "value": "401207004"
+					},
+					{
+					  "type": "CIEL",
+					  "value": "164377"
+					}
+				  ]
+				},
+				"id": "sideEffect"
+			  },
+			  {
+				"label": "Remark",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "textarea",
+				  "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+				  "rows": "",
+				  "conceptMappings": [
+					{
+					  "type": "CIEL",
+					  "value": "161011"
+					},
+					{
+					  "type": "LOINC",
+					  "value": "48767-8"
+					},
+					{
+					  "type": "CIEL",
+					  "value": "161011"
+					}
+				  ]
+				},
+				"id": "remark "
+			  }
 			]
-		}
+		  }
+		]
+	  }
 	],
 	"processor": "EncounterFormProcessor",
 	"uuid": "5ba4a64c-a659-3666-b119-3dfe0548b364",
 	"referencedForms": [],
-	"encounterType": "abf1c7f6-643f-4bf1-9adb-9544e4131c33",
+	"encounterType": "c7f3c349-8771-432b-8e1e-240a53b3bda3",
 	"allowUnspecifiedAll": true
-}
+  }

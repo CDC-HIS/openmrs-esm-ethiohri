@@ -99,16 +99,12 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "ba262f0d-07c1-49d2-a3b6-27dceaccdaba",
-                    "label": "AZT only for 6 weeks"
-                  },
-                  {
                     "concept": "b5b94269-9ee1-4733-8a24-96213cf3c291",
-                    "label": "NVP + AZT for 6 weeks"
+                    "label": "NVP + AZT for 6 weeks and NVP only for additionally 6 weeks"
                   },
                   {
                     "concept": "d32ee1d2-2518-478d-bceb-7e80fc8cb3b1",
-                    "label": "NVP only for 6 weeks"
+                    "label": "None"
                   }
                 ]
               },

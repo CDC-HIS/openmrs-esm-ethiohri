@@ -1,9 +1,9 @@
 {
   "name": "HEI Child Final Outcome",
   "encounter": "HEI Child Final Outcome",
-	"version": "1.0",
-	"published": true,
-	"retired": false,
+  "version": "1.0",
+  "published": true,
+  "retired": false,
   "pages": [
     {
       "label": "HEI Final Outcome",
@@ -24,7 +24,7 @@
                 "answers": [
                   {
                     "concept": "4a00b6e5-8ea1-4d8b-ba40-0b204bf69c01",
-                    "label": "Still on BF/Exposed"
+                    "label": "Positive - Infant referred to Pediatric HIV care outside facility"
                   },
                   {
                     "concept": "34a4c62c-4c5c-4e4b-bc13-f68e07eea076",
@@ -32,11 +32,11 @@
                   },
                   {
                     "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                    "label": "Negative"
+                    "label": "Discharged Negative"
                   },
                   {
                     "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Positive"
+                    "label": "Positive - Infant Referred for Pediatric HIV care within facility"
                   },
                   {
                     "concept": "80782b25-98a1-4920-a676-a039908f3ed1",
@@ -71,5 +71,5 @@
   "encounterType": "7a35d870-f997-40fe-aef6-1648ccc36aa9",
   "referencedForms": [],
   "uuid": "4b3b8a24-3b8b-48e6-a858-d26444bd732b",
-	"allowUnspecifiedAll": true
+  "allowUnspecifiedAll": true
 }

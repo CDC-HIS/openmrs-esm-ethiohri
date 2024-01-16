@@ -31,6 +31,16 @@
 									}
 								]
 							},
+							"validators": [
+                                {
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                },
+                                {
+                                    "type": "js_expression",
+                                    "failsWhenExpression": ""
+                                }
+                            ],
 							"required": "true",
 							"id": "followupDate"
 						},
