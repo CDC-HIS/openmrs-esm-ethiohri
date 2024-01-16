@@ -1,9 +1,9 @@
 {
-	"name": "Exposed Person Followup",
+	"name": "Post Exposure Followup",
 	"version": "1.0",
 	"published": true,
 	"retired": false,
-	"encounter": "Exposed Person Followup",
+	"encounter": "Post Exposure Followup",
 	"pages": [
 	  {
 		"label": "Post Exposure Followup",
@@ -287,6 +287,6 @@
 	"processor": "EncounterFormProcessor",
 	"uuid": "5ba4a64c-a659-3666-b119-3dfe0548b364",
 	"referencedForms": [],
-	"encounterType": "abf1c7f6-643f-4bf1-9adb-9544e4131c33",
+	"encounterType": "c7f3c349-8771-432b-8e1e-240a53b3bda3",
 	"allowUnspecifiedAll": true
   }
