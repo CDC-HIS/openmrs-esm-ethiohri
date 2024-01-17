@@ -456,6 +456,10 @@
                     "label": "On antiretroviral therapy"
                   },
                   {
+                    "concept": "78347c84-f08d-4cc0-8347-f745dc3439f1",
+                    "label": "Not on ART"
+                  },
+                  {
                     "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Unknown"
                   }
@@ -801,6 +805,10 @@
                     "label": "No sample with requisition"
                   },
                   {
+                    "concept": "cc3f8b9e-1bbb-4138-ba7f-630411036830",
+                    "label": "Insufficient sample volume"
+                  },
+                  {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Other"
                   }
@@ -916,6 +924,28 @@
           "label": "Confirmartory Rapid Antibody Test",
           "isExpanded": "true",
           "questions": [
+            {
+              "label": "Confirmatory test done",
+              "type": "obs",
+              "required": false,
+              "id": "confirmatoryTestDone",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "870d0e93-1afc-42ef-9721-84a1a5c33be9",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
             {
               "label": "Rapid antibody result",
               "type": "obs",
