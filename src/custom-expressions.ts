@@ -48,17 +48,21 @@ export function CalcTreatmentEndDate(
   let resultTreatmentEndDate = {};
   let extraDaysAdded = 30 + dispensedDoseReturned;
   if (
-    followupDate &&
-    arvDispensedInDays &&
-    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    // eslint-disable-next-line no-constant-condition
+    (followupDate &&
+      arvDispensedInDays &&
+      followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") ||
+    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   ) {
     resultTreatmentEndDate = new Date(
       followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000
     );
   }
-  return followupDate &&
+  // eslint-disable-next-line no-constant-condition
+  return (followupDate &&
     arvDispensedInDays &&
-    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") ||
+    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     ? resultTreatmentEndDate
     : null;
 }
