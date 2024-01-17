@@ -1869,81 +1869,32 @@
 						{
 							"label": "Functional status",
 							"type": "obs",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "162753"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "363803005"
-									}
-								],
-								"answers": [
-									{
-										"concept": "159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Working",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "301707001"
-											},
-											{
-												"type": "CIEL",
-												"value": "159468"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "1594681000105002"
-											},
-											{
-												"type": "PIH",
-												"value": "2064"
-											}
-										]
-									},
-									{
-										"concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Ambulatory",
-										"conceptMappings": [
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "AMBULATORY"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "255327002"
-											},
-											{
-												"type": "CIEL",
-												"value": "160026"
-											}
-										]
-									},
-									{
-										"concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Bedridden",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "162752"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "160685001"
-											}
-										]
-									}
-								]
-							},
+							"required": false,
 							"hide": {
 								"hideWhenExpression": "age < 5"
 							},
-							"id": "functionalStatus"
-						},
+							"id": "functionalStatus",
+							"questionOptions": {
+							  "rendering": "radio",
+							  "concept": "2b7b8471-b19e-4d55-b2a4-4fe5b80f889a",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Physically able to work"
+								},
+								{
+								  "concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Patient ambulatory"
+								},
+								{
+								  "concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Bedridden"
+								}
+							  ]
+							},
+							"validators": []
+						  },
 						{
 							"label": "WHO stage",
 							"type": "obs",
@@ -5462,22 +5413,8 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "153872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Genital ulcer",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "153872"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "95595008"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "699881"
-											}
-										]
+										"concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
+										"label": "Genital ulcer"
 									},
 									{
 										"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8",

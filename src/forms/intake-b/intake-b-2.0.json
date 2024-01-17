@@ -146,29 +146,171 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "checkbox",
-								"concept": "7975443c-3962-4a94-b404-e66bc920f958",
+								"concept": "efe20a31-6781-40b7-a4d8-5fc347881e76",
 								"answers": [
 									{
-										"concept": "159348AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Chronic pharyngeal candidiasis",
+										"concept": "146513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Oesophageal candidiasis",
+										"conceptMappings": []
+									},
+									{
+										"concept": "ddd5125d-f973-47ce-8fa7-8e3852d24021",
+										"label": "Mouth-Ulcer",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Chronic diarrhea",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
-												"value": "232406009"
+												"value": "236071009"
 											},
 											{
 												"type": "ICD-10-WHO",
-												"value": "B37.8"
+												"value": "K52.9"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "7544"
+											},
+											{
+												"type": "AMPATH",
+												"value": "15"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "72319"
 											},
 											{
 												"type": "CIEL",
-												"value": "159348"
+												"value": "5018"
+											},
+											{
+												"type": "PIH",
+												"value": "5018"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5018"
+											},
+											{
+												"type": "PIH",
+												"value": "1431"
 											}
 										]
 									},
 									{
+										"concept": "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cervical cancer",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "710697"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "315266007"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "315266007"
+											},
+											{
+												"type": "CIEL",
+												"value": "159008"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "Z03.1"
+											},
+											{
+												"type": "CIEL",
+												"value": "159008"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "710697"
+											}
+										]
+									},
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Zoster",
+										"conceptMappings": [
+											{
+												"type": "ICD-10-WHO",
+												"value": "B02.9"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "4740000"
+											},
+											{
+												"type": "PIH",
+												"value": "836"
+											},
+											{
+												"type": "AMPATH",
+												"value": "836"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "33834360"
+											},
+											{
+												"type": "CIEL",
+												"value": "117543"
+											},
+											{
+												"type": "ICPC2",
+												"value": "S70"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "28591"
+											}
+										]
+									},
+									{
+										"concept": "156204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Extrapulmonary TB",
+										"conceptMappings": []
+									},
+									{
+										"concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Kaposi sarcoma",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "644"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "424779008"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "C46.9"
+											},
+											{
+												"type": "CIEL",
+												"value": "644"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5171"
+											}
+										]
+									},
+									{
+										"concept": "ace33bc0-b97d-46ff-a979-0056439f7d64",
+										"label": "No OI",
+										"conceptMappings": []
+									},
+									{
 										"concept": "1294AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Meningitis, cryptococcal",
+										"label": "Cryptococcal Meningitis",
 										"conceptMappings": [
 											{
 												"type": "ICD-10-WHO-2nd",
@@ -205,199 +347,33 @@
 										]
 									},
 									{
-										"concept": "1219AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cryptococcosis",
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary TB",
 										"conceptMappings": []
 									},
 									{
-										"concept": "5328AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "HIV staging - persistent generalized lymphadenopathy",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5328"
-											},
-											{
-												"type": "CIEL",
-												"value": "5328"
-											},
-											{
-												"type": "CIEL",
-												"value": "5328"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "95892003"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "95892003"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "B23.1"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5328"
-											}
-										]
-									},
-									{
-										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "HIV staging - minor mucocutaneous manifestations",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-MVP",
-												"value": "53301000105008"
-											},
-											{
-												"type": "CIEL",
-												"value": "5330"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "53301000105008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5330"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "95346009"
-											},
-											{
-												"type": "CIEL",
-												"value": "5330"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5330"
-											}
-										]
-									},
-									{
-										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
-										"label": "Progressive multifocal leukocencephalopathy (PML)",
+										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bacterial Pneumonia",
 										"conceptMappings": []
 									},
 									{
-										"concept": "160745AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Atypical mycobacterial infection, disseminated",
+										"concept": "298AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Vaginal Candidiasis",
 										"conceptMappings": []
 									},
 									{
-										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
-										"label": "Unexplained Prolonged Fever (>1 month)",
+										"concept": "149856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Acute Diarrhea",
 										"conceptMappings": []
 									},
 									{
-										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
-										"label": "Pneumocystis Carinii Pneumonia (PCP)",
-										"conceptMappings": []
-									},
-									{
-										"concept": "153466AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "herpes simplex type 2 infection",
-										"conceptMappings": []
-									},
-									{
-										"concept": "8f3b6312-fe22-48f7-8a73-964c72c584ed",
-										"label": "HIV disease resulting in Pneumocystis jirovecii pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
-										"label": "Unexplained Chronic Diarrhea (>1 month)",
-										"conceptMappings": []
-									},
-									{
-										"concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Kaposi sarcoma oral",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "644"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "424779008"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "C46.9"
-											},
-											{
-												"type": "CIEL",
-												"value": "644"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5171"
-											}
-										]
-									},
-									{
-										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxoplasmosis",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "26292"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "B58.9"
-											},
-											{
-												"type": "PIH",
-												"value": "2583"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "187192000"
-											},
-											{
-												"type": "CIEL",
-												"value": "5355"
-											},
-											{
-												"type": "PIH",
-												"value": "5355"
-											},
-											{
-												"type": "ICPC2",
-												"value": "A78"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5355"
-											},
-											{
-												"type": "3BT",
-												"value": "10098582"
-											}
-										]
-									},
-									{
-										"concept": "131767AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Opportunistic Mycosis",
-										"conceptMappings": []
-									},
-									{
-										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
-										"label": "Extra Pulmonary Tuberculosis (TB)",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5354AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "HIV staging - salmonella septicemia",
+										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "CNS Toxoplasmosis",
 										"conceptMappings": []
 									},
 									{
 										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Candidiasis, oral",
+										"label": "Oral Candidiasis",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -494,222 +470,23 @@
 										]
 									},
 									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other non-coded",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
-									},
-									{
-										"concept": "119288AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Encephalopathy",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "119288"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "57891"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5345"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "386806002"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "81308009"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "G93.4"
-											}
-										]
-									},
-									{
-										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
-										"label": "Pulmonary Tuberculosis (TB)",
+										"concept": "130021AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumocystosis Pneumonia",
 										"conceptMappings": []
 									},
 									{
-										"concept": "01fc9f6b-2a49-41c6-82e0-42010086596f",
-										"label": "Wasting syndrome infection",
+										"concept": "115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Non-Hodgkin's lymphoma",
 										"conceptMappings": []
 									},
 									{
-										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Recurrent Upper Respiratory Tract Infection",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "804809"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "J06.9"
-											},
-											{
-												"type": "CIEL",
-												"value": "127784"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "195708003"
-											}
-										]
+										"concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
+										"label": "Genital ulcer"
 									},
 									{
-										"concept": "154119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "cytomegalovirus (CMV) viremia",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "706342"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "B25.9"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "428217009"
-											},
-											{
-												"type": "CIEL",
-												"value": "154119"
-											}
-										]
-									},
-									{
-										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumonia",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "43"
-											},
-											{
-												"type": "AMPATH",
-												"value": "43"
-											},
-											{
-												"type": "3BT",
-												"value": "10081596"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "J18.9"
-											},
-											{
-												"type": "ICD-11-WHO",
-												"value": "CA40.Z"
-											},
-											{
-												"type": "CIEL",
-												"value": "114100"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "87580"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5969"
-											},
-											{
-												"type": "ICPC2",
-												"value": "R81"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "233604007"
-											}
-										]
-									},
-									{
-										"concept": "143110AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cryptosporidiosis",
-										"conceptMappings": [
-											{
-												"type": "ICPC2",
-												"value": "D70"
-											},
-											{
-												"type": "CIEL",
-												"value": "143110"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "A07.2"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "240370009"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "193751"
-											},
-											{
-												"type": "3BT",
-												"value": "10023203"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "58777003"
-											}
-										]
+										"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8",
+										"label": "Other",
+										"conceptMappings": []
 									}
 								]
 							},
@@ -2142,39 +1919,29 @@
 						{
 							"label": "Functional status",
 							"type": "obs",
+							"required": false,
+							"id": "patientFunctionalStatus",
 							"questionOptions": {
-								"rendering": "radio",
-								"concept": "162753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"answers": [
-									{
-										"concept": "162063AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Walking",
-										"conceptMappings": []
-									},
-									{
-										"concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Ambulatory",
-										"conceptMappings": []
-									},
-									{
-										"concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Bedridden",
-										"conceptMappings": []
-									}
-								],
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "162753"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "363803005"
-									}
-								]
+							  "rendering": "radio",
+							  "concept": "2b7b8471-b19e-4d55-b2a4-4fe5b80f889a",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Physically able to work"
+								},
+								{
+								  "concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Patient ambulatory"
+								},
+								{
+								  "concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Bedridden"
+								}
+							  ]
 							},
-							"id": "patientFunctionalStatus"
-						}
+							"validators": []
+						  }
 					]
 				},
 				{

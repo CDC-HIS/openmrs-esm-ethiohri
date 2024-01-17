@@ -151,72 +151,31 @@
               "validators": []
             },
             {
-              "label": "HIV test result ",
+              "label": "HIV test Result",
               "type": "obs",
               "required": false,
               "id": "hivTestResult",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "questionOptions": {
                 "rendering": "select",
-                "concept": "159427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "159427"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "2169"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "2169"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-MVP",
-                    "value": "1594271000105002"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "RESULT OF HIV TEST"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "RESULT OF HIV TEST"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-MVP",
-                    "value": "1594271000105002"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED-CT",
-                    "value": "31676001"
-                  }
-                ],
+                "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
+                "conceptMappings": [],
                 "answers": [
                   {
                     "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Positive"
                   },
                   {
-                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15s",
+                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Negative"
                   },
                   {
-                    "concept": "1138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Indeterminate"
+                    "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Inconclusive"
                   }
                 ]
-              },
-              "hide": {
-                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -825,11 +784,11 @@
                     "label": "No STI"
                   },
                   {
-                    "concept": "153872AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
                     "label": "Genital ulcer"
                   },
                   {
-                    "concept": "404a54d8-3ed2-4889-8331-e52beb6f1e70",
+                    "concept": "b3855356-bedc-492e-bec5-2d19bfabcced",
                     "label": "Urethral discharge"
                   },
                   {

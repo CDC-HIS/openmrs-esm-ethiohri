@@ -129,7 +129,7 @@ export const dateandtime = "";
 export const temperature = "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const sbp = "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const dbp = "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-export const pulse = "da7f89c4-537a-4c65-98ae-cccfee4e8fbc";
+export const pulse = "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const respiratoryRate = "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const spo2 = "5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 

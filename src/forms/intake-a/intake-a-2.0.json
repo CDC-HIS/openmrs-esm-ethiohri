@@ -531,93 +531,28 @@
 						{
 							"label": "Challenge to regular follow-up",
 							"type": "obs",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "a3d8dbc0-bbbd-4fb7-8a86-e6ef708ff6e5",
-								"answers": [
-									{
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Yes",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											},
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 373066001"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											}
-										]
-									},
-									{
-										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH",
-												"value": "1066"
-											}
-										]
-									}
-								]
-							},
+							"required": false,
+							"id": "regular_followup",
 							"hide": {
 								"hideWhenExpression": "catchment_area != '160636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "regular_followup"
-						}
+							"questionOptions": {
+							  "rendering": "radio",
+							  "concept": "f93c0a7d-9578-4fb2-afd1-6a7f477a7e1a",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Yes"
+								},
+								{
+								  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "No"
+								}
+							  ]
+							},
+							"validators": []
+						  }
 					]
 				},
 				{

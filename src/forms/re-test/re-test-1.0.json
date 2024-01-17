@@ -901,156 +901,29 @@
 						{
 							"label": "Result",
 							"type": "obs",
+							"required": false,
+							"id": "resultFinal",
 							"questionOptions": {
-								"rendering": "radio",
-								"concept": "159427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"answers": [
-									{
-										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Reactive",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "703"
-											},
-											{
-												"type": "CIEL",
-												"value": "703"
-											},
-											{
-												"type": "AMPATH",
-												"value": "703"
-											},
-											{
-												"type": "AMPATH",
-												"value": "704"
-											},
-											{
-												"type": "AMPATH",
-												"value": "704"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "10828004"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "10828004"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "POSITIVE"
-											},
-											{
-												"type": "AMPATH",
-												"value": "703"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "POSITIVE"
-											},
-											{
-												"type": "PIH",
-												"value": "703"
-											},
-											{
-												"type": "CIEL",
-												"value": "703"
-											}
-										]
-									},
-									{
-										"concept": "1229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Non-Reactive",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "665"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260385009"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NEGATIVE"
-											},
-											{
-												"type": "CIEL",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "664"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260385009"
-											},
-											{
-												"type": "PIH",
-												"value": "664"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NEGATIVE"
-											},
-											{
-												"type": "PIH",
-												"value": "664"
-											},
-											{
-												"type": "CIEL",
-												"value": "664"
-											},
-											{
-												"type": "AMPATH",
-												"value": "665"
-											}
-										]
-									}
-								],
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "159427"
-									},
-									{
-										"type": "PIH",
-										"value": "2169"
-									},
-									{
-										"type": "PIH",
-										"value": "2169"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "1594271000105002"
-									},
-									{
-										"type": "org.openmrs.module.mdrtb",
-										"value": "RESULT OF HIV TEST"
-									},
-									{
-										"type": "org.openmrs.module.mdrtb",
-										"value": "RESULT OF HIV TEST"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "1594271000105002"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "31676001"
-									}
-								]
+							  "rendering": "select",
+							  "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Positive"
+								},
+								{
+								  "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Negative"
+								},
+								{
+								  "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Inconclusive"
+								}
+							  ]
 							},
-							"id": "resultFinal"
-						}
+							"validators": []
+						  }
 					]
 				},
 				{
