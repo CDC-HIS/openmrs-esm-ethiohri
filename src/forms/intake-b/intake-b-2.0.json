@@ -273,9 +273,8 @@
 										]
 									},
 									{
-										"concept": "156204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Extrapulmonary TB",
-										"conceptMappings": []
+										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
+										"label": "Extra Pulmonary Tuberculosis (TB)"
 									},
 									{
 										"concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -352,8 +351,8 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Bacterial Pneumonia",
+										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumonia",
 										"conceptMappings": []
 									},
 									{
@@ -367,8 +366,8 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "CNS Toxoplasmosis",
+										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis",
 										"conceptMappings": []
 									},
 									{
@@ -470,9 +469,8 @@
 										]
 									},
 									{
-										"concept": "130021AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumocystosis Pneumonia",
-										"conceptMappings": []
+										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
+										"label": "Pneumocystis Carinii Pneumonia (PCP)"
 									},
 									{
 										"concept": "115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2629,23 +2627,9 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "120655AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Chronic fatigue",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "300212"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "R53"
-											},
-											{
-												"type": "CIEL",
-												"value": "120655"
-											}
-										]
-									},
+										"concept": "140501AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fatigue"
+									  },
 									{
 										"concept": "0d51073d-99b9-4d66-95f4-d345756e6ba9",
 										"label": "Flu-like (URTI)",
@@ -4539,8 +4523,9 @@
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Bacterial pneumonia"
+										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumonia",
+										"conceptMappings": []
 									},
 									{
 										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -4684,8 +4669,9 @@
 										"label": "Symptomatic HIV- associated"
 									},
 									{
-										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxoplasmosis, central nervous system"
+										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis",
+										"conceptMappings": []
 									}
 								]
 							},

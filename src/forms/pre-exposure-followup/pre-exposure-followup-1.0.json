@@ -158,26 +158,18 @@
           "isExpanded": "true",
           "questions": [
             {
-							"label": "Follow-up date *",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "b8cd8630-56dd-495e-8c84-e36a636febe7",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "163137"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "364713004"
-									}
-								]
-							},
-							"required": "true",
-							"id": "followupDate"
-						},
+              "label": "Followup date *",
+              "type": "obs",
+              "required": "true",
+							"id": "followupDate",
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
             {
               "label": "Sign and symptoms of acute HIV infection present",
               "type": "obs",
@@ -430,7 +422,7 @@
                     "label": "Abdominal pain"
                   },
                   {
-                    "concept": "110149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Skin Rash"
                   },
                   {
@@ -450,7 +442,7 @@
                     "label": "Fatigue"
                   },
                   {
-                    "concept": "2423abaf-6cd5-4409-8b39-2d90ca584fba",
+                    "concept": "139084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Headache"
                   },
                   {
@@ -914,7 +906,7 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "488236af-a2fe-4b04-b62c-eabd27b05ea4",
+                    "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Newly started"
                   },
                   {
@@ -974,7 +966,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1020,7 +1012,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -1039,7 +1031,7 @@
                 "answers": []
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1068,7 +1060,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '488236af-a2fe-4b04-b62c-eabd27b05ea4' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
