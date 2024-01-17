@@ -13,26 +13,19 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Follow-up date *",
+							"label": "Followup date *",
 							"type": "obs",
+							"required": "true",
+							"id": "followupDate",
 							"questionOptions": {
-								"usePreviousValueDisabled": "true",
-								"rendering": "eth-date",
-								"concept": "b8cd8630-56dd-495e-8c84-e36a636febe7",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "163137"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "364713004"
-									}
-								]
+							  "usePreviousValueDisabled": "true",
+							  "rendering": "eth-date",
+							  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+							  "conceptMappings": [],
+							  "answers": []
 							},
 							"validators": [
-                                {
+								{
                                     "type": "date",
                                     "allowFutureDates": "false"
                                 },
@@ -40,10 +33,8 @@
                                     "type": "js_expression",
                                     "failsWhenExpression": ""
                                 }
-                            ],
-							"required": "true",
-							"id": "followupDate"
-						},
+							]
+						  },
 						{
 							"label": "Visit type",
 							"type": "obs",
@@ -4831,23 +4822,9 @@
 										]
 									},
 									{
-										"concept": "120655AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Fatigue",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "300212"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "R53"
-											},
-											{
-												"type": "CIEL",
-												"value": "120655"
-											}
-										]
-									},
+										"concept": "140501AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fatigue"
+									  },
 									{
 										"concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Nausea",
@@ -5206,9 +5183,8 @@
 										]
 									},
 									{
-										"concept": "156204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Extrapulmonary TB",
-										"conceptMappings": []
+										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
+										"label": "Extra Pulmonary Tuberculosis (TB)"
 									},
 									{
 										"concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -5285,8 +5261,8 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Bacterial Pneumonia",
+										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Pneumonia",
 										"conceptMappings": []
 									},
 									{
@@ -5300,8 +5276,8 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "CNS Toxoplasmosis",
+										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis",
 										"conceptMappings": []
 									},
 									{
@@ -5403,9 +5379,8 @@
 										]
 									},
 									{
-										"concept": "130021AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumocystosis Pneumonia",
-										"conceptMappings": []
+										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
+										"label": "Pneumocystis Carinii Pneumonia (PCP)"
 									},
 									{
 										"concept": "115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6247,110 +6222,42 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Viral load performed ?",
+							"label": "Viral load performed?",
 							"type": "obs",
+							"required": false,
+							"id": "viralLoadPerformed",
 							"questionOptions": {
-								"rendering": "radio",
-								"concept": "163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "364712009"
-									},
-									{
-										"type": "CIEL",
-										"value": "163310"
-									},
-									{
-										"type": "CIEL",
-										"value": "163310"
-									}
-								],
-								"answers": [
-									{
-										"concept": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Yes",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "385658003"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1267"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1267"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "255594003"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "completed"
-											},
-											{
-												"type": "CIEL",
-												"value": "1267"
-											},
-											{
-												"type": "CIEL",
-												"value": "1267"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "255594003"
-											}
-										]
-									},
-									{
-										"concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1118"
-											},
-											{
-												"type": "CIEL",
-												"value": "1118"
-											},
-											{
-												"type": "PIH",
-												"value": "1118"
-											},
-											{
-												"type": "PIH",
-												"value": "1118"
-											},
-											{
-												"type": "PIH",
-												"value": "2475"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "385660001"
-											},
-											{
-												"type": "CIEL",
-												"value": "1118"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "385660001"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1118"
-											}
-										]
-									}
-								]
+							  "rendering": "radio",
+							  "concept": "163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+							  "conceptMappings": [
+								{
+								  "relationship": "NARROWER-THAN",
+								  "type": "SNOMED-CT",
+								  "value": "364712009"
+								},
+								{
+								  "relationship": "SAME-AS",
+								  "type": "CIEL",
+								  "value": "163310"
+								}
+							  ],
+							  "answers": [
+								{
+								  "concept": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Yes"
+								},
+								{
+								  "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "No"
+								},
+								{
+								  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Unknown"
+								}
+							  ]
 							},
-							"id": "viralLoadPerformed"
-						},
+							"validators": []
+						  },
 						{
 							"label": "Reason for VL test",
 							"type": "obs",
@@ -6579,7 +6486,7 @@
 								],
 								"answers": [
 									{
-										"concept": "5d5e42cc-acc4-4069-b3a8-7163e0db5d96",
+										"concept": "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Suppressed (<=50)"
 									},
 									{
@@ -6591,7 +6498,7 @@
 										"label": "High Viral Load (>1000 copies/ML)"
 									},
 									{
-										"concept": "a6768be6-c08e-464d-8f53-5f4229508e54",
+										"concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Unsuppressed"
 									}
 								]
@@ -8148,23 +8055,9 @@
 										]
 									},
 									{
-										"concept": "120655AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Fatigue",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "300212"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "R53"
-											},
-											{
-												"type": "CIEL",
-												"value": "120655"
-											}
-										]
-									},
+										"concept": "140501AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fatigue"
+									  },
 									{
 										"concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Diarrhea",
@@ -10305,7 +10198,7 @@
 										"label": "VIA"
 									},
 									{
-										"concept": "885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "f32b7edd-f70a-4b32-a684-4fa35eb2abcd",
 										"label": "Cytology"
 									}
 								]
@@ -10718,7 +10611,7 @@
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
 							},
 							"id": "cytologySampleCollectionDate"
 						},
@@ -10769,7 +10662,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
 							},
 							"id": "cytologyResult"
 						},
@@ -10783,7 +10676,7 @@
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '885AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
 							},
 							"id": "cytologyResultReceivedDate"
 						},
@@ -10998,178 +10891,40 @@
 						{
 							"label": "Treatment received for precancerous lesion",
 							"type": "obs",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "c7ca4fc7-8944-4824-84b0-c299d59a89c0",
-								"answers": [
-									{
-										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No treatment",
-										"conceptMappings": [
-											{
-												"type": "HL7-ActSubstanceAdminSubstitutionCode",
-												"value": "N"
-											},
-											{
-												"type": "CIEL",
-												"value": "1107"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B8.DE28"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1107"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1107"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B5.DE49"
-											},
-											{
-												"type": "PIH",
-												"value": "1107"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260413007"
-											},
-											{
-												"type": "PIH",
-												"value": "1107"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NONE"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1107"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1107"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "260413007"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "NONE"
-											},
-											{
-												"type": "CIEL",
-												"value": "1107"
-											}
-										]
-									},
-									{
-										"concept": "162812AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cryotherapy",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "162812"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "78203001"
-											},
-											{
-												"type": "IMO-ProcedureIT",
-												"value": "665119"
-											}
-										]
-									},
-									{
-										"concept": "166706AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Thermocoagulation",
-										"conceptMappings": []
-									},
-									{
-										"concept": "165084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "LEEP",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProcedureIT",
-												"value": "1074916"
-											},
-											{
-												"type": "CIEL",
-												"value": "165084"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "23140002"
-											}
-										]
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other treatment",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
-									}
-								]
-							},
+							"required": false,
 							"hide": {
 								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
 							},
-							"id": "treatmentReceivedForPrecancerousLesion"
-						},
+							"id": "treatmentReceivedForPrecancerousLesion",
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "6b97156c-3795-48d0-a15c-4f2590ffef54",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "165084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "LEEP"
+								},
+								{
+								  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "No treatment"
+								},
+								{
+								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Other treatment"
+								},
+								{
+								  "concept": "166706AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Thermocoagulation"
+								},
+								{
+								  "concept": "162812AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Cryotherapy"
+								}
+							  ]
+							},
+							"validators": []
+						  },
 						{
 							"label": "Treatment received for confirmed CxCa cases",
 							"type": "obs",

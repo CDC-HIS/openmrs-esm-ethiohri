@@ -81,9 +81,9 @@ export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
     if (viralLoadCount > 50) {
-      resultViralLoadStatus = "a6768be6-c08e-464d-8f53-5f4229508e54";
+      resultViralLoadStatus = "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
-      resultViralLoadStatus = "5d5e42cc-acc4-4069-b3a8-7163e0db5d96";
+      resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     }
   }
   return resultViralLoadStatus ?? null;

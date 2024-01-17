@@ -121,27 +121,28 @@
                           }
                       },
                       {
-                          "label": "Remark",
-                          "type": "obs",
-                          "required": false,
-                          "id": "remark",
-                          "questionOptions": {
-                              "rendering": "textarea",
-                              "concept": "2f95b78f-37fb-4998-8b0f-4d0375001028",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "BROADER-THAN",
-                                      "type": "LOINC",
-                                      "value": "48767-8"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "161011"
-                                  }
-                              ],
-                              "answers": []
-                          }
+                        "label": "Remark",
+                        "type": "obs",
+                        "questionOptions": {
+                          "rendering": "textarea",
+                          "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "rows": "",
+                          "conceptMappings": [
+                            {
+                              "type": "CIEL",
+                              "value": "161011"
+                            },
+                            {
+                              "type": "LOINC",
+                              "value": "48767-8"
+                            },
+                            {
+                              "type": "CIEL",
+                              "value": "161011"
+                            }
+                          ]
+                        },
+                        "id": "remark"
                       },
                       {
                           "label": "Is duplicate elicitation?",

@@ -16,7 +16,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         getValue: (encounter) => {
           return getData(
             encounter,
-            "b8cd8630-56dd-495e-8c84-e36a636febe7",
+            "5c118396-52dc-4cac-8860-e6d8e4a7f296",
             true
           );
         },
