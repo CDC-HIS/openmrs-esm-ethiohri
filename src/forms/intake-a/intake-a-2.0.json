@@ -26,6 +26,9 @@
 							"label": "MRN",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "getIdentifier(patient, 'MRN')"
+                                },
 								"rendering": "text",
 								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -51,6 +54,9 @@
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "patient.name[0].given[0]"
+                                },
 								"rendering": "text",
 								"concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -83,6 +89,9 @@
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "patient.name[0].given[1]"
+                                },
 								"rendering": "text",
 								"concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -99,6 +108,9 @@
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "patient.name[0].family"
+                                },
 								"rendering": "text",
 								"concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -131,6 +143,9 @@
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "getGender(patient)"
+                                },
 								"rendering": "radio",
 								"concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -205,6 +220,9 @@
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "patient.birthDate"
+                                },
 								"rendering": "eth-date",
 								"concept": "166575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -225,6 +243,9 @@
 							"label": "Age",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "patient.age"
+                                },
 								"rendering": "number",
 								"concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"max": 200,
