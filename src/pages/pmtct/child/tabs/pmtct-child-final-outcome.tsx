@@ -1,43 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
+import { getPatientEncounters } from "../../../../api/api";
 
 const columns = [
   {
-    key: "heiDate",
-    header: "HEI Code",
+    key: "finalOutcome",
+    header: "Final Outcome",
     getValue: (encounter) => {
-      return getData(encounter, "2b30a270-be1f-4cce-9949-7d7eaba349be", true);
+      return getData(encounter, "2171d944-a027-417f-a0af-f9c4a88a5ffe");
     },
   },
   {
-    key: "arvStarted",
-    header: "ARV started",
+    key: "finalOutcomeDate",
+    header: "Final Outcome Date",
     getValue: (encounter) => {
-      return getData(encounter, "b7f50074-b9f2-4b0d-9f20-d18b646d822e", false);
-    },
-  },
-  {
-    key: "infantReferred",
-    header: "Infant Referred",
-    getValue: (encounter) => {
-      return getData(encounter, "a0b16ce2-80a8-4b26-9168-74a6f64adb09", false);
-    },
-  },
-  {
-    key: "placeOfDelivery",
-    header: "Place of Delivery",
-    getValue: (encounter) => {
-      return getData(encounter, "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
-    },
-  },
-  {
-    key: "modeOfDelivery",
-    header: "Mode of Delivery",
-    getValue: (encounter) => {
-      return getData(encounter, "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
+      return getData(encounter, "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302");
     },
   },
   {
@@ -65,6 +45,18 @@ const columns = [
 const PMTCTChildFinalOutcomeEncounterList: React.FC<{
   patientUuid: string;
 }> = ({ patientUuid }) => {
+  const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE
+      );
+      if (previousEncounters.length) {
+        setHasPreviousEncounter(true);
+      }
+    })();
+  });
   return (
     <>
       <EncounterList
@@ -77,6 +69,7 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
+          hideFormLauncher: hasPreviousEncounter,
         }}
       />
     </>
