@@ -14,8 +14,8 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
       <Tabs>
         <TabList contained aria-label={""}>
           <Tab>Intake A</Tab>
-          <Tab>Intake B</Tab>
           <Tab>Family Members</Tab>
+          <Tab>Intake B</Tab>
           <Tab>PHDP</Tab>
         </TabList>
         <TabPanels>
@@ -23,10 +23,10 @@ const ProgramManagment: React.FC<{ patientUuid: string }> = ({
             <IntakeAEncounterList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <IntakeBEncounterList patientUuid={patientUuid} />
+            <FamilyInformationList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
-            <FamilyInformationList patientUuid={patientUuid} />
+            <IntakeBEncounterList patientUuid={patientUuid} />
           </TabPanel>
           <TabPanel>
             <PHDPList patientUuid={patientUuid} />
