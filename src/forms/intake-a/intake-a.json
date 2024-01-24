@@ -459,28 +459,6 @@
 							"id": "catchment_area"
 						},
 						{
-							"label": "Residential Type",
-							"type": "obs",
-							"required": false,
-							"id": "residentialType",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "6f612018-bc64-4ab2-86f8-efde342b07d0",
-								"conceptMappings": [],
-								"answers": [
-									{
-										"concept": "515f3768-30f6-4b87-bc9c-c64ce42db187",
-										"label": "Rural"
-									},
-									{
-										"concept": "32e92a9c-cc61-4079-851a-afc56808037a",
-										"label": "Urban"
-									}
-								]
-							},
-							"validators": []
-						},
-						{
 							"label": "Is challenge anticipated to regularly follow in this facility?",
 							"type": "obs",
 							"required": false,
@@ -504,7 +482,29 @@
 							  ]
 							},
 							"validators": []
-						  }
+						  },
+						{
+							"label": "Residential Type",
+							"type": "obs",
+							"required": false,
+							"id": "residentialType",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "6f612018-bc64-4ab2-86f8-efde342b07d0",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "515f3768-30f6-4b87-bc9c-c64ce42db187",
+										"label": "Rural"
+									},
+									{
+										"concept": "32e92a9c-cc61-4079-851a-afc56808037a",
+										"label": "Urban"
+									}
+								]
+							},
+							"validators": []
+						}
 					]
 				},
 				{

@@ -50,7 +50,7 @@ export const INDEX_CASE_TESTING_META = {
 };
 
 export const PROGRAM_MANAGEMENT_META = {
-  title: "Program Management",
+  title: "Intakes",
   slot: "program-management-slot",
   path: "program-management",
 };

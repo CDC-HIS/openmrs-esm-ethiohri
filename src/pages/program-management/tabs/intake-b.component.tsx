@@ -8,31 +8,45 @@ import styles from "../../../root.scss";
 
 const columns = [
   {
-    key: "bmi",
-    header: "Body Mass Index",
+    key: "HIVRelatedOIs",
+    header: "Past OI",
     getValue: (encounter) => {
-      return getData(encounter, "1cc8fe7f-fb70-49d8-9065-73654d852187");
+      return getData(encounter, "339d3209-c797-457f-afb8-8d19d99c63b7");
     },
   },
   {
-    key: "stillOnTreatment",
-    header: "Still On Treatment",
-    getValue: (encounter) => {
-      return getData(encounter, "160119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    },
-  },
-  {
-    key: "functionalStatus",
+    key: "patientFunctionalStatus",
     header: "Functional Status",
     getValue: (encounter) => {
       return getData(encounter, "2b7b8471-b19e-4d55-b2a4-4fe5b80f889a");
     },
   },
   {
+    key: "developmentalStatus",
+    header: "Developmental Status",
+    getValue: (encounter) => {
+      return getData(encounter, "1200AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
+    key: "pregnancyAtEnrollment",
+    header: "Pregnancy Status",
+    getValue: (encounter) => {
+      return getData(encounter, "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
     key: "presentingComplaints",
-    header: "Presenting Complaints",
+    header: "Presenting Symptoms",
     getValue: (encounter) => {
       return getData(encounter, "14718b2b-d38a-4f68-8e22-8bc739ae43f7");
+    },
+  },
+  {
+    key: "WHOStaging",
+    header: "WHO HIV Clinical Stage",
+    getValue: (encounter) => {
+      return getData(encounter, "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {

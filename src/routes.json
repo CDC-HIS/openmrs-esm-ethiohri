@@ -17,7 +17,7 @@
       "slot": "hiv-care-and-treatment-slot",
       "component": "programManagementMenu",
       "meta": {
-        "title": "Program Management",
+        "title": "Intakes",
         "slot": "program-management-slot",
         "path": "program-management",
         "columns": 1

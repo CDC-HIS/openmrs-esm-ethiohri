@@ -2217,603 +2217,6 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Physical Examination",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "checkbox",
-								"concept": "1119AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "1119"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "271907004"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1119"
-									},
-									{
-										"type": "PIH",
-										"value": "2419"
-									}
-								],
-								"answers": [
-									{
-										"concept": "146599AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cachexia",
-										"conceptMappings": [
-											{
-												"type": "3BT",
-												"value": "10015944"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "9672"
-											},
-											{
-												"type": "PIH",
-												"value": "823"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T08"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238108007"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "R64"
-											}
-										]
-									},
-									{
-										"concept": "159439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Distress",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "69328002"
-											},
-											{
-												"type": "CIEL",
-												"value": "159439"
-											},
-											{
-												"type": "PIH",
-												"value": "6735"
-											}
-										]
-									},
-									{
-										"concept": "5243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Gluteal wasting",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5243"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "52431000105000"
-											},
-											{
-												"type": "CIEL",
-												"value": "5243"
-											}
-										]
-									},
-									{
-										"concept": "136443AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Jaundice",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "215"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "47368"
-											},
-											{
-												"type": "3BT",
-												"value": "10044624"
-											},
-											{
-												"type": "PIH",
-												"value": "215"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "R17"
-											},
-											{
-												"type": "ICPC2",
-												"value": "D13"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "18165001"
-											}
-										]
-									},
-									{
-										"concept": "135488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Lymphadenopathy",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "30746006"
-											},
-											{
-												"type": "3BT",
-												"value": "10056366"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "48993"
-											},
-											{
-												"type": "PIH",
-												"value": "161"
-											},
-											{
-												"type": "AMPATH",
-												"value": "161"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5007"
-											},
-											{
-												"type": "ICPC2",
-												"value": "B02"
-											}
-										]
-									},
-									{
-										"concept": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oedema",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "42607"
-											},
-											{
-												"type": "CIEL",
-												"value": "460"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "267038008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5143"
-											},
-											{
-												"type": "PIH",
-												"value": "460"
-											},
-											{
-												"type": "AMPATH",
-												"value": "460"
-											},
-											{
-												"type": "AMPATH",
-												"value": "6002"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "460"
-											}
-										]
-									},
-									{
-										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											}
-										]
-									},
-									{
-										"concept": "159890AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Signs of physical abuse",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-MVP",
-												"value": "1598901000105008"
-											},
-											{
-												"type": "CIEL",
-												"value": "159890"
-											}
-										]
-									},
-									{
-										"concept": "5201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Temporal wasting",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "5201"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "52011000105003"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5201"
-											}
-										]
-									},
-									{
-										"concept": "163293AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unwell appearing",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "302772006"
-											},
-											{
-												"type": "CIEL",
-												"value": "163293"
-											}
-										]
-									},
-									{
-										"concept": "159438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Well appearing",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159438"
-											},
-											{
-												"type": "PIH",
-												"value": "3227"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "102499006"
-											}
-										]
-									},
-									{
-										"concept": "163045AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "HEENT examination (text)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163045"
-											},
-											{
-												"type": "LOINC",
-												"value": "11393-6"
-											}
-										]
-									},
-									{
-										"concept": "166005AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "General lymph node exam (text)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "166005"
-											},
-											{
-												"type": "LOINC",
-												"value": "11447-0"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "274303007"
-											}
-										]
-									},
-									{
-										"concept": "160689AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Chest examination (text)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "160689"
-											}
-										]
-									},
-									{
-										"concept": "163046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cardiac examination (text)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163046"
-											}
-										]
-									},
-									{
-										"concept": "160947AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Abdominal examination (text)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "160947"
-											}
-										]
-									},
-									{
-										"concept": "1126AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Urogenital exam findings",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "164637006"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "11261000105008"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "11261000105008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1126"
-											},
-											{
-												"type": "CIEL",
-												"value": "1126"
-											},
-											{
-												"type": "CIEL",
-												"value": "1126"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1126"
-											}
-										]
-									},
-									{
-										"concept": "163048AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Musculoskeletal examination (text)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163048"
-											}
-										]
-									},
-									{
-										"concept": "160981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Skin examination (text)",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "271898004"
-											},
-											{
-												"type": "LOINC",
-												"value": "10206-1"
-											},
-											{
-												"type": "CIEL",
-												"value": "160981"
-											}
-										]
-									},
-									{
-										"concept": "163109AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Nervous system examination (text)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163109"
-											}
-										]
-									},
-									{
-										"concept": "460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oedema",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "42607"
-											},
-											{
-												"type": "CIEL",
-												"value": "460"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "267038008"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5143"
-											},
-											{
-												"type": "PIH",
-												"value": "460"
-											},
-											{
-												"type": "AMPATH",
-												"value": "460"
-											},
-											{
-												"type": "AMPATH",
-												"value": "6002"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "460"
-											}
-										]
-									},
-									{
-										"concept": "5201AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Temporal wasting",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "5201"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "52011000105003"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5201"
-											}
-										]
-									},
-									{
-										"concept": "5243AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Gluteal wasting",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5243"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "52431000105000"
-											},
-											{
-												"type": "CIEL",
-												"value": "5243"
-											}
-										]
-									},
-									{
-										"concept": "159438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Well appearing",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159438"
-											},
-											{
-												"type": "PIH",
-												"value": "3227"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "102499006"
-											}
-										]
-									},
-									{
-										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											}
-										]
-									},
-									{
-										"concept": "159439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Distress",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "69328002"
-											},
-											{
-												"type": "CIEL",
-												"value": "159439"
-											},
-											{
-												"type": "PIH",
-												"value": "6735"
-											}
-										]
-									},
-									{
-										"concept": "159890AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Signs of physical abuse",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-MVP",
-												"value": "1598901000105008"
-											},
-											{
-												"type": "CIEL",
-												"value": "159890"
-											}
-										]
-									},
-									{
-										"concept": "163293AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unwell appearing",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "302772006"
-											},
-											{
-												"type": "CIEL",
-												"value": "163293"
-											}
-										]
-									}
-								]
-							},
-							"id": "physicalExamination"
-						},
-						{
 							"label": "HEENT examination",
 							"type": "obs",
 							"questionOptions": {
@@ -2926,9 +2329,6 @@
 										"value": "164633005"
 									}
 								]
-							},
-							"hide": {
-								"hideWhenExpression": "heentExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "heentExaminationComment"
 						},
@@ -3058,9 +2458,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "lymphNodesExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
 							"id": "lymphNodesExaminationComment"
 						},
 						{
@@ -3167,9 +2564,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "chestExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
 							"id": "chestExaminationComment"
 						},
 						{
@@ -3271,9 +2665,6 @@
 										"value": "271910006"
 									}
 								]
-							},
-							"hide": {
-								"hideWhenExpression": "heartExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "heartExaminationComment"
 						},
@@ -3381,9 +2772,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "abdomenExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
 							"id": "abdomenExaminationComment"
 						},
 						{
@@ -3471,9 +2859,6 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "1854b210-5a4b-4c7f-a591-f3eddbbae649"
-							},
-							"hide": {
-								"hideWhenExpression": "genitourinarySystemExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "genitourinarySystemExaminationComment"
 						},
@@ -3577,9 +2962,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "musculoskeletalSystemExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
 							"id": "musculoskeletalSystemExaminationComment"
 						},
 						{
@@ -3682,9 +3064,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "skinExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
 							"id": "skinExaminationComment"
 						},
 						{
@@ -3786,9 +3165,6 @@
 										"value": "163109"
 									}
 								]
-							},
-							"hide": {
-								"hideWhenExpression": "nervousSystemExamination !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "nervousSystemExaminationComment"
 						},
@@ -3936,69 +3312,12 @@
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
-										"label": "Clinically asymptomatic client"
-									},
-									{
-										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
-										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": ">10% of body weight loss"
 									},
 									{
 										"concept": "3471dcf1-7c5a-460e-a05e-c3fbf93c25d3",
 										"label": "5 - 10% body weight loss"
-									},
-									{
-										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Herpes zoster"
-									},
-									{
-										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Minor muco-cutaneous manifestations"
-									},
-									{
-										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Recurrent Upper Respiratory Tract Infection"
-									},
-									{
-										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Weight loss greater than ten percent"
-									},
-									{
-										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
-										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
-									},
-									{
-										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oral Candidiasis"
-									},
-									{
-										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
-										"label": "Oral Hair Leukoplakia"
-									},
-									{
-										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
-										"label": "Other sever bacterial infections (E.g: Pyomositis)"
-									},
-									{
-										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
-										"label": "Pulmonary Tuberculosis (TB)"
-									},
-									{
-										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
-										"label": "Unexplained Anemia (< 8 g/dl)"
-									},
-									{
-										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
-										"label": "Unexplained Chronic Diarrhea (>1 month)"
-									},
-									{
-										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
-										"label": "Unexplained Prolonged Fever (>1 month)"
 									},
 									{
 										"concept": "8c035eeb-4760-4ba5-9116-c5f26f1ed54d",
@@ -4009,8 +3328,17 @@
 										"label": "Atypical Myco-bacteriosis"
 									},
 									{
+										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bacteria Pneumonia",
+										"conceptMappings": []
+									},
+									{
 										"concept": "48cd6b34-1a0d-4963-b48b-3f7bbc75bf84",
 										"label": "Candidiasis (Esophagus, Trachea, Bronchi or Lungs)"
+									},
+									{
+										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
+										"label": "Clinically asymptomatic client"
 									},
 									{
 										"concept": "57fb79df-5668-464e-ac38-2d4f1585fd45",
@@ -4021,8 +3349,12 @@
 										"label": "Cryptosporidiosis with diarrhea (>1 month)"
 									},
 									{
+										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cryptococcosis Extra Pulmonary"
+									},
+									{
 										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
-										"label": "Extra Pulmonary Tuberculosis (TB)"
+										"label": "Extra Pulmonary Tuberculosis"
 									},
 									{
 										"concept": "f5194b9d-eee8-41e3-b58f-8f0fbb05053b",
@@ -4032,7 +3364,10 @@
 										"concept": "7ad72b79-f35d-4d47-aec4-00ec6ca3d06d",
 										"label": "Herpes Simplex (Mucocutaneous >1 month, or visceral)"
 									},
-									
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Herpes zoster"
+									},
 									{
 										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "HIV encephalopathy"
@@ -4054,6 +3389,10 @@
 										"label": "Lymphoma"
 									},
 									{
+										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Minor muco-cutaneous manifestations"
+									},
+									{
 										"concept": "6396014f-ac6f-4567-a0e3-4df49144f5a3",
 										"label": "Mycosis"
 									},
@@ -4062,37 +3401,73 @@
 										"label": "Nephropathy or Cardiomyopathy"
 									},
 									{
+										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
+										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
+									},
+									{
 										"concept": "6e2b911f-1ba1-4a5a-b351-0c1b3eff6de2",
 										"label": "Non-typhoid"
+									},
+									{
+										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Oral Candidiasis"
 									},
 									{
 										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
 										"label": "Oral Hair Leukoplakia"
 									},
 									{
+										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
+										"label": "Other sever bacterial infections (E.g: Pyomositis)"
+									},
+									{
+										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
+										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+									},
+									{
+										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
+										"label": "PML"
+									},
+									{
 										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
 										"label": "Pneumocystis Carinii Pneumonia (PCP)"
 									},
 									{
-										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
-										"label": "Progressive multifocal leukocencephalopathy (PML)"
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
 									},
 									{
-										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pulmonary Cryptococcosis"
+										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Recurrent Upper Respiratory Tract Infection"
 									},
 									{
 										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Salmonella Septicaemia"
 									},
 									{
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
+									},
+									{
 										"concept": "b393fcd2-c410-465b-866d-751f8c90df25",
 										"label": "Symptomatic HIV- associated"
 									},
 									{
-										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxoplasmosis",
+										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis of the CNS",
 										"conceptMappings": []
+									},
+									{
+										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
+										"label": "Unexplained Anemia (< 8 g/dl)"
+									},
+									{
+										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
+										"label": "Unexplained Chronic Diarrhea (>1 month)"
+									},
+									{
+										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
+										"label": "Unexplained Prolonged Fever (>1 month)"
 									}
 								]
 							},
@@ -4112,69 +3487,12 @@
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
-										"label": "Clinically asymptomatic client"
-									},
-									{
-										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
-										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": ">10% of body weight loss"
 									},
 									{
 										"concept": "3471dcf1-7c5a-460e-a05e-c3fbf93c25d3",
 										"label": "5 - 10% body weight loss"
-									},
-									{
-										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Herpes zoster"
-									},
-									{
-										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Minor muco-cutaneous manifestations"
-									},
-									{
-										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Recurrent Upper Respiratory Tract Infection"
-									},
-									{
-										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Weight loss greater than ten percent"
-									},
-									{
-										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
-										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
-									},
-									{
-										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oral Candidiasis"
-									},
-									{
-										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
-										"label": "Oral Hair Leukoplakia"
-									},
-									{
-										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
-										"label": "Other sever bacterial infections (E.g: Pyomositis)"
-									},
-									{
-										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
-										"label": "Pulmonary Tuberculosis (TB)"
-									},
-									{
-										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
-										"label": "Unexplained Anemia (< 8 g/dl)"
-									},
-									{
-										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
-										"label": "Unexplained Chronic Diarrhea (>1 month)"
-									},
-									{
-										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
-										"label": "Unexplained Prolonged Fever (>1 month)"
 									},
 									{
 										"concept": "8c035eeb-4760-4ba5-9116-c5f26f1ed54d",
@@ -4185,8 +3503,17 @@
 										"label": "Atypical Myco-bacteriosis"
 									},
 									{
+										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bacteria Pneumonia",
+										"conceptMappings": []
+									},
+									{
 										"concept": "48cd6b34-1a0d-4963-b48b-3f7bbc75bf84",
 										"label": "Candidiasis (Esophagus, Trachea, Bronchi or Lungs)"
+									},
+									{
+										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
+										"label": "Clinically asymptomatic client"
 									},
 									{
 										"concept": "57fb79df-5668-464e-ac38-2d4f1585fd45",
@@ -4197,8 +3524,12 @@
 										"label": "Cryptosporidiosis with diarrhea (>1 month)"
 									},
 									{
+										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cryptococcosis Extra Pulmonary"
+									},
+									{
 										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
-										"label": "Extra Pulmonary Tuberculosis (TB)"
+										"label": "Extra Pulmonary Tuberculosis"
 									},
 									{
 										"concept": "f5194b9d-eee8-41e3-b58f-8f0fbb05053b",
@@ -4208,7 +3539,10 @@
 										"concept": "7ad72b79-f35d-4d47-aec4-00ec6ca3d06d",
 										"label": "Herpes Simplex (Mucocutaneous >1 month, or visceral)"
 									},
-									
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Herpes zoster"
+									},
 									{
 										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "HIV encephalopathy"
@@ -4230,6 +3564,10 @@
 										"label": "Lymphoma"
 									},
 									{
+										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Minor muco-cutaneous manifestations"
+									},
+									{
 										"concept": "6396014f-ac6f-4567-a0e3-4df49144f5a3",
 										"label": "Mycosis"
 									},
@@ -4238,37 +3576,73 @@
 										"label": "Nephropathy or Cardiomyopathy"
 									},
 									{
+										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
+										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
+									},
+									{
 										"concept": "6e2b911f-1ba1-4a5a-b351-0c1b3eff6de2",
 										"label": "Non-typhoid"
+									},
+									{
+										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Oral Candidiasis"
 									},
 									{
 										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
 										"label": "Oral Hair Leukoplakia"
 									},
 									{
+										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
+										"label": "Other sever bacterial infections (E.g: Pyomositis)"
+									},
+									{
+										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
+										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+									},
+									{
+										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
+										"label": "PML"
+									},
+									{
 										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
 										"label": "Pneumocystis Carinii Pneumonia (PCP)"
 									},
 									{
-										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
-										"label": "Progressive multifocal leukocencephalopathy (PML)"
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
 									},
 									{
-										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pulmonary Cryptococcosis"
+										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Recurrent Upper Respiratory Tract Infection"
 									},
 									{
 										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Salmonella Septicaemia"
 									},
 									{
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
+									},
+									{
 										"concept": "b393fcd2-c410-465b-866d-751f8c90df25",
 										"label": "Symptomatic HIV- associated"
 									},
 									{
-										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxoplasmosis",
+										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis of the CNS",
 										"conceptMappings": []
+									},
+									{
+										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
+										"label": "Unexplained Anemia (< 8 g/dl)"
+									},
+									{
+										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
+										"label": "Unexplained Chronic Diarrhea (>1 month)"
+									},
+									{
+										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
+										"label": "Unexplained Prolonged Fever (>1 month)"
 									}
 								]
 							},
@@ -4288,69 +3662,12 @@
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
-										"label": "Clinically asymptomatic client"
-									},
-									{
-										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
-										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": ">10% of body weight loss"
 									},
 									{
 										"concept": "3471dcf1-7c5a-460e-a05e-c3fbf93c25d3",
 										"label": "5 - 10% body weight loss"
-									},
-									{
-										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Herpes zoster"
-									},
-									{
-										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Minor muco-cutaneous manifestations"
-									},
-									{
-										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Recurrent Upper Respiratory Tract Infection"
-									},
-									{
-										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Weight loss greater than ten percent"
-									},
-									{
-										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
-										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
-									},
-									{
-										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oral Candidiasis"
-									},
-									{
-										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
-										"label": "Oral Hair Leukoplakia"
-									},
-									{
-										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
-										"label": "Other sever bacterial infections (E.g: Pyomositis)"
-									},
-									{
-										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
-										"label": "Pulmonary Tuberculosis (TB)"
-									},
-									{
-										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
-										"label": "Unexplained Anemia (< 8 g/dl)"
-									},
-									{
-										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
-										"label": "Unexplained Chronic Diarrhea (>1 month)"
-									},
-									{
-										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
-										"label": "Unexplained Prolonged Fever (>1 month)"
 									},
 									{
 										"concept": "8c035eeb-4760-4ba5-9116-c5f26f1ed54d",
@@ -4361,8 +3678,17 @@
 										"label": "Atypical Myco-bacteriosis"
 									},
 									{
+										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bacteria Pneumonia",
+										"conceptMappings": []
+									},
+									{
 										"concept": "48cd6b34-1a0d-4963-b48b-3f7bbc75bf84",
 										"label": "Candidiasis (Esophagus, Trachea, Bronchi or Lungs)"
+									},
+									{
+										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
+										"label": "Clinically asymptomatic client"
 									},
 									{
 										"concept": "57fb79df-5668-464e-ac38-2d4f1585fd45",
@@ -4373,8 +3699,12 @@
 										"label": "Cryptosporidiosis with diarrhea (>1 month)"
 									},
 									{
+										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cryptococcosis Extra Pulmonary"
+									},
+									{
 										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
-										"label": "Extra Pulmonary Tuberculosis (TB)"
+										"label": "Extra Pulmonary Tuberculosis"
 									},
 									{
 										"concept": "f5194b9d-eee8-41e3-b58f-8f0fbb05053b",
@@ -4384,7 +3714,10 @@
 										"concept": "7ad72b79-f35d-4d47-aec4-00ec6ca3d06d",
 										"label": "Herpes Simplex (Mucocutaneous >1 month, or visceral)"
 									},
-									
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Herpes zoster"
+									},
 									{
 										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "HIV encephalopathy"
@@ -4406,6 +3739,10 @@
 										"label": "Lymphoma"
 									},
 									{
+										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Minor muco-cutaneous manifestations"
+									},
+									{
 										"concept": "6396014f-ac6f-4567-a0e3-4df49144f5a3",
 										"label": "Mycosis"
 									},
@@ -4414,37 +3751,73 @@
 										"label": "Nephropathy or Cardiomyopathy"
 									},
 									{
+										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
+										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
+									},
+									{
 										"concept": "6e2b911f-1ba1-4a5a-b351-0c1b3eff6de2",
 										"label": "Non-typhoid"
+									},
+									{
+										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Oral Candidiasis"
 									},
 									{
 										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
 										"label": "Oral Hair Leukoplakia"
 									},
 									{
+										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
+										"label": "Other sever bacterial infections (E.g: Pyomositis)"
+									},
+									{
+										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
+										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+									},
+									{
+										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
+										"label": "PML"
+									},
+									{
 										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
 										"label": "Pneumocystis Carinii Pneumonia (PCP)"
 									},
 									{
-										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
-										"label": "Progressive multifocal leukocencephalopathy (PML)"
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
 									},
 									{
-										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pulmonary Cryptococcosis"
+										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Recurrent Upper Respiratory Tract Infection"
 									},
 									{
 										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Salmonella Septicaemia"
 									},
 									{
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
+									},
+									{
 										"concept": "b393fcd2-c410-465b-866d-751f8c90df25",
 										"label": "Symptomatic HIV- associated"
 									},
 									{
-										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxoplasmosis",
+										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis of the CNS",
 										"conceptMappings": []
+									},
+									{
+										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
+										"label": "Unexplained Anemia (< 8 g/dl)"
+									},
+									{
+										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
+										"label": "Unexplained Chronic Diarrhea (>1 month)"
+									},
+									{
+										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
+										"label": "Unexplained Prolonged Fever (>1 month)"
 									}
 								]
 							},
@@ -4464,69 +3837,12 @@
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
-										"label": "Clinically asymptomatic client"
-									},
-									{
-										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
-										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": ">10% of body weight loss"
 									},
 									{
 										"concept": "3471dcf1-7c5a-460e-a05e-c3fbf93c25d3",
 										"label": "5 - 10% body weight loss"
-									},
-									{
-										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Herpes zoster"
-									},
-									{
-										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Minor muco-cutaneous manifestations"
-									},
-									{
-										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Recurrent Upper Respiratory Tract Infection"
-									},
-									{
-										"concept": "5339AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Weight loss greater than ten percent"
-									},
-									{
-										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
-										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
-									},
-									{
-										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oral Candidiasis"
-									},
-									{
-										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
-										"label": "Oral Hair Leukoplakia"
-									},
-									{
-										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
-										"label": "Other sever bacterial infections (E.g: Pyomositis)"
-									},
-									{
-										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
-										"label": "Pulmonary Tuberculosis (TB)"
-									},
-									{
-										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
-										"label": "Unexplained Anemia (< 8 g/dl)"
-									},
-									{
-										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
-										"label": "Unexplained Chronic Diarrhea (>1 month)"
-									},
-									{
-										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
-										"label": "Unexplained Prolonged Fever (>1 month)"
 									},
 									{
 										"concept": "8c035eeb-4760-4ba5-9116-c5f26f1ed54d",
@@ -4537,8 +3853,17 @@
 										"label": "Atypical Myco-bacteriosis"
 									},
 									{
+										"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Bacteria Pneumonia",
+										"conceptMappings": []
+									},
+									{
 										"concept": "48cd6b34-1a0d-4963-b48b-3f7bbc75bf84",
 										"label": "Candidiasis (Esophagus, Trachea, Bronchi or Lungs)"
+									},
+									{
+										"concept": "696cb188-859a-4599-ab96-9b984fb33cca",
+										"label": "Clinically asymptomatic client"
 									},
 									{
 										"concept": "57fb79df-5668-464e-ac38-2d4f1585fd45",
@@ -4549,8 +3874,12 @@
 										"label": "Cryptosporidiosis with diarrhea (>1 month)"
 									},
 									{
+										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Cryptococcosis Extra Pulmonary"
+									},
+									{
 										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
-										"label": "Extra Pulmonary Tuberculosis (TB)"
+										"label": "Extra Pulmonary Tuberculosis"
 									},
 									{
 										"concept": "f5194b9d-eee8-41e3-b58f-8f0fbb05053b",
@@ -4560,7 +3889,10 @@
 										"concept": "7ad72b79-f35d-4d47-aec4-00ec6ca3d06d",
 										"label": "Herpes Simplex (Mucocutaneous >1 month, or visceral)"
 									},
-									
+									{
+										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Herpes zoster"
+									},
 									{
 										"concept": "160442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "HIV encephalopathy"
@@ -4582,6 +3914,10 @@
 										"label": "Lymphoma"
 									},
 									{
+										"concept": "5330AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Minor muco-cutaneous manifestations"
+									},
+									{
 										"concept": "6396014f-ac6f-4567-a0e3-4df49144f5a3",
 										"label": "Mycosis"
 									},
@@ -4590,37 +3926,73 @@
 										"label": "Nephropathy or Cardiomyopathy"
 									},
 									{
+										"concept": "cd47b725-e507-4bdb-aace-6a3707d3d929",
+										"label": "Neutropenia (<0.5 x 109/1) and/or Chronic thrombocytopenia (<50 x 109/L)"
+									},
+									{
 										"concept": "6e2b911f-1ba1-4a5a-b351-0c1b3eff6de2",
 										"label": "Non-typhoid"
+									},
+									{
+										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Oral Candidiasis"
 									},
 									{
 										"concept": "87980305-20f9-49f2-9763-9b1987b90ad4",
 										"label": "Oral Hair Leukoplakia"
 									},
 									{
+										"concept": "d74390b1-5da1-432a-82c3-4bb1fdf68fc5",
+										"label": "Other sever bacterial infections (E.g: Pyomositis)"
+									},
+									{
+										"concept": "b2ad0941-d3ef-43fa-8d3d-8a73c33eaaf4",
+										"label": "Persistent Generalized Lymphadenopathy (PGL)"
+									},
+									{
+										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
+										"label": "PML"
+									},
+									{
 										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
 										"label": "Pneumocystis Carinii Pneumonia (PCP)"
 									},
 									{
-										"concept": "80d19a31-a096-4cdd-9e91-7d5b9a0867f8",
-										"label": "Progressive multifocal leukocencephalopathy (PML)"
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
 									},
 									{
-										"concept": "128139AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pulmonary Cryptococcosis"
+										"concept": "127784AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Recurrent Upper Respiratory Tract Infection"
 									},
 									{
 										"concept": "127198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Salmonella Septicaemia"
 									},
 									{
+										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+										"label": "Pulmonary Tuberculosis"
+									},
+									{
 										"concept": "b393fcd2-c410-465b-866d-751f8c90df25",
 										"label": "Symptomatic HIV- associated"
 									},
 									{
-										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxoplasmosis",
+										"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Toxoplasmosis of the CNS",
 										"conceptMappings": []
+									},
+									{
+										"concept": "51214d9b-dc52-4451-b418-8477e98c65ee",
+										"label": "Unexplained Anemia (< 8 g/dl)"
+									},
+									{
+										"concept": "ee348bda-ca86-471f-9cc3-ca0c39d3205e",
+										"label": "Unexplained Chronic Diarrhea (>1 month)"
+									},
+									{
+										"concept": "5aeec702-8a9e-4b1c-8003-6356f91b949a",
+										"label": "Unexplained Prolonged Fever (>1 month)"
 									}
 								]
 							},

@@ -16,23 +16,44 @@ const columns = [
   },
   {
     key: "dateConfirmed",
-    header: "Date Confirmed",
+    header: "Date Confirmed HIV+",
     getValue: (encounter) => {
       return getData(encounter, "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
     key: "testType",
-    header: "Test Type",
+    header: "Type of HIV Test",
     getValue: (encounter) => {
       return getData(encounter, "a865a098-c9ee-4c51-a13b-5c5d574d036c");
     },
   },
   {
-    key: "reasonForReferral",
-    header: "Reason for referral",
+    key: "entryPoint",
+    header: "Entry Point",
     getValue: (encounter) => {
-      return getData(encounter, "5f34e705-3574-4b44-b455-d815962026a1");
+      return getData(encounter, "dd282c99-ea69-44e7-9252-aff0198cc1e8");
+    },
+  },
+  {
+    key: "occupation",
+    header: "Occupation",
+    getValue: (encounter) => {
+      return getData(encounter, "2d2073e1-8377-4c4a-b6c7-0ab848760716");
+    },
+  },
+  {
+    key: "targetPopulation",
+    header: "Target Population",
+    getValue: (encounter) => {
+      return getData(encounter, "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016");
+    },
+  },
+  {
+    key: "childsCareGiverMaritalStatus",
+    header: "Marital Status",
+    getValue: (encounter) => {
+      return getData(encounter, "e6eb59a1-8430-491d-b948-5b582f87d5ea");
     },
   },
   {
