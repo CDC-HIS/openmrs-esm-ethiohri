@@ -38,6 +38,7 @@
 						{
 							"label": "Visit type",
 							"type": "obs",
+							"unspecified": true,
 							"questionOptions": {
 								"usePreviousValueDisabled": "true",
 								"rendering": "radio",
@@ -73,82 +74,6 @@
 								]
 							},
 							"id": "visitType"
-						},
-						{
-							"label": "Date confirmed HIV+ (Retesting)",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
-								},
-								"rendering": "eth-date",
-								"concept": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "432213005"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "86406008"
-									},
-									{
-										"type": "CIEL",
-										"value": "160554"
-									},
-									{
-										"type": "PIH",
-										"value": "2515"
-									},
-									{
-										"type": "CIEL",
-										"value": "160554"
-									},
-									{
-										"type": "PIH",
-										"value": "2515"
-									}
-								]
-							},
-							"id": "dateConfirmedHivPositive"
-						},
-						{
-							"label": "Type of HIV test",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5583b0a6-f390-446d-ab39-d98584ee330c'))?.valueCodeableConcept?.coding[0]?.code"
-								},
-								"rendering": "radio",
-								"concept": "5583b0a6-f390-446d-ab39-d98584ee330c",
-								"answers": [
-									{
-										"concept": "163722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Rapid test for HIV",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163722"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "165813002"
-											},
-											{
-												"type": "CIEL",
-												"value": "163722"
-											}
-										]
-									},
-									{
-										"concept": "164461AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "DNA-PCR (For children)",
-										"conceptMappings": []
-									}
-								]
-							},
-							"id": "typeOfHivTest"
 						},
 						{
 							"label": "Eligibility status",
@@ -200,7 +125,7 @@
 							  							  "calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b'))?.valueCodeableConcept?.coding?"
 								},
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
 								"answers": [
 									{
@@ -591,7 +516,7 @@
 							"label": "Height (in cm) for Adult",
 							"type": "obs",
 							"hide": {
-								"hideWhenExpression": "age < 18"
+								"hideWhenExpression": "age < 5"
 							},
 							"questionOptions": {
 								"calculate": {
@@ -617,6 +542,9 @@
 								"max": 999999,
 								"min": 0,
 								"showDate": ""
+							},
+							"hide": {
+								"hideWhenExpression": "age < 5"
 							},
 							"id": "BMI"
 						},
@@ -705,9 +633,6 @@
 										"value": "1343"
 									}
 								]
-							},
-							"hide": {
-								"hideWhenExpression": "functionalStatus !== '162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "muac"
 						},
@@ -1688,7 +1613,7 @@
 								"showDate": ""
 							},
 							"hide": {
-								"hideWhenExpression": "age > 18"
+								"hideWhenExpression": "age > 5"
 							},
 							"id": "childHeight"
 						},
@@ -2852,7 +2777,7 @@
 							"label": "Family planning methods",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "checkbox",
 								"concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
 									{
@@ -3218,6 +3143,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "familyPlanningMethods"
 						}
