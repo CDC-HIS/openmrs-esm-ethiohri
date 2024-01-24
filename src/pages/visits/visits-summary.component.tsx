@@ -66,12 +66,23 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         },
       },
       {
-        key: "cxcaCounsellingDate",
-        header: "CXCA Counselling Date",
+        key: "cxcaScreeningDate",
+        header: "CXCA Screening Date",
         getValue: (encounter) => {
           return getData(
             encounter,
             "72a28ebe-77ba-4592-9291-ac91e46ea770",
+            true
+          );
+        },
+      },
+      {
+        key: "nextVisitDate",
+        header: "Next Visit Date",
+        getValue: (encounter) => {
+          return getData(
+            encounter,
+            "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
             true
           );
         },
