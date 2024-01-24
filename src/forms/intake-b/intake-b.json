@@ -1926,11 +1926,11 @@
 							  "answers": [
 								{
 								  "concept": "159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Physically able to work"
+								  "label": "Working"
 								},
 								{
 								  "concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Patient ambulatory"
+								  "label": "Ambulatory"
 								},
 								{
 								  "concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

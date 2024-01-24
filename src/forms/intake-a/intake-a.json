@@ -218,7 +218,6 @@
 						{
 							"label": "Date of Birth *",
 							"type": "obs",
-							"required": "true",
 							"questionOptions": {
 								"calculate": {
                                     "calculateExpression": "patient.birthDate"
@@ -266,7 +265,7 @@
 							"required": false,
 							"id": "targetPopulation",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016",
 								"conceptMappings": [],
 								"answers": [
@@ -411,6 +410,44 @@
 								"concept": "319efe14-16fc-49f9-907f-e8e45501971d",
 								"conceptMappings": [],
 								"answers": []
+							},
+							"validators": []
+						},
+						{
+							"label": "Client (Child's care giver) marital status",
+							"type": "obs",
+							"required": false,
+							"id": "childsCareGiverMaritalStatus",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Divorced"
+									},
+									{
+										"concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Living with partner"
+									},
+									{
+										"concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Married"
+									},
+									{
+										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Never married"
+									},
+									{
+										"concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Separated"
+									},
+									{
+										"concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Widowed"
+									}
+								]
 							},
 							"validators": []
 						},
@@ -849,6 +886,12 @@
 									}
 								]
 							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
 							"id": "date_confirmed"
 						},
 						{
@@ -889,64 +932,6 @@
 												"value": "163722"
 											}
 										]
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B6.DE2"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "unknown"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											}
-										]
 									}
 								],
 								"conceptMappings": [
@@ -957,6 +942,191 @@
 								]
 							},
 							"id": "test_type"
+						}
+					]
+				},
+				{
+					"label": "Disclosure At Enrollment",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Does anyone else know about your/your child's HIV status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "159423AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "159423"
+									},
+									{
+										"type": "PIH",
+										"value": "2061"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									}
+								]
+							},
+							"id": "hivDisclosure"
+						},
+						{
+							"label": "Who knows your/your child's HIV positive status",
+							"type": "obs",
+							"required": false,
+							"id": "whoKnows",
+							"hide": {
+								"hideWhenExpression": "hivDisclosure !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "de8937b6-6ebe-4302-a488-2198be481839",
+								"conceptMappings": [
+									{
+										"relationship": "SAME-AS",
+										"type": "ETHIOHRI",
+										"value": "whoKnowsChildsHIVPositiveStatus"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Parent(s)"
+									},
+									{
+										"concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Spouse"
+									},
+									{
+										"concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Own child(ren)"
+									},
+									{
+										"concept": "5618AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Friends"
+									},
+									{
+										"concept": "54848ad0-6d2e-40b0-8143-57cabe3fc6e1",
+										"label": "Relatives"
+									},
+									{
+										"concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Sibling(s)"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+								]
+							}
+						},
+						{
+							"label": "Other person that knows your/your child's HIV positive status",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "f622a8b2-55a1-4194-8579-3470609eb626"
+							},
+							"hide": {
+								"hideWhenExpression": "whoKnows !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "otherPersonThatKnows"
 						}
 					]
 				}
@@ -1018,7 +1188,7 @@
 							"label": "Within the facility ",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
 								"answers": [
 									{
@@ -1255,7 +1425,7 @@
 							"label": "Outside the facility",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "73d76014-365e-484c-bf5b-0959add4e3f3",
 								"answers": [
 									{
@@ -1614,44 +1784,6 @@
 									}
 								]
 							}
-						},
-						{
-							"label": "Client (Child's care giver) marital status",
-							"type": "obs",
-							"required": false,
-							"id": "childsCareGiverMaritalStatus",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
-								"conceptMappings": [],
-								"answers": [
-									{
-										"concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Divorced"
-									},
-									{
-										"concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Living with partner"
-									},
-									{
-										"concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Married"
-									},
-									{
-										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Never married"
-									},
-									{
-										"concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Separated"
-									},
-									{
-										"concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Widowed"
-									}
-								]
-							},
-							"validators": []
 						},
 						{
 							"label": "Relationship",
