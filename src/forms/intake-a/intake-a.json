@@ -419,6 +419,44 @@
 							"validators": []
 						},
 						{
+							"label": "Client (Child's care giver) marital status",
+							"type": "obs",
+							"required": false,
+							"id": "childsCareGiverMaritalStatus",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Married"
+									},
+									{
+										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Never married"
+									},
+									{
+										"concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Living with partner"
+									},
+									{
+										"concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Separated"
+									},
+									{
+										"concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Divorced"
+									},
+									{
+										"concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Widowed"
+									}
+								]
+							},
+							"validators": []
+						},
+						{
 							"label": "Occupation",
 							"type": "obs",
 							"required": false,
@@ -1487,44 +1525,6 @@
 									}
 								]
 							}
-						},
-						{
-							"label": "Client (Child's care giver) marital status",
-							"type": "obs",
-							"required": false,
-							"id": "childsCareGiverMaritalStatus",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
-								"conceptMappings": [],
-								"answers": [
-									{
-										"concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Married"
-									},
-									{
-										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Never married"
-									},
-									{
-										"concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Living with partner"
-									},
-									{
-										"concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Separated"
-									},
-									{
-										"concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Divorced"
-									},
-									{
-										"concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Widowed"
-									}
-								]
-							},
-							"validators": []
 						},
 						{
 							"label": "Relationship",

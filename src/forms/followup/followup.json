@@ -13,7 +13,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Followup date *",
+							"label": "Follow-up Date *",
 							"type": "obs",
 							"required": "true",
 							"id": "followupDate",
@@ -36,7 +36,7 @@
 							]
 						  },
 						{
-							"label": "Visit type",
+							"label": "Visit Type",
 							"type": "obs",
 							"questionOptions": {
 								"usePreviousValueDisabled": "true",
@@ -45,7 +45,7 @@
 								"answers": [
 									{
 										"concept": "1246AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Scheduled visit",
+										"label": "Scheduled",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -67,7 +67,7 @@
 									},
 									{
 										"concept": "160101AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unscheduled visit",
+										"label": "Unscheduled",
 										"conceptMappings": []
 									}
 								]
@@ -75,89 +75,13 @@
 							"id": "visitType"
 						},
 						{
-							"label": "Date confirmed HIV+ (Retesting)",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
-								},
-								"rendering": "eth-date",
-								"concept": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "432213005"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "86406008"
-									},
-									{
-										"type": "CIEL",
-										"value": "160554"
-									},
-									{
-										"type": "PIH",
-										"value": "2515"
-									},
-									{
-										"type": "CIEL",
-										"value": "160554"
-									},
-									{
-										"type": "PIH",
-										"value": "2515"
-									}
-								]
-							},
-							"id": "dateConfirmedHivPositive"
-						},
-						{
-							"label": "Type of HIV test",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5583b0a6-f390-446d-ab39-d98584ee330c'))?.valueCodeableConcept?.coding[0]?.code"
-								},
-								"rendering": "radio",
-								"concept": "5583b0a6-f390-446d-ab39-d98584ee330c",
-								"answers": [
-									{
-										"concept": "163722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Rapid test for HIV",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163722"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "165813002"
-											},
-											{
-												"type": "CIEL",
-												"value": "163722"
-											}
-										]
-									},
-									{
-										"concept": "164461AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "DNA-PCR (For children)",
-										"conceptMappings": []
-									}
-								]
-							},
-							"id": "typeOfHivTest"
-						},
-						{
-							"label": "Eligibility status",
+							"label": "Eligibility Status",
 							"type": "obs",
 							"questionOptions": {
 							  "calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '9ed5856a-a20a-44d2-bc8e-2acaa68cf11b'))?.valueCodeableConcept?.coding?"
 								},
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b",
 								"answers": [
 									{
@@ -175,7 +99,7 @@
 							"id": "eligibilityStatus"
 						},
 						{
-							"label": "Eligibility date",
+							"label": "Eligibility Date",
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
@@ -194,13 +118,13 @@
 							"id": "eligibleDate"
 						},
 						{
-							"label": "Why eligible",
+							"label": "Why Eligible",
 							"type": "obs",
 							"questionOptions": {
 							  							  "calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b'))?.valueCodeableConcept?.coding?"
 								},
-								"rendering": "checkbox",
+								"rendering": "select",
 								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
 								"answers": [
 									{
@@ -237,7 +161,7 @@
 							"id": "whyEligible"
 						},
 						{
-							"label": "ART started ?",
+							"label": "ART Started?",
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
@@ -377,7 +301,7 @@
 							"id": "artStarted"
 						},
 						{
-							"label": "ART start date",
+							"label": "ART start Date",
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
@@ -756,15 +680,111 @@
 							"id": "bmiForAge"
 						},
 						{
-							"label": "Nutritional status - Adult",
+							"label": "Nutritional Status - Adult",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
 								"answers": [
 									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal (BMI = 18.5 - 24.99kg/m2)",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Mild Malnutrition (17 -18.49kg/m2)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "134723"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E44.1"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "9684"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "77702009"
+											}
+										]
+									},
+									{
+										"concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Moderate Malnutrition (16 -16.99kg/m2)",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "9685"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "77091003"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E44.0"
+											},
+											{
+												"type": "CIEL",
+												"value": "134722"
+											}
+										]
+									},
+									{
+										"concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Sever Malnutrition (<16kg/m2)",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "9689"
+											},
+											{
+												"type": "CIEL",
+												"value": "126598"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "360549009"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E43"
+											}
+										]
+									},
+									{
 										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
+										"label": "Overweight (25 -29.99kg/m2)",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -821,102 +841,6 @@
 											{
 												"type": "ICD-10-WHO",
 												"value": "E66.9"
-											}
-										]
-									},
-									{
-										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Normal",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											},
-											{
-												"type": "CIEL",
-												"value": "1115"
-											},
-											{
-												"type": "CIEL",
-												"value": "1115"
-											}
-										]
-									},
-									{
-										"concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Mild Malnutrition",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "134723"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E44.1"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "9684"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "77702009"
-											}
-										]
-									},
-									{
-										"concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Moderate Malnutrition",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "9685"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "77091003"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E44.0"
-											},
-											{
-												"type": "CIEL",
-												"value": "134722"
-											}
-										]
-									},
-									{
-										"concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Severe Malnutrition",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "9689"
-											},
-											{
-												"type": "CIEL",
-												"value": "126598"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "360549009"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E43"
 											}
 										]
 									},
@@ -933,15 +857,111 @@
 							"id": "nutritionalStatusOfAdult"
 						},
 						{
-							"label": "Nutritional status of older child / adolescent (5-18 yrs old)",
+							"label": "Nutritional Status of older Child/Adolescent (5-18 yrs old)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "cdcebe52-8acc-4eaa-ba6d-ceef4bde644f",
 								"answers": [
 									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Normal/Appropriate (> -1 Z score)",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1115"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "17621005"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											},
+											{
+												"type": "CIEL",
+												"value": "1115"
+											}
+										]
+									},
+									{
+										"concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Mild Malnutrition (< -1 and > -2 Z score)",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "134723"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E44.1"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "9684"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "77702009"
+											}
+										]
+									},
+									{
+										"concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Moderate Malnutrition (< -2 and > -3 Z score)",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "9685"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "77091003"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E44.0"
+											},
+											{
+												"type": "CIEL",
+												"value": "134722"
+											}
+										]
+									},
+									{
+										"concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Sever Malnutrition (< -3 Z score)",
+										"conceptMappings": [
+											{
+												"type": "IMO-ProblemIT",
+												"value": "9689"
+											},
+											{
+												"type": "CIEL",
+												"value": "126598"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "360549009"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E43"
+											}
+										]
+									},
+									{
 										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
+										"label": "Overweight (Z score: >+2sd)",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -998,102 +1018,6 @@
 											{
 												"type": "ICD-10-WHO",
 												"value": "E66.9"
-											}
-										]
-									},
-									{
-										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Normal",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1115"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "17621005"
-											},
-											{
-												"type": "CIEL",
-												"value": "1115"
-											},
-											{
-												"type": "CIEL",
-												"value": "1115"
-											}
-										]
-									},
-									{
-										"concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Mild Malnutrition",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "134723"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E44.1"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "9684"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "77702009"
-											}
-										]
-									},
-									{
-										"concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Moderate Malnutrition",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "9685"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "77091003"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E44.0"
-											},
-											{
-												"type": "CIEL",
-												"value": "134722"
-											}
-										]
-									},
-									{
-										"concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Severe Malnutrition",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "9689"
-											},
-											{
-												"type": "CIEL",
-												"value": "126598"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "360549009"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E43"
 											}
 										]
 									}
@@ -1127,7 +1051,7 @@
 								"answers": [
 									{
 										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
+										"label": "Overweight (Z score: >+2sd)",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -1189,7 +1113,7 @@
 									},
 									{
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Normal",
+										"label": "Normal/Appropriate (< -1 Z score)",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -1219,7 +1143,7 @@
 									},
 									{
 										"concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Mild Malnutrition",
+										"label": "Mild Malnutrition (< -1 and > -2 Z score)",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -1241,7 +1165,7 @@
 									},
 									{
 										"concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Moderate Malnutrition",
+										"label": "MAM (< -2 and > -3 Z score)",
 										"conceptMappings": [
 											{
 												"type": "IMO-ProblemIT",
@@ -1263,7 +1187,7 @@
 									},
 									{
 										"concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Severe Malnutrition",
+										"label": "SAM (< -3 Z score)",
 										"conceptMappings": [
 											{
 												"type": "IMO-ProblemIT",
@@ -1416,7 +1340,7 @@
 							"id": "nutritionalScreeningResult"
 						},
 						{
-							"label": "Therapeutic/supplementary food",
+							"label": "Therapeutic/Supplementary Food",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -1527,64 +1451,6 @@
 												"value": "1066"
 											}
 										]
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B6.DE2"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "unknown"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											}
-										]
 									}
 								]
 							},
@@ -1597,7 +1463,7 @@
 							"label": "Nutritional supplements provided",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "select",
 								"concept": "a0f1f531-e082-448a-aed5-200621c7b274",
 								"answers": [
 									{
@@ -1730,7 +1596,7 @@
 							"id": "headCircumference"
 						},
 						{
-							"label": "Developmental milestone (for child)",
+							"label": "Developmental Milestone (for Child)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -1858,7 +1724,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Functional status",
+							"label": "Functional Status",
 							"type": "obs",
 							"required": false,
 							"hide": {
@@ -1872,11 +1738,11 @@
 							  "answers": [
 								{
 								  "concept": "159468AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Physically able to work"
+								  "label": "Working"
 								},
 								{
 								  "concept": "160026AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Patient ambulatory"
+								  "label": "Ambulatory"
 								},
 								{
 								  "concept": "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1887,7 +1753,7 @@
 							"validators": []
 						  },
 						{
-							"label": "WHO stage",
+							"label": "WHO Stage",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -1941,7 +1807,7 @@
 								"answers": [
 									{
 										"concept": "1204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage One",
+										"label": "Stage I",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1979,7 +1845,7 @@
 									},
 									{
 										"concept": "1205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage Two",
+										"label": "Stage II",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -2017,7 +1883,7 @@
 									},
 									{
 										"concept": "1206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage Three",
+										"label": "Stage III",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -2055,7 +1921,7 @@
 									},
 									{
 										"concept": "1207AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage Four",
+										"label": "Stage IV",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -2404,7 +2270,7 @@
 							"id": "pregnant"
 						},
 						{
-							"label": "Wants to get pregnant",
+							"label": "Want to become pregnant",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -2528,7 +2394,7 @@
 							"id": "wantsToBePregnant"
 						},
 						{
-							"label": "Breastfeeding",
+							"label": "Breast feeding?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -2732,7 +2598,7 @@
 							"id": "edd"
 						},
 						{
-							"label": "Referred to PMTCT ?",
+							"label": "Referred to PMTCT?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -2849,10 +2715,10 @@
 							"id": "referredToPMTCT"
 						},
 						{
-							"label": "Family planning methods",
+							"label": "Family Planning Methods",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "checkbox",
 								"concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
 									{
@@ -2962,72 +2828,38 @@
 										]
 									},
 									{
-										"concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Diaphragm/cervical cap",
+										"concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Implant",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
-												"value": "5278"
+												"value": "159589"
 											},
 											{
 												"type": "SNOMED-CT",
-												"value": "368441006"
+												"value": "428987008"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "169552007"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "169552007"
 											},
 											{
 												"type": "AMPATH",
-												"value": "5278"
+												"value": "6220"
 											},
 											{
 												"type": "CIEL",
-												"value": "5278"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5278"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "368441006"
-											}
-										]
-									},
-									{
-										"concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Intrauterine device",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "312081001"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "312081001"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "268460000"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5275"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "268460000"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5275"
-											},
-											{
-												"type": "CIEL",
-												"value": "5275"
+												"value": "159589"
 											}
 										]
 									},
 									{
 										"concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Vasectomy/tubal legation",
+										"label": "Vasectomy/Tubal legation",
 										"conceptMappings": [
 											{
 												"type": "IMO-ProcedureIT",
@@ -3122,32 +2954,32 @@
 										]
 									},
 									{
-										"concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Implantable hormone",
+										"concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Diaphragm/cervical cap",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
-												"value": "159589"
+												"value": "5278"
 											},
 											{
 												"type": "SNOMED-CT",
-												"value": "428987008"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "169552007"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "169552007"
+												"value": "368441006"
 											},
 											{
 												"type": "AMPATH",
-												"value": "6220"
+												"value": "5278"
 											},
 											{
 												"type": "CIEL",
-												"value": "159589"
+												"value": "5278"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5278"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "368441006"
 											}
 										]
 									},
@@ -3219,6 +3051,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "familyPlanningMethods"
 						}
 					]
@@ -3241,7 +3076,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "TB screened ?",
+							"label": "TB screened?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -3260,7 +3095,7 @@
 							"id": "tbScreened"
 						},
 						{
-							"label": "TB screening date",
+							"label": "TB screening Date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "eth-date",
@@ -3364,7 +3199,7 @@
 							"id": "screeningResult"
 						},
 						{
-							"label": "Specimen sent ?",
+							"label": "Specimen sent?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -3973,7 +3808,7 @@
 							"id": "tbTreatmentStartDate"
 						},
 						{
-							"label": "TB treatment status ",
+							"label": "TB treatment status",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -4186,7 +4021,7 @@
 							"id": "eligibleForTPT"
 						},
 						{
-							"label": "Reason for not being eligible ?",
+							"label": "Reason for not being eligible?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -4465,7 +4300,7 @@
 								"answers": [
 									{
 										"concept": "1f34bb7f-07e2-4da8-a35f-ad5398377b50",
-										"label": "3HP1",
+										"label": "TPT(3HP)M1",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4475,7 +4310,7 @@
 									},
 									{
 										"concept": "0ba78722-08e5-49cb-9a93-1d209c6f29a6",
-										"label": "3HP2",
+										"label": "TPT(3HP)M2",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4485,7 +4320,7 @@
 									},
 									{
 										"concept": "01277d3a-755b-42ae-916c-a330b55c5c75",
-										"label": "3HP3",
+										"label": "TPT(3HP)M3",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4495,7 +4330,7 @@
 									},
 									{
 										"concept": "574f5071-03fb-4067-a26d-419ecf3ce151",
-										"label": "3HP Completed",
+										"label": "TPT(3HP) Completed",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4505,7 +4340,7 @@
 									},
 									{
 										"concept": "4176b0d5-8f11-4681-8d9e-1f153cd0205d",
-										"label": "3HP Discontinued",
+										"label": "TPT(3HP) Discontinued",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4529,7 +4364,7 @@
 								"answers": [
 									{
 										"concept": "aba09fd0-8a5c-4b23-8ecc-5700cfe42b0b",
-										"label": "3HR1",
+										"label": "TPT(3HR)M1",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4539,7 +4374,7 @@
 									},
 									{
 										"concept": "36e85a5b-ad01-46af-a72c-5a9cf0983d5d",
-										"label": "3HR2",
+										"label": "TPT(3HR)M2",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4549,7 +4384,7 @@
 									},
 									{
 										"concept": "a7641b83-e190-414a-a3b3-3386a70f873c",
-										"label": "3HR3",
+										"label": "TPT(3HR)M3",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4559,7 +4394,7 @@
 									},
 									{
 										"concept": "8ea0e50d-3778-47d0-be56-51563b56c89b",
-										"label": "3HR Completed",
+										"label": "TPT(3HR) Completed",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4569,7 +4404,7 @@
 									},
 									{
 										"concept": "4ee17eb6-7410-40c7-9204-c3f28a0c22ba",
-										"label": "3HR Discontinued",
+										"label": "TPT(3HR) Discontinued",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4688,12 +4523,16 @@
 								  "label": "90"
 								},
 								{
-								  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
-								  "label": "180"
-								},
-								{
 								  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
 								  "label": "120"
+								},
+								{
+									"concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
+									"label": "150"
+								},
+								{
+									"concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+									"label": "180"
 								}
 							  ]
 							},
@@ -5052,140 +4891,19 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Opporutnistic illnesses",
+							"label": "Opporutnistic Illnesses",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "checkbox",
 								"concept": "efe20a31-6781-40b7-a4d8-5fc347881e76",
 								"answers": [
-									{
-										"concept": "146513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oesophageal candidiasis",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ddd5125d-f973-47ce-8fa7-8e3852d24021",
-										"label": "Mouth-Ulcer",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Chronic diarrhea",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "236071009"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "K52.9"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "7544"
-											},
-											{
-												"type": "AMPATH",
-												"value": "15"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "72319"
-											},
-											{
-												"type": "CIEL",
-												"value": "5018"
-											},
-											{
-												"type": "PIH",
-												"value": "5018"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5018"
-											},
-											{
-												"type": "PIH",
-												"value": "1431"
-											}
-										]
-									},
-									{
-										"concept": "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cervical cancer",
-										"conceptMappings": [
-											{
-												"type": "IMO-ProblemIT",
-												"value": "710697"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "315266007"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "315266007"
-											},
-											{
-												"type": "CIEL",
-												"value": "159008"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "Z03.1"
-											},
-											{
-												"type": "CIEL",
-												"value": "159008"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "710697"
-											}
-										]
-									},
-									{
-										"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Zoster",
-										"conceptMappings": [
-											{
-												"type": "ICD-10-WHO",
-												"value": "B02.9"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "4740000"
-											},
-											{
-												"type": "PIH",
-												"value": "836"
-											},
-											{
-												"type": "AMPATH",
-												"value": "836"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "33834360"
-											},
-											{
-												"type": "CIEL",
-												"value": "117543"
-											},
-											{
-												"type": "ICPC2",
-												"value": "S70"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "28591"
-											}
-										]
-									},
-									{
-										"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
-										"label": "Extra Pulmonary Tuberculosis (TB)"
-									},
+								
+									
+									
+									
+									
+									
+									
 									{
 										"concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Kaposi sarcoma",
@@ -5212,191 +4930,356 @@
 											}
 										]
 									},
-									{
-										"concept": "ace33bc0-b97d-46ff-a979-0056439f7d64",
-										"label": "No OI",
-										"conceptMappings": []
-									},
-									{
-										"concept": "1294AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cryptococcal Meningitis",
-										"conceptMappings": [
-											{
-												"type": "ICD-10-WHO-2nd",
-												"value": "G02.1"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "14232007"
-											},
-											{
-												"type": "CIEL",
-												"value": "1294"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "7548"
-											},
-											{
-												"type": "PIH",
-												"value": "1359"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "B45.1"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "34000795"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1294"
-											}
-										]
-									},
+									
 									{
 										"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
 										"label": "Pulmonary TB",
 										"conceptMappings": []
 									},
-									{
-										"concept": "114100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pneumonia",
-										"conceptMappings": []
-									},
-									{
-										"concept": "298AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Vaginal Candidiasis",
-										"conceptMappings": []
-									},
-									{
-										"concept": "149856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Acute Diarrhea",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5355AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxoplasmosis",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oral Candidiasis",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5542"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5334"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "7545"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "26010"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "7545"
-											},
-											{
-												"type": "AMPATH",
-												"value": "295"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "79740000"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5334"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "79740000"
-											},
-											{
-												"type": "AMPATH",
-												"value": "296"
-											},
-											{
-												"type": "CIEL",
-												"value": "5334"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "26007"
-											},
-											{
-												"type": "AMPATH",
-												"value": "296"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "26010"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5542"
-											},
-											{
-												"type": "PIH",
-												"value": "5334"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "26007"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "B37.0"
-											},
-											{
-												"type": "AMPATH",
-												"value": "295"
-											},
-											{
-												"type": "CIEL",
-												"value": "5334"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5172"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5172"
-											},
-											{
-												"type": "PIH",
-												"value": "5334"
-											}
-										]
-									},
+									
+									
+									
+									
 									{
 										"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
 										"label": "Pneumocystis Carinii Pneumonia (PCP)"
 									},
-									{
-										"concept": "115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Non-Hodgkin's lymphoma",
-										"conceptMappings": []
-									},
-									{
-										"concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
-										"label": "Genital ulcer"
-									},
+									
+									
 									{
 										"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8",
 										"label": "Other",
 										"conceptMappings": []
 									}
 								]
+							},
+							"id": "opportunisticIllnesses"
+						},
+						{
+							"label": "Opporutnistic Illnesses",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "checkbox",
+								"concept": "339d3209-c797-457f-afb8-8d19d99c63b7",
+								"conceptMappings": [],
+							  "answers": [
+								{
+									"concept": "ace33bc0-b97d-46ff-a979-0056439f7d64",
+									"label": "No OI or Opportunistic Cancer",
+									"conceptMappings": []
+								},
+								{
+									"concept": "121252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Bacterial Pneumonia"
+								},
+								{
+									"concept": "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Cervical cancer",
+									"conceptMappings": [
+										{
+											"type": "IMO-ProblemIT",
+											"value": "710697"
+										},
+										{
+											"type": "SNOMED-CT",
+											"value": "315266007"
+										},
+										{
+											"type": "SNOMED-CT",
+											"value": "315266007"
+										},
+										{
+											"type": "CIEL",
+											"value": "159008"
+										},
+										{
+											"type": "ICD-10-WHO",
+											"value": "Z03.1"
+										},
+										{
+											"type": "CIEL",
+											"value": "159008"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "710697"
+										}
+									]
+								},
+								{
+									"concept": "1294AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Cryptococcal Meningitis",
+									"conceptMappings": [
+										{
+											"type": "ICD-10-WHO-2nd",
+											"value": "G02.1"
+										},
+										{
+											"type": "SNOMED-CT",
+											"value": "14232007"
+										},
+										{
+											"type": "CIEL",
+											"value": "1294"
+										},
+										{
+											"type": "PIH-Malawi",
+											"value": "7548"
+										},
+										{
+											"type": "PIH",
+											"value": "1359"
+										},
+										{
+											"type": "ICD-10-WHO",
+											"value": "B45.1"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "34000795"
+										},
+										{
+											"type": "AMPATH",
+											"value": "1294"
+										}
+									]
+								},
+								{
+									"concept": "990AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "CNS Toxoplasmosis",
+									"conceptMappings": []
+								},
+								{
+									"concept": "149856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Diarrhea Acute"
+								},
+								{
+									"concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Chronic diarrhea",
+									"conceptMappings": [
+										{
+											"type": "SNOMED-CT",
+											"value": "236071009"
+										},
+										{
+											"type": "ICD-10-WHO",
+											"value": "K52.9"
+										},
+										{
+											"type": "PIH-Malawi",
+											"value": "7544"
+										},
+										{
+											"type": "AMPATH",
+											"value": "15"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "72319"
+										},
+										{
+											"type": "CIEL",
+											"value": "5018"
+										},
+										{
+											"type": "PIH",
+											"value": "5018"
+										},
+										{
+											"type": "AMPATH",
+											"value": "5018"
+										},
+										{
+											"type": "PIH",
+											"value": "1431"
+										}
+									]
+								},
+								{
+									"concept": "146513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Oesophageal candidiasis",
+									"conceptMappings": []
+								},
+								{
+									"concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
+									"label": "Extra Pulmonary Tuberculosis"
+								},
+								{
+									"concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Kaposi sarcoma"
+								},
+								{
+									"concept": "115195AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Non-Hodgkin's lymphoma",
+									"conceptMappings": []
+								},
+								{
+									"concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
+									"label": "Pneumocystis Pneumonia"
+								},
+								{
+									"concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
+									"label": "Pulmonary TB"
+								},
+								{
+									"concept": "a47318ff-e518-4667-bf3e-34141d2f7838",
+									"label": "Thrush Oral"
+								},
+								{
+									"concept": "ddd5125d-f973-47ce-8fa7-8e3852d24021",
+									"label": "Mouth-Ulcer",
+									"conceptMappings": []
+								},
+								{
+									"concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Zoster",
+									"conceptMappings": [
+										{
+											"type": "ICD-10-WHO",
+											"value": "B02.9"
+										},
+										{
+											"type": "SNOMED-CT",
+											"value": "4740000"
+										},
+										{
+											"type": "PIH",
+											"value": "836"
+										},
+										{
+											"type": "AMPATH",
+											"value": "836"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "33834360"
+										},
+										{
+											"type": "CIEL",
+											"value": "117543"
+										},
+										{
+											"type": "ICPC2",
+											"value": "S70"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "28591"
+										}
+									]
+								},
+								{
+									"concept": "298AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Vaginal Candidiasis",
+									"conceptMappings": []
+								},
+								{
+									"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Oral Candidiasis",
+									"conceptMappings": [
+										{
+											"type": "AMPATH",
+											"value": "5542"
+										},
+										{
+											"type": "AMPATH",
+											"value": "5334"
+										},
+										{
+											"type": "PIH-Malawi",
+											"value": "7545"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "26010"
+										},
+										{
+											"type": "PIH-Malawi",
+											"value": "7545"
+										},
+										{
+											"type": "AMPATH",
+											"value": "295"
+										},
+										{
+											"type": "SNOMED-CT",
+											"value": "79740000"
+										},
+										{
+											"type": "AMPATH",
+											"value": "5334"
+										},
+										{
+											"type": "SNOMED-CT",
+											"value": "79740000"
+										},
+										{
+											"type": "AMPATH",
+											"value": "296"
+										},
+										{
+											"type": "CIEL",
+											"value": "5334"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "26007"
+										},
+										{
+											"type": "AMPATH",
+											"value": "296"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "26010"
+										},
+										{
+											"type": "AMPATH",
+											"value": "5542"
+										},
+										{
+											"type": "PIH",
+											"value": "5334"
+										},
+										{
+											"type": "IMO-ProblemIT",
+											"value": "26007"
+										},
+										{
+											"type": "ICD-10-WHO",
+											"value": "B37.0"
+										},
+										{
+											"type": "AMPATH",
+											"value": "295"
+										},
+										{
+											"type": "CIEL",
+											"value": "5334"
+										},
+										{
+											"type": "AMPATH",
+											"value": "5172"
+										},
+										{
+											"type": "AMPATH",
+											"value": "5172"
+										},
+										{
+											"type": "PIH",
+											"value": "5334"
+										}
+									]
+								},
+								{
+									"concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
+									"label": "Genital ulcer"
+								},
+								{
+									"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Other"
+								}
+							  ]
 							},
 							"id": "opportunisticIllnesses"
 						},
@@ -5408,7 +5291,7 @@
 								"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8"
 							},
 							"hide": {
-								"hideWhenExpression": "!includes('opportunisticIllnesses','20841482-587f-4b4c-9562-ce3f481dd5a8')"
+								"hideWhenExpression": "!includes('opportunisticIllnesses','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
 							"id": "otherOpportunisticIllness"
 						}
@@ -5419,7 +5302,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Assessed for pain ?",
+							"label": "Assessed for pain?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -5548,7 +5431,7 @@
 								"answers": [
 									{
 										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "None",
+										"label": "No Pain",
 										"conceptMappings": [
 											{
 												"type": "HL7-ActSubstanceAdminSubstitutionCode",
@@ -5614,7 +5497,7 @@
 									},
 									{
 										"concept": "1498AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Mild",
+										"label": "WHO Step 1",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -5652,7 +5535,7 @@
 									},
 									{
 										"concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Moderate",
+										"label": "WHO Step 2",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -5694,7 +5577,7 @@
 									},
 									{
 										"concept": "1500AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Severe",
+										"label": "WHO Step 3",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -6249,10 +6132,6 @@
 								{
 								  "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "No"
-								},
-								{
-								  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Unknown"
 								}
 							  ]
 							},
@@ -6290,58 +6169,58 @@
 								"concept": "9b8cef86-9093-4737-a641-3b8399618c85",
 								"answers": [
 									{
-										"concept": "d1977f43-83a5-4b32-b589-33b9315e912d",
-										"label": "First viral load test at 3 months or longer post ART",
-										"conceptMappings": []
-									},
-									{
 										"concept": "b450f8e7-f55e-4788-8fb4-de5229db1b10",
-										"label": "First viral load test at 6 months or longer post ART",
+										"label": "1st VL at 6 months or longer post ART",
 										"conceptMappings": []
 									},
 									{
 										"concept": "c616b09a-bcc2-49a9-b47c-7219f7695e91",
-										"label": "Second viral load test at 12 months post ART",
+										"label": "2dn VL at 12 months post ART",
 										"conceptMappings": []
 									},
 									{
 										"concept": "42a61e3f-e3e9-46a8-96e3-8643f4d476a4",
-										"label": "Annual viral load test",
+										"label": "Annual VL test",
+										"conceptMappings": []
+									},
+									{
+										"concept": "d1977f43-83a5-4b32-b589-33b9315e912d",
+										"label": "Pregnant Mother - 1st VL at 3 months or longer post ART",
 										"conceptMappings": []
 									},
 									{
 										"concept": "89e9a9ee-15d1-424b-be5a-0765822cd35e",
-										"label": "At the first antenatal care visit",
+										"label": "Pregnant Mother - at 1st ANC visit (For clients on ART before conception)",
 										"conceptMappings": []
 									},
 									{
 										"concept": "c1f8f2f6-ec39-422b-a305-58ccafec86c3",
-										"label": "At 34-36 weeks of gestation",
+										"label": "Pregnant Mother - at 34-36 weeks of gestation (or the latest at delivery)",
 										"conceptMappings": []
 									},
 									{
 										"concept": "603faef3-2142-4ee7-8781-aa977ada17a2",
-										"label": "Three months after delivery",
+										"label": "Breast feeding Mother - at 3 months after delivery",
 										"conceptMappings": []
 									},
 									{
 										"concept": "d3d6d8e3-0438-4f83-ba9f-ac46eed6782b",
-										"label": "Six months after the first viral load test at postnatal period",
+										"label": "Breast feeding Mother - at 6 months after the 1st VL at postnatal period",
 										"conceptMappings": []
 									},
 									{
 										"concept": "d18e5f76-5026-45d1-be18-f14ae936c692",
-										"label": "Every six months until MTCT ends",
+										"label": "Breast feeding Mother - Every 6 months until MTCT ends",
 										"conceptMappings": []
 									},
 									{
 										"concept": "9dbe8de0-c0ca-4bb0-ac46-207dd5ee5caf",
-										"label": "Viral load after EAC: repeat viral load where initial viral load greater than 50 and less than 1000 copies per ml",
+										"label": "VL after EAC - Repeat VL for client's initial VL >=50 & <= 1000 copies/ml",
 										"conceptMappings": []
 									},
 									{
 										"concept": "4afb4baf-14c0-498b-b908-06b33e50476e",
-										"label": "Viral load after EAC: confirmatory viral load where initial viral load greater than 1000 copies per ml",
+										"label": "VL after EAC - Confirmatory VL for client's initial VL > 1000 copies/ml",
 										"conceptMappings": []
 									}
 								],
@@ -6365,13 +6244,13 @@
 								"concept": "8f75ce27-29fa-4a67-bc8a-295c94323220",
 								"answers": [
 									{
-										"concept": "9ffb81b7-3d9e-4f72-b1ba-3f60f07e4661",
-										"label": "Repeat or confirmatory VL: initial viral load greater than 1000",
+										"concept": "4c6f2326-480f-449d-9932-fe85019997f6",
+										"label": "Suspected ART failure",
 										"conceptMappings": []
 									},
 									{
-										"concept": "4c6f2326-480f-449d-9932-fe85019997f6",
-										"label": "Suspected Antiretroviral failure",
+										"concept": "9ffb81b7-3d9e-4f72-b1ba-3f60f07e4661",
+										"label": "Repeat or confirmatory VL initial viral load greater than 1000 copies/ml",
 										"conceptMappings": []
 									}
 								]
@@ -6541,7 +6420,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "EAC provided ?",
+							"label": "EAC provided?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -6706,7 +6585,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "CPT started ?",
+							"label": "CPT started?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -6805,64 +6684,6 @@
 											{
 												"type": "AMPATH",
 												"value": "1066"
-											}
-										]
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B6.DE2"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "unknown"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
 											}
 										]
 									}
@@ -6968,16 +6789,16 @@
 								  "label": "90"
 								},
 								{
+									"concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+									"label": "120"
+								},
+								{
 									"concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
 									"label": "150"
 								},
 								{
 								  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
 								  "label": "180"
-								},
-								{
-								  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
-								  "label": "120"
 								}
 							  ]
 							},
@@ -6990,24 +6811,6 @@
 								"rendering": "radio",
 								"concept": "af63fc87-379b-4fc4-8e68-936026da9f54",
 								"answers": [
-									{
-										"concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Fair",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159406"
-											},
-											{
-												"type": "CIEL",
-												"value": "159406"
-											},
-											{
-												"type": "PIH",
-												"value": "1898"
-											}
-										]
-									},
 									{
 										"concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Good",
@@ -7031,6 +6834,24 @@
 											{
 												"type": "PIH",
 												"value": "1897"
+											}
+										]
+									},
+									{
+										"concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Fair",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "159406"
+											},
+											{
+												"type": "CIEL",
+												"value": "159406"
+											},
+											{
+												"type": "PIH",
+												"value": "1898"
 											}
 										]
 									},
@@ -7062,7 +6883,7 @@
 									},
 									{
 										"concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stop",
+										"label": "Stopped",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -7092,7 +6913,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Fluconazole started ?",
+							"label": "Fluconazole started?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -7238,11 +7059,11 @@
 			],
 			"sections": [
 				{
-					"label": "Followup Status",
+					"label": "Follow-up Status",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Followup Status",
+							"label": "Follow-up Status",
 							"type": "obs",
 							"required": false,
 							"id": "followupStatus",
@@ -7292,7 +7113,7 @@
 								"answers": [
 									{
 										"concept": "102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxicity / Side effects",
+										"label": "Toxicity/Side effects",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -7333,6 +7154,52 @@
 										]
 									},
 									{
+										"concept": "843AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Treatment failure",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "843"
+											},
+											{
+												"type": "CIEL",
+												"value": "843"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "FAILED"
+											},
+											{
+												"type": "AMPATH",
+												"value": "843"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "FAILED"
+											},
+											{
+												"type": "PIH",
+												"value": "843"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "266721009"
+											},
+											{
+												"type": "AMPATH",
+												"value": "843"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "266721009"
+											},
+											{
+												"type": "CIEL",
+												"value": "843"
+											}
+										]
+									},
+									{
 										"concept": "159598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Poor adherence",
 										"conceptMappings": [
@@ -7355,6 +7222,116 @@
 											{
 												"type": "AMPATH",
 												"value": "1434"
+											}
+										]
+									},
+									{
+										"concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Illness / hospitalization",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1429"
+											},
+											{
+												"type": "CIEL",
+												"value": "5485"
+											},
+											{
+												"type": "CIEL",
+												"value": "5485"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5485"
+											},
+											{
+												"type": "PIH",
+												"value": "1429"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5485"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "394656005"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "394656005"
+											}
+										]
+									},
+									{
+										"concept": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Drugs out of stock",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "1754"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "17541000105004"
+											},
+											{
+												"type": "PIH",
+												"value": "1761"
+											},
+											{
+												"type": "CIEL",
+												"value": "1754"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "182856006"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "17541000105004"
+											},
+											{
+												"type": "PIH",
+												"value": "1761"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "182856006"
+											}
+										]
+									},
+									{
+										"concept": "819AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Patient lack finances",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "11403006"
+											},
+											{
+												"type": "AMPATH",
+												"value": "819"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "8191000105002"
+											},
+											{
+												"type": "CIEL",
+												"value": "819"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "8191000105002"
+											},
+											{
+												"type": "CIEL",
+												"value": "819"
+											},
+											{
+												"type": "AMPATH",
+												"value": "819"
 											}
 										]
 									},
@@ -7429,162 +7406,6 @@
 											{
 												"type": "CIEL",
 												"value": "160016"
-											}
-										]
-									},
-									{
-										"concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Illness / hospitalization",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1429"
-											},
-											{
-												"type": "CIEL",
-												"value": "5485"
-											},
-											{
-												"type": "CIEL",
-												"value": "5485"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5485"
-											},
-											{
-												"type": "PIH",
-												"value": "1429"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5485"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "394656005"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "394656005"
-											}
-										]
-									},
-									{
-										"concept": "843AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Treatment failure",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "843"
-											},
-											{
-												"type": "CIEL",
-												"value": "843"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "FAILED"
-											},
-											{
-												"type": "AMPATH",
-												"value": "843"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "FAILED"
-											},
-											{
-												"type": "PIH",
-												"value": "843"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "266721009"
-											},
-											{
-												"type": "AMPATH",
-												"value": "843"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "266721009"
-											},
-											{
-												"type": "CIEL",
-												"value": "843"
-											}
-										]
-									},
-									{
-										"concept": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Drugs out of stock",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "1754"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "17541000105004"
-											},
-											{
-												"type": "PIH",
-												"value": "1761"
-											},
-											{
-												"type": "CIEL",
-												"value": "1754"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "182856006"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "17541000105004"
-											},
-											{
-												"type": "PIH",
-												"value": "1761"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "182856006"
-											}
-										]
-									},
-									{
-										"concept": "819AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Patient lack finances",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "11403006"
-											},
-											{
-												"type": "AMPATH",
-												"value": "819"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "8191000105002"
-											},
-											{
-												"type": "CIEL",
-												"value": "819"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "8191000105002"
-											},
-											{
-												"type": "CIEL",
-												"value": "819"
-											},
-											{
-												"type": "AMPATH",
-												"value": "819"
 											}
 										]
 									},
@@ -7982,7 +7803,7 @@
 							"id": "arvDispensedInDays"
 						},
 						{
-							"label": "Side effects",
+							"label": "Side Effects",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "checkbox",
@@ -8301,32 +8122,32 @@
 								"answers": [
 									{
 										"concept": "743f4a06-d8c6-4042-ac0c-74d5249be868",
-										"label": "First Substitution",
+										"label": "1st Substitution",
 										"conceptMappings": []
 									},
 									{
 										"concept": "6762c6ed-5fe9-4892-a0b6-37363e86851d",
-										"label": "Second substitution",
+										"label": "2nd substitution",
 										"conceptMappings": []
 									},
 									{
 										"concept": "973f6e5a-ba3f-451e-a290-a870c582d7c3",
-										"label": "Third Substitution",
+										"label": "3rd Substitution",
 										"conceptMappings": []
 									},
 									{
 										"concept": "d7ad6b13-cc92-4154-824a-31fa7f858868",
-										"label": "Fourth substitution",
+										"label": "4th substitution",
 										"conceptMappings": []
 									},
 									{
 										"concept": "e2582673-49cb-47f8-9cbf-cb8d391b609e",
-										"label": "Fifth substitution",
+										"label": "5th substitution",
 										"conceptMappings": []
 									},
 									{
 										"concept": "7d3d55b2-8392-47ed-a427-e1ec27c02586",
-										"label": "Sixth substitution",
+										"label": "6th substitution",
 										"conceptMappings": []
 									}
 								]
@@ -8345,7 +8166,7 @@
 								"answers": [
 									{
 										"concept": "164506AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "First switch",
+										"label": "1st switch",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -8355,7 +8176,7 @@
 									},
 									{
 										"concept": "164513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Second switch",
+										"label": "2nd switch",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -8369,7 +8190,7 @@
 									},
 									{
 										"concept": "892d5c76-f59f-486d-9b42-945761e9bae7",
-										"label": "Third switch",
+										"label": "3rd switch",
 										"conceptMappings": []
 									}
 								]
@@ -8388,7 +8209,7 @@
 								"answers": [
 									{
 										"concept": "102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxicity / Side effects",
+										"label": "Toxicity/Side effects",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -8425,6 +8246,84 @@
 											{
 												"type": "ICD-10-WHO",
 												"value": "R89.2"
+											}
+										]
+									},
+									{
+										"concept": "160567AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Due to new TB",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1763"
+											},
+											{
+												"type": "PIH",
+												"value": "1763"
+											},
+											{
+												"type": "CIEL",
+												"value": "160567"
+											},
+											{
+												"type": "CIEL",
+												"value": "160567"
+											}
+										]
+									},
+									{
+										"concept": "160561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "New drug available",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1762"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "309298003"
+											},
+											{
+												"type": "CIEL",
+												"value": "160561"
+											}
+										]
+									},
+									{
+										"concept": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Drug stock-out",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "1754"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "17541000105004"
+											},
+											{
+												"type": "PIH",
+												"value": "1761"
+											},
+											{
+												"type": "CIEL",
+												"value": "1754"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "182856006"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "17541000105004"
+											},
+											{
+												"type": "PIH",
+												"value": "1761"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "182856006"
 											}
 										]
 									},
@@ -8479,28 +8378,6 @@
 										]
 									},
 									{
-										"concept": "160567AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Due to new TB",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1763"
-											},
-											{
-												"type": "PIH",
-												"value": "1763"
-											},
-											{
-												"type": "CIEL",
-												"value": "160567"
-											},
-											{
-												"type": "CIEL",
-												"value": "160567"
-											}
-										]
-									},
-									{
 										"concept": "160559AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Risk of pregnancy",
 										"conceptMappings": [
@@ -8515,20 +8392,6 @@
 											{
 												"type": "PIH",
 												"value": "1760"
-											}
-										]
-									},
-									{
-										"concept": "163523AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Clinical failure",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163523"
-											},
-											{
-												"type": "CIEL",
-												"value": "163523"
 											}
 										]
 									},
@@ -8588,62 +8451,6 @@
 										"concept": "266a67b5-28cb-49d6-801f-e6c19559317d",
 										"label": "Anemia",
 										"conceptMappings": []
-									},
-									{
-										"concept": "160561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "New drug available",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1762"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "309298003"
-											},
-											{
-												"type": "CIEL",
-												"value": "160561"
-											}
-										]
-									},
-									{
-										"concept": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Drug stock-out",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "1754"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "17541000105004"
-											},
-											{
-												"type": "PIH",
-												"value": "1761"
-											},
-											{
-												"type": "CIEL",
-												"value": "1754"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "182856006"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "17541000105004"
-											},
-											{
-												"type": "PIH",
-												"value": "1761"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "182856006"
-											}
-										]
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -8710,7 +8517,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "ARV adherence",
+							"label": "ARV Adherence",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -8802,7 +8609,7 @@
 								"answers": [
 									{
 										"concept": "102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Toxicity / Side effects",
+										"label": "Toxicity/Side effects",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -9000,7 +8807,7 @@
 									},
 									{
 										"concept": "160584AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Lost / ran out of pill",
+										"label": "Lost/ran out of pill",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -9334,8 +9141,18 @@
 								],
 								"answers": [
 									{
+										"concept": "8c3aeb01-71d6-42df-9d70-606586fd8561",
+										"label": "Agreed to disclose to partners/family/friends",
+										"conceptMappings": [
+											{
+												"type": "OCT",
+												"value": "agreedToDiscloseToPartnerFriendFamily"
+											}
+										]
+									},
+									{
 										"concept": "a56cdd43-f2eb-49d6-88fd-113aaea2e85f",
-										"label": "Planned to bring partner for test",
+										"label": "Agreed to bring partner for testing",
 										"conceptMappings": [
 											{
 												"type": "OHTSTemp",
@@ -9344,12 +9161,12 @@
 										]
 									},
 									{
-										"concept": "8c3aeb01-71d6-42df-9d70-606586fd8561",
-										"label": "Agreed to disclose to partners",
+										"concept": "9ad0a69e-9725-4c3b-ac8c-f68c29fece79",
+										"label": "Agreed to bring children for testing",
 										"conceptMappings": [
 											{
 												"type": "OCT",
-												"value": "agreedToDiscloseToPartnerFriendFamily"
+												"value": "agreedToBringChild"
 											}
 										]
 									},
@@ -9360,16 +9177,6 @@
 											{
 												"type": "OCT",
 												"value": "discussedAndAgreedToPracticeSaferSex"
-											}
-										]
-									},
-									{
-										"concept": "9ad0a69e-9725-4c3b-ac8c-f68c29fece79",
-										"label": "Agreed to bring children for test",
-										"conceptMappings": [
-											{
-												"type": "OCT",
-												"value": "agreedToBringChild"
 											}
 										]
 									},
@@ -9548,38 +9355,39 @@
 								"concept": "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2",
 								"answers": [
 									{
-										"concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
-										"label": "Appointment spacing model (ASM) / 6MMD",
-										"conceptMappings": []
-									},
-									{
 										"concept": "c4797711-5a47-49ad-980c-bed044a91c6d",
 										"label": "3MMD",
 										"conceptMappings": []
 									},
 									{
+										"concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
+										"label": "ASM (6MMD)",
+										"conceptMappings": []
+									},
+									
+									{
 										"concept": "347b4cbf-76ec-47f7-bdd0-f75f159d0665",
-										"label": "FTAR (Fast track antiretroviral refill)",
+										"label": "FTAR (Fast track ART refill)",
 										"conceptMappings": []
 									},
 									{
 										"concept": "83b84a66-7b31-4b61-be54-f14bc4d50da7",
-										"label": "HEP-CAG (Health extension professional led community)",
+										"label": "CAG (HEP-CAG/Health extension professional led community ART refill group)",
 										"conceptMappings": []
 									},
 									{
 										"concept": "6624ab9c-7aeb-4a26-942f-f5717739a762",
-										"label": "PCAD (Community based group model by peer)",
-										"conceptMappings": []
-									},
-									{
-										"concept": "69e20fac-25ff-46c5-8681-756ba0078c80",
-										"label": "AHD (Advanced HIV disease model)",
+										"label": "PCAD (Peer led community based ART distribution group)",
 										"conceptMappings": []
 									},
 									{
 										"concept": "7b30d810-4c0c-4bb7-a0b6-c1be570d3e80",
 										"label": "DSD for adolescent",
+										"conceptMappings": []
+									},
+									{
+										"concept": "69e20fac-25ff-46c5-8681-756ba0078c80",
+										"label": "DSD for AHD",
 										"conceptMappings": []
 									},
 									{
@@ -9589,7 +9397,7 @@
 									},
 									{
 										"concept": "a8e97cdd-b094-4589-a724-3b123be7391e",
-										"label": "KP_DSD",
+										"label": "DSD for KP",
 										"conceptMappings": []
 									},
 									{
@@ -9776,17 +9584,17 @@
 									},
 									{
 										"concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
-										"label": "Default / LTFU",
+										"label": "LTFU",
 										"conceptMappings": []
 									},
 									{
 										"concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Transfer Out / TO",
+										"label": "TO",
 										"conceptMappings": []
 									},
 									{
 										"concept": "e687b464-e1fe-4f1b-ab76-8071f354fdaa",
-										"label": "Returned to covenatal care",
+										"label": "Returned to Conventional care",
 										"conceptMappings": []
 									},
 									{
@@ -10857,6 +10665,10 @@
 								"concept": "93bf2a3e-1675-44c9-b7ee-b8ba9cb32b22",
 								"answers": [
 									{
+										"concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Not done"
+									},
+									{
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Normal / Negative"
 									},
@@ -10867,10 +10679,6 @@
 									{
 										"concept": "7276fa8a-3bab-4bd7-b647-8e9c8536ef30",
 										"label": "High Grade SIL / Suspicious cancer"
-									},
-									{
-										"concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Not done"
 									}
 								]
 							},
@@ -10902,24 +10710,24 @@
 							  "conceptMappings": [],
 							  "answers": [
 								{
+									"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "No treatment"
+								},
+								{
+									"concept": "162812AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Cryotherapy"
+								},
+								{
 								  "concept": "165084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "LEEP"
-								},
-								{
-								  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "No treatment"
-								},
-								{
-								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Other treatment"
 								},
 								{
 								  "concept": "166706AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Thermocoagulation"
 								},
 								{
-								  "concept": "162812AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Cryotherapy"
+									"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Other treatment"
 								}
 							  ]
 							},
@@ -11069,7 +10877,7 @@
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other",
+										"label": "Other treatment",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -11254,7 +11062,7 @@
 								"answers": [
 									{
 										"concept": "164805AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "VIA screening for women aged between 30-49 years",
+										"label": "VIA screening",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -11264,7 +11072,7 @@
 									},
 									{
 										"concept": "165084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Loop electrosurgical excision procedure of cervix",
+										"label": "LEEP Service",
 										"conceptMappings": [
 											{
 												"type": "IMO-ProcedureIT",
@@ -11282,7 +11090,7 @@
 									},
 									{
 										"concept": "162812AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cryosurgery of lesion of cervix",
+										"label": "Cryotheraphy/Thermal ablation",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -11300,7 +11108,7 @@
 									},
 									{
 										"concept": "3e02da2d-b62a-4b17-b1fc-5eb8b4b164b9",
-										"label": "Referred for further testing and assessment",
+										"label": "Further Evaluation & Management for suspicious cases",
 										"conceptMappings": []
 									},
 									{
@@ -11388,7 +11196,7 @@
 									},
 									{
 										"concept": "3192af69-db4b-4031-9add-5871883980cc",
-										"label": "Client served in the referred HF",
+										"label": "Client got all the services she could get in the referral HF",
 										"conceptMappings": []
 									}
 								]
