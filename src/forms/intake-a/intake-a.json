@@ -41,7 +41,7 @@
 							"id": "mrn"
 						},
 						{
-							"label": "Unit TB No",
+							"label": "Unit TB No.",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -260,7 +260,7 @@
 							"id": "patientAge"
 						},
 						{
-							"label": "Target population",
+							"label": "Target Population Category",
 							"type": "obs",
 							"required": false,
 							"id": "targetPopulation",
@@ -270,56 +270,60 @@
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "e916113e-8d95-43f5-a07c-a21a8aca9bed",
-										"label": "Children of PLHIV (People living with HIV)"
-									},
-									{
-										"concept": "bbe26d24-f535-4a27-8453-ca45d373c827",
-										"label": "Discordant Couples"
-									},
-									{
-										"concept": "166430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "General population"
+										"concept": "166513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Female Commercial Sex workers"	
 									},
 									{
 										"concept": "162198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Long distance truck driver"
-									},
-									{
-										"concept": "160578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Male who has sex with men"
+										"label": "Distance Drivers"
 									},
 									{
 										"concept": "9fb6c25b-4765-463b-9f26-7cc3addf1105",
-										"label": "Mobile worker/Daily laborer"
-									},
-									{
-										"concept": "2453316b-2e88-43d7-87c9-32ef4725ec5d",
-										"label": "Other MARPS-Wido-Divo-Sepa"
-									},
-									{
-										"concept": "b696f324-05a5-49ba-8577-6172195473fc",
-										"label": "OVC (Orphans and vulnerable children)"
-									},
-									{
-										"concept": "360d3b35-4946-454c-86e6-815fed0723f2",
-										"label": "Partner of PLHIV (People living with HIV)"
-									},
-									{
-										"concept": "f99862c6-ebc6-480a-903c-ca28f41e2518",
-										"label": "People who inject drug"
+										"label": "Mobile or Daily Laborers"
 									},
 									{
 										"concept": "e53cf0d0-86ed-4b20-aa93-58546b970c63",
 										"label": "Prisoners"
 									},
 									{
+										"concept": "b696f324-05a5-49ba-8577-6172195473fc",
+										"label": "OVC or AIDS Orphaned"
+									},
+									{
+										"concept": "e916113e-8d95-43f5-a07c-a21a8aca9bed",
+										"label": "Children of PLHIV"
+									},
+									{
+										"concept": "360d3b35-4946-454c-86e6-815fed0723f2",
+										"label": "Partner of PLHIV"
+									},
+									{
+										"concept": "bbe26d24-f535-4a27-8453-ca45d373c827",
+										"label": "Discordant Couples"
+									},
+									{
+										"concept": "518b0c9b-5361-45c0-b9a6-79833b9981bf",
+										"label": "TG"
+									},
+									{
+										"concept": "160578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Male who has sex with men"
+									},
+									{
+										"concept": "f99862c6-ebc6-480a-903c-ca28f41e2518",
+										"label": "People who inject drug"
+									},
+									{
 										"concept": "164100AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Refugee"
 									},
 									{
-										"concept": "518b0c9b-5361-45c0-b9a6-79833b9981bf",
-										"label": "TG (Transgender)"
+										"concept": "2453316b-2e88-43d7-87c9-32ef4725ec5d",
+										"label": "Other MARPS-Wido-Divo-Sepa"
+									},
+									{
+										"concept": "166430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "General population"
 									}
 								]
 							},
@@ -336,24 +340,24 @@
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "3b344266-b983-4906-b768-312fadd5f5d6",
-										"label": "Catholic"
+										"concept": "12f7b48b-38c4-4377-82a3-215b9da86752",
+										"label": "Orthodox"
 									},
 									{
 										"concept": "2a03b89e-51d1-4d80-90d8-af085c3a481d",
 										"label": "Muslim"
 									},
 									{
-										"concept": "12f7b48b-38c4-4377-82a3-215b9da86752",
-										"label": "Orthodox"
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other"
+										"concept": "3b344266-b983-4906-b768-312fadd5f5d6",
+										"label": "Catholic"
 									},
 									{
 										"concept": "d66c7928-b124-437b-818d-1b3d99116200",
 										"label": "Protestant"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
 									}
 								]
 							},
@@ -371,27 +375,27 @@
 								"answers": [
 									{
 										"concept": "160294AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No formal education"
+										"label": "No Education"
+									},
+									{
+										"concept": "1713AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Primary"
+									},
+									{
+										"concept": "1714AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Secondary"
+									},
+									{
+										"concept": "160292AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Tertiary"
+									},
+									{
+										"concept": "9f978371-0866-4685-908f-bcbf2b128725",
+										"label": "TVET"
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Other"
-									},
-									{
-										"concept": "1713AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Primary school education"
-									},
-									{
-										"concept": "1714AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Secondary school education"
-									},
-									{
-										"concept": "160292AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Tertiary education complete"
-									},
-									{
-										"concept": "9f978371-0866-4685-908f-bcbf2b128725",
-										"label": "TVET (technical and vocational education and training)"
 									}
 								]
 							},
@@ -455,90 +459,55 @@
 							"label": "Occupation",
 							"type": "obs",
 							"required": false,
-							"id": "occupation",
+							"id": "childsCareGiverMaritalStatus",
 							"questionOptions": {
 								"rendering": "select",
-								"concept": "6b28ccbd-3cea-4d7f-81a7-25c770e45c32",
+								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
 								"conceptMappings": [],
 								"answers": [
 									{
-										"concept": "159613AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Casual labor"
+										"concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Married"
 									},
 									{
-										"concept": "164832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cleaner"
+										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Never married"
 									},
 									{
-										"concept": "159466AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Driver"
+										"concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Living with partner"
 									},
 									{
-										"concept": "1538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Farmer"
+										"concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Separated"
 									},
 									{
-										"concept": "166513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Female sex worker"
+										"concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Divorced"
 									},
 									{
-										"concept": "160295AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Housewife"
-									},
-									{
-										"concept": "159464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Housework"
-									},
-									{
-										"concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Medical Assistant"
-									},
-									{
-										"concept": "165796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Medical laboratory technician"
-									},
-									{
-										"concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Medical Officer/Doctor"
-									},
-									{
-										"concept": "5217316b-3c4a-4716-8137-466c08bb4c23",
-										"label": "Non-governmental organisation"
-									},
-									{
-										"concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Nurse"
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other"
-									},
-									{
-										"concept": "164969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Responsible medical officer"
-									},
-									{
-										"concept": "164833AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sanitarian"
-									},
-									{
-										"concept": "159673AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Small business owner"
-									},
-									{
-										"concept": "159465AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Student"
-									},
-									{
-										"concept": "123801AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unemployed"
+										"concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Widowed"
 									}
 								]
 							},
 							"validators": []
 						},
 						{
-							"label": "Client resides within catchment area",
+							"label": "Occupation",
+							"type": "obs",
+							"required": false,
+							"id": "occupation",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "2d2073e1-8377-4c4a-b6c7-0ab848760716",
+								"conceptMappings": [],
+								"answers": []
+							},
+							"validators": []
+						},
+						{
+							"label": "Client reside within the catchments area?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -565,29 +534,7 @@
 							"id": "catchment_area"
 						},
 						{
-							"label": "Residential Type",
-							"type": "obs",
-							"required": false,
-							"id": "residentialType",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "6f612018-bc64-4ab2-86f8-efde342b07d0",
-								"conceptMappings": [],
-								"answers": [
-									{
-										"concept": "515f3768-30f6-4b87-bc9c-c64ce42db187",
-										"label": "Rural"
-									},
-									{
-										"concept": "32e92a9c-cc61-4079-851a-afc56808037a",
-										"label": "Urban"
-									}
-								]
-							},
-							"validators": []
-						},
-						{
-							"label": "Challenge to regular follow-up",
+							"label": "Is challenge anticipated to regularly follow in this facility?",
 							"type": "obs",
 							"required": false,
 							"id": "regular_followup",
@@ -610,7 +557,29 @@
 							  ]
 							},
 							"validators": []
-						  }
+						  },
+						{
+							"label": "Residential Type",
+							"type": "obs",
+							"required": false,
+							"id": "residentialType",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "6f612018-bc64-4ab2-86f8-efde342b07d0",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "515f3768-30f6-4b87-bc9c-c64ce42db187",
+										"label": "Rural"
+									},
+									{
+										"concept": "32e92a9c-cc61-4079-851a-afc56808037a",
+										"label": "Urban"
+									}
+								]
+							},
+							"validators": []
+						}
 					]
 				},
 				{
@@ -621,7 +590,7 @@
 					},
 					"questions": [
 						{
-							"label": "Mother's first name",
+							"label": "Mother's First Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -636,7 +605,7 @@
 							"id": "mothers_name"
 						},
 						{
-							"label": "Mother's father name",
+							"label": "Mother's Father's Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -645,7 +614,7 @@
 							"id": "mothers_father_name"
 						},
 						{
-							"label": "Mother's grandfather's name",
+							"label": "Mother's Grand Father's Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -681,7 +650,7 @@
 									},
 									{
 										"concept": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health facility",
+										"label": "Health Facility",
 										"conceptMappings": []
 									},
 									{
@@ -773,12 +742,12 @@
 								"answers": [
 									{
 										"concept": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Spontaneous vaginal delivery",
+										"label": "Spontaneous Vaginal",
 										"conceptMappings": []
 									},
 									{
 										"concept": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cesarean section",
+										"label": "Cesarean Section",
 										"conceptMappings": []
 									},
 									{
@@ -902,22 +871,8 @@
 								"concept": "a865a098-c9ee-4c51-a13b-5c5d574d036c",
 								"answers": [
 									{
-										"concept": "167441AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "HIV DNA polymerase chain reaction, dried blood spot (DBS)",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "167441"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "399256002"
-											}
-										]
-									},
-									{
 										"concept": "163722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Rapid test for HIV",
+										"label": "Rapid HIV tests",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -1154,7 +1109,7 @@
 								"answers": [
 									{
 										"concept": "163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Within the facility",
+										"label": "From Within the Health Facility",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -1185,7 +1140,7 @@
 							"id": "entryPoint"
 						},
 						{
-							"label": "Within the facility ",
+							"label": "From Within the Health Facility",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -1212,11 +1167,6 @@
 									{
 										"concept": "160457AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Pediatric outpatient",
-										"conceptMappings": []
-									},
-									{
-										"concept": "e7e85a1a-1e45-4043-99d7-216034965bc5",
-										"label": "Other OPD",
 										"conceptMappings": []
 									},
 									{
@@ -1343,6 +1293,11 @@
 										]
 									},
 									{
+										"concept": "f6b54649-54ab-451d-b66f-94bf2887d922",
+										"label": "Pediatric IPD",
+										"conceptMappings": []
+									},
+									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Other",
 										"conceptMappings": [
@@ -1422,15 +1377,63 @@
 							"id": "otherEntryPointWithinTheFacility"
 						},
 						{
-							"label": "Outside the facility",
+							"label": "Outside the Health Facility",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "73d76014-365e-484c-bf5b-0959add4e3f3",
 								"answers": [
 									{
+										"concept": "1275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Health Center",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "1275"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "12751000105006"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "12751000105006"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "22232009"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1275"
+											},
+											{
+												"type": "CIEL",
+												"value": "1275"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1275"
+											}
+										]
+									},
+									{
+										"concept": "160480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Public Hospital",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "67190003"
+											},
+											{
+												"type": "CIEL",
+												"value": "160480"
+											}
+										]
+									},
+									{
 										"concept": "1589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Private hospital",
+										"label": "Private Hospital",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1443,8 +1446,22 @@
 										]
 									},
 									{
+										"concept": "163014AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "NGO/FBO Hospital",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "163014"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "257622000"
+											}
+										]
+									},
+									{
 										"concept": "160479AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Private clinic",
+										"label": "Private Clinic",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1459,54 +1476,11 @@
 												"value": "394794000"
 											}
 										]
-									},
+									}, 
 									{
-										"concept": "1275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health center",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "1275"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "12751000105006"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "12751000105006"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "22232009"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1275"
-											},
-											{
-												"type": "CIEL",
-												"value": "1275"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1275"
-											}
-										]
-									},
-									{
-										"concept": "163014AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "NGO/FBO hospital",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163014"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "257622000"
-											}
-										]
+										"concept": "b70be5c7-4388-4e12-9b0e-53f01ae2a3f5",
+										"label": "Self referred",
+										"conceptMappings": []
 									},
 									{
 										"concept": "163488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1519,20 +1493,6 @@
 											{
 												"type": "CIEL",
 												"value": "163488"
-											}
-										]
-									},
-									{
-										"concept": "160480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Public hospital",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "67190003"
-											},
-											{
-												"type": "CIEL",
-												"value": "160480"
 											}
 										]
 									},
@@ -1589,11 +1549,6 @@
 												"value": "74964007"
 											}
 										]
-									},
-									{
-										"concept": "b70be5c7-4388-4e12-9b0e-53f01ae2a3f5",
-										"label": "Self referred",
-										"conceptMappings": []
 									}
 								]
 							},
@@ -1648,7 +1603,7 @@
 			]
 		},
 		{
-			"label": "Care Giver/Emergency Contact",
+			"label": "Care Giver/Emergency Contact Information",
 			"sections": [
 				{
 					"label": "Care Giver/Emergency Contact",
@@ -1913,7 +1868,7 @@
 									},
 									{
 										"concept": "5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other family member",
+										"label": "Other",
 										"conceptMappings": []
 									}
 								],
