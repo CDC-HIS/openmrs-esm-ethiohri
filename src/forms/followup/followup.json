@@ -5343,7 +5343,7 @@
 					]
 				},
 				{
-					"label": "Pain  Management",
+					"label": "Pain Management",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -5476,7 +5476,7 @@
 								"answers": [
 									{
 										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "None",
+										"label": "No pain",
 										"conceptMappings": [
 											{
 												"type": "HL7-ActSubstanceAdminSubstitutionCode",
@@ -5659,6 +5659,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "assessedForPain !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "whoPainScale"
 						}
@@ -6896,16 +6899,16 @@
 								  "label": "90"
 								},
 								{
+									"concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+									"label": "120"
+								  },
+								{
 									"concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
 									"label": "150"
 								},
 								{
 								  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
 								  "label": "180"
-								},
-								{
-								  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
-								  "label": "120"
 								}
 							  ]
 							},

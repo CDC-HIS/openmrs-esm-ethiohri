@@ -806,7 +806,10 @@
 									}
 								]
 							},
-							"id": "planForNextStep"
+							"id": "planForNextStep",
+							"hide": {
+								"hideWhenExpression": "startedArt !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
 						},
 						{
 							"label": "Other plan for next step",

@@ -354,7 +354,7 @@
                             "required": false,
                             "id": "entryPoint",
                             "questionOptions": {
-                                "rendering": "checkbox",
+                                "rendering": "select",
                                 "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
                                 "conceptMappings": [],
                                 "answers": [
@@ -754,16 +754,16 @@
                                 "conceptMappings": [],
                                 "answers": [
                                     {
-                                        "concept": "07896600-8646-4f15-9a5b-92593ee5008f",
-                                        "label": "IR (Incident/Intermittent Infection)"
+                                        "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "R (ProbableRecent Infection)"
                                     },
                                     {
                                         "concept": "c0b85e2c-8c7e-456e-a0d5-1280c8bfa7d4",
                                         "label": "LT (Long-Term Infection)"
                                     },
                                     {
-                                        "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Recent"
+                                        "concept": "07896600-8646-4f15-9a5b-92593ee5008f",
+                                        "label": "IR (Invalid Result)"
                                     }
                                 ]
                             }
@@ -915,7 +915,7 @@
                             }
                         },
                         {
-                            "label": "Linked to App. service",
+                            "label": " Linked to PGBV care",
                             "type": "obs",
                             "required": false,
                             "id": "linkedToApp",

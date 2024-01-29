@@ -65,15 +65,15 @@
                   },
                   {
                     "concept": "160538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Prevention of maternal to child transmission program"
+                    "label": "PMTCT"
                   },
                   {
                     "concept": "141899AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Disseminated intravascular coagulation"
+                    "label": "Drop-in Center"
                   },
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other non-coded"
+                    "label": "Other"
                   }
                 ]
               },
@@ -200,7 +200,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEmpty('hivTestResult')"
               },
               "validators": []
             },
@@ -918,7 +918,10 @@
                   }
                 ]
               },
-              "validators": []
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "patient.gender === 'male'"
+              }
             },
             {
               "label": "Do you have an HIV positive partner",

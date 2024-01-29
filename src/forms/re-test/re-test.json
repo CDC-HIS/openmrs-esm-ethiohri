@@ -808,6 +808,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "finalResult !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "actionTakenForDiscrepant"
 						},
 						{
@@ -818,7 +821,7 @@
 								"concept": "c2d82408-ab97-4b5f-82c0-3819c2d36a46"
 							},
 							"hide": {
-								"hideWhenExpression": "actionTakenForDiscrepant !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "actionTakenForDiscrepant === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "otherActionTakenForDiscrepent"
 						}
