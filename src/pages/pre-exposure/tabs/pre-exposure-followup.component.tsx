@@ -4,10 +4,12 @@ import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   MRN_NULL_WARNING,
   PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE,
+  PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE,
+  PRE_EXPOSURE_SCREENING_NEEDED_WARNING,
 } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
-import { fetchIdentifiers } from "../../../api/api";
+import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
 import styles from "../../../root.scss";
 
 const columns = [
@@ -66,11 +68,21 @@ const PreExposureFollowupList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
   const [hasMRN, setHasMRN] = useState(false);
+  const [hasScreeningEncounter, setHasPreviousEncounter] = useState(false);
   useEffect(() => {
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
       if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
         setHasMRN(true);
+      }
+    })();
+    (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE
+      );
+      if (previousEncounters.length) {
+        setHasPreviousEncounter(true);
       }
     })();
   });
@@ -86,10 +98,15 @@ const PreExposureFollowupList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
+          hideFormLauncher: !hasMRN || !hasScreeningEncounter,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+      {!hasScreeningEncounter && (
+        <p className={styles.patientName}>
+          {PRE_EXPOSURE_SCREENING_NEEDED_WARNING}
+        </p>
+      )}
     </>
   );
 };

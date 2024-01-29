@@ -32,9 +32,9 @@ export const POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE =
 export const POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE =
   "c7f3c349-8771-432b-8e1e-240a53b3bda3";
 export const PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE =
-  "69b60ded-868d-4b6a-8f49-b0c84c18cec6";
+  "8c2b6a9b-4795-417d-affe-2530a753b715";
 export const PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE =
-  "df13ff58-d86a-42ec-ace1-5c3ad8045e2e";
+  "bc423d48-af6f-4354-af22-fec8ff1c0308";
 
 //Intake A concepts
 export const male = "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -147,6 +147,9 @@ export const MRNIdentifierUUID = "c4235b37-9162-40e7-b6dc-068a8f8a01a3";
 
 export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN before an Intake form can be filled ! Please add an MRN on patient details.";
+
+export const PRE_EXPOSURE_SCREENING_NEEDED_WARNING =
+  "* Patient needs to have a Pre-Exposure Screening before a Pre-Exposure followup up can be filled !;";
 
 export const AGE_ABOVE_THREE_WARNING =
   "* Children above three years old are not eligible for PMTCT !";
