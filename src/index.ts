@@ -30,6 +30,7 @@ import {
   CalcTreatmentEndDate,
   CalcMonthsOnART,
   CalcViralLoadStatus,
+  CalcAdultNutritionalStatus,
   getGender,
   getIdentifier,
 } from "./custom-expressions";
@@ -53,6 +54,7 @@ export function startupApp() {
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
   registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
   registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
+  registerExpressionHelper("CustomAdultNutritionalStatusCalc", CalcAdultNutritionalStatus);
   registerExpressionHelper("getGender", getGender);
   registerExpressionHelper("getIdentifier", getIdentifier);
 

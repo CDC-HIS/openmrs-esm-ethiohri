@@ -84,13 +84,37 @@ export function CalcMonthsOnART(artStartDate: Date) {
 export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
-    if (viralLoadCount > 50) {
-      resultViralLoadStatus = "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    if (viralLoadCount >= 50) {
+      resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else if (viralLoadCount >= 51 && viralLoadCount <= 1000) {
+      resultViralLoadStatus = "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else if (viralLoadCount > 1000) {
+      resultViralLoadStatus = "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     } else {
-      resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      resultViralLoadStatus = "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     }
   }
-  return resultViralLoadStatus ?? null;
+  return viralLoadCount ? resultViralLoadStatus : null;
+}
+
+export function CalcAdultNutritionalStatus(bmi: number) {
+  let resultAdultNutritionalStatus: string;
+  if(bmi) {
+    if (bmi >= 18.5 && bmi <= 24.99) {
+      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else if (bmi >= 17 && bmi <= 18.49) {
+      resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else if (bmi >= 16 && bmi <= 16.99) {
+      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else if (bmi < 16) {
+      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else if (bmi >= 25 && bmi <= 29.99) {
+      resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else {
+      resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    }
+  }
+  return bmi ? resultAdultNutritionalStatus : null;
 }
 
 export async function getGender(patient) {
