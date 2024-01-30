@@ -84,7 +84,7 @@ export function CalcMonthsOnART(artStartDate: Date) {
 export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
-    if (viralLoadCount >= 50) {
+    if (viralLoadCount <= 50) {
       resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     } else if (viralLoadCount >= 51 && viralLoadCount <= 1000) {
       resultViralLoadStatus = "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -115,6 +115,20 @@ export function CalcAdultNutritionalStatus(bmi: number) {
     }
   }
   return bmi ? resultAdultNutritionalStatus : null;
+}
+
+export function CalcNutritionalScreening(bmi: number) {
+  let resultNutritionalScreening: string;
+  if(bmi) {
+    if (bmi >= 18.5 && bmi <= 24.99) {
+      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else if (bmi >= 17 && bmi <= 29.99) {
+      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    } else {
+      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    }
+  }
+  return bmi ? resultNutritionalScreening : null;
 }
 
 export async function getGender(patient) {

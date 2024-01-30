@@ -1224,6 +1224,9 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
+								"calculate": {
+									"calculateExpression": "CustomNutritionalScreeningCalc('bmi')"
+								},
 								"answers": [
 									{
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

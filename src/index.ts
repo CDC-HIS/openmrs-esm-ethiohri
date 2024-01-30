@@ -31,6 +31,7 @@ import {
   CalcMonthsOnART,
   CalcViralLoadStatus,
   CalcAdultNutritionalStatus,
+  CalcNutritionalScreening,
   getGender,
   getIdentifier,
 } from "./custom-expressions";
@@ -55,6 +56,7 @@ export function startupApp() {
   registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
   registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
   registerExpressionHelper("CustomAdultNutritionalStatusCalc", CalcAdultNutritionalStatus);
+  registerExpressionHelper("CustomNutritionalScreeningCalc", CalcNutritionalScreening);
   registerExpressionHelper("getGender", getGender);
   registerExpressionHelper("getIdentifier", getIdentifier);
 
