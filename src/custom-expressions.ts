@@ -97,38 +97,50 @@ export function CalcViralLoadStatus(viralLoadCount: number) {
   return viralLoadCount ? resultViralLoadStatus : null;
 }
 
-export function CalcAdultNutritionalStatus(bmi: number) {
+export function CalcBMI(height: number, weight: number) {
+  let resultBMI;
+  let heightInMeters = height / 100;
+  if(height && weight) {
+    resultBMI = weight / (heightInMeters * heightInMeters);
+    resultBMI = resultBMI.toFixed(2);
+  }
+  return height && weight ? resultBMI : null;
+}
+
+export function CalcAdultNutritionalStatus(height: number, weight: number) {
+  let resultBMI = CalcBMI(height, weight);
   let resultAdultNutritionalStatus: string;
-  if(bmi) {
-    if (bmi >= 18.5 && bmi <= 24.99) {
+  if(resultBMI) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    } else if (bmi >= 17 && bmi <= 18.49) {
+    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
       resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    } else if (bmi >= 16 && bmi <= 16.99) {
+    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
       resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    } else if (bmi < 16) {
+    } else if (resultBMI < 16) {
       resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    } else if (bmi >= 25 && bmi <= 29.99) {
+    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
       resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     } else {
       resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     }
   }
-  return bmi ? resultAdultNutritionalStatus : null;
+  return resultBMI ? resultAdultNutritionalStatus : null;
 }
 
-export function CalcNutritionalScreening(bmi: number) {
+export function CalcNutritionalScreening(height: number, weight: number) {
   let resultNutritionalScreening: string;
-  if(bmi) {
-    if (bmi >= 18.5 && bmi <= 24.99) {
+  let resultBMI = CalcBMI(height, weight);
+  if(resultBMI) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-    } else if (bmi >= 17 && bmi <= 29.99) {
+    } else if (resultBMI <= 16 && resultBMI <= 18.49) {
       resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     } else {
       resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     }
   }
-  return bmi ? resultNutritionalScreening : null;
+  return resultBMI ? resultNutritionalScreening : null;
 }
 
 export async function getGender(patient) {

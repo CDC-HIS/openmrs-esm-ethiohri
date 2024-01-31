@@ -535,7 +535,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "Math.round(calcBMI('height','weight'))"
+									"calculateExpression": "CustomBMICalc('height','weight'))"
 								},
 								"rendering": "number",
 								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
@@ -687,7 +687,7 @@
 								"rendering": "radio",
 								"concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
 								"calculate": {
-									"calculateExpression": "CustomAdultNutritionalStatusCalc('bmi')"
+									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight')"
 								},
 								"answers": [
 									{
@@ -1225,7 +1225,7 @@
 								"rendering": "radio",
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
 								"calculate": {
-									"calculateExpression": "CustomNutritionalScreeningCalc('bmi')"
+									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight')"
 								},
 								"answers": [
 									{

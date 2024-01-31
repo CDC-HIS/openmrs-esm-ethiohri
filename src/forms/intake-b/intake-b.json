@@ -1533,7 +1533,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "Math.round(calcBMI('height','weight'))"
+									"calculateExpression": "CustomBMICalc('height','weight'))"
 								},
 								"rendering": "number",
 								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",

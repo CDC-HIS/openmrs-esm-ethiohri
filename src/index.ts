@@ -32,6 +32,7 @@ import {
   CalcViralLoadStatus,
   CalcAdultNutritionalStatus,
   CalcNutritionalScreening,
+  CalcBMI,
   getGender,
   getIdentifier,
 } from "./custom-expressions";
@@ -57,6 +58,7 @@ export function startupApp() {
   registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
   registerExpressionHelper("CustomAdultNutritionalStatusCalc", CalcAdultNutritionalStatus);
   registerExpressionHelper("CustomNutritionalScreeningCalc", CalcNutritionalScreening);
+  registerExpressionHelper("CustomBMICalc", CalcBMI);
   registerExpressionHelper("getGender", getGender);
   registerExpressionHelper("getIdentifier", getIdentifier);
 
