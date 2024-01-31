@@ -16,88 +16,60 @@
 							"label": "Occupation",
 							"type": "obs",
 							"required": false,
-							"id": "occupations",
+							"id": "occupation",
 							"questionOptions": {
 							  "rendering": "select",
 							  "concept": "6b28ccbd-3cea-4d7f-81a7-25c770e45c32",
 							  "conceptMappings": [],
 							  "answers": [
 								{
-								  "concept": "159613AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Casual labor"
-								},
-								{
 								  "concept": "164832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Cleaner"
 								},
 								{
-								  "concept": "159466AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Driver"
-								},
-								{
-								  "concept": "1538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Farmer"
-								},
-								{
-								  "concept": "166513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Female sex worker"
-								},
-								{
-								  "concept": "160295AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Housewife"
-								},
-								{
-								  "concept": "159464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Housework"
-								},
-								{
 								  "concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Medical Assistant"
+								  "label": "Health Assistant"
 								},
 								{
 								  "concept": "165796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Medical laboratory technician"
+								  "label": "Laboratory professional"
 								},
 								{
 								  "concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Medical Officer/Doctor"
-								},
-								{
-								  "concept": "5217316b-3c4a-4716-8137-466c08bb4c23",
-								  "label": "Non-governmental organisation"
+								  "label": "Physician"
 								},
 								{
 								  "concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Nurse"
 								},
 								{
-								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Other"
-								},
-								{
 								  "concept": "164969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Responsible medical officer"
+								  "label": "Health officer"
 								},
 								{
 								  "concept": "164833AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Sanitarian"
 								},
 								{
-								  "concept": "159673AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Small business owner"
-								},
-								{
-								  "concept": "159465AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Student"
-								},
-								{
-								  "concept": "123801AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Unemployed"
+									"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Other"
 								}
 							  ]
 							},
 							"validators": []
 						  },
+						  {
+							"label": "Other occupation",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "4e694dca-33b5-4694-b2b7-6b738198d217"
+							},
+							"id": "otherOccupation",
+							"hide": {
+								"hideWhenExpression": "occupations !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						},
 						{
 							"label": "Case Team",
 							"type": "obs",
@@ -132,6 +104,18 @@
 										"label": "Other"
 									}
 								]
+							}
+						},
+						{
+							"label": "Other case team",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "dfe7b0bf-6498-4d92-8f36-bb1a7cc68e50"
+							},
+							"id": "otherCaseTeam",
+							"hide": {
+								"hideWhenExpression": "caseTeam !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							}
 						}
 					]
