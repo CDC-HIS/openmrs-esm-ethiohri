@@ -535,7 +535,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "Math.round(calcBMI('height','weight'))"
+									"calculateExpression": "CustomBMICalc('height','weight'))"
 								},
 								"rendering": "number",
 								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
@@ -546,7 +546,7 @@
 							"hide": {
 								"hideWhenExpression": "age < 5"
 							},
-							"id": "BMI"
+							"id": "bmi"
 						},
 						{
 							"label": "Edema",
@@ -684,71 +684,12 @@
 							"label": "Nutritional status - Adult",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "radio",
 								"concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
+								"calculate": {
+									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight')"
+								},
 								"answers": [
-									{
-										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "301336003"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E66.9"
-											}
-										]
-									},
 									{
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Normal",
@@ -842,6 +783,68 @@
 											{
 												"type": "ICD-10-WHO",
 												"value": "E43"
+											}
+										]
+									},
+									{
+										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Overweight",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "301336003"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E66.9"
 											}
 										]
 									},
@@ -1221,6 +1224,9 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
+								"calculate": {
+									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight')"
+								},
 								"answers": [
 									{
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6329,7 +6335,7 @@
 							"hide": {
 								"hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "date"
+							"id": "dateViralLoadRequested"
 						},
 						{
 							"label": "Date result received",

@@ -63,6 +63,140 @@
                           }
                       },
                       {
+                        "label": "Contact first name",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactFirstName",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "PIH",
+                                    "value": "2725"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "166102"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "408677003"
+                                }
+                            ],
+                            "answers": []
+                        },
+                        "validators": []
+                    },
+                    {
+                        "label": "Contact middle name",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactMiddleName",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "716057004"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "166574"
+                                }
+                            ],
+                            "answers": []
+                        },
+                        "validators": []
+                    },
+                    {
+                        "label": "Contact last name",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactLastName",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "PIH",
+                                    "value": "2724"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "397678008"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "166103"
+                                }
+                            ],
+                            "answers": []
+                        },
+                        "validators": []
+                    },
+                    {
+                        "label": "Contact Age",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactAge",
+                        "questionOptions": {
+                          "rendering": "number",
+                          "concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "max": 200,
+                          "min": 0,
+                          "showDate": "",
+                          "conceptMappings": [
+                              {
+                                  "type": "CIEL",
+                                  "value": "1532"
+                              }
+                          ]
+                      }
+                    },
+                    {
+                        "label": "Gender",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactGender",
+                        "questionOptions": {
+                            "rendering": "radio",
+                            "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "LOINC",
+                                    "value": "72143-4"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "1533"
+                                }
+                            ],
+                            "answers": [
+                                {
+                                    "concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Female"
+                                },
+                                {
+                                    "concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Male"
+                                }
+                            ]
+                        },
+                        "validators": []
+                    },
+                      {
                           "label": "Current test date",
                           "type": "obs",
                           "required": false,
@@ -164,148 +298,6 @@
                                   }
                               ]
                           }
-                      },
-                      {
-                          "label": "Contact first name",
-                          "type": "obs",
-                          "required": false,
-                          "id": "contactFirstName",
-                          "questionOptions": {
-                              "rendering": "text",
-                              "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "PIH",
-                                      "value": "2725"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "166102"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "SNOMED-CT",
-                                      "value": "408677003"
-                                  }
-                              ],
-                              "answers": []
-                          },
-                          "validators": []
-                      },
-                      {
-                          "label": "Contact middle name",
-                          "type": "obs",
-                          "required": false,
-                          "id": "contactMiddleName",
-                          "questionOptions": {
-                              "rendering": "text",
-                              "concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "SNOMED-CT",
-                                      "value": "716057004"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "166574"
-                                  }
-                              ],
-                              "answers": []
-                          },
-                          "validators": []
-                      },
-                      {
-                          "label": "Contact last name",
-                          "type": "obs",
-                          "required": false,
-                          "id": "contactLastName",
-                          "questionOptions": {
-                              "rendering": "text",
-                              "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "PIH",
-                                      "value": "2724"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "SNOMED-CT",
-                                      "value": "397678008"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "166103"
-                                  }
-                              ],
-                              "answers": []
-                          },
-                          "validators": []
-                      },
-                      {
-                          "label": "Contact birth date",
-                          "type": "obs",
-                          "required": false,
-                          "id": "contactBirthDate",
-                          "questionOptions": {
-                              "rendering": "eth-date",
-                              "concept": "166575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "166575"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "SNOMED-CT",
-                                      "value": "184099003"
-                                  }
-                              ],
-                              "answers": []
-                          }
-                      },
-                      {
-                          "label": "Gender",
-                          "type": "obs",
-                          "required": false,
-                          "id": "contactGender",
-                          "questionOptions": {
-                              "rendering": "radio",
-                              "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "LOINC",
-                                      "value": "72143-4"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "1533"
-                                  }
-                              ],
-                              "answers": [
-                                  {
-                                      "concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                      "label": "Female gender"
-                                  },
-                                  {
-                                      "concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                      "label": "Male gender"
-                                  },
-                                  {
-                                      "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                      "label": "Unknown"
-                                  }
-                              ]
-                          },
-                          "validators": []
                       },
                       {
                           "label": "Contact category",
