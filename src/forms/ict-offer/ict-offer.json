@@ -58,6 +58,9 @@
                             "type": "obs",
                             "required": false,
                             "id": "accepted",
+                            "hide": {
+                                "hideWhenExpression": "offered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
                             "questionOptions": {
                                 "rendering": "radio",
                                 "concept": "fdcbadef-40c5-486a-a30b-a88477ab90ae",
