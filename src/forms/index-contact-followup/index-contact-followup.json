@@ -196,6 +196,34 @@
                         },
                         "validators": []
                     },
+                    {
+                        "label": "Contact phone number",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactPhoneNumber",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "159635"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "184103008"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "org.openmrs.module.mdrtb",
+                                    "value": "TELEPHONE NUMBER"
+                                }
+                            ],
+                            "answers": []
+                        }
+                    },
                       {
                           "label": "Current Test Date",
                           "type": "obs",
@@ -441,34 +469,6 @@
                                       "label": "Provider"
                                   }
                               ]
-                          }
-                      },
-                      {
-                          "label": "Contact phone number",
-                          "type": "obs",
-                          "required": false,
-                          "id": "contactPhoneNumber",
-                          "questionOptions": {
-                              "rendering": "text",
-                              "concept": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "159635"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "SNOMED-CT",
-                                      "value": "184103008"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "org.openmrs.module.mdrtb",
-                                      "value": "TELEPHONE NUMBER"
-                                  }
-                              ],
-                              "answers": []
                           }
                       },
                       {

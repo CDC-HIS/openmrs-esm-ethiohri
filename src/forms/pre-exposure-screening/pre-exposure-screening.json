@@ -13,7 +13,7 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Registration date",
+              "label": "Registration Date",
               "type": "obs",
               "required": false,
               "id": "registrationDate",
@@ -26,7 +26,7 @@
               "validators": []
             },
             {
-              "label": "Screening date",
+              "label": "Screening Date",
               "type": "obs",
               "required": false,
               "id": "screeningDate",
@@ -46,11 +46,11 @@
       "label": "PrEP Screening",
       "sections": [
         {
-          "label": "Screening ",
+          "label": "Screening",
           "isExpanded": "true",
           "questions": [
             {
-              "label": "PreP provision site",
+              "label": "PrEP provision site",
               "type": "obs",
               "required": false,
               "id": "provisionSite",
@@ -80,10 +80,10 @@
               "validators": []
             },
             {
-              "label": "Referred from ",
+              "label": "Referred from",
               "type": "obs",
               "required": false,
-              "id": "referredFrom ",
+              "id": "referredFrom",
               "questionOptions": {
                 "rendering": "select",
                 "concept": "e2fc6b60-70e8-4a87-a164-fb175c788330",
@@ -129,7 +129,7 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "HIV test done ",
+              "label": "HIV test done",
               "type": "obs",
               "required": false,
               "id": "hivTestDone",
@@ -586,10 +586,6 @@
                   {
                     "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "No"
-                  },
-                  {
-                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
                   }
                 ]
               },
@@ -691,10 +687,6 @@
                     "label": "Natural family planning"
                   },
                   {
-                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "None"
-                  },
-                  {
                     "concept": "1359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Norplant (implantable contraceptive)"
                   },
@@ -707,10 +699,6 @@
                     "label": "Oral contraception"
                   },
                   {
-                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other"
-                  },
-                  {
                     "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Sexual abstinence"
                   },
@@ -719,12 +707,12 @@
                     "label": "Tubal ligation procedure"
                   },
                   {
-                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
-                  },
-                  {
                     "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Vasectomy"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
                   }
                 ]
               },
@@ -815,7 +803,7 @@
               }
             },
             {
-              "label": "STI treatment started ",
+              "label": "STI treatment started",
               "type": "obs",
               "required": false,
               "id": "stiTreatmentStarted",
@@ -840,7 +828,7 @@
               "validators": []
             },
             {
-              "label": "STI treatment started date",
+              "label": "STI treatment started Date",
               "type": "obs",
               "required": false,
               "id": "stiTreatmentStartedDate",
@@ -981,17 +969,13 @@
                   {
                     "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
                     "label": "No"
-                  },
-                  {
-                    "concept": "1138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
                   }
                 ]
               },
               "validators": []
             },
             {
-              "label": "Is your partner on HIV treatment ",
+              "label": "Is your partner on HIV treatment",
               "type": "obs",
               "required": false,
               "id": "isYourPartnerOnHIVTreatment ",
@@ -1018,10 +1002,6 @@
                   {
                     "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "No"
-                  },
-                  {
-                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
                   }
                 ]
               },
@@ -1059,7 +1039,7 @@
               }
             },
             {
-              "label": "How long has your partner been on treatment ",
+              "label": "How long has your partner been on treatment",
               "type": "obs",
               "required": false,
               "id": "howLongHasYourPartnerBeenOnTreatment",
@@ -1105,10 +1085,6 @@
                   {
                     "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Unsuppressed"
-                  },
-                  {
-                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
                   }
                 ]
               }
@@ -1190,10 +1166,6 @@
                   {
                     "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "No"
-                  },
-                  {
-                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Unknown"
                   }
                 ]
               },
@@ -1455,7 +1427,7 @@
               "validators": []
             },
             {
-              "label": "PrEP start date",
+              "label": "PrEP start Date",
               "type": "obs",
               "required": false,
               "id": "prepStartDate",

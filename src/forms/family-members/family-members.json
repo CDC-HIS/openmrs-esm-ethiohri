@@ -13,6 +13,36 @@
 					"isExpanded": "true",
 					"questions": [
 						{
+							"label": "Family member relationship",
+							"type": "obs",
+							"required": false,
+							"id": "familyRelationship",
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "c6198ee6-5248-45c4-91a7-c6498bf45c54",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Child"
+								},
+								{
+								  "concept": "1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Parent"
+								},
+								{
+								  "concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Partner or spouse"
+								},
+								{
+								  "concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Sibling"
+								}
+							  ]
+							},
+							"validators": []
+						  },
+						{
 							"label": "Does the client have family members (spouse/parent and child(ren)/siblings < 15 years old ",
 							"type": "obs",
 							"questionOptions": {
