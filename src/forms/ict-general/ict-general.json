@@ -35,6 +35,9 @@
                             "required": false,
                             "id": "indexFirstName",
                             "questionOptions": {
+                                "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueString"
+								},
                                 "rendering": "text",
                                 "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
@@ -64,6 +67,9 @@
                             "required": false,
                             "id": "indexMiddleName",
                             "questionOptions": {
+                                "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueString"
+								},
                                 "rendering": "text",
                                 "concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
@@ -88,6 +94,9 @@
                             "required": false,
                             "id": "indexLastName",
                             "questionOptions": {
+                                "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueString"
+								},
                                 "rendering": "text",
                                 "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
@@ -117,6 +126,9 @@
                             "required": false,
                             "id": "maritalStatus",
                             "questionOptions": {
+                                "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'e6eb59a1-8430-491d-b948-5b582f87d5ea', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueCodeableConcept?.coding?"
+								},
                                 "rendering": "select",
                                 "concept": "1054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "conceptMappings": [
@@ -635,6 +647,9 @@
                             },
                             "id": "artStartDate",
                             "questionOptions": {
+                                "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ae329187-6232-4142-aa91-22c85bc8e5b5', 'dc94a223-66bc-45b7-8e34-d13b8686f239'))?.valueDateTime"
+								},
                                 "rendering": "eth-date",
                                 "concept": "ae329187-6232-4142-aa91-22c85bc8e5b5",
                                 "conceptMappings": [
@@ -686,6 +701,9 @@
                             },
                             "id": "uan",
                             "questionOptions": {
+                                "calculate": {
+                                    "calculateExpression": "getIdentifier(patient, 'UAN')"
+                                },
                                 "rendering": "text",
                                 "concept": "c8d98ef1-5e58-417c-a7c3-7f30f76a7155",
                                 "conceptMappings": [
