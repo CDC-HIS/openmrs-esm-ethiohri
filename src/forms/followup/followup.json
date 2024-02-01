@@ -535,7 +535,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "CustomBMICalc('height','weight'))"
+									"calculateExpression": "Math.round(calcBMI('height','weight'))"
 								},
 								"rendering": "number",
 								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
@@ -10224,7 +10224,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '9580690a-0e84-451a-ada9-c4478d999dc2' && screeningStrategy !== '8304ffef-ac7b-425c-af3b-6ddc4d052ca8'"
+								"hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 							},
 							"id": "hpvSubtype"
 						},
@@ -10237,7 +10237,7 @@
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '9580690a-0e84-451a-ada9-c4478d999dc2' && screeningStrategy !== '8304ffef-ac7b-425c-af3b-6ddc4d052ca8'"
+								"hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 							},
 							"id": "hpvDnaSampleCollectedDate"
 						},
@@ -10324,69 +10324,11 @@
 										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
 										"label": "Negative",
 										"conceptMappings": []
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B6.DE2"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "unknown"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											}
-										]
 									}
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '9580690a-0e84-451a-ada9-c4478d999dc2' && screeningStrategy !== '8304ffef-ac7b-425c-af3b-6ddc4d052ca8'"
+								"hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 							},
 							"id": "hpvScreeningResult"
 						},
@@ -10398,7 +10340,7 @@
 								"concept": "510f2a47-3761-4903-b7eb-8ea389cecfe9"
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '9580690a-0e84-451a-ada9-c4478d999dc2' && screeningStrategy !== '8304ffef-ac7b-425c-af3b-6ddc4d052ca8'"
+								"hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 							},
 							"id": "hpvDnaResultReceivedDate"
 						},
@@ -10520,7 +10462,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '9580690a-0e84-451a-ada9-c4478d999dc2' && screeningStrategy !== '8304ffef-ac7b-425c-af3b-6ddc4d052ca8'"
+								"hideWhenExpression": "screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1'"
 							},
 							"id": "viaScreeningResult"
 						},
@@ -10534,7 +10476,7 @@
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '9580690a-0e84-451a-ada9-c4478d999dc2' && screeningStrategy !== '8304ffef-ac7b-425c-af3b-6ddc4d052ca8'"
+								"hideWhenExpression": "screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1'"
 							},
 							"id": "viaScreeningDate"
 						},

@@ -18,7 +18,7 @@
                     "isExpanded": "true",
                     "questions": [
                       {
-                          "label": "Elicited date",
+                          "label": "Elicited Date",
                           "type": "obs",
                           "required": false,
                           "id": "elicitedDate",
@@ -63,7 +63,7 @@
                           }
                       },
                       {
-                        "label": "Contact first name",
+                        "label": "Contact First Name",
                         "type": "obs",
                         "required": false,
                         "id": "contactFirstName",
@@ -92,7 +92,7 @@
                         "validators": []
                     },
                     {
-                        "label": "Contact middle name",
+                        "label": "Contact Middle Name",
                         "type": "obs",
                         "required": false,
                         "id": "contactMiddleName",
@@ -116,7 +116,7 @@
                         "validators": []
                     },
                     {
-                        "label": "Contact last name",
+                        "label": "Contact Last Name",
                         "type": "obs",
                         "required": false,
                         "id": "contactLastName",
@@ -196,8 +196,36 @@
                         },
                         "validators": []
                     },
+                    {
+                        "label": "Contact phone number",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactPhoneNumber",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "159635"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "184103008"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "org.openmrs.module.mdrtb",
+                                    "value": "TELEPHONE NUMBER"
+                                }
+                            ],
+                            "answers": []
+                        }
+                    },
                       {
-                          "label": "Current test date",
+                          "label": "Current Test Date",
                           "type": "obs",
                           "required": false,
                           "id": "currentTestDate",
@@ -209,7 +237,7 @@
                           }
                       },
                       {
-                          "label": "Current result",
+                          "label": "Current Result",
                           "type": "obs",
                           "required": false,
                           "id": "currentResult",
@@ -218,18 +246,18 @@
                               "concept": "fee36db1-6b65-4625-b1ac-6290716f39b7",
                               "conceptMappings": [],
                               "answers": [
-                                  {
-                                      "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                      "label": "Inconclusive"
-                                  },
-                                  {
-                                      "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                                      "label": "Negative"
-                                  },
-                                  {
-                                      "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                      "label": "Positive"
-                                  }
+                                {
+                                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Positive"
+                                },
+                                {
+                                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                                    "label": "Negative"
+                                },
+                                {
+                                    "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Inconclusive"
+                                }
                               ]
                           }
                       },
@@ -444,34 +472,6 @@
                           }
                       },
                       {
-                          "label": "Contact phone number",
-                          "type": "obs",
-                          "required": false,
-                          "id": "contactPhoneNumber",
-                          "questionOptions": {
-                              "rendering": "text",
-                              "concept": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                              "conceptMappings": [
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "CIEL",
-                                      "value": "159635"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "SNOMED-CT",
-                                      "value": "184103008"
-                                  },
-                                  {
-                                      "relationship": "SAME-AS",
-                                      "type": "org.openmrs.module.mdrtb",
-                                      "value": "TELEPHONE NUMBER"
-                                  }
-                              ],
-                              "answers": []
-                          }
-                      },
-                      {
                           "label": "Contact trials outcome",
                           "type": "obs",
                           "required": false,
@@ -562,7 +562,7 @@
                           }
                       },
                       {
-                          "label": "Prior test date (Estimated)",
+                          "label": "Prior Test Date (Estimated)",
                           "type": "obs",
                           "required": false,
                           "id": "priorTestDate",
@@ -577,7 +577,7 @@
                           }
                       },
                       {
-                          "label": "HIVST kit distributed date",
+                          "label": "HIVST kit distributed Date",
                           "type": "obs",
                           "required": false,
                           "id": "hivstKit",
@@ -610,7 +610,7 @@
                           }
                       },
                       {
-                          "label": "HIVST report date",
+                          "label": "HIVST report Date",
                           "type": "obs",
                           "required": false,
                           "id": "hivstReportDate",

@@ -30,7 +30,7 @@
                             }
                         },
                         {
-                            "label": "Index first name",
+                            "label": "Index First Name",
                             "type": "obs",
                             "required": false,
                             "id": "indexFirstName",
@@ -62,7 +62,7 @@
                             "validators": []
                         },
                         {
-                            "label": "Index middle name",
+                            "label": "Index Middle Name",
                             "type": "obs",
                             "required": false,
                             "id": "indexMiddleName",
@@ -89,7 +89,7 @@
                             "validators": []
                         },
                         {
-                            "label": "Index last name",
+                            "label": "Index Last Name",
                             "type": "obs",
                             "required": false,
                             "id": "indexLastName",
@@ -121,7 +121,7 @@
                             "validators": []
                         },
                         {
-                            "label": "Marital status",
+                            "label": "Marital Status",
                             "type": "obs",
                             "required": false,
                             "id": "maritalStatus",
@@ -180,8 +180,8 @@
                                 ],
                                 "answers": [
                                     {
-                                        "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Divorced"
+                                        "concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Married"
                                     },
                                     {
                                         "concept": "135704AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -192,8 +192,16 @@
                                         "label": "Living with partner"
                                     },
                                     {
-                                        "concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Married"
+                                        "concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Separated"
+                                    },
+                                    {
+                                        "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Divorced"
+                                    },
+                                    {
+                                        "concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Widowed"
                                     },
                                     {
                                         "concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -202,14 +210,6 @@
                                     {
                                         "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                         "label": "Other non-coded"
-                                    },
-                                    {
-                                        "concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Separated"
-                                    },
-                                    {
-                                        "concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Widowed"
                                     }
                                 ]
                             }
@@ -287,10 +287,6 @@
                                     {
                                         "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                         "label": "No"
-                                    },
-                                    {
-                                        "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Unknown"
                                     }
                                 ]
                             }
@@ -594,7 +590,7 @@
                             }
                         },
                         {
-                            "label": "ART status",
+                            "label": "ART Status",
                             "type": "obs",
                             "required": false,
                             "id": "artStatus",
@@ -608,38 +604,38 @@
                                         "label": "Tested HIV+ (HIV Positive)"
                                     },
                                     {
-                                        "concept": "ed799b96-4e99-4abd-ac9d-87670bcf050c",
-                                        "label": "Started"
-                                    },
-                                    {
-                                        "concept": "167156AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Refused"
-                                    },
-                                    {
-                                        "concept": "5b0bd7f0-6792-4e9b-b250-7589ffc4db0b",
-                                        "label": "Referred"
-                                    },
-                                    {
-                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Other"
+                                        "concept": "d0409cbe-1932-446a-a2d6-149922204080",
+                                        "label": "On adherence preparation"
                                     },
                                     {
                                         "concept": "f6ce58c8-1346-48ab-8f62-74edd9b8a7b7",
                                         "label": "On OI management"
                                     },
                                     {
-                                        "concept": "d0409cbe-1932-446a-a2d6-149922204080",
-                                        "label": "On adherence preparation"
+                                        "concept": "ed799b96-4e99-4abd-ac9d-87670bcf050c",
+                                        "label": "Started"
+                                    },
+                                    {
+                                        "concept": "5b0bd7f0-6792-4e9b-b250-7589ffc4db0b",
+                                        "label": "Referred"
+                                    },
+                                    {
+                                        "concept": "167156AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Refused"
                                     },
                                     {
                                         "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                         "label": "Died"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
                                     }
                                 ]
                             }
                         },
                         {
-                            "label": "ART start date",
+                            "label": "ART Start Date",
                             "type": "obs",
                             "required": false,
                             "hide": {
@@ -882,8 +878,8 @@
                                 "conceptMappings": [],
                                 "answers": [
                                     {
-                                        "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Divorced"
+                                        "concept": "b47f53d9-e053-4caf-ac1e-f7fee48d89fc",
+                                        "label": "No AE (Adverse event)"
                                     },
                                     {
                                         "concept": "8da00bae-4655-46ba-b442-e3ca50b8bf96",
@@ -898,16 +894,12 @@
                                         "label": "Loss of relationship"
                                     },
                                     {
+                                        "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Divorced"
+                                    },
+                                    {
                                         "concept": "c405b20b-0845-4721-b09b-d067fd36a594",
                                         "label": "Loss of support"
-                                    },
-                                    {
-                                        "concept": "b47f53d9-e053-4caf-ac1e-f7fee48d89fc",
-                                        "label": "No AE (Adverse event)"
-                                    },
-                                    {
-                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Other"
                                     },
                                     {
                                         "concept": "152292AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -928,6 +920,10 @@
                                     {
                                         "concept": "a9cd93c0-fcd4-46d3-80aa-12d1a74fc8d4",
                                         "label": "Verbal abuse"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
                                     }
                                 ]
                             }
