@@ -456,7 +456,7 @@
 							"validators": []
 						},
 						{
-							"label": "Occupation",
+							"label": "Marital Status",
 							"type": "obs",
 							"required": false,
 							"id": "childsCareGiverMaritalStatus",
