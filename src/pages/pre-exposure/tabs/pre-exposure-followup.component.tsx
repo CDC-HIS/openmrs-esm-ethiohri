@@ -14,34 +14,68 @@ import styles from "../../../root.scss";
 
 const columns = [
   {
-    key: "finalResult",
-    header: "Final Test Result",
+    key: "followupDate",
+    header: "Follow-up Date",
     getValue: (encounter) => {
-      return getData(encounter, "e16b0068-b6a2-46b7-aba9-e3be00a7b4ab");
+      return getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296");
+    },
+  },
+  {
+    key: "finalTestResult",
+    header: "HIV Test Result",
+    getValue: (encounter) => {
+      return getData(encounter, "40d1c129-5373-4005-95b1-409e56db9743");
+    },
+  },
+  {
+    key: "symptomsOfHIVInfection",
+    header: "Sign of HIV?",
+    getValue: (encounter) => {
+      return getData(encounter, "402e8f8c-0931-4e6a-9d53-962ab9519d4d");
+    },
+  },
+  {
+    key: "linkageToHivCare",
+    header: "Linkage to HIV Care",
+    getValue: (encounter) => {
+      return getData(encounter, "02776be4-f96e-40d9-9615-2db00cae6df5");
+    },
+  },
+  {
+    key: "isClientPregnant",
+    header: "Pregnant/BreastFeeding?",
+    getValue: (encounter) => {
+      return getData(encounter, "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
     key: "followupStatus",
-    header: "Followup status",
+    header: "Follow-up Status",
     getValue: (encounter) => {
       return getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
     },
   },
   {
-    key: "dispensedDose",
-    header: "Dispensed dose",
+    key: "prepRegimen",
+    header: "PrEP Regimen",
+    getValue: (encounter) => {
+      return getData(encounter, "722ff3de-e2d1-4df4-8d05-ca881dc7073b");
+    },
+  },
+  {
+    key: "arvDispensedInDays",
+    header: "Dose Days",
     getValue: (encounter) => {
       return getData(encounter, "f3911009-1a8f-42ee-bdfc-1e343c2839aa");
     },
   },
   {
     key: "nextVisitDate",
-    header: "Next visit date",
+    header: "Next Visit Date",
     getValue: (encounter) => {
-      return getData(encounter, "c596f199-4d76-4eca-b3c4-ffa631c0aee9", true);
+      return getData(encounter, "c596f199-4d76-4eca-b3c4-ffa631c0aee9");
     },
   },
-  ,
   {
     key: "actions",
     header: "Actions",

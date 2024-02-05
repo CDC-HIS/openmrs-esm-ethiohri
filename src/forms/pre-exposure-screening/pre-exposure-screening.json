@@ -1496,6 +1496,7 @@
               "label": "Number of first dose day provided",
               "type": "obs",
 							"required": "true",
+              "id": "doseDays",
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
