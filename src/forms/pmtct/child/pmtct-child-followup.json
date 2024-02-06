@@ -817,7 +817,7 @@
               "validators": []
             },
             {
-              "label": "HIV DNA result",
+              "label": "DNA PCR result",
               "type": "obs",
               "required": false,
               "id": "testResult",

@@ -560,6 +560,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "exposedPerson === '1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "eligible"
 						},
 						  {

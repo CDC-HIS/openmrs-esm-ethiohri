@@ -408,8 +408,7 @@
                     "type": "org.openmrs.module.mdrtb",
                     "value": "WEIGHT"
                   }
-                ],
-                "answers": []
+                ]
               },
               "validators": []
             },
@@ -417,7 +416,7 @@
               "label": "ScCr",
               "type": "obs",
               "required": false,
-              "id": "scCr",
+              "id": "creatinineLevel",
               "questionOptions": {
                 "rendering": "number",
                 "concept": "164364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -427,8 +426,7 @@
                     "type": "CIEL",
                     "value": "164364"
                   }
-                ],
-                "answers": []
+                ]
               },
               "validators": []
             },
@@ -438,6 +436,9 @@
               "required": false,
               "id": "eGFR",
               "questionOptions": {
+                "calculate": {
+									"calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
+								},
                 "rendering": "select",
                 "concept": "165570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
@@ -460,10 +461,6 @@
                   {
                     "concept": "120574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Chronic kidney disease, stage II (mild)"
-                  },
-                  {
-                    "concept": "120579AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Chronic kidney disease, stage III (moderate)"
                   },
                   {
                     "concept": "2c156b19-3b11-4e11-9ae2-5ea2bff2b093",

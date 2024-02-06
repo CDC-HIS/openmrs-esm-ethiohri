@@ -9,6 +9,25 @@
       "label": "Followup",
       "sections": [
         {
+          "label": "Followup Date",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Followup date *",
+              "type": "obs",
+              "required": "true",
+							"id": "followupDate",
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
           "label": "Repeat HIV Test",
           "isExpanded": "true",
           "questions": [
@@ -157,19 +176,6 @@
           "label": "Followup status",
           "isExpanded": "true",
           "questions": [
-            {
-              "label": "Followup date *",
-              "type": "obs",
-              "required": "true",
-							"id": "followupDate",
-              "questionOptions": {
-                "rendering": "eth-date",
-                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
-            },
             {
               "label": "Sign and symptoms of acute HIV infection present",
               "type": "obs",
@@ -864,15 +870,14 @@
               "validators": []
             },
             {
-              "label": "Creatinine",
+              "label": "Creatinine Level",
               "type": "obs",
               "required": false,
               "id": "creatinineLevel",
               "questionOptions": {
                 "rendering": "number",
                 "concept": "dfe842c9-e089-4b2a-a243-f90ec90332f7",
-                "conceptMappings": [],
-                "answers": []
+                "conceptMappings": []
               },
               "validators": []
             },
@@ -884,8 +889,7 @@
               "questionOptions": {
                 "rendering": "number",
                 "concept": "8ddaed89-5474-424a-a9e1-a8ad28b091fb",
-                "conceptMappings": [],
-                "answers": []
+                "conceptMappings": []
               },
               "validators": []
             }
@@ -1100,27 +1104,6 @@
                 "hideWhenExpression": "followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
-            },
-            {
-              "label": "Enhanced adherence and counselling provided",
-              "type": "obs",
-              "required": false,
-              "id": "enhancedAdherenceCounsellingProvided",
-              "questionOptions": {
-                "rendering": "radio",
-                "concept": "ebb4f716-7da3-4110-b9e2-6d6838140346",
-                "conceptMappings": [],
-                "answers": [
-                  {
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Yes"
-                  },
-                  {
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "No"
-                  }
-                ]
-              }
             },
             {
               "label": "Adherence assessment and counselling provided",

@@ -123,7 +123,7 @@
 							"type": "obs",
 							"questionOptions": {
 							  							  "calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b'))?.valueCodeableConcept?.coding?"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding?"
 								},
 								"rendering": "select",
 								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
@@ -4257,6 +4257,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+							},
 							"id": "TBProphylaxisType"
 						},
 						{
@@ -4597,6 +4600,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+							},
 							"id": "tptAdherence"
 						},
 						{
@@ -4631,6 +4637,9 @@
 								}
 							  ]
 							},
+							"hide": {
+								"hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01'"
+							},
 							"validators": []
 						  },
 						  {
@@ -4657,6 +4666,9 @@
 								}
 							  ]
 							},
+							"hide": {
+								"hideWhenExpression": "TBProphylaxisType !== '8bf3b3d8-7450-4d67-a336-8b5c07df78e3'"
+							},
 							"validators": []
 						  },
 						{
@@ -4670,6 +4682,9 @@
 								"concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
+							"hide": {
+								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+							},
 							"id": "dateTptCompleted"
 						},
 						{
@@ -4679,6 +4694,9 @@
 								"rendering": "eth-date",
 								"concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
+							},
+							"hide": {
+								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
 							},
 							"id": "dateTptDiscontinued"
 						},
@@ -4963,6 +4981,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
 							},
 							"id": "sideEffects"
 						}
@@ -6186,10 +6207,6 @@
 								{
 								  "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "No"
-								},
-								{
-								  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Unknown"
 								}
 							  ]
 							},
@@ -6304,7 +6321,9 @@
 									{
 										"concept": "9ffb81b7-3d9e-4f72-b1ba-3f60f07e4661",
 										"label": "Repeat or confirmatory VL: initial viral load greater than 1000",
-										"conceptMappings": []
+										"hide": {
+											"hideWhenExpression": "true"
+										}
 									},
 									{
 										"concept": "4c6f2326-480f-449d-9932-fe85019997f6",
@@ -7874,7 +7893,7 @@
 							"validators": []
 						  },
 						{
-							"label": "Dispense dose *",
+							"label": "Dispensed dose *",
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
@@ -7882,36 +7901,46 @@
 								"concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
 								"answers": [
 									{
-										"concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
-										"label": "30",
-										"conceptMappings": []
+									  "concept": "425b7bc6-427e-46e8-842d-4949fbb75728",
+									  "label": "5"
 									},
 									{
-										"concept": "75d94023-7804-44f8-9998-9d678488af3e",
-										"label": "60",
-										"conceptMappings": []
+									  "concept": "244be06d-4aea-4e80-82b9-377868d75f0e",
+									  "label": "10"
 									},
 									{
-										"concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
-										"label": "90",
-										"conceptMappings": []
+									  "concept": "3ae4256e-6d23-44dc-9f44-5d3e647ca1ba",
+									  "label": "15"
 									},
 									{
-										"concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
-										"label": "120",
-										"conceptMappings": []
+									  "concept": "b106f7a2-d8aa-45b9-8db7-b2b64a175850",
+									  "label": "20"
 									},
 									{
-										"concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
-										"label": "150",
-										"conceptMappings": []
+									  "concept": "5dcdc075-049e-46e2-95c2-a1a46b756a77",
+									  "label": "25"
 									},
 									{
-										"concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
-										"label": "180",
-										"conceptMappings": []
+									  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+									  "label": "30"
+									},
+									{
+									  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+									  "label": "60"
+									},
+									{
+									  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+									  "label": "90"
+									},
+									{
+									  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+									  "label": "120"
+									},
+									{
+									  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+									  "label": "180"
 									}
-								]
+								  ]
 							},
 							"hide": {
 								"hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -9390,6 +9419,9 @@
 				{
 					"label": "Operation Triple Zero",
 					"isExpanded": "true",
+					"hide": {
+								"hideWhenExpression": "age < 10 || age > 24"
+							},
 					"questions": [
 						{
 							"label": "Is the client enrolled to OTZ program",
@@ -9474,7 +9506,7 @@
 									}
 								]
 							},
-							"id": "assessmnetStatus"
+							"id": "assessmentStatus"
 						},
 						{
 							"label": "DSD category *",
@@ -9487,7 +9519,10 @@
 									{
 										"concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
 										"label": "Appointment spacing model (ASM) / 6MMD",
-										"conceptMappings": []
+										"conceptMappings": [],
+										"hide": {
+											"hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+										  }
 									},
 									{
 										"concept": "c4797711-5a47-49ad-980c-bed044a91c6d",
@@ -9497,17 +9532,26 @@
 									{
 										"concept": "347b4cbf-76ec-47f7-bdd0-f75f159d0665",
 										"label": "FTAR (Fast track antiretroviral refill)",
-										"conceptMappings": []
+										"conceptMappings": [],
+										"hide": {
+											"hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+										  }
 									},
 									{
 										"concept": "83b84a66-7b31-4b61-be54-f14bc4d50da7",
 										"label": "HEP-CAG (Health extension professional led community)",
-										"conceptMappings": []
+										"conceptMappings": [],
+										"hide": {
+											"hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+										  }
 									},
 									{
 										"concept": "6624ab9c-7aeb-4a26-942f-f5717739a762",
 										"label": "PCAD (Community based group model by peer)",
-										"conceptMappings": []
+										"conceptMappings": [],
+										"hide": {
+											"hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+										  }
 									},
 									{
 										"concept": "69e20fac-25ff-46c5-8681-756ba0078c80",
