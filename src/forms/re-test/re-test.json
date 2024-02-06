@@ -87,193 +87,113 @@
 							  "conceptMappings": [],
 							  "answers": [
 								{
-								  "concept": "2959b6f7-1f9b-49cd-9f3a-1e42e87b4ae5",
-								  "label": "ANC Client"
-								},
-								{
-								  "concept": "7f56577d-b09b-43b9-be0c-78ef81470c83",
-								  "label": "ANC partner"
-								},
-								{
-								  "concept": "165475AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Antenatal program"
-								},
-								{
-								  "concept": "163488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Community"
-								},
-								{
-								  "concept": "162050AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Comprehensive care center"
-								},
-								{
-								  "concept": "160460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Dermatology department"
-								},
-								{
-								  "concept": "163779AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Facility where mother received prevention of maternal to child transmission (PMTCT)"
-								},
-								{
-								  "concept": "5271AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Family planning"
-								},
-								{
-								  "concept": "160448AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "General medicine department"
-								},
-								{
-								  "concept": "160480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Government-run health clinic/facility"
-								},
-								{
-								  "concept": "46c6d199-e290-4dc8-bc48-e050392ebd18",
-								  "label": "Gyn Ward"
-								},
-								{
-								  "concept": "166563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "HIV exposed infant program"
-								},
-								{
-								  "concept": "f0152d8f-5dae-4598-ba92-000952a3f436",
-								  "label": "Index case testing children"
-								},
-								{
-								  "concept": "974ef745-16f5-439f-a4e5-e78135eca5ed",
-								  "label": "Index case testing partners"
-								},
-								{
-								  "concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Inpatient care or hospitalization"
-								},
-								{
-								  "concept": "d1e97037-c599-47c3-93cb-c256b9c27fbc",
-								  "label": "L&D Client"
-								},
-								{
-								  "concept": "b939ea35-5e85-4d5b-9443-a823645b7446",
-								  "label": "L&D Partner"
-								},
-								{
-								  "concept": "164835AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Labor and delivery unit"
-								},
-								{
-								  "concept": "115122AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Malnutrition"
-								},
-								{
-								  "concept": "9d6e28e2-dd0a-4b53-b45d-278ebc219d79",
-								  "label": "Medical Ward"
-								},
-								{
-								  "concept": "163014AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Non-governmental organization-run health facility"
-								},
-								{
-								  "concept": "160552AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Nutrition program"
-								},
-								{
-								  "concept": "160456AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Obstetrics and gynecology department"
-								},
-								{
-								  "concept": "8c4138ca-84e0-48bf-aff6-6287f62bb208",
-								  "label": "OPD1"
-								},
-								{
-								  "concept": "f2d606b8-6f46-4d84-aacd-f7deae4e65a3",
-								  "label": "OPD2"
-								},
-								{
-								  "concept": "e832eb29-4dbc-443e-b385-f8a1ec69143b",
-								  "label": "OPD3"
-								},
-								{
-								  "concept": "5f00bbb4-80ba-4201-a4f5-93d2e0a021ce",
-								  "label": "OPD4"
-								},
-								{
+									"concept": "8c4138ca-84e0-48bf-aff6-6287f62bb208",
+									"label": "OPD1"
+								  },
+								  {
+									"concept": "f2d606b8-6f46-4d84-aacd-f7deae4e65a3",
+									"label": "OPD2"
+								  },
+								  {
+									"concept": "e832eb29-4dbc-443e-b385-f8a1ec69143b",
+									"label": "OPD3"
+								  },
+								  {
+									"concept": "5f00bbb4-80ba-4201-a4f5-93d2e0a021ce",
+									"label": "OPD4"
+								  },
+								  {
+									"concept": "160546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "STI"
+								  },
+								  {
+									"concept": "160460AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Dermatology"
+								  },
+								  {
+									"concept": "2309a42c-1e6c-489e-927e-ba6738ce5683",
+									"label": "Pedi OPD 1"
+								  },
+								  {
+									"concept": "3b221bcb-77d6-4868-bad5-fda94b37ab4b",
+									"label": "Pedi OPD 2"
+								  },
+								  {
+									"concept": "115122AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Malnutrition"
+								  },
+								  {
+									"concept": "e7e85a1a-1e45-4043-99d7-216034965bc5",
+									"label": "Other OPD"
+								  },
+								  {
+									"concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "VCT"
+								  },
+								  {
+								    "concept": "2959b6f7-1f9b-49cd-9f3a-1e42e87b4ae5",
+								    "label": "ANC Client"
+								  },
+								  {
+								    "concept": "7f56577d-b09b-43b9-be0c-78ef81470c83",
+								    "label": "ANC partners"
+								  },
+								  {
+									"concept": "d1e97037-c599-47c3-93cb-c256b9c27fbc",
+									"label": "L&D Clients"
+								  },
+								  {
+									"concept": "b939ea35-5e85-4d5b-9443-a823645b7446",
+									"label": "L&D Partners"
+								  },
+								  {
+									"concept": "14497d04-ec43-4ac4-9cab-02007a0ff273",
+									"label": "PNC Clients"
+								  },
+								  {
+									"concept": "661a2141-4476-4ec9-b35b-3bceec16f044",
+									"label": "PNC Partners"
+								  },
+								  {
+									"concept": "163779AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Children of PMTCT"
+								  },
+								  {
+									"concept": "9d6e28e2-dd0a-4b53-b45d-278ebc219d79",
+									"label": "Medical Ward"
+								  },
+								  {
+									"concept": "838445f2-713d-49dc-b584-917457336218",
+									"label": "Pedi Ward"
+								  },
+								  {
+									"concept": "46c6d199-e290-4dc8-bc48-e050392ebd18",
+									"label": "Gyn Ward"
+								  },
+								  {
+									"concept": "f0152d8f-5dae-4598-ba92-000952a3f436",
+									"label": "Index case testing children"
+								  },
+								  {
+									"concept": "974ef745-16f5-439f-a4e5-e78135eca5ed",
+									"label": "Index case testing partners"
+								  },
+								  {
+									"concept": "160545AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "HF Outreach testing"
+								  },
+								  {
+									"concept": "163488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Referred from community testing"
+								  },
+								  {
+									"concept": "163014AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Private / NGO HFs"
+								  },
+								  {
 								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Other"
-								},
-								{
-								  "concept": "e7e85a1a-1e45-4043-99d7-216034965bc5",
-								  "label": "Other OPD"
-								},
-								{
-								  "concept": "93057ed0-7069-4e9a-9918-ae3dbe6ae5f2",
-								  "label": "Other ward"
-								},
-								{
-								  "concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Outpatient department"
-								},
-								{
-								  "concept": "160545AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Outreach program"
-								},
-								{
-								  "concept": "838445f2-713d-49dc-b584-917457336218",
-								  "label": "Pedi Ward"
-								},
-								{
-								  "concept": "f6b54649-54ab-451d-b66f-94bf2887d922",
-								  "label": "Pediatric IPD"
-								},
-								{
-								  "concept": "160457AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Pediatric medicine department"
-								},
-								{
-								  "concept": "2309a42c-1e6c-489e-927e-ba6738ce5683",
-								  "label": "Pediatric OPD 1"
-								},
-								{
-								  "concept": "3b221bcb-77d6-4868-bad5-fda94b37ab4b",
-								  "label": "Pediatric OPD 2"
-								},
-								{
-								  "concept": "14497d04-ec43-4ac4-9cab-02007a0ff273",
-								  "label": "PNC Client"
-								},
-								{
-								  "concept": "661a2141-4476-4ec9-b35b-3bceec16f044",
-								  "label": "PNC Partner"
-								},
-								{
-								  "concept": "541f72cb-b3e1-43ad-9086-24d32467dfa5",
-								  "label": "Post natal care"
-								},
-								{
-								  "concept": "160538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Prevention of maternal to child transmission program"
-								},
-								{
-								  "concept": "160479AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Private health care clinic/facility"
-								},
-								{
-								  "concept": "160546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Sexually transmitted infection program/clinic"
-								},
-								{
-								  "concept": "af37cab4-73ad-49ff-b9d7-2a89d54d7118",
-								  "label": "TB Clinic"
-								},
-								{
-								  "concept": "160541AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Tuberculosis treatment program"
-								},
-								{
-								  "concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Voluntary counseling and testing center"
-								},
-								{
-								  "concept": "163628AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "voluntary testing and counselling panel"
-								}
+								  }
 							  ]
 							},
 							"validators": []
