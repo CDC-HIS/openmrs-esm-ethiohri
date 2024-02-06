@@ -35,6 +35,7 @@ import {
   CalcBMI,
   getGender,
   getIdentifier,
+  calcEGFR,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -56,11 +57,18 @@ export function startupApp() {
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
   registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
   registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
-  registerExpressionHelper("CustomAdultNutritionalStatusCalc", CalcAdultNutritionalStatus);
-  registerExpressionHelper("CustomNutritionalScreeningCalc", CalcNutritionalScreening);
+  registerExpressionHelper(
+    "CustomAdultNutritionalStatusCalc",
+    CalcAdultNutritionalStatus
+  );
+  registerExpressionHelper(
+    "CustomNutritionalScreeningCalc",
+    CalcNutritionalScreening
+  );
   registerExpressionHelper("CustomBMICalc", CalcBMI);
   registerExpressionHelper("getGender", getGender);
   registerExpressionHelper("getIdentifier", getIdentifier);
+  registerExpressionHelper("calcEGFR", calcEGFR);
 
   registerControl({
     name: "eth-date",

@@ -1,5 +1,11 @@
 import {
   female,
+  kidneyDiseaseStage1,
+  kidneyDiseaseStage2,
+  kidneyDiseaseStage3A,
+  kidneyDiseaseStage3B,
+  kidneyDiseaseStage4,
+  kidneyDiseaseStage5,
   male,
   ninety,
   oneHundredEighty,
@@ -85,13 +91,13 @@ export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
     if (viralLoadCount <= 50) {
-      resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (viralLoadCount >= 51 && viralLoadCount <= 1000) {
-      resultViralLoadStatus = "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultViralLoadStatus = "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (viralLoadCount > 1000) {
-      resultViralLoadStatus = "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultViralLoadStatus = "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
-      resultViralLoadStatus = "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultViralLoadStatus = "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     }
   }
   return viralLoadCount ? resultViralLoadStatus : null;
@@ -100,7 +106,7 @@ export function CalcViralLoadStatus(viralLoadCount: number) {
 export function CalcBMI(height: number, weight: number) {
   let resultBMI;
   let heightInMeters = height / 100;
-  if(height && weight) {
+  if (height && weight) {
     resultBMI = weight / (heightInMeters * heightInMeters);
     resultBMI = resultBMI.toFixed(2);
   }
@@ -110,19 +116,19 @@ export function CalcBMI(height: number, weight: number) {
 export function CalcAdultNutritionalStatus(height: number, weight: number) {
   let resultBMI = CalcBMI(height, weight);
   let resultAdultNutritionalStatus: string;
-  if(resultBMI) {
+  if (resultBMI) {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (resultBMI >= 17 && resultBMI <= 18.49) {
-      resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (resultBMI >= 16 && resultBMI <= 16.99) {
-      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (resultBMI < 16) {
-      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-      resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
-      resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     }
   }
   return resultBMI ? resultAdultNutritionalStatus : null;
@@ -131,13 +137,13 @@ export function CalcAdultNutritionalStatus(height: number, weight: number) {
 export function CalcNutritionalScreening(height: number, weight: number) {
   let resultNutritionalScreening: string;
   let resultBMI = CalcBMI(height, weight);
-  if(resultBMI) {
+  if (resultBMI) {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (resultBMI <= 16 && resultBMI <= 18.49) {
-      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
-      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     }
   }
   return resultBMI ? resultNutritionalScreening : null;
@@ -160,4 +166,40 @@ export async function getIdentifier(patient, identifierName) {
     (e) => e?.type?.text === identifierName
   );
   return identifierValue?.value;
+}
+
+export function calCreatinineClearance(patient, weight, creatinineLevel) {
+  if (patient && weight && creatinineLevel) {
+    let multiplier = patient.gender() === "male" ? 1 : 0.85;
+    let numerator = (140 - patient.age) * weight;
+    let denominator = 72 * creatinineLevel * multiplier;
+    return numerator / denominator;
+  }
+  return null;
+}
+
+export function calcEGFR(patient, weight, creatinineLevel) {
+  let creatinineClearance = calCreatinineClearance(
+    patient,
+    weight,
+    creatinineLevel
+  );
+  // eslint-disable-next-line no-console
+  console.log(`CREATININE CLEARANCE: ${creatinineClearance}`);
+
+  if (creatinineClearance) {
+    if (creatinineClearance >= 90) {
+      return kidneyDiseaseStage1;
+    } else if (creatinineClearance >= 60 && creatinineClearance <= 89) {
+      return kidneyDiseaseStage2;
+    } else if (creatinineClearance >= 45 && creatinineClearance <= 59) {
+      return kidneyDiseaseStage3A;
+    } else if (creatinineClearance >= 30 && creatinineClearance <= 44) {
+      return kidneyDiseaseStage3B;
+    } else if (creatinineClearance >= 15 && creatinineClearance <= 29) {
+      return kidneyDiseaseStage4;
+    } else {
+      return kidneyDiseaseStage5;
+    }
+  }
 }

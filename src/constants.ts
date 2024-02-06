@@ -148,6 +148,13 @@ export const MRNIdentifierUUID = "c4235b37-9162-40e7-b6dc-068a8f8a01a3";
 export const yesConceptUUID = "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const ictAcceptedUUID = "fdcbadef-40c5-486a-a30b-a88477ab90ae";
 
+export const kidneyDiseaseStage1 = "120575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const kidneyDiseaseStage2 = "120574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const kidneyDiseaseStage3A = "2c156b19-3b11-4e11-9ae2-5ea2bff2b093";
+export const kidneyDiseaseStage3B = "3034271b-5d91-4616-9f49-8a8cae5c2e76";
+export const kidneyDiseaseStage4 = "120578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const kidneyDiseaseStage5 = "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
 export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN before an Intake form can be filled ! Please add an MRN on patient details.";
 
