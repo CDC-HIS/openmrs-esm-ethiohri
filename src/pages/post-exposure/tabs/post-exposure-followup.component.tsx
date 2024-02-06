@@ -39,6 +39,20 @@ const columns = [
     },
   },
   {
+    key: "sideEffect",
+    header: "Side Effect",
+    getValue: (encounter) => {
+      return getData(encounter, "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
+    key: "remark",
+    header: "Remark",
+    getValue: (encounter) => {
+      return getData(encounter, "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
     key: "actions",
     header: "Actions",
     getValue: (encounter) => [

@@ -32,13 +32,26 @@ const columns = [
     },
   },
   {
-    key: "eligible",
-    header: "Eligible",
+    key: "sourcePerson",
+    header: "Source Person Status",
     getValue: (encounter) => {
-      return getData(encounter, "78dc1be4-4668-4170-b994-fc5e9a697e56");
+      return getData(encounter, "dc23b554-65b1-479a-aeeb-b47dc9fc2f7e");
     },
-  }
-  ,
+  },
+  {
+    key: "pepRegimen",
+    header: "PEP Regimen",
+    getValue: (encounter) => {
+      return getData(encounter, "17c0da08-509d-483f-905c-01c0c9ddd72a");
+    },
+  },
+  {
+    key: "timeBetweenExposure",
+    header: "Time b/n Exposure & PEP",
+    getValue: (encounter) => {
+      return getData(encounter, "0885bb1e-6a2e-47d0-a597-8e8da07e4e59");
+    },
+  },
   {
     key: "actions",
     header: "Actions",

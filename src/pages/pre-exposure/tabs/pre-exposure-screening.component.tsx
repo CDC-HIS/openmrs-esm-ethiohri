@@ -11,6 +11,20 @@ import { fetchIdentifiers } from "../../../api/api";
 
 const columns = [
   {
+    key: "screeningDate",
+    header: "Screening Date",
+    getValue: (encounter) => {
+      return getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f");
+    },
+  },
+  {
+    key: "referredFrom",
+    header: "Referred From",
+    getValue: (encounter) => {
+      return getData(encounter, "e2fc6b60-70e8-4a87-a164-fb175c788330");
+    },
+  },
+  {
     key: "hivTestResult",
     header: "HIV Test Result",
     getValue: (encounter) => {
@@ -18,27 +32,54 @@ const columns = [
     },
   },
   {
-    key: "stiScreeningResult",
-    header: "STI Screening Result",
+    key: "pregnancyStatus",
+    header: "Pregnant?",
     getValue: (encounter) => {
-      return getData(encounter, "7a643a93-3f11-4ad0-acfa-b15f2d7c8ddc");
+      return getData(encounter, "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
-    key: "hepititisBTestResult",
-    header: "Hepititis B Test Result",
+    key: "selfIdentifyingSexWorker",
+    header: "Self-Identified FSW",
     getValue: (encounter) => {
-      return getData(encounter, "1322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "160579AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
-    key: "prepStarted",
-    header: "PrEP Started",
+    key: "doYouHaveHIVPositivePartner",
+    header: "HIV+ Partner",
     getValue: (encounter) => {
-      return getData(encounter, "3b4bc0b2-acbb-4fb5-82eb-6f0479915862");
+      return getData(encounter, "1436AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
-  ,
+  {
+    key: "typeOfClient",
+    header: "Type of Client",
+    getValue: (encounter) => {
+      return getData(encounter, "166597AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
+    key: "prepStartDate",
+    header: "PrEP Start Date",
+    getValue: (encounter) => {
+      return getData(encounter, "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
+    key: "prepPrescribed",
+    header: "PrEP Regimen",
+    getValue: (encounter) => {
+      return getData(encounter, "51c2429d-21d7-4319-a27d-7a9b10b8759c");
+    },
+  },
+  {
+    key: "doseDays",
+    header: "Dose Days",
+    getValue: (encounter) => {
+      return getData(encounter, "f3911009-1a8f-42ee-bdfc-1e343c2839aa");
+    },
+  },
   {
     key: "actions",
     header: "Actions",
