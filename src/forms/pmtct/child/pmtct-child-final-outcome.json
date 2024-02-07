@@ -56,11 +56,71 @@
               "id": "dateOfFinalOutcome",
               "questionOptions": {
                 "rendering": "date",
-                "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302",
-                "conceptMappings": [],
-                "answers": []
+                "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302"
+              }
+            }
+          ]
+        },
+        {
+          "label": "EXPERIMENTAL QUESTIONS FOR DATE VALIDATION",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Date #1",
+              "type": "obs",
+              "id": "date1",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c1502"
               },
-              "validators": []
+              "validators": [
+                  {
+                      "type": "js_expression",
+                      "failsWhenExpression": "testDateValidation(myValue)"
+                  },
+                  {
+                      "type": "js_expression",
+                      "failsWhenExpression": "myValue > dateOfFinalOutcome"
+                  }
+							]
+            },
+            {
+              "label": "Date #2",
+              "type": "obs",
+              "id": "date2",
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "e83fbaa5-073b-4a6d-b1la-23f41d0c7302"
+              },
+              "validators": [
+                  {
+                      "type": "js_expression",
+                      "failsWhenExpression": "testDateValidation(myValue)"
+                  },
+                  {
+                      "type": "js_expression",
+                      "failsWhenExpression": "myValue > date1"
+                  }
+							]
+            },
+            {
+              "label": "Date #3",
+              "type": "obs",
+              "id": "date3",
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "e83fbaa5-073b-4a3a-b8ba-23f41d0c7302"
+              },
+              "validators": [
+                  {
+                      "type": "js_expression",
+                      "failsWhenExpression": "testDateValidation(myValue)"
+                  },
+                  {
+                      "type": "js_expression",
+                      "failsWhenExpression": "myValue > date2"
+                  }
+							]
             }
           ]
         }
