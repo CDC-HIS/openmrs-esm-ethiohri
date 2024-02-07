@@ -25,7 +25,7 @@ const columns = [
     key: "testType",
     header: "Type of HIV Test",
     getValue: (encounter) => {
-      return getData(encounter, "a865a098-c9ee-4c51-a13b-5c5d574d036c");
+      return getData(encounter, "5583b0a6-f390-446d-ab39-d98584ee330c");
     },
   },
   {
