@@ -170,7 +170,7 @@ export async function getIdentifier(patient, identifierName) {
 
 export function calCreatinineClearance(patient, weight, creatinineLevel) {
   if (patient && weight && creatinineLevel) {
-    let multiplier = patient.gender() === "male" ? 1 : 0.85;
+    let multiplier = patient.gender === "male" ? 1 : 0.85;
     let numerator = (140 - patient.age) * weight;
     let denominator = 72 * creatinineLevel * multiplier;
     return numerator / denominator;
@@ -184,8 +184,6 @@ export function calcEGFR(patient, weight, creatinineLevel) {
     weight,
     creatinineLevel
   );
-  // eslint-disable-next-line no-console
-  console.log(`CREATININE CLEARANCE: ${creatinineClearance}`);
 
   if (creatinineClearance) {
     if (creatinineClearance >= 90) {
