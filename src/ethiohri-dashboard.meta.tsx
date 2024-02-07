@@ -21,7 +21,8 @@ export const MOTHER_HEALTH_SUMMARY = {
   title: "Mother Health Summary",
   slot: "mother-health-slot",
   path: "mother-health",
-  patientExpression: "patient.gender === 'female'",
+  patientExpression:
+    "patient.gender === 'female' && calculateAge(patient.birthDate) > 10",
 };
 
 export const PREP_META = {
