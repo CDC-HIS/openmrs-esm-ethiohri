@@ -20,24 +20,38 @@ const columns = [
     },
   },
   {
-    key: "entryPoint",
-    header: "Entry point",
+    key: "linkedToCareAndTreatment",
+    header: "Linked to Care and Treatment?",
     getValue: (encounter) => {
-      return getData(encounter, "dd282c99-ea69-44e7-9252-aff0198cc1e8");
+      return getData(encounter, "c1bb9738-10aa-4905-bb5d-af4e55b4bb69");
     },
   },
   {
     key: "startedART",
-    header: "Started ART",
+    header: "Started ART?",
     getValue: (encounter) => {
       return getData(encounter, "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
-    key: "finalOutcomeKnown",
-    header: "Final Outcome Known",
+    key: "reasonForNotStartingArtTheSameDay",
+    header: "Reason for not starting?",
     getValue: (encounter) => {
-      return getData(encounter, "4599ebf7-6120-4593-80f0-72458b9fadad");
+      return getData(encounter, "d8ffb301-9a47-45ee-a465-f053cc060aab");
+    },
+  },
+  {
+    key: "planForNextStep",
+    header: "Plan for Next Step",
+    getValue: (encounter) => {
+      return getData(encounter, "e96ea7a2-5285-41d3-bb0d-4f199cf5b8ee");
+    },
+  },
+  {
+    key: "finalOutcome",
+    header: "Final Outcome",
+    getValue: (encounter) => {
+      return getData(encounter, "413b265c-87ef-4988-a7bc-1bfc6b5e5528");
     },
   },
   {
