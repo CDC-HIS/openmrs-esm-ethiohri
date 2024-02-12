@@ -36,6 +36,8 @@ import {
   getGender,
   getIdentifier,
   calcEGFR,
+  isEarlierThanConfirmedDate,
+  isDateAlreadyUsed,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -69,6 +71,11 @@ export function startupApp() {
   registerExpressionHelper("getGender", getGender);
   registerExpressionHelper("getIdentifier", getIdentifier);
   registerExpressionHelper("calcEGFR", calcEGFR);
+  registerExpressionHelper(
+    "isEarlierThanConfirmedDate",
+    isEarlierThanConfirmedDate
+  );
+  registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
 
   registerControl({
     name: "eth-date",

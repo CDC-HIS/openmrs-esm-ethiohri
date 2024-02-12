@@ -1,4 +1,6 @@
+import { getLatestObs } from "./api/api";
 import {
+  INTAKE_A_ENCOUNTER_TYPE,
   female,
   kidneyDiseaseStage1,
   kidneyDiseaseStage2,
@@ -200,4 +202,63 @@ export function calcEGFR(patient, weight, creatinineLevel) {
       return kidneyDiseaseStage5;
     }
   }
+}
+
+export async function isEarlierThanConfirmedDate(patient, chosenDate) {
+  const confirmedDate = await getLatestObs(
+    patient.id,
+    "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    INTAKE_A_ENCOUNTER_TYPE
+  );
+  // eslint-disable-next-line no-console
+  console.log(
+    `Confirmed date: ${new Date(
+      confirmedDate?.valueDateTime
+    )}  ----  Chosen Date: ${new Date(chosenDate)}`
+  );
+
+  // eslint-disable-next-line no-console
+  console.log(
+    `IS OLDER THAN CONFIRMED DATE: ${
+      new Date(confirmedDate?.valueDateTime) > new Date(chosenDate)
+    }`
+  );
+
+  // eslint-disable-next-line no-console
+  console.log(
+    `IS EQUALS THAN CONFIRMED DATE: ${
+      new Date(confirmedDate?.valueDateTime).toDateString() ===
+      new Date(chosenDate).toDateString()
+    }`
+  );
+
+  return new Date(confirmedDate?.valueDateTime) > new Date(chosenDate);
+}
+
+export async function isDateAlreadyUsed(
+  patient,
+  chosenDate,
+  validatingDateUUID,
+  FOLLOWUP_ENCOUNTER_TYPE
+) {
+  // eslint-disable-next-line no-console
+  console.log(`
+  ${patient.id}
+  ${chosenDate}
+  ${"validatingDateUUID"}
+  ${FOLLOWUP_ENCOUNTER_TYPE}`);
+
+  const validatingDate = await getLatestObs(
+    patient.id,
+    "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+    FOLLOWUP_ENCOUNTER_TYPE
+  );
+
+  // eslint-disable-next-line no-console
+  console.log(`VALIDATION DATEEE ####: ${validatingDate}`);
+
+  return validatingDate
+    ? new Date(validatingDate?.valueDateTime).toDateString() ===
+        new Date(chosenDate).toDateString()
+    : false;
 }
