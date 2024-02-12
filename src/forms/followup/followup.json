@@ -1869,7 +1869,7 @@
 								"answers": [
 									{
 										"concept": "1204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage One",
+										"label": "Stage I",
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -1907,7 +1907,7 @@
 									},
 									{
 										"concept": "1205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage Two",
+										"label": "Stage II",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -1945,7 +1945,7 @@
 									},
 									{
 										"concept": "1206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage Three",
+										"label": "Stage III",
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -1983,7 +1983,7 @@
 									},
 									{
 										"concept": "1207AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Stage Four",
+										"label": "Stage IV",
 										"conceptMappings": [
 											{
 												"type": "PIH",
@@ -3925,82 +3925,59 @@
 							"id": "tbTreatmentStartDate"
 						},
 						{
-							"label": "TB treatment status ",
+							"label": "TB treatment status",
 							"type": "obs",
+							"required": false,
+							"id": "tbTreatmentStatus",
 							"questionOptions": {
-								"rendering": "select",
-								"concept": "d4bc3007-3ba8-40ae-8d64-830bcbde56e2",
-								"conceptMappings": [
-									{
-										"type": "ETHIOHRI",
-										"value": "TBTreatmentStatus"
-									}
-								],
-								"answers": [
-									{
-										"concept": "4ec05745-e0bc-4435-a89b-3727ea1cfb72",
-										"label": "TBRX1",
-										"conceptMappings": []
-									},
-									{
-										"concept": "009fee08-ab93-4932-82de-dfe575ad1de2",
-										"label": "TBRX2",
-										"conceptMappings": []
-									},
-									{
-										"concept": "18ca8708-8e84-4967-90b4-5c2bc1e288e0",
-										"label": "TBRX3",
-										"conceptMappings": []
-									},
-									{
-										"concept": "379b1723-db17-4877-bf87-568e75b5962e",
-										"label": "TBRX4",
-										"conceptMappings": []
-									},
-									{
-										"concept": "8f88134c-2692-48cf-a56f-371f3ee3d4bf",
-										"label": "TBRX5",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c3f133c6-3237-4853-ae49-6aeea9649829",
-										"label": "TBRX6",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ea0fd323-a93f-40cd-802a-880621c54524",
-										"label": "TBRX7",
-										"conceptMappings": []
-									},
-									{
-										"concept": "ca88b881-87a5-48d8-98bd-2a03aa4676d3",
-										"label": "TBRX8",
-										"conceptMappings": []
-									},
-									{
-										"concept": "9d4ca0d6-4c10-4d58-af2b-e74c510a6221",
-										"label": "TBRx completed",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "TBRxCompleted"
-											}
-										]
-									},
-									{
-										"concept": "8b1b2f2d-27ef-4ee4-bf0e-cf9abcf7f3f0",
-										"label": "TBRx Discontinued",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "TBRxDiscontinued"
-											}
-										]
-									}
-								]
+							  "rendering": "select",
+							  "concept": "cc9215e5-454f-4cdf-a773-62b2f2f17fdb",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "4ec05745-e0bc-4435-a89b-3727ea1cfb72",
+								  "label": "TBRX1"
+								},
+								{
+								  "concept": "009fee08-ab93-4932-82de-dfe575ad1de2",
+								  "label": "TBRX2"
+								},
+								{
+								  "concept": "18ca8708-8e84-4967-90b4-5c2bc1e288e0",
+								  "label": "TBRX3"
+								},
+								{
+								  "concept": "379b1723-db17-4877-bf87-568e75b5962e",
+								  "label": "TBRX4"
+								},
+								{
+								  "concept": "8f88134c-2692-48cf-a56f-371f3ee3d4bf",
+								  "label": "TBRX5"
+								},
+								{
+								  "concept": "c3f133c6-3237-4853-ae49-6aeea9649829",
+								  "label": "TBRX6"
+								},
+								{
+								  "concept": "ea0fd323-a93f-40cd-802a-880621c54524",
+								  "label": "TBRX7"
+								},
+								{
+								  "concept": "ca88b881-87a5-48d8-98bd-2a03aa4676d3",
+								  "label": "TBRX8"
+								},
+								{
+								  "concept": "8b1b2f2d-27ef-4ee4-bf0e-cf9abcf7f3f0",
+								  "label": "TBRx Discontinued"
+								},
+								{
+								  "concept": "9d4ca0d6-4c10-4d58-af2b-e74c510a6221",
+								  "label": "TBRx completed"
+								}
+							  ]
 							},
-							"id": "tbTreatmentStatus"
-						},
+							"validators": []
+						  },
 						{
 							"label": "Date active TB treatment completed",
 							"type": "obs",
@@ -6779,64 +6756,6 @@
 											{
 												"type": "AMPATH",
 												"value": "1066"
-											}
-										]
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
-										"conceptMappings": [
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 261665006"
-											},
-											{
-												"type": "ANC-DAK",
-												"value": "ANC.B6.DE2"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "HL7-MedicationDispenseStatus",
-												"value": "unknown"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1067"
-											},
-											{
-												"type": "PIH",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "CIEL",
-												"value": "1067"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "261665006"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "UNKNOWN"
 											}
 										]
 									}
