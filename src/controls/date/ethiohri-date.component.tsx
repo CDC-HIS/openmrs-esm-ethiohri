@@ -226,6 +226,13 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
               }}
               id={question.id}
               label={question.label}
+              isDisabled={question.disabled}
+              validationState={
+                isFieldRequiredError || errors.length > 0 ? "invalid" : null
+              }
+              errorMessage={errors[0]?.message}
+              maxVisibleMonths={1}
+              // maxValue={today("Africa/Addis_Ababa")}
             ></DatePicker>
           </Provider>
         </div>
