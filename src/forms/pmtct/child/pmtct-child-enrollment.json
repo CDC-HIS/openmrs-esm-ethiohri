@@ -62,6 +62,8 @@
               "questionOptions": {
                 "rendering": "number",
                 "concept": "5916AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": 99,
+								"min": 0,
                 "conceptMappings": [
                   {
                     "relationship": "SAME-AS",

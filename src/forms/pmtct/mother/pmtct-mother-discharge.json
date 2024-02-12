@@ -1,0 +1,68 @@
+{
+    "name": "PMTCT Discharge",
+    "pages": [
+      {
+        "label": "Discharge Information",
+        "sections": [
+          {
+            "label": "Discharge Information",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Discharge date",
+                "type": "obs",
+                "required": false,
+                "id": "dischargeDate",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "18f78400-d91c-40ea-bd9f-4388c10d50c1",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Reason for discharge",
+                "type": "obs",
+                "required": false,
+                "id": "reasonForDischarge",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "ba47a98e-b6b0-42f1-b612-496d501b1272",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "6d0854b2-66ac-4572-ad1f-743270c48f61",
+                      "label": "Abortion"
+                    },
+                    {
+                      "concept": "3968e4ec-f44c-4e93-8aeb-f363102718b6",
+                      "label": "Infant death"
+                    },
+                    {
+                      "concept": "5d3a760a-1000-48a2-a5b9-9d62c6b2bd6a",
+                      "label": "Infant discharged negative from care (HIV free)"
+                    },
+                    {
+                      "concept": "73d76014-365e-484c-bf5b-0959add4e3f3",
+                      "label": "Infant referred for pediatric HIV care outside the facility"
+                    },
+                    {
+                      "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
+                      "label": "Infant referred for pediatric HIV care within the facility"
+                    }
+                  ]
+                },
+                "validators": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "encounterType": "e5557459-db41-49b0-ade8-afa7b4767bf9",
+    "referencedForms": [],
+    "uuid": "19b6df7e-592b-4ffb-a45f-9e6de6a95802",
+    "description": ""
+  }
