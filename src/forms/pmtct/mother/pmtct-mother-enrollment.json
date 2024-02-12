@@ -46,25 +46,6 @@
                 }
               },
               {
-                "label": "Date of referral",
-                "type": "obs",
-                "required": false,
-                "id": "dateOfReferral",
-                "questionOptions": {
-                  "rendering": "date",
-                  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                  "conceptMappings": [
-                    {
-                      "relationship": "SAME-AS",
-                      "type": "CIEL",
-                      "value": "161561"
-                    }
-                  ],
-                  "answers": []
-                },
-                "validators": []
-              },
-              {
                 "label": "Date of enrollment / booking",
                 "type": "obs",
                 "required": true,

@@ -23,20 +23,24 @@
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "4a00b6e5-8ea1-4d8b-ba40-0b204bf69c01",
-                    "label": "Positive - Infant referred to Pediatric HIV care outside facility"
+                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Discharged Negative"
                   },
                   {
                     "concept": "34a4c62c-4c5c-4e4b-bc13-f68e07eea076",
                     "label": "Lost to Follow-up"
                   },
                   {
-                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                    "label": "Discharged Negative"
+                    "concept": "73d76014-365e-484c-bf5b-0959add4e3f3",
+                    "label": "Positive - Linked outside the facility"
                   },
                   {
-                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Positive - Infant Referred for Pediatric HIV care within facility"
+                    "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
+                    "label": "Positive - Linked within the facility"
+                  },
+                  {
+                    "concept": "bd91122b-5657-450b-9196-7cc705118ccc",
+                    "label": "Positive - Linkage unknown"
                   },
                   {
                     "concept": "80782b25-98a1-4920-a676-a039908f3ed1",
@@ -56,11 +60,8 @@
               "id": "dateOfFinalOutcome",
               "questionOptions": {
                 "rendering": "date",
-                "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
+                "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302"
+              }
             }
           ]
         }

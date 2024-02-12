@@ -318,43 +318,9 @@
           ]
         },
         {
-          "label": "Mother's/Care Giver's Information",
+          "label": "Mother's Information",
           "isExpanded": "true",
           "questions": [
-            {
-              "label": "Relation",
-              "type": "obs",
-              "required": false,
-              "id": "relation",
-              "questionOptions": {
-                "rendering": "select",
-                "concept": "02196de2-36c2-4920-aa1d-347ae3752ea5",
-                "conceptMappings": [],
-                "answers": [
-                  {
-                    "concept": "160729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Brother"
-                  },
-                  {
-                    "concept": "970AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Mother"
-                  },
-                  {
-                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other"
-                  },
-                  {
-                    "concept": "5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other family member"
-                  },
-                  {
-                    "concept": "160730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Sister"
-                  }
-                ]
-              },
-              "validators": []
-            },
             {
               "label": "First Name",
               "type": "obs",
@@ -362,7 +328,7 @@
               "id": "firstName",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
                   {
                     "relationship": "SAME-AS",
@@ -391,7 +357,7 @@
               "id": "fathersName",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "f20f09fa-de8a-44ec-9761-47a11d220e1d",
                 "conceptMappings": [
                   {
                     "relationship": "SAME-AS",
@@ -410,7 +376,7 @@
               "id": "grandfathersName",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "160273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
                   {
                     "relationship": "SAME-AS",
@@ -898,7 +864,9 @@
                     "value": "164402"
                   }
                 ],
-                "answers": []
+                "hide": {
+                  "hideWhenExpression": "mothersPmtct !== '1a259ed4-15b5-4e23-8382-972f89be84c8'"
+                }
               },
               "validators": []
             }
@@ -1021,6 +989,133 @@
                     "relationship": "SAME-AS",
                     "type": "CIEL",
                     "value": "164402"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Care Giver's Information",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Relationship",
+              "type": "obs",
+              "required": false,
+              "id": "relationship",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "02196de2-36c2-4920-aa1d-347ae3752ea5",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "160729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Brother"
+                  },
+                  {
+                    "concept": "160730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Sister"
+                  },
+                  {
+                    "concept": "5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Extended family member"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                  
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Other relationship",
+              "type": "obs",
+              "required": false,
+              "id": "otherRelationship",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "5073143b-eb72-45aa-a4bf-4164aa858f95"
+              },
+              "hide": {
+                "hideWhenExpression": "relationship != '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "First Name",
+              "type": "obs",
+              "required": false,
+              "id": "firstName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "2725"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "166102"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "408677003"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Father's Name",
+              "type": "obs",
+              "required": false,
+              "id": "fathersName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "1594"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Grand Father's Name",
+              "type": "obs",
+              "required": false,
+              "id": "grandfathersName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "2724"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "397678008"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "166103"
                   }
                 ],
                 "answers": []

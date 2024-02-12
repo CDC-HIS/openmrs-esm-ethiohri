@@ -207,11 +207,11 @@
                 "answers": [
                   {
                     "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Normal"
+                    "label": "No red flags"
                   },
                   {
                     "concept": "6022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Delayed milestones"
+                    "label": "Red flags"
                   }
                 ]
               },
@@ -265,7 +265,9 @@
                   }
                 ]
               },
-              "validators": []
+              "hide": {
+                "hideWhenExpression": "developmentMilestone !== '6022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
             }
           ]
         },
@@ -273,6 +275,28 @@
           "label": "Infant Feeding Practice",
           "isExpanded": "true",
           "questions": [
+            {
+              "label": "Is infant less than 6 months",
+              "type": "obs",
+              "required": false,
+              "id": "isInfantLessThanSixMonths",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "8183f31e-de09-4d5c-a96f-f88520b228a4",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
             {
               "label": "Feeding practice for infant less than 6 months",
               "type": "obs",
@@ -291,19 +315,21 @@
                 "answers": [
                   {
                     "concept": "164857AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Exclusive replacement feeding"
+                    "label": "Infant is on exclusive replacement Feeding (ERF)"
                   },
                   {
                     "concept": "5526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Breastfed exclusively"
+                    "label": "Infant is on exclusive Breastfeeding (EBF)"
                   },
                   {
                     "concept": "6046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Mixed feeding"
+                    "label": "Infant is on mixed feeding (MF)"
                   }
                 ]
               },
-              "validators": []
+              "hide": {
+                "hideWhenExpression": "isInfantLessThanSixMonths !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
             },
             {
               "label": "Feeding practice for infant older than 6 months",
@@ -317,28 +343,17 @@
                 "answers": [
                   {
                     "concept": "6046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Mixed feeding"
+                    "label": "Infant is on breastfeeding and complementary feeding"
                   },
                   {
                     "concept": "1595AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Replacement feeding"
+                    "label": "Replacement feeds with complementary feeds"
                   }
                 ]
               },
-              "validators": []
-            },
-            {
-              "label": "Other breast condition",
-              "type": "obs",
-              "required": false,
-              "id": "otherBreastCondition",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "00ed2ac0-aacc-402b-b587-7a4bbe1321d5",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
+              "hide": {
+                "hideWhenExpression": "isInfantLessThanSixMonths !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
             },
             {
               "label": "Abnormal findings",
@@ -413,21 +428,25 @@
               "required": false,
               "id": "mothersBreastCondition",
               "questionOptions": {
-                "rendering": "select",
+                "rendering": "checkbox",
                 "concept": "5efb8e8d-36e1-4eef-9a50-d59ce5d50d7d",
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "b3e08818-e665-453a-b046-1aac1e3ed8c4",
-                    "label": "Normal Mastitis"
+                    "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "ec4886c3-b2c7-41ff-af66-f5d1519c35eb",
+                    "label": "Breast abscess"
                   },
                   {
                     "concept": "243f42c7-ecab-4d73-a2f9-15c8a4999f24",
                     "label": "Cracked nipples"
                   },
                   {
-                    "concept": "ec4886c3-b2c7-41ff-af66-f5d1519c35eb",
-                    "label": "Breast abscess"
+                    "concept": "b3e08818-e665-453a-b046-1aac1e3ed8c4",
+                    "label": "Mastitis"
                   },
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -436,6 +455,19 @@
                 ]
               },
               "validators": []
+            },
+            {
+              "label": "Other breast condition",
+              "type": "obs",
+              "required": false,
+              "id": "otherBreastCondition",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "00ed2ac0-aacc-402b-b587-7a4bbe1321d5"
+              },
+              "hide": {
+                "hideWhenExpression": "mothersBreastCondition !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
             },
             {
               "label": "Maternal ART status",
@@ -814,7 +846,9 @@
                   }
                 ]
               },
-              "validators": []
+              "hide": {
+                "hideWhenExpression": "sampleQuality !== '126224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
             },
             {
               "label": "DNA PCR result",
@@ -975,30 +1009,22 @@
               }
             },
             {
-              "label": "ARV prophylaxis ",
+              "label": "ARV prophylaxis",
               "type": "obs",
               "required": false,
-              "id": "arvProphylaxis",
+              "id": "arvStarted",
               "questionOptions": {
-                "rendering": "select",
+                "rendering": "radio",
                 "concept": "b7f50074-b9f2-4b0d-9f20-d18b646d822e",
                 "conceptMappings": [],
                 "answers": [
                   {
-                    "concept": "ba262f0d-07c1-49d2-a3b6-27dceaccdaba",
-                    "label": "AZT only for 6 weeks"
-                  },
-                  {
                     "concept": "b5b94269-9ee1-4733-8a24-96213cf3c291",
-                    "label": "NVP + AZT for 6 weeks"
+                    "label": "NVP + AZT for 6 weeks and NVP only for additionally 6 weeks"
                   },
                   {
                     "concept": "d32ee1d2-2518-478d-bceb-7e80fc8cb3b1",
-                    "label": "NVP only for 6 weeks"
-                  },
-                  {
-                    "concept": "ae1653d4-4d05-4633-bd92-c5622ddfdc26",
-                    "label": "NVP only for additional 6 weeks"
+                    "label": "None"
                   }
                 ]
               },
@@ -1147,19 +1173,11 @@
                 "answers": [
                   {
                     "concept": "041eed6b-3684-4a7d-903b-a44705fdb50f",
-                    "label": "Continue to followup"
+                    "label": "Continue to followup - Still on BF/Exposed"
                   },
                   {
-                    "concept": "5425b021-8539-420b-ad60-4636e98034f2",
-                    "label": "Referred pediatric HIV care outside facility"
-                  },
-                  {
-                    "concept": "bd5d0757-95f8-4fcb-bd1a-f24953efeca3",
-                    "label": "Referred for pediatric HIV care within facility"
-                  },
-                  {
-                    "concept": "00c3deda-9bb6-490f-821b-75ba9cc85db5",
-                    "label": "Discharged negative form care (HIV free)"
+                    "concept": "80782b25-98a1-4920-a676-a039908f3ed1",
+                    "label": "TO"
                   },
                   {
                     "concept": "34a4c62c-4c5c-4e4b-bc13-f68e07eea076",
@@ -1168,6 +1186,22 @@
                   {
                     "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Died"
+                  },
+                  {
+                    "concept": "bd5d0757-95f8-4fcb-bd1a-f24953efeca3",
+                    "label": "Positive - Referred for pediatric HIV care within facility"
+                  },
+                  {
+                    "concept": "5425b021-8539-420b-ad60-4636e98034f2",
+                    "label": "Positive - Referred pediatric HIV care outside facility"
+                  },
+                  {
+                    "concept": "bd91122b-5657-450b-9196-7cc705118ccc",
+                    "label": "Positive - Uknown linkage to ART program"
+                  },
+                  {
+                    "concept": "00c3deda-9bb6-490f-821b-75ba9cc85db5",
+                    "label": "Discharged negative form care (HIV free)"
                   }
                 ]
               },

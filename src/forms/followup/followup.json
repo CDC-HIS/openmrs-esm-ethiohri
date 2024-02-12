@@ -23,17 +23,7 @@
 							  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
 							  "conceptMappings": [],
 							  "answers": []
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
-                                {
-                                    "type": "js_expression",
-                                    "failsWhenExpression": ""
-                                }
-							]
+							}
 						  },
 						{
 							"label": "Visit type",
@@ -361,7 +351,14 @@
 							"hide": {
 								"hideWhenExpression": "artStarted != '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"id": "artStartDate"
+							"id": "artStartDate",
+							"validators": [
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "isEarlierThanConfirmationDate(patient, myValue)",
+									"message": "Date should not be earlier than HIV Confirmed date"
+								}
+							]
 						},
 						{
 							"label": "Months on ART",
@@ -2779,6 +2776,27 @@
 							},
 							"id": "referredToPMTCT"
 						},
+						{
+							"label": "Date of referral",
+							"type": "obs",
+							"required": false,
+							"id": "dateOfReferral",
+							"questionOptions": {
+							  "rendering": "eth-date",
+							  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+							  "conceptMappings": [
+								{
+								  "relationship": "SAME-AS",
+								  "type": "CIEL",
+								  "value": "161561"
+								}
+							  ],
+							  "answers": []
+							},
+							"hide": {
+								"hideWhenExpression": "referredToPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						  },
 						{
 							"label": "Family planning methods",
 							"type": "obs",
