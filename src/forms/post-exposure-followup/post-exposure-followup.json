@@ -29,7 +29,7 @@
 				"label": "Visit date",
 				"type": "obs",
 				"questionOptions": {
-				  "rendering": "date",
+				  "rendering": "eth-date",
 				  "concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "weeksList": "",
 				  "conceptMappings": [

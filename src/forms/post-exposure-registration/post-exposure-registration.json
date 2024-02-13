@@ -67,7 +67,7 @@
 							},
 							"id": "otherOccupation",
 							"hide": {
-								"hideWhenExpression": "occupations !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "occupation !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							}
 						},
 						{

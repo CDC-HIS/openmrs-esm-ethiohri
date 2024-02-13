@@ -48,7 +48,7 @@
                 "required": false,
                 "id": "dateOfFinalOutcome",
                 "questionOptions": {
-                  "rendering": "date",
+                  "rendering": "eth-date",
                   "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302",
                   "conceptMappings": [],
                   "answers": []

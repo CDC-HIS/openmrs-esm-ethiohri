@@ -14,7 +14,7 @@
                 "required": false,
                 "id": "dischargeDate",
                 "questionOptions": {
-                  "rendering": "date",
+                  "rendering": "eth-date",
                   "concept": "18f78400-d91c-40ea-bd9f-4388c10d50c1",
                   "conceptMappings": [],
                   "answers": []

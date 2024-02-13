@@ -1308,8 +1308,8 @@
 				"questionOptions": {
 				  "rendering": "number",
 				  "concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "max": 9999999,
-				  "min": 0,
+				  "max": 43,
+				  "min": 25,
 				  "showDate": "",
 				  "conceptMappings": [
 					{
@@ -1400,7 +1400,7 @@
 				"questionOptions": {
 				  "rendering": "number",
 				  "concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "max": 99999999,
+				  "max": 150,
 				  "min": 0,
 				  "showDate": "",
 				  "conceptMappings": [
@@ -1434,7 +1434,7 @@
 				"questionOptions": {
 				  "rendering": "number",
 				  "concept": "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "max": 99999999,
+				  "max": 99,
 				  "min": 0,
 				  "showDate": "",
 				  "conceptMappings": [
@@ -1506,7 +1506,7 @@
 				"questionOptions": {
 				  "rendering": "number",
 				  "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "max": 999,
+				  "max": 250,
 				  "min": 0,
 				  "showDate": "",
 				  "conceptMappings": [

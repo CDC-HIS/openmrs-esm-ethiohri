@@ -51,7 +51,7 @@
                 "required": true,
                 "id": "dateOfEnrollment",
                 "questionOptions": {
-                  "rendering": "date",
+                  "rendering": "eth-date",
                   "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
                   "conceptMappings": [],
                   "answers": []

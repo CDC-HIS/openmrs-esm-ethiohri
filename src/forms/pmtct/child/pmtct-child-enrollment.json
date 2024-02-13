@@ -16,7 +16,7 @@
 							"label": "Enrollment Date *",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "date",
+								"rendering": "eth-date",
 								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
 							},
 							"required": "true",
