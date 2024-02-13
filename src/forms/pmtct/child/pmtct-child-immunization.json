@@ -19,49 +19,8 @@
               "id": "bcg",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "886"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "HL-7-CVX",
-                    "value": "19"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "886"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED-CT",
-                    "value": "418268006"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "42284007"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "WHOATC",
-                    "value": "L03AX03"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "IMO-ProcedureIT",
-                    "value": "802747"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5257"
-                  }
-                ],
+                "concept": "3d621104-4f93-4f68-8d59-407cd124cabb",
+                "conceptMappings": [],
                 "answers": [
                   {
                     "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

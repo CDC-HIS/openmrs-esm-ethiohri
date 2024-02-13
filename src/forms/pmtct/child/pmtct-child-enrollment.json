@@ -378,25 +378,7 @@
               "id": "grandfathersName",
               "questionOptions": {
                 "rendering": "text",
-                "concept": "160273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "2724"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "397678008"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "166103"
-                  }
-                ],
-                "answers": []
+								"concept": "1b545ea1-0aed-4632-af99-ea2ceb61b13c"
               },
               "validators": []
             },

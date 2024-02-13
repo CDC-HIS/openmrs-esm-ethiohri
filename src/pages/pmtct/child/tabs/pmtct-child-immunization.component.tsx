@@ -9,7 +9,7 @@ const columns = [
     key: "bcg",
     header: "BCG",
     getValue: (encounter) => {
-      return getData(encounter, "886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "3d621104-4f93-4f68-8d59-407cd124cabb");
     },
   },
   {
