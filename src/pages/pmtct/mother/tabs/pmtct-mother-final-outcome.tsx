@@ -6,38 +6,17 @@ import { moduleName } from "../../../../index";
 
 const columns = [
   {
-    key: "heiDate",
-    header: "HEI Code",
+    key: "finalOutcome",
+    header: "Mother's PMTCT Final Outcome",
     getValue: (encounter) => {
-      return getData(encounter, "2b30a270-be1f-4cce-9949-7d7eaba349be", true);
+      return getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
     },
   },
   {
-    key: "arvStarted",
-    header: "ARV started",
+    key: "dateOfFinalOutcome",
+    header: "Final Outcome Date",
     getValue: (encounter) => {
-      return getData(encounter, "b7f50074-b9f2-4b0d-9f20-d18b646d822e", false);
-    },
-  },
-  {
-    key: "infantReferred",
-    header: "Infant Referred",
-    getValue: (encounter) => {
-      return getData(encounter, "a0b16ce2-80a8-4b26-9168-74a6f64adb09", false);
-    },
-  },
-  {
-    key: "placeOfDelivery",
-    header: "Place of Delivery",
-    getValue: (encounter) => {
-      return getData(encounter, "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
-    },
-  },
-  {
-    key: "modeOfDelivery",
-    header: "Mode of Delivery",
-    getValue: (encounter) => {
-      return getData(encounter, "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
+      return getData(encounter, "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302");
     },
   },
   {

@@ -7,17 +7,17 @@ import { getPatientEncounters } from "../../../../api/api";
 
 const columns = [
   {
-    key: "finalOutcome",
-    header: "Final Outcome",
-    getValue: (encounter) => {
-      return getData(encounter, "2171d944-a027-417f-a0af-f9c4a88a5ffe");
-    },
-  },
-  {
-    key: "finalOutcomeDate",
+    key: "dateOfFinalOutcome",
     header: "Final Outcome Date",
     getValue: (encounter) => {
       return getData(encounter, "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302");
+    },
+  },
+  {
+    key: "finalOutcome",
+    header: "HEI PMTCT Final Outcome",
+    getValue: (encounter) => {
+      return getData(encounter, "2171d944-a027-417f-a0af-f9c4a88a5ffe");
     },
   },
   {

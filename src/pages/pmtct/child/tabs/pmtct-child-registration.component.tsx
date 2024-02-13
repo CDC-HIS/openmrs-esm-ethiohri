@@ -7,38 +7,45 @@ import { getPatientEncounters } from "../../../../api/api";
 
 const columns = [
   {
-    key: "heiDate",
+    key: "enrollment_date",
+    header: "Enrollment Date",
+    getValue: (encounter) => {
+      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d");
+    },
+  },
+  {
+    key: "heiCode",
     header: "HEI Code",
     getValue: (encounter) => {
-      return getData(encounter, "2b30a270-be1f-4cce-9949-7d7eaba349be", true);
+      return getData(encounter, "2b30a270-be1f-4cce-9949-7d7eaba349be");
+    },
+  },
+  {
+    key: "birthWeight",
+    header: "Birth Weight",
+    getValue: (encounter) => {
+      return getData(encounter, "5916AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
     key: "arvStarted",
-    header: "ARV started",
+    header: "ARV Prophylaxis",
     getValue: (encounter) => {
-      return getData(encounter, "b7f50074-b9f2-4b0d-9f20-d18b646d822e", false);
+      return getData(encounter, "b7f50074-b9f2-4b0d-9f20-d18b646d822e");
     },
   },
   {
-    key: "infantReferred",
-    header: "Infant Referred",
+    key: "mothersPmtct",
+    header: "Mother's PMTCT Intervention",
     getValue: (encounter) => {
-      return getData(encounter, "a0b16ce2-80a8-4b26-9168-74a6f64adb09", false);
+      return getData(encounter, "6b60a8c6-da45-4f10-9135-e5e5d4b2a1b9");
     },
   },
   {
-    key: "placeOfDelivery",
-    header: "Place of Delivery",
+    key: "fathersStatus",
+    header: "Father's HIV Status",
     getValue: (encounter) => {
-      return getData(encounter, "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
-    },
-  },
-  {
-    key: "modeOfDelivery",
-    header: "Mode of Delivery",
-    getValue: (encounter) => {
-      return getData(encounter, "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
+      return getData(encounter, "2d5b2754-423e-47d3-9bf5-81ee0c2108f5");
     },
   },
   {
