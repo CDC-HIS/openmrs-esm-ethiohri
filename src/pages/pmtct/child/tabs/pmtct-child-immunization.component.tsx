@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { PMTCT_IMMUNIZATION_ENCOUNTER_TYPE } from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
+import { getPatientEncounters } from "../../../../api/api";
 
 const columns = [
   {
@@ -65,6 +66,18 @@ const columns = [
 const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
+  useEffect(() => {
+    (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        PMTCT_IMMUNIZATION_ENCOUNTER_TYPE
+      );
+      if (previousEncounters.length) {
+        setHasPreviousEncounter(true);
+      }
+    })();
+  });
   return (
     <>
       <EncounterList
@@ -77,6 +90,7 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
+          hideFormLauncher: hasPreviousEncounter,
         }}
       />
     </>

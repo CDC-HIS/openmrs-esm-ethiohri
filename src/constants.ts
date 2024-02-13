@@ -5,7 +5,7 @@ export const FAMILY_INFO_ENCOUNTER_TYPE =
 export const PHDP_ENCOUNTER_TYPE = "f1b397c1-46bd-43e6-a23d-ae2cedaec881";
 export const FOLLOWUP_ENCOUNTER_TYPE = "136b2ded-22a3-4831-a39a-088d35a50ef5";
 export const POSITIVE_TRACKING_ENCOUNTER_TYPE =
-  "96a78a83-d92a-4da7-b68e-41791fb835d2";
+  "f28bb488-0f83-417c-98ba-06ea5f1765e3";
 export const ICT_GENERAL_ENCOUNTER_TYPE =
   "bf097a70-4bb8-47dc-a127-1aacf86a86a0";
 export const ICT_OFFER_ENCOUNTER_TYPE = "23b08733-6d26-48b5-b135-dac294e25e1e";
