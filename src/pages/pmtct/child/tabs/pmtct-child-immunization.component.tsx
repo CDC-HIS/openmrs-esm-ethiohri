@@ -9,35 +9,50 @@ const columns = [
     key: "bcg",
     header: "BCG",
     getValue: (encounter) => {
-      return getData(encounter, "886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return getData(encounter, "886AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
+    key: "opv3",
+    header: "OPV",
+    getValue: (encounter) => {
+      return getData(encounter, "50c23a47-40ae-469d-b7a2-0f88b8e2c915");
+    },
+  },
+  {
+    key: "penta3",
+    header: "PENTA",
+    getValue: (encounter) => {
+      return getData(encounter, "698adfa3-2b38-4d83-83a0-0811d7d90bb5");
+    },
+  },
+
+  {
+    key: "rota2",
+    header: "ROTA",
+    getValue: (encounter) => {
+      return getData(encounter, "6236db83-5d44-4bb8-8032-472b4e6c24f0");
+    },
+  },
+  {
+    key: "pcv3",
+    header: "PCV",
+    getValue: (encounter) => {
+      return getData(encounter, "e0287c59-984a-40ae-a449-446576a7ee27");
     },
   },
   {
     key: "ipv",
     header: "IPV",
     getValue: (encounter) => {
-      return getData(encounter, "923b4623-ac8d-4e65-a55a-aa4715752a14", false);
+      return getData(encounter, "923b4623-ac8d-4e65-a55a-aa4715752a14");
     },
   },
   {
-    key: "opv0",
-    header: "OPV 0 Taken",
+    key: "mcv2",
+    header: "MCV",
     getValue: (encounter) => {
-      return getData(encounter, "14369b36-910a-4996-813c-2312d234f5cf", false);
-    },
-  },
-  {
-    key: "opv1",
-    header: "OPV 1 Taken",
-    getValue: (encounter) => {
-      return getData(encounter, "1c60218e-6285-460b-94ed-205cdf0afe20", false);
-    },
-  },
-  {
-    key: "opv2",
-    header: "OPV 2 Taken",
-    getValue: (encounter) => {
-      return getData(encounter, "1f25b4b6-bad6-4d39-b11a-6b76ea781958", false);
+      return getData(encounter, "025f8bb8-96ce-4e4a-b38c-4a27e77a2f4a");
     },
   },
   {

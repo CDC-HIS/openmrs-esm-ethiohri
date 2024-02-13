@@ -7,14 +7,14 @@ import { moduleName } from "../../../../index";
 const columns = [
   {
     key: "dischargeDate",
-    header: "Discharge date",
+    header: "Discharge Date",
     getValue: (encounter) => {
-      return getData(encounter, "18f78400-d91c-40ea-bd9f-4388c10d50c1", true);
+      return getData(encounter, "18f78400-d91c-40ea-bd9f-4388c10d50c1");
     },
   },
   {
     key: "reasonForDischarge",
-    header: "Reason for discharge",
+    header: "Reason for Discharge",
     getValue: (encounter) => {
       return getData(encounter, "ba47a98e-b6b0-42f1-b612-496d501b1272");
     },
