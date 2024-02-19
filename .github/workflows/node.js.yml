@@ -95,9 +95,7 @@ jobs:
           name: Run the Update MicroFronEnd Script on dev server
           with:
               command: cd /usr/share/tomcat/frontendmodules/ && /bin/bash update_frontend_modules.sh
-              host: ${{ secrets.ETHIOHRI_HOST }}
-              username: ${{ secrets.ETHIOHRI_USER }}
-              privateKey: ${{ secrets.ETHIOHRI_DEV_PRIVATE_KEY}}
+              
   demo:
       runs-on: ubuntu-latest
       needs: release
