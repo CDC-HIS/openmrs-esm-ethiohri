@@ -81,7 +81,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
 
   dev:
-      runs-on: ubuntu-latest
+      runs-on: ethiohri-self-hosted
       needs: pre_release
 
       if: ${{ github.ref == 'refs/heads/develop' }}
