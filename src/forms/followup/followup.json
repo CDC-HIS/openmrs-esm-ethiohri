@@ -7135,9 +7135,9 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Followup Status",
+							"label": "Followup Status *",
 							"type": "obs",
-							"required": false,
+							"required": true,
 							"id": "followupStatus",
 							"questionOptions": {
 							  "rendering": "select",
