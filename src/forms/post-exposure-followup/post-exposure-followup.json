@@ -297,6 +297,6 @@
 	"processor": "EncounterFormProcessor",
 	"uuid": "2733aacf-6ffa-387d-88be-1c7f4a2a1cd8",
 	"referencedForms": [],
-	"encounterType": "2733aacf-6ffa-387d-88be-1c7f4a2a1cd8",
+	"encounterType": "c7f3c349-8771-432b-8e1e-240a53b3bda3",
 	"allowUnspecifiedAll": true
   }
