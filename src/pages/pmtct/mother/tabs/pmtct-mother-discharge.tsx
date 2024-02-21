@@ -51,8 +51,8 @@ const PMTCTMotherDischargeEncounterList: React.FC<{
         encounterType={PMTCT_MOTHER_DISCHARGE_ENCOUNTER_TYPE}
         formList={[{ name: "PMTCT Discharge" }]}
         columns={columns}
-        description="Mother's Discharge Encounter List"
-        headerTitle="Mother's Discharge"
+        description="PMTCT Mother's Discharge Encounter List"
+        headerTitle="PMTCT Mother's Discharge"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,

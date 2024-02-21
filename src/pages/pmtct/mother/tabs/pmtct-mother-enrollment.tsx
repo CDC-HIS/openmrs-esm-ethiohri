@@ -9,11 +9,11 @@ const columns = [
     key: "dateOfEnrollment",
     header: "PMTCT Enrollment/Booking Date",
     getValue: (encounter) => {
-      return getData(encounter, "0fe4faee-0717-4dc0-be3d-1cd52923804a");
+      return getData(encounter, "0fe4faee-0717-4dc0-be3d-1cd52923804a", true);
     },
   },
   {
-    key: "referredFrom",
+    key: "statusAtEnrollment",
     header: "Status at Enrollment",
     getValue: (encounter) => {
       return getData(encounter, "ab192dd0-bb1c-4417-b8f9-4c35dc991b55");

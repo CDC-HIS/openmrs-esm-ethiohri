@@ -10,7 +10,7 @@ const columns = [
     key: "enrollment_date",
     header: "Enrollment Date",
     getValue: (encounter) => {
-      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d");
+      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
     },
   },
   {
