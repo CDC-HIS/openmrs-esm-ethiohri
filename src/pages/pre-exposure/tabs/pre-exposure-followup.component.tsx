@@ -17,7 +17,7 @@ const columns = [
     key: "followupDate",
     header: "Follow-up Date",
     getValue: (encounter) => {
-      return getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296");
+      return getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
     },
   },
   {

@@ -14,7 +14,7 @@ const columns = [
     key: "screeningDate",
     header: "Screening Date",
     getValue: (encounter) => {
-      return getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f");
+      return getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f", true);
     },
   },
   {

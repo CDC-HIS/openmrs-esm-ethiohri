@@ -9,7 +9,7 @@ const columns = [
     key: "dischargeDate",
     header: "Discharge Date",
     getValue: (encounter) => {
-      return getData(encounter, "18f78400-d91c-40ea-bd9f-4388c10d50c1");
+      return getData(encounter, "18f78400-d91c-40ea-bd9f-4388c10d50c1", true);
     },
   },
   {

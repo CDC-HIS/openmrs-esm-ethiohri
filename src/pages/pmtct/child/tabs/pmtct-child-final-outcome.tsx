@@ -10,7 +10,7 @@ const columns = [
     key: "dateOfFinalOutcome",
     header: "Final Outcome Date",
     getValue: (encounter) => {
-      return getData(encounter, "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302");
+      return getData(encounter, "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302", true);
     },
   },
   {
