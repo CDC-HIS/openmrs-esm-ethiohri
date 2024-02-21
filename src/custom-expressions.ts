@@ -14,10 +14,25 @@ import {
   oneHundredTwenty,
   sixty,
   thirty,
+  five,
+  ten,
+  fifteen,
+  twenty,
+  twentyFive
 } from "./constants";
 
 export function DispensedDoseInNumber(arvDispensedInDays: string) {
   switch (arvDispensedInDays) {
+    case five:
+      return 5;
+    case ten:
+      return 10;
+    case fifteen:
+      return 15;
+    case twenty:
+      return 20;
+    case twentyFive:
+      return 25;
     case thirty:
       return 30;
     case sixty:

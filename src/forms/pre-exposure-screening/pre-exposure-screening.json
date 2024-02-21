@@ -1233,7 +1233,10 @@
       ]
     },
     {
-      "label": "PrEP Eligibility And Treatment Initiation",
+      "label": "PrEP Eligibility",
+      "hide": {
+        "hideWhenExpression": "selfIdentifyingSexWorker !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+      },
       "sections": [
         {
           "label": "Eligibility",
@@ -1273,7 +1276,24 @@
                 "answers": []
               },
               "validators": []
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Treatment Initiation",
+      "hide": {
+        "hideWhenExpression": "selfIdentifyingSexWorker !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+      },
+      "sections": [
+        {
+          "label": "Treatment Initiation",
+          "isExpanded": "true",
+          "hide": {
+            "hideWhenExpression": "contraindicationsToPrepMedicines !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          },
+          "questions": [
             {
               "label": "Eligible for PrEP",
               "type": "obs",
@@ -1356,13 +1376,7 @@
                 "hideWhenExpression": "prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
-            }
-          ]
-        },
-        {
-          "label": "Treatment initiation",
-          "isExpanded": "true",
-          "questions": [
+            },
             {
               "label": "PrEP started",
               "type": "obs",
@@ -1559,6 +1573,12 @@
       ]
     }
   ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
   "processor": "EncounterFormProcessor",
   "uuid": "e7bce9e2-5ed6-4cbb-ab93-3531a4c33760",
   "referencedForms": [],

@@ -7135,9 +7135,9 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Followup Status",
+							"label": "Followup Status *",
 							"type": "obs",
-							"required": false,
+							"required": true,
 							"id": "followupStatus",
 							"questionOptions": {
 							  "rendering": "select",
@@ -10050,12 +10050,6 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "01c546b4-e08a-4c0c-82ef-d387cab6bbbf",
-								"conceptMappings": [
-									{
-										"type": "OCT",
-										"value": "CervicalCancerScreeening_ConvSet"
-									}
-								],
 								"answers": [
 									{
 										"concept": "165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -10326,6 +10320,20 @@
 							"id": "hpvDnaResultReceivedDate"
 						},
 						{
+							"label": "VIA screening date *",
+							"type": "obs",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "f46c7ed3-65c3-451c-a8e1-4c615f795db1",
+								"weeksList": ""
+							},
+							"hide": {
+								"hideWhenExpression": "screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' && screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
+							},
+							"id": "viaScreeningDate"
+						},
+						{
 							"label": "VIA screening result *",
 							"type": "obs",
 							"required": "true",
@@ -10443,37 +10451,37 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1'"
+								"hideWhenExpression": "screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' && screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 							},
 							"id": "viaScreeningResult"
 						},
 						{
-							"label": "VIA screening date *",
+							"label": "Cytology sample collection date",
 							"type": "obs",
-							"required": "true",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "f46c7ed3-65c3-451c-a8e1-4c615f795db1",
-								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1'"
-							},
-							"id": "viaScreeningDate"
-						},
-						{
-							"label": "Cytology sample collection date *",
-							"type": "obs",
-							"required": "true",
+							"required": "false",
 							"questionOptions": {
 								"rendering": "eth-date",
 								"concept": "3b5034de-ce0f-4017-80ab-17746ab3fe15",
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
+								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' && screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 							},
 							"id": "cytologySampleCollectionDate"
+						},
+						{
+							"label": "Cytology result received date *",
+							"type": "obs",
+							"required": "true",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "f0892f21-406c-446b-abd5-bb62f3ea2387",
+								"weeksList": ""
+							},
+							"hide": {
+								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' && screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
+							},
+							"id": "cytologyResultReceivedDate"
 						},
 						{
 							"label": "Cytology result *",
@@ -10522,24 +10530,19 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
+								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' && screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 							},
 							"id": "cytologyResult"
-						},
-						{
-							"label": "Cytology result received date *",
-							"type": "obs",
-							"required": "true",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "f0892f21-406c-446b-abd5-bb62f3ea2387",
-								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
-							},
-							"id": "cytologyResultReceivedDate"
-						},
+						}
+					]
+				},
+				{
+					"label": "Biopsy",
+					"isExpanded": "true",
+					"hide": {
+						"hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					},		
+					"questions": [
 						{
 							"label": "Biopsy sample collection date",
 							"type": "obs",
@@ -10548,10 +10551,17 @@
 								"concept": "5c93668e-6206-4cce-bdf9-7c6fb02991df",
 								"weeksList": ""
 							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "biopsySampleCollectedDate"
+						},
+						{
+							"label": "Biopsy result received date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "473c914c-53d8-496c-a85c-32787a7d95b0",
+								"weeksList": ""
+							},
+							"id": "biopsyResultReceicedDate"
 						},
 						{
 							"label": "Biopsy result",
@@ -10678,24 +10688,17 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "biopsyResult"
-						},
-						{
-							"label": "Biopsy result received date",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "473c914c-53d8-496c-a85c-32787a7d95b0",
-								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
-							"id": "biopsyResultReceicedDate"
-						},
+						}
+					]
+				},
+				{
+					"label": "Colposcopy",
+					"isExpanded": "true",
+					"hide": {
+						"hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					},				
+					"questions": [
 						{
 							"label": "Colposcopy exam date",
 							"type": "obs",
@@ -10703,9 +10706,6 @@
 								"rendering": "eth-date",
 								"concept": "eb135e8e-5e19-4d6e-ad71-c6bdab26f73d",
 								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
 							},
 							"id": "colposcopyExamDate"
 						},
@@ -10734,9 +10734,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "colposcopyExamFinding"
 						}
 					]
@@ -10745,16 +10742,13 @@
 					"label": "Treatment",
 					"isExpanded": "true",
 					"hide": {
-						"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
+						"hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 					},
 					"questions": [
 						{
 							"label": "Treatment received for precancerous lesion",
 							"type": "obs",
 							"required": false,
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "treatmentReceivedForPrecancerousLesion",
 							"questionOptions": {
 							  "rendering": "select",
@@ -10983,14 +10977,14 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "confirmedCxCaCases"
 						},
 						{
 							"label": "Date treatment given",
 							"type": "obs",
+							"hide": {
+								"hideWhenExpression": "confirmedCxCaCases == '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && treatmentReceivedForPrecancerousLesion == '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"questionOptions": {
 								"rendering": "eth-date",
 								"concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -11014,29 +11008,16 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "dateTreatmentGiven"
-						},
-						{
-							"label": "Next follow-up/screening date for CxCa",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "eth-date",
-								"concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
-								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							"id": "nextFollowupScreeningDate"
 						}
 					]
 				},
 				{
 					"label": "Referral",
 					"isExpanded": "true",
+					"hide": {
+						"hideWhenExpression": "confirmedCxCaCases !== '164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					},
 					"questions": [
 						{
 							"label": "Referral/linkage status",
@@ -11279,6 +11260,22 @@
 								"hideWhenExpression": "!includes('feedback','3192af69-db4b-4031-9add-5871883980cc')"
 							},
 							"id": "dateClientServedAtReferredHF"
+						}
+					]
+				},
+				{
+					"label": "Next Follow-up Screening Date",
+					"isExpanded": "true",				
+					"questions": [
+						{
+							"label": "Next follow-up/screening date for CxCa",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "eth-date",
+								"concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
+								"weeksList": ""
+							},
+							"id": "nextFollowupScreeningDate"
 						}
 					]
 				}

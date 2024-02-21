@@ -1,8 +1,5 @@
-import React, { useMemo } from "react";
-import {
-  EncounterList,
-  EncounterListColumn,
-} from "@ohri/openmrs-esm-ohri-commons-lib";
+import React from "react";
+import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { FOLLOWUP_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
