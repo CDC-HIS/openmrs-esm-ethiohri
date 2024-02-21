@@ -98,6 +98,11 @@ export const generalTreatmentStatusConcept =
   "163105AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
 //Dispensed dose in number concepts
+export const five = "425b7bc6-427e-46e8-842d-4949fbb75728";
+export const ten = "244be06d-4aea-4e80-82b9-377868d75f0e";
+export const fifteen = "3ae4256e-6d23-44dc-9f44-5d3e647ca1ba";
+export const twenty = "b106f7a2-d8aa-45b9-8db7-b2b64a175850";
+export const twentyFive = "5dcdc075-049e-46e2-95c2-a1a46b756a77";
 export const thirty = "fba421cf-a483-4329-b8b1-6a3ef16081bc";
 export const sixty = "75d94023-7804-44f8-9998-9d678488af3e";
 export const ninety = "4abbd98d-0c07-42f4-920c-7bbf0f5824dc";
