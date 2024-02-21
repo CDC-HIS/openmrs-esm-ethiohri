@@ -61,7 +61,7 @@
               "id": "birthWeight",
               "questionOptions": {
                 "rendering": "number",
-                "concept": "5916AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "max": 99,
 								"min": 0,
                 "conceptMappings": [
