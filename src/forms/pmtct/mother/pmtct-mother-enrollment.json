@@ -46,6 +46,18 @@
                 }
               },
               {
+                "label": "Other facility name",
+                "type": "obs",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "2c30c599-1e4f-46f9-8488-5ab57cdc8ac3"
+                },
+                "hide": {
+                  "hideWhenExpression": "referredFrom !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                },
+                "id": "otherFacilityName"
+              },
+              {
                 "label": "Date of enrollment / booking",
                 "type": "obs",
                 "required": true,
