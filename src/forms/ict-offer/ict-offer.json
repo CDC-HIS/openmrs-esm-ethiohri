@@ -54,6 +54,51 @@
                             }
                         },
                         {
+                            "label": "Prioritization for ICT",
+                            "type": "obs",
+                            "required": false,
+                            "id": "priorityCriteria",
+                            "hide": {
+                                "hideWhenExpression": "offered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "questionOptions": {
+                              "rendering": "select",
+                              "concept": "8534a956-49e8-42d9-82c4-33e51429265d",
+                              "conceptMappings": [],
+                              "answers": [
+                                {
+                                    "concept": "4693bef1-4d6b-4546-b2c9-1a3409b6158f",
+                                    "label": "Newly diagnosed"
+                                },
+                                {
+                                  "concept": "cd44c2af-e628-455f-8826-7aab004bd100",
+                                  "label": "Enrolled at PMTCT (Prevention of mother-to-child transmission of HIV)"
+                                },
+                                {
+                                  "concept": "41a9a67e-ce27-4a33-be91-0725209c69b0",
+                                  "label": "Key population (FSW)"
+                                },
+                                {
+                                  "concept": "c1c0c92c-521c-454c-bfd2-52db5b308f6a",
+                                  "label": "PLHIV (People living with HIV) incare with STI"
+                                },
+                                {
+                                  "concept": "bde58790-d3fc-40d6-bcce-f728105f91cf",
+                                  "label": "PLHIV (People living with HIV) restart ART & adult"
+                                },
+                                {
+                                  "concept": "7b370f0a-61e2-4cc4-99c1-f38d96d7cee0",
+                                  "label": "PLHIV (People living with HIV) with HVL & adult"
+                                },
+                                {
+                                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Other"
+                                }
+                              ]
+                            },
+                            "validators": []
+                          },
+                        {
                             "label": "Accepted",
                             "type": "obs",
                             "required": false,
