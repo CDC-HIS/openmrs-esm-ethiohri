@@ -821,7 +821,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < enrollment_date",
+									"message": "HIV confirmation date should not be later than enrollment date"
+								}
 							],
 							"id": "date_confirmed"
 						},

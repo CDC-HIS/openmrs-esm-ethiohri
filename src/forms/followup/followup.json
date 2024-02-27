@@ -23,7 +23,14 @@
 							  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
 							  "conceptMappings": [],
 							  "answers": []
-							}
+							},
+							"validators": [
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue > today()",
+									"message": "Future dates are not accepted"
+								}
+							]
 						  },
 						{
 							"label": "Visit type",
@@ -356,7 +363,7 @@
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "isEarlierThanConfirmationDate(patient, myValue)",
-									"message": "Date should not be earlier than HIV Confirmed date"
+									"message": "ART started date should not be earlier than HIV Confirmed date"
 								}
 							]
 						},
@@ -394,7 +401,10 @@
 								},
 								{
 								  "concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
-								  "label": "Pregnancy and family information observation"
+								  "label": "Pregnancy and family information observation",
+								  "hide": {
+									"hideWhenExpression": "patient.gender === 'male'"
+								}
 								},
 								{
 								  "concept": "246831e5-65e8-411f-aac9-57adcc4fb12c",

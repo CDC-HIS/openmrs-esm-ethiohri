@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getLatestObs } from "./api/api";
 import {
   INTAKE_A_ENCOUNTER_TYPE,
@@ -18,7 +19,7 @@ import {
   ten,
   fifteen,
   twenty,
-  twentyFive
+  twentyFive,
 } from "./constants";
 
 export function DispensedDoseInNumber(arvDispensedInDays: string) {
@@ -219,29 +220,26 @@ export function calcEGFR(patient, weight, creatinineLevel) {
   }
 }
 
-export async function isEarlierThanConfirmedDate(patient, chosenDate) {
+export async function isEarlierThanConfirmationDate(patient, chosenDate) {
   const confirmedDate = await getLatestObs(
     patient.id,
     "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
     INTAKE_A_ENCOUNTER_TYPE
   );
-  // eslint-disable-next-line no-console
   console.log(
     `Confirmed date: ${new Date(
       confirmedDate?.valueDateTime
     )}  ----  Chosen Date: ${new Date(chosenDate)}`
   );
 
-  // eslint-disable-next-line no-console
   console.log(
     `IS OLDER THAN CONFIRMED DATE: ${
       new Date(confirmedDate?.valueDateTime) > new Date(chosenDate)
     }`
   );
 
-  // eslint-disable-next-line no-console
   console.log(
-    `IS EQUALS THAN CONFIRMED DATE: ${
+    `IS EQUALS TO CONFIRMED DATE: ${
       new Date(confirmedDate?.valueDateTime).toDateString() ===
       new Date(chosenDate).toDateString()
     }`
@@ -256,7 +254,6 @@ export async function isDateAlreadyUsed(
   validatingDateUUID,
   FOLLOWUP_ENCOUNTER_TYPE
 ) {
-  // eslint-disable-next-line no-console
   console.log(`
   ${patient.id}
   ${chosenDate}
@@ -269,7 +266,6 @@ export async function isDateAlreadyUsed(
     FOLLOWUP_ENCOUNTER_TYPE
   );
 
-  // eslint-disable-next-line no-console
   console.log(`VALIDATION DATEEE ####: ${validatingDate}`);
 
   return validatingDate
