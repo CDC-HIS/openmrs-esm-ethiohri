@@ -20,7 +20,14 @@
 								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
 							},
 							"required": "true",
-							"id": "enrollment_date"
+							"id": "enrollment_date",
+							"validators": [
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue > today()",
+									"message": "Future dates are not accepted"
+								}
+							]
 						},
 						{
 							"label": "MRN",
@@ -819,13 +826,14 @@
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
+									"type": "js_expression",
+									"failsWhenExpression": "myValue > today()",
+									"message": "Future dates are not accepted"
+								},
 								{
 									"type": "js_expression",
-									"failsWhenExpression": "myValue < enrollment_date",
-									"message": "HIV confirmation date should not be later than enrollment date"
+									"failsWhenExpression": "myValue > enrollment_date",
+									"message": "HIV confirmation date should be earlier than enrollment date"
 								}
 							],
 							"id": "date_confirmed"
