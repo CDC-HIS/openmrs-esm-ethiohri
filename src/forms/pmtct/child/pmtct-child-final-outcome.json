@@ -64,6 +64,87 @@
               }
             }
           ]
+        },
+        {
+          "label": "Referral Information",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Provider name",
+              "type": "obs",
+              "required": false,
+              "id": "providerName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "1392"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "1473"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Provider telephone number",
+              "type": "obs",
+              "required": false,
+              "id": "providerTelephoneNumber",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "5587f1b1-1917-4345-a284-a0ed6a56a522",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred to",
+              "type": "obs",
+              "required": false,
+              "id": "referredTo",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "161562AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "161562"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred date",
+              "type": "obs",
+              "required": false,
+              "id": "referredDate",
+              "questionOptions": {
+                "rendering": "eth-date",
+                "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "161561"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
         }
       ]
     }

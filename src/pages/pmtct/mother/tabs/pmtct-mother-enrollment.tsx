@@ -51,8 +51,8 @@ const PMTCTMotherEnrollmentEncounterList: React.FC<{ patientUuid: string }> = ({
         encounterType={PMTCT_MOTHER_ENROLLMENT_ENCOUNTER_TYPE}
         formList={[{ name: "PMTCT Mother Initial Registration" }]}
         columns={columns}
-        description="Mother's Initial Registration Encounter List"
-        headerTitle="Mother's Initial Registration"
+        description="Maternal PMTCT Entry Information"
+        headerTitle="Maternal PMTCT Entry Information"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,

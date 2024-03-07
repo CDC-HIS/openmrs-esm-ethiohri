@@ -59,7 +59,7 @@
       "slot": "ethio-pmtct-slot",
       "component": "childHealthMenu",
       "meta": {
-        "title": "Child Health",
+        "title": "HEI Information",
         "slot": "child-health-slot",
         "path": "child-health",
         "columns": 1
@@ -75,7 +75,7 @@
       "slot": "ethio-pmtct-slot",
       "component": "motherHealthMenu",
       "meta": {
-        "title": "Mother Health",
+        "title": "Maternal PMTCT Information",
         "slot": "mother-health-slot",
         "path": "mother-health",
         "columns": 1

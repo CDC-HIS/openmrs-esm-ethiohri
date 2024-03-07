@@ -11,14 +11,15 @@ export const PMTCT_META = {
 };
 
 export const CHILD_HEALTH_SUMMARY = {
-  title: "Child Health Summary",
+  title: "HEI Information",
   slot: "child-health-slot",
   path: "child-health",
-  patientExpression: "calculateAge(patient.birthDate) <= 3",
+  patientExpression:
+    "calculateAge(patient.birthDate) <= 3 || hasPreviousEncounter(patient.id, 'ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97')",
 };
 
 export const MOTHER_HEALTH_SUMMARY = {
-  title: "Mother Health Summary",
+  title: "Maternal PMTCT Information",
   slot: "mother-health-slot",
   path: "mother-health",
   patientExpression:

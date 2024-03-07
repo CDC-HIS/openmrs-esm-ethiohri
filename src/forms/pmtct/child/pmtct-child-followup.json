@@ -171,7 +171,7 @@
               "required": false,
               "id": "reasonForGrowthFailure",
               "questionOptions": {
-                "rendering": "select",
+                "rendering": "checkbox",
                 "concept": "bbf0b810-d865-481c-8012-c446e1679fbd",
                 "conceptMappings": [],
                 "answers": [
@@ -1177,7 +1177,7 @@
                   },
                   {
                     "concept": "80782b25-98a1-4920-a676-a039908f3ed1",
-                    "label": "TO"
+                    "label": "TO (before Final Outcome known)"
                   },
                   {
                     "concept": "34a4c62c-4c5c-4e4b-bc13-f68e07eea076",
@@ -1193,7 +1193,7 @@
                   },
                   {
                     "concept": "5425b021-8539-420b-ad60-4636e98034f2",
-                    "label": "Positive - Referred pediatric HIV care outside facility"
+                    "label": "Positive - Referred for pediatric HIV care outside facility"
                   },
                   {
                     "concept": "bd91122b-5657-450b-9196-7cc705118ccc",
@@ -1201,90 +1201,9 @@
                   },
                   {
                     "concept": "00c3deda-9bb6-490f-821b-75ba9cc85db5",
-                    "label": "Discharged negative form care (HIV free)"
+                    "label": "Discharged negative from care (HIV free)"
                   }
                 ]
-              },
-              "validators": []
-            }
-          ]
-        },
-        {
-          "label": "Referral Information",
-          "isExpanded": "true",
-          "questions": [
-            {
-              "label": "Provider name",
-              "type": "obs",
-              "required": false,
-              "id": "providerName",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "1392"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "1473"
-                  }
-                ],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
-              "label": "Provider telephone number",
-              "type": "obs",
-              "required": false,
-              "id": "providerTelephoneNumber",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "5587f1b1-1917-4345-a284-a0ed6a56a522",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
-              "label": "Referred to",
-              "type": "obs",
-              "required": false,
-              "id": "referredTo",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "161562AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "161562"
-                  }
-                ],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
-              "label": "Referred date",
-              "type": "obs",
-              "required": false,
-              "id": "referredDate",
-              "questionOptions": {
-                "rendering": "eth-date",
-                "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "161561"
-                  }
-                ],
-                "answers": []
               },
               "validators": []
             }

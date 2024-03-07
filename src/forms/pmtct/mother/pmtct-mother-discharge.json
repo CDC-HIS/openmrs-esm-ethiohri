@@ -9,6 +9,52 @@
             "isExpanded": "true",
             "questions": [
               {
+                "label": "Date of enrollment / booking",
+                "type": "obs",
+                "required": true,
+                "id": "dateOfEnrollment",
+                "questionOptions": {
+                  "calculate": {
+                    "calculateExpression": "resolve(api.getLatestObs(patient.id, '0fe4faee-0717-4dc0-be3d-1cd52923804a', '0f108867-410d-4479-8375-2c85f218027c'))?.valueDateTime"
+                  },
+                  "rendering": "eth-date",
+                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Maternal PMTCT Final outcome",
+                "type": "obs",
+                "required": false,
+                "id": "finalOutcome",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Alive on ART"
+                    },
+                    {
+                      "concept": "1693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "TO"
+                    },
+                    {
+                      "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Died"
+                    },
+                    {
+                      "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
+                      "label": "Lost"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
                 "label": "Discharge date",
                 "type": "obs",
                 "required": false,
