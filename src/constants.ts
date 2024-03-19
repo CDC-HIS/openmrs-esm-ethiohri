@@ -174,3 +174,6 @@ export const GENDER_PMTCT_WARNING =
 
 export const ICT_OFFER_DECLINED_WARNING =
   "* ICT hasn't been offered/accepted by patient !";
+
+export const PRIVILEGE_WARNING =
+  "* You do not have the privilege to view this section !";

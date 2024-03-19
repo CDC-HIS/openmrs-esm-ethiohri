@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { getLatestObs } from "./api/api";
+import { getCurrentUser, getLatestObs } from "./api/api";
 import {
   INTAKE_A_ENCOUNTER_TYPE,
   female,
@@ -232,20 +232,9 @@ export async function isEarlierThanConfirmationDate(patient, chosenDate) {
     )}  ----  Chosen Date: ${new Date(chosenDate)}`
   );
 
-  console.log(
-    `IS OLDER THAN CONFIRMED DATE: ${
-      new Date(confirmedDate?.valueDateTime) > new Date(chosenDate)
-    }`
-  );
-
-  console.log(
-    `IS EQUALS TO CONFIRMED DATE: ${
-      new Date(confirmedDate?.valueDateTime).toDateString() ===
-      new Date(chosenDate).toDateString()
-    }`
-  );
-
-  return new Date(confirmedDate?.valueDateTime) > new Date(chosenDate);
+  let result = new Date(confirmedDate?.valueDateTime) > new Date(chosenDate);
+  console.log(`IS OLDER THAN CONFIRMED DATE: ${result}`);
+  return await confirmedDate;
 }
 
 export async function isDateAlreadyUsed(
@@ -272,4 +261,10 @@ export async function isDateAlreadyUsed(
     ? new Date(validatingDate?.valueDateTime).toDateString() ===
         new Date(chosenDate).toDateString()
     : false;
+}
+
+export async function checkUserRole(roleType) {
+  const user = await getCurrentUser();
+  const privilege = user?.roles?.find((element) => element.name === roleType);
+  return !privilege ? false : true;
 }

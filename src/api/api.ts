@@ -299,3 +299,9 @@ export function getLatestObs(
     return data.entry?.length ? data.entry[0].resource : null;
   });
 }
+
+export function getCurrentUser() {
+  return openmrsFetch(`ws/rest/v1/session`).then(({ data }) => {
+    return data.user ? data.user : null;
+  });
+}
