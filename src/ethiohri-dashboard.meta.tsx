@@ -40,13 +40,13 @@ export const POST_META = {
 };
 
 export const HIV_TESTING_SERVICE_META = {
-  title: "HIV Testing Service",
+  title: "HIV Client Testing Service",
   slot: "hiv-testing-service-slot",
   path: "hiv-testing-service",
 };
 
 export const INDEX_CASE_TESTING_META = {
-  title: "Index Case Testing",
+  title: "Index Case Client Testing",
   slot: "index-case-testing-slot",
   path: "index-case-testing",
 };

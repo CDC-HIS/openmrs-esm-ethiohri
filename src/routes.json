@@ -13,6 +13,38 @@
       "component": "hivCareAndTreatmentMenu"
     },
     {
+      "name": "hiv-testing-service-ext",
+      "slot": "hiv-care-and-treatment-slot",
+      "component": "hivTestingServiceMenu",
+      "meta": {
+        "title": "HIV Client Testing Service",
+        "slot": "hiv-testing-service-slot",
+        "path": "hiv-testing-service",
+        "columns": 1
+      }
+    },
+    {
+      "name": "hiv-testing-chart-ext",
+      "slot": "hiv-testing-service-slot",
+      "component": "hivTestingServiceChart"
+    },
+    {
+      "name": "index-case-testing-ext",
+      "slot": "hiv-care-and-treatment-slot",
+      "component": "indexCaseTestingMenu",
+      "meta": {
+        "title": "Index Case Client Testing",
+        "slot": "index-case-testing-slot",
+        "path": "index-case-testing",
+        "columns": 1
+      }
+    },
+    {
+      "name": "index-case-testing-chart-ext",
+      "slot": "index-case-testing-slot",
+      "component": "indexCaseTestingChart"
+    },
+    {
       "name": "program-management-ext",
       "slot": "hiv-care-and-treatment-slot",
       "component": "programManagementMenu",
@@ -117,38 +149,7 @@
       "name": "post-exposure-chart-ext",
       "slot": "post-exposure-slot",
       "component": "pepChart"
-    },
-    {
-      "name": "hiv-testing-service-ext",
-      "slot": "hiv-care-and-treatment-slot",
-      "component": "hivTestingServiceMenu",
-      "meta": {
-        "title": "HIV Testing Service",
-        "slot": "hiv-testing-service-slot",
-        "path": "hiv-testing-service",
-        "columns": 1
-      }
-    },
-    {
-      "name": "hiv-testing-chart-ext",
-      "slot": "hiv-testing-service-slot",
-      "component": "hivTestingServiceChart"
-    },
-    {
-      "name": "index-case-testing-ext",
-      "slot": "hiv-care-and-treatment-slot",
-      "component": "indexCaseTestingMenu",
-      "meta": {
-        "title": "Index Case Testing",
-        "slot": "index-case-testing-slot",
-        "path": "index-case-testing",
-        "columns": 1
-      }
-    },
-    {
-      "name": "index-case-testing-chart-ext",
-      "slot": "index-case-testing-slot",
-      "component": "indexCaseTestingChart"
     }
+    
   ]
 }
