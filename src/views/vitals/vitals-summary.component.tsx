@@ -20,13 +20,11 @@ import {
   CalendarDate,
 } from "@internationalized/date";
 
-interface HivBaselineTabListProps {
+interface VitalsSummaryProps {
   patientUuid: string;
 }
 
-const HivBaselineTabList: React.FC<HivBaselineTabListProps> = ({
-  patientUuid,
-}) => {
+const VitalsSummary: React.FC<VitalsSummaryProps> = ({ patientUuid }) => {
   const { t } = useTranslation();
   const [tableRows, setTableRows] = useState([]);
   const [encounterFollowUp, setencounterFollowUp] = useState([]);
@@ -165,4 +163,4 @@ const HivBaselineTabList: React.FC<HivBaselineTabListProps> = ({
   );
 };
 
-export default HivBaselineTabList;
+export default VitalsSummary;

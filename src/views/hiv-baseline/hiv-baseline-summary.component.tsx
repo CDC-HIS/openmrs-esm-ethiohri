@@ -19,11 +19,11 @@ import {
   CalendarDate,
 } from "@internationalized/date";
 
-interface HivBaselineTabListProps {
+interface HivBaselineSummaryProps {
   patientUuid: string;
 }
 
-const HivBaselineTabList: React.FC<HivBaselineTabListProps> = ({
+const HivBaselineSummary: React.FC<HivBaselineSummaryProps> = ({
   patientUuid,
 }) => {
   const { t } = useTranslation();
@@ -145,4 +145,4 @@ const HivBaselineTabList: React.FC<HivBaselineTabListProps> = ({
   );
 };
 
-export default HivBaselineTabList;
+export default HivBaselineSummary;

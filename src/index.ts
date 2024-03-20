@@ -43,6 +43,16 @@ import {
   createConditionalDashboardGroup,
   createConditionalDashboardLink,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
+import ProgramManagment from "./pages/program-management/program-managment-summary.component";
+import VisitsSummary from "./pages/visits/visits-summary.component";
+import MotherHealth from "./pages/pmtct/mother/pmtct-mother.component";
+import PreExposure from "./pages/pre-exposure/pre-exposure-summary.component";
+import PostExposure from "./pages/post-exposure/post-exposure.component";
+import HIVTestingService from "./pages/hiv-testing-service/hiv-testing-service-summary.component";
+import IndexCaseTesting from "./pages/index-case-testing/index-case-testing-summary.component";
+import ActiveMedications from "./views/medications/active-medications.component";
+import VitalsSummary from "./views/vitals/vitals-summary.component";
+import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -54,28 +64,35 @@ export const importTranslation = require.context(
 );
 
 export function startupApp() {
-  defineConfigSchema(moduleName, configSchema);
+  // defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
-  registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
-  registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
-  registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
-  registerExpressionHelper(
-    "CustomAdultNutritionalStatusCalc",
-    CalcAdultNutritionalStatus
-  );
-  registerExpressionHelper(
-    "CustomNutritionalScreeningCalc",
-    CalcNutritionalScreening
-  );
-  registerExpressionHelper("CustomBMICalc", CalcBMI);
-  registerExpressionHelper("getGender", getGender);
-  registerExpressionHelper("getIdentifier", getIdentifier);
-  registerExpressionHelper("calcEGFR", calcEGFR);
-  registerExpressionHelper(
-    "isEarlierThanConfirmationDate",
-    isEarlierThanConfirmationDate
-  );
-  registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
+  // registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
+  // registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
+  // registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
+  // registerExpressionHelper(
+  //   "CustomAdultNutritionalStatusCalc",
+  //   CalcAdultNutritionalStatus
+  // );
+  // registerExpressionHelper(
+  //   "CustomNutritionalScreeningCalc",
+  //   CalcNutritionalScreening
+  // );
+  // registerExpressionHelper("CustomBMICalc", CalcBMI);
+  // registerExpressionHelper("getGender", getGender);
+  // registerExpressionHelper("getIdentifier", getIdentifier);
+  // registerExpressionHelper("calcEGFR", calcEGFR);
+  // registerExpressionHelper(
+  //   "isEarlierThanConfirmationDate",
+  //   isEarlierThanConfirmationDate
+  // );
+  // registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
+
+  // import("./custom-expressions").then(({ CalcNextVisitDate }) => {
+  //   registerExpressionHelper(
+  //     "CustomNextVisitDateCalc",
+  //     CalcNextVisitDate
+  //   );
+  // });
 
   registerControl({
     name: "eth-date",
@@ -96,21 +113,16 @@ export const attributeTags = getAsyncLifecycle(
     moduleName,
   }
 );
-export const hivBaseline = getAsyncLifecycle(
-  () => import("./views/hiv-baseline/hiv-baseline-summary.component"),
-  {
-    featureName: "hiv-baseline-summary",
-    moduleName,
-  }
-);
-export const ethiohriActiveMedications = getAsyncLifecycle(
-  () => import("./views/medications/active-medications.component"),
+export const hivBaseline = getSyncLifecycle(HivBaselineSummary, {
+  featureName: "hiv-baseline-summary",
+  moduleName,
+});
+export const ethiohriActiveMedications = getSyncLifecycle(
+  ActiveMedications,
   options
 );
-export const vitalsOverview = getAsyncLifecycle(
-  () => import("./views/vitals/vitals-summary.component"),
-  options
-);
+export const vitalsOverview = getSyncLifecycle(VitalsSummary, options);
+
 export const hivCareAndTreatmentMenu = getSyncLifecycle(
   createDashboardGroup(HIV_CARE_AND_TREATMENT),
   options
@@ -127,9 +139,8 @@ export const programManagementMenu = getSyncLifecycle(
   options
 );
 
-export const programManagementChart = getAsyncLifecycle(
-  () =>
-    import("./pages/program-management/program-managment-summary.component"),
+export const programManagementChart = getSyncLifecycle(
+  ProgramManagment,
   options
 );
 export const clinicalVisitsMenu = getSyncLifecycle(
@@ -139,10 +150,7 @@ export const clinicalVisitsMenu = getSyncLifecycle(
   }),
   options
 );
-export const clinicalVisitsChart = getAsyncLifecycle(
-  () => import("./pages/visits/visits-summary.component"),
-  options
-);
+export const clinicalVisitsChart = getSyncLifecycle(VisitsSummary, options);
 
 export const pmtctMenu = getSyncLifecycle(
   createConditionalDashboardGroup(PMTCT_META),
@@ -166,10 +174,7 @@ export const motherHealthMenu = getSyncLifecycle(
   }),
   options
 );
-export const motherHealthChart = getAsyncLifecycle(
-  () => import("./pages/pmtct/mother/pmtct-mother.component"),
-  options
-);
+export const motherHealthChart = getSyncLifecycle(MotherHealth, options);
 export const prepMenu = getSyncLifecycle(
   createDashboardLink({
     ...PREP_META,
@@ -177,10 +182,7 @@ export const prepMenu = getSyncLifecycle(
   }),
   options
 );
-export const prepChart = getAsyncLifecycle(
-  () => import("./pages/pre-exposure/pre-exposure-summary.component"),
-  options
-);
+export const prepChart = getSyncLifecycle(PreExposure, options);
 export const pepMenu = getSyncLifecycle(
   createDashboardLink({
     ...POST_META,
@@ -188,10 +190,7 @@ export const pepMenu = getSyncLifecycle(
   }),
   options
 );
-export const pepChart = getAsyncLifecycle(
-  () => import("./pages/post-exposure/post-exposure.component"),
-  options
-);
+export const pepChart = getSyncLifecycle(PostExposure, options);
 export const hivTestingServiceMenu = getSyncLifecycle(
   createDashboardLink({
     ...HIV_TESTING_SERVICE_META,
@@ -199,9 +198,8 @@ export const hivTestingServiceMenu = getSyncLifecycle(
   }),
   options
 );
-export const hivTestingServiceChart = getAsyncLifecycle(
-  () =>
-    import("./pages/hiv-testing-service/hiv-testing-service-summary.component"),
+export const hivTestingServiceChart = getSyncLifecycle(
+  HIVTestingService,
   options
 );
 export const indexCaseTestingMenu = getSyncLifecycle(
@@ -211,8 +209,7 @@ export const indexCaseTestingMenu = getSyncLifecycle(
   }),
   options
 );
-export const indexCaseTestingChart = getAsyncLifecycle(
-  () =>
-    import("./pages/index-case-testing/index-case-testing-summary.component"),
+export const indexCaseTestingChart = getSyncLifecycle(
+  IndexCaseTesting,
   options
 );

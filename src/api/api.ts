@@ -1,5 +1,4 @@
 import { openmrsFetch } from "@openmrs/esm-framework";
-import moment from "moment";
 import {
   finalHIVCodeConcept,
   finalPositiveHIVValueConcept,
@@ -7,6 +6,7 @@ import {
   encounterRepresentation,
   covidOutcomesCohortUUID,
 } from "../constants";
+import dayjs from "dayjs";
 
 const BASE_WS_API_URL = "/ws/rest/v1/";
 const BASE_FHIR_API_URL = "/ws/fhir2/R4/";
@@ -48,7 +48,7 @@ export function fetchPatientList(offSet: number = 1, pageSize: number = 10) {
 }
 
 export function fetchTodayClients() {
-  let date = moment().format("YYYY-MM-DD");
+  let date = dayjs().format("YYYY-MM-DD");
   return openmrsFetch(`/ws/fhir2/R4/Encounter?date=${date}`).then(
     ({ data }) => {
       if (data.entry?.length) {
@@ -64,8 +64,8 @@ export function fetchPatientsFromObservationCodeConcept(
   valueConcept?: string,
   cutOffDays?: number
 ) {
-  let endDate = moment().format("YYYY-MM-DD");
-  let startDate = moment().subtract(cutOffDays, "days").format("YYYY-MM-DD");
+  let endDate = dayjs().format("YYYY-MM-DD");
+  let startDate = dayjs().subtract(cutOffDays, "days").format("YYYY-MM-DD");
 
   return openmrsFetch(
     `/ws/fhir2/R4/Observation?code=${codeConcept}${
