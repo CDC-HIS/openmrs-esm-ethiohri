@@ -53,6 +53,7 @@ import IndexCaseTesting from "./pages/index-case-testing/index-case-testing-summ
 import ActiveMedications from "./views/medications/active-medications.component";
 import VitalsSummary from "./views/vitals/vitals-summary.component";
 import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
+import ChildHealth from "./pages/pmtct/child/pmtct-child.component";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -64,35 +65,28 @@ export const importTranslation = require.context(
 );
 
 export function startupApp() {
-  // defineConfigSchema(moduleName, configSchema);
+  defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
-  // registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
-  // registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
-  // registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
-  // registerExpressionHelper(
-  //   "CustomAdultNutritionalStatusCalc",
-  //   CalcAdultNutritionalStatus
-  // );
-  // registerExpressionHelper(
-  //   "CustomNutritionalScreeningCalc",
-  //   CalcNutritionalScreening
-  // );
-  // registerExpressionHelper("CustomBMICalc", CalcBMI);
-  // registerExpressionHelper("getGender", getGender);
-  // registerExpressionHelper("getIdentifier", getIdentifier);
-  // registerExpressionHelper("calcEGFR", calcEGFR);
-  // registerExpressionHelper(
-  //   "isEarlierThanConfirmationDate",
-  //   isEarlierThanConfirmationDate
-  // );
-  // registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
-
-  // import("./custom-expressions").then(({ CalcNextVisitDate }) => {
-  //   registerExpressionHelper(
-  //     "CustomNextVisitDateCalc",
-  //     CalcNextVisitDate
-  //   );
-  // });
+  registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
+  registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
+  registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
+  registerExpressionHelper(
+    "CustomAdultNutritionalStatusCalc",
+    CalcAdultNutritionalStatus
+  );
+  registerExpressionHelper(
+    "CustomNutritionalScreeningCalc",
+    CalcNutritionalScreening
+  );
+  registerExpressionHelper("CustomBMICalc", CalcBMI);
+  registerExpressionHelper("getGender", getGender);
+  registerExpressionHelper("getIdentifier", getIdentifier);
+  registerExpressionHelper("calcEGFR", calcEGFR);
+  registerExpressionHelper(
+    "isEarlierThanConfirmationDate",
+    isEarlierThanConfirmationDate
+  );
+  registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
 
   registerControl({
     name: "eth-date",
@@ -163,10 +157,7 @@ export const childHealthMenu = getSyncLifecycle(
   }),
   options
 );
-export const childHealthChart = getAsyncLifecycle(
-  () => import("./pages/pmtct/child/pmtct-child.component"),
-  options
-);
+export const childHealthChart = getSyncLifecycle(ChildHealth, options);
 export const motherHealthMenu = getSyncLifecycle(
   createConditionalDashboardLink({
     ...MOTHER_HEALTH_SUMMARY,

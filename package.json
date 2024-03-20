@@ -113,8 +113,7 @@
   },
   "resolutions": {
     "@carbon/react": "1.13.0",
-    "@carbon/icons-react": "11.26.0",
-    "@openmrs/openmrs-form-engine-lib": "portal:/Users/piru/Projects/openmrs-form-engine-lib"
+    "@carbon/icons-react": "11.26.0"
   },
   "packageManager": "yarn@4.1.1"
 }

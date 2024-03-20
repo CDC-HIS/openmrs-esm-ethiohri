@@ -3180,9 +3180,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openmrs/openmrs-form-engine-lib@portal:/Users/piru/Projects/openmrs-form-engine-lib::locator=%40icap-ethiopia%2Fesm-ethiohri-app%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "@openmrs/openmrs-form-engine-lib@portal:/Users/piru/Projects/openmrs-form-engine-lib::locator=%40icap-ethiopia%2Fesm-ethiohri-app%40workspace%3A."
+"@openmrs/openmrs-form-engine-lib@npm:next":
+  version: 1.0.0-pre.556
+  resolution: "@openmrs/openmrs-form-engine-lib@npm:1.0.0-pre.556"
   dependencies:
     ace-builds: "npm:^1.4.12"
     enzyme: "npm:^3.11.0"
@@ -3205,8 +3205,9 @@ __metadata:
     react: 18.x
     react-i18next: 11.x
     rxjs: 6.x
+  checksum: 10/336b1a58d814bf96120f9948beadde0db81256a2254fd25ad176802a0f15fd7272cf221032e60c9c3ef58feddbb44c8ad5f68816ea031e7177a4f0c4fede9211
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "@openmrs/webpack-config@npm:5.5.1-pre.1651":
   version: 5.5.1-pre.1651
