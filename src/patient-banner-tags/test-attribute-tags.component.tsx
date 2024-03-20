@@ -23,7 +23,6 @@ export function fetchPatientObs(patientUuid: string) {
   );
 }
 const gregToEth = (gregdate: any) => {
-  // gregdate = moment(gregdate).format("DD/MM/YYYY");
   if (!gregdate) return null;
   let dmy = gregdate.split("-");
   if (dmy.length == 3) {

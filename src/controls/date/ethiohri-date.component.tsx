@@ -56,7 +56,8 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
       return isInlineView(
         question.inlineRendering,
         layoutType,
-        workspaceLayout
+        workspaceLayout,
+        "view"
       );
     }
     return false;
@@ -239,7 +240,7 @@ const ETHIOHRIDate: React.FC<OHRIFormFieldProps> = ({
         {previousValueForReview && (
           <div>
             <PreviousValueReview
-              value={previousValueForReview.value}
+              previousValue={previousValueForReview.value}
               displayText={previousValueForReview.display}
               setValue={onDateChange}
             />

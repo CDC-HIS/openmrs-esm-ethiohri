@@ -4,7 +4,7 @@ import styles from "../../program-management/program-management.scss";
 import PMTCTMotherEnrollmentEncounterList from "./tabs/pmtct-mother-enrollment";
 import PMTCTMotherDischargeEncounterList from "./tabs/pmtct-mother-discharge";
 
-const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const MotherHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <>
       <div className={styles.tabContainer}>
@@ -27,4 +27,4 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 };
 
-export default ChildHealth;
+export default MotherHealth;

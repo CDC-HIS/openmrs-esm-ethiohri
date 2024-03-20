@@ -49,7 +49,8 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
       return isInlineView(
         question.inlineRendering,
         layoutType,
-        workspaceLayout
+        workspaceLayout,
+        "view"
       );
     }
     return false;
@@ -217,7 +218,7 @@ const Calendar: React.FC<OHRIFormFieldProps> = ({
         {previousValueForReview && (
           <div>
             <PreviousValueReview
-              value={previousValueForReview.value}
+              previousValue={previousValueForReview.value}
               displayText={previousValueForReview.display}
               setValue={onDateChange}
             />
