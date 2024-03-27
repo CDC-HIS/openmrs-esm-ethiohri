@@ -6,7 +6,6 @@
   },
   "pages": [],
   "extensions": [
-    
     {
       "name": "hiv-care-and-treatment-ext",
       "slot": "patient-chart-dashboard-slot",
@@ -150,6 +149,5 @@
       "slot": "post-exposure-slot",
       "component": "pepChart"
     }
-    
   ]
 }

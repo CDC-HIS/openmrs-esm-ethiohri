@@ -43,17 +43,17 @@ import {
   createConditionalDashboardGroup,
   createConditionalDashboardLink,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
-import ProgramManagment from "./pages/program-management/program-managment-summary.component";
-import VisitsSummary from "./pages/visits/visits-summary.component";
-import MotherHealth from "./pages/pmtct/mother/pmtct-mother.component";
-import PreExposure from "./pages/pre-exposure/pre-exposure-summary.component";
-import PostExposure from "./pages/post-exposure/post-exposure.component";
-import HIVTestingService from "./pages/hiv-testing-service/hiv-testing-service-summary.component";
-import IndexCaseTesting from "./pages/index-case-testing/index-case-testing-summary.component";
+import ProgramManagment from "./views/program-management/program-managment-summary.component";
+import VisitsSummary from "./views/visits/visits-summary.component";
+import MotherHealth from "./views/pmtct/mother/pmtct-mother.component";
+import PreExposure from "./views/pre-exposure/pre-exposure-summary.component";
+import PostExposure from "./views/post-exposure/post-exposure.component";
+import HIVTestingService from "./views/hiv-testing-service/hiv-testing-service-summary.component";
+import IndexCaseTesting from "./views/index-case-testing/index-case-testing-summary.component";
 import ActiveMedications from "./views/medications/active-medications.component";
 import VitalsSummary from "./views/vitals/vitals-summary.component";
 import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
-import ChildHealth from "./pages/pmtct/child/pmtct-child.component";
+import ChildHealth from "./views/pmtct/child/pmtct-child.component";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -90,18 +90,22 @@ export function startupApp() {
 
   registerControl({
     name: "eth-date",
-    load: () => import("./controls/date/ethiohri-date.component"),
+    load: () => import("./components/controls/date/ethiohri-date.component"),
     type: "eth-date",
   });
 }
 
 export const patientDetailsButton = getAsyncLifecycle(
-  () => import("./actions-buttons/test-patient-details-button.component"),
+  () =>
+    import(
+      "./components/actions-buttons/test-patient-details-button.component"
+    ),
   options
 );
 
 export const attributeTags = getAsyncLifecycle(
-  () => import("./patient-banner-tags/test-attribute-tags.component"),
+  () =>
+    import("./components/patient-banner-tags/test-attribute-tags.component"),
   {
     featureName: "test-attribute-tags",
     moduleName,

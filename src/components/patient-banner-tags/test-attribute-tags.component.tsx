@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Tag } from "@carbon/react";
-import { openmrsFetch } from "@openmrs/esm-framework";
+import { openmrsFetch, restBaseUrl } from "@openmrs/esm-framework";
 import {
   EthiopicCalendar,
   toCalendar,
@@ -10,10 +10,9 @@ import {
 interface TestAttributeTagsProps {
   patientUuid: string;
 }
-const BASE_WS_API_URL = "/ws/rest/v1/";
 
 export function fetchPatientObs(patientUuid: string) {
-  return openmrsFetch(`${BASE_WS_API_URL}obs?patient=${patientUuid}`).then(
+  return openmrsFetch(`${restBaseUrl}/obs?patient=${patientUuid}`).then(
     ({ data }) => {
       if (data.results.length) {
         return data.results;
