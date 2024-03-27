@@ -7,7 +7,7 @@ import {
   PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE,
   PRE_EXPOSURE_SCREENING_NEEDED_WARNING,
 } from "../../../constants";
-import { getData } from "../../../encounterUtils";
+import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
 import styles from "../../../root.scss";

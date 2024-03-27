@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { ICT_OFFER_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../../constants";
-import { getData } from "../../../encounterUtils";
+import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
 import { fetchIdentifiers } from "../../../api/api";

@@ -8,7 +8,7 @@ import {
   ictAcceptedUUID,
   yesConceptUUID,
 } from "../../../constants";
-import { getData } from "../../../encounterUtils";
+import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
 import { fetchIdentifiers, getLatestObs } from "../../../api/api";

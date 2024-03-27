@@ -4,7 +4,7 @@ import {
   MRN_NULL_WARNING,
   POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE,
 } from "../../../constants";
-import { getData } from "../../../encounterUtils";
+import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
 import { fetchIdentifiers } from "../../../api/api";

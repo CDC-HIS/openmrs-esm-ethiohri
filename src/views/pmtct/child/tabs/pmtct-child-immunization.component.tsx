@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { PMTCT_IMMUNIZATION_ENCOUNTER_TYPE } from "../../../../constants";
-import { getData } from "../../../../encounterUtils";
+import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
 import { getPatientEncounters } from "../../../../api/api";
 
