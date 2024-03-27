@@ -1,5 +1,6 @@
-import { request } from '@playwright/test';
-import * as dotenv from 'dotenv';
+import { restBaseUrl } from "@openmrs/esm-framework";
+import { request } from "@playwright/test";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
@@ -12,20 +13,23 @@ dotenv.config();
 
 async function globalSetup() {
   const requestContext = await request.newContext();
-  const token = Buffer.from(`${process.env.E2E_USER_ADMIN_USERNAME}:${process.env.E2E_USER_ADMIN_PASSWORD}`).toString(
-    'base64',
+  const token = Buffer.from(
+    `${process.env.E2E_USER_ADMIN_USERNAME}:${process.env.E2E_USER_ADMIN_PASSWORD}`
+  ).toString("base64");
+  await requestContext.post(
+    `${process.env.E2E_BASE_URL}${restBaseUrl}/session`,
+    {
+      data: {
+        sessionLocation: process.env.E2E_LOGIN_DEFAULT_LOCATION_UUID,
+        locale: "en",
+      },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${token}`,
+      },
+    }
   );
-  await requestContext.post(`${process.env.E2E_BASE_URL}/ws/rest/v1/session`, {
-    data: {
-      sessionLocation: process.env.E2E_LOGIN_DEFAULT_LOCATION_UUID,
-      locale: 'en',
-    },
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Basic ${token}`,
-    },
-  });
-  await requestContext.storageState({ path: 'e2e/storageState.json' });
+  await requestContext.storageState({ path: "e2e/storageState.json" });
   await requestContext.dispose();
 }
 

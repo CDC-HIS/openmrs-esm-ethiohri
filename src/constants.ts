@@ -78,6 +78,7 @@ export const otherEntryPoint = "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const encounterType_follow_UP = "136b2ded-22a3-4831-a39a-088d35a50ef5";
 export const encounterType_intake_A = "05add044-67f8-48c9-928d-79002ab19efe";
 export const encounterType_intake_B = "dc94a223-66bc-45b7-8e34-d13b8686f239";
+
 // Clinical visit
 export const clinicalVisitEncounterType =
   "cb0a65a7-0587-477e-89b9-cf2fd144f1d4";
@@ -113,15 +114,6 @@ export const finalPositiveHIVValueConcept =
   "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const computedHIV_StatusConcept = "a5261998-c635-4e27-870c-e837faf6cf9a";
 
-// COVID Concepts
-export const dateSpecimenCollected = "159951AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-export const covidTestType = "069f6dfe-88c1-4a45-a894-0d99549c8718";
-export const covidOutcome = "a845f3e6-4432-4de4-9fff-37fa270b1a06";
-export const rapidAntigenResultDate = "af159c77-bc5d-46dd-90d9-bcbffb22267f";
-export const pcrTestResultDate = "4a77ab44-0323-490e-96be-e168c0e5c9de";
-export const finalCovid19Result = "5da5c21b-969f-41bd-9091-e40d4c707544";
-export const covidOutcomesCohortUUID = "afb0d950-48fd-44d7-ae2c-79615cd125f0";
-
 //HIV followup
 export const tptfollowup3HP = "c1af657e-bc31-46a2-9f5e-55a1c9ae7507";
 export const tptfollowupINH = "0166677a-5a8e-45fa-b3f6-3c5aa9f13d00";
@@ -129,7 +121,8 @@ export const tptfollowup3HR = "c1af657e-bc31-46a2-9f5e-55a1c9ae7507";
 export const cotrimoxazolestarted = "160434AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const fluconazolestarted = "a1173486-b6c1-4d0a-886d-1126b6b558a1";
 export const arvDispensecode = "6d7d0327-e1f8-4246-bfe5-be1e82d94b14";
-//vital signe
+
+//vital signs
 export const dateandtime = "";
 export const temperature = "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const sbp = "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
