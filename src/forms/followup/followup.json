@@ -845,8 +845,11 @@
 							"label": "Nutritional status of older child / adolescent (5-18 yrs old)",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "radio",
 								"concept": "cdcebe52-8acc-4eaa-ba6d-ceef4bde644f",
+								"calculate": {
+									"calculateExpression": "CustomOlderChildNutritionalStatusCalc('bmiForAge')"
+								},
 								"answers": [
 									{
 										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
