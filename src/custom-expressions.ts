@@ -159,6 +159,24 @@ export function CalcNutritionalScreening(height: number, weight: number) {
   return resultBMI ? resultNutritionalScreening : null;
 }
 
+export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
+  console.log("BMI FOR AGE", bmiForAge);
+  switch (bmiForAge) {
+    case "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f":
+      return "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "6f384ab3-5587-478e-a685-0b43c0f64163":
+      return "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "b782c7a5-639e-4f7e-9eee-608a62439885":
+      return "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "c3354c3c-b708-4821-94ee-cebc9eadf1e3":
+      return "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "9a41b3bb-7c37-40f2-9022-d0f672e171cc":
+      return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    default:
+      return 0;
+  }
+}
+
 export async function getGender(patient) {
   if (patient.gender === "male") {
     return male;
