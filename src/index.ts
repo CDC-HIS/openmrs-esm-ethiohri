@@ -83,11 +83,11 @@ export function startupApp() {
   registerExpressionHelper("calcEGFR", calcEGFR);
   registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
 
-  registerControl({
-    name: "eth-date",
-    load: () => import("./components/controls/date/ethiohri-date.component"),
-    type: "eth-date",
-  });
+  // registerControl({
+  //   name: "eth-date",
+  //   load: () => import("./components/controls/date/ethiohri-date.component"),
+  //   type: "eth-date",
+  // });
 }
 
 export const patientDetailsButton = getAsyncLifecycle(
