@@ -158,7 +158,7 @@ export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN, before this form can be filled ! Please add an MRN on patient details.";
 
 export const formWarning = (formName) =>
-  `* Patient needs to have a ${formName} form filled, before a this form can be filled !`;
+  `* Patient needs to have ${formName} form filled, before a this form can be filled !`;
 
 export const POSITIVE_PATIENT_WARNING =
   "* Patient has already been confirmed as HIV positive !";

@@ -3,11 +3,16 @@ import {
   EncounterList,
   EncounterListColumn,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { FOLLOWUP_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../constants";
+import {
+  FOLLOWUP_ENCOUNTER_TYPE,
+  INTAKE_A_ENCOUNTER_TYPE,
+  MRN_NULL_WARNING,
+  formWarning,
+} from "../../constants";
 import { getData } from "../encounterUtils";
 import { moduleName } from "../../index";
 import styles from "../../root.scss";
-import { fetchIdentifiers } from "../../api/api";
+import { fetchIdentifiers, getPatientEncounters } from "../../api/api";
 
 const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
@@ -112,11 +117,22 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 
   const [hasMRN, setHasMRN] = useState(false);
+  const [hasIntakeAEncounter, setHasIntakeAEncounter] = useState(false);
   useEffect(() => {
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
       if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
         setHasMRN(true);
+      }
+    })();
+
+    (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        INTAKE_A_ENCOUNTER_TYPE
+      );
+      if (previousEncounters.length) {
+        setHasIntakeAEncounter(true);
       }
     })();
   });
@@ -132,10 +148,13 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
+          hideFormLauncher: !hasMRN || !hasIntakeAEncounter,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+      {!hasIntakeAEncounter && (
+        <p className={styles.patientName}>{formWarning("Intake A")}</p>
+      )}
     </>
   );
 };
