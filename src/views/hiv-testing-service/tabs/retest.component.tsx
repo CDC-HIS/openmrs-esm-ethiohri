@@ -6,10 +6,13 @@ import {
   RETEST_ENCOUNTER_TYPE,
   formWarning,
 } from "../../../constants";
-import { getData } from "../../encounterUtils";
+import {
+  doesEncounterExist,
+  doesPatientHaveIdentifier,
+  getData,
+} from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
-import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
 
 const columns = [
   {
@@ -97,30 +100,19 @@ const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
     useState(false);
   useEffect(() => {
     (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-
-    (async () => {
-      const previousEncounters = await getPatientEncounters(
+      await doesEncounterExist(
         patientUuid,
-        RETEST_ENCOUNTER_TYPE
+        POSITIVE_TRACKING_ENCOUNTER_TYPE,
+        setHasPositiveTrackingEncounter
       );
-      if (previousEncounters.length) {
-        setHasPreviousEncounter(true);
-      }
-    })();
 
-    (async () => {
-      const previousEncounters = await getPatientEncounters(
+      await doesEncounterExist(
         patientUuid,
-        POSITIVE_TRACKING_ENCOUNTER_TYPE
+        RETEST_ENCOUNTER_TYPE,
+        setHasPreviousEncounter
       );
-      if (previousEncounters.length) {
-        setHasPositiveTrackingEncounter(true);
-      }
+
+      await doesPatientHaveIdentifier(patientUuid, setHasMRN);
     })();
   });
   return (

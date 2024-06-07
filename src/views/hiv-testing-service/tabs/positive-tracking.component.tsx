@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { POSITIVE_TRACKING_ENCOUNTER_TYPE } from "../../../constants";
-import { getData } from "../../encounterUtils";
+import {
+  MRN_NULL_WARNING,
+  POSITIVE_TRACKING_ENCOUNTER_TYPE,
+} from "../../../constants";
+import { doesPatientHaveIdentifier, getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
+import styles from "../../../root.scss";
 
 const columns = [
   {
@@ -86,19 +90,30 @@ const columns = [
 const PositiveTrackingList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasMRN, setHasMRN] = useState(false);
+  useEffect(() => {
+    (async () => {
+      await doesPatientHaveIdentifier(patientUuid, setHasMRN);
+    })();
+  });
+
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={POSITIVE_TRACKING_ENCOUNTER_TYPE}
-      formList={[{ name: "Positive Tracking" }]}
-      columns={columns}
-      description="Positive Tracking List"
-      headerTitle="Positive Tracking"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <>
+      <EncounterList
+        patientUuid={patientUuid}
+        encounterType={POSITIVE_TRACKING_ENCOUNTER_TYPE}
+        formList={[{ name: "Positive Tracking" }]}
+        columns={columns}
+        description="Positive Tracking List"
+        headerTitle="Positive Tracking"
+        launchOptions={{
+          displayText: "Add",
+          moduleName: moduleName,
+          hideFormLauncher: !hasMRN,
+        }}
+      />
+      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+    </>
   );
 };
 
