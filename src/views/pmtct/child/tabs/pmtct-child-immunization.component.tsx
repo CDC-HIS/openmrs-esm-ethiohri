@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { PMTCT_IMMUNIZATION_ENCOUNTER_TYPE } from "../../../../constants";
-import { getData } from "../../../encounterUtils";
+import {
+  PMTCT_IMMUNIZATION_ENCOUNTER_TYPE,
+  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  formWarning,
+} from "../../../../constants";
+import { doesEncounterExist, getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { getPatientEncounters } from "../../../../api/api";
+import styles from "../../../../root.scss";
 
 const columns = [
   {
@@ -89,15 +93,20 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
+  const [hasEnrollmentEncounter, setHasEnrollmentEncounter] = useState(false);
   useEffect(() => {
     (async () => {
-      const previousEncounters = await getPatientEncounters(
+      await doesEncounterExist(
         patientUuid,
-        PMTCT_IMMUNIZATION_ENCOUNTER_TYPE
+        PMTCT_IMMUNIZATION_ENCOUNTER_TYPE,
+        setHasPreviousEncounter
       );
-      if (previousEncounters.length) {
-        setHasPreviousEncounter(true);
-      }
+
+      await doesEncounterExist(
+        patientUuid,
+        PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+        setHasEnrollmentEncounter
+      );
     })();
   });
   return (
@@ -112,9 +121,12 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: hasPreviousEncounter,
+          hideFormLauncher: hasPreviousEncounter || !hasEnrollmentEncounter,
         }}
       />
+      {!hasEnrollmentEncounter && (
+        <p className={styles.patientName}>{formWarning("HEI Enrollment")}</p>
+      )}
     </>
   );
 };

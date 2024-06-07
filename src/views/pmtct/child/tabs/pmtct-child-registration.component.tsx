@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { PMTCT_REGISTRATION_ENCOUNTER_TYPE } from "../../../../constants";
+import {
+  ENROLLED_IN_PMTCT_CONCEPT_ID,
+  NOT_ENROLLED_IN_PMTCT_WARNING,
+  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  REGISTRATION_ENCOUNTER_TYPE,
+  yesConceptUUID,
+} from "../../../../constants";
 import { getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { getPatientEncounters } from "../../../../api/api";
+import { getLatestObs, getPatientEncounters } from "../../../../api/api";
+import styles from "../../../../root.scss";
 
 const columns = [
   {
@@ -80,6 +87,7 @@ const columns = [
 const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
+  const [hasEnrolledInPMTCT, setHasEnrolledInPMTCT] = useState(false);
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   useEffect(() => {
     (async () => {
@@ -88,8 +96,21 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
         PMTCT_REGISTRATION_ENCOUNTER_TYPE
       );
       if (previousEncounters.length) {
-        setHasPreviousEncounter(true);
+        setHasPreviousEncounter(false);
       }
+    })();
+
+    (async () => {
+      const enrolledInPMTCT = await getLatestObs(
+        patientUuid,
+        ENROLLED_IN_PMTCT_CONCEPT_ID,
+        REGISTRATION_ENCOUNTER_TYPE
+      );
+
+      setHasEnrolledInPMTCT(
+        enrolledInPMTCT?.valueCodeableConcept?.coding[0]?.code ===
+          yesConceptUUID
+      );
     })();
   });
   return (
@@ -104,9 +125,12 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: hasPreviousEncounter,
+          hideFormLauncher: hasPreviousEncounter || !hasEnrolledInPMTCT,
         }}
       />
+      {!hasEnrolledInPMTCT && (
+        <p className={styles.patientName}>{NOT_ENROLLED_IN_PMTCT_WARNING}</p>
+      )}
     </>
   );
 };

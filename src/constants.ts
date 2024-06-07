@@ -35,6 +35,8 @@ export const PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE =
   "8c2b6a9b-4795-417d-affe-2530a753b715";
 export const PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE =
   "bc423d48-af6f-4354-af22-fec8ff1c0308";
+export const REGISTRATION_ENCOUNTER_TYPE =
+  "a0fde61e-f493-4f1f-b709-22aa94f72dc3";
 
 //Intake A concepts
 export const male = "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -109,6 +111,12 @@ export const oneHundredTwenty = "684c450f-878b-4b96-ab1b-2b539c30f033";
 export const oneHundredFifty = "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93";
 export const oneHundredEighty = "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8";
 
+//Registration encounter concepts
+export const REGISTRATION_DATE_CONCEPT_ID =
+  "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const ENROLLED_IN_PMTCT_CONCEPT_ID =
+  "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
 // Final HIV Test Result Concepts
 export const finalHIVCodeConcept = "e16b0068-b6a2-46b7-aba9-e3be00a7b4ab";
 export const finalPositiveHIVValueConcept =
@@ -158,7 +166,7 @@ export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN, before this form can be filled ! Please add an MRN on patient details.";
 
 export const formWarning = (formName) =>
-  `* Patient needs to have ${formName} form filled, before a this form can be filled !`;
+  `* Patient needs to have ${formName} form filled, before this form can be filled !`;
 
 export const POSITIVE_PATIENT_WARNING =
   "* Patient has already been confirmed as HIV positive !";
@@ -174,3 +182,6 @@ export const ICT_OFFER_DECLINED_WARNING =
 
 export const PRIVILEGE_WARNING =
   "* You do not have the privilege to view this section !";
+
+export const NOT_ENROLLED_IN_PMTCT_WARNING =
+  "* Patient was not reffered to PMTCT during registration !";

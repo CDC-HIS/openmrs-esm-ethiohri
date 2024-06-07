@@ -1,12 +1,17 @@
 /* eslint-disable prettier/prettier */
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   EncounterList,
   EncounterListColumn,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { PMTCT_FOLLOWUP_ENCOUNTER_TYPE } from "../../../../constants";
-import { getData } from "../../../encounterUtils";
+import {
+  PMTCT_FOLLOWUP_ENCOUNTER_TYPE,
+  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  formWarning,
+} from "../../../../constants";
+import { doesEncounterExist, getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
+import styles from "../../../../root.scss";
 
 const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
@@ -126,19 +131,36 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
     []
   );
 
+  const [hasEnrollmentEncounter, setHasEnrollmentEncounter] = useState(false);
+  useEffect(() => {
+    (async () => {
+      await doesEncounterExist(
+        patientUuid,
+        PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+        setHasEnrollmentEncounter
+      );
+    })();
+  });
+
   return (
-    <EncounterList
-      patientUuid={patientUuid}
-      encounterType={PMTCT_FOLLOWUP_ENCOUNTER_TYPE}
-      formList={[{ name: "HEI Followup" }]}
-      columns={columns}
-      description="HEI Followup Encounter List"
-      headerTitle="HEI Followup"
-      launchOptions={{
-        displayText: "Add",
-        moduleName: moduleName,
-      }}
-    />
+    <>
+      <EncounterList
+        patientUuid={patientUuid}
+        encounterType={PMTCT_FOLLOWUP_ENCOUNTER_TYPE}
+        formList={[{ name: "HEI Followup" }]}
+        columns={columns}
+        description="HEI Followup Encounter List"
+        headerTitle="HEI Followup"
+        launchOptions={{
+          displayText: "Add",
+          moduleName: moduleName,
+          hideFormLauncher: !hasEnrollmentEncounter,
+        }}
+      />
+      {!hasEnrollmentEncounter && (
+        <p className={styles.patientName}>{formWarning("HEI Enrollment")}</p>
+      )}
+    </>
   );
 };
 
