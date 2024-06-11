@@ -53,7 +53,7 @@ import IndexCaseTesting from "./views/index-case-testing/index-case-testing-summ
 import ActiveMedications from "./views/medications/active-medications.component";
 import VitalsSummary from "./views/vitals/vitals-summary.component";
 import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
-import ChildHealth from "./views/pmtct/child/pmtct-child.component";
+import ChildHealth from "./views/pmtct/child/hei.component";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };

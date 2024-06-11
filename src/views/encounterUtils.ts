@@ -21,11 +21,11 @@ export async function doesEncounterExist(
   encounterTypeId,
   setHasEncounter
 ) {
-  const previousencounter = await getPatientEncounters(
+  const previousEncounter = await getPatientEncounters(
     patientId,
     encounterTypeId
   );
-  if (previousencounter.length) {
+  if (previousEncounter.length) {
     setHasEncounter(true);
   }
 }

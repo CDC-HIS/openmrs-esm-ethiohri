@@ -7,9 +7,9 @@ import {
   REGISTRATION_ENCOUNTER_TYPE,
   yesConceptUUID,
 } from "../../../../constants";
-import { getData } from "../../../encounterUtils";
+import { doesEncounterExist, getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
-import { getLatestObs, getPatientEncounters } from "../../../../api/api";
+import { getLatestObs } from "../../../../api/api";
 import styles from "../../../../root.scss";
 
 const columns = [
@@ -91,22 +91,17 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   useEffect(() => {
     (async () => {
-      const previousEncounters = await getPatientEncounters(
+      await doesEncounterExist(
         patientUuid,
-        HEI_ENROLLMENT_ENCOUNTER_TYPE
+        HEI_ENROLLMENT_ENCOUNTER_TYPE,
+        setHasPreviousEncounter
       );
-      if (previousEncounters.length) {
-        setHasPreviousEncounter(false);
-      }
-    })();
 
-    (async () => {
       const enrolledInPMTCT = await getLatestObs(
         patientUuid,
         ENROLLED_IN_PMTCT_CONCEPT_ID,
         REGISTRATION_ENCOUNTER_TYPE
       );
-
       setHasEnrolledInPMTCT(
         enrolledInPMTCT?.valueCodeableConcept?.coding[0]?.code ===
           yesConceptUUID

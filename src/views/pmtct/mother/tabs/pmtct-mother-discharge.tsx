@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
-  FOLLOWUP_ENCOUNTER_TYPE,
-  INTAKE_A_ENCOUNTER_TYPE,
   PMTCT_MOTHER_DISCHARGE_ENCOUNTER_TYPE,
+  PMTCT_MOTHER_ENROLLMENT_ENCOUNTER_TYPE,
   formWarning,
 } from "../../../../constants";
 import { doesEncounterExist, getData } from "../../../encounterUtils";
@@ -57,20 +56,15 @@ const columns = [
 const PMTCTMotherDischargeEncounterList: React.FC<{
   patientUuid: string;
 }> = ({ patientUuid }) => {
-  const [hasIntakeAEncounter, setHasIntakeAEncounter] = useState(false);
-  const [hasFollowupEncounter, setHasFollowupEncounter] = useState(false);
+  const [hasPMTCTEnrollmentEncounter, setHasPMTCTEnrollmentEncounter] =
+    useState(false);
 
   useEffect(() => {
     (async () => {
       await doesEncounterExist(
         patientUuid,
-        INTAKE_A_ENCOUNTER_TYPE,
-        setHasIntakeAEncounter
-      );
-      await doesEncounterExist(
-        patientUuid,
-        FOLLOWUP_ENCOUNTER_TYPE,
-        setHasFollowupEncounter
+        PMTCT_MOTHER_ENROLLMENT_ENCOUNTER_TYPE,
+        setHasPMTCTEnrollmentEncounter
       );
     })();
   });
@@ -87,14 +81,13 @@ const PMTCTMotherDischargeEncounterList: React.FC<{
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasIntakeAEncounter || !hasFollowupEncounter,
+          hideFormLauncher: !hasPMTCTEnrollmentEncounter,
         }}
       />
-      {!hasIntakeAEncounter && (
-        <p className={styles.patientName}>{formWarning("Intake A")}</p>
-      )}
-      {!hasFollowupEncounter && (
-        <p className={styles.patientName}>{formWarning("Followup")}</p>
+      {!hasPMTCTEnrollmentEncounter && (
+        <p className={styles.patientName}>
+          {formWarning("PMTCT Mother Enrollment")}
+        </p>
       )}
     </>
   );

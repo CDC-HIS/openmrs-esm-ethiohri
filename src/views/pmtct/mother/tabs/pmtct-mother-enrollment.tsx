@@ -30,24 +30,24 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Mother Initial Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Mother Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "View Mother's Initial Registration",
+        label: "View Mother's Enrollment",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Mother Initial Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Mother Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Edit Mother's Initial Registration",
+        label: "Edit Mother's Enrollment",
         mode: "edit",
       },
       {
-        form: { name: "PMTCT Mother Initial Registration", package: "eth_hiv" },
+        form: { name: "PMTCT Mother Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Delete Mother's Initial Registration",
+        label: "Delete Mother's Enrollment",
         mode: "delete",
       },
     ],
@@ -80,10 +80,10 @@ const PMTCTMotherEnrollmentEncounterList: React.FC<{ patientUuid: string }> = ({
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PMTCT_MOTHER_ENROLLMENT_ENCOUNTER_TYPE}
-        formList={[{ name: "PMTCT Mother Initial Registration" }]}
+        formList={[{ name: "PMTCT Enrollment" }]}
         columns={columns}
         description="Maternal PMTCT Entry Information"
-        headerTitle="Maternal PMTCT Entry Information"
+        headerTitle="PMTCT Mother Enrollment"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,

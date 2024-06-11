@@ -1,10 +1,10 @@
 import { Tab, Tabs, TabList, TabPanels, TabPanel } from "@carbon/react";
 import React from "react";
 import styles from "../../program-management/program-management.scss";
-import PMTCTRegistrationEncounterList from "./tabs/pmtct-child-registration.component";
-import PMTCTImmunizationEncounterList from "./tabs/pmtct-child-immunization.component";
-import PMTCTFollowupEncounterList from "./tabs/pmtct-child-followup.component";
-import PMTCTChildFinalOutcomeEncounterList from "./tabs/pmtct-child-final-outcome";
+import PMTCTRegistrationEncounterList from "./tabs/hei-enrollment.component";
+import PMTCTImmunizationEncounterList from "./tabs/hei-immunization.component";
+import PMTCTFollowupEncounterList from "./tabs/hei-followup.component";
+import PMTCTChildFinalOutcomeEncounterList from "./tabs/hei-final-outcome";
 
 const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (

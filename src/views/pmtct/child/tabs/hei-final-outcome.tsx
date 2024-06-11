@@ -79,7 +79,7 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
       <EncounterList
         patientUuid={patientUuid}
         encounterType={HEI_FINAL_OUTCOME_ENCOUNTER_TYPE}
-        formList={[{ name: "HEI Child Final Outcome" }]}
+        formList={[{ name: "HEI Final Outcome" }]}
         columns={columns}
         description="HEI Final Outcome Encounter List"
         headerTitle="HEI Final Outcome"
