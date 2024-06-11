@@ -1,6 +1,6 @@
 {
   "name": "HEI Immunization",
-	"version": "2.0",
+	"version": "1.0",
 	"published": true,
 	"retired": false,
 	"encounter": "HEI Immunization",
@@ -731,8 +731,14 @@
       ]
     }
   ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
   "processor": "EncounterFormProcessor",
-	"uuid": "5e353ae4-f834-4de0-bc7a-2c30ea8840ad",
+	"uuid": "54d8c12f-355d-3ad7-8261-2374480653bc",
 	"referencedForms": [],
 	"encounterType": "1a548c84-2170-47d5-9a23-56fcad902f63",
 	"allowUnspecifiedAll": true

@@ -1,6 +1,6 @@
 {
   "name": "HEI Followup",
-  "version": "2.0",
+  "version": "1.0",
   "published": true,
   "retired": false,
   "encounter": "HEI Followup",
@@ -1231,8 +1231,14 @@
       ]
     }
   ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
   "processor": "EncounterFormProcessor",
-  "uuid": "a6350beb-5964-4437-8071-ce2ef39ac362",
+  "uuid": "f4504bb0-b656-3c8a-8fd8-038fb9ba75b8",
   "referencedForms": [],
   "encounterType": "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d",
   "allowUnspecifiedAll": true

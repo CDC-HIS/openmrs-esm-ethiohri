@@ -5,8 +5,8 @@ import {
   EncounterListColumn,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
-  PMTCT_FOLLOWUP_ENCOUNTER_TYPE,
-  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  HEI_FOLLOWUP_ENCOUNTER_TYPE,
+  HEI_ENROLLMENT_ENCOUNTER_TYPE,
   formWarning,
 } from "../../../../constants";
 import { doesEncounterExist, getData } from "../../../encounterUtils";
@@ -136,7 +136,7 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
     (async () => {
       await doesEncounterExist(
         patientUuid,
-        PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+        HEI_ENROLLMENT_ENCOUNTER_TYPE,
         setHasEnrollmentEncounter
       );
     })();
@@ -146,7 +146,7 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
     <>
       <EncounterList
         patientUuid={patientUuid}
-        encounterType={PMTCT_FOLLOWUP_ENCOUNTER_TYPE}
+        encounterType={HEI_FOLLOWUP_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Followup" }]}
         columns={columns}
         description="HEI Followup Encounter List"

@@ -1,7 +1,7 @@
 {
-  "name": "HEI Child Final Outcome",
-  "encounter": "HEI Child Final Outcome",
-  "version": "2.0",
+  "name": "HEI Final Outcome",
+  "encounter": "HEI Final Outcome",
+  "version": "1.0",
   "published": true,
   "retired": false,
   "pages": [
@@ -152,9 +152,15 @@
       ]
     }
   ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
   "processor": "EncounterFormProcessor",
   "encounterType": "7a35d870-f997-40fe-aef6-1648ccc36aa9",
   "referencedForms": [],
-  "uuid": "4b3b8a24-3b8b-48e6-a858-d26444bd732b",
+  "uuid": "f5672f05-dc5a-3f3f-a2ab-51de7858f41c",
   "allowUnspecifiedAll": true
 }

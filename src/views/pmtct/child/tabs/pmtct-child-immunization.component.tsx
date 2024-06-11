@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
-  PMTCT_IMMUNIZATION_ENCOUNTER_TYPE,
-  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  HEI_IMMUNIZATION_ENCOUNTER_TYPE,
+  HEI_ENROLLMENT_ENCOUNTER_TYPE,
   formWarning,
 } from "../../../../constants";
 import { doesEncounterExist, getData } from "../../../encounterUtils";
@@ -98,13 +98,13 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
     (async () => {
       await doesEncounterExist(
         patientUuid,
-        PMTCT_IMMUNIZATION_ENCOUNTER_TYPE,
+        HEI_IMMUNIZATION_ENCOUNTER_TYPE,
         setHasPreviousEncounter
       );
 
       await doesEncounterExist(
         patientUuid,
-        PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+        HEI_ENROLLMENT_ENCOUNTER_TYPE,
         setHasEnrollmentEncounter
       );
     })();
@@ -113,7 +113,7 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
     <>
       <EncounterList
         patientUuid={patientUuid}
-        encounterType={PMTCT_IMMUNIZATION_ENCOUNTER_TYPE}
+        encounterType={HEI_IMMUNIZATION_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Immunization" }]}
         columns={columns}
         description="HEI Immunization Encounter List"

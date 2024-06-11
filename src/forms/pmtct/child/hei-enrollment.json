@@ -1,6 +1,6 @@
 {
   "name": "HEI Enrollment",
-  "version": "2.0",
+  "version": "1.0",
   "published": true,
   "retired": false,
   "encounter": "HEI Enrollment",
@@ -1112,8 +1112,14 @@
       ]
     }
   ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
   "processor": "EncounterFormProcessor",
-  "uuid": "1c19ae8a-c896-4596-8e6f-808ea2a60baa",
+  "uuid": "11b4730d-e689-336b-9ac2-e989e479cc2b",
   "referencedForms": [],
   "encounterType": "ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97",
   "allowUnspecifiedAll": true

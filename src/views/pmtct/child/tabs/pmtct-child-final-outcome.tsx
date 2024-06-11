@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
-  PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE,
-  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  HEI_FINAL_OUTCOME_ENCOUNTER_TYPE,
+  HEI_ENROLLMENT_ENCOUNTER_TYPE,
   formWarning,
 } from "../../../../constants";
 import { doesEncounterExist, getData } from "../../../encounterUtils";
@@ -63,13 +63,13 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
     (async () => {
       await doesEncounterExist(
         patientUuid,
-        PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE,
+        HEI_FINAL_OUTCOME_ENCOUNTER_TYPE,
         setHasPreviousEncounter
       );
 
       await doesEncounterExist(
         patientUuid,
-        PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+        HEI_ENROLLMENT_ENCOUNTER_TYPE,
         setHasEnrollmentEncounter
       );
     })();
@@ -78,7 +78,7 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
     <>
       <EncounterList
         patientUuid={patientUuid}
-        encounterType={PMTCT_CHILD_FINAL_OUTCOME_ENCOUNTER_TYPE}
+        encounterType={HEI_FINAL_OUTCOME_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Child Final Outcome" }]}
         columns={columns}
         description="HEI Final Outcome Encounter List"

@@ -1,5 +1,9 @@
 {
     "name": "PMTCT Discharge",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "PMTCT Discharge",
     "pages": [
       {
         "label": "Discharge Information",
@@ -122,9 +126,15 @@
         ]
       }
     ],
+    "availableIntents": [
+      {
+        "intent": "*",
+        "display": "default_intent"
+      }
+    ],
     "processor": "EncounterFormProcessor",
     "encounterType": "e5557459-db41-49b0-ade8-afa7b4767bf9",
     "referencedForms": [],
-    "uuid": "19b6df7e-592b-4ffb-a45f-9e6de6a95802",
-    "description": ""
+    "uuid": "5a753d1a-926b-385c-9f6d-e336dde7a8da",
+    "allowUnspecifiedAll": true
   }

@@ -3,7 +3,7 @@ import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   ENROLLED_IN_PMTCT_CONCEPT_ID,
   NOT_ENROLLED_IN_PMTCT_WARNING,
-  PMTCT_REGISTRATION_ENCOUNTER_TYPE,
+  HEI_ENROLLMENT_ENCOUNTER_TYPE,
   REGISTRATION_ENCOUNTER_TYPE,
   yesConceptUUID,
 } from "../../../../constants";
@@ -93,7 +93,7 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
     (async () => {
       const previousEncounters = await getPatientEncounters(
         patientUuid,
-        PMTCT_REGISTRATION_ENCOUNTER_TYPE
+        HEI_ENROLLMENT_ENCOUNTER_TYPE
       );
       if (previousEncounters.length) {
         setHasPreviousEncounter(false);
@@ -117,7 +117,7 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
     <>
       <EncounterList
         patientUuid={patientUuid}
-        encounterType={PMTCT_REGISTRATION_ENCOUNTER_TYPE}
+        encounterType={HEI_ENROLLMENT_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Enrollment" }]}
         columns={columns}
         description="HEI Enrollment Encounter List"
