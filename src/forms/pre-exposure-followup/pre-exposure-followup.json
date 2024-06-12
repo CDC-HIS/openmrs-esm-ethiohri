@@ -23,7 +23,12 @@
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             }
           ]
         },
@@ -347,7 +352,12 @@
               "hide": {
                 "hideWhenExpression": "isClientPregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             },
             {
               "label": "EDD",
@@ -797,7 +807,12 @@
               "hide": {
                 "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e'"
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             },
             {
               "label": "Screened for TB",

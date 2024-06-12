@@ -23,10 +23,9 @@
 							"id": "enrollment_date",
 							"validators": [
 								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue > today()",
-									"message": "Future dates are not accepted"
-								}
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
 							]
 						},
 						{
@@ -833,9 +832,8 @@
 							},
 							"validators": [
 								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue > today()",
-									"message": "Future dates are not accepted"
+									"type": "date",
+									"allowFutureDates": "false"
 								},
 								{
 									"type": "js_expression",

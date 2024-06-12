@@ -58,6 +58,12 @@
               "type": "obs",
               "required": true,
               "id": "dateOfFinalOutcome",
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
               "questionOptions": {
                 "rendering": "date",
                 "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302"
@@ -145,7 +151,12 @@
                 ],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             }
           ]
         }

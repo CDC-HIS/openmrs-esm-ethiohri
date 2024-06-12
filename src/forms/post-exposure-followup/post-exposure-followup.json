@@ -44,10 +44,6 @@
 					{
 						"type": "date",
 						"allowFutureDates": "false"
-					},
-					{
-						"type": "js_expression",
-						"failsWhenExpression": ""
 					}
 				],
 				"id": "visitDate"

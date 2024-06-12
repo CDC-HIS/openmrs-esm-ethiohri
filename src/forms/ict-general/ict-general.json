@@ -455,6 +455,12 @@
                                     "allowFutureDates": "false"
                                 }
 							],
+                            "validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
                             "answers": []
                         },
                         {
@@ -554,7 +560,13 @@
                                     }
                                 ],
                                 "answers": []
-                            }
+                            },
+                            "validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							]
                         },
                         {
                             "label": "UAN",

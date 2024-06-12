@@ -19,6 +19,12 @@
 								"rendering": "date",
 								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
 							},
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
 							"required": "true",
 							"id": "enrollment_date"
 						},
@@ -832,7 +838,12 @@
                 ],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             },
             {
               "label": "Unique ART number",

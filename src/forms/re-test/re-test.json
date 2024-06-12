@@ -201,12 +201,6 @@
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 'f28bb488-0f83-417c-98ba-06ea5f1765e3'))?.valueDateTime"
 								  }
 							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                }
-							],
 							"id": "dateOfInitialTest"
 						},
 						{

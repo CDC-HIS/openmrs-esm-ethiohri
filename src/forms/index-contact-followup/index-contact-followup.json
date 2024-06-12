@@ -22,6 +22,12 @@
                           "type": "obs",
                           "required": false,
                           "id": "elicitedDate",
+                          "validators": [
+                            {
+                                "type": "date",
+                                "allowFutureDates": "false"
+                            }
+                        ],
                           "questionOptions": {
                               "rendering": "date",
                               "concept": "58abd286-8f57-4717-aa41-efd8e93d5902",
@@ -229,6 +235,12 @@
                           "type": "obs",
                           "required": false,
                           "id": "currentTestDate",
+                          "validators": [
+                            {
+                                "type": "date",
+                                "allowFutureDates": "false"
+                            }
+                        ],
                           "questionOptions": {
                               "rendering": "date",
                               "concept": "76b355ac-5708-4e2e-ab5c-7b21d5c62405",
@@ -569,6 +581,12 @@
                           "hide": {
                               "hideWhenExpression": "testedBefore !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                           },
+                          "validators": [
+                            {
+                                "type": "date",
+                                "allowFutureDates": "false"
+                            }
+                        ],
                           "questionOptions": {
                               "rendering": "date",
                               "concept": "67e5e461-c1bd-44fc-8b74-5929a388df9a",
@@ -581,6 +599,12 @@
                           "type": "obs",
                           "required": false,
                           "id": "hivstKit",
+                          "validators": [
+                            {
+                                "type": "date",
+                                "allowFutureDates": "false"
+                            }
+                        ],
                           "questionOptions": {
                               "rendering": "date",
                               "concept": "947073ef-aa76-42cb-a361-1641149a8100",
@@ -614,6 +638,12 @@
                           "type": "obs",
                           "required": false,
                           "id": "hivstReportDate",
+                          "validators": [
+                            {
+                                "type": "date",
+                                "allowFutureDates": "false"
+                            }
+                        ],
                           "questionOptions": {
                               "rendering": "date",
                               "concept": "70e43194-c463-444d-a631-db938fbc1bdc",
@@ -683,6 +713,12 @@
                               "hideWhenExpression": "startedOralPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                           },
                           "id": "dateOralPrepStarted",
+                          "validators": [
+                            {
+                                "type": "date",
+                                "allowFutureDates": "false"
+                            }
+                        ],
                           "questionOptions": {
                               "rendering": "date",
                               "concept": "5810b330-1003-4619-9e4f-c8a1f25fd12c",

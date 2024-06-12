@@ -46,6 +46,12 @@
                                 "hideWhenExpression": "offered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "id": "offeredDate",
+                            "validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
                             "questionOptions": {
                                 "rendering": "date",
                                 "concept": "a7c606b1-9f3e-4095-815a-3a623dc738e1",
@@ -130,6 +136,12 @@
                                 "hideWhenExpression": "accepted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "id": "acceptedDate",
+                            "validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
                             "questionOptions": {
                                 "rendering": "date",
                                 "concept": "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4",

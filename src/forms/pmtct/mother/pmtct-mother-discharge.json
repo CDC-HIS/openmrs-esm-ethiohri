@@ -27,7 +27,12 @@
                   "conceptMappings": [],
                   "answers": []
                 },
-                "validators": []
+                "validators": [
+                  {
+                    "type": "date",
+                    "allowFutureDates": "false"
+                  }
+                ]
               },
               {
                 "label": "Maternal PMTCT Final outcome",

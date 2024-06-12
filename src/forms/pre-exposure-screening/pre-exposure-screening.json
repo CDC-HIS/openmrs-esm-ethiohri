@@ -23,7 +23,12 @@
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             },
             {
               "label": "Screening Date",
@@ -36,7 +41,12 @@
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             }
           ]
         }
@@ -854,7 +864,12 @@
               "hide": {
                 "hideWhenExpression": "stiTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             }
           ]
         },
@@ -1472,7 +1487,12 @@
               "hide": {
                 "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
             },
             {
               "label": "PrEP (ARVs) prescribed",

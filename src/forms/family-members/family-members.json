@@ -313,6 +313,12 @@
 							"hide": {
 								"hideWhenExpression": "counselledForHIV !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
 							"id": "counsellationDate"
 						},
 						{
@@ -416,6 +422,12 @@
 									}
 								]
 							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
 							"hide": {
 								"hideWhenExpression": "testedForHIV !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
@@ -563,6 +575,12 @@
 							"hide": {
 								"hideWhenExpression": "enrolledInCare !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
 							"id": "dateEnrolledInCare"
 						},
 						{
@@ -731,6 +749,12 @@
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
 							"id": "artStartDate"
 						},
 						{
