@@ -137,7 +137,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
+									"message": "Eligibility date should not be earlier than HIV Confirmation date in Intake A"
+								}
 							],
 							"id": "eligibleDate"
 						},
@@ -4735,7 +4740,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(tptStartDate)",
+									"message": "Date TPT Completed should not be earlier than TPT Start Date"
+								}
 							],
 							"id": "dateTptCompleted"
 						},
@@ -4754,7 +4764,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(tptStartDate)",
+									"message": "Date TPT Discontinued should not be earlier than TPT Start Date"
+								}
 							],
 							"id": "dateTptDiscontinued"
 						},

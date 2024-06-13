@@ -888,18 +888,6 @@
               "validators": []
             },
             {
-              "label": "Creatinine Level",
-              "type": "obs",
-              "required": false,
-              "id": "creatinineLevel",
-              "questionOptions": {
-                "rendering": "number",
-                "concept": "dfe842c9-e089-4b2a-a243-f90ec90332f7",
-                "conceptMappings": []
-              },
-              "validators": []
-            },
-            {
               "label": "Weight",
               "type": "obs",
               "required": false,
@@ -907,6 +895,18 @@
               "questionOptions": {
                 "rendering": "number",
                 "concept": "8ddaed89-5474-424a-a9e1-a8ad28b091fb",
+                "conceptMappings": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Creatinine Level",
+              "type": "obs",
+              "required": false,
+              "id": "creatinineLevel",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "dfe842c9-e089-4b2a-a243-f90ec90332f7",
                 "conceptMappings": []
               },
               "validators": []
