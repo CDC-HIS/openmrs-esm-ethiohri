@@ -98,16 +98,14 @@ export function CalcMonthsOnART(artStartDate: Date) {
 export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
-    if (viralLoadCount == 0) {
+    if (viralLoadCount === 0) {
       resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (viralLoadCount <= 50) {
-      resultViralLoadStatus = "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (viralLoadCount >= 51 && viralLoadCount <= 1000) {
       resultViralLoadStatus = "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (viralLoadCount > 1000) {
       resultViralLoadStatus = "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      resultViralLoadStatus = "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     }
   }
   return viralLoadCount ? resultViralLoadStatus : null;
