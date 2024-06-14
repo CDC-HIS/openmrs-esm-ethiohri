@@ -1841,7 +1841,7 @@ __metadata:
     "@adobe/react-spectrum": "npm:^3.32.0"
     "@carbon/charts-react": "npm:^1.5.2"
     "@carbon/react": "npm:^1.13.0"
-    "@ohri/openmrs-esm-ohri-commons-lib": "npm:^2.3.2-pre.258"
+    "@ohri/openmrs-esm-ohri-commons-lib": "npm:2.3.3"
     "@openmrs/esm-framework": "npm:^5.6.1-pre.1855"
     "@openmrs/esm-patient-common-lib": "npm:^7.1.1-pre.4529"
     "@openmrs/openmrs-form-engine-lib": "npm:2.0.0-pre.1151"
@@ -1889,7 +1889,7 @@ __metadata:
     typescript: "npm:^4.9.3"
     webpack: "npm:^5.88.0"
   peerDependencies:
-    "@ohri/openmrs-esm-ohri-commons-lib": 1.x
+    "@ohri/openmrs-esm-ohri-commons-lib": 2.3.3
     "@openmrs/esm-framework": 5.x
     "@openmrs/esm-patient-common-lib": 7.x
     dayjs: 1.x
@@ -2865,9 +2865,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ohri/openmrs-esm-ohri-commons-lib@npm:^2.3.2-pre.258":
-  version: 2.3.2-pre.258
-  resolution: "@ohri/openmrs-esm-ohri-commons-lib@npm:2.3.2-pre.258"
+"@ohri/openmrs-esm-ohri-commons-lib@npm:2.3.3":
+  version: 2.3.3
+  resolution: "@ohri/openmrs-esm-ohri-commons-lib@npm:2.3.3"
   dependencies:
     "@carbon/react": "npm:^1.13.0"
     "@openmrs/openmrs-form-engine-lib": "npm:1.1.0-pre.723"
@@ -2876,13 +2876,13 @@ __metadata:
     systemjs-webpack-interop: "npm:^2.3.7"
     yup: "npm:^0.29.1"
   peerDependencies:
-    "@openmrs/esm-framework": "*"
-    "@openmrs/esm-patient-common-lib": "*"
+    "@openmrs/esm-framework": 5.x
+    "@openmrs/esm-patient-common-lib": 6.x
     dayjs: 1.x
     react: 18.x
     react-i18next: 11.x
     swr: 2.x
-  checksum: 10/06079400cc001019ef818a39aca7add670aa292b3c3c090c2f48f09696e070b37e0fd7fb237c7bb05d4bb8beec234a91d7dfa41baa033d8b353cbc6455753918
+  checksum: 10/878c97c33fa67190f350df364258d01bcf93cdc87e468a86a45a47a17c7e720cec2623279218e0a32f5697b39b8fef4ad33d665cc6ed8706823edd99a962ac33
   languageName: node
   linkType: hard
 

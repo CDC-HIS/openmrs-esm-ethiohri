@@ -55,7 +55,7 @@
     "lodash-es": "^4.17.15"
   },
   "peerDependencies": {
-    "@ohri/openmrs-esm-ohri-commons-lib": "1.x",
+    "@ohri/openmrs-esm-ohri-commons-lib": "2.3.3",
     "@openmrs/esm-framework": "5.x",
     "@openmrs/esm-patient-common-lib": "7.x",
     "dayjs": "1.x",
@@ -65,7 +65,7 @@
     "swr": "2.x"
   },
   "devDependencies": {
-    "@ohri/openmrs-esm-ohri-commons-lib": "^2.3.2-pre.258",
+    "@ohri/openmrs-esm-ohri-commons-lib": "2.3.3",
     "@openmrs/esm-framework": "^5.6.1-pre.1855",
     "@openmrs/esm-patient-common-lib": "^7.1.1-pre.4529",
     "@playwright/test": "^1.30.0",
