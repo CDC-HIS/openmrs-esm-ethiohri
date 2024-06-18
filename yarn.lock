@@ -1840,7 +1840,7 @@ __metadata:
   dependencies:
     "@adobe/react-spectrum": "npm:^3.32.0"
     "@carbon/charts-react": "npm:^1.5.2"
-    "@carbon/react": "npm:^1.37.0"
+    "@carbon/react": "npm:^1.13.0"
     "@ohri/openmrs-esm-ohri-commons-lib": "npm:2.3.3"
     "@openmrs/esm-framework": "npm:^5.6.1-pre.1855"
     "@openmrs/esm-patient-common-lib": "npm:7.0.2-pre.3907"
