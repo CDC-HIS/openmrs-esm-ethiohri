@@ -39,6 +39,8 @@ export const REGISTRATION_ENCOUNTER_TYPE =
 //Intake A concepts
 export const male = "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const female = "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+export const doesClientHaveFamilyMembers =
+  "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
 //HIV Art Therapy
 export const art_Therapy_EncounterUUID = "74bf4fe6-8fdb-4228-be39-680a93a9cf6d";
@@ -162,6 +164,9 @@ export const kidneyDiseaseStage5 = "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
 export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN, before this form can be filled ! Please add an MRN on patient details.";
+
+export const NO_FAMILY_MEMBERS_WARNING =
+  "* Patient has no family members as specified in Intake A form.";
 
 export const formWarning = (formName) =>
   `* Patient needs to have ${formName} form filled, before this form can be filled !`;

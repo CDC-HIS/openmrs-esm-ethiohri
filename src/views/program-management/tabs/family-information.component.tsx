@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   FAMILY_INFO_ENCOUNTER_TYPE,
+  INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
+  NO_FAMILY_MEMBERS_WARNING,
+  doesClientHaveFamilyMembers,
+  yesConceptUUID,
 } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
-import { fetchIdentifiers } from "../../../api/api";
+import { fetchIdentifiers, getLatestObs } from "../../../api/api";
 
 const columns = [
   {
@@ -92,12 +96,24 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
   const [hasMRN, setHasMRN] = useState(false);
+  const [hasFamilyMembers, setHasFamilyMembers] = useState(false);
   useEffect(() => {
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
       if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
         setHasMRN(true);
       }
+    })();
+
+    (async () => {
+      const answer = await getLatestObs(
+        patientUuid,
+        doesClientHaveFamilyMembers,
+        INTAKE_A_ENCOUNTER_TYPE
+      );
+      setHasFamilyMembers(
+        answer?.valueCodeableConcept?.coding[0]?.code === yesConceptUUID
+      );
     })();
   });
   return (
@@ -112,10 +128,13 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
+          hideFormLauncher: !hasMRN || !hasFamilyMembers,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+      {!hasFamilyMembers && (
+        <p className={styles.patientName}>{NO_FAMILY_MEMBERS_WARNING}</p>
+      )}
     </>
   );
 };
