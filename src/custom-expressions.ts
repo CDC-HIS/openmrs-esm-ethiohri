@@ -175,6 +175,56 @@ export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
   }
 }
 
+export function CalcNextFollowupDateForCxCa(
+  screeningStrategy: string,
+  hpvScreeningResult: string,
+  viaScreeningResult?: string,
+  hpvDnaSampleCollectedDate?: Date,
+  viaScreeningDate?: Date,
+  dateTreatmentGiven?: Date
+) {
+  let nextFollowupDateCxCa;
+  let dnaCollectedDate = new Date(hpvDnaSampleCollectedDate);
+  let viaScreenedDate = new Date(viaScreeningDate);
+  let treatmentGivenDate = new Date(dateTreatmentGiven);
+  let dnaCollectedDatewWithThreeYears: Date;
+  let viaScreeningDateWithOneYear: Date;
+  let treatmentGivenDateWithSixMonth: Date;
+
+  if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
+    if (hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {
+      dnaCollectedDatewWithThreeYears = new Date(
+        dnaCollectedDate.setFullYear(dnaCollectedDate.getFullYear() + 3)
+      );
+      nextFollowupDateCxCa = dnaCollectedDatewWithThreeYears;
+      return nextFollowupDateCxCa;
+    } else if (
+      hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
+      viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"
+    ) {
+      viaScreeningDateWithOneYear = new Date(
+        viaScreenedDate.setFullYear(viaScreenedDate.getFullYear() + 1)
+      );
+      nextFollowupDateCxCa = viaScreeningDateWithOneYear;
+      return nextFollowupDateCxCa;
+    } else if (
+      hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
+      (viaScreeningResult == "7bc7c4f3-a636-478d-8a3f-65116093e37a" ||
+        "be297cab-5ae6-4e7c-8657-b82730b7b8f1")
+    ) {
+      treatmentGivenDateWithSixMonth = new Date(
+        treatmentGivenDate.setMonth(treatmentGivenDate.getMonth() + 6)
+      );
+      nextFollowupDateCxCa = treatmentGivenDateWithSixMonth;
+      return nextFollowupDateCxCa;
+    } else {
+      return null;
+    }
+  } else {
+    return null;
+  }
+}
+
 export async function getGender(patient) {
   if (patient.gender === "male") {
     return male;
