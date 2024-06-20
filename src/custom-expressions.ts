@@ -189,6 +189,7 @@ export function CalcNextFollowupDateForCxCa(
   let treatmentGivenDate = new Date(dateTreatmentGiven);
   let dnaCollectedDatewWithThreeYears: Date;
   let viaScreeningDateWithOneYear: Date;
+  let viaScreeningDateWithTwoYears: Date;
   let treatmentGivenDateWithSixMonth: Date;
 
   if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
@@ -212,6 +213,22 @@ export function CalcNextFollowupDateForCxCa(
       (viaScreeningResult == "7bc7c4f3-a636-478d-8a3f-65116093e37a" ||
         "be297cab-5ae6-4e7c-8657-b82730b7b8f1")
     ) {
+      treatmentGivenDateWithSixMonth = new Date(
+        treatmentGivenDate.setMonth(treatmentGivenDate.getMonth() + 6)
+      );
+      nextFollowupDateCxCa = treatmentGivenDateWithSixMonth;
+      return nextFollowupDateCxCa;
+    } else {
+      return null;
+    }
+  } else if (screeningStrategy == "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1") {
+    if (viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc") {
+      viaScreeningDateWithTwoYears = new Date(
+        viaScreenedDate.setFullYear(viaScreenedDate.getFullYear() + 2)
+      );
+      nextFollowupDateCxCa = viaScreeningDateWithTwoYears;
+      return nextFollowupDateCxCa;
+    } else if (viaScreeningResult == "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
       treatmentGivenDateWithSixMonth = new Date(
         treatmentGivenDate.setMonth(treatmentGivenDate.getMonth() + 6)
       );
