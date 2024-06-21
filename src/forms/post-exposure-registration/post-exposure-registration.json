@@ -649,6 +649,12 @@
 			]
 		}
 	],
+	"availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
 	"processor": "EncounterFormProcessor",
 	"uuid": "0937d863-6940-40d2-9c7f-779c427fd766",
 	"referencedForms": [],

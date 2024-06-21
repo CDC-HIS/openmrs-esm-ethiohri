@@ -193,5 +193,11 @@
                 }
             ]
         }
-    ]
+    ],
+    "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	]
 }
