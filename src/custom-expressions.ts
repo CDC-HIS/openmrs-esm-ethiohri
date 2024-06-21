@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { getCurrentUser, getLatestObs } from "./api/api";
 import {
   female,
@@ -121,44 +120,91 @@ export function CalcBMI(height: number, weight: number) {
   return height && weight ? resultBMI : null;
 }
 
-export function CalcAdultNutritionalStatus(height: number, weight: number) {
+export function CalcAdultNutritionalStatus(
+  height: number,
+  weight: number,
+  pregnant?: string,
+  muac?: number
+) {
   let resultBMI = CalcBMI(height, weight);
   let resultAdultNutritionalStatus: string;
-  if (resultBMI) {
+
+  if (resultBMI && pregnant == "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
     } else if (resultBMI >= 17 && resultBMI <= 18.49) {
       resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
     } else if (resultBMI >= 16 && resultBMI <= 16.99) {
       resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
     } else if (resultBMI < 16) {
       resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
     } else if (resultBMI >= 25 && resultBMI <= 29.99) {
       resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
     } else {
       resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
     }
+  } else if (muac && pregnant == "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+    if (muac >= 23) {
+      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
+    } else if (muac >= 19 && muac < 23) {
+      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
+    } else if (muac < 19) {
+      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultAdultNutritionalStatus;
+    } else {
+      return null;
+    }
+  } else {
+    return null;
   }
-  return resultBMI ? resultAdultNutritionalStatus : null;
 }
 
-export function CalcNutritionalScreening(height: number, weight: number) {
+export function CalcNutritionalScreening(
+  height: number,
+  weight: number,
+  pregnant?: string,
+  muac?: number
+) {
   let resultNutritionalScreening: string;
   let resultBMI = CalcBMI(height, weight);
-  if (resultBMI) {
+  if (resultBMI && pregnant == "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
     } else if (resultBMI <= 16 && resultBMI <= 18.49) {
       resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
     } else {
       resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
     }
+  } else if (muac && pregnant == "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+    if (muac >= 23) {
+      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
+    } else if (muac >= 19 && muac < 23) {
+      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
+    } else if (muac < 19) {
+      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
+    } else {
+      return null;
+    }
+  } else {
+    return null;
   }
-  return resultBMI ? resultNutritionalScreening : null;
 }
 
 export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
-  console.log("BMI FOR AGE", bmiForAge);
   switch (bmiForAge) {
     case "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f":
       return "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -172,6 +218,73 @@ export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
       return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     default:
       return 0;
+  }
+}
+
+export function CalcNextFollowupDateForCxCa(
+  screeningStrategy: string,
+  hpvScreeningResult: string,
+  viaScreeningResult?: string,
+  hpvDnaSampleCollectedDate?: Date,
+  viaScreeningDate?: Date,
+  dateTreatmentGiven?: Date
+) {
+  let nextFollowupDateCxCa;
+  let dnaCollectedDate = new Date(hpvDnaSampleCollectedDate);
+  let viaScreenedDate = new Date(viaScreeningDate);
+  let treatmentGivenDate = new Date(dateTreatmentGiven);
+  let dnaCollectedDatewWithThreeYears: Date;
+  let viaScreeningDateWithOneYear: Date;
+  let viaScreeningDateWithTwoYears: Date;
+  let treatmentGivenDateWithSixMonth: Date;
+
+  if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
+    if (hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {
+      dnaCollectedDatewWithThreeYears = new Date(
+        dnaCollectedDate.setFullYear(dnaCollectedDate.getFullYear() + 3)
+      );
+      nextFollowupDateCxCa = dnaCollectedDatewWithThreeYears;
+      return nextFollowupDateCxCa;
+    } else if (
+      hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
+      viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"
+    ) {
+      viaScreeningDateWithOneYear = new Date(
+        viaScreenedDate.setFullYear(viaScreenedDate.getFullYear() + 1)
+      );
+      nextFollowupDateCxCa = viaScreeningDateWithOneYear;
+      return nextFollowupDateCxCa;
+    } else if (
+      hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
+      (viaScreeningResult == "7bc7c4f3-a636-478d-8a3f-65116093e37a" ||
+        "be297cab-5ae6-4e7c-8657-b82730b7b8f1")
+    ) {
+      treatmentGivenDateWithSixMonth = new Date(
+        treatmentGivenDate.setMonth(treatmentGivenDate.getMonth() + 6)
+      );
+      nextFollowupDateCxCa = treatmentGivenDateWithSixMonth;
+      return nextFollowupDateCxCa;
+    } else {
+      return null;
+    }
+  } else if (screeningStrategy == "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1") {
+    if (viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc") {
+      viaScreeningDateWithTwoYears = new Date(
+        viaScreenedDate.setFullYear(viaScreenedDate.getFullYear() + 2)
+      );
+      nextFollowupDateCxCa = viaScreeningDateWithTwoYears;
+      return nextFollowupDateCxCa;
+    } else if (viaScreeningResult == "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+      treatmentGivenDateWithSixMonth = new Date(
+        treatmentGivenDate.setMonth(treatmentGivenDate.getMonth() + 6)
+      );
+      nextFollowupDateCxCa = treatmentGivenDateWithSixMonth;
+      return nextFollowupDateCxCa;
+    } else {
+      return null;
+    }
+  } else {
+    return null;
   }
 }
 
@@ -245,8 +358,6 @@ export async function isDateAlreadyUsed(
     "5c118396-52dc-4cac-8860-e6d8e4a7f296",
     FOLLOWUP_ENCOUNTER_TYPE
   );
-
-  console.log(`VALIDATION DATEEE ####: ${validatingDate}`);
 
   return validatingDate
     ? new Date(validatingDate?.valueDateTime).toDateString() ===

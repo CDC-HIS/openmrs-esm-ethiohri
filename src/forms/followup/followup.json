@@ -688,7 +688,7 @@
 								"rendering": "radio",
 								"concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
 								"calculate": {
-									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight')"
+									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight', 'pregnant', 'muac')"
 								},
 								"answers": [
 									{
@@ -1230,7 +1230,7 @@
 								"unspecified": true,
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
 								"calculate": {
-									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight')"
+									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight', 'pregnant', 'muac')"
 								},
 								"answers": [
 									{
@@ -11701,7 +11701,7 @@
 				},
 				{
 					"label": "Next Follow-up Screening Date",
-					"isExpanded": "true",				
+					"isExpanded": "true",
 					"questions": [
 						{
 							"label": "Next follow-up/screening date for CxCa",
@@ -11709,6 +11709,8 @@
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
+								"calculate": {"calculateExpression": "CustomNextFollowupDateForCxCa('screeningStrategy', 'hpvScreeningResult', 'viaScreeningResult', 'hpvDnaSampleCollectedDate', 'viaScreeningDate', 'dateTreatmentGiven')"
+								},
 								"weeksList": ""
 							},
 							"id": "nextFollowupScreeningDate"
