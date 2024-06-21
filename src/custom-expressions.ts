@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { getCurrentUser, getLatestObs } from "./api/api";
 import {
   female,
@@ -128,49 +127,37 @@ export function CalcAdultNutritionalStatus(
   muac?: number
 ) {
   let resultBMI = CalcBMI(height, weight);
-  console.log("BMI == ", resultBMI);
   let resultAdultNutritionalStatus: string;
 
   if (resultBMI && pregnant == "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 17 && resultBMI <= 18.49) {
       resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 16 && resultBMI <= 16.99) {
       resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI < 16) {
       resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 25 && resultBMI <= 29.99) {
       resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else {
       resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     }
   } else if (muac && pregnant == "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    console.log("MUAC == ", muac);
-    console.log("PREGNANT == ", pregnant);
     if (muac >= 23) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (muac >= 19 && muac < 23) {
       resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (muac < 19) {
       resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else {
       return null;
@@ -218,7 +205,6 @@ export function CalcNutritionalScreening(
 }
 
 export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
-  console.log("BMI FOR AGE", bmiForAge);
   switch (bmiForAge) {
     case "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f":
       return "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -372,8 +358,6 @@ export async function isDateAlreadyUsed(
     "5c118396-52dc-4cac-8860-e6d8e4a7f296",
     FOLLOWUP_ENCOUNTER_TYPE
   );
-
-  console.log(`VALIDATION DATEEE ####: ${validatingDate}`);
 
   return validatingDate
     ? new Date(validatingDate?.valueDateTime).toDateString() ===
