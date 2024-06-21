@@ -19,14 +19,14 @@ const columns = [
     key: "dateOfRetesting",
     header: "Date of Re-test",
     getValue: (encounter) => {
-      return getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7");
+      return getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7", true);
     },
   },
   {
     key: "dateOfInitialTest",
     header: "Date of Initial test",
     getValue: (encounter) => {
-      return getData(encounter, "9182520e-24e8-4e84-aba7-6b56bdeb76d5");
+      return getData(encounter, "9182520e-24e8-4e84-aba7-6b56bdeb76d5", true);
     },
   },
   {
