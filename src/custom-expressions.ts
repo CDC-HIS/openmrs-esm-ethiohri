@@ -347,12 +347,6 @@ export async function isDateAlreadyUsed(
   validatingDateUUID,
   FOLLOWUP_ENCOUNTER_TYPE
 ) {
-  console.log(`
-  ${patient.id}
-  ${chosenDate}
-  ${"validatingDateUUID"}
-  ${FOLLOWUP_ENCOUNTER_TYPE}`);
-
   const validatingDate = await getLatestObs(
     patient.id,
     "5c118396-52dc-4cac-8860-e6d8e4a7f296",
