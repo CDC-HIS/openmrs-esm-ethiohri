@@ -104,7 +104,10 @@
         "id": "registrationDate",
         "label": "Registration date",
         "type": "obs",
-        "uuid": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        "uuid": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "validation": {
+          "required": true
+        }
       },
       {
         "id": "enrolledInPmtct",
