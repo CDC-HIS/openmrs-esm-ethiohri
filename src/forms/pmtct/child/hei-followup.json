@@ -473,7 +473,19 @@
               "hide": {
                 "hideWhenExpression": "mothersBreastCondition !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
-            },
+            }
+            
+          ]
+        }
+      ]
+    },
+    {
+      "label": "HIV Test",
+      "sections": [
+        {
+          "label": "HIV DNA/PCR Test Request",
+          "isExpanded": "true",
+          "questions": [
             {
               "label": "Maternal ART status",
               "type": "obs",
@@ -503,18 +515,7 @@
                 ]
               },
               "validators": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "HIV Test",
-      "sections": [
-        {
-          "label": "HIV DNA/PCR Test Request",
-          "isExpanded": "true",
-          "questions": [
+            },
             {
               "label": "HIV test done",
               "type": "obs",
@@ -1153,26 +1154,8 @@
                 "answers": []
               },
               "validators": []
-            },
-            {
-              "label": "Next visit date",
-              "type": "obs",
-              "required": false,
-              "id": "nextVisitDate",
-              "questionOptions": {
-                "rendering": "date",
-                "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
-                "conceptMappings": [],
-                "answers": []
-              },
-              "validators": [
-								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue < new Date(followupDate)",
-									"message": "Next visit date should not be earlier than Followup date"
-								}
-							]
             }
+            
           ]
         }
       ]
@@ -1245,16 +1228,31 @@
                     "label": "Positive - Referred for pediatric HIV care outside facility"
                   },
                   {
-                    "concept": "bd91122b-5657-450b-9196-7cc705118ccc",
-                    "label": "Positive - Uknown linkage to ART program"
-                  },
-                  {
                     "concept": "00c3deda-9bb6-490f-821b-75ba9cc85db5",
                     "label": "Discharged negative from care (HIV free)"
                   }
                 ]
               },
               "validators": []
+            },
+            {
+              "label": "Next visit date",
+              "type": "obs",
+              "required": false,
+              "id": "nextVisitDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(followupDate)",
+									"message": "Next visit date should not be earlier than Followup date"
+								}
+							]
             }
           ]
         }
