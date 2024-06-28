@@ -48,15 +48,6 @@
 							"id": "mrn"
 						},
 						{
-							"label": "Unit TB No.",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "text",
-								"concept": "161654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-							},
-							"id": "unit_tb_no"
-						},
-						{
 							"label": "Client's Name *",
 							"type": "obs",
 							"required": "true",
@@ -149,7 +140,7 @@
 							"id": "grandfathers_name"
 						},
 						{
-							"label": "Gender *",
+							"label": "Sex *",
 							"type": "obs",
 							"required": "true",
 							"readonly": "true",
@@ -271,6 +262,15 @@
 								]
 							},
 							"id": "patientAge"
+						},
+						{
+							"label": "Unit TB No.",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "161654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "unit_tb_no"
 						},
 						{
 							"label": "Target Population Category",
@@ -1491,7 +1491,7 @@
 							"id": "careGiverAge"
 						},
 						{
-							"label": "Gender",
+							"label": "Sex",
 							"type": "obs",
 							"required": false,
 							"id": "careGiverGender",
