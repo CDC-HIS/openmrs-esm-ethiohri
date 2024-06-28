@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { INTAKE_A_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../../constants";
 import { getData } from "../../encounterUtils";
@@ -90,6 +90,12 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
 }) => {
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   const [hasMRN, setHasMRN] = useState(false);
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved(true);
+  }, []);
+
   useEffect(() => {
     (async () => {
       const previousEncounters = await getPatientEncounters(
@@ -106,7 +112,7 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
         setHasMRN(true);
       }
     })();
-  });
+  }, [isFormSaved]);
 
   return (
     <>
@@ -124,6 +130,7 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
           //TODO:insert function to run when requirements aren't met
           // runIfFailed:  isUANNotEmpty ? myFunction() : undefined
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
