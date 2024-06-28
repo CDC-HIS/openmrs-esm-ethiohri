@@ -23,7 +23,12 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
-                }
+                },
+                {
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(patient.birthDate)",
+									"message": "Enrollment date should not be earlier than Birth date"
+								}
               ],
 							"required": "true",
 							"id": "enrollment_date"
@@ -68,7 +73,7 @@
               "questionOptions": {
                 "rendering": "number",
                 "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "max": 99,
+                "max": 15000,
 								"min": 0,
                 "conceptMappings": [
                   {
@@ -331,68 +336,9 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "First Name",
-              "type": "obs",
-              "required": false,
-              "id": "firstName",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "2725"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "166102"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "408677003"
-                  }
-                ],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
-              "label": "Father's Name",
-              "type": "obs",
-              "required": false,
-              "id": "fathersName",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "f20f09fa-de8a-44ec-9761-47a11d220e1d",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "1594"
-                  }
-                ],
-                "answers": []
-              },
-              "validators": []
-            },
-            {
-              "label": "Grand Father's Name",
-              "type": "obs",
-              "required": false,
-              "id": "grandfathersName",
-              "questionOptions": {
-                "rendering": "text",
-								"concept": "1b545ea1-0aed-4632-af99-ea2ceb61b13c"
-              },
-              "validators": []
-            },
-            {
               "label": "Mother's Status",
               "type": "obs",
-              "required": false,
+              "required": true,
               "id": "mothersStatus",
               "questionOptions": {
                 "rendering": "radio",
@@ -464,7 +410,7 @@
             {
               "label": "Mother's MRN",
               "type": "obs",
-              "required": false,
+              "required": true,
               "id": "mothersMrn",
               "questionOptions": {
                 "rendering": "text",
@@ -478,8 +424,80 @@
                 ],
                 "answers": []
               },
+              "hide": {
+                "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
+              },
               "validators": []
             },
+            {
+              "label": "First Name",
+              "type": "obs",
+              "required": false,
+              "id": "firstName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "2725"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "166102"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "408677003"
+                  }
+                ],
+                "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Father's Name",
+              "type": "obs",
+              "required": false,
+              "id": "fathersName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "f20f09fa-de8a-44ec-9761-47a11d220e1d",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "1594"
+                  }
+                ],
+                "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Grand Father's Name",
+              "type": "obs",
+              "required": false,
+              "id": "grandfathersName",
+              "questionOptions": {
+                "rendering": "text",
+								"concept": "1b545ea1-0aed-4632-af99-ea2ceb61b13c"
+              },
+              "hide": {
+                "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
+              },
+              "validators": []
+            },
+            
             {
               "label": "Mother's PMTCT Interventions",
               "type": "obs",
@@ -499,6 +517,9 @@
                     "label": "None"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
               },
               "validators": []
             },
@@ -781,6 +802,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a' || mothersPmtct != '1a259ed4-15b5-4e23-8382-972f89be84c8'"
+              },
               "validators": []
             },
             {
@@ -789,7 +813,7 @@
               "required": false,
               "id": "artStartdate",
               "hide": {
-                "hideWhenExpression": "mothersPmtct != '1a259ed4-15b5-4e23-8382-972f89be84c8'"
+                "hideWhenExpression": "mothersPmtct != '1a259ed4-15b5-4e23-8382-972f89be84c8' || mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
               },
               "questionOptions": {
                 "rendering": "date",
@@ -863,6 +887,9 @@
                 "hide": {
                   "hideWhenExpression": "mothersPmtct !== '1a259ed4-15b5-4e23-8382-972f89be84c8'"
                 }
+              },
+              "hide": {
+                "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
               },
               "validators": []
             }

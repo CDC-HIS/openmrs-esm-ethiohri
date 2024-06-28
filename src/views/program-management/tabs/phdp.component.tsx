@@ -18,7 +18,7 @@ const columns = [
     key: "issuesAddressed",
     header: "Issues Addressed",
     getValue: (encounter) => {
-      return getData(encounter, "bbcdc4d4-8e9e-41ab-b197-2b5d97c1a7e0");
+      return getData(encounter, "5e8e03b1-d6ad-4362-a99a-f610af940f57");
     },
   },
   {
