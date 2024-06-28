@@ -6,14 +6,14 @@
 	"encounter": "Intake A",
 	"pages": [
 		{
-			"label": "General Information",
+			"label": "HIV Care/ART Clinic INTAKE FORM-A",
 			"sections": [
 				{
 					"label": "General Information",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Enrollment Date *",
+							"label": "Registration/Enrollment Date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -48,7 +48,26 @@
 							"id": "mrn"
 						},
 						{
-							"label": "Client's Name *",
+							"label": "Unique ART Number",
+							"type": "obs",
+							"readonly": "true",
+							"questionOptions": {
+								"calculate": {
+                                    "calculateExpression": "getIdentifier(patient, 'UAN')"
+                                },
+								"rendering": "text",
+								"concept": "164402AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "164402"
+									}
+								]
+							},
+							"id": "uniqueArtNumber"
+						},
+						{
+							"label": "Client's Name",
 							"type": "obs",
 							"required": "true",
 							"readonly": "true",
@@ -84,7 +103,7 @@
 							"id": "clients_name"
 						},
 						{
-							"label": "Father's Name *",
+							"label": "Father's Name",
 							"type": "obs",
 							"required": "true",
 							"readonly": "true",
@@ -104,7 +123,7 @@
 							"id": "fathers_name"
 						},
 						{
-							"label": "Grand Father's Name *",
+							"label": "Grand Father's Name",
 							"type": "obs",
 							"required": "true",
 							"readonly": "true",
@@ -140,7 +159,7 @@
 							"id": "grandfathers_name"
 						},
 						{
-							"label": "Sex *",
+							"label": "Sex",
 							"type": "obs",
 							"required": "true",
 							"readonly": "true",
@@ -218,7 +237,7 @@
 							"id": "gender"
 						},
 						{
-							"label": "Date of Birth *",
+							"label": "Date of Birth",
 							"type": "obs",
 							"readonly": "true",
 							"questionOptions": {
@@ -284,7 +303,7 @@
 								"answers": [
 									{
 										"concept": "166513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Female Commercial Sex workers"	
+										"label": "Female Commercial Sex workers"
 									},
 									{
 										"concept": "162198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -337,6 +356,44 @@
 									{
 										"concept": "166430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "General population"
+									}
+								]
+							},
+							"validators": []
+						},
+						{
+							"label": "Client (Child's care giver) marital status",
+							"type": "obs",
+							"required": false,
+							"id": "childsCareGiverMaritalStatus",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Never married"
+									},
+									{
+										"concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Married"
+									},
+									{
+										"concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Divorced"
+									},
+									{
+										"concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Widowed"
+									},
+									{
+										"concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Separated"
+									},
+									{
+										"concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Living with partner"
 									}
 								]
 							},
@@ -431,44 +488,6 @@
 							"validators": []
 						},
 						{
-							"label": "Client (Child's care giver) marital status",
-							"type": "obs",
-							"required": false,
-							"id": "childsCareGiverMaritalStatus",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
-								"conceptMappings": [],
-								"answers": [
-									{
-										"concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Married"
-									},
-									{
-										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Never married"
-									},
-									{
-										"concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Living with partner"
-									},
-									{
-										"concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Separated"
-									},
-									{
-										"concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Divorced"
-									},
-									{
-										"concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Widowed"
-									}
-								]
-							},
-							"validators": []
-						},
-						{
 							"label": "Occupation",
 							"type": "obs",
 							"required": false,
@@ -478,6 +497,28 @@
 								"concept": "2d2073e1-8377-4c4a-b6c7-0ab848760716",
 								"conceptMappings": [],
 								"answers": []
+							},
+							"validators": []
+						},
+						{
+							"label": "Residential Type",
+							"type": "obs",
+							"required": false,
+							"id": "residentialType",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "6f612018-bc64-4ab2-86f8-efde342b07d0",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "515f3768-30f6-4b87-bc9c-c64ce42db187",
+										"label": "Rural"
+									},
+									{
+										"concept": "32e92a9c-cc61-4079-851a-afc56808037a",
+										"label": "Urban"
+									}
+								]
 							},
 							"validators": []
 						},
@@ -532,33 +573,11 @@
 							  ]
 							},
 							"validators": []
-						  },
-						{
-							"label": "Residential Type",
-							"type": "obs",
-							"required": false,
-							"id": "residentialType",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "6f612018-bc64-4ab2-86f8-efde342b07d0",
-								"conceptMappings": [],
-								"answers": [
-									{
-										"concept": "515f3768-30f6-4b87-bc9c-c64ce42db187",
-										"label": "Rural"
-									},
-									{
-										"concept": "32e92a9c-cc61-4079-851a-afc56808037a",
-										"label": "Urban"
-									}
-								]
-							},
-							"validators": []
-						}
+						  }
 					]
 				},
 				{
-					"label": "For child only",
+					"label": "FOR CHILD <5 YEARS ONLY",
 					"isExpanded": "true",
 					"hide": {
 						"hideWhenExpression": "age > 4"
@@ -619,13 +638,13 @@
 								],
 								"answers": [
 									{
-										"concept": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Home",
+										"concept": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Health Facility",
 										"conceptMappings": []
 									},
 									{
-										"concept": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health Facility",
+										"concept": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Home",
 										"conceptMappings": []
 									},
 									{
@@ -802,7 +821,7 @@
 					]
 				},
 				{
-					"label": "HIV Confirmation",
+					"label": "HIV TEST INFORMATION",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -855,11 +874,11 @@
 							  "answers": [
 								{
 								  "concept": "163722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Rapid test for HIV"
+								  "label": "Rapid HIV test"
 								},
 								{
 								  "concept": "164461AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Child HIV DNA/PCR test result"
+								  "label": "DBS/PCR (for children)"
 								}
 							  ]
 							},
@@ -870,7 +889,7 @@
 			]
 		},
 		{
-			"label": "Entry Point",
+			"label": "CLIENT REFERRAL INFORMATION",
 			"sections": [
 				{
 					"label": "Entry Point",
@@ -1258,7 +1277,7 @@
 												"value": "394794000"
 											}
 										]
-									}, 
+									},
 									{
 										"concept": "b70be5c7-4388-4e12-9b0e-53f01ae2a3f5",
 										"label": "Self referred",
@@ -1385,7 +1404,7 @@
 			]
 		},
 		{
-			"label": "Care Giver/Emergency Contact Information",
+			"label": "CARE GIVER/EMERGENCY CONTACT INFORMATION",
 			"sections": [
 				{
 					"label": "Care Giver/Emergency Contact",
@@ -1690,26 +1709,83 @@
 							"id": "otherRelationship"
 						},
 						{
-							"label": "Phone Number",
+							"label": "Address-Region",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "163152"
-									}
-								]
+								"concept": "1eb080aa-7921-425e-801f-b53f4ca93a7d"
 							},
-							"id": "phone_number"
+							"id": "addressRegion"
+						},
+						{
+							"label": "Address-Zone/Subcity",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "d6760730-88fa-4008-a279-28456896b631"
+							},
+							"id": "addressZone"
+						},
+						{
+							"label": "Address-Woreda",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "690ee868-8320-41ae-934d-e8a58a597a4c"
+							},
+							"id": "addressWoreda"
+						},
+						{
+							"label": "Address-Kebele/Peasant Association",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "71e24505-a56d-4abe-8f15-c7b49b35884a"
+							},
+							"id": "addressKebele"
+						},
+						{
+							"label": "Address-House No.",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "8eb1c71a-28c2-4f7e-8765-0db52da5b6ee"
+							},
+							"id": "addressHouseNo"
+						},
+						{
+							"label": "Telephone Number-Home",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "2481f720-0490-4c89-aeb8-dd128b8cb001"
+							},
+							"id": "telephoneHome"
+						},
+						{
+							"label": "Telephone Number-Mobile",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "d266ec50-0ba1-442a-8f2c-7895eaad84ab"
+							},
+							"id": "telephoneMobile"
+						},
+						{
+							"label": "Telephone Number-Work",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "605a3cfe-a072-4b1b-8067-317538ffdfbb"
+							},
+							"id": "telephoneWork"
 						}
 					]
 				}
 			]
 		},
 		{
-			"label": "Disclosure at Enrollment",
+			"label": "DISCLOSURE AT ENROLLMENT",
 			"sections": [
 				{
 					"label": "Disclosure at Enrollment",
