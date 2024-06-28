@@ -7839,7 +7839,7 @@
 					"label": "ARV Drugs",
 					"isExpanded": "true",
 					"hide": {
-						"hideWhenExpression": "followupStatus !== '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus !== '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						"hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 					},
 					"questions": [
 						{
