@@ -15,90 +15,35 @@
 						{
 							"label": "Relationship type",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "1560"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "303071001"
-									},
-									{
-										"type": "PIH",
-										"value": "6441"
-									}
-								],
+								"concept": "04cec045-0b0b-42aa-89cf-da87f3cd2464",
 								"answers": [
 									{
-										"concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Parent or spouse",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5617"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5617"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "127848009"
-											},
-											{
-												"type": "CIEL",
-												"value": "5617"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "127848009"
-											},
-											{
-												"type": "CIEL",
-												"value": "5617"
-											}
-										]
+										"concept": "d665f3ee-cb0e-405f-9bbd-cf07a4da500f",
+										"label": "Spouse"
 									},
 									{
-										"concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Child or sibling",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1565"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "410601007"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1671"
-											},
-											{
-												"type": "PIH",
-												"value": "6396"
-											},
-											{
-												"type": "CIEL",
-												"value": "1528"
-											}
-										]
+										"concept": "c347f900-1a26-4c95-a073-847be62f3d56",
+										"label": "Parent"
+									},
+									{
+										"concept": "d2597a28-fe10-42aa-8245-8ee0123e86a2",
+										"label": "Child"
+									},
+									{
+										"concept": "124f60f8-4114-453d-8f93-1a96cf7b24cf",
+										"label": "Sibling"
 									}
 								]
-							},
-							"hide": {
-								"hideWhenExpression": "hasFamilyMember !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "familyMemberType"
 						},
 						{
-							"label": "Age",
+							"label": "Age in Years (at enrollment)",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -112,9 +57,9 @@
 							"id": "familyMemberAge"
 						},
 						{
-							"label": "Gender",
+							"label": "Sex",
 							"type": "obs",
-							"required": false,
+							"required": true,
 							"id": "familyMemberGender",
 							"hide": {
 								"hideWhenExpression": "hasFamilyMember !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -147,7 +92,7 @@
 							}
 						},
 						{
-							"label": "Health status",
+							"label": "Health status at enrollment",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -176,7 +121,7 @@
 							"id": "familyMemberHealthStatus"
 						},
 						{
-							"label": "Counseled for HIV",
+							"label": "Counseled for HIV?",
 							"type": "obs",
 							"required": false,
 							"id": "counselledForHIV",
@@ -196,7 +141,7 @@
 							}
 						},
 						{
-							"label": "Counselation date",
+							"label": "Date counselled for HIV",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -215,7 +160,7 @@
 							"id": "counsellationDate"
 						},
 						{
-							"label": "Tested for HIV",
+							"label": "Tested for HIV?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -302,7 +247,7 @@
 							"id": "testedForHIV"
 						},
 						{
-							"label": "HIV test date",
+							"label": "Date tested for HIV",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -356,7 +301,7 @@
 							"validators": []
 						  },
 						{
-							"label": "Enrolled in care",
+							"label": "Enrolled in care?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -477,7 +422,7 @@
 							"id": "dateEnrolledInCare"
 						},
 						{
-							"label": "Started ART",
+							"label": "Started ART?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
