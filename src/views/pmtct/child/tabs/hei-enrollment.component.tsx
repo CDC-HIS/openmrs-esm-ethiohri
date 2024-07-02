@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   ENROLLED_IN_PMTCT_CONCEPT_ID,
@@ -89,6 +89,12 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
 }) => {
   const [hasEnrolledInPMTCT, setHasEnrolledInPMTCT] = useState(false);
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved(true);
+  }, []);
+
   useEffect(() => {
     (async () => {
       await doesEncounterExist(
@@ -107,7 +113,7 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
           yesConceptUUID
       );
     })();
-  });
+  }, [isFormSaved]);
   return (
     <>
       <EncounterList
@@ -122,6 +128,7 @@ const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
           moduleName: moduleName,
           hideFormLauncher: hasPreviousEncounter || !hasEnrolledInPMTCT,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasEnrolledInPMTCT && (
         <p className={styles.patientName}>{NOT_ENROLLED_IN_PMTCT_WARNING}</p>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   HEI_FINAL_OUTCOME_ENCOUNTER_TYPE,
@@ -58,6 +58,11 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
 }> = ({ patientUuid }) => {
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   const [hasEnrollmentEncounter, setHasEnrollmentEncounter] = useState(false);
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved(true);
+  }, []);
 
   useEffect(() => {
     (async () => {
@@ -73,7 +78,7 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
         setHasEnrollmentEncounter
       );
     })();
-  });
+  }, [isFormSaved]);
   return (
     <>
       <EncounterList
@@ -88,6 +93,7 @@ const PMTCTChildFinalOutcomeEncounterList: React.FC<{
           moduleName: moduleName,
           hideFormLauncher: hasPreviousEncounter || !hasEnrollmentEncounter,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasEnrollmentEncounter && (
         <p className={styles.patientName}>{formWarning("HEI Enrollment")}</p>
