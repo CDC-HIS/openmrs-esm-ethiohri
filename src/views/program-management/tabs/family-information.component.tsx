@@ -4,7 +4,6 @@ import {
   FAMILY_INFO_ENCOUNTER_TYPE,
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
-  NO_FAMILY_MEMBERS_WARNING,
   doesClientHaveFamilyMembers,
   yesConceptUUID,
 } from "../../../constants";
@@ -16,9 +15,9 @@ import { fetchIdentifiers, getLatestObs } from "../../../api/api";
 const columns = [
   {
     key: "familyMember",
-    header: "Family Member",
+    header: "Relationship",
     getValue: (encounter) => {
-      return getData(encounter, "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "04cec045-0b0b-42aa-89cf-da87f3cd2464");
     },
   },
   {
@@ -64,6 +63,13 @@ const columns = [
     },
   },
   {
+    key: "enrolledInCare",
+    header: "Enrolled in Care",
+    getValue: (encounter) => {
+      return getData(encounter, "3ca41707-40ef-424c-9e1a-923a407e68fc");
+    },
+  },
+  {
     key: "actions",
     header: "Actions",
     getValue: (encounter) => [
@@ -96,7 +102,6 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
   const [hasMRN, setHasMRN] = useState(false);
-  const [hasFamilyMembers, setHasFamilyMembers] = useState(false);
   useEffect(() => {
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
@@ -110,9 +115,6 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
         patientUuid,
         doesClientHaveFamilyMembers,
         INTAKE_A_ENCOUNTER_TYPE
-      );
-      setHasFamilyMembers(
-        answer?.valueCodeableConcept?.coding[0]?.code === yesConceptUUID
       );
     })();
   });
@@ -128,13 +130,10 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN || !hasFamilyMembers,
+          hideFormLauncher: !hasMRN,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
-      {!hasFamilyMembers && (
-        <p className={styles.patientName}>{NO_FAMILY_MEMBERS_WARNING}</p>
-      )}
     </>
   );
 };

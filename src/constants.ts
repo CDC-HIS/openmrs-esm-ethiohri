@@ -165,9 +165,6 @@ export const kidneyDiseaseStage5 = "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN, before this form can be filled ! Please add an MRN on patient details.";
 
-export const NO_FAMILY_MEMBERS_WARNING =
-  "* Patient has no family members as specified in Intake A form.";
-
 export const formWarning = (formName) =>
   `* Patient needs to have ${formName} form filled, before this form can be filled !`;
 
