@@ -17,7 +17,7 @@ const columns = [
     key: "familyMember",
     header: "Relationship",
     getValue: (encounter) => {
-      return getData(encounter, "04cec045-0b0b-42aa-89cf-da87f3cd2464");
+      return getData(encounter, "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
