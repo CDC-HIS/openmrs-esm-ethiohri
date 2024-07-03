@@ -64,8 +64,8 @@
     "swr": "2.x"
   },
   "devDependencies": {
-    "@ohri/openmrs-esm-ohri-commons-lib": "^2.3.5",
-    "@openmrs/esm-framework": "5.6.1-pre.1979",
+    "@ohri/openmrs-esm-ohri-commons-lib": "^2.3.6",
+    "@openmrs/esm-framework": "^5.6.1-pre.1996",
     "@openmrs/esm-patient-common-lib": "^8.0.0",
     "@playwright/test": "^1.30.0",
     "@swc/core": "^1.3.6",
@@ -98,7 +98,7 @@
     "jest": "^28.1.2",
     "jest-cli": "^28.1.2",
     "jest-environment-jsdom": "^28.1.2",
-    "openmrs": "5.6.1-pre.1979",
+    "openmrs": "^5.6.1-pre.1996",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
     "react": "^18.2.0",
