@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   MRN_NULL_WARNING,
@@ -96,25 +96,28 @@ const columns = [
 const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
-  const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] =
-    useState(false);
+
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved((prev) => !prev);
+  }, []);
+
   useEffect(() => {
     (async () => {
-      await doesEncounterExist(
-        patientUuid,
-        POSITIVE_TRACKING_ENCOUNTER_TYPE,
-        setHasPositiveTrackingEncounter
-      );
-
       await doesEncounterExist(
         patientUuid,
         RETEST_ENCOUNTER_TYPE,
         setHasPreviousEncounter
       );
 
+      hasPreviousEncounter
+        ? setHasPreviousEncounter(true)
+        : setHasPreviousEncounter(false);
+
       await doesPatientHaveIdentifier(patientUuid, setHasMRN);
     })();
-  });
+  }, [isFormSaved]);
   return (
     <>
       <EncounterList
@@ -127,14 +130,11 @@ const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher:
-            !hasMRN || hasPreviousEncounter || !hasPositiveTrackingEncounter,
+          hideFormLauncher: !hasMRN || hasPreviousEncounter,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
-      {!hasPositiveTrackingEncounter && (
-        <p className={styles.patientName}>{formWarning("Positive Tracking")}</p>
-      )}
     </>
   );
 };

@@ -86,7 +86,7 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
   const [isFormSaved, setIsFormSaved] = useState(false);
 
   const updateFormSavedStatus = useCallback(() => {
-    setIsFormSaved(true);
+    setIsFormSaved((prev) => !prev);
   }, []);
 
   useEffect(() => {
@@ -95,9 +95,9 @@ const IntakeBEncounterList: React.FC<{ patientUuid: string }> = ({
         patientUuid,
         INTAKE_B_ENCOUNTER_TYPE
       );
-      if (previousEncounters.length) {
-        setHasPreviousEncounter(true);
-      }
+      previousEncounters.length
+        ? setHasPreviousEncounter(true)
+        : setHasPreviousEncounter(false);
     })();
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
