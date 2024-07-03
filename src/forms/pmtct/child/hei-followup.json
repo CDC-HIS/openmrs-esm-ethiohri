@@ -27,9 +27,26 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
-                }
+                },
+                {
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(enrollment_date)",
+									"message": "Followup date should not be earlier than Enrollment date"
+								}
               ]
-            }
+            },
+            {
+							"label": "Enrollment Date *",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "fixed",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '1ebc345c-6f09-43e1-a616-d7e52fff4c7d', 'ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97'))?.valueDateTime"
+                  }
+							},
+							"id": "enrollment_date"
+						}
           ]
         },
         {
@@ -42,6 +59,8 @@
               "required": false,
               "id": "weight",
               "questionOptions": {
+                "max": 15,
+								"min": 0,
                 "rendering": "number",
                 "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
@@ -223,7 +242,7 @@
               "validators": []
             },
             {
-              "label": "Reason for red flag",
+              "label": "AT",
               "type": "obs",
               "required": false,
               "id": "reasonForRedFlag",
@@ -454,6 +473,10 @@
                     "label": "Mastitis"
                   },
                   {
+                    "concept": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not Applicable"
+                  },
+                  {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Other"
                   }
@@ -556,11 +579,7 @@
                 "answers": [
                   {
                     "concept": "42807db4-c4cc-4dc4-9154-a78e1c867f9f",
-                    "label": "Initial test"
-                  },
-                  {
-                    "concept": "ce696718-39b5-4838-80f2-44d7cf40c055",
-                    "label": "Diagnostic repeat test"
+                    "label": "Initial / Diagnostic"
                   },
                   {
                     "concept": "d3fa0a12-d04c-410d-85bf-48eab683010d",
@@ -1196,7 +1215,7 @@
             {
               "label": "Decision",
               "type": "obs",
-              "required": false,
+              "required": true,
               "id": "decision",
               "questionOptions": {
                 "rendering": "select",
