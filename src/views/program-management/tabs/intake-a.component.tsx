@@ -102,8 +102,6 @@ const IntakeAEncounterList: React.FC<{ patientUuid: string }> = ({
         patientUuid,
         INTAKE_A_ENCOUNTER_TYPE
       );
-      console.log("Reloading previous encounter status");
-
       previousEncounters.length
         ? setHasPreviousEncounter(true)
         : setHasPreviousEncounter(false);

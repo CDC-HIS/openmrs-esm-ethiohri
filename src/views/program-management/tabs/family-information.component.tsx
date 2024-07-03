@@ -5,7 +5,6 @@ import {
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
   doesClientHaveFamilyMembers,
-  yesConceptUUID,
 } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";

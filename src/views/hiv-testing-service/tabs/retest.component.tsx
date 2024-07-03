@@ -1,11 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  MRN_NULL_WARNING,
-  POSITIVE_TRACKING_ENCOUNTER_TYPE,
-  RETEST_ENCOUNTER_TYPE,
-  formWarning,
-} from "../../../constants";
+import { MRN_NULL_WARNING, RETEST_ENCOUNTER_TYPE } from "../../../constants";
 import {
   doesEncounterExist,
   doesPatientHaveIdentifier,

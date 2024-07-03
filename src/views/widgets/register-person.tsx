@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { EmptyStateComingSoon } from "@ohri/openmrs-esm-ohri-commons-lib";
 
 const RegisterPerson: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   useEffect(() => {});
