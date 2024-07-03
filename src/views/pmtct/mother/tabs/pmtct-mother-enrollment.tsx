@@ -12,7 +12,7 @@ import {
 import { doesEncounterExist, getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
 import styles from "../../../../root.scss";
-import { getLatestObs } from "@openmrs/openmrs-form-engine-lib/src/api/api";
+import { getLatestObs } from "../../../../api/api";
 
 const columns = [
   {
