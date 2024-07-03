@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   EncounterList,
   EncounterListColumn,
@@ -8,6 +8,8 @@ import {
   HEI_FOLLOWUP_ENCOUNTER_TYPE,
   HEI_ENROLLMENT_ENCOUNTER_TYPE,
   formWarning,
+  FOLLOWUP_ENCOUNTER_TYPE,
+  PATIENT_ENROLLED_IN_ART,
 } from "../../../../constants";
 import { doesEncounterExist, getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
@@ -132,12 +134,28 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
   );
 
   const [hasEnrollmentEncounter, setHasEnrollmentEncounter] = useState(false);
+  const [hasFollowupEncounter, setHasFollowupEncounter] = useState(false);
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved(true);
+  }, []);
   useEffect(() => {
     (async () => {
       await doesEncounterExist(
         patientUuid,
         HEI_ENROLLMENT_ENCOUNTER_TYPE,
         setHasEnrollmentEncounter
+      );
+    })();
+  }, [isFormSaved]);
+
+  useEffect(() => {
+    (async () => {
+      await doesEncounterExist(
+        patientUuid,
+        FOLLOWUP_ENCOUNTER_TYPE,
+        setHasFollowupEncounter
       );
     })();
   });
@@ -154,11 +172,15 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasEnrollmentEncounter,
+          hideFormLauncher: !hasEnrollmentEncounter || hasFollowupEncounter,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasEnrollmentEncounter && (
         <p className={styles.patientName}>{formWarning("HEI Enrollment")}</p>
+      )}
+      {hasFollowupEncounter && (
+        <p className={styles.patientName}>{PATIENT_ENROLLED_IN_ART}</p>
       )}
     </>
   );

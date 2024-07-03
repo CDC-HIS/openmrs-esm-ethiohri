@@ -185,3 +185,5 @@ export const PRIVILEGE_WARNING =
 
 export const NOT_ENROLLED_IN_PMTCT_WARNING =
   "* Patient was not reffered to PMTCT during registration !";
+
+export const PATIENT_ENROLLED_IN_ART = "* Patient is on ART !";
