@@ -148,6 +148,11 @@
       "name": "post-exposure-chart-ext",
       "slot": "post-exposure-slot",
       "component": "pepChart"
+    },
+    {
+      "name": "register-person-ext",
+      "slot": "capture-patient-photo-slot",
+      "component": "registerPerson"
     }
   ]
 }

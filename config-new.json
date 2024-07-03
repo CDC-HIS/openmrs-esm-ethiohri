@@ -46,7 +46,14 @@
     }
   },
   "@openmrs/esm-patient-registration-app": {
-    "sections": ["demographics", "contact"],
+    "extensionSlots": {
+      "capture-patient-photo-slot": {
+        "remove": [
+          "capture-photo-widget"
+        ]
+      }
+    },
+    "sections": ["demographics", "contact", "relationships"],
     "Translation overrides": {
       "en": {
         "givenNameLabelText": "Client's Name",
