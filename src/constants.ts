@@ -187,3 +187,6 @@ export const NOT_ENROLLED_IN_PMTCT_WARNING =
   "* Patient was not reffered to PMTCT during registration !";
 
 export const PATIENT_ENROLLED_IN_ART = "* Patient is on ART !";
+
+export const PMTCT_REFERRAL_WARNING =
+  "* Patient has not been referred to PMTCT during previous followup !";
