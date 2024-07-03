@@ -1,6 +1,19 @@
 {
   "@openmrs/esm-patient-chart-app": {
     "extensionSlots": {
+      "patient-info-slot": {
+        "remove": [
+          "patient-vitals-info"
+        ]
+      },
+      "action-menu-patient-chart-items-slot": {
+        "remove": [
+          "clinical-form-action-menu",
+          "order-basket-action-menu",
+          "patient-lists-action-menu",
+          "visit-note-nav-button"
+        ]
+      },
       "patient-chart-summary-dashboard-slot": {
         "remove": ["vitals-overview-widget", "active-medications-widget"]
       },
@@ -14,7 +27,14 @@
           "conditions-summary-dashboard",
           "offline-tools-patient-chart-actions-dashboard-link",
           "results-summary-dashboard",
-          "test-results-summary-dashboard"
+          "test-results-summary-dashboard",
+          "clinical-views-divider",
+          "encounters-summary-dashboard",
+          "immunization-summary-dashboard",
+          "medications-summary-dashboard",
+          "patient-appointments-summary-dashboard",
+          "patient-orders-summary-dashboard",
+          "programs-summary-dashboard"
         ]
       }
     },
