@@ -1,20 +1,21 @@
 {
 	"name": "POC Intake-A",
-	"version": "2.0",
+	"version": "1.0",
 	"published": true,
 	"retired": false,
 	"encounter": "Intake A",
 	"pages": [
 		{
-			"label": "HIV Care/ART Clinic INTAKE FORM-A",
+			"label": "HIV CARE/ART CLINIC INTAKE FORM-A",
 			"sections": [
 				{
-					"label": "General Information",
+					"label": "GENERAL INFORMATION",
 					"isExpanded": "true",
 					"questions": [
 						{
 							"label": "Registration/Enrollment Date",
 							"type": "obs",
+							"required": "true",
 							"readonly": "true",
 							"questionOptions": {
 								"rendering": "date",
@@ -23,7 +24,6 @@
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 'a0fde61e-f493-4f1f-b709-22aa94f72dc3'))?.valueDateTime"
 								}
 							},
-							"required": "true",
 							"id": "enrollment_date",
 							"validators": [
 								{
@@ -889,14 +889,9 @@
 							"validators": []
 						}
 					]
-				}
-			]
-		},
-		{
-			"label": "CLIENT REFERRAL INFORMATION",
-			"sections": [
+				},
 				{
-					"label": "Entry Point",
+					"label": "CLIENT REFERRAL INFORMATION",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -1404,14 +1399,9 @@
 							}
 						}
 					]
-				}
-			]
-		},
-		{
-			"label": "CARE GIVER/EMERGENCY CONTACT INFORMATION",
-			"sections": [
+				},
 				{
-					"label": "Care Giver/Emergency Contact",
+					"label": "CARE GIVER/EMERGENCY CONTACT INFORMATION",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -1785,14 +1775,9 @@
 							"id": "telephoneWork"
 						}
 					]
-				}
-			]
-		},
-		{
-			"label": "DISCLOSURE AT ENROLLMENT",
-			"sections": [
+				},
 				{
-					"label": "Disclosure at Enrollment",
+					"label": "DISCLOSURE AT ENROLLMENT",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -2082,14 +2067,9 @@
 							"id": "otherPersonThatKnows"
 						}
 					]
-				}
-			]
-		},
-		{
-			"label": "Notes",
-			"sections": [
+				},
 				{
-					"label": "Notes",
+					"label": "NOTES",
 					"isExpanded": "true",
 					"questions": [
 						{

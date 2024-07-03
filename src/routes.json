@@ -16,7 +16,7 @@
       "slot": "hiv-care-and-treatment-slot",
       "component": "hivTestingServiceMenu",
       "meta": {
-        "title": "HIV Client Testing Service",
+        "title": "HIV Testing Service",
         "slot": "hiv-testing-service-slot",
         "path": "hiv-testing-service",
         "columns": 1
@@ -32,7 +32,7 @@
       "slot": "hiv-care-and-treatment-slot",
       "component": "indexCaseTestingMenu",
       "meta": {
-        "title": "Index Case Client Testing",
+        "title": "Index Case Testing",
         "slot": "index-case-testing-slot",
         "path": "index-case-testing",
         "columns": 1
