@@ -176,8 +176,7 @@
 								  "label": "Other"
 								  }
 							  ]
-							},
-							"validators": []
+							}
 						  },
 						{
 							"label": "Other entry point",
@@ -839,8 +838,7 @@
 								  "label": "Inconclusive"
 								}
 							  ]
-							},
-							"validators": []
+							}
 						  }
 					]
 				},
@@ -1064,8 +1062,7 @@
 								"concept": "c263bf7c-cdc0-4e35-8238-bfdc1d29b468",
 								"conceptMappings": [],
 								"answers": []
-							},
-							"validators": []
+							}
 						},
 						{
 							"label": "Reason why ART not initiated on the same day",
@@ -1114,8 +1111,7 @@
 								  "label": "Refusal of treatment by patient"
 								}
 							  ]
-							},
-							"validators": []
+							}
 						  },
 						{
 							"label": "Other reason why ART not initiated the same day",
@@ -1156,8 +1152,7 @@
 								  "label": "Other"
 								}
 							  ]
-							},
-							"validators": []
+							}
 						  }
 					]
 				}

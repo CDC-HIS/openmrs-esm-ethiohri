@@ -87,10 +87,8 @@
                                     "type": "date",
                                     "allowFutureDates": "false"
                                 }
-							],
-							"hide": {
-							  "hideWhenExpression": "true"
-							}
+							]
+							
 						  },
 						{
 							"label": "Eligibility status",
