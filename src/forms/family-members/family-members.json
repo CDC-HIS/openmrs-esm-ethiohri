@@ -432,6 +432,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "enrolledInCare"
 						},
 						{
