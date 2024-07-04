@@ -13,8 +13,25 @@
 					"isExpanded": "true",
 					"questions": [
 						{
+							"label": "Registraton date",
+							"type": "obs",
+							"required": true,
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
+							"id": "registrationDate"
+						},
+						{
 							"label": "HIV positive date",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -238,6 +255,13 @@
 							"hide": {
 								"hideWhenExpression": "entryPointWithinTheFacility !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherEntryPointWithinTheFacility"
 						},
 						{
@@ -298,6 +322,13 @@
 							"hide": {
 								"hideWhenExpression": "entryPointOutsideTheFacility !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherEntryPointOutsideTheFacility"
 						}
 					]
@@ -578,6 +609,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "linkedToCareAndTreatment !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "startedArt"
 						},
 						{
@@ -635,6 +669,13 @@
 							"hide": {
 								"hideWhenExpression": "reasonForNotStartingArtTheSameDay !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherReasonForNotStartingArtTheSameDay"
 						},
 						{
@@ -730,6 +771,13 @@
 							"hide": {
 								"hideWhenExpression": "planForNextStep !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherPlanForNextStep"
 						}
 					]
@@ -862,6 +910,11 @@
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(dateLinkedToCareAndTreatment)",
 									"message": "Final outcome known date should not be earlier than Date Linked to Care and Treatment"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(hivPostiveDate)",
+									"message": "Final outcome known date should not be earlier than HIV Positive Confirmation date"
 								}
 							],
 							"hide": {
@@ -1066,6 +1119,13 @@
 							"hide": {
 								"hideWhenExpression": "finalOutcome !== '4de0ba18-205b-4df9-be26-bdd08d964e6a'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "nameOfFacilityReferredTo"
 						},
 						{
@@ -1078,6 +1138,13 @@
 							"hide": {
 								"hideWhenExpression": "finalOutcome !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherFinalOutcome"
 						},
 						{
@@ -1102,6 +1169,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 250",
+								  "message": "Please use a maximum of 250 characters"
+								}
+							  ],
 							"id": "remark "
 						}
 					]

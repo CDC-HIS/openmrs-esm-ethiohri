@@ -188,6 +188,13 @@
 							"hide": {
 								"hideWhenExpression": "entryPoint !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherEntryPoint"
 						},
 						{
@@ -246,6 +253,13 @@
 								"rendering": "text",
 								"concept": "60c2f1ed-0c88-4d2b-9067-f0a46e5d4d88"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "lotNumber1"
 						},
 						{
@@ -341,6 +355,13 @@
 								"rendering": "text",
 								"concept": "f6dea1b3-4d8c-438f-be0e-5e056f84946f"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "kitName2"
 						},
 						{
@@ -445,6 +466,13 @@
 								"rendering": "text",
 								"concept": "6c2c0bc0-88b5-43a3-a466-02b0df0667c4"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "kitName3"
 						},
 						{
@@ -737,6 +765,13 @@
 							"hide": {
 								"hideWhenExpression": "actionTakenForDiscrepant === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherActionTakenForDiscrepent"
 						}
 					]
@@ -766,6 +801,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "labName"
 						},
 						{
@@ -1062,6 +1104,13 @@
 							"hide": {
 								"hideWhenExpression": "actionTaken !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "c263bf7c-cdc0-4e35-8238-bfdc1d29b468",
@@ -1128,6 +1177,13 @@
 							"hide": {
 								"hideWhenExpression": "reasonWhyArtNotInitiated !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherReasonArtNotInitiatedTheSameDay"
 						},
 						{

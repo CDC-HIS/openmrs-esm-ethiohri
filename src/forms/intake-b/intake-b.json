@@ -215,6 +215,13 @@
 				  "rendering": "text",
 				  "concept": "20841482-587f-4b4c-9562-ce3f481dd5a8"
 				},
+				"validators": [
+					{
+					  "type": "js_expression",
+					  "failsWhenExpression": "myValue.length > 50",
+					  "message": "Please use a maximum of 50 characters"
+					}
+				  ],
 				"hide": {
 				  "hideWhenExpression": "!includes('HIVRelatedOIs', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 				},
@@ -2180,6 +2187,13 @@
 				  "rendering": "text",
 				  "concept": "a6408b87-6146-4b20-839f-e0ed70c62e5a"
 				},
+				"validators": [
+					{
+					  "type": "js_expression",
+					  "failsWhenExpression": "myValue.length > 50",
+					  "message": "Please use a maximum of 50 characters"
+					}
+				  ],
 				"hide": {
 				  "hideWhenExpression": "!includes('presentingComplaints', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 				},
@@ -3267,6 +3281,13 @@
 				  "rendering": "text",
 				  "concept": "0d3783f1-3790-4b7f-8213-2ff1358148ee"
 				},
+				"validators": [
+					{
+					  "type": "js_expression",
+					  "failsWhenExpression": "myValue.length > 50",
+					  "message": "Please use a maximum of 50 characters"
+					}
+				  ],
 				"id": "otherPhysicalExaminationFindings"
 			  }
 			]
@@ -4116,6 +4137,13 @@
 					}
 				  ]
 				},
+				"validators": [
+					{
+					  "type": "js_expression",
+					  "failsWhenExpression": "myValue.length > 250",
+					  "message": "Please use a maximum of 250 characters"
+					}
+				  ],
 				"id": "intakeNotes"
 			  }
 			]
@@ -4331,6 +4359,13 @@
 				  "rendering": "text",
 				  "concept": "7e4d2281-c8f7-4090-bc29-4ff2313946cc"
 				},
+				"validators": [
+					{
+					  "type": "js_expression",
+					  "failsWhenExpression": "myValue.length > 50",
+					  "message": "Please use a maximum of 50 characters"
+					}
+				  ],
 				"hide": {
 				  "hideWhenExpression": "whyEligibleForART !== '7e4d2281-c8f7-4090-bc29-4ff2313946cc'"
 				},

@@ -290,6 +290,13 @@
 					}
 				  ]
 				},
+				"validators": [
+					{
+					  "type": "js_expression",
+					  "failsWhenExpression": "myValue.length > 250",
+					  "message": "Please use a maximum of 250 characters"
+					}
+				  ],
 				"id": "remark "
 			  }
 			]

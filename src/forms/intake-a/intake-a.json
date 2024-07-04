@@ -215,7 +215,13 @@
 								"conceptMappings": [],
 								"answers": []
 							},
-							"validators": []
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
 						},
 						{
 							"label": "Occupation",
@@ -326,6 +332,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "mothers_name"
 						},
 						{
@@ -335,6 +348,13 @@
 								"rendering": "text",
 								"concept": "1594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "mothers_father_name"
 						},
 						{
@@ -344,6 +364,13 @@
 								"rendering": "text",
 								"concept": "1b545ea1-0aed-4632-af99-ea2ceb61b13c"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "mothers_grandfather_name"
 						},
 						{
@@ -449,7 +476,13 @@
 							"hide": {
 								"hideWhenExpression": "placeOfDelivery !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"validators": []
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
 						},
 						{
 							"label": "Mode of delivery",
@@ -546,7 +579,13 @@
 							"hide": {
 								"hideWhenExpression": "modeOfDelivery !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"validators": []
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
 						}
 					]
 				},
@@ -897,6 +936,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"hide": {
 								"hideWhenExpression": "entryPoint !== '163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !includes('within_the_facility','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
@@ -1096,6 +1142,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"hide": {
 								"hideWhenExpression": "entryPoint !== '164407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !includes('outside_the_facility','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
@@ -1159,6 +1212,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "care_giver_first_name"
 						},
 						{
@@ -1178,6 +1238,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "care_giver_fathers_name"
 						},
 						{
@@ -1209,6 +1276,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 20",
+								  "message": "Please use a maximum of 20 characters"
+								}
+							  ],
 							"id": "care_giver_grandfathers_name"
 						},
 						{
@@ -1423,6 +1497,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"hide": {
 								"hideWhenExpression": "relationship !== '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
@@ -1790,6 +1871,13 @@
 							"hide": {
 								"hideWhenExpression": "whoKnows !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"id": "otherPersonThatKnows"
 						}
 					]
@@ -1812,6 +1900,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 250",
+								  "message": "Please use a maximum of 250 characters"
+								}
+							  ],
 							"id": "notes"
 						}
 					]

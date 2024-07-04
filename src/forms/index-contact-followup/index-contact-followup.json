@@ -73,6 +73,13 @@
                         "type": "obs",
                         "required": false,
                         "id": "contactFirstName",
+                        "validators": [
+                            {
+                              "type": "js_expression",
+                              "failsWhenExpression": "myValue.length > 20",
+                              "message": "Please use a maximum of 20 characters"
+                            }
+                          ],
                         "questionOptions": {
                             "rendering": "text",
                             "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -94,8 +101,7 @@
                                 }
                             ],
                             "answers": []
-                        },
-                        "validators": []
+                        }
                     },
                     {
                         "label": "Contact Middle Name",
@@ -119,8 +125,13 @@
                             ],
                             "answers": []
                         },
-                        "validators": []
-                    },
+                        "validators": [
+                            {
+                              "type": "js_expression",
+                              "failsWhenExpression": "myValue.length > 20",
+                              "message": "Please use a maximum of 20 characters"
+                            }
+                          ]                    },
                     {
                         "label": "Contact Last Name",
                         "type": "obs",
@@ -148,8 +159,13 @@
                             ],
                             "answers": []
                         },
-                        "validators": []
-                    },
+                        "validators": [
+                            {
+                              "type": "js_expression",
+                              "failsWhenExpression": "myValue.length > 20",
+                              "message": "Please use a maximum of 20 characters"
+                            }
+                          ]                    },
                     {
                         "label": "Contact Age",
                         "type": "obs",
@@ -316,6 +332,13 @@
                             }
                           ]
                         },
+                        "validators": [
+                            {
+                              "type": "js_expression",
+                              "failsWhenExpression": "myValue.length > 250",
+                              "message": "Please use a maximum of 250 characters"
+                            }
+                          ],
                         "id": "remark"
                       },
                       {

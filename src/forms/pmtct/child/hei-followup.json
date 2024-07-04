@@ -444,7 +444,13 @@
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
             },
             {
               "label": "Mother's breast condition",
@@ -495,7 +501,14 @@
               },
               "hide": {
                 "hideWhenExpression": "mothersBreastCondition !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              }
+              },
+              "validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
             }
             
           ]
@@ -682,7 +695,13 @@
                 ],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]
             },
             {
               "label": "Specimen collected by ",

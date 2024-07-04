@@ -113,7 +113,13 @@
                 ],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]
             },
             {
               "label": "Provider telephone number",

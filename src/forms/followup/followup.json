@@ -5582,6 +5582,13 @@
 								"rendering": "text",
 								"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8"
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
 							"hide": {
 								"hideWhenExpression": "!includes('opportunisticIllnesses','20841482-587f-4b4c-9562-ce3f481dd5a8')"
 							},

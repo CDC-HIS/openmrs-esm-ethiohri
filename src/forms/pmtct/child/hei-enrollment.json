@@ -180,8 +180,13 @@
                 ],
                 "answers": []
               },
-              "validators": []
-            },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]            },
             {
               "label": "Place of delivery",
               "type": "obs",
@@ -253,13 +258,20 @@
               "hide": {
                 "hideWhenExpression": "placeOfDelivery != '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
+
               "questionOptions": {
                 "rendering": "text",
                 "concept": "2f3c7d4f-198f-40ce-94d2-a968c8c4bea4",
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
             },
             {
               "label": "Mode of delivery",
@@ -327,7 +339,13 @@
                 "conceptMappings": [],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
             }
           ]
         },
@@ -459,8 +477,13 @@
               "hide": {
                 "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
               },
-              "validators": []
-            },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]            },
             {
               "label": "Father's Name",
               "type": "obs",
@@ -481,8 +504,13 @@
               "hide": {
                 "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
               },
-              "validators": []
-            },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]            },
             {
               "label": "Grand Father's Name",
               "type": "obs",
@@ -495,8 +523,13 @@
               "hide": {
                 "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
               },
-              "validators": []
-            },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]            },
             
             {
               "label": "Mother's PMTCT Interventions",
@@ -1130,6 +1163,13 @@
                 "rendering": "text",
                 "concept": "5073143b-eb72-45aa-a4bf-4164aa858f95"
               },
+              "validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ],
               "hide": {
                 "hideWhenExpression": "relationship != '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
@@ -1161,7 +1201,13 @@
                 ],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]
             },
             {
               "label": "Father's Name",
@@ -1180,7 +1226,13 @@
                 ],
                 "answers": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]
             },
             {
               "label": "Grand Father's Name",
@@ -1209,8 +1261,13 @@
                 ],
                 "answers": []
               },
-              "validators": []
-            }
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]            }
           ]
         }
       ]

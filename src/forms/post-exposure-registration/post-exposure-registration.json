@@ -68,7 +68,14 @@
 							"id": "otherOccupation",
 							"hide": {
 								"hideWhenExpression": "occupation !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							}
+							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
 						},
 						{
 							"label": "Case Team",
@@ -116,7 +123,14 @@
 							"id": "otherCaseTeam",
 							"hide": {
 								"hideWhenExpression": "caseTeam !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							}
+							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
 						}
 					]
 				},
