@@ -13,7 +13,7 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Followup date *",
+              "label": "Followup date",
               "type": "obs",
               "required": "true",
 							"id": "followupDate",
@@ -839,7 +839,7 @@
                 "answers": []
               },
               "hide": {
-                "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || screenedForSTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e'"
               },
               "validators": [
                 {
@@ -1132,7 +1132,7 @@
                 "rendering": "date",
                 "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
                 "calculate": {
-									"calculateExpression": "CustomTreatmentEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
+									"calculateExpression": "CustomPrepDoseEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
 								},
                 "conceptMappings": [],
                 "answers": []
