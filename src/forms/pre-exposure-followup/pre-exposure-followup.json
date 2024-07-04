@@ -839,7 +839,7 @@
                 "answers": []
               },
               "hide": {
-                "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e'"
+                "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || screenedForSTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
