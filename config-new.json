@@ -131,7 +131,7 @@
         "id": "registrationDate",
         "label": "Registration date",
         "type": "obs",
-        "uuid": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "uuid": "dadc86a8-1e44-4a6d-91c2-e3b54089b54c",
         "validation": {
           "required": true
         }
