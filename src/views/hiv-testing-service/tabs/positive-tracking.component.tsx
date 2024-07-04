@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   MRN_NULL_WARNING,
@@ -7,6 +7,7 @@ import {
 import { doesPatientHaveIdentifier, getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
+import { getPatientEncounters } from "../../../api/api";
 
 const columns = [
   {
@@ -91,11 +92,28 @@ const PositiveTrackingList: React.FC<{ patientUuid: string }> = ({
   patientUuid,
 }) => {
   const [hasMRN, setHasMRN] = useState(false);
+  const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved((prev) => !prev);
+  }, []);
+
   useEffect(() => {
     (async () => {
+      (async () => {
+        const previousEncounters = await getPatientEncounters(
+          patientUuid,
+          POSITIVE_TRACKING_ENCOUNTER_TYPE
+        );
+        previousEncounters.length
+          ? setHasPreviousEncounter(true)
+          : setHasPreviousEncounter(false);
+      })();
+
       await doesPatientHaveIdentifier(patientUuid, setHasMRN);
     })();
-  });
+  }, [isFormSaved]);
 
   return (
     <>
@@ -109,8 +127,9 @@ const PositiveTrackingList: React.FC<{ patientUuid: string }> = ({
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
+          hideFormLauncher: !hasMRN || hasPreviousEncounter,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
