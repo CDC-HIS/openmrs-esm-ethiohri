@@ -204,13 +204,9 @@
 						{
 							"label": "Date of initial test",
 							"type": "obs",
-							"readonly": true,
 							"questionOptions": {
 								"rendering": "date",
-								"concept": "9182520e-24e8-4e84-aba7-6b56bdeb76d5",
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', 'f28bb488-0f83-417c-98ba-06ea5f1765e3'))?.valueDateTime"
-								  }
+								"concept": "9182520e-24e8-4e84-aba7-6b56bdeb76d5"
 							},
 							"id": "dateOfInitialTest"
 						},
