@@ -8,6 +8,7 @@ import {
 } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
+import { getPatientEncounters } from "../../../api/api";
 
 const columns = [
   {
@@ -91,7 +92,6 @@ const columns = [
 const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
-
   const [isFormSaved, setIsFormSaved] = useState(false);
 
   const updateFormSavedStatus = useCallback(() => {
@@ -100,15 +100,15 @@ const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
 
   useEffect(() => {
     (async () => {
-      await doesEncounterExist(
-        patientUuid,
-        RETEST_ENCOUNTER_TYPE,
-        setHasPreviousEncounter
-      );
-
-      hasPreviousEncounter
-        ? setHasPreviousEncounter(true)
-        : setHasPreviousEncounter(false);
+      (async () => {
+        const previousEncounters = await getPatientEncounters(
+          patientUuid,
+          RETEST_ENCOUNTER_TYPE
+        );
+        previousEncounters.length
+          ? setHasPreviousEncounter(true)
+          : setHasPreviousEncounter(false);
+      })();
 
       await doesPatientHaveIdentifier(patientUuid, setHasMRN);
     })();

@@ -13,21 +13,6 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Registraton date",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "date",
-								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                }
-							],
-							"id": "registrationDate"
-						},
-						{
 							"label": "HIV positive date",
 							"type": "obs",
 							"questionOptions": {
