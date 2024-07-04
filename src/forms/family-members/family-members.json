@@ -590,6 +590,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "artStarted"
 						},
 						{

@@ -596,6 +596,7 @@
 						{
 							"label": "Date confirmed HIV+/Retesting",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

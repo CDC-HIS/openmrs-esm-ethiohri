@@ -60,3 +60,33 @@ export function getCurrentUser() {
     return data.user ? data.user : null;
   });
 }
+
+export async function getRelationships(patientUuid: string) {
+  try {
+    const response = await openmrsFetch(
+      `${restBaseUrl}/relationship?v=full&person=${patientUuid}`
+    );
+    const data = await response.data;
+    console.log("PATIENT RELATIONSHIP ========", data);
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching patient emergency contact:", error);
+    return null;
+  }
+}
+
+export async function getPatientInfo(patientUuid: string) {
+  try {
+    const response = await openmrsFetch(
+      `${restBaseUrl}/person/${patientUuid}?v=full`
+    );
+    const data = await response.data;
+    console.log("PATIENT INFORMATION ========", data);
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching patient emergency contact:", error);
+    return null;
+  }
+}
