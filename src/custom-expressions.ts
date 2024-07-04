@@ -60,23 +60,30 @@ export function CalcTreatmentEndDate(
   let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
   let resultTreatmentEndDate = {};
   let extraDaysAdded = 30 + dispensedDoseReturned;
-  if (
-    // eslint-disable-next-line no-constant-condition
-    (followupDate &&
-      arvDispensedInDays &&
-      followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") ||
-    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-  ) {
+  if (followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")) {
     resultTreatmentEndDate = new Date(
       followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000
     );
   }
-  // eslint-disable-next-line no-constant-condition
-  return (followupDate &&
-    arvDispensedInDays &&
-    followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") ||
-    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  return followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     ? resultTreatmentEndDate
+    : null;
+}
+
+export function CalcPrepDoseEndDate(
+  followupDate: Date,
+  arvDispensedInDays: string,
+  followupStatus: string
+) {
+  let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
+  let resultPrepDoseDate = {};
+  if (followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")) {
+    resultPrepDoseDate = new Date(
+      followupDate.getTime() + dispensedDoseReturned * 24 * 60 * 60 * 1000
+    );
+  }
+  return followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    ? resultPrepDoseDate
     : null;
 }
 
