@@ -27,9 +27,43 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
-                }
+                },
+                {
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(prepRegistrationDate)",
+									"message": "Followup date should not be earlier than Prep Registration date"
+								},
+                {
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(prepScreeningDate)",
+									"message": "Followup date should not be earlier than Prep Screening date"
+								}
               ]
-            }
+            },
+            {
+							"label": "Prep Registration Date",
+							"type": "obs",
+							"id": "prepRegistrationDate",
+							"questionOptions": {
+							  "concept": "",
+							  "rendering": "fixed",
+							  "calculate": {
+								"calculateExpression": "resolve(api.getLatestObs(patient.id, '1ebc345c-6f09-43e1-a616-d7e52fff4c7d', '8c2b6a9b-4795-417d-affe-2530a753b715'))?.valueDateTime"
+							  }
+							}
+						  },
+            {
+							"label": "Prep Screening Date",
+							"type": "obs",
+							"id": "prepScreeningDate",
+							"questionOptions": {
+							  "concept": "",
+							  "rendering": "fixed",
+							  "calculate": {
+								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'bd09b775-0294-4775-9615-964d98e06a4f', '8c2b6a9b-4795-417d-affe-2530a753b715'))?.valueDateTime"
+							  }
+							}
+						  }
           ]
         },
         {
@@ -1094,7 +1128,6 @@
               "type": "obs",
               "required": false,
               "id": "prepDoseEndDate",
-              "readonly": "true",
               "questionOptions": {
                 "rendering": "date",
                 "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",

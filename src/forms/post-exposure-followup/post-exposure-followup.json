@@ -15,6 +15,7 @@
 				{
 					"label": "Reporting date",
 					"type": "obs",
+					"readonly": true,
 					"questionOptions": {
 						"calculate": {
 							"calculateExpression": "resolve(api.getLatestObs(patient.id, '4285d9e8-3ab4-4a94-bd4e-4dd92855795c', 'de4cef7c-0aca-4593-9b5f-64a51c841c9d'))?.valueDateTime"
@@ -44,6 +45,11 @@
 					{
 						"type": "date",
 						"allowFutureDates": "false"
+					},
+					{
+						"type": "js_expression",
+						"failsWhenExpression": "myValue < new Date(reportingDate)",
+						"message": "Visit date should not be earlier than Reporting date"
 					}
 				],
 				"id": "visitDate"
