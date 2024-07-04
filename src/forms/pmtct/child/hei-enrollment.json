@@ -538,23 +538,38 @@
                 "answers": [
                   {
                     "concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
-                    "label": "1a30 - D4T(30)+3TC+NVP"
+                    "label": "1a30 - D4T(30)+3TC+NVP",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
-                    "label": "1a40 - D4T(40)+3TC+NVP"
+                    "label": "1a40 - D4T(40)+3TC+NVP",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
-                    "label": "1b30 - D4T(30)+3TC+EFV"
+                    "label": "1b30 - D4T(30)+3TC+EFV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
-                    "label": "1b40 - D4T(40)+3TC+EFV"
+                    "label": "1b40 - D4T(40)+3TC+EFV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
-                    "label": "1c - AZT+3TC+NVP"
+                    "label": "1c - AZT+3TC+NVP",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
@@ -566,7 +581,10 @@
                   },
                   {
                     "concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
-                    "label": "1f - TDF+3TC+NVP"
+                    "label": "1f - TDF+3TC+NVP",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
@@ -574,7 +592,10 @@
                   },
                   {
                     "concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
-                    "label": "1h - ABC+3TC+NVP"
+                    "label": "1h - ABC+3TC+NVP",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
@@ -590,19 +611,31 @@
                   },
                   {
                     "concept": "a87d9674-11af-4440-afd0-d097d84d0393",
-                    "label": "2a - ABC+DDL+LPV"
+                    "label": "2a - ABC+DDL+LPV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
-                    "label": "2b - ABC+DDL+NFV"
+                    "label": "2b - ABC+DDL+NFV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
-                    "label": "2c - TDF+DDL+LPV"
+                    "label": "2c - TDF+DDL+LPV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
-                    "label": "2d - TDF+DDL+NFV"
+                    "label": "2d - TDF+DDL+NFV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
@@ -662,15 +695,24 @@
                   },
                   {
                     "concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
-                    "label": "4a - D4T+3TC+NVP"
+                    "label": "4a - D4T+3TC+NVP",
+                    "hide": {
+                      "hideWhenExpression": "true"
+                    }
                   },
                   {
                     "concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
-                    "label": "4b - D4T+3TC+EFV"
+                    "label": "4b - D4T+3TC+EFV",
+                    "hide": {
+                      "hideWhenExpression": "true"
+                    }
                   },
                   {
                     "concept": "756b4487-f358-4817-b248-9c05080bad67",
-                    "label": "4c - AZT+3TC+NVP"
+                    "label": "4c - AZT+3TC+NVP",
+                    "hide": {
+                      "hideWhenExpression": "true"
+                    }
                   },
                   {
                     "concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
@@ -710,19 +752,31 @@
                   },
                   {
                     "concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
-                    "label": "5a - ABC+DDL+LPY"
+                    "label": "5a - ABC+DDL+LPY",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "7c30ed1a-a770-4b74-8704-82077427128d",
-                    "label": "5b - ABC+DDL+NFV"
+                    "label": "5b - ABC+DDL+NFV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
-                    "label": "5c - TDF+DDL+LPV"
+                    "label": "5c - TDF+DDL+LPV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
-                    "label": "5d - TDF+DDL+NFV"
+                    "label": "5d - TDF+DDL+NFV",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
@@ -750,11 +804,17 @@
                   },
                   {
                     "concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
-                    "label": "5k - RAL+AZT+3TC"
+                    "label": "5k - RAL+AZT+3TC",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
-                    "label": "5l - RAL+ABC+3TC"
+                    "label": "5l - RAL+ABC+3TC",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
@@ -770,11 +830,17 @@
                   },
                   {
                     "concept": "5415f1b1-a680-4870-89c5-3324d42da408",
-                    "label": "6a - DRVr+RAL+AZT+3TC"
+                    "label": "6a - DRVr+RAL+AZT+3TC",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
-                    "label": "6b - DRVr+RAL+TDF+3TC"
+                    "label": "6b - DRVr+RAL+TDF+3TC",
+                    "hide": {
+									"hideWhenExpression": "true"
+								}
                   },
                   {
                     "concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
