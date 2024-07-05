@@ -33,8 +33,33 @@
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
 									"message": "Followup date should not be earlier than Registration date"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue == new Date(previousFollowupDate)",
+									"message": "Current followup date can not be same as previous followup date"
 								}
 							]
+						  },
+						  {
+							"label": "Previous followup date",
+							"type": "obs",
+							"id": "previousFollowupDate",
+							"readonly": true,
+							"questionOptions": {
+							  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+							  "rendering": "date",
+							  "calculate": {
+								"calculateExpression": "resolve(api.getLatestObs(patient.id, '5c118396-52dc-4cac-8860-e6d8e4a7f296', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
+							  }
+							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							]
+							
 						  },
 						{
 							"label": "Visit type",
@@ -2185,7 +2210,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "(!includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670')) || patient.gender === 'male'"
+						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || patient.gender === 'male'"
 					}
 				}
 			],
@@ -7376,7 +7401,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','2889d127-3b82-4978-ad2a-97ddf16bcc81') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670')"
+						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','2889d127-3b82-4978-ad2a-97ddf16bcc81') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 					}
 				}
 			],
@@ -9755,7 +9780,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','98b00c1a-d81c-4648-be6f-86793d0ae23f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','98b00c1a-d81c-4648-be6f-86793d0ae23f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 					}
 				}
 			],
@@ -10194,7 +10219,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "(!includes('observationsConductedDuringCurrentVisit','23ad6d16-d8a5-46fa-ac98-dfab4db06d1a')  && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670')) || patient.gender === 'male' || age < 15"
+						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','23ad6d16-d8a5-46fa-ac98-dfab4db06d1a')  && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || patient.gender === 'male' || age < 15"
 					}
 				}
 			],
