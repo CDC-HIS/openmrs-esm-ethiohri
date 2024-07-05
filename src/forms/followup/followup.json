@@ -2185,7 +2185,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || patient.gender === 'male'"
+						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670')"
 					}
 				}
 			],
