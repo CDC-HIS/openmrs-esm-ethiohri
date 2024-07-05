@@ -33,33 +33,8 @@
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
 									"message": "Followup date should not be earlier than Registration date"
-								},
-								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue == new Date(previousFollowupDate)",
-									"message": "Current followup date can not be same as previous followup date"
 								}
 							]
-						  },
-						  {
-							"label": "Previous followup date",
-							"type": "obs",
-							"id": "previousFollowupDate",
-							"readonly": true,
-							"questionOptions": {
-							  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
-							  "rendering": "date",
-							  "calculate": {
-								"calculateExpression": "resolve(api.getLatestObs(patient.id, '5c118396-52dc-4cac-8860-e6d8e4a7f296', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
-							  }
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                }
-							]
-							
 						  },
 						{
 							"label": "Visit type",
