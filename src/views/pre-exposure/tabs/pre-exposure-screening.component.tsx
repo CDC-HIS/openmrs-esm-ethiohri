@@ -112,11 +112,10 @@ const columns = [
   },
 ];
 
-const PreExposureScreeningList: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const PreExposureScreeningList = ({ patientUuid, updateFormSavedStatus }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
+
   useEffect(() => {
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
@@ -147,6 +146,7 @@ const PreExposureScreeningList: React.FC<{ patientUuid: string }> = ({
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || isConfirmedPositive,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
       {isConfirmedPositive && (

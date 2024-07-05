@@ -90,20 +90,12 @@ const columns = [
   },
 ];
 
-const PostExposureFollowup: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasScreeningEncounter, setHasScreeningEncounter] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
     (async () => {
       const previousEncounters = await getPatientEncounters(
         patientUuid,
@@ -111,6 +103,15 @@ const PostExposureFollowup: React.FC<{ patientUuid: string }> = ({
       );
       if (previousEncounters.length) {
         setHasScreeningEncounter(true);
+      }
+    })();
+  }, [isFormSaved]);
+
+  useEffect(() => {
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
+        setHasMRN(true);
       }
     })();
     (async () => {

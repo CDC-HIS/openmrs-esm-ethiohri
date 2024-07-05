@@ -84,9 +84,7 @@ const columns = [
   },
 ];
 
-const PostExposureRegistration: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const PostExposureRegistration = ({ patientUuid, updateFormSavedStatus }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
 
@@ -120,6 +118,7 @@ const PostExposureRegistration: React.FC<{ patientUuid: string }> = ({
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || isConfirmedPositive,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
       {isConfirmedPositive && (

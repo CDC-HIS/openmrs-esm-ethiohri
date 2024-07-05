@@ -1,10 +1,16 @@
 import { Tab, Tabs, TabList, TabPanels, TabPanel } from "@carbon/react";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import styles from "../program-management/program-management.scss";
 import PreExposureScreeningList from "./tabs/pre-exposure-screening.component";
 import PreExposureFollowupList from "./tabs/pre-exposure-followup.component";
 
 const PreExposure: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved((prev) => !prev);
+  }, []);
+
   return (
     <div className={styles.tabContainer}>
       <Tabs>
@@ -14,10 +20,16 @@ const PreExposure: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <PreExposureScreeningList patientUuid={patientUuid} />
+            <PreExposureScreeningList
+              updateFormSavedStatus={updateFormSavedStatus}
+              patientUuid={patientUuid}
+            />
           </TabPanel>
           <TabPanel>
-            <PreExposureFollowupList patientUuid={patientUuid} />
+            <PreExposureFollowupList
+              isFormSaved={isFormSaved}
+              patientUuid={patientUuid}
+            />
           </TabPanel>
         </TabPanels>
       </Tabs>
