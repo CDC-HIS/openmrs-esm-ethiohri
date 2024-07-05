@@ -54,6 +54,110 @@
 							"id": "mrn"
 						},
 						{
+							"label": "Sex",
+							"type": "obs",
+							"required": "true",
+							"readonly": "true",
+							"questionOptions": {
+								"isTransient": true,
+								"calculate": {
+                                    "calculateExpression": "getGender(patient)"
+                                },
+								"rendering": "radio",
+								"concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "LOINC",
+										"value": "72143-4"
+									},
+									{
+										"type": "CIEL",
+										"value": "1533"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Male",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "1534"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "248153007"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "248153007"
+											},
+											{
+												"type": "PIH",
+												"value": "2843"
+											},
+											{
+												"type": "PIH",
+												"value": "2843"
+											}
+										]
+									},
+									{
+										"concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Female",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "248152002"
+											},
+											{
+												"type": "CIEL",
+												"value": "1535"
+											},
+											{
+												"type": "PIH",
+												"value": "2844"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "248152002"
+											},
+											{
+												"type": "PIH",
+												"value": "2844"
+											}
+										]
+									}
+								]
+							},
+							"id": "gender"
+						},
+						{
+							"label": "Date of Birth",
+							"type": "obs",
+							"readonly": "true",
+							"questionOptions": {
+								"isTransient": true,
+								"calculate": {
+                                    "calculateExpression": "patient.birthDate"
+                                },
+								"rendering": "date",
+								"concept": "166575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "166575"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "184099003"
+									}
+								]
+							},
+							"id": "date_of_birth"
+						},
+						{
 							"label": "Unit TB No.",
 							"type": "obs",
 							"questionOptions": {
