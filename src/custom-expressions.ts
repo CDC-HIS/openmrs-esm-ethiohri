@@ -130,86 +130,101 @@ export function CalcBMI(height: number, weight: number) {
 export function CalcAdultNutritionalStatus(
   height: number,
   weight: number,
-  pregnant?: string,
-  muac?: number
+  /* muac?: number */
 ) {
   let resultBMI = CalcBMI(height, weight);
   let resultAdultNutritionalStatus: string;
 
-  if (resultBMI && pregnant == "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+  if (resultBMI) {
+  if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 17 && resultBMI <= 18.49) {
       resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 16 && resultBMI <= 16.99) {
       resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI < 16) {
       resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 25 && resultBMI <= 29.99) {
       resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else {
       resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
-    }
-  } else if (muac && pregnant == "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    if (muac >= 23) {
-      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (muac >= 19 && muac < 23) {
-      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (muac < 19) {
-      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else {
-      return null;
     }
   } else {
     return null;
   }
 }
 
-export function CalcNutritionalScreening(
-  height: number,
-  weight: number,
-  pregnant?: string,
-  muac?: number
-) {
-  let resultNutritionalScreening: string;
-  let resultBMI = CalcBMI(height, weight);
-  if (resultBMI && pregnant == "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else if (resultBMI <= 16 && resultBMI <= 18.49) {
-      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else {
-      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    }
-  } else if (muac && pregnant == "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    if (muac >= 23) {
-      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else if (muac >= 19 && muac < 23) {
-      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else if (muac < 19) {
-      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
+  export function CalcNutritionalScreening(
+    height: number,
+    weight: number,
+    /* muac?: number */
+  ) {
+    let resultNutritionalScreening: string;
+    let resultBMI = CalcBMI(height, weight);
+    if (resultBMI) {
+      if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+        resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+        return resultNutritionalScreening;
+      } else if (resultBMI <= 16 && resultBMI <= 18.49) {
+        resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+        return resultNutritionalScreening;
+      } else {
+        resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+        return resultNutritionalScreening;
+      }
     } else {
       return null;
     }
-  } else {
-    return null;
   }
-}
+
+   /* if (muac !== undefined) {
+    if (muac >= 23) {
+      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
+      return resultAdultNutritionalStatus;
+    } else if (muac >= 19 && muac < 23) {
+      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
+      return resultAdultNutritionalStatus;
+    } else if (muac < 19 && muac > 0) {
+      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
+      return resultAdultNutritionalStatus;
+    } else {
+      return null;
+    }
+  } */
+
+    /* if (muac >= 23) {
+      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+      return resultNutritionalScreening;
+    } else if (muac >= 19 && muac < 23) {
+      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+      return resultNutritionalScreening;
+    } else if (muac < 19) {
+      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+      return resultNutritionalScreening;
+    } else {
+      return null;
+    } */
 
 export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
   switch (bmiForAge) {

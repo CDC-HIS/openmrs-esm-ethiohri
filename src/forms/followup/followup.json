@@ -696,7 +696,7 @@
 								"rendering": "radio",
 								"concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
 								"calculate": {
-									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight', 'pregnant', 'muac')"
+									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight')"
 								},
 								"answers": [
 									{
@@ -1238,7 +1238,7 @@
 								"unspecified": true,
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
 								"calculate": {
-									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight', 'pregnant', 'muac')"
+									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight')"
 								},
 								"answers": [
 									{
@@ -2185,7 +2185,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f') || patient.gender === 'male'"
+						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f')"
 					}
 				}
 			],
@@ -2345,6 +2345,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "patient.gender === 'male' && patient.age <= 10"
+							},
 							"id": "pregnant"
 						},
 						{
@@ -2467,7 +2470,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && patient.gender === 'male' && patient.age <= 10"
 							},
 							"id": "wantsToBePregnant"
 						},
@@ -2602,6 +2605,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "patient.gender === 'male' && patient.age <= 10"
+							},
 							"id": "breastfeeding"
 						},
 						{
@@ -2682,7 +2688,7 @@
 							"id": "edd"
 						},
 						{
-							"label": "Referred to PMTCT ?",
+							"label": "Referred to PMTCT?",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -2795,6 +2801,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "patient.gender === 'male' && patient.age <= 10 && pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "referredToPMTCT"
 						},
@@ -3197,7 +3206,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "familyPlanningMethods"
 						}
@@ -3242,6 +3251,7 @@
 						{
 							"label": "TB screening date",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "179497a0-6f07-469f-bb2e-9b85644a82af",
@@ -3261,6 +3271,7 @@
 						{
 							"label": "Screening result",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "160108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3906,7 +3917,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "tbTreatmentStarted"
 						},
@@ -3975,6 +3986,9 @@
 							"type": "obs",
 							"required": false,
 							"id": "tbTreatmentStatus",
+              "hide": {
+								"hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"questionOptions": {
 							  "rendering": "select",
 							  "concept": "cc9215e5-454f-4cdf-a773-62b2f2f17fdb",
@@ -4041,6 +4055,9 @@
                                     "allowFutureDates": "false"
                                 }
 							],
+              "hide": {
+								"hideWhenExpression": "tbTreatmentStatus !== '9d4ca0d6-4c10-4d58-af2b-e74c510a6221' || tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "dateActiveTBRxCompleted"
 						},
 						{
@@ -4060,6 +4077,9 @@
                                     "allowFutureDates": "false"
                                 }
 							],
+              "hide": {
+								"hideWhenExpression": "tbTreatmentStatus !== '8b1b2f2d-27ef-4ee4-bf0e-cf9abcf7f3f0' || tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"id": "dateActiveTBRxDiscontinued"
 						},
 						{
@@ -4168,7 +4188,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+								"hideWhenExpression": "screeningResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "eligibleForTPT"
 						},
@@ -4261,7 +4281,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+								"hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"validators": [
 								{
@@ -4273,6 +4293,7 @@
 						},
 						{
 							"label": "TB prophylaxis type",
+							"required": true,
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
@@ -4299,12 +4320,12 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+								"hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "TBProphylaxisType"
 						},
 						{
-							"label": "TPT follow up (INH)",
+							"label": "TPT follow up (6H)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -4398,7 +4419,7 @@
 							"id": "tptFollowupINH"
 						},
 						{
-							"label": "Alternate TPT follow up (3HP)",
+							"label": "TPT follow up (3HP)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -4457,75 +4478,132 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "alternateTptProhylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5'"
+								"hideWhenExpression": "TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5'"
 							},
 							"id": "tptFollowUp3HP"
 						},
-						{
-							"label": "Alternate TPT follow up (3HR)",
+						  {
+							"label": "Date TPT completed",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "select",
-								"concept": "43f17059-ad82-43d7-bb0b-fe5315abdd07",
-								"answers": [
-									{
-										"concept": "aba09fd0-8a5c-4b23-8ecc-5700cfe42b0b",
-										"label": "3HR1",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "3HR1"
-											}
-										]
-									},
-									{
-										"concept": "36e85a5b-ad01-46af-a72c-5a9cf0983d5d",
-										"label": "3HR2",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "3HR2"
-											}
-										]
-									},
-									{
-										"concept": "a7641b83-e190-414a-a3b3-3386a70f873c",
-										"label": "3HR3",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "3HR3"
-											}
-										]
-									},
-									{
-										"concept": "8ea0e50d-3778-47d0-be56-51563b56c89b",
-										"label": "3HR Completed",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "3HRCompleted"
-											}
-										]
-									},
-									{
-										"concept": "4ee17eb6-7410-40c7-9204-c3f28a0c22ba",
-										"label": "3HR Discontinued",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "3HRDiscontinued"
-											}
-										]
-									}
-								]
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
+								"rendering": "date",
+								"concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "alternateTptProhylaxisType !== 'c989f10b-6ab4-44d2-a8cd-b4f45fc3ab9b'"
+								"hideWhenExpression": "tptFollowupINH !== 'a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb' || TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01'"
 							},
-							"id": "tptFollowup3HR"
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(tptStartDate)",
+									"message": "Date TPT Completed should not be earlier than TPT Start Date"
+								}
+							],
+							"id": "dateTptCompleted"
 						},
 						{
+							"label": "Date TPT discontinued",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": ""
+							},
+							"hide": {
+								"hideWhenExpression": "tptFollowupINH !== '86e102e6-ddf4-423c-b5b7-3d157de0c96f' || TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01'"
+							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(tptStartDate)",
+									"message": "Date TPT Discontinued should not be earlier than TPT Start Date"
+								}
+							],
+							"id": "dateTptDiscontinued"
+						},
+						{
+							"label": "TPT dispensed dose in days (6H)",
+							"type": "obs",
+							"required": false,
+							"id": "tptDispensedDose",
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "ad542a8d-cd7c-4d70-8ef3-829b89c05009",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+								  "label": "30"
+								},
+								{
+								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+								  "label": "60"
+								},
+								{
+								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+								  "label": "90"
+								},
+								{
+									"concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+									"label": "120"
+								},
+								{
+									"concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
+									"label": "150"
+								},
+								{
+								  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+								  "label": "180"
+								}
+							  ]
+							},
+							"hide": {
+								"hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01'"
+							},
+							"validators": []
+						  },
+						  {
+							"label": "TPT dispensed dose in days (3HP)",
+							"type": "obs",
+							"required": false,
+							"id": "tptDispensedDoseAlternate",
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "cc80b9ac-2ed1-4fd5-969a-9e324e91e95e",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+								  "label": "30"
+								},
+								{
+								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+								  "label": "60"
+								},
+								{
+								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+								  "label": "90"
+								}
+							  ]
+							},
+							"hide": {
+								"hideWhenExpression": "TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5'"
+							},
+							"validators": []
+						  },
+						  {
 							"label": "Adherence for TPT",
 							"type": "obs",
 							"questionOptions": {
@@ -4605,126 +4683,9 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+								"hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "tptAdherence"
-						},
-						{
-							"label": "TPT dispensed dose in days (INH)",
-							"type": "obs",
-							"required": false,
-							"id": "tptDispensedDose",
-							"questionOptions": {
-							  "rendering": "select",
-							  "concept": "ad542a8d-cd7c-4d70-8ef3-829b89c05009",
-							  "conceptMappings": [],
-							  "answers": [
-								{
-								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
-								  "label": "30"
-								},
-								{
-								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
-								  "label": "60"
-								},
-								{
-								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
-								  "label": "90"
-								},
-								{
-									"concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
-									"label": "120"
-								},
-								{
-								  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
-								  "label": "180"
-								}
-							  ]
-							},
-							"hide": {
-								"hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01'"
-							},
-							"validators": []
-						  },
-						  {
-							"label": "TPT dispensed dose in days (Alternate)",
-							"type": "obs",
-							"required": false,
-							"id": "tptDispensedDoseAlternate",
-							"questionOptions": {
-							  "rendering": "select",
-							  "concept": "cc80b9ac-2ed1-4fd5-969a-9e324e91e95e",
-							  "conceptMappings": [],
-							  "answers": [
-								{
-								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
-								  "label": "30"
-								},
-								{
-								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
-								  "label": "60"
-								},
-								{
-								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
-								  "label": "90"
-								}
-							  ]
-							},
-							"hide": {
-								"hideWhenExpression": "TBProphylaxisType !== '8bf3b3d8-7450-4d67-a336-8b5c07df78e3'"
-							},
-							"validators": []
-						  },
-						{
-							"label": "Date TPT completed",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
-								},
-								"rendering": "date",
-								"concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
-								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue < new Date(tptStartDate)",
-									"message": "Date TPT Completed should not be earlier than TPT Start Date"
-								}
-							],
-							"id": "dateTptCompleted"
-						},
-						{
-							"label": "Date TPT discontinued",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "date",
-								"concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
-								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue < new Date(tptStartDate)",
-									"message": "Date TPT Discontinued should not be earlier than TPT Start Date"
-								}
-							],
-							"id": "dateTptDiscontinued"
 						},
 						{
 							"label": "Are there any side effects for TPT drugs?",
@@ -5409,7 +5370,7 @@
 									},
 									{
 										"concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Oral Candidiasis",
+										"label": "Thrush Oral",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -9701,7 +9662,7 @@
 					"label": "Operation Triple Zero",
 					"isExpanded": "true",
 					"hide": {
-								"hideWhenExpression": "age < 10 || age > 24"
+								"hideWhenExpression": "age <= 10 || age > 24"
 							},
 					"questions": [
 						{
