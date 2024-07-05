@@ -112,20 +112,12 @@ const columns = [
   },
 ];
 
-const PreExposureFollowupList: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasScreeningEncounter, setHasScreeningEncounter] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
 
   useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
     (async () => {
       const previousEncounters = await getPatientEncounters(
         patientUuid,
@@ -135,6 +127,16 @@ const PreExposureFollowupList: React.FC<{ patientUuid: string }> = ({
         setHasScreeningEncounter(true);
       }
     })();
+  }, [isFormSaved]);
+
+  useEffect(() => {
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
+        setHasMRN(true);
+      }
+    })();
+
     (async () => {
       const positiveConfirmationDate = await getLatestObs(
         patientUuid,
