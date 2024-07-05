@@ -84,16 +84,13 @@ const columns = [
   },
 ];
 
-const PMTCTRegistrationEncounterList: React.FC<{ patientUuid: string }> = ({
+const PMTCTRegistrationEncounterList = ({
   patientUuid,
+  updateFormSavedStatus,
+  isFormSaved,
 }) => {
   const [hasEnrolledInPMTCT, setHasEnrolledInPMTCT] = useState(false);
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
-  const [isFormSaved, setIsFormSaved] = useState(false);
-
-  const updateFormSavedStatus = useCallback(() => {
-    setIsFormSaved(true);
-  }, []);
 
   useEffect(() => {
     (async () => {

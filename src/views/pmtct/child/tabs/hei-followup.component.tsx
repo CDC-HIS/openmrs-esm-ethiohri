@@ -15,9 +15,7 @@ import { doesEncounterExist, getData } from "../../../encounterUtils";
 import { moduleName } from "../../../../index";
 import styles from "../../../../root.scss";
 
-const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const PMTCTFollowupEncounterList = ({ patientUuid, isFormSaved }) => {
   const columns: EncounterListColumn[] = useMemo(
     () => [
       {
@@ -36,35 +34,6 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
         header: "Weight",
         getValue: (encounter) => {
           return getData(encounter, "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        },
-      },
-      {
-        key: "growthPattern",
-        header: "Growth Pattern",
-        getValue: (encounter) => {
-          return getData(encounter, "eea6b3e8-efc6-448e-9d01-c2462e2cf727");
-        },
-      },
-
-      {
-        key: "developmentMilestone",
-        header: "Developmental Milestone",
-        getValue: (encounter) => {
-          return getData(encounter, "d646c980-b04d-46a0-8a49-4800506ad64c");
-        },
-      },
-      {
-        key: "feedingPracticeForInfantOlderThan6Months",
-        header: "Feeding Practice",
-        getValue: (encounter) => {
-          return getData(encounter, "db416d1c-d29b-4257-8cd7-76ff835845c5");
-        },
-      },
-      {
-        key: "testIndication",
-        header: "DNA PCR Indication",
-        getValue: (encounter) => {
-          return getData(encounter, "cc8b10f3-a1ff-4d82-8143-a45af803bd56");
         },
       },
       {
@@ -135,11 +104,7 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
 
   const [hasEnrollmentEncounter, setHasEnrollmentEncounter] = useState(false);
   const [hasFollowupEncounter, setHasFollowupEncounter] = useState(false);
-  const [isFormSaved, setIsFormSaved] = useState(false);
 
-  const updateFormSavedStatus = useCallback(() => {
-    setIsFormSaved(true);
-  }, []);
   useEffect(() => {
     (async () => {
       await doesEncounterExist(
@@ -174,7 +139,6 @@ const PMTCTFollowupEncounterList: React.FC<{ patientUuid: string }> = ({
           moduleName: moduleName,
           hideFormLauncher: !hasEnrollmentEncounter || hasFollowupEncounter,
         }}
-        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasEnrollmentEncounter && (
         <p className={styles.patientName}>{formWarning("HEI Enrollment")}</p>

@@ -1,5 +1,5 @@
 import { Tab, Tabs, TabList, TabPanels, TabPanel } from "@carbon/react";
-import React from "react";
+import React, { useCallback, useState } from "react";
 import styles from "../../program-management/program-management.scss";
 import PMTCTRegistrationEncounterList from "./tabs/hei-enrollment.component";
 import PMTCTImmunizationEncounterList from "./tabs/hei-immunization.component";
@@ -7,6 +7,12 @@ import PMTCTFollowupEncounterList from "./tabs/hei-followup.component";
 import PMTCTChildFinalOutcomeEncounterList from "./tabs/hei-final-outcome";
 
 const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+    setIsFormSaved((prev) => !prev);
+  }, []);
+
   return (
     <>
       <div className={styles.tabContainer}>
@@ -19,16 +25,31 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           </TabList>
           <TabPanels>
             <TabPanel>
-              <PMTCTRegistrationEncounterList patientUuid={patientUuid} />
+              <PMTCTRegistrationEncounterList
+                isFormSaved={isFormSaved}
+                updateFormSavedStatus={updateFormSavedStatus}
+                patientUuid={patientUuid}
+              />
             </TabPanel>
             <TabPanel>
-              <PMTCTImmunizationEncounterList patientUuid={patientUuid} />
+              <PMTCTImmunizationEncounterList
+                isFormSaved={isFormSaved}
+                updateFormSavedStatus={updateFormSavedStatus}
+                patientUuid={patientUuid}
+              />
             </TabPanel>
             <TabPanel>
-              <PMTCTFollowupEncounterList patientUuid={patientUuid} />
+              <PMTCTFollowupEncounterList
+                isFormSaved={isFormSaved}
+                patientUuid={patientUuid}
+              />
             </TabPanel>
             <TabPanel>
-              <PMTCTChildFinalOutcomeEncounterList patientUuid={patientUuid} />
+              <PMTCTChildFinalOutcomeEncounterList
+                isFormSaved={isFormSaved}
+                updateFormSavedStatus={updateFormSavedStatus}
+                patientUuid={patientUuid}
+              />
             </TabPanel>
           </TabPanels>
         </Tabs>

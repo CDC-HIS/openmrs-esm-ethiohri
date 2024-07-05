@@ -53,16 +53,13 @@ const columns = [
   },
 ];
 
-const PMTCTChildFinalOutcomeEncounterList: React.FC<{
-  patientUuid: string;
-}> = ({ patientUuid }) => {
+const PMTCTChildFinalOutcomeEncounterList = ({
+  patientUuid,
+  isFormSaved,
+  updateFormSavedStatus,
+}) => {
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   const [hasEnrollmentEncounter, setHasEnrollmentEncounter] = useState(false);
-  const [isFormSaved, setIsFormSaved] = useState(false);
-
-  const updateFormSavedStatus = useCallback(() => {
-    setIsFormSaved(true);
-  }, []);
 
   useEffect(() => {
     (async () => {

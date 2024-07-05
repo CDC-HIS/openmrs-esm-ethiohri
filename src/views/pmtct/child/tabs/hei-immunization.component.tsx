@@ -89,8 +89,10 @@ const columns = [
   },
 ];
 
-const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
+const PMTCTImmunizationEncounterList = ({
   patientUuid,
+  isFormSaved,
+  updateFormSavedStatus,
 }) => {
   const [hasPreviousEncounter, setHasPreviousEncounter] = useState(false);
   const [hasEnrollmentEncounter, setHasEnrollmentEncounter] = useState(false);
@@ -108,7 +110,7 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
         setHasEnrollmentEncounter
       );
     })();
-  });
+  }, [isFormSaved]);
   return (
     <>
       <EncounterList
@@ -123,6 +125,7 @@ const PMTCTImmunizationEncounterList: React.FC<{ patientUuid: string }> = ({
           moduleName: moduleName,
           hideFormLauncher: hasPreviousEncounter || !hasEnrollmentEncounter,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasEnrollmentEncounter && (
         <p className={styles.patientName}>{formWarning("HEI Enrollment")}</p>
