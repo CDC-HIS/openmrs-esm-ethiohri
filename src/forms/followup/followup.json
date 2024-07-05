@@ -3279,7 +3279,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(followupDate)",
+									"message": "TB Screening date should not be earlier than Followup date"
+								}
 							],
 							"id": "tbScreeningDate"
 						},
@@ -3801,7 +3806,7 @@
                                     "allowFutureDates": "false"
                                 }
 							],
-							"id": "activetTbDiagnosedDate"
+							"id": "activeTbDiagnosedDate"
 						},
 						{
 							"label": "TB treatment started",
@@ -3991,7 +3996,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(activeTbDiagnosedDate)",
+									"message": "TB Treatment Start date should not be earlier than TB Diagnosed date"
+								}
 							],
 							"id": "tbTreatmentStartDate"
 						},
@@ -4064,7 +4074,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
+									"message": "TB Treatment Completed date should not be earlier than TB Treatment Started date"
+								}
 							],
 							"id": "dateActiveTBRxCompleted"
 						},
@@ -4083,7 +4098,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
+									"message": "TB Treatment Discontinued date should not be earlier than TB Treatment Started date"
+								}
 							],
 							"id": "dateActiveTBRxDiscontinued"
 						},
