@@ -36,18 +36,6 @@
 								}
 							]
 						  },
-						  {
-							"label": "HIV confirmation date",
-							"type": "obs",
-							"id": "hivConfirmationDate",
-							"questionOptions": {
-							  "concept": "",
-							  "rendering": "fixed",
-							  "calculate": {
-								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'dadc86a8-1e44-4a6d-91c2-e3b54089b54c', 'a0fde61e-f493-4f1f-b709-22aa94f72dc3'))?.valueDateTime"
-							  }
-							}
-						  },
 						{
 							"label": "Visit type",
 							"type": "obs",
@@ -93,7 +81,7 @@
 							"id": "hivConfirmationDate",
 							"readonly": true,
 							"questionOptions": {
-							  "concept": "",
+							  "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 							  "rendering": "date",
 							  "calculate": {
 								"calculateExpression": "resolve(api.getLatestObs(patient.id, '160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueDateTime"
