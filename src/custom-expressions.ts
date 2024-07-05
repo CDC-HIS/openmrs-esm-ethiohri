@@ -60,12 +60,22 @@ export function CalcTreatmentEndDate(
   let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
   let resultTreatmentEndDate = {};
   let extraDaysAdded = 30 + dispensedDoseReturned;
-  if (followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")) {
+  if (
+    followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  ) {
     resultTreatmentEndDate = new Date(
       followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000
     );
   }
-  return followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  return followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     ? resultTreatmentEndDate
     : null;
 }
@@ -77,12 +87,22 @@ export function CalcPrepDoseEndDate(
 ) {
   let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
   let resultPrepDoseDate = {};
-  if (followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")) {
+  if (
+    followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  ) {
     resultPrepDoseDate = new Date(
       followupDate.getTime() + dispensedDoseReturned * 24 * 60 * 60 * 1000
     );
   }
-  return followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  return followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     ? resultPrepDoseDate
     : null;
 }
@@ -129,36 +149,30 @@ export function CalcBMI(height: number, weight: number) {
 
 export function CalcAdultNutritionalStatus(
   height: number,
-  weight: number,
+  weight: number
   /* muac?: number */
 ) {
   let resultBMI = CalcBMI(height, weight);
   let resultAdultNutritionalStatus: string;
 
   if (resultBMI) {
-  if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 17 && resultBMI <= 18.49) {
       resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 16 && resultBMI <= 16.99) {
       resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI < 16) {
       resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else if (resultBMI >= 25 && resultBMI <= 29.99) {
       resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     } else {
       resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
       return resultAdultNutritionalStatus;
     }
   } else {
@@ -166,33 +180,30 @@ export function CalcAdultNutritionalStatus(
   }
 }
 
-  export function CalcNutritionalScreening(
-    height: number,
-    weight: number,
-    /* muac?: number */
-  ) {
-    let resultNutritionalScreening: string;
-    let resultBMI = CalcBMI(height, weight);
-    if (resultBMI) {
-      if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-        resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-        console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
-        return resultNutritionalScreening;
-      } else if (resultBMI <= 16 && resultBMI <= 18.49) {
-        resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-        console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
-        return resultNutritionalScreening;
-      } else {
-        resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-        console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
-        return resultNutritionalScreening;
-      }
+export function CalcNutritionalScreening(
+  height: number,
+  weight: number
+  /* muac?: number */
+) {
+  let resultNutritionalScreening: string;
+  let resultBMI = CalcBMI(height, weight);
+  if (resultBMI) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
+    } else if (resultBMI <= 16 && resultBMI <= 18.49) {
+      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
     } else {
-      return null;
+      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      return resultNutritionalScreening;
     }
+  } else {
+    return null;
   }
+}
 
-   /* if (muac !== undefined) {
+/* if (muac !== undefined) {
     if (muac >= 23) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
@@ -210,7 +221,7 @@ export function CalcAdultNutritionalStatus(
     }
   } */
 
-    /* if (muac >= 23) {
+/* if (muac >= 23) {
       resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
       return resultNutritionalScreening;
