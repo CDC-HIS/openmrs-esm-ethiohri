@@ -9755,7 +9755,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','98b00c1a-d81c-4648-be6f-86793d0ae23f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670')"
+						"hideWhenExpression": "!includes('observationsConductedDuringCurrentVisit','98b00c1a-d81c-4648-be6f-86793d0ae23f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
 					}
 				}
 			],
