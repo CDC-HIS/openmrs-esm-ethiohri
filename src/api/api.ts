@@ -67,7 +67,6 @@ export async function getRelationships(patientUuid: string) {
       `${restBaseUrl}/relationship?v=full&person=${patientUuid}`
     );
     const data = await response.data;
-    console.log("PATIENT RELATIONSHIP ========", data);
 
     return data;
   } catch (error) {
@@ -82,7 +81,6 @@ export async function getPatientInfo(patientUuid: string) {
       `${restBaseUrl}/person/${patientUuid}?v=full`
     );
     const data = await response.data;
-    console.log("PATIENT INFORMATION ========", data);
 
     return data;
   } catch (error) {

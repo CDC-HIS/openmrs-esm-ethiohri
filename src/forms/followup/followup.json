@@ -4295,7 +4295,7 @@
 								"answers": [
 									{
 										"concept": "8ba598a1-9e8a-4499-bd7a-54c3d0c94f01",
-										"label": "INH",
+										"label": "6H",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4304,26 +4304,8 @@
 										]
 									},
 									{
-										"concept": "1079AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Continuous",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "1079"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1079"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "255238004"
-											}
-										]
-									},
-									{
-										"concept": "8bf3b3d8-7450-4d67-a336-8b5c07df78e3",
-										"label": "Alternate",
+										"concept": "e8588507-635c-4e28-a1f8-3c493e30b2f5",
+										"label": "3HP",
 										"conceptMappings": []
 									}
 								]
@@ -4334,43 +4316,6 @@
 							"id": "TBProphylaxisType"
 						},
 						{
-							"label": "Alternate TB prophylaxis type",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f18eded5-67a9-4f02-b131-9a6230e64d18'))?.valueCodeableConcept?.coding[0]?.code"
-								  },
-								"rendering": "radio",
-								"concept": "f18eded5-67a9-4f02-b131-9a6230e64d18",
-								"answers": [
-									{
-										"concept": "e8588507-635c-4e28-a1f8-3c493e30b2f5",
-										"label": "3HP",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "3HP"
-											}
-										]
-									},
-									{
-										"concept": "c989f10b-6ab4-44d2-a8cd-b4f45fc3ab9b",
-										"label": "3HR",
-										"conceptMappings": [
-											{
-												"type": "ETHIOHRI",
-												"value": "3HR"
-											}
-										]
-									}
-								]
-							},
-							"hide": {
-								"hideWhenExpression": "TBProphylaxisType !== '8bf3b3d8-7450-4d67-a336-8b5c07df78e3'"
-							},
-							"id": "alternateTptProhylaxisType"
-						},
-						{
 							"label": "TPT follow up (INH)",
 							"type": "obs",
 							"questionOptions": {
@@ -4379,7 +4324,7 @@
 								"answers": [
 									{
 										"concept": "549ea6cb-55c7-4375-bfcc-8a4d9c8b1813",
-										"label": "INH1",
+										"label": "6H1",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4389,7 +4334,7 @@
 									},
 									{
 										"concept": "52c88128-2009-4969-8672-311922030884",
-										"label": "INH2",
+										"label": "6H2",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4399,7 +4344,7 @@
 									},
 									{
 										"concept": "83ee8ddd-ad0d-4d25-8d6d-bbbc122f9fc9",
-										"label": "INH3",
+										"label": "6H3",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4409,7 +4354,7 @@
 									},
 									{
 										"concept": "0b0ce047-db8a-4004-96b4-df5bff8d18bd",
-										"label": "INH4",
+										"label": "6H4",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4419,7 +4364,7 @@
 									},
 									{
 										"concept": "3d84a5f8-23fe-4410-8b33-df206c69dae1",
-										"label": "INH5",
+										"label": "6H5",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4429,7 +4374,7 @@
 									},
 									{
 										"concept": "4e090425-769b-4a3f-8dfe-e8770b681b7b",
-										"label": "INH6",
+										"label": "6H6",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4439,7 +4384,7 @@
 									},
 									{
 										"concept": "a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb",
-										"label": "INH completed",
+										"label": "6H completed",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
@@ -4449,7 +4394,7 @@
 									},
 									{
 										"concept": "86e102e6-ddf4-423c-b5b7-3d157de0c96f",
-										"label": "INH Discontinued",
+										"label": "6H Discontinued",
 										"conceptMappings": [
 											{
 												"type": "ETHIOHRI",
