@@ -46,7 +46,7 @@ import {
   createConditionalDashboardLink,
 } from "@ohri/openmrs-esm-ohri-commons-lib";
 import ProgramManagment from "./views/program-management/program-managment-summary.component";
-import VisitsSummary from "./views/visits/visits-summary.component";
+import VisitsSummary from "./views/followup/followup.component";
 import MotherHealth from "./views/pmtct/mother/pmtct-mother.component";
 import PreExposure from "./views/pre-exposure/pre-exposure-summary.component";
 import PostExposure from "./views/post-exposure/post-exposure.component";

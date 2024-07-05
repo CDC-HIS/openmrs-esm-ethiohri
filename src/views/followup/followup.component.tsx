@@ -14,7 +14,7 @@ import { moduleName } from "../../index";
 import styles from "../../root.scss";
 import { fetchIdentifiers, getPatientEncounters } from "../../api/api";
 
-const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
     () => [
       {
@@ -159,4 +159,4 @@ const VisitsSummary: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 };
 
-export default VisitsSummary;
+export default Followup;
