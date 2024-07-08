@@ -1180,6 +1180,7 @@
 							"label": "Reason for referral",
 							"type": "obs",
 							"id": "reason_for_referral",
+							"readonly": "true",
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "5f34e705-3574-4b44-b455-d815962026a1",
@@ -1612,6 +1613,7 @@
 						{
 							"label": "Does the client have family members (spouse/parent and child(ren)/siblings < 15 years old ",
 							"type": "obs",
+							"readonly": "true",
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "fcb687a1-f258-427a-8351-b4cd31e6ba0c",
