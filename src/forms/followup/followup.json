@@ -3262,9 +3262,9 @@
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
+									"type": "date",
+									"allowFutureDates": "false"
+								},
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(followupDate)",
@@ -3788,9 +3788,9 @@
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                }
+									"type": "date",
+									"allowFutureDates": "false"
+								}
 							],
 							"id": "activeTbDiagnosedDate"
 						},
@@ -3980,9 +3980,9 @@
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
+									"type": "date",
+									"allowFutureDates": "false"
+								},
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(activeTbDiagnosedDate)",
@@ -3996,7 +3996,7 @@
 							"type": "obs",
 							"required": false,
 							"id": "tbTreatmentStatus",
-              "hide": {
+			  "hide": {
 								"hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
@@ -4061,16 +4061,16 @@
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
+									"type": "date",
+									"allowFutureDates": "false"
+								},
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
 									"message": "TB Treatment Completed date should not be earlier than TB Treatment Started date"
 								}
 							],
-              "hide": {
+			  "hide": {
 								"hideWhenExpression": "tbTreatmentStatus !== '9d4ca0d6-4c10-4d58-af2b-e74c510a6221' || tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "dateActiveTBRxCompleted"
@@ -4088,16 +4088,16 @@
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
+									"type": "date",
+									"allowFutureDates": "false"
+								},
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
 									"message": "TB Treatment Discontinued date should not be earlier than TB Treatment Started date"
 								}
 							],
-              "hide": {
+			  "hide": {
 								"hideWhenExpression": "tbTreatmentStatus !== '8b1b2f2d-27ef-4ee4-bf0e-cf9abcf7f3f0' || tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "dateActiveTBRxDiscontinued"
@@ -4282,6 +4282,7 @@
 						{
 							"label": "TPT start date",
 							"type": "obs",
+							"required":true,
 							"questionOptions": {
 								"calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
@@ -4305,9 +4306,9 @@
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                }
+									"type": "date",
+									"allowFutureDates": "false"
+								}
 							],
 							"id": "tptStartDate"
 						},
@@ -4505,6 +4506,7 @@
 						  {
 							"label": "Date TPT completed",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
@@ -4514,13 +4516,13 @@
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "tptFollowupINH !== 'a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb' || TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01'"
+								"hideWhenExpression": "tptFollowupINH !== 'a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb' && tptFollowUp3HP !== '574f5071-03fb-4067-a26d-419ecf3ce151'"
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
+									"type": "date",
+									"allowFutureDates": "false"
+								},
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(tptStartDate)",
@@ -4532,19 +4534,20 @@
 						{
 							"label": "Date TPT discontinued",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
 							"hide": {
-								"hideWhenExpression": "tptFollowupINH !== '86e102e6-ddf4-423c-b5b7-3d157de0c96f' || TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01'"
+								"hideWhenExpression": "tptFollowupINH !== '86e102e6-ddf4-423c-b5b7-3d157de0c96f' && tptFollowUp3HP !== '4176b0d5-8f11-4681-8d9e-1f153cd0205d'"
 							},
 							"validators": [
 								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
+									"type": "date",
+									"allowFutureDates": "false"
+								},
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(tptStartDate)",
@@ -4606,15 +4609,15 @@
 							  "answers": [
 								{
 								  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
-								  "label": "30"
+								  "label": "30 (3HP-4Weeks)"
 								},
 								{
 								  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
-								  "label": "60"
+								  "label": "60 (3HP-8Weeks)"
 								},
 								{
 								  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
-								  "label": "90"
+								  "label": "90 (3HP-12Weeks)"
 								}
 							  ]
 							},
