@@ -8,13 +8,6 @@ import styles from "../../../root.scss";
 
 const columns = [
   {
-    key: "date",
-    header: "Enrollment Date",
-    getValue: (encounter) => {
-      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
-    },
-  },
-  {
     key: "dateConfirmed",
     header: "Date Confirmed HIV+",
     getValue: (encounter) => {

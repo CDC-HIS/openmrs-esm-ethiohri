@@ -23,6 +23,13 @@ const columns = [
     },
   },
   {
+    key: "placeOfDelivery",
+    header: "Place of Delivery",
+    getValue: (encounter) => {
+      return getData(encounter, "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    },
+  },
+  {
     key: "statusAtEnrollment",
     header: "Status at Enrollment",
     getValue: (encounter) => {

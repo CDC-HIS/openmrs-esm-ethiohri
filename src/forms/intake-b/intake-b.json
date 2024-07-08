@@ -4180,7 +4180,7 @@
 		]
 	  },
 	  {
-		"label": "ART ELIGIBILITY",
+		"label": "ART Eligibility",
 		"sections": [
 		  {
 			"label": "ART ELIGIBILITY ASSESSMENT AND PLAN",
@@ -4189,6 +4189,7 @@
 			  {
 				"label": "Eligibile for ART",
 				"type": "obs",
+				"readonly": "true",
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "162703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -4307,6 +4308,7 @@
 			  {
 				"label": "Why eligible for ART",
 				"type": "obs",
+				"readonly": "true",
 				"questionOptions": {
 				  "rendering": "checkbox",
 				  "concept": "0675742c-ea84-4cab-a85f-54b46eadd1ee",
@@ -4384,6 +4386,7 @@
 			  {
 				"label": "Other reason why eligible",
 				"type": "obs",
+				"readonly": "true",
 				"questionOptions": {
 				  "rendering": "text",
 				  "concept": "7e4d2281-c8f7-4090-bc29-4ff2313946cc"
