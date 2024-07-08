@@ -466,7 +466,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Weight (in kg) *",
+							"label": "Weight (in kg) * REQUIRED",
 							"required": false,
 							"type": "obs",
 							"questionOptions": {
