@@ -466,8 +466,8 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Weight (in kg)",
-							"required": true,
+							"label": "Weight (in kg) *",
+							"required": false,
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -7442,6 +7442,49 @@
                                 }
 							],
 							"id": "fluconazoleStartDate"
+						},
+						{
+							"label": "Fluconazole dose *",
+							"type": "obs",
+							"required": "false",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "249fdc0a-eb3d-4921-9afe-b286a410883b",
+								"answers": [
+									{
+									  "concept": "3ae4256e-6d23-44dc-9f44-5d3e647ca1ba",
+									  "label": "15"
+									},
+									{
+									  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+									  "label": "30"
+									},
+									{
+									  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+									  "label": "60"
+									},
+									{
+									  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+									  "label": "90"
+									},
+									{
+									  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+									  "label": "120"
+									},
+									{
+										"concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
+										"label": "150"
+									},
+									{
+									  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+									  "label": "180"
+									}
+								  ]
+							},
+							"hide": {
+								"hideWhenExpression": "fluconazoleStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "fluconazoleDose"
 						},
 						{
 							"label": "Fluconazole stop date",
