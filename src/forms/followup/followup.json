@@ -32,7 +32,7 @@
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
-									"message": "Followup date should not be earlier than Registration date"
+									"message": "Followup date should not be earlier than HIV+ Confirmation date"
 								}
 							]
 						  },
@@ -2808,11 +2808,14 @@
 							"id": "referredToPMTCT"
 						},
 						{
-							"label": "Date of referral",
+							"label": "Date referred to PMTCT",
 							"type": "obs",
 							"required": false,
-							"id": "dateOfReferral",
+							"id": "dateOfPMTCTReferral",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 							  "rendering": "date",
 							  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 							  "conceptMappings": [
@@ -2886,6 +2889,9 @@
 									{
 										"concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Oral contraceptive pill",
+										"hide": {
+											"hideWhenExpression": "patient.gender === 'male'"
+										},
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -2920,6 +2926,9 @@
 									{
 										"concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Injectable",
+										"hide": {
+											"hideWhenExpression": "patient.gender === 'male'"
+										},
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -2950,6 +2959,9 @@
 									{
 										"concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Diaphragm/cervical cap",
+										"hide": {
+											"hideWhenExpression": "patient.gender === 'male'"
+										},
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -2980,6 +2992,9 @@
 									{
 										"concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Intrauterine device",
+										"hide": {
+											"hideWhenExpression": "patient.gender === 'male'"
+										},
 										"conceptMappings": [
 											{
 												"type": "SNOMED-CT",
@@ -3014,6 +3029,9 @@
 									{
 										"concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Vasectomy/tubal legation",
+										"hide": {
+											"hideWhenExpression": "patient.gender === 'female'"
+										},
 										"conceptMappings": [
 											{
 												"type": "IMO-ProcedureIT",
@@ -3110,6 +3128,9 @@
 									{
 										"concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Implantable hormone",
+										"hide": {
+											"hideWhenExpression": "patient.gender === 'male'"
+										},
 										"conceptMappings": [
 											{
 												"type": "CIEL",
@@ -3253,6 +3274,9 @@
 							"type": "obs",
 							"required": true,
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '179497a0-6f07-469f-bb2e-9b85644a82af'))?.valueDateTime"
+								},
 								"rendering": "date",
 								"concept": "179497a0-6f07-469f-bb2e-9b85644a82af",
 								"weeksList": ""
@@ -3800,6 +3824,9 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"conceptMappings": [
 									{
 										"type": "CIEL",
@@ -4002,6 +4029,9 @@
 							"questionOptions": {
 							  "rendering": "select",
 							  "concept": "cc9215e5-454f-4cdf-a773-62b2f2f17fdb",
+							  "calculate": {
+								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'cc9215e5-454f-4cdf-a773-62b2f2f17fdb'))?.valueDateTime"
+							},
 							  "conceptMappings": [],
 							  "answers": [
 								{
@@ -4349,6 +4379,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0166677a-5a8e-45fa-b3f6-3c5aa9f13d00'))?.valueDateTime"
+								},
 								"concept": "0166677a-5a8e-45fa-b3f6-3c5aa9f13d00",
 								"answers": [
 									{
@@ -4443,6 +4476,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'c1af657e-bc31-46a2-9f5e-55a1c9ae7507'))?.valueDateTime"
+								},
 								"concept": "c1af657e-bc31-46a2-9f5e-55a1c9ae7507",
 								"answers": [
 									{
@@ -4534,6 +4570,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								},
 								"concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
 							},
@@ -4560,6 +4599,9 @@
 							"id": "tptDispensedDose",
 							"questionOptions": {
 							  "rendering": "select",
+							  "calculate": {
+								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ad542a8d-cd7c-4d70-8ef3-829b89c05009'))?.valueDateTime"
+							},
 							  "concept": "ad542a8d-cd7c-4d70-8ef3-829b89c05009",
 							  "conceptMappings": [],
 							  "answers": [
@@ -4628,6 +4670,9 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '23d97715-589c-4dcf-bb86-70e26bba2269'))?.valueDateTime"
+								},
 								"concept": "23d97715-589c-4dcf-bb86-70e26bba2269",
 								"answers": [
 									{
@@ -6411,6 +6456,9 @@
 							{
 							  "concept": "d1977f43-83a5-4b32-b589-33b9315e912d",
 							  "label": "First viral load test at 3 months or longer post ART",
+							  "hide": {
+								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							  "conceptMappings": []
 							},
 							{
@@ -6431,26 +6479,41 @@
 							{
 							  "concept": "89e9a9ee-15d1-424b-be5a-0765822cd35e",
 							  "label": "At the first antenatal care visit",
+							  "hide": {
+								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							  "conceptMappings": []
 							},
 							{
 							  "concept": "c1f8f2f6-ec39-422b-a305-58ccafec86c3",
 							  "label": "At 34-36 weeks of gestation",
+							  "hide": {
+								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							  "conceptMappings": []
 							},
 							{
 							  "concept": "603faef3-2142-4ee7-8781-aa977ada17a2",
 							  "label": "Three months after delivery",
+							  "hide": {
+								"hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							  "conceptMappings": []
 							},
 							{
 							  "concept": "d3d6d8e3-0438-4f83-ba9f-ac46eed6782b",
 							  "label": "Six months after the first viral load test at postnatal period",
+							  "hide": {
+								"hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							  "conceptMappings": []
 							},
 							{
 							  "concept": "d18e5f76-5026-45d1-be18-f14ae936c692",
 							  "label": "Every six months until MTCT ends",
+							  "hide": {
+								"hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							  "conceptMappings": []
 							},
 							{
@@ -6522,6 +6585,11 @@
 							{
 								"type": "date",
 								"allowFutureDates": "false"
+							},
+							{
+								"type": "js_expression",
+								"failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
+								"message": "Date VL Requested should not be earlier than Viral Load Result Received date"
 							}
 						],
 						"hide": {
@@ -6909,10 +6977,15 @@
 						  "hideWhenExpression": "eacProvided !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 						},
 						"validators": [
-						  {
-							"type": "date",
-							"allowFutureDates": "false"
-						  }
+							{
+								"type": "date",
+								"allowFutureDates": "false"
+							},
+							{
+								"type": "js_expression",
+								"failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
+								"message": "Date EAC-1 provided should not be earlier than Viral Load Result Received date"
+							}
 						],
 						"id": "dateEAC1Provided"
 					  },
@@ -6928,10 +7001,15 @@
 						  "hideWhenExpression": "isEmpty('dateEAC1Provided')"
 						},
 						"validators": [
-						  {
-							"type": "date",
-							"allowFutureDates": "false"
-						  }
+							{
+								"type": "date",
+								"allowFutureDates": "false"
+							},
+							{
+								"type": "js_expression",
+								"failsWhenExpression": "myValue < new Date(dateEAC1Provided)",
+								"message": "Date EAC-2 provided should not be earlier than Date EAC-1 provided"
+							}
 						],
 						"id": "dateEAC2Provided"
 					  },
@@ -6947,10 +7025,15 @@
 						  "hideWhenExpression": "isEmpty('dateEAC2Provided')"
 						},
 						"validators": [
-						  {
-							"type": "date",
-							"allowFutureDates": "false"
-						  }
+							{
+								"type": "date",
+								"allowFutureDates": "false"
+							},
+							{
+								"type": "js_expression",
+								"failsWhenExpression": "myValue < new Date(dateEAC2Provided)",
+								"message": "Date EAC-3 provided should not be earlier than Date EAC-2 provided"
+							}
 						],
 						"id": "dateEAC3Provided"
 					  }

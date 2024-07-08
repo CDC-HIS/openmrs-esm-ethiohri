@@ -615,7 +615,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Date confirmed HIV+/Retesting",
+							"label": "Date confirmed HIV+ / Retesting",
 							"type": "obs",
 							"required": true,
 							"questionOptions": {
