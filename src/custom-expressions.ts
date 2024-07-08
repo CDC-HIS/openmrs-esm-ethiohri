@@ -60,12 +60,22 @@ export function CalcTreatmentEndDate(
   let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
   let resultTreatmentEndDate = {};
   let extraDaysAdded = 30 + dispensedDoseReturned;
-  if (followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")) {
+  if (
+    followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  ) {
     resultTreatmentEndDate = new Date(
       followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000
     );
   }
-  return followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  return followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     ? resultTreatmentEndDate
     : null;
 }
@@ -77,12 +87,22 @@ export function CalcPrepDoseEndDate(
 ) {
   let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
   let resultPrepDoseDate = {};
-  if (followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")) {
+  if (
+    followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  ) {
     resultPrepDoseDate = new Date(
       followupDate.getTime() + dispensedDoseReturned * 24 * 60 * 60 * 1000
     );
   }
-  return followupDate && (dispensedDoseReturned !== 0) && followupStatus == ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||"162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+  return followupDate &&
+    dispensedDoseReturned !== 0 &&
+    followupStatus ==
+      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     ? resultPrepDoseDate
     : null;
 }
@@ -104,7 +124,7 @@ export function CalcMonthsOnART(artStartDate: Date) {
 export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
-    if (viralLoadCount === 0) {
+    if (viralLoadCount == 0) {
       resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (viralLoadCount <= 50) {
       resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -129,14 +149,13 @@ export function CalcBMI(height: number, weight: number) {
 
 export function CalcAdultNutritionalStatus(
   height: number,
-  weight: number,
-  pregnant?: string,
-  muac?: number
+  weight: number
+  /* muac?: number */
 ) {
   let resultBMI = CalcBMI(height, weight);
   let resultAdultNutritionalStatus: string;
 
-  if (resultBMI && pregnant == "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+  if (resultBMI) {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       return resultAdultNutritionalStatus;
@@ -156,19 +175,6 @@ export function CalcAdultNutritionalStatus(
       resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       return resultAdultNutritionalStatus;
     }
-  } else if (muac && pregnant == "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    if (muac >= 23) {
-      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (muac >= 19 && muac < 23) {
-      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (muac < 19) {
-      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else {
-      return null;
-    }
   } else {
     return null;
   }
@@ -176,13 +182,12 @@ export function CalcAdultNutritionalStatus(
 
 export function CalcNutritionalScreening(
   height: number,
-  weight: number,
-  pregnant?: string,
-  muac?: number
+  weight: number
+  /* muac?: number */
 ) {
   let resultNutritionalScreening: string;
   let resultBMI = CalcBMI(height, weight);
-  if (resultBMI && pregnant == "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+  if (resultBMI) {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
       resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       return resultNutritionalScreening;
@@ -193,23 +198,44 @@ export function CalcNutritionalScreening(
       resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       return resultNutritionalScreening;
     }
-  } else if (muac && pregnant == "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    if (muac >= 23) {
-      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else if (muac >= 19 && muac < 23) {
-      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else if (muac < 19) {
-      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else {
-      return null;
-    }
   } else {
     return null;
   }
 }
+
+/* if (muac !== undefined) {
+    if (muac >= 23) {
+      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
+      return resultAdultNutritionalStatus;
+    } else if (muac >= 19 && muac < 23) {
+      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
+      return resultAdultNutritionalStatus;
+    } else if (muac < 19 && muac > 0) {
+      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
+      return resultAdultNutritionalStatus;
+    } else {
+      return null;
+    }
+  } */
+
+/* if (muac >= 23) {
+      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+      return resultNutritionalScreening;
+    } else if (muac >= 19 && muac < 23) {
+      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+      return resultNutritionalScreening;
+    } else if (muac < 19) {
+      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
+      return resultNutritionalScreening;
+    } else {
+      return null;
+    } */
 
 export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
   switch (bmiForAge) {
