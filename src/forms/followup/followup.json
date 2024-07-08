@@ -9087,6 +9087,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "regimenChange !== '94747e61-6350-4382-817a-265f18501758' && regimenChange !== '8825ff0d-de38-4525-8130-86738c70c599'"
+							},
 							"id": "reasonForRegimenChange"
 						}
 					]
