@@ -2653,7 +2653,7 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Weight (in kg) * REQUIRED",
+							"label": "Weight (in kg) *",
 							"required": false,
 							"type": "obs",
 							"questionOptions": {
