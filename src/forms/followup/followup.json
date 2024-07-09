@@ -98,6 +98,7 @@
 						{
 							"label": "Eligibility status",
 							"type": "obs",
+							"readonly": "true",
 							"questionOptions": {
 							  "calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '9ed5856a-a20a-44d2-bc8e-2acaa68cf11b'))?.valueCodeableConcept?.coding?"
@@ -122,6 +123,7 @@
 						{
 							"label": "Eligibility date",
 							"type": "obs",
+							"readonly": "true",
 							"questionOptions": {
 								"calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
@@ -154,7 +156,7 @@
 							"type": "obs",
 							"questionOptions": {
 							  							  "calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding?"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b'))?.valueCodeableConcept?.coding?"
 								},
 								"rendering": "select",
 								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
