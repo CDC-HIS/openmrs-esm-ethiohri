@@ -397,3 +397,30 @@ export async function checkUserRole(roleType) {
   const privilege = user?.roles?.find((element) => element.name === roleType);
   return !privilege ? false : true;
 }
+
+export function isTreatmentVisible(
+  hpvScreeningResult,
+  viaScreeningResult,
+  cytologyResult,
+  biopsyResult,
+  colposcopyExamFinding
+) {
+  const condition1 =
+    hpvScreeningResult !== "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  const condition2 =
+    viaScreeningResult !== "7bc7c4f3-a636-478d-8a3f-65116093e37a" &&
+    viaScreeningResult !== "be297cab-5ae6-4e7c-8657-b82730b7b8f1" &&
+    viaScreeningResult !== "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  const condition3 =
+    cytologyResult !== "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
+    cytologyResult !== "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68";
+  const condition4 =
+    biopsyResult !== "ba4420d5-acc2-4d1c-8ead-43476e17960d" &&
+    biopsyResult !== "fde5cd74-e503-4ce1-9afe-f74195f95f6e" &&
+    biopsyResult !== "baab7d76-69e0-426d-afca-99cd1c9849a5";
+  const condition5 =
+    colposcopyExamFinding !== "f0f52e6c-56fa-44c6-a81e-a3a7ac8548c4" &&
+    colposcopyExamFinding !== "7276fa8a-3bab-4bd7-b647-8e9c8536ef30";
+
+  return condition1 && condition2 && condition3 && condition4 && condition5;
+}

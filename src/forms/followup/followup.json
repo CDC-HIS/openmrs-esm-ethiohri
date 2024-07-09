@@ -11424,7 +11424,7 @@
 					"label": "Treatment",
 					"isExpanded": "true",
 					"hide": {
-						"hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						"hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding)"
 					},
 					"questions": [
 						{
@@ -11704,7 +11704,7 @@
 					"label": "Referral",
 					"isExpanded": "true",
 					"hide": {
-						"hideWhenExpression": "confirmedCxCaCases !== '164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						"hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding)"
 					},
 					"questions": [
 						{
