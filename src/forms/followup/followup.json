@@ -12202,7 +12202,9 @@
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
-								"weeksList": ""
+								"weeksList": "",
+								"calculate": {
+									"calculateExpression": "CustomNextFollowupDateForCxCa('screeningStrategy', 'hpvScreeningResult', 'viaScreeningResult', 'cytologyResult', 'hpvDnaSampleCollectedDate', 'viaScreeningDate', 'cytologySampleCollectionDate', 'dateTreatmentGiven')" }
 							},
 							"id": "nextFollowupScreeningDate"
 						}

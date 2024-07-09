@@ -257,68 +257,30 @@ export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
 export function CalcNextFollowupDateForCxCa(
   screeningStrategy: string,
   hpvScreeningResult: string,
-  viaScreeningResult?: string,
-  hpvDnaSampleCollectedDate?: Date,
-  viaScreeningDate?: Date,
-  dateTreatmentGiven?: Date
+  viaScreeningResult: string,
+  cytologyResult: string,
+  hpvDnaSampleCollectedDate: Date,
+  viaScreeningDate: Date,
+  cytologySampleCollectionDate: Date,
+  dateTreatmentGiven: Date
 ) {
   let nextFollowupDateCxCa;
-  let dnaCollectedDate = new Date(hpvDnaSampleCollectedDate);
-  let viaScreenedDate = new Date(viaScreeningDate);
-  let treatmentGivenDate = new Date(dateTreatmentGiven);
-  let dnaCollectedDatewWithThreeYears: Date;
-  let viaScreeningDateWithOneYear: Date;
-  let viaScreeningDateWithTwoYears: Date;
-  let treatmentGivenDateWithSixMonth: Date;
-
-  if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
-    if (hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {
-      dnaCollectedDatewWithThreeYears = new Date(
-        dnaCollectedDate.setFullYear(dnaCollectedDate.getFullYear() + 3)
-      );
-      nextFollowupDateCxCa = dnaCollectedDatewWithThreeYears;
-      return nextFollowupDateCxCa;
-    } else if (
-      hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
-      viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"
-    ) {
-      viaScreeningDateWithOneYear = new Date(
-        viaScreenedDate.setFullYear(viaScreenedDate.getFullYear() + 1)
-      );
-      nextFollowupDateCxCa = viaScreeningDateWithOneYear;
-      return nextFollowupDateCxCa;
-    } else if (
-      hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
-      (viaScreeningResult == "7bc7c4f3-a636-478d-8a3f-65116093e37a" ||
-        "be297cab-5ae6-4e7c-8657-b82730b7b8f1")
-    ) {
-      treatmentGivenDateWithSixMonth = new Date(
-        treatmentGivenDate.setMonth(treatmentGivenDate.getMonth() + 6)
-      );
-      nextFollowupDateCxCa = treatmentGivenDateWithSixMonth;
-      return nextFollowupDateCxCa;
-    } else {
-      return null;
-    }
-  } else if (screeningStrategy == "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1") {
-    if (viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc") {
-      viaScreeningDateWithTwoYears = new Date(
-        viaScreenedDate.setFullYear(viaScreenedDate.getFullYear() + 2)
-      );
-      nextFollowupDateCxCa = viaScreeningDateWithTwoYears;
-      return nextFollowupDateCxCa;
-    } else if (viaScreeningResult == "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-      treatmentGivenDateWithSixMonth = new Date(
-        treatmentGivenDate.setMonth(treatmentGivenDate.getMonth() + 6)
-      );
-      nextFollowupDateCxCa = treatmentGivenDateWithSixMonth;
-      return nextFollowupDateCxCa;
-    } else {
-      return null;
-    }
+  if (dateTreatmentGiven) {
+    nextFollowupDateCxCa = new Date(dateTreatmentGiven.setMonth(dateTreatmentGiven.getMonth() + 6));
   } else {
-    return null;
+    if (screeningStrategy == 'd3989991-4f6d-4336-9f84-cb4208d39ae6') {
+      if (hpvScreeningResult == '5e4fc757-0b14-49ae-b3b7-419666f41e15') {
+        nextFollowupDateCxCa = new Date(hpvDnaSampleCollectedDate.setFullYear(hpvDnaSampleCollectedDate.getFullYear() + 3));
+      } else if (hpvScreeningResult == '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult == 'a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc') {
+        nextFollowupDateCxCa = new Date(viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 1));
+      }
+    } else if (screeningStrategy == '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' && viaScreeningResult == 'a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc') {
+      nextFollowupDateCxCa = new Date(viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 2));
+    } else if (screeningStrategy == 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' && cytologyResult == '5e4fc757-0b14-49ae-b3b7-419666f41e15') {
+      nextFollowupDateCxCa = new Date(cytologySampleCollectionDate.setFullYear(cytologySampleCollectionDate.getFullYear() + 3));
+    }
   }
+  return nextFollowupDateCxCa;
 }
 
 export async function getGender(patient) {
