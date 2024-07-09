@@ -12192,6 +12192,9 @@
 				{
 					"label": "Next Follow-up Screening Date",
 					"isExpanded": "true",
+					"hide": {
+						"hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					},
 					"questions": [
 						{
 							"label": "Next follow-up/screening date for CxCa",
