@@ -221,7 +221,7 @@
             {
               "label": "Sign and symptoms of acute HIV infection present",
               "type": "obs",
-              "required": false,
+              "required": true,
               "id": "symptomsOfHIVInfection",
               "questionOptions": {
                 "rendering": "radio",
@@ -1052,7 +1052,7 @@
             {
               "label": "PrEP regimen",
               "type": "obs",
-              "required": false,
+              "required": true,
               "id": "prepRegimen",
               "questionOptions": {
                 "rendering": "select",
@@ -1081,7 +1081,7 @@
             {
               "label": "Dispensed dose",
               "type": "obs",
-              "required": false,
+              "required": true,
               "id": "arvDispensedInDays",
               "questionOptions": {
                 "rendering": "select",
