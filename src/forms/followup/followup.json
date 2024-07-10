@@ -4664,7 +4664,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && patient.gender === 'male' && patient.age <= 10"
+								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "wantsToBePregnant"
 						},
@@ -4887,6 +4887,7 @@
 						{
 							"label": "Referred to PMTCT?",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -5000,14 +5001,14 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "patient.gender === 'male' && patient.age <= 10 && pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "referredToPMTCT"
 						},
 						{
 							"label": "Date referred to PMTCT",
 							"type": "obs",
-							"required": false,
+							"required": true,
 							"id": "dateOfPMTCTReferral",
 							"questionOptions": {
 								"calculate": {
@@ -5424,7 +5425,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "familyPlanningMethods"
 						}
