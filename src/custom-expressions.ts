@@ -149,93 +149,69 @@ export function CalcBMI(height: number, weight: number) {
 
 export function CalcAdultNutritionalStatus(
   height: number,
-  weight: number
-  /* muac?: number */
+  weight: number,
+  muac: number
 ) {
+  let nutritionalStatus: string;
   let resultBMI = CalcBMI(height, weight);
-  let resultAdultNutritionalStatus: string;
 
-  if (resultBMI) {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
-      resultAdultNutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
-      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (resultBMI < 16) {
-      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
-    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-      resultAdultNutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
+  if (muac) {
+    if (muac > 23) {
+      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (muac >= 19 && muac <= 23) {
+      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (muac < 19) {
+      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
-      resultAdultNutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultAdultNutritionalStatus;
+      return null;
     }
-  } else {
-    return null;
+  } else if (resultBMI) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
+      nutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
+      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI < 16) {
+      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+      nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else {
+      return null;
+    }
   }
+  return nutritionalStatus;
 }
 
 export function CalcNutritionalScreening(
   height: number,
-  weight: number
-  /* muac?: number */
+  weight: number,
+  muac: number
 ) {
-  let resultNutritionalScreening: string;
   let resultBMI = CalcBMI(height, weight);
-  if (resultBMI) {
+  let nutritionalScreening: string;
+
+  if (muac) {
+    if (muac > 23) {
+      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (muac <= 23) {
+      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else {
+      return null;
+    }
+  } else if (resultBMI) {
     if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
-    } else if (resultBMI <= 16 && resultBMI <= 18.49) {
-      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
+      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI <= 18.49) {
+      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
-      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      return resultNutritionalScreening;
+      return null;
     }
-  } else {
-    return null;
   }
+  return nutritionalScreening;
 }
-
-/* if (muac !== undefined) {
-    if (muac >= 23) {
-      resultAdultNutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
-      return resultAdultNutritionalStatus;
-    } else if (muac >= 19 && muac < 23) {
-      resultAdultNutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
-      return resultAdultNutritionalStatus;
-    } else if (muac < 19 && muac > 0) {
-      resultAdultNutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("ADULT NUTRITIONAL STATUS == ", resultAdultNutritionalStatus);
-      return resultAdultNutritionalStatus;
-    } else {
-      return null;
-    }
-  } */
-
-/* if (muac >= 23) {
-      resultNutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
-      return resultNutritionalScreening;
-    } else if (muac >= 19 && muac < 23) {
-      resultNutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
-      return resultNutritionalScreening;
-    } else if (muac < 19) {
-      resultNutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      console.log("NUTRITIONAL SCREENING == ", resultNutritionalScreening);
-      return resultNutritionalScreening;
-    } else {
-      return null;
-    } */
 
 export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
   switch (bmiForAge) {
@@ -266,18 +242,41 @@ export function CalcNextFollowupDateForCxCa(
 ) {
   let nextFollowupDateCxCa;
   if (dateTreatmentGiven) {
-    nextFollowupDateCxCa = new Date(dateTreatmentGiven.setMonth(dateTreatmentGiven.getMonth() + 6));
+    nextFollowupDateCxCa = new Date(
+      dateTreatmentGiven.setMonth(dateTreatmentGiven.getMonth() + 6)
+    );
   } else {
-    if (screeningStrategy == 'd3989991-4f6d-4336-9f84-cb4208d39ae6') {
-      if (hpvScreeningResult == '5e4fc757-0b14-49ae-b3b7-419666f41e15') {
-        nextFollowupDateCxCa = new Date(hpvDnaSampleCollectedDate.setFullYear(hpvDnaSampleCollectedDate.getFullYear() + 3));
-      } else if (hpvScreeningResult == '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult == 'a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc') {
-        nextFollowupDateCxCa = new Date(viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 1));
+    if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
+      if (hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {
+        nextFollowupDateCxCa = new Date(
+          hpvDnaSampleCollectedDate.setFullYear(
+            hpvDnaSampleCollectedDate.getFullYear() + 3
+          )
+        );
+      } else if (
+        hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
+        viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"
+      ) {
+        nextFollowupDateCxCa = new Date(
+          viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 1)
+        );
       }
-    } else if (screeningStrategy == '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' && viaScreeningResult == 'a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc') {
-      nextFollowupDateCxCa = new Date(viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 2));
-    } else if (screeningStrategy == 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' && cytologyResult == '5e4fc757-0b14-49ae-b3b7-419666f41e15') {
-      nextFollowupDateCxCa = new Date(cytologySampleCollectionDate.setFullYear(cytologySampleCollectionDate.getFullYear() + 3));
+    } else if (
+      screeningStrategy == "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1" &&
+      viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"
+    ) {
+      nextFollowupDateCxCa = new Date(
+        viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 2)
+      );
+    } else if (
+      screeningStrategy == "f32b7edd-f70a-4b32-a684-4fa35eb2abcd" &&
+      cytologyResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15"
+    ) {
+      nextFollowupDateCxCa = new Date(
+        cytologySampleCollectionDate.setFullYear(
+          cytologySampleCollectionDate.getFullYear() + 3
+        )
+      );
     }
   }
   return nextFollowupDateCxCa;
