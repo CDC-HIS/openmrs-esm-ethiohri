@@ -98,7 +98,6 @@
 						{
 							"label": "Eligibility status",
 							"type": "obs",
-							"readonly": "true",
 							"questionOptions": {
 							  "calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '9ed5856a-a20a-44d2-bc8e-2acaa68cf11b'))?.valueCodeableConcept?.coding?"
@@ -123,7 +122,6 @@
 						{
 							"label": "Eligibility date",
 							"type": "obs",
-							"readonly": "true",
 							"questionOptions": {
 								"calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
@@ -152,7 +150,7 @@
 							"id": "eligibleDate"
 						},
 						{
-							"label": "Why eligible",
+							"label": "Why eligible (TI)",
 							"type": "obs",
 							"questionOptions": {
 							  							  "calculate": {
