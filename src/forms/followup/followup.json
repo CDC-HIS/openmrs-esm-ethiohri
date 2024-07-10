@@ -407,6 +407,9 @@
 							"required": true,
 							"id": "followupStatus",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 							  "rendering": "select",
 							  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
 							  "conceptMappings": [],
@@ -824,6 +827,9 @@
 							"required": true,
 							"id": "dispenseCode",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '6d7d0327-e1f8-4246-bfe5-be1e82d94b14'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 							  "rendering": "select",
 							  "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
 							  "conceptMappings": [],
@@ -4383,6 +4389,9 @@
 							"label": "Pregnant",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -4663,6 +4672,9 @@
 							"label": "Breastfeeding",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"conceptMappings": [
@@ -5459,9 +5471,6 @@
 							"type": "obs",
 							"required": true,
 							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '179497a0-6f07-469f-bb2e-9b85644a82af'))?.valueDateTime"
-								},
 								"rendering": "date",
 								"concept": "179497a0-6f07-469f-bb2e-9b85644a82af",
 								"weeksList": ""
@@ -6010,7 +6019,7 @@
 								"rendering": "radio",
 								"concept": "166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"conceptMappings": [
 									{
@@ -6214,9 +6223,6 @@
 							"questionOptions": {
 							  "rendering": "select",
 							  "concept": "cc9215e5-454f-4cdf-a773-62b2f2f17fdb",
-							  "calculate": {
-								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'cc9215e5-454f-4cdf-a773-62b2f2f17fdb'))?.valueDateTime"
-							},
 							  "conceptMappings": [],
 							  "answers": [
 								{
@@ -6566,7 +6572,7 @@
 							"questionOptions": {
 								"rendering": "select",
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0166677a-5a8e-45fa-b3f6-3c5aa9f13d00'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0166677a-5a8e-45fa-b3f6-3c5aa9f13d00'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"concept": "0166677a-5a8e-45fa-b3f6-3c5aa9f13d00",
 								"answers": [
@@ -6788,7 +6794,7 @@
 							"questionOptions": {
 							  "rendering": "select",
 							  "calculate": {
-								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ad542a8d-cd7c-4d70-8ef3-829b89c05009'))?.valueDateTime"
+								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ad542a8d-cd7c-4d70-8ef3-829b89c05009'))?.valueCodeableConcept?.coding[0]?.code"
 							},
 							  "concept": "ad542a8d-cd7c-4d70-8ef3-829b89c05009",
 							  "conceptMappings": [],
@@ -6859,7 +6865,7 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '23d97715-589c-4dcf-bb86-70e26bba2269'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '23d97715-589c-4dcf-bb86-70e26bba2269'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"concept": "23d97715-589c-4dcf-bb86-70e26bba2269",
 								"answers": [
@@ -9251,6 +9257,9 @@
 							"label": "CPT started ?",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160434AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "160434AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"answers": [
@@ -9376,6 +9385,9 @@
 							"label": "Cotrimoxazole start date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								  },
 								"rendering": "date",
 								"concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -9409,6 +9421,9 @@
 							"label": "Cotrimoxazole stop date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+								  },
 								"rendering": "date",
 								"concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": "",
@@ -9596,6 +9611,9 @@
 							"label": "Fluconazole started ?",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'a1173486-b6c1-4d0a-886d-1126b6b558a1'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "a1173486-b6c1-4d0a-886d-1126b6b558a1",
 								"answers": [
@@ -9703,6 +9721,9 @@
 							"label": "Fluconazole start date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5ac4300a-5e19-45c8-8692-31a57d6d5b8c'))?.valueDateTime"
+								  },
 								"rendering": "date",
 								"concept": "5ac4300a-5e19-45c8-8692-31a57d6d5b8c"
 							},
@@ -9764,6 +9785,9 @@
 							"label": "Fluconazole stop date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'c2d57bcb-02f2-457d-af05-8d759a1457a7'))?.valueDateTime"
+								  },
 								"rendering": "date",
 								"concept": "c2d57bcb-02f2-457d-af05-8d759a1457a7"
 							},
@@ -9969,6 +9993,9 @@
 							"label": "OTZ enrollment date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0fe4faee-0717-4dc0-be3d-1cd52923804a'))?.valueDateTime"
+								  },
 								"rendering": "date",
 								"concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
 								"weeksList": ""
@@ -10008,6 +10035,9 @@
 							"required": true,
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '78c8abfb-1989-444a-8750-947227f4bde8'))?.valueDateTime"
+								  },
 								"rendering": "date",
 								"concept": "78c8abfb-1989-444a-8750-947227f4bde8",
 								"weeksList": ""
@@ -10025,6 +10055,9 @@
 							"type": "obs",
 							"required": true,
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'e6e24c87-d3a0-4a38-bd04-560b13f92298'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "e6e24c87-d3a0-4a38-bd04-560b13f92298",
 								"answers": [
@@ -10045,6 +10078,9 @@
 							"type": "obs",
 							"required": true,
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "select",
 								"concept": "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2",
 								"answers": [
@@ -10167,6 +10203,9 @@
 							"label": "DSD category changed by this date",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'eae5830f-ac48-48f0-bebd-35c500de8ff9'))?.valueDateTime"
+								  },
 								"rendering": "radio",
 								"concept": "eae5830f-ac48-48f0-bebd-35c500de8ff9",
 								"answers": [
@@ -10274,6 +10313,9 @@
 							"label": "Reason for DSD category change",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '2780c548-5118-4ae4-99da-c8557cb55f28'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "select",
 								"concept": "2780c548-5118-4ae4-99da-c8557cb55f28",
 								"answers": [
