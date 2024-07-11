@@ -6429,9 +6429,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "screeningResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
 							"id": "eligibleForTPT"
 						},
 						{
