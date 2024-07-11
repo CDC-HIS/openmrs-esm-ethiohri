@@ -299,36 +299,6 @@
 				},
 				"id": "TBProphylaxisType"
 			},
-			{
-				"label": "TB prophylaxis type",
-				"required": true,
-				"type": "obs",
-				"questionOptions": {
-					"calculate": {
-						"calculateExpression": "resolve(api.getLatestObs(patient.id, '54084c9e-bc87-4d95-89fc-eb9a2cffb592'))?.valueCodeableConcept?.coding[0]?.code"
-					  },
-					"rendering": "radio",
-					"concept": "54084c9e-bc87-4d95-89fc-eb9a2cffb592",
-					"answers": [
-						{
-							"concept": "8ba598a1-9e8a-4499-bd7a-54c3d0c94f01",
-							"label": "6H",
-							"conceptMappings": [
-								{
-									"type": "ETHIOHRI",
-									"value": "INH"
-								}
-							]
-						},
-						{
-							"concept": "e8588507-635c-4e28-a1f8-3c493e30b2f5",
-							"label": "3HP",
-							"conceptMappings": []
-						}
-					]
-				},
-				"id": "TBProphylaxisType"
-			},
 			  {
 				"label": "TPT started date",
 				"type": "obs",
