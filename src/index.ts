@@ -217,8 +217,3 @@ export const indexCaseTestingChart = getSyncLifecycle(
   IndexCaseTesting,
   options
 );
-
-export const registerPerson = getAsyncLifecycle(
-  () => import("./views/widgets/register-person"),
-  options
-);
