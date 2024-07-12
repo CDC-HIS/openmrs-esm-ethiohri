@@ -1293,9 +1293,6 @@
 				"questionOptions": {
 				  "rendering": "text",
 				  "concept": "0503b8d4-e6db-4a87-ba42-8ef892791dba",
-				  "calculate": {
-					"calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
-				  },
 				  "conceptMappings": [],
 				  "answers": []
 				},

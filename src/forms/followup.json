@@ -13,6 +13,18 @@
 					"isExpanded": "true",
 					"questions": [
 						{
+							"label": "Registration/Enrollment Date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "fixed",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'dadc86a8-1e44-4a6d-91c2-e3b54089b54c', 'a0fde61e-f493-4f1f-b709-22aa94f72dc3'))?.valueDateTime"
+								}
+							},
+							"id": "enrollment_date"
+						},
+						{
 							"label": "Followup date",
 							"type": "obs",
 							"required": "true",
@@ -33,6 +45,11 @@
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
 									"message": "Followup date should not be earlier than HIV+ Confirmation date"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(enrollment_date)",
+									"message": "Followup date should not be earlier than Registration date"
 								}
 							]
 						  },
@@ -93,7 +110,6 @@
                                     "allowFutureDates": "false"
                                 }
 							]
-							
 						  },
 						{
 							"label": "Eligibility status",
@@ -355,15 +371,9 @@
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
 									"message": "ART started date should not be earlier than HIV Confirmation date in Intake A"
-								},
-								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue < new Date(followupDate)",
-									"message": "ART Start date should not be earlier than Followup date"
 								}
 							]
 						},
-						
 						{
 							"label": "Months on ART",
 							"type": "obs",
@@ -372,7 +382,7 @@
 								"rendering": "text",
 								"concept": "0503b8d4-e6db-4a87-ba42-8ef892791dba",
 								"calculate": {
-								  "calculateExpression": "CustomMonthsOnARTCalc('artStartDate')"
+								  "calculateExpression": "CustomMonthsOnARTCalc('artStartDate', 'followupDate')"
 								},
 								"conceptMappings": [],
 								"answers": []
@@ -2881,13 +2891,13 @@
 							"id": "bmiForAge"
 						},
 						{
-							"label": "Nutritional Status - Adult",
+							"label": "Nutritional status - Adult",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
 								"calculate": {
-									"calculateExpression": "CustomAdultNutritionalStatusCalc('height', 'weight', 'muac')"
+									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight', 'muac')"
 								},
 								"answers": [
 									{
@@ -3429,7 +3439,7 @@
 								"unspecified": true,
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
 								"calculate": {
-									"calculateExpression": "CustomNutritionalScreeningCalc('height', 'weight', 'muac')"
+									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight', 'muac')"
 								},
 								"answers": [
 									{
@@ -3731,6 +3741,7 @@
 						{
 							"label": "Nutritional supplements provided",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "a0f1f531-e082-448a-aed5-200621c7b274",
@@ -3800,6 +3811,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "TherapeuticSupplementaryFood !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "nutritionalSupplementsProvided"
 						}
