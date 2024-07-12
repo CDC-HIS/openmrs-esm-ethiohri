@@ -7,6 +7,7 @@ import {
   FOLLOWUP_ENCOUNTER_TYPE,
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
+  UAN_NULL_WARNING,
   formWarning,
 } from "../../constants";
 import { getData } from "../encounterUtils";
@@ -124,12 +125,20 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   );
 
   const [hasMRN, setHasMRN] = useState(false);
+  const [hasUAN, setHasUAN] = useState(false);
   const [hasIntakeAEncounter, setHasIntakeAEncounter] = useState(false);
   useEffect(() => {
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
       if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
         setHasMRN(true);
+      }
+    })();
+
+    (async () => {
+      const identifiers = await fetchIdentifiers(patientUuid);
+      if (identifiers?.find((e) => e.identifierType.display === "UAN")) {
+        setHasUAN(true);
       }
     })();
 
@@ -155,10 +164,11 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN || !hasIntakeAEncounter,
+          hideFormLauncher: !hasMRN || !hasIntakeAEncounter || !hasUAN,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+      {!hasUAN && <p className={styles.patientName}>{UAN_NULL_WARNING}</p>}
       {!hasIntakeAEncounter && (
         <p className={styles.patientName}>{formWarning("Intake A")}</p>
       )}

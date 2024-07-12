@@ -163,7 +163,10 @@ export const kidneyDiseaseStage4 = "120578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const kidneyDiseaseStage5 = "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
 export const MRN_NULL_WARNING =
-  "* Patient needs to have a registered MRN, before this form can be filled ! Please add an MRN on patient details.";
+  "* Patient needs to have a registered MRN, before this form can be filled! Please add an MRN on patient details.";
+
+export const UAN_NULL_WARNING =
+  "* Patient needs to have a registered UAN, before this form can be filled! Please add an MRN on patient details.";
 
 export const formWarning = (formName) =>
   `* Patient needs to have ${formName} form filled, before this form can be filled !`;
