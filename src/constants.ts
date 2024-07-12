@@ -166,7 +166,7 @@ export const MRN_NULL_WARNING =
   "* Patient needs to have a registered MRN, before this form can be filled! Please add an MRN on patient details.";
 
 export const UAN_NULL_WARNING =
-  "* Patient needs to have a registered UAN, before this form can be filled! Please add an MRN on patient details.";
+  "* Please fill Unique ART Number if the client has started ART!";
 
 export const formWarning = (formName) =>
   `* Patient needs to have ${formName} form filled, before this form can be filled !`;

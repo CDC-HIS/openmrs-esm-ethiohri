@@ -346,6 +346,9 @@
 									}
 								]
 							},
+							"hide": {
+								"hideWhenExpression": "hasUAN(patient)"
+							},
 							"id": "artStarted"
 						},
 						{
@@ -361,6 +364,9 @@
 								},
 								"rendering": "date",
 								"concept": "ae329187-6232-4142-aa91-22c85bc8e5b5"
+							},
+							"hide": {
+								"hideWhenExpression": "hasUAN(patient)"
 							},
 							"validators": [
 								{
@@ -388,7 +394,7 @@
 								"answers": []
 							  },
 							"hide": {
-								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hasUAN(patient)"
 							},
 							"validators": []
 						}

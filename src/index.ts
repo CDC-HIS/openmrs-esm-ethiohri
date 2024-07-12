@@ -41,6 +41,7 @@ import {
   calcEGFR,
   isDateAlreadyUsed,
   isTreatmentVisible,
+  hasUAN,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -96,6 +97,7 @@ export function startupApp() {
   registerExpressionHelper("calcEGFR", calcEGFR);
   registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
   registerExpressionHelper("isTreatmentVisible", isTreatmentVisible);
+  registerExpressionHelper("hasUAN", hasUAN);
 
   // registerControl({
   //   name: "eth-date",

@@ -388,3 +388,13 @@ export function isTreatmentVisible(
 
   return condition1 && condition2 && condition3 && condition4 && condition5;
 }
+
+export async function hasUAN(patient) {
+  const identifierValue = patient?.identifier?.find(
+    (e) => e?.type?.text === "UAN"
+  );
+  if (identifierValue) {
+    return true;
+  }
+  return false;
+}
