@@ -5495,10 +5495,10 @@
 						{
 							"label": "TB screening date",
 							"type": "obs",
-							"required": true,
+							"readonly": true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f980e9d2-e85c-483e-ae93-980623114e6f'))?.valueQuantity?.value"
+									"calculateExpression": "followupDate"
 								},
 								"rendering": "date",
 								"concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
