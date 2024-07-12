@@ -176,6 +176,22 @@
 							"validators": []
 						},
 						{
+							"label": "Specify other religion",
+							"type": "obs",
+							"required": false,
+							"hide": {
+								"hideWhenExpression": "religion != '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "otherReligion",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "5285ef6e-3e4c-446d-a0fa-51ce5ea7865c",
+								"conceptMappings": [],
+								"answers": []
+							},
+							"validators": []
+						},
+						{
 							"label": "Level of Education",
 							"type": "obs",
 							"required": false,
