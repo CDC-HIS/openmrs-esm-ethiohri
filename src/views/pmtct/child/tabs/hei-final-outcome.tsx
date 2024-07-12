@@ -29,21 +29,21 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "HEI Child Final Outcome", package: "eth_hiv" },
+        form: { name: "HEI Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View HEI Final Outcome",
         mode: "view",
       },
       {
-        form: { name: "HEI Child Final Outcome", package: "eth_hiv" },
+        form: { name: "HEI Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit HEI Final Outcome",
         mode: "edit",
       },
       {
-        form: { name: "HEI Child Final Outcome", package: "eth_hiv" },
+        form: { name: "HEI Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Delete HEI Final Outcome",

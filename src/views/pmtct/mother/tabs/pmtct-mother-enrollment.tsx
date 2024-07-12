@@ -41,21 +41,21 @@ const columns = [
     header: "Actions",
     getValue: (encounter) => [
       {
-        form: { name: "PMTCT Mother Enrollment", package: "eth_hiv" },
+        form: { name: "PMTCT Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "View Mother's Enrollment",
         mode: "view",
       },
       {
-        form: { name: "PMTCT Mother Enrollment", package: "eth_hiv" },
+        form: { name: "PMTCT Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Edit Mother's Enrollment",
         mode: "edit",
       },
       {
-        form: { name: "PMTCT Mother Enrollment", package: "eth_hiv" },
+        form: { name: "PMTCT Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
         label: "Delete Mother's Enrollment",
