@@ -5472,8 +5472,11 @@
 							"type": "obs",
 							"required": true,
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f980e9d2-e85c-483e-ae93-980623114e6f'))?.valueQuantity?.value"
+								},
 								"rendering": "date",
-								"concept": "179497a0-6f07-469f-bb2e-9b85644a82af",
+								"concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
 								"weeksList": ""
 							},
 							"hide": {
