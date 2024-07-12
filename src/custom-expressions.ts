@@ -107,18 +107,17 @@ export function CalcPrepDoseEndDate(
     : null;
 }
 
-export function CalcMonthsOnART(artStartDate: Date) {
-  let today = new Date();
+export function CalcMonthsOnART(artStartDate: Date, followupDate: Date) {
   let resultMonthsOnART: string;
   let artInDays = Math.round(
-    (today.getTime() - artStartDate.getTime?.()) / 86400000
+    (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
   );
-  if (artStartDate && artInDays < 30) {
+  if (artStartDate && followupDate && artInDays < 30) {
     resultMonthsOnART = "0 months";
-  } else if (artStartDate && artInDays >= 30) {
+  } else if (artStartDate && followupDate && artInDays >= 30) {
     resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
   }
-  return artStartDate ? resultMonthsOnART : "0 months";
+  return artStartDate && followupDate ? resultMonthsOnART : null;
 }
 
 export function CalcViralLoadStatus(viralLoadCount: number) {
