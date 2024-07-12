@@ -93,7 +93,6 @@
                                     "allowFutureDates": "false"
                                 }
 							]
-							
 						  },
 						{
 							"label": "Eligibility status",
@@ -3731,6 +3730,7 @@
 						{
 							"label": "Nutritional supplements provided",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "a0f1f531-e082-448a-aed5-200621c7b274",
@@ -3800,6 +3800,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "TherapeuticSupplementaryFood !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "nutritionalSupplementsProvided"
 						}
