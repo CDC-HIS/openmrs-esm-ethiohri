@@ -176,6 +176,22 @@
 							"validators": []
 						},
 						{
+							"label": "Specify other religion",
+							"type": "obs",
+							"required": false,
+							"hide": {
+								"hideWhenExpression": "religion != '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "otherReligion",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "5285ef6e-3e4c-446d-a0fa-51ce5ea7865c",
+								"conceptMappings": [],
+								"answers": []
+							},
+							"validators": []
+						},
+						{
 							"label": "Level of Education",
 							"type": "obs",
 							"required": false,
@@ -275,23 +291,103 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "160637AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "365508006"
-									}
-								],
+								"concept": "6c309c37-5ecb-4506-a4e6-201d4c90e6a3",
 								"answers": [
 									{
-										"concept": "160635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Yes",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
 									},
 									{
-										"concept": "160636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "No",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
 									}
 								]
 							},
@@ -875,60 +971,10 @@
 										"label": "Pediatric IPD",
 										"conceptMappings": []
 									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
-									}
+								{
+									"concept": "e7e85a1a-1e45-4043-99d7-216034965bc5",
+									"label": "Other OPD"
+								}
 								]
 							},
 							"hide": {
