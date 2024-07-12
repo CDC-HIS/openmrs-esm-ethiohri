@@ -2880,13 +2880,13 @@
 							"id": "bmiForAge"
 						},
 						{
-							"label": "Nutritional Status - Adult",
+							"label": "Nutritional status - Adult",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
 								"calculate": {
-									"calculateExpression": "CustomAdultNutritionalStatusCalc('height', 'weight', 'muac')"
+									"calculateExpression": "CustomAdultNutritionalStatusCalc('height','weight', 'muac')"
 								},
 								"answers": [
 									{
@@ -3428,7 +3428,7 @@
 								"unspecified": true,
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
 								"calculate": {
-									"calculateExpression": "CustomNutritionalScreeningCalc('height', 'weight', 'muac')"
+									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight', 'muac')"
 								},
 								"answers": [
 									{

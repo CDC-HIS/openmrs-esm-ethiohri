@@ -176,6 +176,8 @@ export function CalcAdultNutritionalStatus(
       nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (resultBMI >= 25 && resultBMI <= 29.99) {
       nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 30) {
+      nutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
       return null;
     }
@@ -206,6 +208,8 @@ export function CalcNutritionalScreening(
       nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (resultBMI >= 25 && resultBMI <= 29.99) {
       nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 30) {
+      nutritionalScreening = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else {
       return null;
     }
