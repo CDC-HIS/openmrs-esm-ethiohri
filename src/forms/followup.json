@@ -6047,9 +6047,6 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
-								},
 								"conceptMappings": [
 									{
 										"type": "CIEL",
@@ -6564,9 +6561,6 @@
 							"required": true,
 							"type": "obs",
 							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '54084c9e-bc87-4d95-89fc-eb9a2cffb592'))?.valueCodeableConcept?.coding[0]?.code"
-								  },
 								"rendering": "radio",
 								"concept": "54084c9e-bc87-4d95-89fc-eb9a2cffb592",
 								"answers": [
@@ -6597,9 +6591,6 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0166677a-5a8e-45fa-b3f6-3c5aa9f13d00'))?.valueCodeableConcept?.coding[0]?.code"
-								},
 								"concept": "0166677a-5a8e-45fa-b3f6-3c5aa9f13d00",
 								"answers": [
 									{
@@ -6694,9 +6685,6 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'c1af657e-bc31-46a2-9f5e-55a1c9ae7507'))?.valueDateTime"
-								},
 								"concept": "c1af657e-bc31-46a2-9f5e-55a1c9ae7507",
 								"answers": [
 									{
@@ -6819,9 +6807,6 @@
 							"id": "tptDispensedDose",
 							"questionOptions": {
 							  "rendering": "select",
-							  "calculate": {
-								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ad542a8d-cd7c-4d70-8ef3-829b89c05009'))?.valueCodeableConcept?.coding[0]?.code"
-							},
 							  "concept": "ad542a8d-cd7c-4d70-8ef3-829b89c05009",
 							  "conceptMappings": [],
 							  "answers": [
