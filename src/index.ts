@@ -40,6 +40,7 @@ import {
   getIdentifier,
   calcEGFR,
   isDateAlreadyUsed,
+  isSupplementaryFoodVisible,
   isTreatmentVisible,
   hasUAN,
 } from "./custom-expressions";
@@ -97,6 +98,7 @@ export function startupApp() {
   registerExpressionHelper("calcEGFR", calcEGFR);
   registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
   registerExpressionHelper("isTreatmentVisible", isTreatmentVisible);
+  registerExpressionHelper("isSupplementaryFoodVisible", isSupplementaryFoodVisible);
   registerExpressionHelper("hasUAN", hasUAN);
 
   // registerControl({

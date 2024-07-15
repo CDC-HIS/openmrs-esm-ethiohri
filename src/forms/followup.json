@@ -3740,7 +3740,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "nutritionalScreeningResult !== '123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isSupplementaryFoodVisible('height', 'weight', 'muac')"
 							},
 							"id": "TherapeuticSupplementaryFood"
 						},
