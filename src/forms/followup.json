@@ -5496,6 +5496,7 @@
 							"label": "TB screening date",
 							"type": "obs",
 							"readonly": true,
+							"required": true,
 							"questionOptions": {
 								"calculate": {
 									"calculateExpression": "followupDate"
