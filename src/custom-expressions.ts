@@ -389,6 +389,22 @@ export function isTreatmentVisible(
   return condition1 && condition2 && condition3 && condition4 && condition5;
 }
 
+export function isSupplementaryFoodVisible(height, weight, muac) {
+  let resultBMI = CalcBMI(height, weight);
+  let finalCondition: boolean;
+
+  if (muac === "" && resultBMI === null) {
+    finalCondition = true;
+  } else if (muac <= 23 || resultBMI <= 19) {
+    finalCondition = false;
+  } else if (muac > 23 || resultBMI > 19) {
+    finalCondition = true;
+  } else {
+    return null;
+  }
+  return finalCondition;
+}
+
 export async function hasUAN(patient) {
   const identifierValue = patient?.identifier?.find(
     (e) => e?.type?.text === "UAN"
