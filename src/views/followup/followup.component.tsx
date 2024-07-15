@@ -168,7 +168,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
-      {!hasUAN && <p className={styles.warningMessage}>{UAN_NULL_WARNING}</p>}
+      {!hasUAN && <p className={styles.patientName}>{UAN_NULL_WARNING}</p>}
       {!hasIntakeAEncounter && (
         <p className={styles.patientName}>{formWarning("Intake A")}</p>
       )}
