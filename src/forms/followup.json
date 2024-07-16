@@ -8521,472 +8521,472 @@
 					"isExpanded": "true",
 					"questions": [
 					  {
-						"label": "Viral load performed?",
-						"type": "obs",
-						"required": false,
-						"id": "viralLoadPerformed",
-						"questionOptions": {
-						  "rendering": "radio",
-						  "concept": "163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						  "conceptMappings": [
-							{
-							  "relationship": "NARROWER-THAN",
-							  "type": "SNOMED-CT",
-							  "value": "364712009"
-							},
-							{
-							  "relationship": "SAME-AS",
-							  "type": "CIEL",
-							  "value": "163310"
-							}
-						  ],
-						  "answers": [
-							{
-							  "concept": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Yes"
-							},
-							{
-							  "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "No"
-							}
-						  ]
+					  "label": "Viral load performed?",
+					  "type": "obs",
+					  "required": false,
+					  "id": "viralLoadPerformed",
+					  "questionOptions": {
+						"rendering": "radio",
+						"concept": "163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"conceptMappings": [
+						{
+						  "relationship": "NARROWER-THAN",
+						  "type": "SNOMED-CT",
+						  "value": "364712009"
 						},
-						"validators": []
+						{
+						  "relationship": "SAME-AS",
+						  "type": "CIEL",
+						  "value": "163310"
+						}
+						],
+						"answers": [
+						{
+						  "concept": "1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "label": "Yes"
+						},
+						{
+						  "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "label": "No"
+						}
+						]
+					  },
+					  "validators": []
 					  },
 					  {
-						"label": "Reason for VL test",
-						"required": true,
-						"type": "obs",
-						"questionOptions": {
-						  "rendering": "radio",
-						  "concept": "6bb5b796-60bc-406c-abd9-fb9362ed5e80",
-						  "answers": [
-							{
-							  "concept": "9b8cef86-9093-4737-a641-3b8399618c85",
-							  "label": "Routine",
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "8f75ce27-29fa-4a67-bc8a-295c94323220",
-							  "label": "Targeted",
-							  "conceptMappings": []
-							}
-						  ]
-						},
-						"hide": {
-						  "hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
-						"id": "viralLoadIndication"
-					  },
-					  {
-						"label": "Routine VL test",
-						"type": "obs",
-						"required": true,
-						"questionOptions": {
-						  "rendering": "select",
+					  "label": "Reason for VL test",
+					  "required": true,
+					  "type": "obs",
+					  "questionOptions": {
+						"rendering": "radio",
+						"concept": "6bb5b796-60bc-406c-abd9-fb9362ed5e80",
+						"answers": [
+						{
 						  "concept": "9b8cef86-9093-4737-a641-3b8399618c85",
-						  "answers": [
-							{
-							  "concept": "d1977f43-83a5-4b32-b589-33b9315e912d",
-							  "label": "First viral load test at 3 months or longer post ART",
-							  "hide": {
-								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "b450f8e7-f55e-4788-8fb4-de5229db1b10",
-							  "label": "First viral load test at 6 months or longer post ART",
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "c616b09a-bcc2-49a9-b47c-7219f7695e91",
-							  "label": "Second viral load test at 12 months post ART",
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "42a61e3f-e3e9-46a8-96e3-8643f4d476a4",
-							  "label": "Annual viral load test",
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "89e9a9ee-15d1-424b-be5a-0765822cd35e",
-							  "label": "At the first antenatal care visit",
-							  "hide": {
-								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "c1f8f2f6-ec39-422b-a305-58ccafec86c3",
-							  "label": "At 34-36 weeks of gestation",
-							  "hide": {
-								"hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "603faef3-2142-4ee7-8781-aa977ada17a2",
-							  "label": "Three months after delivery",
-							  "hide": {
-								"hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "d3d6d8e3-0438-4f83-ba9f-ac46eed6782b",
-							  "label": "Six months after the first viral load test at postnatal period",
-							  "hide": {
-								"hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "d18e5f76-5026-45d1-be18-f14ae936c692",
-							  "label": "Every six months until MTCT ends",
-							  "hide": {
-								"hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "9dbe8de0-c0ca-4bb0-ac46-207dd5ee5caf",
-							  "label": "Viral load after EAC: repeat viral load where initial viral load greater than 50 and less than 1000 copies per ml",
-							  "conceptMappings": []
-							},
-							{
-							  "concept": "4afb4baf-14c0-498b-b908-06b33e50476e",
-							  "label": "Viral load after EAC: confirmatory viral load where initial viral load greater than 1000 copies per ml",
-							  "conceptMappings": []
-							}
-						  ],
-						  "conceptMappings": [
-							{
-							  "type": "OCT",
-							  "value": "RoutineViralLoad"
-							}
-						  ]
+						  "label": "Routine",
+						  "conceptMappings": []
 						},
-						"hide": {
-						  "hideWhenExpression": "viralLoadIndication !== '9b8cef86-9093-4737-a641-3b8399618c85'"
-						},
-						"id": "routineTest"
-					  },
-					  {
-						"label": "Targeted VL test",
-						"type": "obs",
-						"required": true,
-						"questionOptions": {
-						  "rendering": "select",
+						{
 						  "concept": "8f75ce27-29fa-4a67-bc8a-295c94323220",
-						  "answers": [
-							{
-							  "concept": "9ffb81b7-3d9e-4f72-b1ba-3f60f07e4661",
-							  "label": "Repeat or confirmatory VL: initial viral load greater than 1000",
-							  "hide": {
-								"hideWhenExpression": "true"
+						  "label": "Targeted",
+						  "conceptMappings": []
+						}
+						]
+					  },
+					  "hide": {
+						"hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					  },
+					  "id": "viralLoadIndication"
+					  },
+					  {
+					  "label": "Routine VL test",
+					  "type": "obs",
+					  "required": true,
+					  "questionOptions": {
+						"rendering": "select",
+						"concept": "9b8cef86-9093-4737-a641-3b8399618c85",
+						"answers": [
+						{
+						  "concept": "d1977f43-83a5-4b32-b589-33b9315e912d",
+						  "label": "First viral load test at 3 months or longer post ART",
+						  "hide": {
+						  "hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "b450f8e7-f55e-4788-8fb4-de5229db1b10",
+						  "label": "First viral load test at 6 months or longer post ART",
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "c616b09a-bcc2-49a9-b47c-7219f7695e91",
+						  "label": "Second viral load test at 12 months post ART",
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "42a61e3f-e3e9-46a8-96e3-8643f4d476a4",
+						  "label": "Annual viral load test",
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "89e9a9ee-15d1-424b-be5a-0765822cd35e",
+						  "label": "At the first antenatal care visit",
+						  "hide": {
+						  "hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "c1f8f2f6-ec39-422b-a305-58ccafec86c3",
+						  "label": "At 34-36 weeks of gestation",
+						  "hide": {
+						  "hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "603faef3-2142-4ee7-8781-aa977ada17a2",
+						  "label": "Three months after delivery",
+						  "hide": {
+						  "hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "d3d6d8e3-0438-4f83-ba9f-ac46eed6782b",
+						  "label": "Six months after the first viral load test at postnatal period",
+						  "hide": {
+						  "hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "d18e5f76-5026-45d1-be18-f14ae936c692",
+						  "label": "Every six months until MTCT ends",
+						  "hide": {
+						  "hideWhenExpression": "breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "9dbe8de0-c0ca-4bb0-ac46-207dd5ee5caf",
+						  "label": "Viral load after EAC: repeat viral load where initial viral load greater than 50 and less than 1000 copies per ml",
+						  "conceptMappings": []
+						},
+						{
+						  "concept": "4afb4baf-14c0-498b-b908-06b33e50476e",
+						  "label": "Viral load after EAC: confirmatory viral load where initial viral load greater than 1000 copies per ml",
+						  "conceptMappings": []
+						}
+						],
+						"conceptMappings": [
+						{
+						  "type": "OCT",
+						  "value": "RoutineViralLoad"
+						}
+						]
+					  },
+					  "hide": {
+						"hideWhenExpression": "viralLoadIndication !== '9b8cef86-9093-4737-a641-3b8399618c85'"
+					  },
+					  "id": "routineTest"
+					  },
+					  {
+					  "label": "Targeted VL test",
+					  "type": "obs",
+					  "required": true,
+					  "questionOptions": {
+						"rendering": "select",
+						"concept": "8f75ce27-29fa-4a67-bc8a-295c94323220",
+						"answers": [
+						{
+						  "concept": "9ffb81b7-3d9e-4f72-b1ba-3f60f07e4661",
+						  "label": "Repeat or confirmatory VL: initial viral load greater than 1000",
+						  "hide": {
+						  "hideWhenExpression": "true"
+						  }
+						},
+						{
+						  "concept": "4c6f2326-480f-449d-9932-fe85019997f6",
+						  "label": "Suspected Antiretroviral failure",
+						  "conceptMappings": []
+						}
+						]
+					  },
+					  "hide": {
+						"hideWhenExpression": "viralLoadIndication !== '8f75ce27-29fa-4a67-bc8a-295c94323220'"
+					  },
+					  "id": "targeted"
+					  },
+					  {
+					  "label": "Date VL Requested",
+					  "type": "obs",
+					  "required": true,
+					  "questionOptions": {
+						"rendering": "date",
+						"concept": "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"weeksList": "",
+						"conceptMappings": [
+						{
+						  "type": "CIEL",
+						  "value": "163281"
+						}
+						]
+					  },
+					  "validators": [
+						{
+						  "type": "date",
+						  "allowFutureDates": "false"
+						},
+						{
+						  "type": "js_expression",
+						  "failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
+						  "message": "Date VL Requested should not be earlier than Viral Load Result Received date"
+						}
+					  ],
+					  "hide": {
+						"hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					  },
+					  "id": "dateViralLoadRequested"
+					  },
+					  {
+					  "label": "Viral load received?",
+					  "type": "obs",
+					  "required": false,
+					  "questionOptions": {
+						"rendering": "radio",
+						"concept": "f429af1a-8eba-48ab-a0f7-9d69652753e7",
+						"answers": [
+						  {
+							"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+							"label": "Yes",
+							"conceptMappings": [
+							  {
+								"type": "SNOMED-CT",
+								"value": "373066001"
+							  },
+							  {
+								"type": "PIH",
+								"value": "1065"
+							  },
+							  {
+								"type": "PIH",
+								"value": "1065"
+							  },
+							  {
+								"type": "AMPATH",
+								"value": "1065"
+							  },
+							  {
+								"type": "CIEL",
+								"value": "1065"
+							  },
+							  {
+								"type": "CIEL",
+								"value": "1065"
+							  },
+							  {
+								"type": "PIH-Malawi",
+								"value": "1065"
+							  },
+							  {
+								"type": "CIEL",
+								"value": "1065"
+							  },
+							  {
+								"type": "SNOMED-CT",
+								"value": "373066001"
+							  },
+							  {
+								"type": "SNOMED CT",
+								"value": "CT: 373066001"
+							  },
+							  {
+								"type": "PIH-Malawi",
+								"value": "1065"
+							  },
+							  {
+								"type": "AMPATH",
+								"value": "1065"
 							  }
-							},
-							{
-							  "concept": "4c6f2326-480f-449d-9932-fe85019997f6",
-							  "label": "Suspected Antiretroviral failure",
-							  "conceptMappings": []
-							}
-						  ]
-						},
-						"hide": {
-						  "hideWhenExpression": "viralLoadIndication !== '8f75ce27-29fa-4a67-bc8a-295c94323220'"
-						},
-						"id": "targeted"
-					  },
-					  {
-						"label": "Date VL Requested",
-						"type": "obs",
-						"required": true,
-						"questionOptions": {
-						  "rendering": "date",
-						  "concept": "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						  "weeksList": "",
-						  "conceptMappings": [
-							{
-							  "type": "CIEL",
-							  "value": "163281"
-							}
-						  ]
-						},
-						"validators": [
-							{
-								"type": "date",
-								"allowFutureDates": "false"
-							},
-							{
-								"type": "js_expression",
-								"failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
-								"message": "Date VL Requested should not be earlier than Viral Load Result Received date"
-							}
-						],
-						"hide": {
-						  "hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
-						"id": "dateViralLoadRequested"
-					  },
-					  {
-						"label": "Viral load received?",
-						"type": "obs",
-						"required": true,
-						"questionOptions": {
-							"rendering": "radio",
-							"concept": "f429af1a-8eba-48ab-a0f7-9d69652753e7",
-							"answers": [
-								{
-									"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-									"label": "Yes",
-									"conceptMappings": [
-										{
-											"type": "SNOMED-CT",
-											"value": "373066001"
-										},
-										{
-											"type": "PIH",
-											"value": "1065"
-										},
-										{
-											"type": "PIH",
-											"value": "1065"
-										},
-										{
-											"type": "AMPATH",
-											"value": "1065"
-										},
-										{
-											"type": "CIEL",
-											"value": "1065"
-										},
-										{
-											"type": "CIEL",
-											"value": "1065"
-										},
-										{
-											"type": "PIH-Malawi",
-											"value": "1065"
-										},
-										{
-											"type": "CIEL",
-											"value": "1065"
-										},
-										{
-											"type": "SNOMED-CT",
-											"value": "373066001"
-										},
-										{
-											"type": "SNOMED CT",
-											"value": "CT: 373066001"
-										},
-										{
-											"type": "PIH-Malawi",
-											"value": "1065"
-										},
-										{
-											"type": "AMPATH",
-											"value": "1065"
-										}
-									]
-								},
-								{
-									"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-									"label": "No",
-									"conceptMappings": [
-										{
-											"type": "PIH",
-											"value": "1066"
-										},
-										{
-											"type": "SNOMED-CT",
-											"value": "373067005"
-										},
-										{
-											"type": "PIH",
-											"value": "1066"
-										},
-										{
-											"type": "PIH-Malawi",
-											"value": "1066"
-										},
-										{
-											"type": "CIEL",
-											"value": "1066"
-										},
-										{
-											"type": "AMPATH",
-											"value": "1066"
-										},
-										{
-											"type": "SNOMED-CT",
-											"value": "373067005"
-										},
-										{
-											"type": "PIH-Malawi",
-											"value": "1066"
-										},
-										{
-											"type": "AMPATH",
-											"value": "1066"
-										}
-									]
-								}
 							]
-						},
-						"hide": {
-							"hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
-						"validators": [
-							{
-								"type": "date",
-								"allowFutureDates": "false"
-							}
-						],
-						"id": "vlReceived"
+						  },
+						  {
+							"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+							"label": "No",
+							"conceptMappings": [
+							  {
+								"type": "PIH",
+								"value": "1066"
+							  },
+							  {
+								"type": "SNOMED-CT",
+								"value": "373067005"
+							  },
+							  {
+								"type": "PIH",
+								"value": "1066"
+							  },
+							  {
+								"type": "PIH-Malawi",
+								"value": "1066"
+							  },
+							  {
+								"type": "CIEL",
+								"value": "1066"
+							  },
+							  {
+								"type": "AMPATH",
+								"value": "1066"
+							  },
+							  {
+								"type": "SNOMED-CT",
+								"value": "373067005"
+							  },
+							  {
+								"type": "PIH-Malawi",
+								"value": "1066"
+							  },
+							  {
+								"type": "AMPATH",
+								"value": "1066"
+							  }
+							]
+						  }
+						]
+					  },
+					  "hide": {
+						"hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					  },
+					  "validators": [
+						{
+						  "type": "date",
+						  "allowFutureDates": "false"
+						}
+					  ],
+					  "id": "vlReceived"
 					},
 					  {
-						"label": "Date result received",
-						"type": "obs",
-						"required": true,
-						"questionOptions": {
-						  "rendering": "date",
-						  "concept": "beeede36-cae4-4f6e-b4b9-e39e37353a82",
-						  "weeksList": ""
-						},
-						"hide": {
-							"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
-						"id": "dateViralLoadResultReceived"
+					  "label": "Date result received",
+					  "type": "obs",
+					  "required": true,
+					  "questionOptions": {
+						"rendering": "date",
+						"concept": "beeede36-cae4-4f6e-b4b9-e39e37353a82",
+						"weeksList": ""
+					  },
+					  "hide": {
+						"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					  },
+					  "id": "dateViralLoadResultReceived"
 					  },
 					  {
-						"label": "Viral load count",
-						"type": "obs",
-						"questionOptions": {
-						  "rendering": "number",
-						  "concept": "856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						  "max": 9999999,
-						  "min": 0,
-						  "showDate": "",
-						  "conceptMappings": [
-							{
-							  "type": "AMPATH",
-							  "value": "856"
-							},
-							{
-							  "type": "CIEL",
-							  "value": "856"
-							},
-							{
-							  "type": "IMO-ProcedureIT",
-							  "value": "929811"
-							},
-							{
-							  "type": "CIEL",
-							  "value": "856"
-							},
-							{
-							  "type": "SNOMED-CT",
-							  "value": "315124004"
-							},
-							{
-							  "type": "SNOMED-CT",
-							  "value": "315124004"
-							},
-							{
-							  "type": "LOINC",
-							  "value": "25836-8"
-							},
-							{
-							  "type": "IMO-ProcedureIT",
-							  "value": "929811"
-							},
-							{
-							  "type": "AMPATH",
-							  "value": "856"
-							}
-						  ]
+					  "label": "Viral load count",
+					  "type": "obs",
+					  "questionOptions": {
+						"rendering": "number",
+						"concept": "856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"max": 9999999,
+						"min": 0,
+						"showDate": "",
+						"conceptMappings": [
+						{
+						  "type": "AMPATH",
+						  "value": "856"
 						},
-						"hide": {
-							"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						{
+						  "type": "CIEL",
+						  "value": "856"
 						},
-						"id": "viralLoadCount"
-					  },
-					  {
-						"label": "Viral load status",
-						"type": "obs",
-						"required": false,
-						"id": "viralLoadStatus",
-						"questionOptions": {
-						  "rendering": "radio",
-						  "calculate": {
-							"calculateExpression": "CustomViralLoadStatusCalc('viralLoadCount')"
-						  },
-						  "concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
-						  "conceptMappings": [
-							{
-							  "relationship": "SAME-AS",
-							  "type": "ETHIOHRI",
-							  "value": "viralLoadStatus"
-							}
-						  ],
-						  "answers": [
-							{
-							  "concept": "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Suppressed (<=50)"
-							},
-							{
-							  "concept": "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Low Level Viremia (51-1000)"
-							},
-							{
-							  "concept": "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "High Viral Load (>1000 copies/ML)"
-							},
-							{
-							  "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-							  "label": "Unsuppressed",
-							  "hide": {
-								"hideWhenExpression": "true"
-							}
-							}
-						  ]
+						{
+						  "type": "IMO-ProcedureIT",
+						  "value": "929811"
 						},
-						"hide": {
-							"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						{
+						  "type": "CIEL",
+						  "value": "856"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "315124004"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "315124004"
+						},
+						{
+						  "type": "LOINC",
+						  "value": "25836-8"
+						},
+						{
+						  "type": "IMO-ProcedureIT",
+						  "value": "929811"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "856"
 						}
+						]
+					  },
+					  "hide": {
+						"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					  },
+					  "id": "viralLoadCount"
 					  },
 					  {
-						"label": "Lab ID",
-						"type": "obs",
-						"questionOptions": {
-						  "rendering": "number",
-						  "concept": "051f22d7-24dc-423c-a13d-b5de1e2e8361",
-						  "conceptMappings": [
-							{
-							  "type": "SNOMED-CT",
-							  "value": "364712009"
-							},
-							{
-							  "type": "CIEL",
-							  "value": "163310"
-							},
-							{
-							  "type": "CIEL",
-							  "value": "163310"
-							}
-						  ],
-						  "showDate": ""
+					  "label": "Viral load status",
+					  "type": "obs",
+					  "required": false,
+					  "id": "viralLoadStatus",
+					  "questionOptions": {
+						"rendering": "radio",
+						"calculate": {
+						"calculateExpression": "CustomViralLoadStatusCalc('viralLoadCount')"
 						},
-						"hide": {
-							"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						"concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
+						"conceptMappings": [
+						{
+						  "relationship": "SAME-AS",
+						  "type": "ETHIOHRI",
+						  "value": "viralLoadStatus"
+						}
+						],
+						"answers": [
+						{
+						  "concept": "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "label": "Suppressed (<=50)"
 						},
-						"id": "labId"
+						{
+						  "concept": "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "label": "Low Level Viremia (51-1000)"
+						},
+						{
+						  "concept": "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "label": "High Viral Load (>1000 copies/ML)"
+						},
+						{
+						  "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "label": "Unsuppressed",
+						  "hide": {
+						  "hideWhenExpression": "true"
+						}
+						}
+						]
+					  },
+					  "hide": {
+						"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					  }
+					  },
+					  {
+					  "label": "Lab ID",
+					  "type": "obs",
+					  "questionOptions": {
+						"rendering": "number",
+						"concept": "051f22d7-24dc-423c-a13d-b5de1e2e8361",
+						"conceptMappings": [
+						{
+						  "type": "SNOMED-CT",
+						  "value": "364712009"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "163310"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "163310"
+						}
+						],
+						"showDate": ""
+					  },
+					  "hide": {
+						"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					  },
+					  "id": "labId"
 					  }
 					]
-				  },
+					},
 				  {
 					"label": "Enhanced Adherence Counseling",
 					"isExpanded": "true",
