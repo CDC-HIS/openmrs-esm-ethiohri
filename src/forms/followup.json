@@ -5495,15 +5495,10 @@
 						{
 							"label": "TB screening date",
 							"type": "obs",
-							"readonly": true,
 							"required": true,
 							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "followupDate"
-								},
 								"rendering": "date",
-								"concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
-								"weeksList": ""
+								"concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
 							},
 							"hide": {
 								"hideWhenExpression": "tbScreened !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -5516,7 +5511,12 @@
 								{
 									"type": "js_expression",
 									"failsWhenExpression": "myValue < new Date(followupDate)",
-									"message": "TB Screening date should not be earlier than Followup date"
+									"message": "TB Screening date should be the same as Followup date"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue > new Date(followupDate)",
+									"message": "TB Screening date should be the same as Followup date"
 								}
 							],
 							"id": "tbScreeningDate"
