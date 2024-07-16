@@ -217,137 +217,19 @@
 								},
 								"rendering": "radio",
 								"concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "PIH-Malawi",
-										"value": "7010"
-									},
-									{
-										"type": "CIEL",
-										"value": "1149"
-									},
-									{
-										"type": "PIH",
-										"value": "1432"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1149"
-									},
-									{
-										"type": "PIH",
-										"value": "1622"
-									},
-									{
-										"type": "PIH",
-										"value": "2589"
-									},
-									{
-										"type": "PIH",
-										"value": "1577"
-									}
-								],
 								"answers": [
 									{
 										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Yes",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 373066001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											}
-										]
+										"label": "Yes"
 									},
 									{
 										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "CIEL",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											}
-										]
+										"label": "No"
 									}
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "hasUAN(patient)"
+								"hideWhenExpression": "false"
 							},
 							"id": "artStarted"
 						},
@@ -424,7 +306,7 @@
 							"id": "followupStatus",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "loadFollowupStatus(patient)"
 								},
 							  "rendering": "select",
 							  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
