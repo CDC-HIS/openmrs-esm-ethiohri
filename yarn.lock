@@ -1842,7 +1842,7 @@ __metadata:
     "@carbon/charts-react": "npm:^1.5.2"
     "@carbon/react": "npm:^1.13.0"
     "@ohri/openmrs-esm-ohri-commons-lib": "npm:^2.3.6"
-    "@openmrs/esm-framework": "npm:^5.6.1-pre.2069"
+    "@openmrs/esm-framework": "npm:^5.6.1-pre.1996"
     "@openmrs/esm-patient-common-lib": "npm:^8.0.0"
     "@openmrs/openmrs-form-engine-lib": "npm:2.0.0-pre.1151"
     "@playwright/test": "npm:^1.30.0"
@@ -3167,7 +3167,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openmrs/esm-framework@npm:^5.6.1-pre.2069":
+"@openmrs/esm-framework@npm:^5.6.1-pre.1996":
   version: 5.6.1-pre.2069
   resolution: "@openmrs/esm-framework@npm:5.6.1-pre.2069"
   dependencies:
