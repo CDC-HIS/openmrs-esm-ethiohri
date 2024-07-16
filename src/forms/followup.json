@@ -8214,11 +8214,8 @@
 							"label": "Hgb. (g/dl)",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "21AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 9999999,
-								"min": 0,
-								"showDate": "",
+								"rendering": "text",
+								"concept": "8729e0b9-c1b4-416f-b47e-9d9b8855d023",
 								"conceptMappings": [
 									{
 										"type": "IMO-ProcedureIT",
@@ -8286,17 +8283,21 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+								  "message": "Hgb should be a numeric value"
+								}
+										  ],
 							"id": "hgb"
 						},
 						{
 							"label": "ALT (U/L)",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 9999999,
-								"min": 0,
-								"showDate": "",
+								"rendering": "text",
+								"concept": "49296372-8a07-4182-8506-ded37e2bc667",
 								"conceptMappings": [
 									{
 										"type": "CIEL",
@@ -8344,17 +8345,21 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+								  "message": "ALT should be a numeric value"
+								}
+										  ],
 							"id": "alt"
 						},
 						{
 							"label": "AST (U/L)",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "653AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 9999999,
-								"min": 0,
-								"showDate": "",
+								"rendering": "text",
+								"concept": "33297367-9a74-4e2c-a474-923e61d45252",
 								"conceptMappings": [
 									{
 										"type": "CIEL",
@@ -8394,17 +8399,21 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+								  "message": "AST should be a numeric value"
+								}
+										  ],
 							"id": "ast"
 						},
 						{
 							"label": "Creatinine/Cr. (mg/dl)",
 							"type": "obs",
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "790AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 9999999,
-								"min": 0,
-								"showDate": "",
+								"rendering": "text",
+								"concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0",
 								"conceptMappings": [
 									{
 										"type": "CIEL",
@@ -8432,6 +8441,13 @@
 									}
 								]
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+								  "message": "Creatinine/Cr should be a numeric value"
+								}
+										  ],
 							"id": "creatinine"
 						},
 						{
