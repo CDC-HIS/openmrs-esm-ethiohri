@@ -414,3 +414,35 @@ export async function hasUAN(patient) {
   }
   return false;
 }
+
+export async function clearInput(parentQuestion, childQuestion) {
+  const HP_PROPHYLAXIS_TYPE = [
+    "1f34bb7f-07e2-4da8-a35f-ad5398377b50",
+    "0ba78722-08e5-49cb-9a93-1d209c6f29a6",
+    "01277d3a-755b-42ae-916c-a330b55c5c75",
+    "574f5071-03fb-4067-a26d-419ecf3ce151",
+    "4176b0d5-8f11-4681-8d9e-1f153cd0205d",
+  ];
+
+  const INH_PROPHYLAXIS_TYPE = [
+    "549ea6cb-55c7-4375-bfcc-8a4d9c8b1813",
+    "52c88128-2009-4969-8672-311922030884",
+    "83ee8ddd-ad0d-4d25-8d6d-bbbc122f9fc9",
+    "0b0ce047-db8a-4004-96b4-df5bff8d18bd",
+    "3d84a5f8-23fe-4410-8b33-df206c69dae1",
+    "4e090425-769b-4a3f-8dfe-e8770b681b7b",
+    "a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb",
+    "86e102e6-ddf4-423c-b5b7-3d157de0c96f",
+  ];
+
+  if (
+    (parentQuestion === "8ba598a1-9e8a-4499-bd7a-54c3d0c94f01" &&
+      HP_PROPHYLAXIS_TYPE.includes(childQuestion)) ||
+    (parentQuestion === "e8588507-635c-4e28-a1f8-3c493e30b2f5" &&
+      INH_PROPHYLAXIS_TYPE.includes(childQuestion))
+  ) {
+    return "";
+  } else {
+    return childQuestion;
+  }
+}

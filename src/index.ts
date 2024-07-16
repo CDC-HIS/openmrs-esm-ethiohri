@@ -43,6 +43,7 @@ import {
   isSupplementaryFoodVisible,
   isTreatmentVisible,
   hasUAN,
+  clearInput,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -98,8 +99,12 @@ export function startupApp() {
   registerExpressionHelper("calcEGFR", calcEGFR);
   registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
   registerExpressionHelper("isTreatmentVisible", isTreatmentVisible);
-  registerExpressionHelper("isSupplementaryFoodVisible", isSupplementaryFoodVisible);
+  registerExpressionHelper(
+    "isSupplementaryFoodVisible",
+    isSupplementaryFoodVisible
+  );
   registerExpressionHelper("hasUAN", hasUAN);
+  registerExpressionHelper("clearInput", clearInput);
 
   // registerControl({
   //   name: "eth-date",
