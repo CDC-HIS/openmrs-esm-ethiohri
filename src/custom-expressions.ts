@@ -15,6 +15,7 @@ import {
   sixty,
   thirty,
   fifteen,
+  FOLLOWUP_ENCOUNTER_TYPE,
 } from "./constants";
 
 export function DispensedDoseInNumber(arvDispensedInDays: string) {
@@ -405,12 +406,30 @@ export function isSupplementaryFoodVisible(height, weight, muac) {
   return finalCondition;
 }
 
-export async function hasUAN(patient) {
-  const identifierValue = patient?.identifier?.find(
-    (e) => e?.type?.text === "UAN"
+export async function loadFollowupStatus(patient) {
+  const status = await getLatestObs(
+    patient.id,
+    "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+    FOLLOWUP_ENCOUNTER_TYPE
   );
-  if (identifierValue) {
-    return true;
+  if (
+    status?.valueCodeableConcept?.coding[0]?.code ===
+    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  ) {
+    return "";
   }
-  return false;
+  return status?.valueCodeableConcept?.coding[0]?.code;
+}
+
+export async function hideRestartStatus(patient) {
+  const status = await getLatestObs(
+    patient.id,
+    "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+    FOLLOWUP_ENCOUNTER_TYPE
+  );
+
+  return (
+    status?.valueCodeableConcept?.coding[0]?.code ===
+    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  );
 }

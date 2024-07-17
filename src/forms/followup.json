@@ -209,6 +209,19 @@
 							"id": "whyEligible"
 						},
 						{
+							"label": "UAN",
+							"type": "obs",
+							"questionOptions": {
+								"isTransient": true,
+								"calculate": {
+                                    "calculateExpression": "getIdentifier(patient, 'UAN')"
+                                },
+								"rendering": "fixed",
+								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "uan"
+						},
+						{
 							"label": "ART started ?",
 							"type": "obs",
 							"questionOptions": {
@@ -229,7 +242,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "hasUAN(patient)"
+								"hideWhenExpression": "isEmpty(uan)"
 							},
 							"id": "artStarted"
 						},
@@ -246,9 +259,6 @@
 								},
 								"rendering": "date",
 								"concept": "ae329187-6232-4142-aa91-22c85bc8e5b5"
-							},
-							"hide": {
-								"hideWhenExpression": "hasUAN(patient)"
 							},
 							"validators": [
 								{
@@ -276,7 +286,7 @@
 								"answers": []
 							  },
 							"hide": {
-								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hasUAN(patient)"
+								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"validators": []
 						}
@@ -320,7 +330,7 @@
 									"concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 									"label": "Restart",
 									"hide": {
-										"hideWhenExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04'))?.valueCodeableConcept?.coding[0]?.code === 162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+										"hideWhenExpression": "hideRestartStatus(patient)"
 									}
 								},
 								{
