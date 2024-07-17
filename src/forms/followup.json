@@ -6357,6 +6357,9 @@
 							"label": "Reason for not being eligible ?",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '4fedb725-fe8e-4a66-b8b2-a605239efa17'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "4fedb725-fe8e-4a66-b8b2-a605239efa17",
 								"answers": [
@@ -6458,6 +6461,9 @@
 							"required": true,
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '54084c9e-bc87-4d95-89fc-eb9a2cffb592'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "radio",
 								"concept": "54084c9e-bc87-4d95-89fc-eb9a2cffb592",
 								"answers": [
@@ -6487,6 +6493,9 @@
 							"label": "TPT follow up",
 							"type": "obs",
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0166677a-5a8e-45fa-b3f6-3c5aa9f13d00'))?.valueCodeableConcept?.coding[0]?.code"
+								},
 								"rendering": "select",
 								"concept": "0166677a-5a8e-45fa-b3f6-3c5aa9f13d00",
 								"answers": [
