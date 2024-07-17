@@ -250,6 +250,7 @@
 							"label": "ART start date",
 							"type": "obs",
 							"id": "artStartDate",
+							"required": true,
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
@@ -300,7 +301,7 @@
 				{
 					"intent": "*",
 					"hide": {
-						"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEmpty(uan)"
 					}
 				}
 			],
