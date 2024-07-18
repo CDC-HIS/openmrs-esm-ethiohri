@@ -418,16 +418,3 @@ export async function loadFollowupStatus(patient) {
   }
   return status?.valueCodeableConcept?.coding[0]?.code;
 }
-
-export async function hideRestartStatus(patient) {
-  const status = await getLatestObs(
-    patient.id,
-    "222f64a8-a603-4d2e-b70e-2d90b622bb04",
-    FOLLOWUP_ENCOUNTER_TYPE
-  );
-
-  return (
-    status?.valueCodeableConcept?.coding[0]?.code ===
-    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-  );
-}
