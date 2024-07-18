@@ -348,65 +348,19 @@
               "label": "Weight",
               "type": "obs",
               "required": false,
-              "id": "weight",
               "questionOptions": {
-                "rendering": "number",
-                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH-Malawi",
-                    "value": "5089"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5089"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5089"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5089"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5089"
-                  },
-                  {
-                    "relationship": "BROADER-THAN",
-                    "type": "LOINC",
-                    "value": "3141-9"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5089"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "27113001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5089"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "WEIGHT"
-                  }
-                ]
+                "rendering": "text",
+                "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
               },
-              "validators": []
-            },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+                  "message": "Weight should be a numeric value"
+                }
+              ],
+              "id": "weight"
+              },
             {
               "label": "ScCr",
               "type": "obs",

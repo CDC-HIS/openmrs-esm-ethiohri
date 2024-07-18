@@ -33,7 +33,7 @@ const PMTCTFollowupEncounterList = ({ patientUuid, isFormSaved }) => {
         key: "weight",
         header: "Weight",
         getValue: (encounter) => {
-          return getData(encounter, "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+          return getData(encounter, "4ab93a3c-4373-4b9b-9268-5ff0641cc242");
         },
       },
       {
