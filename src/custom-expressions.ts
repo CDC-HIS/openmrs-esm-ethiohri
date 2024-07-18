@@ -61,24 +61,22 @@ export function CalcTreatmentEndDate(
   let dispensedDoseReturned = DispensedDoseInNumber(arvDispensedInDays);
   let resultTreatmentEndDate = {};
   let extraDaysAdded = 30 + dispensedDoseReturned;
-  if (
-    followupDate &&
-    dispensedDoseReturned !== 0 &&
-    followupStatus ==
-      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-  ) {
-    resultTreatmentEndDate = new Date(
-      followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000
-    );
+
+  if (followupDate && dispensedDoseReturned !== 0) {
+    if (
+      followupStatus === "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+      followupStatus === "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    ) {
+      resultTreatmentEndDate = new Date(
+        followupDate.getTime() + extraDaysAdded * 24 * 60 * 60 * 1000
+      );
+    } else {
+      return null;
+    }
+  } else {
+    return null;
   }
-  return followupDate &&
-    dispensedDoseReturned !== 0 &&
-    followupStatus ==
-      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
-    ? resultTreatmentEndDate
-    : null;
+  return resultTreatmentEndDate;
 }
 
 export function CalcPrepDoseEndDate(
