@@ -6368,7 +6368,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "activeTB !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && tbTreatmentStarted !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "activeTB === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && tbTreatmentStarted === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "eligibleForTPT"
 						},
@@ -6612,7 +6612,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "isEmpty('TBProphylaxisType')"
+								"hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							  },
 							"id": "tptFollowup"
 						},
@@ -6718,7 +6718,7 @@
 							  ]
 							},
 							"hide": {
-								"hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"validators": []
 						  },
