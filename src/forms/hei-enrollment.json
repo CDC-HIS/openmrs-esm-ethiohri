@@ -69,48 +69,19 @@
               "label": "Birth Weight (in grams)",
               "type": "obs",
               "required": false,
-              "id": "birthWeight",
               "questionOptions": {
-                "rendering": "number",
-                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "max": 15000,
-								"min": 0,
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5916"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "AMPATH",
-                    "value": "6433"
-                  },
-                  {
-                    "relationship": "BROADER-THAN",
-                    "type": "LOINC",
-                    "value": "8339-4"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5916"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH-Malawi",
-                    "value": "5916"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED-CT",
-                    "value": "364589006"
-                  }
-                ],
-                "answers": []
+                "rendering": "text",
+                "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
               },
-              "validators": []
-            },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+                  "message": "Weight should be a numeric value"
+                }
+              ],
+              "id": "birthWeight"
+              },
             {
               "label": "ARV prophylaxis started",
               "type": "obs",

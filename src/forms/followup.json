@@ -2583,57 +2583,19 @@
 					"questions": [
 						{
 							"label": "Weight (in kg) *",
-							"required": false,
 							"type": "obs",
+							"required": false,
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": 999,
-								"min": 0,
-								"showDate": "",
-								"conceptMappings": [
-									{
-										"type": "PIH-Malawi",
-										"value": "5089"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5089"
-									},
-									{
-										"type": "CIEL",
-										"value": "5089"
-									},
-									{
-										"type": "PIH",
-										"value": "5089"
-									},
-									{
-										"type": "AMPATH",
-										"value": "5089"
-									},
-									{
-										"type": "LOINC",
-										"value": "3141-9"
-									},
-									{
-										"type": "PIH",
-										"value": "5089"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "27113001"
-									},
-									{
-										"type": "CIEL",
-										"value": "5089"
-									},
-									{
-										"type": "org.openmrs.module.mdrtb",
-										"value": "WEIGHT"
-									}
-								]
+							  "rendering": "text",
+							  "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
 							},
+							"validators": [
+							  {
+								"type": "js_expression",
+								"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+								"message": "Weight should be a numeric value"
+							  }
+							],
 							"id": "weight"
 						},
 						{
@@ -2659,15 +2621,19 @@
 							"type": "obs",
 							"readonly": "true",
 							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "CustomBMICalc('height','weight')"
-								},
-								"rendering": "number",
-								"concept": "1cc8fe7f-fb70-49d8-9065-73654d852187",
-								"max": 999999,
-								"min": 0,
-								"showDate": ""
+							  "rendering": "text",
+							  "concept": "e3c2efba-3ec9-4029-9bd9-716948995433",
+							  "calculate": {
+								"calculateExpression": "CustomBMICalc('height','weight')"
+							}
 							},
+							"validators": [
+							  {
+								"type": "js_expression",
+								"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+								"message": "BMI should be a numeric value"
+							  }
+							],
 							"hide": {
 								"hideWhenExpression": "age <= 17"
 							},
