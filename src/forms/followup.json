@@ -6134,7 +6134,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"validators": [
 								{
@@ -6155,7 +6155,7 @@
 							"required": false,
 							"id": "tbTreatmentStatus",
 			  "hide": {
-								"hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 							  "rendering": "select",
@@ -6366,6 +6366,9 @@
 										]
 									}
 								]
+							},
+							"hide": {
+								"hideWhenExpression": "activeTB !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && tbTreatmentStarted !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "eligibleForTPT"
 						},
