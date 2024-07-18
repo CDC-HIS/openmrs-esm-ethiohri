@@ -43,7 +43,6 @@ import {
   isSupplementaryFoodVisible,
   isTreatmentVisible,
   loadFollowupStatus,
-  hideRestartStatus,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -104,8 +103,6 @@ export function startupApp() {
     isSupplementaryFoodVisible
   );
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
-  registerExpressionHelper("hideRestartStatus", hideRestartStatus);
-
   // registerControl({
   //   name: "eth-date",
   //   load: () => import("./components/controls/date/ethiohri-date.component"),
