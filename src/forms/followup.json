@@ -8838,7 +8838,7 @@
 					  {
 					  "label": "Viral load status",
 					  "type": "obs",
-					  "required": false,
+					  "required": true,
 					  "id": "viralLoadStatus",
 					  "questionOptions": {
 						"rendering": "radio",
