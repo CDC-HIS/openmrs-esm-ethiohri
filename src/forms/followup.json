@@ -11858,9 +11858,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "referralOrLinkageStatus"
 						},
 						{
@@ -11876,9 +11873,6 @@
 										"value": "161561"
 									}
 								]
-							},
-							"hide": {
-								"hideWhenExpression": "referralOrLinkageStatus !== '164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"validators": [
 								{
@@ -12002,9 +11996,6 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viaScreeningResult !== '7bc7c4f3-a636-478d-8a3f-65116093e37a' && viaScreeningResult !== 'be297cab-5ae6-4e7c-8657-b82730b7b8f1' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && cytologyResult !== '912a5c48-8b07-4fd7-b2c3-ccb94fde7c68'"
-							},
 							"id": "reasonForReferral"
 						},
 						{
@@ -12045,9 +12036,6 @@
 								"rendering": "date",
 								"concept": "88571a39-5caf-4260-b8d6-d0e28ca37410"
 							},
-							"hide": {
-								"hideWhenExpression": "!includes('feedback','1502AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
-							},
 							"validators": [
 								{
                                     "type": "date",
@@ -12063,9 +12051,6 @@
 								"rendering": "date",
 								"concept": "080e8ad4-809e-4d51-a2a9-6eaac774ad38",
 								"weeksList": ""
-							},
-							"hide": {
-								"hideWhenExpression": "!includes('feedback','3192af69-db4b-4031-9add-5871883980cc')"
 							},
 							"validators": [
 								{
