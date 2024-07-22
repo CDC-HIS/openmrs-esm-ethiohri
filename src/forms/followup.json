@@ -333,7 +333,7 @@
 							"id": "followupStatus",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "loadFollowupStatus(patient)"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 							  "rendering": "select",
 							  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
