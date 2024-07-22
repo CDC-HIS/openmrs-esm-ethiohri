@@ -5129,9 +5129,6 @@
 									{
 										"concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Vasectomy/tubal legation",
-										"hide": {
-											"hideWhenExpression": "patient.gender === 'female'"
-										},
 										"conceptMappings": [
 											{
 												"type": "IMO-ProcedureIT",
