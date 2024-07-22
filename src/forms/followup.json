@@ -9918,7 +9918,6 @@
 							"label": "DSD category",
 							"type": "obs",
 							"required": true,
-							"unspecified": true,
 							"questionOptions": {
 								"calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2'))?.valueCodeableConcept?.coding[0]?.code"
@@ -10036,6 +10035,10 @@
 												"value": "74964007"
 											}
 										]
+									},
+									{
+										"concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "None"
 									}
 								]
 							},
