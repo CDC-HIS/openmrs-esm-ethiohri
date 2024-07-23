@@ -59,6 +59,7 @@ import ActiveMedications from "./views/medications/active-medications.component"
 import VitalsSummary from "./views/vitals/vitals-summary.component";
 import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
 import ChildHealth from "./views/pmtct/child/hei.component";
+import { PatientList } from "./components/patient-lists/patient-list.component";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -223,3 +224,8 @@ export const indexCaseTestingChart = getSyncLifecycle(
   IndexCaseTesting,
   options
 );
+
+export const patientList = getSyncLifecycle(PatientList, {
+  featureName: "home",
+  moduleName,
+});

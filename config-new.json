@@ -46,7 +46,7 @@
     "extensionSlots": {
       "homepage-widgets-slot": {
         "remove": ["home-appointments", "active-visits-widget"],
-        "add": ["ohri-patient-list"]
+        "add": ["eth-patient-list"]
       }
     }
   },

@@ -148,6 +148,11 @@
       "name": "post-exposure-chart-ext",
       "slot": "post-exposure-slot",
       "component": "pepChart"
+    },
+    {
+      "name": "eth-patient-list",
+      "slot": "eth-home-dashboard-slot",
+      "component": "patientList"
     }
   ]
 }
