@@ -289,7 +289,13 @@
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"validators": []
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "/^(\\d{4}|\\d{5}|\\d{6}|\\d{7}|\\d{8}|\\d{9})$/.test(myValue)",
+								  "message": "Months on ART should not be more than three digits long"
+								}
+							]
 						}
 					]
 				}
