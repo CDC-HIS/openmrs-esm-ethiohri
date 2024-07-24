@@ -3904,9 +3904,8 @@
 					  "conceptMappings": []
 					},
 					{
-					  "concept": "7e4d2281-c8f7-4090-bc29-4ff2313946cc",
-					  "label": "Other reason for eligibility specify",
-					  "conceptMappings": []
+						"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Other reason for eligibility"
 					}
 				  ]
 				},
@@ -3931,7 +3930,7 @@
 					}
 				  ],
 				"hide": {
-				  "hideWhenExpression": "whyEligibleForART !== '7e4d2281-c8f7-4090-bc29-4ff2313946cc'"
+				  "hideWhenExpression": "whyEligibleForART !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"id": "otherReasonWhyEligible"
 			  }
