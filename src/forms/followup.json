@@ -3819,7 +3819,7 @@
 									},
 									{
 										"concept": "6022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Delayed",
+										"label": "Delay",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -3845,7 +3845,7 @@
 									},
 									{
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Regular",
+										"label": "Regression",
 										"conceptMappings": [
 											{
 												"type": "AMPATH",
@@ -5321,7 +5321,7 @@
 							]
 						  },
 						  "hide": {
-							"hideWhenExpression": "patient.gender !== 'male' && pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							"hideWhenExpression": "patient.gender !== 'male' && pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.age <= 10"
 						  },
 						  "id": "familyPlanningMethods"
 						}
