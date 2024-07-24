@@ -7635,10 +7635,60 @@
 										"concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
 										"label": "Genital ulcer"
 									},
+
 									{
-										"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8",
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Other",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "6408"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "74964007"
+											}
+										]
 									}
 								]
 							},
@@ -7662,7 +7712,7 @@
 								}
 							  ],
 							"hide": {
-								"hideWhenExpression": "!includes('opportunisticIllnesses','20841482-587f-4b4c-9562-ce3f481dd5a8')"
+								"hideWhenExpression": "!includes('opportunisticIllnesses','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
 							"id": "otherOpportunisticIllness"
 						}
@@ -10237,14 +10287,9 @@
 								"concept": "2780c548-5118-4ae4-99da-c8557cb55f28",
 								"answers": [
 									{
-										"concept": "159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Dead",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159"
-											}
-										]
+										"conceptMappings": []
 									},
 									{
 										"concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
