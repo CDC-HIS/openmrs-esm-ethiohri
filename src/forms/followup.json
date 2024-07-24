@@ -7052,28 +7052,64 @@
 										"conceptMappings": []
 									},
 									{
-										"concept": "141830AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "119537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Dizzy, anxiety, nightmare, depression",
 										"conceptMappings": [
 											{
+												"type": "AMPATH",
+												"value": "207"
+											},
+											{
+												"type": "PIH",
+												"value": "207"
+											},
+											{
+												"type": "ICPC2",
+												"value": "P76"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "35489007"
+											},
+											{
 												"type": "IMO-ProblemIT",
-												"value": "42216"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "387603000"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "271789005"
+												"value": "41696"
 											},
 											{
 												"type": "ICD-10-WHO",
-												"value": "R42"
+												"value": "F32.9"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "35489007"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "F32.9"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "41696"
 											},
 											{
 												"type": "CIEL",
-												"value": "141830"
+												"value": "119537"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6038"
+											},
+											{
+												"type": "PIH",
+												"value": "207"
+											},
+											{
+												"type": "AMPATH",
+												"value": "6038"
+											},
+											{
+												"type": "AMPATH",
+												"value": "207"
 											}
 										]
 									},
