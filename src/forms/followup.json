@@ -6507,7 +6507,7 @@
 							"id": "TBProphylaxisType"
 						},
 						{
-							"label": "TPT follow up (6H)",
+							"label": "TPT follow up",
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
