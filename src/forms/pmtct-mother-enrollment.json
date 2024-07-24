@@ -31,14 +31,14 @@
                     "label": "New from ANC"
                   },
                   {
-                    "concept": "164835AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "New from L&D"
-                  },
+										"concept": "d1e97037-c599-47c3-93cb-c256b9c27fbc",
+										"label": "New from L&D",
+										"conceptMappings": []
+									},
                   {
                     "concept": "541f72cb-b3e1-43ad-9086-24d32467dfa5",
                     "label": "New from PNC"
                   }
-                  
                 ]
               }
             },
