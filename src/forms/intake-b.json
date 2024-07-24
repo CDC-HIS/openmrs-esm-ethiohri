@@ -2176,9 +2176,13 @@
 					  "conceptMappings": []
 					},
 					{
-					  "concept": "d25d832e-e3b6-4696-8dfe-0317a733d841",
-					  "label": "Nausea and/or Vomiting",
-					  "conceptMappings": []
+						"concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Nausea",
+						"conceptMappings": []
+					},
+					{
+						"concept": "122983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Vomiting"
 					},
 					{
 					  "concept": "2423abaf-6cd5-4409-8b39-2d90ca584fba",
