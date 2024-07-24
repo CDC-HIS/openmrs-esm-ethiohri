@@ -458,9 +458,10 @@
                     "label": "Abdominal pain"
                   },
                   {
-                    "concept": "512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Skin Rash"
-                  },
+										"concept": "110149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Rash",
+										"conceptMappings": []
+									},
                   {
                     "concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Nausea"
