@@ -2564,7 +2564,7 @@
 								},
 								{
 								  "concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
-								  "label": "Pregnancy & Family Information"
+								  "label": "Pregnancy and Family Planning"
 								},
 								{
 								  "concept": "246831e5-65e8-411f-aac9-57adcc4fb12c",
@@ -2580,7 +2580,7 @@
 								},
 								{
 								  "concept": "98ed68a9-9596-45dc-8015-2289a969c6fe",
-								  "label": "Cotrimoxazole Preventive Therapy"
+								  "label": "CPT and FPT"
 								},
 								{
 								  "concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
@@ -4301,7 +4301,7 @@
 			]
 		},
 		{
-			"label": "Pregnancy And Family Planning",
+			"label": "Pregnancy and Family Planning",
 			"behaviours": [
 				{
 					"intent": "*",
@@ -4312,7 +4312,7 @@
 			],
 			"sections": [
 				{
-					"label": "Pregnancy And Family Planning",
+					"label": "Pregnancy and Family Planning",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -7179,7 +7179,7 @@
 			]
 		},
 		{
-			"label": "OI And Pain Management",
+			"label": "OI and Pain Management",
 			"behaviours": [
 				{
 					"intent": "*",
@@ -9202,7 +9202,7 @@
 			]
 		},
 		{
-			"label": "Cotrimoxazole Preventive Therapy",
+			"label": "CPT and FPT",
 			"behaviours": [
 				{
 					"intent": "*",
@@ -9213,7 +9213,7 @@
 			],
 			"sections": [
 				{
-					"label": "Cotrimoxazole Preventive Therapy",
+					"label": "CPT and FPT",
 					"isExpanded": "true",
 					"questions": [
 						{
