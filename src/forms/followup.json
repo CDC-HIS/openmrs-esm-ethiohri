@@ -2471,7 +2471,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && arvAdherence !== '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "reasonForPoorARVAdherence"
 						},
