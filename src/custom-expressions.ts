@@ -214,7 +214,7 @@ export function CalcNutritionalScreening(
       } else if (resultBMI >= 25 && resultBMI <= 29.99) {
         nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       } else if (resultBMI >= 30) {
-        nutritionalScreening = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
       } else {
         return null;
       }
