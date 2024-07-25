@@ -146,6 +146,7 @@ export function CalcBMI(height: number, weight: number) {
 }
 
 export function CalcAdultNutritionalStatus(
+  patient,
   height: number,
   weight: number,
   muac: number
@@ -153,37 +154,42 @@ export function CalcAdultNutritionalStatus(
   let nutritionalStatus: string;
   let resultBMI = CalcBMI(height, weight);
 
-  if (muac) {
-    if (muac > 23) {
-      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (muac >= 19 && muac <= 23) {
-      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (muac < 19) {
-      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      return null;
+  if (patient.age >= 5) {
+    if (muac) {
+      if (muac > 23) {
+        nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (muac >= 19 && muac <= 23) {
+        nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (muac < 19) {
+        nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else {
+        return null;
+      }
+    } else if (resultBMI) {
+      if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+        nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI >= 17 && resultBMI <= 18.49) {
+        nutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI >= 16 && resultBMI <= 16.99) {
+        nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI < 16) {
+        nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+        nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI >= 30) {
+        nutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else {
+        return null;
+      }
     }
-  } else if (resultBMI) {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
-      nutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
-      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI < 16) {
-      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-      nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 30) {
-      nutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      return null;
-    }
+  } else {
+    return null;
   }
   return nutritionalStatus;
 }
 
 export function CalcNutritionalScreening(
+  patient,
   height: number,
   weight: number,
   muac: number
@@ -191,26 +197,30 @@ export function CalcNutritionalScreening(
   let resultBMI = CalcBMI(height, weight);
   let nutritionalScreening: string;
 
-  if (muac) {
-    if (muac > 23) {
-      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (muac <= 23) {
-      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      return null;
+  if (patient.age >= 5) {
+    if (muac) {
+      if (muac > 23) {
+        nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (muac <= 23) {
+        nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else {
+        return null;
+      }
+    } else if (resultBMI) {
+      if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+        nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI <= 18.49) {
+        nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+        nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else if (resultBMI >= 30) {
+        nutritionalScreening = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+      } else {
+        return null;
+      }
     }
-  } else if (resultBMI) {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI <= 18.49) {
-      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 30) {
-      nutritionalScreening = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      return null;
-    }
+  } else {
+    return null;
   }
   return nutritionalScreening;
 }
