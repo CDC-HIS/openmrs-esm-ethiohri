@@ -2777,36 +2777,36 @@
 								"concept": "eeeaf256-e133-42fa-b167-dbf9edf33e77",
 								"answers": [
 									{
-										"concept": "9324e838-c96d-4312-91b0-deae5cc0334c",
-										"label": "Z score: Greater than 3 sd",
-										"conceptMappings": []
-									},
+														  "concept": "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f",
+														  "label": "Z score: -1sd-(+2) sd",
+														  "conceptMappings": []
+													  },
 									{
-										"concept": "9a41b3bb-7c37-40f2-9022-d0f672e171cc",
-										"label": "Z score: +2sd-(+3) sd",
-										"conceptMappings": []
-									},
+														  "concept": "6f384ab3-5587-478e-a685-0b43c0f64163",
+														  "label": "Z score: -1sd-(-2) sd",
+														  "conceptMappings": []
+													  },
 									{
-										"concept": "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f",
-										"label": "Z score: -1sd-(+2) sd",
-										"conceptMappings": []
-									},
+														  "concept": "b782c7a5-639e-4f7e-9eee-608a62439885",
+														  "label": "Z score: -2sd-(-3) sd",
+														  "conceptMappings": []
+													  },
 									{
-										"concept": "6f384ab3-5587-478e-a685-0b43c0f64163",
-										"label": "Z score: -1sd-(-2) sd",
-										"conceptMappings": []
-									},
+														  "concept": "c3354c3c-b708-4821-94ee-cebc9eadf1e3",
+														  "label": "Z score: less than -3 sd",
+														  "conceptMappings": []
+													  },
 									{
-										"concept": "b782c7a5-639e-4f7e-9eee-608a62439885",
-										"label": "Z score: -2sd-(-3) sd",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c3354c3c-b708-4821-94ee-cebc9eadf1e3",
-										"label": "Z score: less than -3 sd",
-										"conceptMappings": []
-									}
-								]
+														  "concept": "9a41b3bb-7c37-40f2-9022-d0f672e171cc",
+														  "label": "Z score: +2sd-(+3) sd",
+														  "conceptMappings": []
+													  },
+													  {
+														  "concept": "9324e838-c96d-4312-91b0-deae5cc0334c",
+														  "label": "Z score: Greater than 3 sd",
+														  "conceptMappings": []
+													  }
+												  ]
 							},
 							"hide": {
 								"hideWhenExpression": "age <= 4 || age >= 18"
@@ -3004,68 +3004,6 @@
 								},
 								"answers": [
 									{
-										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Overweight",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "PIH",
-												"value": "3230"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "238131007"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											},
-											{
-												"type": "IMO-ProblemIT",
-												"value": "50813"
-											},
-											{
-												"type": "ICPC2",
-												"value": "T83"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "301336003"
-											},
-											{
-												"type": "3BT",
-												"value": "10077209"
-											},
-											{
-												"type": "CIEL",
-												"value": "114413"
-											},
-											{
-												"type": "ICD-10-WHO",
-												"value": "E66.9"
-											}
-										]
-									},
-									{
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Normal",
 										"conceptMappings": [
@@ -3158,6 +3096,68 @@
 											{
 												"type": "ICD-10-WHO",
 												"value": "E43"
+											}
+										]
+									},
+									{
+										"concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Overweight",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "PIH",
+												"value": "3230"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "238131007"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											},
+											{
+												"type": "IMO-ProblemIT",
+												"value": "50813"
+											},
+											{
+												"type": "ICPC2",
+												"value": "T83"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "301336003"
+											},
+											{
+												"type": "3BT",
+												"value": "10077209"
+											},
+											{
+												"type": "CIEL",
+												"value": "114413"
+											},
+											{
+												"type": "ICD-10-WHO",
+												"value": "E66.9"
 											}
 										]
 									}
@@ -3361,7 +3361,7 @@
 								"rendering": "radio",
 								"concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
 								"calculate": {
-									"calculateExpression": "CustomNutritionalScreeningCalc('height','weight', 'muac')"
+									"calculateExpression": "CustomNutritionalScreeningCalc(patient, 'height','weight', 'muac', 'bmiForAge')"
 								},
 								"answers": [
 									{

@@ -145,59 +145,70 @@ export function CalcBMI(height: number, weight: number) {
   return height && weight ? resultBMI : null;
 }
 
-export function CalcAdultNutritionalStatus(
-  patient,
-  height: number,
-  weight: number,
-  muac: number
-) {
+export function CalcAdultNutritionalStatus(height, weight, muac) {
   let nutritionalStatus: string;
   let resultBMI = CalcBMI(height, weight);
 
-  if (patient.age >= 5) {
-    if (muac) {
-      if (muac > 23) {
-        nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (muac >= 19 && muac <= 23) {
-        nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (muac < 19) {
-        nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else {
-        return null;
-      }
-    } else if (resultBMI) {
-      if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-        nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI >= 17 && resultBMI <= 18.49) {
-        nutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI >= 16 && resultBMI <= 16.99) {
-        nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI < 16) {
-        nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-        nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI >= 30) {
-        nutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else {
-        return null;
-      }
+  if (muac) {
+    if (muac > 23) {
+      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (muac >= 19 && muac <= 23) {
+      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (muac < 19) {
+      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else {
+      return null;
     }
-  } else {
-    return null;
+  } else if (resultBMI) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
+      nutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
+      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI < 16) {
+      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+      nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (resultBMI >= 30) {
+      nutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else {
+      return null;
+    }
   }
   return nutritionalStatus;
 }
 
+export function CalcOlderChildNutritionalStatus(bmiForAge) {
+  switch (bmiForAge) {
+    case "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f":
+      return "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "6f384ab3-5587-478e-a685-0b43c0f64163":
+      return "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "b782c7a5-639e-4f7e-9eee-608a62439885":
+      return "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "c3354c3c-b708-4821-94ee-cebc9eadf1e3":
+      return "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "9324e838-c96d-4312-91b0-deae5cc0334c":
+      return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    case "9a41b3bb-7c37-40f2-9022-d0f672e171cc":
+      return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    default:
+      return 0;
+  }
+}
+
 export function CalcNutritionalScreening(
   patient,
-  height: number,
-  weight: number,
-  muac: number
+  height,
+  weight,
+  muac,
+  bmiForAge
 ) {
   let resultBMI = CalcBMI(height, weight);
   let nutritionalScreening: string;
 
-  if (patient.age >= 5) {
+  if (patient.age >= 18) {
     if (muac) {
       if (muac > 23) {
         nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -218,28 +229,29 @@ export function CalcNutritionalScreening(
       } else {
         return null;
       }
+    } else {
+      return null;
+    }
+  } else if (patient.age >= 5 && patient.age < 18) {
+    if (bmiForAge == "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f") {
+      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge == "6f384ab3-5587-478e-a685-0b43c0f64163") {
+      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge == "b782c7a5-639e-4f7e-9eee-608a62439885") {
+      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge == "c3354c3c-b708-4821-94ee-cebc9eadf1e3") {
+      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge == "9324e838-c96d-4312-91b0-deae5cc0334c") {
+      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge == "9a41b3bb-7c37-40f2-9022-d0f672e171cc") {
+      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else {
+      return null;
     }
   } else {
     return null;
   }
   return nutritionalScreening;
-}
-
-export function CalcOlderChildNutritionalStatus(bmiForAge: string) {
-  switch (bmiForAge) {
-    case "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f":
-      return "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    case "6f384ab3-5587-478e-a685-0b43c0f64163":
-      return "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    case "b782c7a5-639e-4f7e-9eee-608a62439885":
-      return "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    case "c3354c3c-b708-4821-94ee-cebc9eadf1e3":
-      return "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    case "9a41b3bb-7c37-40f2-9022-d0f672e171cc":
-      return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    default:
-      return 0;
-  }
 }
 
 export function CalcNextFollowupDateForCxCa(
