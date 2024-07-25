@@ -289,7 +289,13 @@
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
-							"validators": []
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "/^(\\d{4}|\\d{5}|\\d{6}|\\d{7}|\\d{8}|\\d{9})$/.test(myValue)",
+								  "message": "Months on ART should not be more than three digits long"
+								}
+							]
 						}
 					]
 				}
@@ -2564,7 +2570,7 @@
 								},
 								{
 								  "concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
-								  "label": "Pregnancy & Family Information"
+								  "label": "Pregnancy and Family Planning"
 								},
 								{
 								  "concept": "246831e5-65e8-411f-aac9-57adcc4fb12c",
@@ -2580,7 +2586,7 @@
 								},
 								{
 								  "concept": "98ed68a9-9596-45dc-8015-2289a969c6fe",
-								  "label": "Cotrimoxazole Preventive Therapy"
+								  "label": "CPT and FPT"
 								},
 								{
 								  "concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
@@ -2641,13 +2647,8 @@
 								"hideWhenExpression": "age <= 4"
 							},
 							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f980e9d2-e85c-483e-ae93-980623114e6f'))?.valueQuantity?.value"
-								},
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
-								"max": 999,
-								"min": 0,
 								"showDate": ""
 							},
 							"id": "height"
@@ -4301,7 +4302,7 @@
 			]
 		},
 		{
-			"label": "Pregnancy And Family Planning",
+			"label": "Pregnancy and Family Planning",
 			"behaviours": [
 				{
 					"intent": "*",
@@ -4312,7 +4313,7 @@
 			],
 			"sections": [
 				{
-					"label": "Pregnancy And Family Planning",
+					"label": "Pregnancy and Family Planning",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -6507,7 +6508,7 @@
 							"id": "TBProphylaxisType"
 						},
 						{
-							"label": "TPT follow up (6H)",
+							"label": "TPT follow up",
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
@@ -7179,7 +7180,7 @@
 			]
 		},
 		{
-			"label": "OI And Pain Management",
+			"label": "OI and Pain Management",
 			"behaviours": [
 				{
 					"intent": "*",
@@ -7635,10 +7636,60 @@
 										"concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
 										"label": "Genital ulcer"
 									},
+
 									{
-										"concept": "20841482-587f-4b4c-9562-ce3f481dd5a8",
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Other",
-										"conceptMappings": []
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "6408"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "74964007"
+											}
+										]
 									}
 								]
 							},
@@ -7662,7 +7713,7 @@
 								}
 							  ],
 							"hide": {
-								"hideWhenExpression": "!includes('opportunisticIllnesses','20841482-587f-4b4c-9562-ce3f481dd5a8')"
+								"hideWhenExpression": "!includes('opportunisticIllnesses','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
 							"id": "otherOpportunisticIllness"
 						}
@@ -9152,7 +9203,7 @@
 			]
 		},
 		{
-			"label": "Cotrimoxazole Preventive Therapy",
+			"label": "CPT and FPT",
 			"behaviours": [
 				{
 					"intent": "*",
@@ -9163,7 +9214,7 @@
 			],
 			"sections": [
 				{
-					"label": "Cotrimoxazole Preventive Therapy",
+					"label": "CPT and FPT",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -10237,14 +10288,9 @@
 								"concept": "2780c548-5118-4ae4-99da-c8557cb55f28",
 								"answers": [
 									{
-										"concept": "159AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Dead",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "159"
-											}
-										]
+										"conceptMappings": []
 									},
 									{
 										"concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
@@ -10716,7 +10762,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
-								"concept": "8b57d62c-c9a3-454a-b1af-929ca69603ce",
+								"concept": "510f2a47-3761-4903-b7eb-8ea389cecfe9",
 								"weeksList": ""
 							},
 							"hide": {
