@@ -3754,7 +3754,7 @@
 								"showDate": ""
 							},
 							"hide": {
-								"hideWhenExpression": "age > 5"
+								"hideWhenExpression": "age >= 5"
 							},
 							"id": "childHeight"
 						},
