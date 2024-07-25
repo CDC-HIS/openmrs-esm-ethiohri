@@ -116,7 +116,7 @@
 							"type": "obs",
 							"questionOptions": {
 							  "calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '9ed5856a-a20a-44d2-bc8e-2acaa68cf11b'))?.valueCodeableConcept?.coding?"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '9ed5856a-a20a-44d2-bc8e-2acaa68cf11b', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding?"
 								},
 								"rendering": "checkbox",
 								"concept": "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b",
@@ -140,7 +140,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -170,7 +170,7 @@
 							"type": "obs",
 							"questionOptions": {
 							  							  "calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b'))?.valueCodeableConcept?.coding?"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding?"
 								},
 								"rendering": "select",
 								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
@@ -226,7 +226,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "radio",
 								"concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -256,7 +256,7 @@
 							},
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ae329187-6232-4142-aa91-22c85bc8e5b5'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ae329187-6232-4142-aa91-22c85bc8e5b5', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "ae329187-6232-4142-aa91-22c85bc8e5b5"
@@ -322,7 +322,7 @@
 							"questionOptions": {
 								"isTransient": true,
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "fixed",
 								"concept": ""
@@ -339,7 +339,7 @@
 							"id": "followupStatus",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 							  "rendering": "select",
 							  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
@@ -762,7 +762,7 @@
 							"id": "dispenseCode",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '6d7d0327-e1f8-4246-bfe5-be1e82d94b14'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '6d7d0327-e1f8-4246-bfe5-be1e82d94b14', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 							  "rendering": "select",
 							  "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
@@ -4326,7 +4326,7 @@
 						  "type": "obs",
 						  "questionOptions": {
 							"calculate": {
-							  "calculateExpression": "resolve(api.getLatestObs(patient.id, '5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+							  "calculateExpression": "resolve(api.getLatestObs(patient.id, '5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 							},
 							"rendering": "radio",
 							"concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -4609,7 +4609,7 @@
 						  "type": "obs",
 						  "questionOptions": {
 							"calculate": {
-							  "calculateExpression": "resolve(api.getLatestObs(patient.id, '5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+							  "calculateExpression": "resolve(api.getLatestObs(patient.id, '5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 							},
 							"rendering": "radio",
 							"concept": "5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -4948,7 +4948,7 @@
 						  "id": "dateOfPMTCTReferral",
 						  "questionOptions": {
 							"calculate": {
-							  "calculateExpression": "resolve(api.getLatestObs(patient.id, '161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+							  "calculateExpression": "resolve(api.getLatestObs(patient.id, '161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 							},
 							"rendering": "date",
 							"concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -5924,7 +5924,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6093,7 +6093,7 @@
 							"required": true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6216,7 +6216,7 @@
 							"required": true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'd4a98e9e-26b0-429b-82cb-e6a2197eeb05'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'd4a98e9e-26b0-429b-82cb-e6a2197eeb05', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "d4a98e9e-26b0-429b-82cb-e6a2197eeb05",
@@ -6244,7 +6244,7 @@
 							"required": true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '93c114b1-ddcb-41eb-bca5-0c08a2a8c349'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '93c114b1-ddcb-41eb-bca5-0c08a2a8c349', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "93c114b1-ddcb-41eb-bca5-0c08a2a8c349",
@@ -6381,7 +6381,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '4fedb725-fe8e-4a66-b8b2-a605239efa17'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '4fedb725-fe8e-4a66-b8b2-a605239efa17', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "radio",
 								"concept": "4fedb725-fe8e-4a66-b8b2-a605239efa17",
@@ -6452,7 +6452,7 @@
 							"required":true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6485,7 +6485,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '54084c9e-bc87-4d95-89fc-eb9a2cffb592'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '54084c9e-bc87-4d95-89fc-eb9a2cffb592', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "radio",
 								"concept": "54084c9e-bc87-4d95-89fc-eb9a2cffb592",
@@ -6517,7 +6517,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0166677a-5a8e-45fa-b3f6-3c5aa9f13d00'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0166677a-5a8e-45fa-b3f6-3c5aa9f13d00', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "select",
 								"concept": "0166677a-5a8e-45fa-b3f6-3c5aa9f13d00",
@@ -6626,7 +6626,7 @@
 							"required": true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"rendering": "date",
 								"concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6655,7 +6655,7 @@
 							"questionOptions": {
 								"rendering": "date",
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								},
 								"concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"weeksList": ""
@@ -6732,7 +6732,7 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '23d97715-589c-4dcf-bb86-70e26bba2269'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '23d97715-589c-4dcf-bb86-70e26bba2269', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"concept": "23d97715-589c-4dcf-bb86-70e26bba2269",
 								"answers": [
@@ -9227,7 +9227,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160434AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '160434AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "radio",
 								"concept": "160434AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -9355,7 +9355,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								  },
 								"rendering": "date",
 								"concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -9391,7 +9391,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								  },
 								"rendering": "date",
 								"concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -9581,7 +9581,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'a1173486-b6c1-4d0a-886d-1126b6b558a1'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'a1173486-b6c1-4d0a-886d-1126b6b558a1', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "radio",
 								"concept": "a1173486-b6c1-4d0a-886d-1126b6b558a1",
@@ -9691,7 +9691,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5ac4300a-5e19-45c8-8692-31a57d6d5b8c'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '5ac4300a-5e19-45c8-8692-31a57d6d5b8c', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								  },
 								"rendering": "date",
 								"concept": "5ac4300a-5e19-45c8-8692-31a57d6d5b8c"
@@ -9755,7 +9755,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'c2d57bcb-02f2-457d-af05-8d759a1457a7'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'c2d57bcb-02f2-457d-af05-8d759a1457a7', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								  },
 								"rendering": "date",
 								"concept": "c2d57bcb-02f2-457d-af05-8d759a1457a7"
@@ -9963,7 +9963,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0fe4faee-0717-4dc0-be3d-1cd52923804a'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '0fe4faee-0717-4dc0-be3d-1cd52923804a', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								  },
 								"rendering": "date",
 								"concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
@@ -10005,7 +10005,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '78c8abfb-1989-444a-8750-947227f4bde8'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '78c8abfb-1989-444a-8750-947227f4bde8', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								  },
 								"rendering": "date",
 								"concept": "78c8abfb-1989-444a-8750-947227f4bde8",
@@ -10025,7 +10025,7 @@
 							"required": true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'e6e24c87-d3a0-4a38-bd04-560b13f92298'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'e6e24c87-d3a0-4a38-bd04-560b13f92298', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "radio",
 								"concept": "e6e24c87-d3a0-4a38-bd04-560b13f92298",
@@ -10048,7 +10048,7 @@
 							"required": true,
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "select",
 								"concept": "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2",
@@ -10177,7 +10177,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'eae5830f-ac48-48f0-bebd-35c500de8ff9'))?.valueDateTime"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'eae5830f-ac48-48f0-bebd-35c500de8ff9', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 								  },
 								"rendering": "radio",
 								"concept": "eae5830f-ac48-48f0-bebd-35c500de8ff9",
@@ -10287,7 +10287,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '2780c548-5118-4ae4-99da-c8557cb55f28'))?.valueCodeableConcept?.coding[0]?.code"
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, '2780c548-5118-4ae4-99da-c8557cb55f28', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
 								"rendering": "select",
 								"concept": "2780c548-5118-4ae4-99da-c8557cb55f28",
