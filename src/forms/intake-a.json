@@ -399,7 +399,7 @@
 							"required": false,
 							"id": "regular_followup",
 							"hide": {
-								"hideWhenExpression": "catchment_area != '160636AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "catchment_area != '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 							  "rendering": "radio",
@@ -417,7 +417,7 @@
 							  ]
 							},
 							"validators": []
-						  }
+                        }
 					]
 				},
 				{
