@@ -6920,7 +6920,7 @@
 							},
 							"id": "anySideEffectsForTPT",
 							"hide": {
-								"hideWhenExpression": "screeningResult !== '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
+								"hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							}
 						},
 						{
