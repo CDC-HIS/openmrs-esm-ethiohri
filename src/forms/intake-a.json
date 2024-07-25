@@ -1240,6 +1240,328 @@
 					]
 				},
 				{
+					"label": "CARE GIVER/EMERGENCY CONTACT INFORMATION",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "First Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "2725"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "408677003"
+									},
+									{
+										"type": "PIH",
+										"value": "2725"
+									},
+									{
+										"type": "CIEL",
+										"value": "166102"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "408677003"
+									}
+								]
+							},
+							"id": "care_giver_first_name"
+						},
+						{
+							"label": "Father's Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-CT",
+										"value": "716057004"
+									},
+									{
+										"type": "CIEL",
+										"value": "166574"
+									}
+								]
+							},
+							"id": "care_giver_fathers_name"
+						},
+						{
+							"label": "Grand Father's Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "PIH",
+										"value": "2724"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "397678008"
+									},
+									{
+										"type": "CIEL",
+										"value": "166103"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "397678008"
+									},
+									{
+										"type": "PIH",
+										"value": "2724"
+									}
+								]
+							},
+							"id": "care_giver_grandfathers_name"
+						},
+						{
+							"label": "Age",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": 200,
+								"min": 0,
+								"showDate": "false",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "1532"
+									}
+								]
+							},
+							"id": "careGiverAge"
+						},
+						{
+							"label": "Sex",
+							"type": "obs",
+							"required": false,
+							"id": "careGiverGender",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"relationship": "SAME-AS",
+										"type": "LOINC",
+										"value": "72143-4"
+									},
+									{
+										"relationship": "SAME-AS",
+										"type": "CIEL",
+										"value": "1533"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Male"
+									},
+									{
+										"concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Female"
+									}
+								]
+							}
+						},
+						{
+							"label": "Address",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "1eb080aa-7921-425e-801f-b53f4ca93a7d"
+							},
+							"id": "addressRegion"
+						},
+                        {
+							"label": "Phone Number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "d266ec50-0ba1-442a-8f2c-7895eaad84ab"
+							},
+							"id": "telephoneMobile"
+						},
+                        {
+							"label": "Relationship",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"answers": [
+									{
+										"concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Spouse",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5617"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5617"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "127848009"
+											},
+											{
+												"type": "CIEL",
+												"value": "5617"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "127848009"
+											},
+											{
+												"type": "CIEL",
+												"value": "5617"
+											}
+										]
+									},
+									{
+										"concept": "971AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Father",
+										"conceptMappings": []
+									},
+									{
+										"concept": "970AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Mother",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Child",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "1565"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "410601007"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1671"
+											},
+											{
+												"type": "PIH",
+												"value": "6396"
+											},
+											{
+												"type": "CIEL",
+												"value": "1528"
+											}
+										]
+									},
+									{
+										"concept": "160729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Brother",
+										"conceptMappings": []
+									},
+									{
+										"concept": "160730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Sister",
+										"conceptMappings": []
+									},
+									{
+										"concept": "974AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Extended family member",
+										"conceptMappings": []
+									},
+									{
+										"concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Friend/Colleague",
+										"conceptMappings": [
+											{
+												"type": "CIEL",
+												"value": "972"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "375005"
+											},
+											{
+												"type": "PIH",
+												"value": "2178"
+											},
+											{
+												"type": "CIEL",
+												"value": "972"
+											},
+											{
+												"type": "AMPATH",
+												"value": "972"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "375005"
+											},
+											{
+												"type": "AMPATH",
+												"value": "972"
+											},
+											{
+												"type": "PIH",
+												"value": "2178"
+											}
+										]
+									},
+									{
+										"concept": "5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other",
+										"conceptMappings": []
+									}
+								],
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "1560"
+									},
+									{
+										"type": "SNOMED-CT",
+										"value": "303071001"
+									},
+									{
+										"type": "PIH",
+										"value": "6441"
+									}
+								]
+							},
+							"id": "relationship"
+						},
+						{
+							"label": "Other type of relationship",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "164352AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"type": "SNOMED-CT",
+										"value": "302147001"
+									}
+								]
+							},
+							"hide": {
+								"hideWhenExpression": "relationship !== '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "otherRelationship"
+						}
+					]
+				},
+				{
 					"label": "DISCLOSURE AT ENROLLMENT",
 					"isExpanded": "true",
 					"questions": [
