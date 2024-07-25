@@ -2647,13 +2647,8 @@
 								"hideWhenExpression": "age <= 4"
 							},
 							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f980e9d2-e85c-483e-ae93-980623114e6f'))?.valueQuantity?.value"
-								},
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
-								"max": 999,
-								"min": 0,
 								"showDate": ""
 							},
 							"id": "height"
