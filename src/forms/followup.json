@@ -2477,7 +2477,7 @@
 								]
 							},
 							"hide": {
-								"hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && arvAdherence !== '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"id": "reasonForPoorARVAdherence"
 						},
@@ -2647,8 +2647,13 @@
 								"hideWhenExpression": "age <= 4"
 							},
 							"questionOptions": {
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'f980e9d2-e85c-483e-ae93-980623114e6f', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueQuantity?.value"
+								},
 								"rendering": "number",
 								"concept": "f980e9d2-e85c-483e-ae93-980623114e6f",
+								"max": 999,
+								"min": 0,
 								"showDate": ""
 							},
 							"id": "height"
