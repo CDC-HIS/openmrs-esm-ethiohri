@@ -2537,7 +2537,17 @@
 								],
 								"answers": []
 							},
-							"validators": []
+							"validators": [
+								{
+								  "type": "date",
+								  "allowFutureDates": "false"
+								},
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue < new Date(followupDate)",
+								  "message": "Transfer out date should not be earlier than Followup date"
+								}
+							  ]
 						}
 					]
 				}
