@@ -8740,36 +8740,36 @@
 					  "id": "targeted"
 					  },
 					  {
-					  "label": "Date VL Requested",
-					  "type": "obs",
-					  "required": true,
-					  "questionOptions": {
-						"rendering": "date",
-						"concept": "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"weeksList": "",
-						"conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "163281"
-						}
-						]
-					  },
-					  "validators": [
-						{
-						  "type": "date",
-						  "allowFutureDates": "false"
+						"label": "Date VL Requested",
+						"type": "obs",
+						"required": true,
+						"questionOptions": {
+						  "rendering": "date",
+						  "concept": "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						  "weeksList": "",
+						  "conceptMappings": [
+						  {
+							"type": "CIEL",
+							"value": "163281"
+						  }
+						  ]
 						},
-						{
-						  "type": "js_expression",
-						  "failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
-						  "message": "Date VL Requested should not be earlier than Viral Load Result Received date"
-						}
-					  ],
-					  "hide": {
-						"hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-					  },
-					  "id": "dateViralLoadRequested"
-					  },
+						"hide": {
+						  "hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						"id": "dateViralLoadRequested",
+						"validators": [
+							{
+							  "type": "date",
+							  "allowFutureDates": "false"
+							},
+							{
+							  "type": "js_expression",
+							  "failsWhenExpression": "myValue > new Date(dateViralLoadResultReceived)",
+							  "message": "VL requested date should not be later than VL result received date"
+							}
+						  ]
+						},
 					  {
 					  "label": "Viral load received?",
 					  "type": "obs",
@@ -8887,20 +8887,31 @@
 					  ],
 					  "id": "vlReceived"
 					},
-					  {
-					  "label": "Date result received",
-					  "type": "obs",
-					  "required": true,
-					  "questionOptions": {
-						"rendering": "date",
-						"concept": "beeede36-cae4-4f6e-b4b9-e39e37353a82",
-						"weeksList": ""
-					  },
-					  "hide": {
-						"hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-					  },
-					  "id": "dateViralLoadResultReceived"
-					  },
+					{
+						"label": "Date result received",
+						"type": "obs",
+						"required": true,
+						"questionOptions": {
+						  "rendering": "date",
+						  "concept": "beeede36-cae4-4f6e-b4b9-e39e37353a82",
+						  "weeksList": ""
+						},
+						"hide": {
+						  "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
+						"id": "dateViralLoadResultReceived",
+						"validators": [
+							{
+							  "type": "date",
+							  "allowFutureDates": "false"
+							},
+							{
+							  "type": "js_expression",
+							  "failsWhenExpression": "myValue < new Date(dateViralLoadRequested)",
+							  "message": "VL result received date should not be earlier than VL requested date"
+							}
+						  ]
+						},
 					  {
 					  "label": "Viral load count",
 					  "type": "obs",
