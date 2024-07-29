@@ -160,7 +160,7 @@
 					  "label": "Positive"
 					},
 					{
-					  "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
 					  "label": "Negative"
 					},
 					{
@@ -1714,11 +1714,11 @@
 				  "conceptMappings": [],
 				  "answers": [
 					{
-					  "concept": "161364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "concept": "97d14de6-89c4-49cb-9553-55de5cbc9b03",
 					  "label": " TDF/3TC"
 					},
 					{
-					  "concept": "84795AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "concept": "ff27e3c2-1453-4819-ba89-74bd70749848",
 					  "label": "TDF"
 					},
 					{
