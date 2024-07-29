@@ -4,9 +4,11 @@ import {
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
   POSITIVE_PATIENT_WARNING,
+  REACTIVE_EXPOSED_PERSON_WARNING,
   POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE,
   POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE,
   dateOfHIVConfirmation,
+  exposedPersonStatus,
   formWarning,
 } from "../../../constants";
 import { getData } from "../../encounterUtils";
@@ -94,6 +96,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasScreeningEncounter, setHasScreeningEncounter] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
+  const [isExposedPersonReactive, setIsExposedPersonReactive] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -122,6 +125,14 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
       );
       if (positiveConfirmationDate != null) setIsConfirmedPositive(true);
     })();
+    (async () => {
+      const exposedPerson = await getLatestObs(
+        patientUuid,
+        exposedPersonStatus,
+        POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE
+      );
+      if (exposedPerson == '1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') setIsExposedPersonReactive(true);
+    })();
   });
   return (
     <>
@@ -136,7 +147,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
           displayText: "Add",
           moduleName: moduleName,
           hideFormLauncher:
-            !hasMRN || !hasScreeningEncounter || isConfirmedPositive,
+            !hasMRN || !hasScreeningEncounter || isConfirmedPositive || isExposedPersonReactive,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
@@ -145,6 +156,9 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
       )}
       {isConfirmedPositive && (
         <p className={styles.patientName}>{POSITIVE_PATIENT_WARNING}</p>
+      )}
+      {isExposedPersonReactive && (
+        <p className={styles.patientName}>{REACTIVE_EXPOSED_PERSON_WARNING}</p>
       )}
     </>
   );
