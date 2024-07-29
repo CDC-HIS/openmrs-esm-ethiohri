@@ -1157,57 +1157,15 @@
 				"id": "doYouHaveHIVPositivePartner",
 				"questionOptions": {
 				  "rendering": "radio",
-				  "concept": "1436AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "1436"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-MVP",
-					  "value": "14361000105003"
-					},
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "AMPATH",
-					  "value": "2313"
-					},
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "278977008"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "PIH",
-					  "value": "3082"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-MVP",
-					  "value": "14361000105003"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "PIH",
-					  "value": "3082"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "1436"
-					}
-				  ],
+				  "concept": "f15222fd-c4dd-44e0-b7f4-407599596998",
 				  "answers": [
 					{
-					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
+						"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Yes"
 					},
 					{
-					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-					  "label": "No"
+						"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "No"
 					}
 				  ]
 				},
@@ -1245,7 +1203,7 @@
 				  ]
 				},
 				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"validators": []
 			  },
@@ -1254,7 +1212,7 @@
 				"type": "obs",
 				"required": false,
 				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"id": "isYourPartnerAdherentToARTMedications",
 				"questionOptions": {
@@ -1289,7 +1247,7 @@
 				  "answers": []
 				},
 				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"validators": []
 			  },
@@ -1298,7 +1256,7 @@
 				"type": "obs",
 				"required": false,
 				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"id": "lastViralLoadResultOfYourPartner",
 				"questionOptions": {
@@ -1488,7 +1446,7 @@
 			{
 				"intent": "*",
 				"hide": {
-					"hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || doYouHaveHIVPositivePartner === '5e4fc757-0b14-49ae-b3b7-419666f41e15' && selfIdentifyingSexWorker === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+					"hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || doYouHaveHIVPositivePartner === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && selfIdentifyingSexWorker === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				}
 			}
 		],
@@ -1688,7 +1646,7 @@
 					  "label": "Newly Started (started in the facility)"
 					},
 					{
-					  "concept": "166596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Transfer In (started in another facility)"
 					}
 				  ]
