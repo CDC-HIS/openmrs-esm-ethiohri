@@ -986,6 +986,9 @@
         {
           "label": "Adherence",
           "isExpanded": "true",
+          "hide": {
+            "hideWhenExpression": "finalTestResult == '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          },
           "questions": [
             {
               "label": "Followup Status",
