@@ -364,21 +364,45 @@
 			  {
 				"label": "ScCr",
 				"type": "obs",
-				"required": false,
-				"id": "creatinineLevel",
 				"questionOptions": {
-				  "rendering": "number",
-				  "concept": "164364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "164364"
-					}
-				  ]
+					"rendering": "text",
+					"concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0",
+					"conceptMappings": [
+						{
+							"type": "CIEL",
+							"value": "790"
+						},
+						{
+							"type": "SNOMED-CT",
+							"value": "113075003"
+						},
+						{
+							"type": "LOINC",
+							"value": "14682-9"
+						},
+						{
+							"type": "AMPATH",
+							"value": "790"
+						},
+						{
+							"type": "AMPATH",
+							"value": "790"
+						},
+						{
+							"type": "CIEL",
+							"value": "790"
+						}
+					]
 				},
-				"validators": []
-			  },
+				"validators": [
+					{
+					  "type": "js_expression",
+					  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+					  "message": "ScCr should be a numeric value"
+					}
+							  ],
+				"id": "creatinineLevel"
+			},
 			  {
 				"label": "eGFR",
 				"type": "obs",
