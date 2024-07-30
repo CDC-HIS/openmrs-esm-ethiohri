@@ -6,10 +6,10 @@
 	"encounter": "Post Exposure Followup",
 	"pages": [
 	  {
-		"label": "Post Exposure Followup",
+		"label": "Exposed Person PEP Follow-up",
 		"sections": [
 		  {
-			"label": "Exposed Person Followup",
+			"label": "PEP FOLLOW-UP",
 			"isExpanded": "true",
 			"questions": [
 				{
@@ -26,34 +26,34 @@
 					},
 					"id": "reportingDate"
 				},
-			  {
-				"label": "Visit date",
-				"type": "obs",
-				"required": true,
-				"questionOptions": {
-				  "rendering": "date",
-				  "concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "weeksList": "",
-				  "conceptMappings": [
-					{
-					  "type": "CIEL",
-					  "value": "163260"
-					}
-				  ]
-				},
-				"validators": [
-					{
-						"type": "date",
-						"allowFutureDates": "false"
+				{
+					"label": "Visit date",
+					"type": "obs",
+					"required": true,
+					"questionOptions": {
+					  "rendering": "date",
+					  "concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "weeksList": "",
+					  "conceptMappings": [
+						{
+						  "type": "CIEL",
+						  "value": "163260"
+						}
+					  ]
 					},
-					{
-						"type": "js_expression",
-						"failsWhenExpression": "myValue < new Date(reportingDate)",
-						"message": "Visit date should not be earlier than Reporting date"
-					}
-				],
-				"id": "visitDate"
-			  },
+					"validators": [
+						{
+							"type": "date",
+							"allowFutureDates": "false"
+						},
+						{
+							"type": "js_expression",
+							"failsWhenExpression": "myValue < new Date(reportingDate)",
+							"message": "Visit date should not be earlier than Reporting date"
+						}
+					],
+					"id": "visitDate"
+				  },
 			  {
 				"label": "Visit period",
 				"type": "obs",
@@ -170,7 +170,7 @@
 				"id": "adherence"
 			  },
 			  {
-				"label": "HIV status",
+				"label": "HIV Status",
 				"type": "obs",
 				"questionOptions": {
 				  "rendering": "select",
