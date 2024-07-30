@@ -10503,7 +10503,7 @@
 							"id": "isCxCaCounsellingGiven"
 						},
 						{
-							"label": "Date counselling given (Visit date)",
+							"label": "Date counseling given (Visit date)",
 							"type": "obs",
 							"required": "true",
 							"questionOptions": {
@@ -10518,6 +10518,11 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(patient.birthDate)",
+									"message": "Date Counseling given should not be earlier than the patient's birthdate"
 								}
 							],
 							"id": "dateCxCaCounsellingGiven"
@@ -10561,6 +10566,16 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(patient.birthDate)",
+									"message": "Date accepted CxCa screening should not be earlier than the patient's birthdate"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Date accepted CxCa screening should not be earlier than Date counseling given"
 								}
 							],
 							"id": "dateAcceptedCervicalCancerScreening"
@@ -10690,6 +10705,16 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(patient.birthDate)",
+									"message": "Date Linked to CxCa unit should not be earlier than the patient's birthdate"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+									"message": "Date accepted CxCa screening should not be earlier than Date accepted CxCa Screening"
 								}
 							],
 							"id": "dateLinkedToCxCaScreeningUnit"
@@ -10786,12 +10811,17 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "HPV DNA sample collection date should not be earlier than Date counseling given"
 								}
 							],
 							"id": "hpvDnaSampleCollectedDate"
 						},
 						{
-							"label": "HPV DNA result received date ",
+							"label": "HPV DNA result received date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -10805,6 +10835,11 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(hpvDnaSampleCollectedDate)",
+									"message": "HPV DNA result received date should not be earlier than HPV DNA sample collection date"
 								}
 							],
 							"id": "hpvDnaResultReceivedDate"
@@ -11228,6 +11263,11 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "VIA screening date should not be earlier than Date counseling given"
 								}
 							],
 							"id": "viaScreeningDate"
@@ -11379,6 +11419,11 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Cytology sample collection date should not be earlier than Date counseling given"
 								}
 							],
 							"id": "cytologySampleCollectionDate"
@@ -11399,6 +11444,16 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Cytology result received date should not be earlier than Date counseling given"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(cytologySampleCollectionDate)",
+									"message": "Cytology result received date should not be earlier than Cytology sample collection date"
 								}
 							],
 							"id": "cytologyResultReceivedDate"
@@ -11475,6 +11530,11 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Biopsy sample collection date should not be earlier than Date counseling given"
 								}
 							],
 							"id": "biopsySampleCollectedDate"
@@ -11491,9 +11551,19 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Biopsy result received date should not be earlier than Date counseling given"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(biopsySampleCollectedDate)",
+									"message": "Biopsy result received date should not be earlier than Biopsy sample collection date"
 								}
 							],
-							"id": "biopsyResultReceicedDate"
+							"id": "biopsyResultReceivedDate"
 						},
 						{
 							"label": "Biopsy result",
@@ -11643,6 +11713,11 @@
 								{
 									"type": "date",
 									"allowFutureDates": "false"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Colposcopy exam date should not be earlier than Date counseling given"
 								}
 							],
 							"id": "colposcopyExamDate"
@@ -11950,7 +12025,37 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Date treatment given should not be earlier than Date counseling given"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(hpvDnaResultReceivedDate)",
+									"message": "Date treatment given should not be earlier than HPV DNA result received date"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(viaScreeningDate)",
+									"message": "Date treatment given should not be earlier than VIA screening date"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(cytologyResultReceivedDate)",
+									"message": "Date treatment given should not be earlier than Cytology result received date"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(biopsyResultReceivedDate)",
+									"message": "Date treatment given should not be earlier than Biopsy result received date"
+								},
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(colposcopyExamDate)",
+									"message": "Date treatment given should not be earlier than Colposcopy exam date"
+								}
 							],
 							"id": "dateTreatmentGiven"
 						}
@@ -12026,7 +12131,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Date of referral to other HF should not be earlier than Date counseling given"
+								}
 							],
 							"id": "dateOfReferralToOtherHF"
 						},
@@ -12188,7 +12298,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Date confirmed client seen the referral HF should not be earlier than Date counseling given"
+								}
 							],
 							"id": "dateClientArrivedAtReferredHF"
 						},
@@ -12204,7 +12319,12 @@
 								{
                                     "type": "date",
                                     "allowFutureDates": "false"
-                                }
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Date client served in the referral HF should not be earlier than Date counseling given"
+								}
 							],
 							"id": "dateClientServedAtReferredHF"
 						}
@@ -12227,6 +12347,13 @@
 								"calculate": {
 									"calculateExpression": "CustomNextFollowupDateForCxCa('screeningStrategy', 'hpvScreeningResult', 'viaScreeningResult', 'cytologyResult', 'hpvDnaSampleCollectedDate', 'viaScreeningDate', 'cytologySampleCollectionDate', 'dateTreatmentGiven')" }
 							},
+							"validators":[
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+									"message": "Next follow-up/screening date for CxCa should not be earlier than Date counseling given"
+								}
+							],
 							"id": "nextFollowupScreeningDate"
 						}
 					]
