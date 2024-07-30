@@ -5,10 +5,12 @@ import {
   MRN_NULL_WARNING,
   POSITIVE_PATIENT_WARNING,
   REACTIVE_EXPOSED_PERSON_WARNING,
+  REACTIVE_HIV_STATUS_WARNING,
   POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE,
   POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE,
   dateOfHIVConfirmation,
   exposedPersonStatus,
+  hivStatus,
   formWarning,
 } from "../../../constants";
 import { getData } from "../../encounterUtils";
@@ -104,6 +106,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
   const [hasScreeningEncounter, setHasScreeningEncounter] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
   const [isExposedPersonReactive, setIsExposedPersonReactive] = useState(false);
+  const [isHivStatusReactive, setIsHivStatusReactive] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -140,6 +143,14 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
       );
       if (exposedPerson == '1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') setIsExposedPersonReactive(true);
     })();
+    (async () => {
+      const hivStatusReactive = await getLatestObs(
+        patientUuid,
+        hivStatus,
+        POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE
+      );
+      if (hivStatusReactive == '1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') setIsHivStatusReactive(true);
+    })();
   });
   return (
     <>
@@ -154,7 +165,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
           displayText: "Add",
           moduleName: moduleName,
           hideFormLauncher:
-            !hasMRN || !hasScreeningEncounter || isConfirmedPositive || isExposedPersonReactive,
+            !hasMRN || !hasScreeningEncounter || isConfirmedPositive || isExposedPersonReactive || isHivStatusReactive,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
@@ -166,6 +177,9 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
       )}
       {isExposedPersonReactive && (
         <p className={styles.patientName}>{REACTIVE_EXPOSED_PERSON_WARNING}</p>
+      )}
+      {isHivStatusReactive && (
+        <p className={styles.patientName}>{REACTIVE_HIV_STATUS_WARNING}</p>
       )}
     </>
   );

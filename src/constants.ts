@@ -73,6 +73,7 @@ export const priorityPopulationTypeConcept =
 export const dateOfHIVDiagnosisConcept = "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const dateOfHIVConfirmation = "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const exposedPersonStatus = "ad4935e0-624a-4e01-8e51-02acd0b45f07";
+export const hivStatus = "21ea1d83-acd7-4c99-b4cc-33a90e6dd7d7";
 export const regimen = "6d7d0327-e1f8-4246-bfe5-be1e82d94b14";
 export const artStartdate = "ae329187-6232-4142-aa91-22c85bc8e5b5";
 export const entryPointConcept = "160540AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
@@ -174,9 +175,12 @@ export const formWarning = (formName) =>
 
 export const POSITIVE_PATIENT_WARNING =
   "* Patient has already been confirmed as HIV positive !";
-  
-  export const REACTIVE_EXPOSED_PERSON_WARNING =
+
+export const REACTIVE_EXPOSED_PERSON_WARNING =
   "* Exposed person's status is reactive in PEP Registration form !";
+
+export const REACTIVE_HIV_STATUS_WARNING =
+  "* Patient's HIV status is reactive in a previous PEP Followup form !";
 
 export const AGE_ABOVE_THREE_WARNING =
   "* Children above three years old are not eligible for PMTCT !";
