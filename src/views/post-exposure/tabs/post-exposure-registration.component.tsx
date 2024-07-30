@@ -42,6 +42,13 @@ const columns = [
     },
   },
   {
+    key: "exposedPerson",
+    header: "Exposed Person Status",
+    getValue: (encounter) => {
+      return getData(encounter, "ad4935e0-624a-4e01-8e51-02acd0b45f07");
+    },
+  },
+  {
     key: "pepRegimen",
     header: "PEP Regimen",
     getValue: (encounter) => {

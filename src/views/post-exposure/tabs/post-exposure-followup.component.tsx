@@ -22,6 +22,13 @@ import {
 
 const columns = [
   {
+    key: "reportingDate",
+    header: "Reporting Date",
+    getValue: (encounter) => {
+      return getData(encounter, "4285d9e8-3ab4-4a94-bd4e-4dd92855795c", true);
+    },
+  },
+  {
     key: "visitDate",
     header: "Visit Date",
     getValue: (encounter) => {
