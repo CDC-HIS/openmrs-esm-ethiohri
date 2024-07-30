@@ -6,12 +6,29 @@
 	"encounter": "Exposed Person Information",
 	"pages": [
 		{
-			"label": "PEP Followup Register",
+			"label": "Post Exposure To HIV Prophylaxis (PEP) Registration",
 			"sections": [
 				{
-					"label": "Exposed Person Information",
+					"label": "GENERAL INFORMATION",
 					"isExpanded": "true",
 					"questions": [
+						{
+							"label": "Reporting date",
+							"type": "obs",
+							"required": true,
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c",
+								"weeksList": ""
+							},
+							"validators": [
+								{
+								  "type": "date",
+								  "allowFutureDates": "false"
+								}
+							  ],
+							"id": "reportingDate"
+						},
 						{
 							"label": "Occupation",
 							"type": "obs",
@@ -23,28 +40,28 @@
 							  "conceptMappings": [],
 							  "answers": [
 								{
+									"concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Physician"
+								},
+								{
+									"concept": "164969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Health officer"
+								},
+								{
+									"concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Nurse"
+								},
+								{
+									"concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Health Assistant"
+								},
+								{
+									"concept": "165796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Laboratory professional"
+								},
+								{
 								  "concept": "164832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								  "label": "Cleaner"
-								},
-								{
-								  "concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Health Assistant"
-								},
-								{
-								  "concept": "165796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Laboratory professional"
-								},
-								{
-								  "concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Physician"
-								},
-								{
-								  "concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Nurse"
-								},
-								{
-								  "concept": "164969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Health officer"
 								},
 								{
 								  "concept": "164833AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -78,10 +95,10 @@
 							  ]
 						},
 						{
-							"label": "Case Team",
+							"label": "Department",
 							"type": "obs",
 							"required": false,
-							"id": "caseTeam",
+							"id": "department",
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "cdc0f46f-7cc4-490b-a32b-8088c67c884a",
@@ -104,7 +121,7 @@
 									},
 									{
 										"concept": "e1ea3319-08e5-44f1-9408-edd664b5094e",
-										"label": "Operation room"
+										"label": "Operation Room"
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -114,15 +131,15 @@
 							}
 						},
 						{
-							"label": "Other case team",
+							"label": "Other department",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "dfe7b0bf-6498-4d92-8f36-bb1a7cc68e50"
 							},
-							"id": "otherCaseTeam",
+							"id": "otherDepartment",
 							"hide": {
-								"hideWhenExpression": "caseTeam !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "department !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"validators": [
 								{
@@ -135,28 +152,11 @@
 					]
 				},
 				{
-					"label": "Exposure Detail",
+					"label": "EXPOSURE",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Reporting date",
-							"type": "obs",
-							"required": true,
-							"questionOptions": {
-								"rendering": "date",
-								"concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c",
-								"weeksList": ""
-							},
-							"validators": [
-								{
-								  "type": "date",
-								  "allowFutureDates": "false"
-								}
-							  ],
-							"id": "reportingDate"
-						},
-						{
-							"label": "Duration  in hours",
+							"label": "Duration (in hours)",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "number",
@@ -188,7 +188,7 @@
 									},
 									{
 										"concept": "126582AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sexual assault"
+										"label": "Sexual Assault (Rape)"
 									},
 									{
 										"concept": "164837AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -196,6 +196,122 @@
 									}
 								]
 							}
+						},
+						{
+							"label": "Non-occupational exposure type",
+							"type": "obs",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "a58651ae-26ae-4e48-8931-2c37cbcf6850"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "exposureType !== '164837AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "nonoccupationalType"
+						},
+						{
+							"label": "Source of exposure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "1c92b574-953a-458e-9fa7-82f5538d8aee",
+								"answers": [
+									{
+										"concept": "181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Needle stick injury",
+										"conceptMappings": []
+									},
+									{
+										"concept": "164838AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Skin injury with sharps",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c66806da-e333-41c6-b2c6-b95d2e43b07a",
+										"label": "Blood and products splash",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162631AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Potentially infectious body fluids",
+										"conceptMappings": []
+									},
+									{
+										"concept": "111505AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Rape",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "6408"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "74964007"
+											}
+										]
+									}
+								]
+							},
+							"id": "sourceOfExposure"
+						},
+						{
+							"label": "Other source of exposure",
+							"type": "obs",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "5b703cff-eac5-4129-b1b3-9817790c8a09"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "sourceOfExposure !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "otherSource"
 						},
 						{
 							"label": "Exposure code",
@@ -222,7 +338,13 @@
 								]
 							},
 							"id": "exposureCode"
-						},
+						}
+					]
+				},
+				{
+					"label": "BASELINE HIV STATUS",
+					"isExpanded": "true",
+					"questions": [
 						{
 							"label": "Source person",
 							"type": "obs",
@@ -242,7 +364,7 @@
 									},
 									{
 										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
+										"label": "Unknown status",
 										"conceptMappings": [
 											{
 												"type": "SNOMED CT",
@@ -321,7 +443,7 @@
 									},
 									{
 										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Unknown",
+										"label": "Unknown status",
 										"conceptMappings": [
 											{
 												"type": "SNOMED CT",
@@ -380,102 +502,13 @@
 								]
 							},
 							"id": "exposedPerson"
-						},
-						{
-							"label": "Source of exposure",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "1c92b574-953a-458e-9fa7-82f5538d8aee",
-								"answers": [
-									{
-										"concept": "164838AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sharps injury",
-										"conceptMappings": []
-									},
-									{
-										"concept": "181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Contaminated needle stick",
-										"conceptMappings": []
-									},
-									{
-										"concept": "164838AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sharps injury",
-										"conceptMappings": []
-									},
-									{
-										"concept": "c66806da-e333-41c6-b2c6-b95d2e43b07a",
-										"label": "Blood and products splash",
-										"conceptMappings": []
-									},
-									{
-										"concept": "162631AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Body fluid substance",
-										"conceptMappings": []
-									},
-									{
-										"concept": "111505AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Victim of Rape",
-										"conceptMappings": []
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other non-coded",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
-									}
-								]
-							},
-							"id": "sourceOfExposure"
-						},
+						}
+					]
+				},
+				{
+					"label": "PEP PROVISION",
+					"isExpanded": "true",
+					"questions": [
 						{
 							"label": "Eligible",
 							"type": "obs",
@@ -581,15 +614,27 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "exposedPerson !== '1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							  },
 							"id": "eligible"
+						},
+						{
+							"label": "Time between exposure and PEP in hours",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "0885bb1e-6a2e-47d0-a597-8e8da07e4e59",
+								"max": 99999999,
+								"min": 0,
+								"showDate": ""
+							},
+							"hide": {
+								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "timeBetweenExposure"
 						},
 						  {
 							"label": "PEP Regimen",
 							"type": "obs",
-							"required": false,
+							"required": true,
 							"id": "pepRegimen",
 							"hide": {
 								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -642,22 +687,7 @@
 							  ]
 							},
 							"validators": []
-						  },
-						{
-							"label": "Time between exposure and PEP",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "0885bb1e-6a2e-47d0-a597-8e8da07e4e59",
-								"max": 99999999,
-								"min": 0,
-								"showDate": ""
-							},
-							"hide": {
-								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							"id": "timeBetweenExposure"
-						}
+						  }
 					]
 				}
 			]
