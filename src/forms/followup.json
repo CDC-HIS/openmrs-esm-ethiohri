@@ -2666,6 +2666,13 @@
 								"min": 0,
 								"showDate": ""
 							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "!/^\\d+$/.test(myValue)",
+								  "message": "Height should be a whole number"
+								}
+							  ],
 							"id": "height"
 						},
 						{
