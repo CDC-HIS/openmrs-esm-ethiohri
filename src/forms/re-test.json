@@ -1137,6 +1137,9 @@
 							"type": "obs",
 							"required": false,
 							"id": "reasonWhyArtNotInitiated",
+							"hide": {
+								"hideWhenExpression": "actionTaken == '1250AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
 							"questionOptions": {
 							  "rendering": "select",
 							  "concept": "d8ffb301-9a47-45ee-a465-f053cc060aab",
