@@ -2370,7 +2370,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "33b614d0-1953-4056-ac84-66b0492394e5",
@@ -2492,7 +2492,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "1121AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2626,7 +2626,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "51ee2cfb-01df-4b6b-8145-a265f6002be6",
@@ -2738,7 +2738,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "1d51e0df-9e50-432d-ae12-b5a044c8d6e6",
@@ -2846,7 +2846,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "84fa6273-8798-4cca-941d-2d21f8698e22",
@@ -2958,7 +2958,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "1c7d55db-453a-464e-a297-b9ce9cc2b77f",
@@ -3052,7 +3052,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "a6cb33f0-6f6c-47fd-b862-90ccd8ffd18a",
@@ -3160,7 +3160,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "2c8381a2-167e-4ce6-a3e1-5d7427e87667",
@@ -3268,7 +3268,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' : '' "
+					"calculateExpression": "areAllSystemsNormal === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' :  console.log()"
 				  },
 				  "rendering": "radio",
 				  "concept": "adb5d92a-f8cc-4e77-92d0-cb263e2f4e7a",
