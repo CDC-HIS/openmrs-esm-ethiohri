@@ -169,7 +169,7 @@
 							"label": "Why eligible (TI)",
 							"type": "obs",
 							"questionOptions": {
-							  							  "calculate": {
+								"calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding?"
 								},
 								"rendering": "select",
@@ -10849,25 +10849,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "159859"
-									},
-									{
-										"type": "AMPATH",
-										"value": "2322"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "1598591000105006"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "9718006"
-									}
-								],
+								"concept": "8ecc6d15-26dd-4840-8667-a517a93bea5f",
 								"answers": [
 									{
 										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -10927,6 +10909,64 @@
 										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
 										"label": "Negative",
 										"conceptMappings": []
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "ANC-DAK",
+												"value": "ANC.B6.DE2"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											}
+										]
 									}
 								]
 							},
