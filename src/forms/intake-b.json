@@ -3863,18 +3863,8 @@
 				  "readonly": "true",
 				  "answers": [
 					{
-					  "concept": "163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Test and Treatment",
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "163329"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "163329"
-						}
-					  ]
+					  "concept": "b52413a8-cc05-4ce3-8af9-b4a8deda0d1b",
+					  "label": "Test and Treatment"
 					},
 					{
 					  "concept": "cd52d9c3-23b5-4394-872e-9e70c4e66728",
