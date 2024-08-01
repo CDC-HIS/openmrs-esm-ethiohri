@@ -197,7 +197,7 @@
 					  "label": "Toxoplasmosis of Brain"
 					},
 					{
-						"concept": "d02a4fc0-8ef9-47f6-85d6-88c85a471baa",
+						"concept": "feba334d-46af-4ea6-a82c-fc5cde1ec9bf",
 						"label": "Wasting Syndrome"
 					},
 					{
@@ -3589,7 +3589,7 @@
                     "label": "HIV encephalopathy"
                   },
                   {
-                    "concept": "17e3f152-863b-4778-b7ed-341a5b1c907b",
+                    "concept": "feba334d-46af-4ea6-a82c-fc5cde1ec9bf",
                     "label": "HIV Wasting Syndrome"
                   },
                   {
