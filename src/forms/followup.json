@@ -168,6 +168,7 @@
 						{
 							"label": "Why eligible (TI)",
 							"type": "obs",
+							"id": "whyEligible",
 							"questionOptions": {
 								"calculate": {
 									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding?"
@@ -206,7 +207,7 @@
 									}
 								]
 							},
-							"id": "whyEligible"
+							"validators": []
 						},
 						{
 							"label": "UAN",
