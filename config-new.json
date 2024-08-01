@@ -47,6 +47,13 @@
       "homepage-widgets-slot": {
         "remove": ["home-appointments", "active-visits-widget"],
         "add": ["eth-patient-list"]
+      },
+      "home-metrics-tiles-slot": {
+        "remove": [
+          "active-visits-tile",
+          "home-appointments-tile",
+          "total-visits-tile"
+        ]
       }
     }
   },
