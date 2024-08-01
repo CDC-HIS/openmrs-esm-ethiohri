@@ -1190,6 +1190,10 @@
 					{
 						"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						"label": "No"
+					},
+					{
+						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "I don't know"
 					}
 				  ]
 				},
@@ -1223,6 +1227,10 @@
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
+					},
+					{
+						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "I don't know"
 					}
 				  ]
 				},
@@ -1306,6 +1314,10 @@
 					{
 					  "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Unsuppressed"
+					},
+					{
+						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "I don't know"
 					}
 				  ]
 				}
@@ -1395,6 +1407,10 @@
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
+					},
+					{
+						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "I don't know"
 					}
 				  ]
 				},
@@ -1455,6 +1471,10 @@
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
+					},
+					{
+						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "I don't know"
 					}
 				  ]
 				},
