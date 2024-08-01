@@ -6,10 +6,10 @@
 	"encounter": "Re-test",
 	"pages": [
 		{
-			"label": "Registration",
+			"label": "HIV Re-Test Registration",
 			"sections": [
 				{
-					"label": "Referral Information",
+					"label": "REFERRAL INFORMATION",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -60,7 +60,7 @@
 						{
 							"label": "Entry point",
 							"type": "obs",
-							"required": false,
+							"required": true,
 							"id": "entryPoint",
 							"questionOptions": {
 							  "rendering": "select",
@@ -204,15 +204,28 @@
 						{
 							"label": "Date of initial test",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "9182520e-24e8-4e84-aba7-6b56bdeb76d5"
 							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                },
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(dateOfRetesting)",
+									"message": "Date of initial test should be earlier than date of re-test"
+								}
+							],
 							"id": "dateOfInitialTest"
 						},
 						{
-							"label": "Date of retesting",
+							"label": "Date of re-testing for verification",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "3c588dc4-cd32-47e6-a919-806e254b66c7",
@@ -234,11 +247,11 @@
 					]
 				},
 				{
-					"label": "Test 1",
+					"label": "RETESTING FOR VERIFICATION RESULT",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Kit name",
+							"label": "Test1 Kit Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -247,7 +260,7 @@
 							"id": "kitName1"
 						},
 						{
-							"label": "Lot number",
+							"label": "Test1 Lot No.",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -263,7 +276,7 @@
 							"id": "lotNumber1"
 						},
 						{
-							"label": "Expiry date",
+							"label": "Test1 Exp. Date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -284,7 +297,7 @@
 							"id": "expiryDate1"
 						},
 						{
-							"label": "Result",
+							"label": "Test1 Result",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -352,15 +365,9 @@
 								]
 							},
 							"id": "result1"
-						}
-					]
-				},
-				{
-					"label": "Test 2",
-					"isExpanded": "true",
-					"questions": [
+						},
 						{
-							"label": "Kit name",
+							"label": "Test2 Kit Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -376,7 +383,7 @@
 							"id": "kitName2"
 						},
 						{
-							"label": "Lot number",
+							"label": "Test2 Lot No.",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -385,7 +392,7 @@
 							"id": "lotNumber2"
 						},
 						{
-							"label": "Expiry date",
+							"label": "Test2 Exp. Date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -395,7 +402,7 @@
 							"id": "expiryDate2"
 						},
 						{
-							"label": "Result",
+							"label": "Test2 Result",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -463,15 +470,9 @@
 								]
 							},
 							"id": "result2"
-						}
-					]
-				},
-				{
-					"label": "Test 3",
-					"isExpanded": "true",
-					"questions": [
+						},
 						{
-							"label": "Kit name",
+							"label": "Test3 Kit Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -487,7 +488,7 @@
 							"id": "kitName3"
 						},
 						{
-							"label": "Lot number",
+							"label": "Test3 Lot No.",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -496,7 +497,7 @@
 							"id": "lotNumber3"
 						},
 						{
-							"label": "Expiry date",
+							"label": "Test3 Exp. Date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -506,7 +507,7 @@
 							"id": "expiryDate3"
 						},
 						{
-							"label": "Result",
+							"label": "Test3 Result",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
@@ -574,16 +575,11 @@
 								]
 							},
 							"id": "result3"
-						}
-					]
-				},
-				{
-					"label": "Final result ",
-					"isExpanded": "true",
-					"questions": [
+						},
 						{
-							"label": "Final result",
+							"label": "Final Result",
 							"type": "obs",
+							"required": true,
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "2b1ea8df-3293-4964-9b44-9e31dff678a4",
@@ -761,20 +757,17 @@
 									}
 								]
 							},
-							"hide": {
-								"hideWhenExpression": "finalResult !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
 							"id": "actionTakenForDiscrepant"
 						},
 						{
-							"label": "Other action taken for discrepent",
+							"label": "Other action taken",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "c2d82408-ab97-4b5f-82c0-3819c2d36a46"
 							},
 							"hide": {
-								"hideWhenExpression": "actionTakenForDiscrepant === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "actionTakenForDiscrepant !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"validators": [
 								{
@@ -783,16 +776,16 @@
 								  "message": "Please use a maximum of 50 characters"
 								}
 							  ],
-							"id": "otherActionTakenForDiscrepent"
+							"id": "otherActionTaken"
 						}
 					]
 				},
 				{
-					"label": "Final test result from lab",
+					"label": "TEST RESULT FROM REFERENCE LABORATORIES",
 					"isExpanded": "true",
 					"questions": [
 						{
-							"label": "Lab name",
+							"label": "Lab Name",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -822,7 +815,17 @@
 							"id": "labName"
 						},
 						{
-							"label": "Lot number",
+							"label": "Type of test done",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "17f915f1-b003-47c1-a512-5b3130e031b3"
+							},
+							"validators": [],
+							"id": "typeOfTest"
+						},
+						{
+							"label": "Lot No.",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
@@ -845,7 +848,7 @@
 							"id": "lotNumberFinal"
 						},
 						{
-							"label": "Expiry date",
+							"label": "Exp. Date",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "date",
@@ -869,7 +872,7 @@
 							"id": "expiryDateFinal"
 						},
 						{
-							"label": "Result",
+							"label": "Final result from lab",
 							"type": "obs",
 							"required": false,
 							"id": "resultFinal",
@@ -880,15 +883,11 @@
 							  "answers": [
 								{
 								  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Positive"
+								  "label": "Reactive"
 								},
 								{
 								  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-								  "label": "Negative"
-								},
-								{
-								  "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Inconclusive"
+								  "label": "Non-reactive"
 								}
 							  ]
 							}
@@ -896,81 +895,14 @@
 					]
 				},
 				{
-					"label": "ART ",
+					"label": "ACTION TAKEN AFTER RETESTING FOR VERIFICATION",
 					"isExpanded": "true",
 					"hide": {
 						"hideWhenExpression": "resultFinal == '5e4fc757-0b14-49ae-b3b7-419666f41e15'"
 					  },
 					"questions": [
 						{
-							"label": "ART start date",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "date",
-								"concept": "ae329187-6232-4142-aa91-22c85bc8e5b5",
-								"weeksList": "",
-								"conceptMappings": [
-									{
-										"type": "AMPATH",
-										"value": "5869"
-									},
-									{
-										"type": "PIH",
-										"value": "2516"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "2516"
-									},
-									{
-										"type": "AMPATH",
-										"value": "1499"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "1595991000105005"
-									},
-									{
-										"type": "PIH",
-										"value": "2516"
-									},
-									{
-										"type": "CIEL",
-										"value": "159599"
-									},
-									{
-										"type": "PIH-Malawi",
-										"value": "2516"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "413946009"
-									},
-									{
-										"type": "SNOMED-MVP",
-										"value": "1595991000105005"
-									},
-									{
-										"type": "CIEL",
-										"value": "159599"
-									}
-								]
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                },
-								{
-									"type": "js_expression",
-									"failsWhenExpression": "myValue < new Date(dateOfRetesting)",
-									"message": "ART start date should not be earlier than Date of Retesting"
-								}
-							],
-							"id": "artStartDate"
-						},
-						{
-							"label": "Action taken",
+							"label": "Action taken/Final result",
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "select",
@@ -1111,10 +1043,12 @@
 							"id": "actionTaken"
 						},
 						{
-							"label": "Other action taken",
+							"label": "Other action taken for final result",
 							"type": "obs",
-							"required": false,
-							"id": "otherActionTaken",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "c263bf7c-cdc0-4e35-8238-bfdc1d29b468"
+							},
 							"hide": {
 								"hideWhenExpression": "actionTaken !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
@@ -1125,113 +1059,8 @@
 								  "message": "Please use a maximum of 50 characters"
 								}
 							  ],
-							"questionOptions": {
-								"rendering": "text",
-								"concept": "c263bf7c-cdc0-4e35-8238-bfdc1d29b468",
-								"conceptMappings": [],
-								"answers": []
-							}
-						},
-						{
-							"label": "Reason why ART not initiated on the same day",
-							"type": "obs",
-							"required": false,
-							"id": "reasonWhyArtNotInitiated",
-							"hide": {
-								"hideWhenExpression": "actionTaken == '1250AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							"questionOptions": {
-							  "rendering": "select",
-							  "concept": "d8ffb301-9a47-45ee-a465-f053cc060aab",
-							  "conceptMappings": [],
-							  "answers": [
-								{
-								  "concept": "145047AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Clinical Infection"
-								},
-								{
-								  "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Died"
-								},
-								{
-								  "concept": "141537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Economic problem"
-								},
-								{
-								  "concept": "d0409cbe-1932-446a-a2d6-149922204080",
-								  "label": "On adherence preparation"
-								},
-								{
-								  "concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "On antiretroviral therapy"
-								},
-								{
-								  "concept": "f6ce58c8-1346-48ab-8f62-74edd9b8a7b7",
-								  "label": "On OI management"
-								},
-								{
-								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Other"
-								},
-								{
-								  "concept": "97c667c6-567b-4b7b-adc1-12f06c584cd4",
-								  "label": "Referred TX not initiated"
-								},
-								{
-								  "concept": "127750AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Refusal of treatment by patient"
-								}
-							  ]
-							}
-						  },
-						{
-							"label": "Other reason why ART not initiated the same day",
-							"type": "obs",
-							"questionOptions": {
-								"rendering": "text",
-								"concept": "0e10d5b1-ff3f-4c87-a6bb-0b5bbc8ebec2"
-							},
-							"hide": {
-								"hideWhenExpression": "reasonWhyArtNotInitiated !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							"validators": [
-								{
-								  "type": "js_expression",
-								  "failsWhenExpression": "myValue.length > 50",
-								  "message": "Please use a maximum of 50 characters"
-								}
-							  ],
-							"id": "otherReasonArtNotInitiatedTheSameDay"
-						},
-						{
-							"label": "Plan for next step",
-							"type": "obs",
-							"required": false,
-							"id": "planForNextSteps",
-							"questionOptions": {
-							  "rendering": "select",
-							  "concept": "e96ea7a2-5285-41d3-bb0d-4f199cf5b8ee",
-							  "conceptMappings": [],
-							  "answers": [
-								{
-								  "concept": "0691212c-094e-4c3c-aa21-ab5e7433f4f8",
-								  "label": "Address adherance barriers"
-								},
-								{
-								  "concept": "b690f83a-0382-4fcc-acc8-30b459e0910f",
-								  "label": "Initiate ART when the patient is ready after OI management"
-								},
-								{
-								  "concept": "5a99502c-4545-456f-8c40-dc4a7f18e275",
-								  "label": "Linked to ACMs for counseling and tracking"
-								},
-								{
-								  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								  "label": "Other"
-								}
-							  ]
-							}
-						  }
+							"id": "otherActionTaken"
+						}
 					]
 				}
 			]
