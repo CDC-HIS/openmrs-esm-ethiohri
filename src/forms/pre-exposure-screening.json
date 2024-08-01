@@ -1825,22 +1825,15 @@
 			  {
 				"label": "Unique identification code (UIC)",
 				"type": "obs",
-				"required": false,
-				"id": "uniqueIdentificaitonCode",
 				"questionOptions": {
-				  "rendering": "number",
-				  "concept": "164402AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "164402"
-					}
-				  ],
-				  "answers": []
+					"rendering": "text",
+					"calculate": {
+						"calculateExpression": "getIdentifier(patient, 'UAN')"
+					},
+					"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 				},
-				"validators": []
-			  }
+				"id": "uniqueIdentificaitonCode"
+			}
 			]
 		  }
 		]
