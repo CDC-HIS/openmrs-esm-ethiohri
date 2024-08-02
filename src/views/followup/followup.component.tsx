@@ -100,14 +100,14 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           {
             form: { name: "POC Followup Form", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
-            intent: "*",
+            intent: "view",
             label: "View Followup",
             mode: "view",
           },
           {
             form: { name: "POC Followup Form", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
-            intent: "*",
+            intent: "edit",
             label: "Edit Followup",
             mode: "edit",
           },
