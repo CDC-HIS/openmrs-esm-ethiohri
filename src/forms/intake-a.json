@@ -41,7 +41,7 @@
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016",
-								"conceptMappings": [],
+								
 								"answers": [
 									{
 										"concept": "166513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -111,7 +111,7 @@
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea",
-								"conceptMappings": [],
+								
 								"answers": [
 									{
 										"concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -149,7 +149,7 @@
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "22612cd9-5ec5-4196-b7cc-80ba37e8a13f",
-								"conceptMappings": [],
+								
 								"answers": [
 									{
 										"concept": "12f7b48b-38c4-4377-82a3-215b9da86752",
@@ -186,7 +186,7 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "5285ef6e-3e4c-446d-a0fa-51ce5ea7865c",
-								"conceptMappings": [],
+								
 								"answers": []
 							},
 							"validators": []
@@ -199,7 +199,7 @@
 							"questionOptions": {
 								"rendering": "select",
 								"concept": "0022deac-d7a0-471a-bbdc-e41fc0e92bb4",
-								"conceptMappings": [],
+								
 								"answers": [
 									{
 										"concept": "160294AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -240,7 +240,7 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "319efe14-16fc-49f9-907f-e8e45501971d",
-								"conceptMappings": [],
+								
 								"answers": []
 							},
 							"validators": [
@@ -259,7 +259,7 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "2d2073e1-8377-4c4a-b6c7-0ab848760716",
-								"conceptMappings": [],
+								
 								"answers": []
 							},
 							"validators": []
@@ -272,7 +272,7 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "6f612018-bc64-4ab2-86f8-efde342b07d0",
-								"conceptMappings": [],
+								
 								"answers": [
 									{
 										"concept": "515f3768-30f6-4b87-bc9c-c64ce42db187",
@@ -295,99 +295,13 @@
 								"answers": [
 									{
 										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Yes",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 373066001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											}
-										]
+										"label": "Yes"
+										
 									},
 									{
 										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "CIEL",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											}
-										]
+										"label": "No"
+										
 									}
 								]
 							},
@@ -404,7 +318,7 @@
 							"questionOptions": {
 							  "rendering": "radio",
 							  "concept": "f93c0a7d-9578-4fb2-afd1-6a7f477a7e1a",
-							  "conceptMappings": [],
+							  
 							  "answers": [
 								{
 								  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -432,13 +346,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "302147001"
-									}
-								]
+								"concept": "1593AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								
 							},
 							"validators": [
 								{
@@ -487,84 +396,22 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "AMPATH",
-										"value": "2368"
-									},
-									{
-										"type": "AMPATH",
-										"value": "6441"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "169812000"
-									}
-								],
+								
 								"answers": [
 									{
 										"concept": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health Facility",
-										"conceptMappings": []
+										"label": "Health Facility"
+										
 									},
 									{
 										"concept": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Home",
-										"conceptMappings": []
+										"label": "Home"
+										
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other",
-										"conceptMappings": [
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
+										"label": "Other"
+										
 									}
 								]
 							},
@@ -578,7 +425,7 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "2f3c7d4f-198f-40ce-94d2-a968c8c4bea4",
-								"conceptMappings": [],
+								
 								"answers": []
 							},
 							"hide": {
@@ -598,76 +445,22 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "5630AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "236973005"
-									}
-								],
+								
 								"answers": [
 									{
 										"concept": "1170AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Spontaneous Vaginal",
-										"conceptMappings": []
+										"label": "Spontaneous Vaginal"
+										
 									},
 									{
 										"concept": "1171AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Cesarean Section",
-										"conceptMappings": []
+										"label": "Cesarean Section"
+										
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other",
-										"conceptMappings": [
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
+										"label": "Other"
+										
 									}
 								]
 							},
@@ -681,7 +474,7 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "ed73985e-cbab-4912-8275-0c037d5674a3",
-								"conceptMappings": [],
+								
 								"answers": []
 							},
 							"hide": {
@@ -707,25 +500,8 @@
 							"required": true,
 							"questionOptions": {
 								"rendering": "date",
-								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "160753"
-									},
-									{
-										"type": "CIEL",
-										"value": "160753"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "439771001"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "439771001"
-									}
-								]
+								"concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								
 							},
 							"validators": [
 								{
@@ -753,7 +529,7 @@
 							"questionOptions": {
 							  "rendering": "radio",
 							  "concept": "5583b0a6-f390-446d-ab39-d98584ee330c",
-							  "conceptMappings": [],
+							  
 							  "answers": [
 								{
 								  "concept": "163722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -779,40 +555,17 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "dd282c99-ea69-44e7-9252-aff0198cc1e8",
-								"conceptMappings": [
-									{
-										"type": "ETHIOHRI",
-										"value": "entryPoint"
-									}
-								],
+								
 								"answers": [
 									{
 										"concept": "163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "From Within the Health Facility",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163266"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "257622000"
-											}
-										]
+										"label": "From Within the Health Facility"
+										
 									},
 									{
 										"concept": "164407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Outside the facility",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "4563007"
-											},
-											{
-												"type": "CIEL",
-												"value": "164407"
-											}
-										]
+										"label": "Outside the facility"
+										
 									}
 								]
 							},
@@ -827,154 +580,58 @@
 								"answers": [
 									{
 										"concept": "160448AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Medical outpatient",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "309927009"
-											},
-											{
-												"type": "PIH",
-												"value": "7891"
-											},
-											{
-												"type": "CIEL",
-												"value": "160448"
-											}
-										]
+										"label": "Medical outpatient"
+										
 									},
 									{
 										"concept": "160457AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Pediatric outpatient",
-										"conceptMappings": []
+										"label": "Pediatric outpatient"
+										
 									},
 									{
 										"concept": "af37cab4-73ad-49ff-b9d7-2a89d54d7118",
-										"label": "TB Clinic",
-										"conceptMappings": []
+										"label": "TB Clinic"
+										
 									},
 									{
 										"concept": "14497d04-ec43-4ac4-9cab-02007a0ff273",
-										"label": "PNC",
-										"conceptMappings": []
+										"label": "PNC"
+										
 									},
 									{
 										"concept": "d1e97037-c599-47c3-93cb-c256b9c27fbc",
-										"label": "L&D",
-										"conceptMappings": []
+										"label": "L&D"
+										
 									},
 									{
 										"concept": "160538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "MCH (PMTCT)",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1647"
-											},
-											{
-												"type": "CIEL",
-												"value": "160538"
-											},
-											{
-												"type": "PIH",
-												"value": "1647"
-											},
-											{
-												"type": "CIEL",
-												"value": "160538"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1776"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1776"
-											}
-										]
+										"label": "MCH (PMTCT)"
+										
 									},
 									{
 										"concept": "2959b6f7-1f9b-49cd-9f3a-1e42e87b4ae5",
-										"label": "ANC",
-										"conceptMappings": []
+										"label": "ANC"
+										
 									},
 									{
 										"concept": "160546AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "STI clinic",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "160546"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "25681007"
-											},
-											{
-												"type": "PIH",
-												"value": "1786"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "25681007"
-											},
-											{
-												"type": "PIH",
-												"value": "1786"
-											},
-											{
-												"type": "CIEL",
-												"value": "160546"
-											}
-										]
+										"label": "STI clinic"
+										
 									},
 									{
 										"concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "VCT",
-										"conceptMappings": []
+										"label": "VCT"
+										
 									},
 									{
 										"concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Adult IPD",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1429"
-											},
-											{
-												"type": "CIEL",
-												"value": "5485"
-											},
-											{
-												"type": "CIEL",
-												"value": "5485"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5485"
-											},
-											{
-												"type": "PIH",
-												"value": "1429"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5485"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "394656005"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "394656005"
-											}
-										]
+										"label": "Adult IPD"
+										
 									},
 									{
 										"concept": "f6b54649-54ab-451d-b66f-94bf2887d922",
-										"label": "Pediatric IPD",
-										"conceptMappings": []
+										"label": "Pediatric IPD"
+										
 									},
 								{
 									"concept": "e7e85a1a-1e45-4043-99d7-216034965bc5",
@@ -992,13 +649,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "a0368d36-686d-4b98-b60e-e62cb3d46c9b",
-								"conceptMappings": [
-									{
-										"type": "ETHIOHRI",
-										"value": "withinTheFacility"
-									}
-								]
+								"concept": "a0368d36-686d-4b98-b60e-e62cb3d46c9b"
+								
 							},
 							"validators": [
 								{
@@ -1021,170 +673,43 @@
 								"answers": [
 									{
 										"concept": "1275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Health Center",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "1275"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "12751000105006"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "12751000105006"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "22232009"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1275"
-											},
-											{
-												"type": "CIEL",
-												"value": "1275"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1275"
-											}
-										]
+										"label": "Health Center"
+										
 									},
 									{
 										"concept": "160480AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Public Hospital",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "67190003"
-											},
-											{
-												"type": "CIEL",
-												"value": "160480"
-											}
-										]
+										"label": "Public Hospital"
+										
 									},
 									{
 										"concept": "1589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Private Hospital",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "22232009"
-											},
-											{
-												"type": "PIH",
-												"value": "2070"
-											}
-										]
+										"label": "Private Hospital"
+										
 									},
 									{
 										"concept": "163014AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "NGO/FBO Hospital",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "163014"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "257622000"
-											}
-										]
+										"label": "NGO/FBO Hospital"
+										
 									},
 									{
 										"concept": "160479AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Private Clinic",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "394794000"
-											},
-											{
-												"type": "CIEL",
-												"value": "160479"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "394794000"
-											}
-										]
+										"label": "Private Clinic"
+										
 									},
 									{
 										"concept": "b70be5c7-4388-4e12-9b0e-53f01ae2a3f5",
-										"label": "Self referred",
-										"conceptMappings": []
+										"label": "Self referred"
+										
 									},
 									{
 										"concept": "163488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Community referred",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "133928008"
-											},
-											{
-												"type": "CIEL",
-												"value": "163488"
-											}
-										]
+										"label": "Community referred"
+										
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "CIEL",
-												"value": "5622"
-											},
-											{
-												"type": "org.openmrs.module.mdrtb",
-												"value": "OTHER"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-MVP",
-												"value": "56221000105001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "6408"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5622"
-											},
-											{
-												"type": "PIH",
-												"value": "5622"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "74964007"
-											}
-										]
+										"label": "Other"
+										
 									}
 								]
 							},
@@ -1198,13 +723,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "2c30c599-1e4f-46f9-8488-5ab57cdc8ac3",
-								"conceptMappings": [
-									{
-										"type": "ETHIOHRI",
-										"value": "outsideTheFacility"
-									}
-								]
+								"concept": "2c30c599-1e4f-46f9-8488-5ab57cdc8ac3"
+								
 							},
 							"validators": [
 								{
@@ -1253,29 +773,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "PIH",
-										"value": "2725"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "408677003"
-									},
-									{
-										"type": "PIH",
-										"value": "2725"
-									},
-									{
-										"type": "CIEL",
-										"value": "166102"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "408677003"
-									}
-								]
+								"concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								
 							},
 							"id": "care_giver_first_name"
 						},
@@ -1284,17 +783,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "716057004"
-									},
-									{
-										"type": "CIEL",
-										"value": "166574"
-									}
-								]
+								"concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								
 							},
 							"id": "care_giver_fathers_name"
 						},
@@ -1303,29 +793,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "PIH",
-										"value": "2724"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "397678008"
-									},
-									{
-										"type": "CIEL",
-										"value": "166103"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "397678008"
-									},
-									{
-										"type": "PIH",
-										"value": "2724"
-									}
-								]
+								"concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								
 							},
 							"id": "care_giver_grandfathers_name"
 						},
@@ -1337,13 +806,8 @@
 								"concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 								"max": 200,
 								"min": 0,
-								"showDate": "false",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "1532"
-									}
-								]
+								"showDate": "false"
+								
 							},
 							"id": "careGiverAge"
 						},
@@ -1406,143 +870,51 @@
 								"answers": [
 									{
 										"concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Spouse",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "5617"
-											},
-											{
-												"type": "AMPATH",
-												"value": "5617"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "127848009"
-											},
-											{
-												"type": "CIEL",
-												"value": "5617"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "127848009"
-											},
-											{
-												"type": "CIEL",
-												"value": "5617"
-											}
-										]
+										"label": "Spouse"
+										
 									},
 									{
 										"concept": "971AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Father",
-										"conceptMappings": []
+										"label": "Father"
+										
 									},
 									{
 										"concept": "970AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Mother",
-										"conceptMappings": []
+										"label": "Mother"
+										
 									},
 									{
 										"concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Child",
-										"conceptMappings": [
-											{
-												"type": "AMPATH",
-												"value": "1565"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "410601007"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1671"
-											},
-											{
-												"type": "PIH",
-												"value": "6396"
-											},
-											{
-												"type": "CIEL",
-												"value": "1528"
-											}
-										]
+										"label": "Child"
+										
 									},
 									{
 										"concept": "160729AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Brother",
-										"conceptMappings": []
+										"label": "Brother"
+										
 									},
 									{
 										"concept": "160730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Sister",
-										"conceptMappings": []
+										"label": "Sister"
+										
 									},
 									{
 										"concept": "974AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Extended family member",
-										"conceptMappings": []
+										"label": "Extended family member"
+										
 									},
 									{
 										"concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Friend/Colleague",
-										"conceptMappings": [
-											{
-												"type": "CIEL",
-												"value": "972"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "375005"
-											},
-											{
-												"type": "PIH",
-												"value": "2178"
-											},
-											{
-												"type": "CIEL",
-												"value": "972"
-											},
-											{
-												"type": "AMPATH",
-												"value": "972"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "375005"
-											},
-											{
-												"type": "AMPATH",
-												"value": "972"
-											},
-											{
-												"type": "PIH",
-												"value": "2178"
-											}
-										]
+										"label": "Friend/Colleague"
+										
 									},
 									{
 										"concept": "5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Other",
-										"conceptMappings": []
-									}
-								],
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "1560"
-									},
-									{
-										"type": "SNOMED-CT",
-										"value": "303071001"
-									},
-									{
-										"type": "PIH",
-										"value": "6441"
+										"label": "Other"
+										
 									}
 								]
+								
 							},
 							"id": "relationship"
 						},
@@ -1551,13 +923,8 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "164352AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "SNOMED-CT",
-										"value": "302147001"
-									}
-								]
+								"concept": "164352AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								
 							},
 							"hide": {
 								"hideWhenExpression": "relationship !== '5620AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -1580,99 +947,13 @@
 								"answers": [
 									{
 										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Yes",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 373066001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											}
-										]
+										"label": "Yes"
+										
 									},
 									{
 										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "CIEL",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											}
-										]
+										"label": "No"
+										
 									}
 								]
 							},
@@ -1684,112 +965,17 @@
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "159423AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "159423"
-									},
-									{
-										"type": "PIH",
-										"value": "2061"
-									}
-								],
+								
 								"answers": [
 									{
 										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Yes",
-										"conceptMappings": [
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "PIH",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "CIEL",
-												"value": "1065"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373066001"
-											},
-											{
-												"type": "SNOMED CT",
-												"value": "CT: 373066001"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1065"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1065"
-											}
-										]
+										"label": "Yes"
+										
 									},
 									{
 										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "No",
-										"conceptMappings": [
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH",
-												"value": "1066"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "CIEL",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											},
-											{
-												"type": "SNOMED-CT",
-												"value": "373067005"
-											},
-											{
-												"type": "PIH-Malawi",
-												"value": "1066"
-											},
-											{
-												"type": "AMPATH",
-												"value": "1066"
-											}
-										]
+										"label": "No"
+										
 									}
 								]
 							},
@@ -1876,13 +1062,8 @@
 							"questionOptions": {
 								"rendering": "textarea",
 								"concept": "165095AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"rows": "8",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "165095"
-									}
-								]
+								"rows": "8"
+								
 							},
 							"validators": [
 								{
