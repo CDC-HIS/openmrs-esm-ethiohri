@@ -31,14 +31,14 @@ const columns = [
       {
         form: { name: "HEI Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View HEI Final Outcome",
         mode: "view",
       },
       {
         form: { name: "HEI Final Outcome", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit HEI Final Outcome",
         mode: "edit",
       },

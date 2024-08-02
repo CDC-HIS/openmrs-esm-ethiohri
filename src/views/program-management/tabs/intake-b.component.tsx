@@ -56,14 +56,14 @@ const columns = [
       {
         form: { name: "POC Intake-B", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View Intake-B",
         mode: "view",
       },
       {
         form: { name: "POC Intake-B", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit Intake-B",
         mode: "edit",
       },

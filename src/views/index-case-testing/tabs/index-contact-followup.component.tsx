@@ -49,14 +49,14 @@ const columns = [
       {
         form: { name: "POC Index Contact Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View Index Contact Followup",
         mode: "view",
       },
       {
         form: { name: "POC Index Contact Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit Index Contact Followup",
         mode: "edit",
       },

@@ -45,7 +45,16 @@
 							  "calculate": {
 								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'bd09b775-0294-4775-9615-964d98e06a4f', '8c2b6a9b-4795-417d-affe-2530a753b715'))?.valueDateTime"
 							  }
-							}
+							},
+              "behaviours": [
+								{
+									"intent": "edit",
+									"questionOptions": {
+										"concept": "bd09b775-0294-4775-9615-964d98e06a4f",
+							  "rendering": "fixed"
+								}
+								}
+							]
 						  }
           ]
         },

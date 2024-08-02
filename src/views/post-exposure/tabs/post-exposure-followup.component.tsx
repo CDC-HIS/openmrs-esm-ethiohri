@@ -79,14 +79,14 @@ const columns = [
       {
         form: { name: "Post Exposure Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View Post Exposure Followup",
         mode: "view",
       },
       {
         form: { name: "Post Exposure Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit Post Exposure Followup",
         mode: "edit",
       },
@@ -141,7 +141,8 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
         exposedPersonStatus,
         POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE
       );
-      if (exposedPerson == '1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') setIsExposedPersonReactive(true);
+      if (exposedPerson == "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+        setIsExposedPersonReactive(true);
     })();
     (async () => {
       const hivStatusReactive = await getLatestObs(
@@ -149,7 +150,8 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
         hivStatus,
         POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE
       );
-      if (hivStatusReactive == '1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') setIsHivStatusReactive(true);
+      if (hivStatusReactive == "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+        setIsHivStatusReactive(true);
     })();
   });
   return (
@@ -165,7 +167,11 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
           displayText: "Add",
           moduleName: moduleName,
           hideFormLauncher:
-            !hasMRN || !hasScreeningEncounter || isConfirmedPositive || isExposedPersonReactive || isHivStatusReactive,
+            !hasMRN ||
+            !hasScreeningEncounter ||
+            isConfirmedPositive ||
+            isExposedPersonReactive ||
+            isHivStatusReactive,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}

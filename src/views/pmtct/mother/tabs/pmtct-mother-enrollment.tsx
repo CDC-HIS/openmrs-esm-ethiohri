@@ -43,14 +43,14 @@ const columns = [
       {
         form: { name: "PMTCT Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View Mother's Enrollment",
         mode: "view",
       },
       {
         form: { name: "PMTCT Enrollment", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit Mother's Enrollment",
         mode: "edit",
       },

@@ -67,14 +67,14 @@ const columns = [
       {
         form: { name: "HEI Immunization", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View HEI Immunization",
         mode: "view",
       },
       {
         form: { name: "HEI Immunization", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit HEI Immunization",
         mode: "edit",
       },

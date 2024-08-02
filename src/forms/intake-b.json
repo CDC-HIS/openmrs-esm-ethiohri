@@ -220,9 +220,6 @@
 				"label": "TB prophylaxis type",
 				"type": "obs",
 				"questionOptions": {
-					"calculate": {
-						"calculateExpression": "resolve(api.getLatestObs(patient.id, '54084c9e-bc87-4d95-89fc-eb9a2cffb592'))?.valueCodeableConcept?.coding[0]?.code"
-					  },
 					"rendering": "radio",
 					"concept": "54084c9e-bc87-4d95-89fc-eb9a2cffb592",
 					"answers": [

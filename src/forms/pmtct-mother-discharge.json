@@ -23,10 +23,17 @@
                     "calculateExpression": "resolve(api.getLatestObs(patient.id, '0fe4faee-0717-4dc0-be3d-1cd52923804a', '1914ed4a-86fe-43d2-8338-2be2937ff11e'))?.valueDateTime"
                   },
                   "rendering": "date",
-                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
-                  "conceptMappings": [],
-                  "answers": []
+                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a"
                 },
+                "behaviours": [
+                  {
+                    "intent": "edit",
+                    "questionOptions": {
+                      "rendering": "date",
+                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a"
+                  }
+                  }
+                ],
                 "validators": [
                   {
                     "type": "date",

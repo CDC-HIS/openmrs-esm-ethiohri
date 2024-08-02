@@ -52,14 +52,14 @@ const columns = [
       {
         form: { name: "POC ICT General", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View ICT General",
         mode: "view",
       },
       {
         form: { name: "POC ICT General", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit ICT General",
         mode: "edit",
       },

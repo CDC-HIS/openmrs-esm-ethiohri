@@ -36,14 +36,14 @@ const columns = [
       {
         form: { name: "POC PHDP Form", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View PHDP",
         mode: "view",
       },
       {
         form: { name: "POC PHDP Form", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit PHDP",
         mode: "edit",
       },

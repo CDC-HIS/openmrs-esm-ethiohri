@@ -90,14 +90,14 @@ const columns = [
       {
         form: { name: "Prep", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View Pre Exposure Screening",
         mode: "view",
       },
       {
         form: { name: "Prep", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit Pre Exposure Screening",
         mode: "edit",
       },

@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  POSITIVE_TRACKING_ENCOUNTER_TYPE,
-} from "../../../constants";
+import { POSITIVE_TRACKING_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import { getPatientEncounters } from "../../../api/api";
@@ -64,14 +62,14 @@ const columns = [
       {
         form: { name: "Positive Tracking", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "view",
         label: "View Positive Tracking",
         mode: "view",
       },
       {
         form: { name: "Positive Tracking", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
-        intent: "*",
+        intent: "edit",
         label: "Edit Positive Tracking",
         mode: "edit",
       },
@@ -97,32 +95,32 @@ const PositiveTrackingList: React.FC<{ patientUuid: string }> = ({
   }, []);
 
   useEffect(() => {
-      (async () => {
-        const previousEncounters = await getPatientEncounters(
-          patientUuid,
-          POSITIVE_TRACKING_ENCOUNTER_TYPE
-        );
-        previousEncounters.length
-          ? setHasPreviousEncounter(true)
-          : setHasPreviousEncounter(false);
-      })();
+    (async () => {
+      const previousEncounters = await getPatientEncounters(
+        patientUuid,
+        POSITIVE_TRACKING_ENCOUNTER_TYPE
+      );
+      previousEncounters.length
+        ? setHasPreviousEncounter(true)
+        : setHasPreviousEncounter(false);
+    })();
   }, [isFormSaved]);
 
   return (
-      <EncounterList
-        patientUuid={patientUuid}
-        encounterType={POSITIVE_TRACKING_ENCOUNTER_TYPE}
-        formList={[{ name: "Positive Tracking" }]}
-        columns={columns}
-        description="Positive Tracking List"
-        headerTitle="Positive Tracking"
-        launchOptions={{
-          displayText: "Add",
-          moduleName: moduleName,
-          hideFormLauncher: hasPreviousEncounter,
-        }}
-        afterFormSaveAction={updateFormSavedStatus}
-      />
+    <EncounterList
+      patientUuid={patientUuid}
+      encounterType={POSITIVE_TRACKING_ENCOUNTER_TYPE}
+      formList={[{ name: "Positive Tracking" }]}
+      columns={columns}
+      description="Positive Tracking List"
+      headerTitle="Positive Tracking"
+      launchOptions={{
+        displayText: "Add",
+        moduleName: moduleName,
+        hideFormLauncher: hasPreviousEncounter,
+      }}
+      afterFormSaveAction={updateFormSavedStatus}
+    />
   );
 };
 

@@ -78,14 +78,14 @@ const PMTCTFollowupEncounterList = ({ patientUuid, isFormSaved }) => {
           {
             form: { name: "HEI Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
-            intent: "*",
+            intent: "view",
             label: "View HEI Followup",
             mode: "view",
           },
           {
             form: { name: "HEI Followup", package: "eth_hiv" },
             encounterUuid: encounter.uuid,
-            intent: "*",
+            intent: "edit",
             label: "Edit HEI Followup",
             mode: "edit",
           },
