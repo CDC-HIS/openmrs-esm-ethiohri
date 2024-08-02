@@ -940,29 +940,23 @@
               ]
             },
             {
-              "label": "Unique ART number",
-              "type": "obs",
-              "required": false,
-              "id": "artNumber",
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "164402AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "164402"
-                  }
-                ],
+							"label": "Unique ART number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"calculate": {
+                                    "calculateExpression": "getIdentifier(patient, 'UAN')"
+                                },
+								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "hide": {
                   "hideWhenExpression": "mothersPmtct !== '1a259ed4-15b5-4e23-8382-972f89be84c8'"
                 }
-              },
+							},
               "hide": {
                 "hideWhenExpression": "mothersStatus != '6691e136-0289-4d2f-80bf-50ec816e121a'"
               },
-              "validators": []
-            }
+							"id": "artNumber"
+						}
           ]
         },
         {
@@ -1067,27 +1061,20 @@
               "validators": []
             },
             {
-              "label": "If on ART, Unique ART number",
-              "type": "obs",
-              "required": false,
-              "id": "ifOnArt",
+							"label": "If on ART, Unique ART number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"calculate": {
+                                    "calculateExpression": "getIdentifier(patient, 'UAN')"
+                                },
+								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
               "hide": {
                 "hideWhenExpression": "ifPositive != '95daa4f8-b45d-4dee-b5d0-5f9446d22c19' || fathersStatus == '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
-              "questionOptions": {
-                "rendering": "text",
-                "concept": "164402AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "164402"
-                  }
-                ],
-                "answers": []
-              },
-              "validators": []
-            }
+							"id": "ifOnArt"
+						}
           ]
         },
         {

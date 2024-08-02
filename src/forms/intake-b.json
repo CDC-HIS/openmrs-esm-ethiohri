@@ -197,7 +197,7 @@
 					  "label": "Toxoplasmosis of Brain"
 					},
 					{
-						"concept": "d02a4fc0-8ef9-47f6-85d6-88c85a471baa",
+						"concept": "feba334d-46af-4ea6-a82c-fc5cde1ec9bf",
 						"label": "Wasting Syndrome"
 					},
 					{
@@ -2177,8 +2177,13 @@
 					  "conceptMappings": []
 					},
 					{
+						"concept": "118789AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+						"label": "Dysphagia",
+						"conceptMappings": []
+					},
+					{
 					  "concept": "125225AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Dysphagia/Odynophagia, Swallowing Painful",
+					  "label": "Odynophagia, Swallowing Painful",
 					  "conceptMappings": []
 					},
 					{
@@ -3589,7 +3594,7 @@
                     "label": "HIV encephalopathy"
                   },
                   {
-                    "concept": "17e3f152-863b-4778-b7ed-341a5b1c907b",
+                    "concept": "feba334d-46af-4ea6-a82c-fc5cde1ec9bf",
                     "label": "HIV Wasting Syndrome"
                   },
                   {
@@ -3858,18 +3863,8 @@
 				  "readonly": "true",
 				  "answers": [
 					{
-					  "concept": "163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Test and Treatment",
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "163329"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "163329"
-						}
-					  ]
+					  "concept": "b52413a8-cc05-4ce3-8af9-b4a8deda0d1b",
+					  "label": "Test and Treatment"
 					},
 					{
 					  "concept": "cd52d9c3-23b5-4394-872e-9e70c4e66728",

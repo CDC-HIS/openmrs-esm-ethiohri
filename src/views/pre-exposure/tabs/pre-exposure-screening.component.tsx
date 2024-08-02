@@ -59,7 +59,7 @@ const columns = [
     key: "typeOfClient",
     header: "Type of Client",
     getValue: (encounter) => {
-      return getData(encounter, "166597AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "da8c5265-2ab4-43f8-af66-ec1c9c8e9d4f");
     },
   },
   {

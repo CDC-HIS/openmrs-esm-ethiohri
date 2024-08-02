@@ -637,13 +637,10 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "text",
-								"concept": "164402AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"conceptMappings": [
-									{
-										"type": "CIEL",
-										"value": "164402"
-									}
-								]
+								"calculate": {
+                                    "calculateExpression": "getIdentifier(patient, 'UAN')"
+                                },
+								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"

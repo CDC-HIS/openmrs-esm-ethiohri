@@ -191,31 +191,70 @@
 							"id": "eligibleDate"
 						},
 						{
-							"label": "Why eligible (TI)",
+							"label": "Transferred-In (check this for all TI cases)",
 							"type": "obs",
 							"questionOptions": {
-							  							  "calculate": {
-									"calculateExpression": "resolve(api.getLatestObs(patient.id, '613718f1-ecf2-4228-b9c2-6157d574bd0b', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding?"
+								"calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
 								},
-								"rendering": "select",
-								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
+								"rendering": "radio",
+								"concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
 								"answers": [
 									{
-										"concept": "163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Test and Treatment"
-										
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+								]
+							},
+							"behaviours": [
+								{
+									"intent": "edit",
+									"questionOptions": {
+										"rendering": "radio",
+								"concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+								]
+								}
+								}
+							],
+							"id": "transferredInCase"
+						},
+						{
+							"label": "Why Eligible?",
+							"type": "obs",
+							"questionOptions": {
+							  "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'b7b1da64-22f4-4357-9eb8-493b43c02581', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding?"
+								},
+								"rendering": "checkbox",
+								"concept": "b7b1da64-22f4-4357-9eb8-493b43c02581",
+								"answers": [
+									{
+										"concept": "b52413a8-cc05-4ce3-8af9-b4a8deda0d1b",
+										"label": "Test and Treat",
+										"conceptMappings": []
 									},
 									{
 										"concept": "dfec38ad-238a-4f4a-a52f-c96b6becdd26",
-										"label": "Clinical Staging"
-									},
-									{
-										"concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Transfer in (Check this for all TI cases)"
+										"label": "Clinical Staging",
+										"conceptMappings": []
 									},
 									{
 										"concept": "0b4ec9d0-d86a-4978-b3ad-0add037232d7",
-										"label": "Other (like TB, HBV, Pregnant)"
+										"label": "Other(like TB, HBV, Pregnant)",
+										"conceptMappings": []
 									}
 								]
 							},
@@ -224,25 +263,23 @@
 								{
 									"intent": "edit",
 									"questionOptions": {
-										"rendering": "select",
-								"concept": "613718f1-ecf2-4228-b9c2-6157d574bd0b",
+										"rendering": "checkbox",
+								"concept": "b7b1da64-22f4-4357-9eb8-493b43c02581",
 								"answers": [
 									{
-										"concept": "163329AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Test and Treatment"
-										
+										"concept": "b52413a8-cc05-4ce3-8af9-b4a8deda0d1b",
+										"label": "Test and Treat",
+										"conceptMappings": []
 									},
 									{
 										"concept": "dfec38ad-238a-4f4a-a52f-c96b6becdd26",
-										"label": "Clinical Staging"
-									},
-									{
-										"concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Transfer in (Check this for all TI cases)"
+										"label": "Clinical Staging",
+										"conceptMappings": []
 									},
 									{
 										"concept": "0b4ec9d0-d86a-4978-b3ad-0add037232d7",
-										"label": "Other (like TB, HBV, Pregnant)"
+										"label": "Other(like TB, HBV, Pregnant)",
+										"conceptMappings": []
 									}
 								]
 								}
@@ -5725,8 +5762,7 @@
 							"type": "obs",
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "159859AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								
+								"concept": "8ecc6d15-26dd-4840-8667-a517a93bea5f",
 								"answers": [
 									{
 										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -5736,6 +5772,10 @@
 									{
 										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
 										"label": "Negative"
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown"
 									}
 								]
 							},

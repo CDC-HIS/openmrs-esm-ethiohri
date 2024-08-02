@@ -1666,31 +1666,14 @@
 				"id": "typeOfClient",
 				"questionOptions": {
 				  "rendering": "select",
-				  "concept": "166597AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "363787002"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "166597"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "KenyaEMR",
-					  "value": "164932"
-					}
-				  ],
+				  "concept": "da8c5265-2ab4-43f8-af66-ec1c9c8e9d4f",
 				  "answers": [
 					{
 					  "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Newly Started (started in the facility)"
 					},
 					{
-					  "concept": "160563AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
 					  "label": "Transfer In (started in another facility)"
 					}
 				  ]
@@ -1825,22 +1808,15 @@
 			  {
 				"label": "Unique identification code (UIC)",
 				"type": "obs",
-				"required": false,
-				"id": "uniqueIdentificaitonCode",
 				"questionOptions": {
-				  "rendering": "number",
-				  "concept": "164402AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "164402"
-					}
-				  ],
-				  "answers": []
+					"rendering": "text",
+					"calculate": {
+						"calculateExpression": "getIdentifier(patient, 'UAN')"
+					},
+					"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 				},
-				"validators": []
-			  }
+				"id": "uniqueIdentificaitonCode"
+			}
 			]
 		  }
 		]
