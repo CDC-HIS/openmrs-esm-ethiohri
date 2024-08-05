@@ -2311,9 +2311,9 @@
 					  "message": "Please use a maximum of 50 characters"
 					}
 				  ],
-				"hide": {
-				  "hideWhenExpression": "whyEligibleForART !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
+				  "hide": {
+					"hideWhenExpression": "!includes('whyEligibleForART', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+				  },
 				"id": "otherReasonWhyEligible"
 			  }
 			]

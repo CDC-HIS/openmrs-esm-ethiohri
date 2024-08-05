@@ -470,8 +470,8 @@
                 "concept": "00ed2ac0-aacc-402b-b587-7a4bbe1321d5"
               },
               "hide": {
-                "hideWhenExpression": "mothersBreastCondition !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              },
+								"hideWhenExpression": "!includes('mothersBreastCondition', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							  },
               "validators": [
 								{
 								  "type": "js_expression",
