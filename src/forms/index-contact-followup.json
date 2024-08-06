@@ -186,6 +186,24 @@
                       }
                     },
                     {
+                        "label": "Contact Birth Date",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactBirthdate",
+                        "validators": [
+                          {
+                              "type": "date",
+                              "allowFutureDates": "false"
+                          }
+                      ],
+                        "questionOptions": {
+                            "rendering": "date",
+                            "concept": "e27ae70c-6131-4004-9da8-841619e19480",
+                            "conceptMappings": [],
+                            "answers": []
+                        }
+                    },
+                    {
                         "label": "Gender",
                         "type": "obs",
                         "required": false,
