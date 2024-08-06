@@ -89,6 +89,13 @@
                 "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
 								}
 								}
+								,{
+									"intent": "view",
+									"questionOptions": {
+										"rendering": "fixed",
+                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
+								}
+								}
 							]
             }
           ]

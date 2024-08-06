@@ -32,6 +32,13 @@
 						"concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c"
 						}
 						}
+						,{
+							"intent": "view",
+							"questionOptions": {
+								"rendering": "date",
+						"concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c"
+						}
+						}
 					],
 					"id": "reportingDate"
 				},

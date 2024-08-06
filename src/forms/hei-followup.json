@@ -53,6 +53,13 @@
 								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
 								}
 								}
+								,{
+									"intent": "view",
+									"questionOptions": {
+										"rendering": "fixed",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+								}
+								}
 							],
 							"id": "enrollment_date"
 						}
@@ -1082,6 +1089,23 @@
               "behaviours": [
 								{
 									"intent": "edit",
+									"questionOptions": {
+										"rendering": "radio",
+                "concept": "b7f50074-b9f2-4b0d-9f20-d18b646d822e",
+                "answers": [
+                  {
+                    "concept": "b5b94269-9ee1-4733-8a24-96213cf3c291",
+                    "label": "NVP + AZT for 6 weeks and NVP only for additionally 6 weeks"
+                  },
+                  {
+                    "concept": "d32ee1d2-2518-478d-bceb-7e80fc8cb3b1",
+                    "label": "None"
+                  }
+                ]
+								}
+								}
+								,{
+									"intent": "view",
 									"questionOptions": {
 										"rendering": "radio",
                 "concept": "b7f50074-b9f2-4b0d-9f20-d18b646d822e",
