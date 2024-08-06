@@ -982,7 +982,7 @@
 							"id": "hivDisclosure"
 						},
 						{
-							"label": "Who knows your/your child's HIV positive status",
+							"label": "Who knows your child's HIV positive status",
 							"type": "obs",
 							"required": false,
 							"id": "whoKnows",
@@ -1039,8 +1039,8 @@
 								"concept": "f622a8b2-55a1-4194-8579-3470609eb626"
 							},
 							"hide": {
-								"hideWhenExpression": "whoKnows !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
+								"hideWhenExpression": "!includes('whoKnows', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							  },
 							"validators": [
 								{
 								  "type": "js_expression",
