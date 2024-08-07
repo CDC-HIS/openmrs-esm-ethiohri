@@ -11,12 +11,78 @@
     "allowUnspecifiedAll": true,
     "pages": [
         {
-            "label": "POC ICT Offer",
+            "label": "ICT SERVICE OFFERING",
             "sections": [
                 {
-                    "label": "ICT Offer",
+                    "label": "ICT SERVICE OFFERING",
                     "isExpanded": "true",
                     "questions": [
+                        {
+                            "label": "Visit date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "visitDate",
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "53097498-c1b3-49d0-a159-ee09b4b5a914",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Prioritization for ICT",
+                            "type": "obs",
+                            "required": false,
+                            "id": "priorityCriteria",
+                            "questionOptions": {
+                              "rendering": "select",
+                              "concept": "8534a956-49e8-42d9-82c4-33e51429265d",
+                              "conceptMappings": [],
+                              "answers": [
+                                {
+                                    "concept": "4693bef1-4d6b-4546-b2c9-1a3409b6158f",
+                                    "label": "Newly Diagnosed"
+                                },
+                                {
+                                    "concept": "7b370f0a-61e2-4cc4-99c1-f38d96d7cee0",
+                                    "label": "PLHIV with HVL & Adult"
+                                },
+                                {
+                                    "concept": "bde58790-d3fc-40d6-bcce-f728105f91cf",
+                                    "label": "PLHIV restart ART & Adult"
+                                },
+                                {
+                                    "concept": "c1c0c92c-521c-454c-bfd2-52db5b308f6a",
+                                    "label": "PLHIV incare with STI"
+                                },
+                                {
+                                  "concept": "cd44c2af-e628-455f-8826-7aab004bd100",
+                                  "label": "Enrolled at PMTCT"
+                                },
+                                {
+                                  "concept": "41a9a67e-ce27-4a33-be91-0725209c69b0",
+                                  "label": "Key population"
+                                },
+                                {
+                                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Other"
+                                }
+                              ]
+                            },
+                            "validators": []
+                          },
+                          {
+							"label": "Specify other",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "373c74c7-0957-487f-a7a1-e086857c5fb7"
+							},
+							"hide": {
+								"hideWhenExpression": "!includes('priorityCriteria','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							},
+							"id": "otherPrioritization"
+						},
                         {
                             "label": "Offered",
                             "type": "obs",
@@ -59,51 +125,6 @@
                                 "answers": []
                             }
                         },
-                        {
-                            "label": "Prioritization for ICT",
-                            "type": "obs",
-                            "required": false,
-                            "id": "priorityCriteria",
-                            "hide": {
-                                "hideWhenExpression": "offered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "questionOptions": {
-                              "rendering": "select",
-                              "concept": "8534a956-49e8-42d9-82c4-33e51429265d",
-                              "conceptMappings": [],
-                              "answers": [
-                                {
-                                    "concept": "4693bef1-4d6b-4546-b2c9-1a3409b6158f",
-                                    "label": "Newly diagnosed"
-                                },
-                                {
-                                  "concept": "cd44c2af-e628-455f-8826-7aab004bd100",
-                                  "label": "Enrolled at PMTCT (Prevention of mother-to-child transmission of HIV)"
-                                },
-                                {
-                                  "concept": "41a9a67e-ce27-4a33-be91-0725209c69b0",
-                                  "label": "Key population (FSW)"
-                                },
-                                {
-                                  "concept": "c1c0c92c-521c-454c-bfd2-52db5b308f6a",
-                                  "label": "PLHIV (People living with HIV) incare with STI"
-                                },
-                                {
-                                  "concept": "bde58790-d3fc-40d6-bcce-f728105f91cf",
-                                  "label": "PLHIV (People living with HIV) restart ART & adult"
-                                },
-                                {
-                                  "concept": "7b370f0a-61e2-4cc4-99c1-f38d96d7cee0",
-                                  "label": "PLHIV (People living with HIV) with HVL & adult"
-                                },
-                                {
-                                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                    "label": "Other"
-                                }
-                              ]
-                            },
-                            "validators": []
-                          },
                         {
                             "label": "Accepted",
                             "type": "obs",
@@ -150,7 +171,31 @@
                             }
                         },
                         {
-                            "label": "If not accepted, indicate",
+                            "label": "Elicited",
+                            "type": "obs",
+                            "required": false,
+                            "id": "elicited",
+                            "hide": {
+                                "hideWhenExpression": "accepted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "77296687-cba5-4e70-9d51-e20e54d50548",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Reason ICT service not accepted",
                             "type": "obs",
                             "required": false,
                             "hide": {
@@ -163,31 +208,190 @@
                                 "conceptMappings": [],
                                 "answers": [
                                     {
-                                        "concept": "3c2c53ec-efa8-4254-bb0c-202c4bb9d750",
-                                        "label": "Afraid IPV"
-                                    },
-                                    {
-                                        "concept": "015d54ca-e4e8-4165-880a-c8a14cf9e714",
-                                        "label": "No data source"
-                                    },
-                                    {
-                                        "concept": "12283dd2-ec9d-4a41-b672-1076eb1c2858",
-                                        "label": "No family members"
-                                    },
-                                    {
                                         "concept": "8611a257-6b96-464f-8ae2-410c9c692c55",
                                         "label": "No reason"
                                     },
                                     {
                                         "concept": "7a203f1c-3ff1-492d-af7d-d804d7d1f84a",
-                                        "label": "No time for elicitation"
+                                        "label": "No time"
+                                    },
+                                    {
+                                        "concept": "53384cd2-dff0-4db2-b403-78bd3d8903cd",
+                                        "label": "Fear of disclosure"
+                                    },
+                                    {
+                                        "concept": "3c2c53ec-efa8-4254-bb0c-202c4bb9d750",
+                                        "label": "Afraid of IPV"
                                     },
                                     {
                                         "concept": "6369d2cb-bf3d-44e4-8cd3-639b40bd8ce1",
-                                        "label": "Preferred other HF"
+                                        "label": "Prefer other HF"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
                                     }
                                 ]
                             }
+                        },
+                        {
+							"label": "Specify other reason",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "f39fc7e2-0485-43dc-9d22-b065850710c8"
+							},
+							"hide": {
+								"hideWhenExpression": "!includes('notAccepted','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							},
+							"id": "otherReason"
+						}
+                    ]
+                },
+                {
+                    "label": "IPV/AE",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "High risk for IPV",
+                            "type": "obs",
+                            "required": false,
+                            "id": "highRiskIpv",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "6cb09073-5bc1-4cbb-a13c-27c98956231b",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "AE reported",
+                            "type": "obs",
+                            "required": false,
+                            "id": "aeReported",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "ff68acf5-9a2f-44c9-a2a3-fa8807dcb04a",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Adverse event type",
+                            "type": "obs",
+                            "required": false,
+                            "id": "adverseEventType",
+                            "questionOptions": {
+                                "rendering": "checkbox",
+                                "concept": "e0e6d06a-fec6-4ae9-aec5-6d2ffda07f40",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Divorce"
+                                    },
+                                    {
+                                        "concept": "74f8c5a5-be94-4605-947f-2eb2cac3c187",
+                                        "label": "Loss of relationship"
+                                    },
+                                    {
+                                        "concept": "c405b20b-0845-4721-b09b-d067fd36a594",
+                                        "label": "Loss of support"
+                                    },
+                                    {
+                                        "concept": "0f27a4b6-5f19-4c44-9d6d-abcdd9fd8d30",
+                                        "label": "Stigma"
+                                    },
+                                    {
+                                        "concept": "8da00bae-4655-46ba-b442-e3ca50b8bf96",
+                                        "label": "Job loss"
+                                    },
+                                    {
+                                        "concept": "158835AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Social exclusion"
+                                    },
+                                    {
+                                        "concept": "a9cd93c0-fcd4-46d3-80aa-12d1a74fc8d4",
+                                        "label": "Verbal abuse"
+                                    },
+                                    {
+                                        "concept": "152292AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Physical abuse"
+                                    },
+                                    {
+                                        "concept": "807fa6a8-a2ff-45db-9b41-72949fd9401d",
+                                        "label": "Loneliness"
+                                    },
+                                    {
+                                        "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Cessation of sexual intercourse"
+                                    },
+                                    {
+                                        "concept": "134660AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Marital discord"
+                                    },
+                                    {
+                                        "concept": "0ef9b5ba-8690-4c63-8b38-ed9a6a263a39",
+                                        "label": "Taking away access to children"
+                                    },
+                                    {
+                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Other"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+							"label": "Specify other type",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "37002efb-7044-47b4-bcbc-d900161fc7ee"
+							},
+							"hide": {
+								"hideWhenExpression": "!includes('adverseEventType','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							},
+							"id": "otherType"
+						},
+                        {
+                            "label": " Linked to appropriate care",
+                            "type": "obs",
+                            "required": false,
+                            "id": "linkedToApp",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "f4817ca2-a67f-46e3-8c97-864612ccbb47",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            },
+                            "validators": []
                         }
                     ]
                 }

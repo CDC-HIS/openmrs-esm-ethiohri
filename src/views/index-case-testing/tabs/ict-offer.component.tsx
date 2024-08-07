@@ -43,21 +43,21 @@ const columns = [
         form: { name: "POC ICT Offer", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "view",
-        label: "View ICT Offer",
+        label: "View ICT Service Offering",
         mode: "view",
       },
       {
         form: { name: "POC ICT Offer", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "edit",
-        label: "Edit ICT Offer",
+        label: "Edit ICT Service Offering",
         mode: "edit",
       },
       {
         form: { name: "POC ICT Offer", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Delete ICT Offer",
+        label: "Delete ICT Service Offering",
         mode: "delete",
       },
     ],
@@ -81,8 +81,8 @@ const ICTOffer: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         encounterType={ICT_OFFER_ENCOUNTER_TYPE}
         formList={[{ name: "POC ICT Offer" }]}
         columns={columns}
-        description="ICT Offer List"
-        headerTitle="ICT Offer"
+        description="ICT Service Offering List"
+        headerTitle="ICT Service Offering"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
