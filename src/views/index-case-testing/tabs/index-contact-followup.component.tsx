@@ -50,21 +50,21 @@ const columns = [
         form: { name: "POC Index Contact Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "view",
-        label: "View Index Contact Followup",
+        label: "View ICT Followup",
         mode: "view",
       },
       {
         form: { name: "POC Index Contact Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "edit",
-        label: "Edit Index Contact Followup",
+        label: "Edit ICT Followup",
         mode: "edit",
       },
       {
         form: { name: "POC Index Contact Followup", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Delete Index Contact Followup",
+        label: "Delete ICT Followup",
         mode: "delete",
       },
     ],
@@ -101,8 +101,8 @@ const IndexContactFollowup: React.FC<{ patientUuid: string }> = ({
         encounterType={INDEX_CONTACT_FOLLOWUP_ENCOUNTER_TYPE}
         formList={[{ name: "POC Index Contact Followup" }]}
         columns={columns}
-        description="Index Contact Followup List"
-        headerTitle="Index Contact Followup"
+        description="ICT Followup"
+        headerTitle="ICT Followup"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
