@@ -53,21 +53,21 @@ const columns = [
         form: { name: "POC ICT General", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "view",
-        label: "View ICT General",
+        label: "View Index Case Information",
         mode: "view",
       },
       {
         form: { name: "POC ICT General", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "edit",
-        label: "Edit ICT General",
+        label: "Edit Index Case Information",
         mode: "edit",
       },
       {
         form: { name: "POC ICT General", package: "eth_hiv" },
         encounterUuid: encounter.uuid,
         intent: "*",
-        label: "Delete ICT General",
+        label: "Delete Index Case Information",
         mode: "delete",
       },
     ],
@@ -91,8 +91,8 @@ const ICTGeneral: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         encounterType={ICT_GENERAL_ENCOUNTER_TYPE}
         formList={[{ name: "POC ICT General" }]}
         columns={columns}
-        description="ICT General List"
-        headerTitle="ICT General"
+        description="Index Case Information List"
+        headerTitle="Index Case Information"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,

@@ -15,9 +15,9 @@ const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
     <div className={styles.tabContainer}>
       <Tabs>
         <TabList contained aria-label={""}>
-          <Tab>ICT General</Tab>
-          <Tab>ICT Offer</Tab>
-          <Tab>Index Contact Followup</Tab>
+          <Tab>Index Case Information</Tab>
+          <Tab>ICT Service Offering</Tab>
+          <Tab>ICT Followup</Tab>
           <Tab>Family Index Case Contact</Tab>
           <Tab>Partner Index Case Information</Tab>
         </TabList>
