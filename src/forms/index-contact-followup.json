@@ -241,6 +241,14 @@
                                     "label": "Sibling (< 19)"
                                 },
                                 {
+                                    "concept": "d665f3ee-cb0e-405f-9bbd-cf07a4da500f",
+                                    "label": "Spouse"
+                                },
+                                {
+                                    "concept": "10540efa-421e-4a6d-b2a3-22cb4ceee6d0",
+                                    "label": "Non-spouse partner"
+                                },
+                                {
                                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                     "label": "Other"
                                 }
