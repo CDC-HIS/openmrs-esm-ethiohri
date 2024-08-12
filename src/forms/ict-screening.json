@@ -1,0 +1,297 @@
+{
+    "name": "ICT Screening",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "ICT Screening",
+    "pages": [
+      {
+        "label": "ICT SCREENING (OLD)",
+        "sections": [
+          {
+            "label": "ICT REGISTRATION SCREENING",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Is the client eligible for partner and family based ICT?",
+                "type": "obs",
+                "required": false,
+                "id": "eligibleForIct",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "15063af6-4d52-4f58-94a3-c151048d9c57",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Maternal HIV status",
+                "type": "obs",
+                "required": false,
+                "id": "maternalHivStatus",
+                "questionOptions": {
+                  "rendering": "select",
+                  "concept": "3535f4d1-bf1e-47d5-822d-60c1da143cad",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Known Positive"
+                    },
+                    {
+                      "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                      "label": "Negative"
+                    },
+                    {
+                      "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Unknown status & alive"
+                    },
+                    {
+                      "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Dead"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Marital status",
+                "type": "obs",
+                "required": false,
+                "id": "maritalStatus",
+                "questionOptions": {
+                  "rendering": "select",
+                  "concept": "2feaa615-f6af-41db-91c1-301def421146",
+                  "answers": [
+                    {
+                      "concept": "5555AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Married"
+                    },
+                    {
+                      "concept": "1057AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Single"
+                    },
+                    {
+                      "concept": "1056AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Separated"
+                    },
+                    {
+                      "concept": "1058AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Divorced"
+                    },
+                    {
+                      "concept": "1059AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Widow/Widower"
+                    },
+                    {
+                      "concept": "1060AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Living together"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
+                "label": "Number of contacts elicited?",
+                "type": "obs",
+                "required": false,
+                "id": "contactsElicited",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "cb018c94-17f1-4065-98c0-af892e5f7a36",
+                  "conceptMappings": [],
+                  "answers": []
+                }
+              },
+              {
+                "label": "Did the index case agree to be interviewed?",
+                "type": "obs",
+                "required": false,
+                "id": "agreeInterviewed",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "4dd6e628-fcc9-4629-92b8-192751c3de9c",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Reason for not being interviewed",
+                "type": "obs",
+                "required": false,
+                "id": "reasonNotBeingInterviewed",
+                "hide": {
+                  "hideWhenExpression": "agreeInterviewed !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                },
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "a4c912a5-bb4d-4250-ab4c-35a7d3020587",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "afe90395-0720-4515-929b-6796e45a11ae",
+                      "label": "Refused"
+                    },
+                    {
+                      "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Dead"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Other"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Date index case interviewed",
+                "type": "obs",
+                "required": false,
+                "id": "dateIcInterviewed",
+                "hide": {
+                  "hideWhenExpression": "agreeInterviewed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                },
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "5fff58c8-705d-4e4a-954e-41e7441c659d"
+                }
+              },
+              {
+                "label": "Is the index case interviewed for partner service?",
+                "type": "obs",
+                "required": false,
+                "id": "icInterviewedForService",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "75a0a101-a094-4c7d-a4c7-255fb0094440",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Date interview offered for index case",
+                "type": "obs",
+                "required": false,
+                "id": "dateIcInterviewOffered",
+                "hide": {
+                  "hideWhenExpression": "icInterviewedForService !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                },
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "93f85b06-9bd2-4789-a3d6-8fbfb3075429"
+                }
+              },
+              {
+                "label": "Number of sexual partners in the past 12 month",
+                "type": "obs",
+                "required": false,
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "75dfe54f-30f1-404c-8523-eda893d51468",
+                  "max": 200,
+                  "min": 0,
+                  "showDate": ""
+                },
+                "id": "12month"
+              },
+              {
+                "label": "Number of sexual partners in the past 24 month",
+                "type": "obs",
+                "required": false,
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "59ca144e-569b-4d8e-b83c-24c47af6b683",
+                  "max": 200,
+                  "min": 0,
+                  "showDate": ""
+                },
+                "id": "24month"
+              },
+              {
+                "label": "Is index client willing to provide names of partners",
+                "type": "obs",
+                "required": false,
+                "id": "willingToProvideNames",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "0e7e5389-0966-40f7-9e97-ae059b9f2ce7",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                }
+              },
+              {
+                "label": "Reason for not willing to provide the names of partners",
+                "type": "obs",
+                "required": false,
+                "id": "notWillingToProvideNames",
+                "hide": {
+                  "hideWhenExpression": "willingToProvideNames !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                },
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "e637d9c3-49a1-4a00-8bbf-ace9f12a9b7e"
+                }
+              },
+              {
+                "label": "Next visit date",
+                "type": "obs",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+                  "weeksList": ""
+                },
+                "readonly": "false",
+                "id": "nextVisitDate"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "availableIntents": [
+      {
+        "intent": "*",
+        "display": "default_intent"
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "uuid": "ecefb340-0162-47b2-aec4-3db9b7bdc5e8",
+    "referencedForms": [],
+    "encounterType": "43a8ef4f-473e-4778-9c90-7b7f05014499",
+    "allowUnspecifiedAll": true
+  }

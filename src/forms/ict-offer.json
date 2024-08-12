@@ -35,7 +35,7 @@
                             "required": false,
                             "id": "priorityCriteria",
                             "questionOptions": {
-                              "rendering": "select",
+                              "rendering": "checkbox",
                               "concept": "8534a956-49e8-42d9-82c4-33e51429265d",
                               "conceptMappings": [],
                               "answers": [
