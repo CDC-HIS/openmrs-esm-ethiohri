@@ -64,6 +64,22 @@
                                   "label": "Key population"
                                 },
                                 {
+                                    "concept": "a30f0bd7-c81c-4f5d-9d9c-12afb084e005",
+                                    "label": "Client with new partner"
+                                },
+                                {
+                                    "concept": "c2881eae-b745-499f-872a-62f3a270d793",
+                                    "label": "Client with partner not yet disclosed"
+                                },
+                                {
+                                    "concept": "62b44258-b73b-4362-a0bc-f90703ed6d38",
+                                    "label": "Client with partner not tested"
+                                },
+                                {
+                                    "concept": "dd0515e2-abe7-457e-bc6a-b7faf14aeecb",
+                                    "label": "Client child (<15 Years) not tested"
+                                },
+                                {
                                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                     "label": "Other"
                                 }
