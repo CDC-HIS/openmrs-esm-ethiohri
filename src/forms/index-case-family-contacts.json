@@ -151,7 +151,7 @@
                 "id": "homePhoneNumber",
                 "questionOptions": {
                   "rendering": "text",
-                  "concept": " 2481f720-0490-4c89-aeb8-dd128b8cb001"
+                  "concept": "2481f720-0490-4c89-aeb8-dd128b8cb001"
                 }
               },
               {
@@ -171,7 +171,7 @@
                 "id": "workPhoneNumber",
                 "questionOptions": {
                   "rendering": "text",
-                  "concept": "605a3cfe-a072-4b1b-8067-317538ffdfbb "
+                  "concept": "605a3cfe-a072-4b1b-8067-317538ffdfbb"
                 }
               }
             ]
@@ -272,7 +272,7 @@
                       "label": "Positive"
                     },
                     {
-                      "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
                       "label": "Negative"
                     },
                     {
