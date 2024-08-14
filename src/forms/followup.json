@@ -3416,6 +3416,10 @@
 										"label": "Smear microscopy"
 									},
 									{
+										"concept": "8ee98d84-2e50-4c11-9f20-185588f8b906",
+										"label": "Chest X-Ray"
+									},
+									{
 										"concept": "9224c3c7-d2d7-4165-88cb-81e5aec30d70",
 										"label": "Additional test"
 									}
@@ -3435,7 +3439,6 @@
 									{
 										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 										"label": "Positive"
-										
 									},
 									{
 										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
