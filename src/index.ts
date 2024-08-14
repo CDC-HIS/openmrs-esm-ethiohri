@@ -43,6 +43,8 @@ import {
   isSupplementaryFoodVisible,
   isTreatmentVisible,
   loadFollowupStatus,
+  getBirthdateFromAge,
+  getAgeFromBirthdate
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -104,6 +106,8 @@ export function startupApp() {
     isSupplementaryFoodVisible
   );
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
+  registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);
+  registerExpressionHelper("getAgeFromBirthdate", getAgeFromBirthdate);
   // registerControl({
   //   name: "eth-date",
   //   load: () => import("./components/controls/date/ethiohri-date.component"),

@@ -440,3 +440,43 @@ export async function loadFollowupStatus(patient) {
   }
   return status?.valueCodeableConcept?.coding[0]?.code;
 }
+
+export async function getAgeFromBirthdate(dateOfBirth) {
+  if (dateOfBirth) {
+    const birthdate = new Date(dateOfBirth);
+    const today = new Date();
+    let age = today.getFullYear() - birthdate.getFullYear();
+    const monthDifference = today.getMonth() - birthdate.getMonth();
+    if (
+      monthDifference < 0 ||
+      (monthDifference === 0 && today.getDate() < birthdate.getDate())
+    ) {
+      age--;
+    }
+    return age;
+  } else {
+    return null;
+  }
+}
+
+export async function getBirthdateFromAge(contactAge) {
+  if (contactAge) {
+    const today = new Date();
+    const birthYear = today.getFullYear() - contactAge;
+    const birthdate = new Date(today.setFullYear(birthYear));
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+      timeZoneName: "short",
+    };
+    return (
+      birthdate.toLocaleDateString("en-US", options) +
+      " " +
+      birthdate.toTimeString().split(" ")[0]
+    );
+  } else {
+    return null;
+  }
+}

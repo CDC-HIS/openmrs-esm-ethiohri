@@ -169,6 +169,9 @@
                         "id": "contactAge",
                         "questionOptions": {
                           "rendering": "number",
+                          "calculate": {
+                            "calculateExpression": "getAgeFromBirthdate('dateOfBirth')"
+                            },
                           "concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                           "max": 200,
                           "min": 0,
@@ -180,6 +183,19 @@
                               }
                           ]
                       }
+                    },
+                    {
+                        "label": "Date of Birth",
+                        "type": "obs",
+                        "required": false,
+                        "id": "dateOfBirth",
+                        "questionOptions": {
+                          "rendering": "date",
+                          "calculate": {
+                            "calculateExpression": "getBirthdateFromAge('contactAge')"
+                            },
+                          "concept": "e27ae70c-6131-4004-9da8-841619e19480"
+                        }
                     },
                     {
                         "label": "Sex",
