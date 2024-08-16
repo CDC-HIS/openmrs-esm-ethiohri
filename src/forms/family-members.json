@@ -635,6 +635,7 @@
 						{
 							"label": "Unique ART Number",
 							"type": "obs",
+							"readonly": true,
 							"questionOptions": {
 								"rendering": "text",
 								"calculate": {
@@ -642,6 +643,22 @@
                                 },
 								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
+							"behaviours": [
+								{
+									"intent": "edit",
+									"questionOptions": {
+										"rendering": "text",
+										"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								}
+								},
+								{
+									"intent": "view",
+									"questionOptions": {
+										"rendering": "text",
+										"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								}
+								}
+							],
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
