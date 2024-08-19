@@ -6,7 +6,8 @@ import ICTGeneral from "./tabs/ict-general.component";
 import ICTOffer from "./tabs/ict-offer.component";
 import IndexContactFollowup from "./tabs/index-contact-followup.component";
 import FamilyIndexCaseContacts from "./tabs/ict-family-contacts.component";
-import PartnerIndexCaseInformation from "./tabs/ict-partner-information";
+import PartnerIndexCaseInformation from "./tabs/ict-partner-information.component";
+import ICTScreening from "./tabs/ict-screening.component";
 
 const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
   patientUuid,
@@ -20,6 +21,7 @@ const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
           <Tab>ICT Followup</Tab>
           <Tab>Family Index Case Contact</Tab>
           <Tab>Partner Index Case Information</Tab>
+          <Tab>ICT Screening</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -36,6 +38,9 @@ const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
           </TabPanel>
           <TabPanel>
             <PartnerIndexCaseInformation patientUuid={patientUuid} />
+          </TabPanel>
+          <TabPanel>
+            <ICTScreening patientUuid={patientUuid} />
           </TabPanel>
         </TabPanels>
       </Tabs>
