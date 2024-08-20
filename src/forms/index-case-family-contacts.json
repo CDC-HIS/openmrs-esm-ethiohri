@@ -455,6 +455,12 @@
         ]
       }
     ],
+    "availableIntents": [
+      {
+        "intent": "*",
+        "display": "default_intent"
+      }
+    ],
     "processor": "EncounterFormProcessor",
     "encounterType": "57c02902-a9fe-4b63-a1a7-0a070fd3a48a",
     "referencedForms": [],
