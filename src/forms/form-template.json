@@ -1,0 +1,39 @@
+{
+	"name": " ### ",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": " ### ",
+	"pages": [
+		{
+			"label": " ### ",
+			"sections": [
+				{
+					"label": " ### ",
+					"questions": [
+						{
+							"label": " ### ",
+							"type": " ### ",
+							"questionOptions": {
+								"rendering": " ### ",
+								"concept": " ### "
+							},
+							"id": " ### "
+						}
+					]
+				}
+			]
+		}
+	],
+	"availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"uuid": " ##__FORM_UUID__## ",
+	"referencedForms": [],
+	"encounterType": " ##__ENCOUNTER_TYPE_UUID__## ",
+	"allowUnspecifiedAll": true
+}
