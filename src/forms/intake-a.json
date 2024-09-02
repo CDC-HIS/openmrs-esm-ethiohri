@@ -633,10 +633,14 @@
 										"label": "Pediatric IPD"
 										
 									},
-								{
-									"concept": "e7e85a1a-1e45-4043-99d7-216034965bc5",
-									"label": "Other OPD"
-								}
+									{
+										"concept": "e7e85a1a-1e45-4043-99d7-216034965bc5",
+										"label": "Other OPD"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
 								]
 							},
 							"hide": {
@@ -650,7 +654,6 @@
 							"questionOptions": {
 								"rendering": "text",
 								"concept": "a0368d36-686d-4b98-b60e-e62cb3d46c9b"
-								
 							},
 							"validators": [
 								{
@@ -659,9 +662,9 @@
 								  "message": "Please use a maximum of 50 characters"
 								}
 							  ],
-							"hide": {
-								"hideWhenExpression": "entryPoint !== '163266AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !includes('within_the_facility','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
-							},
+							  "hide": {
+								"hideWhenExpression": "within_the_facility !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							  },
 							"id": "otherEntryPointWithinTheFacility"
 						},
 						{
