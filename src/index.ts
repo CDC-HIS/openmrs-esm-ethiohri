@@ -44,7 +44,7 @@ import {
   isTreatmentVisible,
   loadFollowupStatus,
   getBirthdateFromAge,
-  getAgeFromBirthdate
+  getAgeFromBirthdate,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -233,3 +233,8 @@ export const patientList = getSyncLifecycle(PatientList, {
   featureName: "home",
   moduleName,
 });
+
+export const helpMenu = getAsyncLifecycle(
+  () => import("./views/navbar/help-button.component"),
+  options
+);
