@@ -1155,16 +1155,20 @@
 			  {
 				"label": "Temperature (in degree Celsius)",
 				"type": "obs",
+				"required": false,
 				"questionOptions": {
-				  "rendering": "number",
-				  "concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "max": 43,
-				  "min": 25,
-				  "showDate": ""
-				  
+				  "rendering": "text",
+				  "concept": "9ce234b3-bafc-4e82-9709-34b0cb6b7d85"
 				},
+				"validators": [
+				  {
+					"type": "js_expression",
+					"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+					"message": "Temperature should be a numeric value"
+				  }
+				],
 				"id": "temperature"
-			  },
+				},
 			  {
 				"label": "PULSE/Heart Rate (per minute)",
 				"type": "obs",
