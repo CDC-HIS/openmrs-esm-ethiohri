@@ -6,10 +6,6 @@ import styles from "./navbar.scss";
 const HelpMenu: React.FC = () => {
   const currentUrl = `localhost:81/doku.php?id=start`;
 
-  useEffect(() => {
-    console.log(`localhost:81/doku.php?id=start`);
-  }, []);
-
   return (
     <div className={styles.switcherContainer}>
       <a href={currentUrl} target="_blank" style={{ textDecoration: "none" }}>
