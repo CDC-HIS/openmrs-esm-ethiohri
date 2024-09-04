@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Switcher } from "@carbon/react";
 import { Help } from "@carbon/react/icons";
 import styles from "./navbar.scss";
 
 const HelpMenu: React.FC = () => {
-  const currentUrl = `localhost:81/doku.php?id=start`;
+  const currentUrl = `${window.location.protocol}//${window.location.hostname}:81/doku.php?id=start`;
 
   return (
     <div className={styles.switcherContainer}>
