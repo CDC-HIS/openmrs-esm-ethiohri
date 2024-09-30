@@ -55,7 +55,7 @@
     "lodash-es": "^4.17.15"
   },
   "peerDependencies": {
-    "@ohri/openmrs-esm-ohri-commons-lib": "2.3.5",
+    "@ohri/openmrs-esm-ohri-commons-lib": "2.3.9",
     "@openmrs/esm-framework": "5.x",
     "@openmrs/esm-patient-common-lib": "^8.0.0",
     "react": "18.x",
