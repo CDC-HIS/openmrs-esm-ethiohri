@@ -2182,22 +2182,6 @@
 								"rendering": "date",
 								"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
-							"behaviours": [
-								{
-									"intent": "edit",
-									"questionOptions": {
-										"rendering": "date",
-										"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-								}
-							},
-								{
-									"intent": "view",
-									"questionOptions": {
-										"rendering": "date",
-										"concept": "164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-								}
-							}
-							],
 							"readonly": "true",
 							"hide": {
 								"hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -2214,22 +2198,6 @@
 								"rendering": "date",
 								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
 							},
-							"behaviours": [
-								{
-									"intent": "edit",
-									"questionOptions": {
-										"rendering": "date",
-								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
-								}
-							},
-								{
-									"intent": "view",
-									"questionOptions": {
-										"rendering": "date",
-								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
-								}
-							}
-							],
 							"hide": {
 								"hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
