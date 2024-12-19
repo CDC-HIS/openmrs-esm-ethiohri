@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
@@ -43,7 +43,7 @@ jobs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop'}}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Download Artifacts
         uses: actions/download-artifact@v3
       - name: Use Node.js
