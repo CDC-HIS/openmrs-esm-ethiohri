@@ -88,7 +88,7 @@ jobs:
 
       steps:
         - name: Download Artifacts
-          uses: actions/download-artifact@v3
+          uses: actions/checkout@v4
         - name: Compute Timestamp
           run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
         - name: Run the Update MicroFronEnd Script on dev server
@@ -102,7 +102,7 @@ jobs:
 
       steps:
         - name: Download Artifacts
-          uses: actions/download-artifact@v3
+          uses: actions/checkout@v4
         - name: Compute Timestamp
           run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
         - uses: garygrossgarten/github-action-ssh@release
