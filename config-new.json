@@ -109,7 +109,7 @@
       {
         "id": "demographics",
         "name": "Basic Info",
-        "fields": ["registrationDate","name", "gender", "dob", "id", "enrolledInPmtct"]
+        "fields": ["registrationDate","name", "gender", "dob", "id"]
       }
     ],
     "fieldDefinitions": [
@@ -139,26 +139,11 @@
         "label": "Registration date",
         "type": "obs",
         "uuid": "dadc86a8-1e44-4a6d-91c2-e3b54089b54c",
+        "allowFutureDates": false,
         "validation": {
           "required": true
         }
-      },
-      {
-        "id": "enrolledInPmtct",
-        "label": "Enrolled in PMTCT ?",
-        "type": "obs",
-        "uuid": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "customConceptAnswers": [
-            {
-            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "label": "Yes"
-            },
-            {
-            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "label": "No"
-            }
-        ]
-      },
+      }, 
       {
         "id": "hometelephoneNumber",
         "label": "Home Telephone Number",

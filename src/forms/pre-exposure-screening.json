@@ -74,7 +74,7 @@
 			  {
 				"label": "Referred from",
 				"type": "obs",
-				"required": false,
+				"required": true,
 				"id": "referredFrom",
 				"questionOptions": {
 				  "rendering": "select",
@@ -360,49 +360,49 @@
 				  }
 				],
 				"id": "weight"
-				},
+			  },
 			  {
 				"label": "ScCr",
 				"type": "obs",
 				"questionOptions": {
-					"rendering": "text",
-					"concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0",
-					"conceptMappings": [
-						{
-							"type": "CIEL",
-							"value": "790"
-						},
-						{
-							"type": "SNOMED-CT",
-							"value": "113075003"
-						},
-						{
-							"type": "LOINC",
-							"value": "14682-9"
-						},
-						{
-							"type": "AMPATH",
-							"value": "790"
-						},
-						{
-							"type": "AMPATH",
-							"value": "790"
-						},
-						{
-							"type": "CIEL",
-							"value": "790"
-						}
-					]
+				  "rendering": "text",
+				  "concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0",
+				  "conceptMappings": [
+					{
+					  "type": "CIEL",
+					  "value": "790"
+					},
+					{
+					  "type": "SNOMED-CT",
+					  "value": "113075003"
+					},
+					{
+					  "type": "LOINC",
+					  "value": "14682-9"
+					},
+					{
+					  "type": "AMPATH",
+					  "value": "790"
+					},
+					{
+					  "type": "AMPATH",
+					  "value": "790"
+					},
+					{
+					  "type": "CIEL",
+					  "value": "790"
+					}
+				  ]
 				},
 				"validators": [
-					{
-					  "type": "js_expression",
-					  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
-					  "message": "ScCr should be a numeric value"
-					}
-							  ],
+				  {
+					"type": "js_expression",
+					"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+					"message": "ScCr should be a numeric value"
+				  }
+				],
 				"id": "creatinineLevel"
-			},
+			  },
 			  {
 				"label": "eGFR",
 				"type": "obs",
@@ -410,8 +410,8 @@
 				"id": "eGFR",
 				"questionOptions": {
 				  "calculate": {
-									  "calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
-								  },
+					"calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
+				  },
 				  "rendering": "select",
 				  "concept": "165570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "conceptMappings": [
@@ -592,387 +592,387 @@
 					}
 				  ],
 				  "answers": [
-									  {
-										  "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Condoms",
-										  "conceptMappings": [
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "706506000"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5270"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "190"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5270"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "190"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "190"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "706506000"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "190"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "190"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Oral contraceptive pill",
-										  "hide": {
-											  "hideWhenExpression": "patient.gender === 'male'"
-										  },
-										  "conceptMappings": [
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "5935008"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "780"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "780"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "13"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "5935008"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "13"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "780"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Injectable",
-										  "hide": {
-											  "hideWhenExpression": "patient.gender === 'male'"
-										  },
-										  "conceptMappings": [
-											  {
-												  "type": "CIEL",
-												  "value": "5279"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "169552007"
-											  },
-											  {
-												  "type": "SNOMED-MVP",
-												  "value": "52791000105008"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5279"
-											  },
-											  {
-												  "type": "SNOMED-MVP",
-												  "value": "52791000105008"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5279"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Diaphragm/cervical cap",
-										  "hide": {
-											  "hideWhenExpression": "patient.gender === 'male'"
-										  },
-										  "conceptMappings": [
-											  {
-												  "type": "CIEL",
-												  "value": "5278"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "368441006"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5278"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "5278"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5278"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "368441006"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Intrauterine device",
-										  "hide": {
-											  "hideWhenExpression": "patient.gender === 'male'"
-										  },
-										  "conceptMappings": [
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "312081001"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "312081001"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "268460000"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5275"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "268460000"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "5275"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "5275"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Vasectomy/tubal legation",
-										  "hide": {
-											  "hideWhenExpression": "patient.gender === 'female'"
-										  },
-										  "conceptMappings": [
-											  {
-												  "type": "IMO-ProcedureIT",
-												  "value": "1848460"
-											  },
-											  {
-												  "type": "IMO-ProcedureIT",
-												  "value": "1809386"
-											  },
-											  {
-												  "type": "IMO-ProcedureIT",
-												  "value": "1809386"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "1489"
-											  },
-											  {
-												  "type": "IMO-ProcedureIT",
-												  "value": "1848460"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "22523008"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "22523008"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1721"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "1489"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1721"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Abstinence",
-										  "conceptMappings": [
-											  {
-												  "type": "AMPATH",
-												  "value": "6219"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "159524"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1274"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "162171002"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1274"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "159524"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1720"
-											  },
-											  {
-												  "type": "PIH-Malawi",
-												  "value": "3628"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1720"
-											  },
-											  {
-												  "type": "PIH-Malawi",
-												  "value": "3628"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "162171002"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "Implantable hormone",
-										  "hide": {
-											  "hideWhenExpression": "patient.gender === 'male'"
-										  },
-										  "conceptMappings": [
-											  {
-												  "type": "CIEL",
-												  "value": "159589"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "428987008"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "169552007"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "169552007"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "6220"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "159589"
-											  }
-										  ]
-									  },
-									  {
-										  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										  "label": "None",
-										  "conceptMappings": [
-											  {
-												  "type": "HL7-ActSubstanceAdminSubstitutionCode",
-												  "value": "N"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "1107"
-											  },
-											  {
-												  "type": "ANC-DAK",
-												  "value": "ANC.B8.DE28"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "1107"
-											  },
-											  {
-												  "type": "PIH-Malawi",
-												  "value": "1107"
-											  },
-											  {
-												  "type": "ANC-DAK",
-												  "value": "ANC.B5.DE49"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1107"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "260413007"
-											  },
-											  {
-												  "type": "PIH",
-												  "value": "1107"
-											  },
-											  {
-												  "type": "org.openmrs.module.mdrtb",
-												  "value": "NONE"
-											  },
-											  {
-												  "type": "PIH-Malawi",
-												  "value": "1107"
-											  },
-											  {
-												  "type": "AMPATH",
-												  "value": "1107"
-											  },
-											  {
-												  "type": "SNOMED-CT",
-												  "value": "260413007"
-											  },
-											  {
-												  "type": "org.openmrs.module.mdrtb",
-												  "value": "NONE"
-											  },
-											  {
-												  "type": "CIEL",
-												  "value": "1107"
-											  }
-										  ]
-									  }
-								  ]
+					{
+					  "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Condoms",
+					  "conceptMappings": [
+						{
+						  "type": "SNOMED-CT",
+						  "value": "706506000"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5270"
+						},
+						{
+						  "type": "PIH",
+						  "value": "190"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5270"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "190"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "190"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "706506000"
+						},
+						{
+						  "type": "PIH",
+						  "value": "190"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "190"
+						}
+					  ]
+					},
+					{
+					  "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Oral contraceptive pill",
+					  "hide": {
+						"hideWhenExpression": "patient.gender === 'male'"
+					  },
+					  "conceptMappings": [
+						{
+						  "type": "SNOMED-CT",
+						  "value": "5935008"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "780"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "780"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "13"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "5935008"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "13"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "780"
+						}
+					  ]
+					},
+					{
+					  "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Injectable",
+					  "hide": {
+						"hideWhenExpression": "patient.gender === 'male'"
+					  },
+					  "conceptMappings": [
+						{
+						  "type": "CIEL",
+						  "value": "5279"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "169552007"
+						},
+						{
+						  "type": "SNOMED-MVP",
+						  "value": "52791000105008"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5279"
+						},
+						{
+						  "type": "SNOMED-MVP",
+						  "value": "52791000105008"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5279"
+						}
+					  ]
+					},
+					{
+					  "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Diaphragm/cervical cap",
+					  "hide": {
+						"hideWhenExpression": "patient.gender === 'male'"
+					  },
+					  "conceptMappings": [
+						{
+						  "type": "CIEL",
+						  "value": "5278"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "368441006"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5278"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "5278"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5278"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "368441006"
+						}
+					  ]
+					},
+					{
+					  "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Intrauterine device",
+					  "hide": {
+						"hideWhenExpression": "patient.gender === 'male'"
+					  },
+					  "conceptMappings": [
+						{
+						  "type": "SNOMED-CT",
+						  "value": "312081001"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "312081001"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "268460000"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5275"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "268460000"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "5275"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "5275"
+						}
+					  ]
+					},
+					{
+					  "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Vasectomy/tubal legation",
+					  "hide": {
+						"hideWhenExpression": "patient.gender === 'female'"
+					  },
+					  "conceptMappings": [
+						{
+						  "type": "IMO-ProcedureIT",
+						  "value": "1848460"
+						},
+						{
+						  "type": "IMO-ProcedureIT",
+						  "value": "1809386"
+						},
+						{
+						  "type": "IMO-ProcedureIT",
+						  "value": "1809386"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "1489"
+						},
+						{
+						  "type": "IMO-ProcedureIT",
+						  "value": "1848460"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "22523008"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "22523008"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1721"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "1489"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1721"
+						}
+					  ]
+					},
+					{
+					  "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Abstinence",
+					  "conceptMappings": [
+						{
+						  "type": "AMPATH",
+						  "value": "6219"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "159524"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1274"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "162171002"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1274"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "159524"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1720"
+						},
+						{
+						  "type": "PIH-Malawi",
+						  "value": "3628"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1720"
+						},
+						{
+						  "type": "PIH-Malawi",
+						  "value": "3628"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "162171002"
+						}
+					  ]
+					},
+					{
+					  "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Implantable hormone",
+					  "hide": {
+						"hideWhenExpression": "patient.gender === 'male'"
+					  },
+					  "conceptMappings": [
+						{
+						  "type": "CIEL",
+						  "value": "159589"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "428987008"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "169552007"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "169552007"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "6220"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "159589"
+						}
+					  ]
+					},
+					{
+					  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "None",
+					  "conceptMappings": [
+						{
+						  "type": "HL7-ActSubstanceAdminSubstitutionCode",
+						  "value": "N"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "1107"
+						},
+						{
+						  "type": "ANC-DAK",
+						  "value": "ANC.B8.DE28"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "1107"
+						},
+						{
+						  "type": "PIH-Malawi",
+						  "value": "1107"
+						},
+						{
+						  "type": "ANC-DAK",
+						  "value": "ANC.B5.DE49"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1107"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "260413007"
+						},
+						{
+						  "type": "PIH",
+						  "value": "1107"
+						},
+						{
+						  "type": "org.openmrs.module.mdrtb",
+						  "value": "NONE"
+						},
+						{
+						  "type": "PIH-Malawi",
+						  "value": "1107"
+						},
+						{
+						  "type": "AMPATH",
+						  "value": "1107"
+						},
+						{
+						  "type": "SNOMED-CT",
+						  "value": "260413007"
+						},
+						{
+						  "type": "org.openmrs.module.mdrtb",
+						  "value": "NONE"
+						},
+						{
+						  "type": "CIEL",
+						  "value": "1107"
+						}
+					  ]
+					}
+				  ]
 				},
 				"hide": {
 				  "hideWhenExpression": "pregnancyStatus == '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -1184,16 +1184,16 @@
 				  "concept": "f15222fd-c4dd-44e0-b7f4-407599596998",
 				  "answers": [
 					{
-						"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"label": "Yes"
+					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Yes"
 					},
 					{
-						"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"label": "No"
+					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "No"
 					},
 					{
-						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"label": "I don't know"
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "I don't know"
 					}
 				  ]
 				},
@@ -1229,8 +1229,8 @@
 					  "label": "No"
 					},
 					{
-						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"label": "I don't know"
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "I don't know"
 					}
 				  ]
 				},
@@ -1316,8 +1316,8 @@
 					  "label": "Unsuppressed"
 					},
 					{
-						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"label": "I don't know"
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "I don't know"
 					}
 				  ]
 				}
@@ -1362,12 +1362,12 @@
 	  {
 		"label": "Recent Exposure To HIV",
 		"behaviours": [
-			{
-				"intent": "*",
-				"hide": {
-					"hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				}
+		  {
+			"intent": "*",
+			"hide": {
+			  "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 			}
+		  }
 		],
 		"sections": [
 		  {
@@ -1409,8 +1409,8 @@
 					  "label": "No"
 					},
 					{
-						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"label": "I don't know"
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "I don't know"
 					}
 				  ]
 				},
@@ -1473,8 +1473,8 @@
 					  "label": "No"
 					},
 					{
-						"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-						"label": "I don't know"
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "I don't know"
 					}
 				  ]
 				},
@@ -1487,12 +1487,12 @@
 	  {
 		"label": "PrEP Eligibility",
 		"behaviours": [
-			{
-				"intent": "*",
-				"hide": {
-					"hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || doYouHaveHIVPositivePartner === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && selfIdentifyingSexWorker === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				}
+		  {
+			"intent": "*",
+			"hide": {
+			  "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 			}
+		  }
 		],
 		"sections": [
 		  {
@@ -1540,15 +1540,20 @@
 	  },
 	  {
 		"label": "Treatment Initiation",
-		"hide": {
-		  "hideWhenExpression": "selfIdentifyingSexWorker !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-		},
+		"behaviours": [
+		  {
+			"intent": "*",
+			"hide": {
+			  "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+			}
+		  }
+		],
 		"sections": [
 		  {
 			"label": "Treatment Initiation",
 			"isExpanded": "true",
 			"hide": {
-			  "hideWhenExpression": "contraindicationsToPrepMedicines !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+			  "hideWhenExpression": "contraindicationsToPrepMedicines === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 			},
 			"questions": [
 			  {
@@ -1719,16 +1724,16 @@
 				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"validators": [
-								  {
-									  "type": "date",
-									  "allowFutureDates": "false"
-								  },
-								  {
-									  "type": "js_expression",
-									  "failsWhenExpression": "myValue < new Date(screeningDate)",
-									  "message": "PrEP Start date should not be earlier than Screening date"
-								  }
-							  ]
+				  {
+					"type": "date",
+					"allowFutureDates": "false"
+				  },
+				  {
+					"type": "js_expression",
+					"failsWhenExpression": "myValue < new Date(screeningDate)",
+					"message": "PrEP Start date should not be earlier than Screening date"
+				  }
+				]
 			  },
 			  {
 				"label": "PrEP (ARVs) prescribed",
@@ -1762,44 +1767,44 @@
 			  {
 				"label": "Number of first dose day provided",
 				"type": "obs",
-							  "required": "true",
+				"required": "true",
 				"id": "doseDays",
-							  "questionOptions": {
-								  "rendering": "select",
-								  "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
-								  "answers": [
-									  {
-										  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
-										  "label": "30",
-										  "conceptMappings": []
-									  },
-									  {
-										  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
-										  "label": "60",
-										  "conceptMappings": []
-									  },
-									  {
-										  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
-										  "label": "90",
-										  "conceptMappings": []
-									  },
-									  {
-										  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
-										  "label": "120",
-										  "conceptMappings": []
-									  },
-									  {
-										  "concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
-										  "label": "150",
-										  "conceptMappings": []
-									  },
-									  {
-										  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
-										  "label": "180",
-										  "conceptMappings": []
-									  }
-								  ]
-							  },
+				"questionOptions": {
+				  "rendering": "select",
+				  "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
+				  "answers": [
+					{
+					  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+					  "label": "30",
+					  "conceptMappings": []
+					},
+					{
+					  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+					  "label": "60",
+					  "conceptMappings": []
+					},
+					{
+					  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+					  "label": "90",
+					  "conceptMappings": []
+					},
+					{
+					  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+					  "label": "120",
+					  "conceptMappings": []
+					},
+					{
+					  "concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
+					  "label": "150",
+					  "conceptMappings": []
+					},
+					{
+					  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+					  "label": "180",
+					  "conceptMappings": []
+					}
+				  ]
+				},
 				"hide": {
 				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
@@ -1809,25 +1814,24 @@
 				"label": "Unique identification code (UIC)",
 				"type": "obs",
 				"questionOptions": {
-					"rendering": "text",
-					"calculate": {
-						"calculateExpression": "getIdentifier(patient, 'UAN')"
-					},
-					"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				  "rendering": "text",
+				  "concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+				  "conceptMappings": [],
+				  "answers": []
 				},
 				"id": "uniqueIdentificaitonCode"
-			}
+			  }
 			]
 		  }
 		]
 	  }
 	],
 	"availableIntents": [
-		  {
-			  "intent": "*",
-			  "display": "default_intent"
-		  }
-	  ],
+	  {
+		"intent": "*",
+		"display": "default_intent"
+	  }
+	],
 	"processor": "EncounterFormProcessor",
 	"uuid": "e7bce9e2-5ed6-4cbb-ab93-3531a4c33760",
 	"referencedForms": [],

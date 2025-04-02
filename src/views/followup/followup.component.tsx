@@ -51,8 +51,20 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       {
         key: "followUpStatus",
         header: "Follow Up Status",
+        // getValue: (encounter) => {
+        //   return getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
+        // },
         getValue: (encounter) => {
-          return getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
+          const status = getData(
+            encounter,
+            "222f64a8-a603-4d2e-b70e-2d90b622bb04"
+          );
+          if (status === "Restart medication") {
+            return "Restart";
+          } else if (status === "Ran away") {
+            return "Drop";
+          }
+          return status; // Return the original value if no modification is needed
         },
       },
       {

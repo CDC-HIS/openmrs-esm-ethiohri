@@ -2164,10 +2164,6 @@
                     "label": "Salmonella Septicaemia"
                   },
                   {
-                    "concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
-                    "label": "Pulmonary Tuberculosis"
-                  },
-                  {
                     "concept": "b393fcd2-c410-465b-866d-751f8c90df25",
                     "label": "Symptomatic HIV- associated"
                   },
@@ -2294,10 +2290,7 @@
 						"label": "Other reason for eligibility"
 					}
 				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "eligibileForART !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
+				},				
 				"id": "whyEligibleForART"
 			  },
 			  {
@@ -2314,10 +2307,7 @@
 					  "failsWhenExpression": "myValue.length > 50",
 					  "message": "Please use a maximum of 50 characters"
 					}
-				  ],
-				  "hide": {
-					"hideWhenExpression": "!includes('whyEligibleForART', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
-				  },
+				  ],				  
 				"id": "otherReasonWhyEligible"
 			  }
 			]

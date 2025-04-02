@@ -635,12 +635,8 @@
 						{
 							"label": "Unique ART Number",
 							"type": "obs",
-							"readonly": true,
 							"questionOptions": {
-								"rendering": "text",
-								"calculate": {
-                                    "calculateExpression": "getIdentifier(patient, 'UAN')"
-                                },
+								"rendering": "text",								
 								"concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 							},
 							"behaviours": [
