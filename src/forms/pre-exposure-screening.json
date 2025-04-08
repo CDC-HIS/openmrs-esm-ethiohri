@@ -1691,7 +1691,7 @@
 			  {
 				"label": "PrEP Start Date",
 				"type": "obs",
-				"required": false,
+				"required": true,
 				"id": "prepStartDate",
 				"questionOptions": {
 				  "rendering": "date",
@@ -1805,6 +1805,26 @@
 					}
 				  ]
 				},
+				"hide": {
+				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				},
+				"validators": []
+			  },
+			  {
+				"label": "PrEP dose end date",
+				"type": "obs",
+				"required": false,
+				"id": "prepDoseEndDate",
+				"questionOptions": {
+				  "rendering": "date",
+				  "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
+				  "calculate": {
+					"calculateExpression": "CustomPrepDoseEndDateCalc('prepStartDate', 'doseDays', '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+				  },
+				  "conceptMappings": [],
+				  "answers": []
+				},
+				"readonly": "true",
 				"hide": {
 				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},

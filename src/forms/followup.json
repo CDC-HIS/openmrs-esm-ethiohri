@@ -2200,7 +2200,10 @@
 				"behaviours": [
 				  {
 					"intent": "edit",
-					"questionOptions": {					  
+					"questionOptions": {	
+						"calculate": {
+					"calculateExpression": "!nextVisitDate ? CustomNextVisitDateCalc('followupDate','arvDispensedInDays') : nextVisitDate"
+				  },				  
 					  "rendering": "date",
 					  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
 					}

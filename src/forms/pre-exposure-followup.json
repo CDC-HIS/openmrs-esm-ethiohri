@@ -1140,6 +1140,7 @@
                 "conceptMappings": [],
                 "answers": []
               },
+              "readonly": "true",
               "hide": {
                 "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
