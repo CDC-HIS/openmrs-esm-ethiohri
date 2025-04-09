@@ -10,11 +10,9 @@
       "dom",
       "es5",
       "scripthost",
-      "es2015",
-      "es2015.promise",
+      "es2022",
       "es2016.array.include",
-      "es2018",
-      "es2020"
+      "es2018"
     ],
     "resolveJsonModule": true,
     "noEmit": true,
