@@ -1,0 +1,50 @@
+@use '@carbon/styles/scss/spacing';
+@use '@carbon/styles/scss/type';
+@import '../../root.scss';
+
+.searchField {
+  width: 100%;
+  max-width: 250px;
+  border: 0px !important;
+}
+
+.searchBox {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.searchContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.searchContainer > div {
+  align-self: center;
+  justify-self: flex-end;
+}
+
+.search {
+  width: 100%;
+  max-width: 16rem;
+  background-color: $ui-02;
+  border-bottom-color: $ui-03;
+}
+
+.heading {
+  text-align: left;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  @include type.type-style("heading-03");
+  color: $text-02;
+}
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.tile {
+  text-align: center;
+  border: 1px solid $ui-03;
+}

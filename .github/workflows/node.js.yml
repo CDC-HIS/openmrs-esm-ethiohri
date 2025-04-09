@@ -18,18 +18,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
+          node-version: "18"
       - run: yarn
       - run: yarn lint
       - run: yarn coverage
       - run: yarn typescript
       - run: yarn build
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: |
@@ -43,19 +43,19 @@ jobs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop'}}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
+          node-version: "18"
           registry-url: "https://registry.npmjs.org"
       - run: yarn
       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" 'package.json'
-      - run: yarn config set npmAuthToken "${ICAP_ACCESS_TOKEN}" && yarn cipublish --access public --tag next --no-git-tag-version
+      - run: yarn config set npmAuthToken "${NPM_AUTH_TOKEN}" && yarn cipublish --access public --tag next --no-git-tag-version
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   release:
     runs-on: ubuntu-latest
@@ -66,53 +66,49 @@ jobs:
     if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master'}}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Download Artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: "16.x"
+          node-version: "18"
           registry-url: 'https://registry.npmjs.org'
       - run: yarn
       - run: sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-release-pre.${{ github.run_number }}/" 'package.json'
-      - run: yarn config set npmAuthToken "${ICAP_ACCESS_TOKEN}" && yarn cipublish --access public --tag latest --no-git-tag-version
+      - run: yarn config set npmAuthToken "${NPM_AUTH_TOKEN}" && yarn cipublish --access public --tag latest --no-git-tag-version
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.ICAP_ACCESS_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   dev:
-      runs-on: ubuntu-latest
+      runs-on: ethiohri-dev
       needs: pre_release
 
       if: ${{ github.ref == 'refs/heads/develop' }}
 
       steps:
         - name: Download Artifacts
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
         - name: Compute Timestamp
           run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-        - uses: garygrossgarten/github-action-ssh@release
-          name: Run the Update MicroFronEnd Script on dev server
-          with:
-              command: cd /usr/share/tomcat/frontendmodules/ && /bin/bash update_frontend_modules.sh
-              host: ${{ secrets.ETHIOHRI_HOST }}
-              username: ${{ secrets.ETHIOHRI_USER }}
-              privateKey: ${{ secrets.ETHIOHRI_DEV_PRIVATE_KEY}}
-  demo:
-      runs-on: ubuntu-latest
-      needs: release
+        - name: Run the Update MicroFronEnd Script on dev server
+          run: cd /usr/share/tomcat/frontendmodules/ && /bin/bash update_frontend_modules.sh
 
-      if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master'}}
+#  demo:
+#      runs-on: ubuntu-latest
+#     needs: release
 
-      steps:
-        - name: Download Artifacts
-          uses: actions/download-artifact@v3
-        - name: Compute Timestamp
-          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-        - uses: garygrossgarten/github-action-ssh@release
-          name: Run the Update MicroFronEnd Script on Demo server
-          with:
-              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_modules.sh
-              host: ${{ secrets.ETHIOHRI_DEMO_HOST }}
-              username: ${{ secrets.ETHIOHRI_DEMO_USER }}
-              privateKey: ${{ secrets.ETHIOHRI_DEMO_PRIVATE_KEY}}
+#      if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master'}}
+
+#      steps:
+#        - name: Download Artifacts
+#          uses: actions/download-artifact@v4
+#        - name: Compute Timestamp
+#          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+#        - uses: garygrossgarten/github-action-ssh@release
+#          name: Run the Update MicroFronEnd Script on Demo server
+#          with:
+#              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_modules.sh
+#              host: ${{ secrets.ETHIOHRI_DEMO_HOST }}
+#              username: ${{ secrets.ETHIOHRI_DEMO_USER }}
+#              privateKey: ${{ secrets.ETHIOHRI_DEMO_PRIVATE_KEY}}

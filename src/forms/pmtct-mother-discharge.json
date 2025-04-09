@@ -1,0 +1,159 @@
+{
+    "name": "PMTCT Discharge",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "PMTCT Discharge",
+    "pages": [
+      {
+        "label": "Discharge Information",
+        "sections": [
+          {
+            "label": "Discharge Information",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Date of enrollment / booking",
+                "type": "obs",
+                "required": false,
+                "readonly": true,
+                "id": "dateOfEnrollment",
+                "questionOptions": {
+                  "calculate": {
+                    "calculateExpression": "resolve(api.getLatestObs(patient.id, '0fe4faee-0717-4dc0-be3d-1cd52923804a', '1914ed4a-86fe-43d2-8338-2be2937ff11e'))?.valueDateTime"
+                  },
+                  "rendering": "date",
+                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a"
+                },
+                "behaviours": [
+                  {
+                    "intent": "edit",
+                    "questionOptions": {
+                      "rendering": "date",
+                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a"
+                  }
+                  }
+                  ,{
+                    "intent": "view",
+                    "questionOptions": {
+                      "rendering": "date",
+                  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a"
+                  }
+                  }
+                ],
+                "validators": [
+                  {
+                    "type": "date",
+                    "allowFutureDates": "false"
+                  }
+                ]
+              },
+              {
+                "label": "Maternal PMTCT Final outcome",
+                "type": "obs",
+                "required": true,
+                "id": "finalOutcome",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Alive on ART"
+                    },
+                    {
+                      "concept": "1693AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "TO"
+                    },
+                    {
+                      "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Died"
+                    },
+                    {
+                      "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
+                      "label": "Lost"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
+                "label": "Discharge date",
+                "type": "obs",
+                "required": true,
+                "id": "dischargeDate",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "18f78400-d91c-40ea-bd9f-4388c10d50c1",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": [
+                  {
+                    "type": "date",
+                    "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateOfEnrollment)",
+                  "message": "Discharge date should not be earlier than date of enrollment / booking"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "message": "Discharge date should not be earlier than patient's date of birth"
+                }
+                ]
+              },
+              {
+                "label": "Reason for discharge",
+                "type": "obs",
+                "required": false,
+                "id": "reasonForDischarge",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "ba47a98e-b6b0-42f1-b612-496d501b1272",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "6d0854b2-66ac-4572-ad1f-743270c48f61",
+                      "label": "Abortion"
+                    },
+                    {
+                      "concept": "3968e4ec-f44c-4e93-8aeb-f363102718b6",
+                      "label": "Infant death"
+                    },
+                    {
+                      "concept": "5d3a760a-1000-48a2-a5b9-9d62c6b2bd6a",
+                      "label": "Infant discharged negative from care (HIV free)"
+                    },
+                    {
+                      "concept": "73d76014-365e-484c-bf5b-0959add4e3f3",
+                      "label": "Infant referred for pediatric HIV care outside the facility"
+                    },
+                    {
+                      "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
+                      "label": "Infant referred for pediatric HIV care within the facility"
+                    }
+                  ]
+                },
+                "validators": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "availableIntents": [
+      {
+        "intent": "*",
+        "display": "default_intent"
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "encounterType": "e5557459-db41-49b0-ade8-afa7b4767bf9",
+    "referencedForms": [],
+    "uuid": "5a753d1a-926b-385c-9f6d-e336dde7a8da",
+    "allowUnspecifiedAll": true
+  }

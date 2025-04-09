@@ -1,0 +1,204 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "patient-info-slot": {
+        "remove": [
+          "patient-vitals-info"
+        ]
+      },
+      "action-menu-patient-chart-items-slot": {
+        "remove": [
+          "clinical-form-action-menu",
+          "order-basket-action-menu",
+          "patient-lists-action-menu",
+          "visit-note-nav-button"
+        ]
+      },
+      "patient-chart-summary-dashboard-slot": {
+        "remove": ["vitals-overview-widget", "active-medications-widget"]
+      },
+      "visits-summary-slot": {
+        "remove": ["visits-summary-ext"]
+      },
+      "patient-chart-dashboard-slot": {
+        "remove": [
+          "allergies-summary-dashboard",
+          "attachments-results-summary-dashboard",
+          "conditions-summary-dashboard",
+          "offline-tools-patient-chart-actions-dashboard-link",
+          "results-summary-dashboard",
+          "test-results-summary-dashboard",
+          "clinical-views-divider",
+          "encounters-summary-dashboard",
+          "immunization-summary-dashboard",
+          "medications-summary-dashboard",
+          "patient-appointments-summary-dashboard",
+          "patient-orders-summary-dashboard",
+          "programs-summary-dashboard"
+        ]
+      }
+    },
+    "logo": {
+      "src": "ethiohri_logo_light.svg"
+    }
+  },
+  "@openmrs/esm-home-app": {
+    "extensionSlots": {
+      "homepage-widgets-slot": {
+        "remove": ["home-appointments", "active-visits-widget"],
+        "add": ["eth-patient-list"]
+      },
+      "home-metrics-tiles-slot": {
+        "remove": [
+          "active-visits-tile",
+          "home-appointments-tile",
+          "total-visits-tile"
+        ]
+      }
+    }
+  },
+  "@openmrs/esm-styleguide": {
+    "Brand color #1": "#002F6C",
+    "Brand color #2": "#002F6C",
+    "Brand color #3": "#1A75BB"
+  },
+  "@openmrs/esm-primary-navigation-app": {
+    "logo": {
+      "src": "ethiohri_logo_light.svg"
+    }
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "ethiohri_logo_dark.svg"
+    }
+  },
+  "@openmrs/esm-patient-registration-app": {
+    "extensionSlots": {
+      "capture-patient-photo-slot": {
+        "remove": [
+          "capture-photo-widget"
+        ]
+      }
+    },
+    "sections": ["demographics", "contact", "relationships"],
+    "Translation overrides": {
+      "en": {
+        "givenNameLabelText": "Client's Name",
+        "middleNameLabelText": "Father's Name",
+        "familyNameLabelText": "Grandfather's Name"
+      },
+      "am": {
+        "givenNameLabelText": "Client's Name",
+        "middleNameLabelText": "Father's Name",
+        "familyNameLabelText": "Grandfather's Name"
+      }
+    },
+    "sectionDefinitions": [
+      {
+        "id": "contact",
+        "name": "Contact Info",
+        "fields": [
+          "address",
+          "kebela",
+          "houseNumber",
+          "mobiletelephoneNumber",
+          "hometelephoneNumber",
+          "worktelephoneNumber"
+        ]
+      },
+      {
+        "id": "demographics",
+        "name": "Basic Info",
+        "fields": ["registrationDate","name", "gender", "dob", "id"]
+      }
+    ],
+    "fieldDefinitions": [
+      {
+        "id": "kebela",
+        "label": "Kebele",
+        "type": "person attribute",
+        "uuid": "e1695908-916d-4c9e-b62b-90b512492da2"
+      },
+      {
+        "id": "houseNumber",
+        "label": "House Number",
+        "type": "person attribute",
+        "uuid": "553bedc6-4e59-42d3-b80b-d3cf02a792bd"
+      },
+      {
+        "id": "mobiletelephoneNumber",
+        "label": "Mobile Telephone Number",
+        "type": "person attribute",
+        "uuid": "1794bcad-b2d2-47ae-8e26-1d4ec31ade13",
+        "validation": {
+          "matches": "^[0-9]{10}$"
+        }
+      },
+      {
+        "id": "registrationDate",
+        "label": "Registration date",
+        "type": "obs",
+        "uuid": "dadc86a8-1e44-4a6d-91c2-e3b54089b54c",
+        "allowFutureDates": false,
+        "validation": {
+          "required": true
+        }
+      }, 
+      {
+        "id": "hometelephoneNumber",
+        "label": "Home Telephone Number",
+        "type": "person attribute",
+        "uuid": "b3269e45-8e40-44a1-a5f2-bbb2765c6287",
+        "validation": {
+          "matches": "^[0-9]{10}$"
+        }
+      },
+      {
+        "id": "worktelephoneNumber",
+        "label": "Work Telephone Number",
+        "type": "person attribute",
+        "uuid": "a69aae3d-8c79-4ac5-a218-88889f007163",
+        "validation": {
+          "matches": "^[0-9]{10}$"
+        }
+      }
+    ],
+    "fieldConfigurations": {
+      "gender": [
+        {
+          "id": "male",
+          "value": "male",
+          "label": "Male"
+        },
+        {
+          "id": "female",
+          "value": "female",
+          "label": "Female"
+        }
+      ],
+      "name": {
+        "allowUnidentifiedPatients": false
+      },
+      "address": {
+        "useAddressHierarchy": {
+          "enabled": true,
+          "useQuickSearch": true,
+          "searchAddressByLevel": true,
+          "useAddressHierarchyLabel": {
+            "country": "Country",
+            "state": "Region",
+            "district": "Zone/Sub-City",
+            "city": "Woreda"
+          }
+        }
+      }
+    },
+    "defaultPatientIdentifierTypes": [
+      "52c28db7-09fb-4d33-8f9f-4500347256b6",
+      "d956f302-1723-4eca-9548-fb7e66706d34"
+    ],
+    "registrationObs": {
+      "encounterTypeUuid": "a0fde61e-f493-4f1f-b709-22aa94f72dc3"
+    }
+  }
+}

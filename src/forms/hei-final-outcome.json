@@ -1,0 +1,212 @@
+{
+  "name": "HEI Final Outcome",
+  "encounter": "HEI Final Outcome",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "pages": [
+    {
+      "label": "HEI Final Outcome",
+      "sections": [
+        {
+          "label": "Final Outcome",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Final Outcome",
+              "type": "obs",
+              "required": true,
+              "id": "finalOutcome",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "2171d944-a027-417f-a0af-f9c4a88a5ffe",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "4a00b6e5-8ea1-4d8b-ba40-0b204bf69c01",
+                    "label": "Still on BF/Exposed"
+                  },
+                  {
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                    "label": "Discharged Negative"
+                  },
+                  {
+                    "concept": "34a4c62c-4c5c-4e4b-bc13-f68e07eea076",
+                    "label": "Lost to Follow-up"
+                  },
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "TO (Before final outcome known)"
+                  },
+                  {
+                    "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Died"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Date of final outcome",
+              "type": "obs",
+              "required": true,
+              "id": "dateOfFinalOutcome",
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                },
+                {
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(followupDate)",
+									"message": "Date of final outcome should not be earlier than the previous followup date"
+								}
+              ],
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302"
+              }
+            },
+            {
+              "label": "Followup date",
+              "type": "obs",
+              "id": "followupDate",
+              "questionOptions": {
+                "rendering": "fixed",
+                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '5c118396-52dc-4cac-8860-e6d8e4a7f296', 'd7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d'))?.valueDateTime"
+                  }
+              },
+              "behaviours": [
+								{
+									"intent": "edit",
+									"questionOptions": {
+										"rendering": "fixed",
+                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
+								}
+								}
+								,{
+									"intent": "view",
+									"questionOptions": {
+										"rendering": "fixed",
+                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
+								}
+								}
+							]
+            }
+          ]
+        },
+        {
+          "label": "Referral Information",
+          "isExpanded": "true",
+          "hide": {
+            "hideWhenExpression": "finalOutcome !== '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && finalOutcome !== '73d76014-365e-484c-bf5b-0959add4e3f3'"
+          },
+          "questions": [
+            {
+              "label": "Provider name",
+              "type": "obs",
+              "required": false,
+              "id": "providerName",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "1473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "1392"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "1473"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]
+            },
+            {
+              "label": "Provider telephone number",
+              "type": "obs",
+              "required": false,
+              "id": "providerTelephoneNumber",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "5587f1b1-1917-4345-a284-a0ed6a56a522",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred to",
+              "type": "obs",
+              "required": false,
+              "id": "referredTo",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "161562AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "161562"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred date",
+              "type": "obs",
+              "required": false,
+              "id": "referredDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "161561"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
+  "processor": "EncounterFormProcessor",
+  "encounterType": "7a35d870-f997-40fe-aef6-1648ccc36aa9",
+  "referencedForms": [],
+  "uuid": "81645610-e6af-3e5d-8b10-832bdd985c56",
+  "allowUnspecifiedAll": true
+}

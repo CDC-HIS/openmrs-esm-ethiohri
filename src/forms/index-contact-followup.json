@@ -1,0 +1,1177 @@
+{
+    "name": "POC Index Contact Followup",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "Index Contact Followup",
+    "processor": "EncounterFormProcessor",
+    "referencedForms": [],
+    "uuid": "8a75cc8f-d700-4b09-8ict-contact28d89",
+    "encounterType": "8a75cc8f-d700-4b09-8b96-97d519728d89",
+    "allowUnspecifiedAll": true,
+    "pages": [
+        {
+            "label": "POC ICT FOLLOWUP",
+            "sections": [
+                {
+                    "label": "CONTACT'S INFORMATION",
+                    "isExpanded": "true",
+                    "questions": [
+                      {
+                          "label": "Elicited date",
+                          "type": "obs",
+                          "required": false,
+                          "id": "elicitedDate",
+                          "validators": [
+                            {
+                                "type": "date",
+                                "allowFutureDates": "false"
+                            }
+                        ],
+                          "questionOptions": {
+                              "rendering": "date",
+                              "concept": "58abd286-8f57-4717-aa41-efd8e93d5902",
+                              "conceptMappings": [],
+                              "answers": []
+                          }
+                      },
+                      {
+                        "label": "Contact's First Name",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactFirstName",
+                        "validators": [
+                            {
+                              "type": "js_expression",
+                              "failsWhenExpression": "myValue.length > 20",
+                              "message": "Please use a maximum of 20 characters"
+                            }
+                          ],
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "PIH",
+                                    "value": "2725"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "166102"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "408677003"
+                                }
+                            ],
+                            "answers": []
+                        }
+                    },
+                    {
+                        "label": "Contact's Middle Name",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactMiddleName",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "716057004"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "166574"
+                                }
+                            ],
+                            "answers": []
+                        },
+                        "validators": [
+                            {
+                              "type": "js_expression",
+                              "failsWhenExpression": "myValue.length > 20",
+                              "message": "Please use a maximum of 20 characters"
+                            }
+                          ]                    },
+                    {
+                        "label": "Contact's Grand Father Name",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactLastName",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "PIH",
+                                    "value": "2724"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "SNOMED-CT",
+                                    "value": "397678008"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "166103"
+                                }
+                            ],
+                            "answers": []
+                        },
+                        "validators": [
+                            {
+                              "type": "js_expression",
+                              "failsWhenExpression": "myValue.length > 20",
+                              "message": "Please use a maximum of 20 characters"
+                            }
+                          ]
+                        },
+                        {
+                            "label": "Phone #/Physical Address",
+                            "type": "obs",
+                            "required": false,
+                            "id": "contactPhoneNumber",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "159635AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "conceptMappings": [
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "CIEL",
+                                        "value": "159635"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "SNOMED-CT",
+                                        "value": "184103008"
+                                    },
+                                    {
+                                        "relationship": "SAME-AS",
+                                        "type": "org.openmrs.module.mdrtb",
+                                        "value": "TELEPHONE NUMBER"
+                                    }
+                                ],
+                                "answers": []
+                            }
+                        },
+                    {
+                        "label": "Age",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactAge",
+                        "questionOptions": {
+                          "rendering": "number",
+                          "calculate": {
+                            "calculateExpression": "getAgeFromBirthdate('dateOfBirth')"
+                            },
+                          "concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                          "max": 200,
+                          "min": 0,
+                          "showDate": "",
+                          "conceptMappings": [
+                              {
+                                  "type": "CIEL",
+                                  "value": "1532"
+                              }
+                          ]
+                      }
+                    },
+                    {
+                        "label": "Date of Birth",
+                        "type": "obs",
+                        "required": false,
+                        "id": "dateOfBirth",
+                        "questionOptions": {
+                          "rendering": "date",
+                          "calculate": {
+                            "calculateExpression": "getBirthdateFromAge('contactAge')"
+                            },
+                          "concept": "e27ae70c-6131-4004-9da8-841619e19480"
+                        }
+                    },
+                    {
+                        "label": "Sex",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactGender",
+                        "questionOptions": {
+                            "rendering": "radio",
+                            "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "conceptMappings": [
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "LOINC",
+                                    "value": "72143-4"
+                                },
+                                {
+                                    "relationship": "SAME-AS",
+                                    "type": "CIEL",
+                                    "value": "1533"
+                                }
+                            ],
+                            "answers": [
+                                {
+                                    "concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Female"
+                                },
+                                {
+                                    "concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Male"
+                                }
+                            ]
+                        },
+                        "validators": []
+                    },
+                    {
+                        "label": "Contact category",
+                        "type": "obs",
+                        "required": false,
+                        "id": "contactCategory",
+                        "questionOptions": {
+                            "rendering": "radio",
+                            "concept": "a7d17e7a-a8b2-49b5-84f1-aade1277b658",
+                            "conceptMappings": [],
+                            "answers": [
+                                {
+                                    "concept": "a79a78a5-e983-4a1d-986c-6868a04da28e",
+                                    "label": "Sex Partner"
+                                },
+                                {
+                                    "concept": "5c306c62-1141-47c5-8754-b5dfbd0bbe48",
+                                    "label": "Child (< 19)"
+                                },
+                                {
+                                    "concept": "1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Parent"
+                                },
+                                {
+                                    "concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Sibling (< 19)"
+                                },
+                                {
+                                    "concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Spouse"
+                                },
+                                {
+                                    "concept": "10540efa-421e-4a6d-b2a3-22cb4ceee6d0",
+                                    "label": "Non-spouse partner"
+                                },
+                                {
+                                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Other"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Specify other category",
+                        "type": "obs",
+                        "questionOptions": {
+                            "rendering": "text",
+                            "concept": "316017c2-7e8b-4607-ab86-889484f79edb"
+                        },
+                        "hide": {
+                            "hideWhenExpression": "contactCategory !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        },
+                        "id": "otherCategory"
+                    },
+                    {
+                        "label": "IPV risk assessed",
+                        "type": "obs",
+                        "required": false,
+                        "id": "ipvRisk",
+                        "questionOptions": {
+                            "rendering": "radio",
+                            "concept": "bf64b919-2e57-4f96-82c8-7d551b506181",
+                            "conceptMappings": [],
+                            "answers": [
+                                {
+                                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Yes"
+                                },
+                                {
+                                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "No"
+                                },
+                                {
+                                    "concept": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Not applicable"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "IPV risk assessment outcome",
+                        "type": "obs",
+                        "required": false,
+                        "hide": {
+                            "hideWhenExpression": "ipvRisk !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        },
+                        "id": "ipvRiskOutcome",
+                        "questionOptions": {
+                            "rendering": "checkbox",
+                            "concept": "d9843fda-3799-4727-8695-02292f4a90b4",
+                            "conceptMappings": [],
+                            "answers": [
+                                {
+                                    "concept": "152292AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Physical"
+                                },
+                                {
+                                    "concept": "118668AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Emotional"
+                                },
+                                {
+                                    "concept": "152370AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Sexual"
+                                },
+                                {
+                                    "concept": "fe881e9b-fafe-4f06-936b-22cd20165044",
+                                    "label": "No IPV"
+                                },
+                                {
+                                    "concept": "61712cf4-7898-4b38-a202-6d68a83dbf01",
+                                    "label": "NA child"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Linked to PGBV care",
+                        "type": "obs",
+                        "required": false,
+                        "id": "linkedToPgbv",
+                        "questionOptions": {
+                            "rendering": "radio",
+                            "concept": "5fdc49a5-18fd-4817-8270-9e5b4f47c62f",
+                            "conceptMappings": [],
+                            "answers": [
+                                {
+                                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Yes"
+                                },
+                                {
+                                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "No"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "HIV status disclosed by index client?",
+                        "type": "obs",
+                        "required": false,
+                        "id": "hivStatusDisclosed",
+                        "questionOptions": {
+                            "rendering": "radio",
+                            "concept": "e62278d3-1f46-48b3-9f34-bd2543a35275",
+                            "conceptMappings": [],
+                            "answers": [
+                                {
+                                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "Yes"
+                                },
+                                {
+                                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                    "label": "No"
+                                }
+                            ]
+                        }
+                    }
+                  ]
+                },
+                {
+                    "label": "NOTIFICATION PLAN",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Notification plan",
+                            "type": "obs",
+                            "required": false,
+                            "id": "notificationPlan",
+                            "questionOptions": {
+                                "rendering": "select",
+                                "concept": "4d789ec1-9ea9-4b5e-bc27-a0611c4f8310",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "9e67687f-5df5-43c1-acd0-134295791541",
+                                        "label": "No Notification (IPV+)"
+                                    },
+                                    {
+                                        "concept": "013a416d-b517-415d-aba2-e7dbae5014b1",
+                                        "label": "Client"
+                                    },
+                                    {
+                                        "concept": "19785c69-e16c-412a-af3f-5a77979c99ff",
+                                        "label": "Contractual"
+                                    },
+                                    {
+                                        "concept": "d53de30f-62a5-454a-a5f9-215b803b2122",
+                                        "label": "Dual"
+                                    },
+                                    {
+                                        "concept": "f7dcfbd8-d3fb-4a95-a321-fa6d8e9a7212",
+                                        "label": "Provider"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Notified face-to-face",
+                            "type": "obs",
+                            "required": false,
+                            "id": "notifiedFaceToFace",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "44c1b588-46e4-47c5-85f8-7bebca1579d2",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Trial date 1st",
+                            "type": "obs",
+                            "required": false,
+                            "id": "trialDate1",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "36fdf1b1-bb8e-4f6f-9a3c-dd1f224187c7",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Trial outcome 1st",
+                            "type": "obs",
+                            "required": false,
+                            "id": "trialOutcome1",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "735d0478-411a-430c-9cb4-1fe8b9c9dc3d",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Trial date 2nd",
+                            "type": "obs",
+                            "required": false,
+                            "id": "trialDate2",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "9160fae7-0a61-4be9-b38a-97db3c621c66",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Trial outcome 2nd",
+                            "type": "obs",
+                            "required": false,
+                            "id": "trialOutcome2",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "360ced7c-774e-440f-abe4-3100d3e30d1b",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Trial date 3rd",
+                            "type": "obs",
+                            "required": false,
+                            "id": "trialDate3",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "7ac249fc-4520-4581-a33c-7d5020a7f57b",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Trial outcome 3rd",
+                            "type": "obs",
+                            "required": false,
+                            "id": "trialOutcome3",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "da238ed9-14dc-4299-9752-7141fbe3cf43",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        }
+                  ]
+                },
+                {
+                    "label": "PRIOR TEST",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Prior HIV test result",
+                            "type": "obs",
+                            "required": false,
+                            "id": "priorHivTestResult",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "0f4be70c-f1dc-434b-acba-fc1421854bc4",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Positive"
+                                    },
+                                    {
+                                        "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                                        "label": "Negative"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Estimated test date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "estimatedTestDate",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "67e5e461-c1bd-44fc-8b74-5929a388df9a",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Duration since last test (in months)",
+                            "type": "obs",
+                            "required": false,
+                            "id": "durationSince",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "d002eb43-bcba-4435-8e0d-b0a6130f09bd",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "HIVST",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Date HIVST kit distributed",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hivstKitDate",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "947073ef-aa76-42cb-a361-1641149a8100",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "HIVST report date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hivstReportDate",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "70e43194-c463-444d-a631-db938fbc1bdc",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "HIVST result",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hivstResult",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "e77fb81b-7811-41e4-8f30-af101d9c1c6b",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Recent"
+                                    },
+                                    {
+                                        "concept": "c74f4c43-c85a-43f0-87a2-2554178ab714",
+                                        "label": "NR"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "NATIONAL ALGORITHM",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+							"label": "HIV test date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"weeksList": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "164400"
+									}
+								]
+							},
+							"validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
+							"id": "hivTestDate"
+						},
+                        {
+							"label": "HIV test result",
+							"type": "obs",
+							"required": false,
+							"id": "hivTestResult",
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Positive"
+								},
+								{
+								  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+								  "label": "Negative"
+								},
+								{
+								  "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Inconclusive"
+								}
+							  ]
+							},
+							"validators": []
+						  },
+                          {
+                            "label": "Tested at",
+                            "type": "obs",
+                            "required": false,
+                            "id": "testedAt",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "9e998da3-eb3d-49c2-9650-fb1102a2da09",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Health facility"
+                                    },
+                                    {
+                                        "concept": "163488AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Community"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "RTRI",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Eligible for Recency testing",
+                            "type": "obs",
+                            "required": false,
+                            "id": "eligibleForRecency",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "63ffc936-492f-4ee3-b24e-d6d8a72674a9",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "8875cb57-a667-474d-9f9b-d3e592dfc75b",
+                                        "label": "E"
+                                    },
+                                    {
+                                        "concept": "b64e1eea-9dc4-4149-8644-646980d2ab4b",
+                                        "label": "NE"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "Tested for Recency?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "testedForRecency",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "ac70a921-72dd-47a4-a944-b1119240332e",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "label": "RTRI Result",
+                            "type": "obs",
+                            "required": false,
+                            "hide": {
+                                "hideWhenExpression": "testedForRecency !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "id": "rtriResult",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "3e0c5f07-cea4-4da5-8091-854c4d343bc0",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "R"
+                                    },
+                                    {
+                                        "concept": "c0b85e2c-8c7e-456e-a0d5-1280c8bfa7d4",
+                                        "label": "LT"
+                                    },
+                                    {
+                                        "concept": "07896600-8646-4f15-9a5b-92593ee5008f",
+                                        "label": "IR"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "CARE & TREATMENT",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Date linked to care",
+                            "type": "obs",
+                            "required": false,
+                            "id": "linkedToCareDate",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "d7e22235-9820-48d9-af05-bc2a906f7b46",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Date ART started",
+                            "type": "obs",
+                            "questionOptions": {
+                              "rendering": "date",
+                              "concept": "ae329187-6232-4142-aa91-22c85bc8e5b5",
+                              "weeksList": ""
+                            },
+                            "validators": [
+                                {
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+                            ],
+                            "id": "artStartDate"
+                          },
+                          {
+                            "label": "UAN of newly identified HIV +ve",
+                            "type": "obs",
+                            "required": false,
+                            "id": "contactUan",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "72750cad-0b54-4875-97c7-c94fb9caa50e",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "ICT FOR HIV +VE CONTACT",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Date linked to ICT service",
+                            "type": "obs",
+                            "required": false,
+                            "id": "dateLinkedToIct",
+                            "validators": [
+								{
+                                    "type": "date",
+                                    "allowFutureDates": "false"
+                                }
+							],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "8307d4cb-120f-4b8e-a51c-52bd4ab9f768",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "Reason if not linked to ICT",
+                            "type": "obs",
+                            "required": false,
+                            "id": "reasonNotLinkedIct",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "fc1ed555-346f-4757-8c9d-f05895955538",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "5b0bd7f0-6792-4e9b-b250-7589ffc4db0b",
+                                        "label": "Referred"
+                                    },
+                                    {
+                                        "concept": "afe90395-0720-4515-929b-6796e45a11ae",
+                                        "label": "Declined"
+                                    },
+                                    {
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "PREP FOR HIV -VE PARTNER",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "Screened for PrEP",
+                            "type": "obs",
+                            "required": false,
+                            "id": "screenedForPrep",
+                            "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "8c6a4530-78f6-41fe-ba85-29429257bea0",
+                              "conceptMappings": [],
+                              "answers": [
+                                {
+                                  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Yes"
+                                },
+                                {
+                                  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "No"
+                                }
+                              ]
+                            },
+                            "validators": []
+                          },
+                        {
+                            "label": "Eligible for PrEP",
+                            "type": "obs",
+                            "required": false,
+                            "id": "eligibileForPrep",
+                            "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "e5d11e73-835a-4fdf-9924-ed59c6a18f3d",
+                              "conceptMappings": [],
+                              "answers": [
+                                {
+                                  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Yes"
+                                },
+                                {
+                                  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "No"
+                                }
+                              ]
+                            },
+                            "validators": []
+                          },
+                        {
+                            "label": "Started Oral PrEP",
+                            "type": "obs",
+                            "required": false,
+                            "id": "prepStarted",
+                            "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "3b4bc0b2-acbb-4fb5-82eb-6f0479915862",
+                              "conceptMappings": [],
+                              "answers": [
+                                {
+                                  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Yes"
+                                },
+                                {
+                                  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "No"
+                                }
+                              ]
+                            },
+                            "validators": []
+                          },
+                        {
+                            "label": "PrEP start date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "prepStartDate",
+                            "hide": {
+                                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "questionOptions": {
+                              "rendering": "date",
+                              "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                              "conceptMappings": [
+                                {
+                                  "relationship": "SAME-AS",
+                                  "type": "SNOMED-CT",
+                                  "value": "413946009"
+                                },
+                                {
+                                  "relationship": "SAME-AS",
+                                  "type": "CIEL",
+                                  "value": "163526"
+                                },
+                                {
+                                  "relationship": "SAME-AS",
+                                  "type": "SNOMED-CT",
+                                  "value": "413946009"
+                                },
+                                {
+                                  "relationship": "SAME-AS",
+                                  "type": "CIEL",
+                                  "value": "163526"
+                                }
+                              ],
+                              "answers": []
+                            }
+                          }
+                    ]
+                },
+                {
+                    "label": "SCREENED FOR AE",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+                            "label": "AE type 1st report",
+                            "type": "obs",
+                            "required": false,
+                            "id": "aeReport1",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "d2bd964c-68b9-4d7f-99c4-df0573cf24c6",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "AE for IPV report date 1st",
+                            "type": "obs",
+                            "required": false,
+                            "id": "aeDate1",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "530884fa-592f-475a-92ad-68407e09faff",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "AE type 2nd report",
+                            "type": "obs",
+                            "required": false,
+                            "id": "aeReport2",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "86760598-b311-42f1-950d-2c15ee2c5d93",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "AE for IPV report date 2nd",
+                            "type": "obs",
+                            "required": false,
+                            "id": "aeDate2",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "d3861816-a406-4291-a105-f97800250710",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "AE type 3rd report",
+                            "type": "obs",
+                            "required": false,
+                            "id": "aeReport3",
+                            "questionOptions": {
+                                "rendering": "text",
+                                "concept": "6218ab27-803f-4d2b-95ed-44725aaae77e",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+                        {
+                            "label": "AE for IPV report date 3rd",
+                            "type": "obs",
+                            "required": false,
+                            "id": "aeDate3",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "94b41a3e-7009-4ddf-84e1-7394f045b3b3",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "label": "CASE CLOSURE",
+                    "isExpanded": "true",
+                    "questions": [
+                        {
+							"label": "Case closure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "049cf42e-8d02-4030-87f9-6cf8493b8543",
+								"answers": [
+									{
+										"concept": "fbb90257-989b-4e14-952e-dec23acaa4ad",
+										"label": "Successful intervention: Contact notified, HIV status known and linked for appropriate services"
+									},
+									{
+										"concept": "2f1dbb1c-74c5-40e7-9be2-b389b60faccc",
+										"label": "Intervention complete: Contact notified, HIV status known but not linked to appropriate services"
+									},
+									{
+										"concept": "986ef282-a52a-4503-bbd6-bcb20acfde5f",
+										"label": "Intervention partially completed: Contact notified, but HIV status unknown (e.g: declined ICT services)"
+									},
+									{
+										"concept": "1b767ed4-fbaf-4f3f-80d8-5b3be5c2dd7d",
+										"label": "Intervention incomplete: Contact was not notified (e.g: out of jurisdiction, unable to locate)"
+									}
+								]
+							},
+							"id": "caseClosure"
+						},
+                        {
+                            "label": "Date of case closure",
+                            "type": "obs",
+                            "required": false,
+                            "id": "caseClosureDate",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "c88816ce-b1b7-4f00-8d3e-9888ac78aafb",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	]
+  }

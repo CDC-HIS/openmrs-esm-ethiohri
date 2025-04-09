@@ -1,0 +1,110 @@
+{
+  "name": "PMTCT Enrollment",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "PMTCT Enrollment",
+  "pages": [
+    {
+      "label": "PMTCT Referral",
+      "sections": [
+        {
+          "label": "Referral",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Status at enrollment",
+              "type": "obs",
+              "required": true,
+              "id": "referredFrom",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "ab192dd0-bb1c-4417-b8f9-4c35dc991b55",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "90f138a5-9a94-488a-b5c9-6daf8b2400d1",
+                    "label": "Known +ve – On ART at entry"
+                  },
+                  {
+                    "concept": "1726AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "New from ANC"
+                  },
+                  {
+										"concept": "d1e97037-c599-47c3-93cb-c256b9c27fbc",
+										"label": "New from L&D",
+										"conceptMappings": []
+									},
+                  {
+                    "concept": "541f72cb-b3e1-43ad-9086-24d32467dfa5",
+                    "label": "New from PNC"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Place of delivery",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1536AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Home Delivery",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "1588AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Same Facility",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Another Health Facility",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "id": "placeOfDelivery"
+            },
+            {
+              "label": "Date of enrollment / booking",
+              "type": "obs",
+              "required": true,
+              "id": "dateOfEnrollment",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+              },
+              {
+                "type": "js_expression",
+                "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                "message": "Date of enrollment / booking date should not be earlier than patient's date of birth"
+              }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
+  "processor": "EncounterFormProcessor",
+  "encounterType": "1914ed4a-86fe-43d2-8338-2be2937ff11e",
+  "referencedForms": [],
+  "uuid": "4b93795c-928a-313e-ab2d-a6b758850f20",
+  "description": "PMTCT Inital Registration"
+}

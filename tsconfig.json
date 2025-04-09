@@ -14,10 +14,14 @@
       "es2015.promise",
       "es2016.array.include",
       "es2018",
-      "es2020"
+      "es2020",
+      "es2022",
+      "esnext"
     ],
     "resolveJsonModule": true,
     "noEmit": true,
     "target": "esnext"
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test.tsx", "src/**/*.outdated.tsx"]
 }

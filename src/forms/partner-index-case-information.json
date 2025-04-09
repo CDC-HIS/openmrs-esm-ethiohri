@@ -1,0 +1,761 @@
+{
+	"name": "Partner Index Case Information",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Partner Index Case Information",
+	"pages": [
+		{
+			"label": "PARTNER INDEX CASE INFORMATION",
+			"sections": [
+				{
+					"label": "CONTACT/PARTNER INFORMATION",
+					"isExpanded": "true",
+					"questions": [
+                        {
+							"label": "Registration date",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+							},
+							"required": "false",
+							"id": "registration_date"
+						},
+                        {
+							"label": "First Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "familyFirstName"
+						},
+						{
+							"label": "Father's Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "familyFathersName"
+						},
+						{
+							"label": "Grand Father's Name",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							},
+							"id": "familyGrandfathersName"
+						},
+						{
+							"label": "Sex",
+							"type": "obs",
+							"required": false,
+							"id": "familyGender",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"conceptMappings": [
+									{
+										"relationship": "SAME-AS",
+										"type": "LOINC",
+										"value": "72143-4"
+									},
+									{
+										"relationship": "SAME-AS",
+										"type": "CIEL",
+										"value": "1533"
+									}
+								],
+								"answers": [
+									{
+										"concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Male"
+									},
+									{
+										"concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Female"
+									}
+								]
+							}
+						},
+						{
+							"label": "Date of birth",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "e27ae70c-6131-4004-9da8-841619e19480"
+							},
+							"required": "false",
+							"id": "familyDateofbirth"
+						},
+						{
+							"label": "Age",
+							"type": "obs",
+							"required": false,
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "301aee32-885f-4f56-aed1-497ad7aaf8d7",
+								"max": 200,
+								"min": 0,
+								"showDate": ""
+							},
+							"id": "familyAge"
+						},
+						{
+							"label": "Relationship",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "f5d1f4ec-22b8-4b47-a136-1ffb12aefe31",
+								"answers": [
+									{
+										"concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Child (Biological)"
+									},
+									{
+										"concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Spouse"
+									},
+									{
+										"concept": "10540efa-421e-4a6d-b2a3-22cb4ceee6d0",
+										"label": "Non-Spouse Partner"
+									},
+									{
+										"concept": "163565AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Sexual Partner"
+									},
+									{
+										"concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Sibling"
+									},
+									{
+										"concept": "1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Parent"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+								]
+							},
+							"id": "familyRelationship"
+						},
+						{
+							"label": "Other relationship",
+							"type": "obs",
+							"required": false,
+							"id": "otherRelationship",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "5073143b-eb72-45aa-a4bf-4164aa858f95"
+							},
+							"hide": {
+							  "hideWhenExpression": "familyRelationship !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						  },
+						  {
+							"label": "Address",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "1eb080aa-7921-425e-801f-b53f4ca93a7d"
+							},
+							"id": "familyAddress"
+						},
+                        {
+							"label": "Home Phone Number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "2481f720-0490-4c89-aeb8-dd128b8cb001"
+							},
+							"id": "familyHomePhone"
+						},
+						{
+							"label": "Mobile Phone Number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "d266ec50-0ba1-442a-8f2c-7895eaad84ab"
+							},
+							"id": "familyMobilePhone"
+						},
+						{
+							"label": "Work Phone Number",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "605a3cfe-a072-4b1b-8067-317538ffdfbb"
+							},
+							"id": "familyWorkPhone"
+						},
+						{
+							"label": "Followup date",
+							"type": "obs",
+							"required": false,
+							"id": "followupDate",
+							"questionOptions": {
+							  "rendering": "date",
+							  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+							  "conceptMappings": [],
+							  "answers": []
+							}
+						  },
+						  {
+                            "label": "Date of last exposure",
+                            "type": "obs",
+                            "required": false,
+                            "id": "dateOfLastExposure",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "584d752a-f923-4052-b01b-32668c491cce",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+						{
+							"label": "If exactly the date of last exposure not remembered was the exposure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "5f2f843e-f53b-4c71-8920-c601b0d183ed",
+								"answers": [
+									{
+										"concept": "2bd6c7e0-4ffc-4e37-9852-9dbf97975422",
+										"label": "In less than 3 months"
+									},
+									{
+										"concept": "9ce0fff0-efa4-42d7-b4e8-b84d975666f9",
+										"label": "In 3 to 12 months"
+									},
+									{
+										"concept": "48bb53b2-9f76-437e-8735-cc1f801ae0fe",
+										"label": "In greater than 12 months"
+									}
+								]
+							},
+							"id": "caseClosureNotRemembered"
+						},
+						{
+							"label": "Priority category",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "9d843a9c-686c-432e-a86a-8f011db3bf99",
+								"answers": [
+									{
+										"concept": "a6e7258a-fd42-4c7b-8d69-d2dfa1c4ce69",
+										"label": "1"
+									},
+									{
+										"concept": "caaa3157-b4e7-44d4-8adf-a444c38ec47f",
+										"label": "2"
+									},
+									{
+										"concept": "9314de06-6af9-4b26-800b-71bbc958fcdb",
+										"label": "3"
+									},
+									{
+										"concept": "cad5610c-400f-46cc-87cf-39439412a923",
+										"label": "4"
+									}
+								]
+							},
+							"id": "priorityCategory"
+						},
+						{
+							"label": "Intimate partner violence assessment done?",
+							"type": "obs",
+							"required": false,
+							"id": "ipvAssessmentDone",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "4f273053-3a13-4463-98d2-8c927d30e327",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+								]
+							}
+						},
+						{
+							"label": "Has your partner ever hit, kicked, slapped, or otherwise physically hurt you",
+							"type": "obs",
+							"required": false,
+							"id": "partnerHurtYou",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "a3c4ab51-117a-4d38-be9f-e1068e8e852e",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+								]
+							}
+						},
+						{
+							"label": "Has your partner ever threatened to hurt you?",
+							"type": "obs",
+							"required": false,
+							"id": "partnerThreatened",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "f3020605-34d9-4906-8ab4-560d0b8fef10",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+								]
+							}
+						},
+						{
+							"label": "Has your partner ever forced you to do something sexually that made you feel uncomfortable?",
+							"type": "obs",
+							"required": false,
+							"id": "partnerForcedYou",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "728c8d24-db7c-4b7b-bf2f-d07b60415a10",
+								"conceptMappings": [],
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+								]
+							}
+						},
+						{
+                            "label": "Select Notification plan",
+                            "type": "obs",
+                            "required": false,
+                            "id": "notificationPlan",
+                            "questionOptions": {
+                                "rendering": "select",
+                                "concept": "4d789ec1-9ea9-4b5e-bc27-a0611c4f8310",
+                                "conceptMappings": [],
+                                "answers": [
+									{
+                                        "concept": "9e67687f-5df5-43c1-acd0-134295791541",
+                                        "label": "No Notification (IPV+)"
+                                    },
+                                    {
+                                        "concept": "013a416d-b517-415d-aba2-e7dbae5014b1",
+                                        "label": "Client Referral"
+                                    },
+									{
+                                        "concept": "f7dcfbd8-d3fb-4a95-a321-fa6d8e9a7212",
+                                        "label": "Provider Referral"
+                                    },
+									{
+                                        "concept": "d53de30f-62a5-454a-a5f9-215b803b2122",
+                                        "label": "Dual Referral"
+                                    },
+                                    {
+                                        "concept": "19785c69-e16c-412a-af3f-5a77979c99ff",
+                                        "label": "Contract Referral"
+                                    }
+                                ]
+                            }
+                        },
+						{
+                            "label": "Is partner notified?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "partnerNotified",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "39bcf22b-8023-4f77-8120-de18f49bdb08",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "Yes"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                        "label": "No"
+                                    }
+                                ]
+                            }
+                        },
+						{
+                            "label": "If the partner not notified, reason for not notified?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "reasonNotNotified",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "a60ece01-05a6-4036-9960-75a7d39ca681",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "afe90395-0720-4515-929b-6796e45a11ae",
+                                        "label": "Refused"
+                                    },
+                                    {
+                                        "concept": "6ffde5d2-c59b-45ea-b96d-ed914e2b326f",
+                                        "label": "Out of jurisdiction"
+                                    },
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+                                ]
+                            }
+                        },
+						{
+							"label": "Other reason for not notified",
+							"type": "obs",
+							"required": false,
+							"id": "otherReasonForNotNotified",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "f4d2f07a-a901-4d70-80f3-839200e090e3"
+							},
+							"hide": {
+							  "hideWhenExpression": "reasonNotNotified !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						  },
+						  {
+                            "label": "Date Notification offered",
+                            "type": "obs",
+                            "required": false,
+                            "id": "dateNotificationOffered",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "6978db94-1ae0-4056-b5f9-662c8f278228",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+						{
+                            "label": "Date Partner contacted",
+                            "type": "obs",
+                            "required": false,
+                            "id": "datePartnerContacted",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "e93a4535-bdbf-42f6-8654-69f5515822b1",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+						{
+                            "label": "If partner not contacted, reason for not contacting",
+                            "type": "obs",
+                            "required": false,
+                            "id": "reasonNotContacting",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "faa397c2-10e3-4fc1-9d1d-7c1f0b3fe3bb",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+                                        "concept": "1b767ed4-fbaf-4f3f-80d8-5b3be5c2dd7d",
+                                        "label": "Unable to locate"
+                                    },
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+                                ]
+                            }
+                        },
+						{
+							"label": "Other reason for not contacted",
+							"type": "obs",
+							"required": false,
+							"id": "otherReasonForNotContacted",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "e7ab068f-7732-4d5b-b207-8d6f767d9962"
+							},
+							"hide": {
+							  "hideWhenExpression": "reasonNotContacting !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						  },
+						  {
+                            "label": "Has the partner tested for HIV?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "partnerTestedHiv",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "0783b3f4-b20a-4e3e-80e1-b057361c3964",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+                                ]
+                            }
+                        },
+						{
+                            "label": "Previous HIV test date",
+                            "type": "obs",
+                            "required": false,
+                            "id": "previousHivTestDate",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "9f209638-c93b-4a9a-8107-7ae6b548b85d",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+						{
+                            "label": "Previous test result",
+                            "type": "obs",
+                            "required": false,
+                            "id": "partnerTestedHiv",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "96fd63de-09dc-49c1-87aa-eb8c0665a072",
+                                "conceptMappings": [],
+                                "answers": [
+                                      {
+										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Positive"
+									  },
+									  {
+										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+										"label": "Negative"
+									  },
+									  {
+										"concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Inconclusive"
+									  }
+                                ]
+                            }
+                        },
+						{
+                            "label": "Date partner tested for HIV",
+                            "type": "obs",
+                            "required": false,
+                            "id": "partnerTestedForHiv",
+                            "validators": [
+                              {
+                                  "type": "date",
+                                  "allowFutureDates": "false"
+                              }
+                          ],
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "05124366-dd0d-4bf1-91ac-5d6c2f76ad55",
+                                "conceptMappings": [],
+                                "answers": []
+                            }
+                        },
+						{
+                            "label": "HIV tested result",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hivTestedResult",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
+                                "conceptMappings": [],
+                                "answers": [
+                                      {
+										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Positive"
+									  },
+									  {
+										"concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+										"label": "Negative"
+									  },
+									  {
+										"concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Inconclusive"
+									  }
+                                ]
+                            }
+                        },
+						{
+                            "label": "Is the partner linked to partner service?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "partnerLinkedToService",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "310ccbe6-77a9-4815-9937-774c7664b233",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No"
+									}
+                                ]
+                            }
+                        },
+						{
+                            "label": "Reason why the newly diagnosed not linked to partner and family based ICT?",
+                            "type": "obs",
+                            "required": false,
+                            "id": "reasonNewlyDiagnosed",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "37a8bd53-619e-425d-8d35-907ce9cb4242",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+										"concept": "5b0bd7f0-6792-4e9b-b250-7589ffc4db0b",
+										"label": "Referred"
+									},
+									{
+										"concept": "afe90395-0720-4515-929b-6796e45a11ae",
+										"label": "Refused"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+                                ]
+                            }
+                        },
+						{
+							"label": "Other reason",
+							"type": "obs",
+							"required": false,
+							"id": "otherReasonNotLinked",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "02bcaf88-e8f0-433d-9fe2-83ad17ea5c86"
+							},
+							"hide": {
+							  "hideWhenExpression": "reasonNewlyDiagnosed !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						  },
+						  {
+                            "label": "Case closure status",
+                            "type": "obs",
+                            "required": false,
+                            "id": "caseClosureStatus",
+                            "questionOptions": {
+                                "rendering": "select",
+                                "concept": "049cf42e-8d02-4030-87f9-6cf8493b8543",
+                                "conceptMappings": [],
+                                "answers": [
+                                    {
+										"concept": "fbb90257-989b-4e14-952e-dec23acaa4ad",
+										"label": "Successful intervention"
+									},
+									{
+										"concept": "2f1dbb1c-74c5-40e7-9be2-b389b60faccc",
+										"label": "Intervention complete"
+									},
+									{
+										"concept": "986ef282-a52a-4503-bbd6-bcb20acfde5f",
+										"label": "Intervention partially completed"
+									},
+									{
+										"concept": "6ffde5d2-c59b-45ea-b96d-ed914e2b326f",
+										"label": "Out of jurisdiction"
+									},
+									{
+										"concept": "0b9ffd21-4cf4-408a-9243-4303b688221d",
+										"label": "No sexual partner"
+									},
+									{
+										"concept": "a6e587a8-f7a0-426f-ae32-84a15aab50d3",
+										"label": "Refused partner notification"
+									},
+									{
+										"concept": "1b767ed4-fbaf-4f3f-80d8-5b3be5c2dd7d",
+										"label": "Unable to locate"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+                                ]
+                            }
+                        },
+						{
+							"label": "Other status",
+							"type": "obs",
+							"required": false,
+							"id": "otherCaseClosureStatus",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "633a3e6e-a224-47e3-a58d-2697dcddf90b"
+							},
+							"hide": {
+							  "hideWhenExpression": "caseClosureStatus !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							}
+						  }
+                    ]
+				}
+			]
+		}
+	],
+	"availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"uuid": "00e4d1c3-1989-4c6e-afc0-c84137fdf02d",
+	"referencedForms": [],
+	"encounterType": "bc17321c-a1a8-45a3-a49e-e8d0c91c476d",
+	"allowUnspecifiedAll": true
+}

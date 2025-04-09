@@ -1,0 +1,1324 @@
+{
+  "name": "HEI Followup",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "HEI Followup",
+  "pages": [
+    {
+      "label": "Infant Status",
+      "sections": [
+        {
+          "label": "Followup Info",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Followup date",
+              "type": "obs",
+              "required": false,
+              "id": "followupDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                },
+                {
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(enrollment_date)",
+									"message": "Followup date should not be earlier than Enrollment date"
+								}
+              ]
+            },
+            {
+							"label": "Enrollment Date *",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "fixed",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '1ebc345c-6f09-43e1-a616-d7e52fff4c7d', 'ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97'))?.valueDateTime"
+                  }
+							},
+              "behaviours": [
+								{
+									"intent": "edit",
+									"questionOptions": {
+										"rendering": "fixed",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+								}
+								}
+								,{
+									"intent": "view",
+									"questionOptions": {
+										"rendering": "fixed",
+								"concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+								}
+								}
+							],
+							"id": "enrollment_date"
+						}
+          ]
+        },
+        {
+          "label": "Anthropometric measurements",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Weight (kg)",
+              "type": "obs",
+              "required": false,
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+                  "message": "Weight should be a numeric value"
+                }
+              ],
+              "id": "weight"
+              },
+            {
+              "label": "Length (cm)",
+              "type": "obs",
+              "required": false,
+              "id": "length",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "78230f35-d01c-48de-9ce3-8a0065a305bb",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Head circumference (cm)",
+              "type": "obs",
+              "required": false,
+              "id": "headCircumference (cm)",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "5314"
+                  },
+                  {
+                    "relationship": "BROADER-THAN",
+                    "type": "LOINC",
+                    "value": "8287-5"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "363812007"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "IMO-ProcedureIT",
+                    "value": "29947201"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "5314"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Infant Development",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Growth pattern",
+              "type": "obs",
+              "required": false,
+              "id": "growthPattern",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "eea6b3e8-efc6-448e-9d01-c2462e2cf727",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "2580f731-d86a-4876-8550-eacd0f7755be",
+                    "label": "Growth failure"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Reason for growth failure",
+              "type": "obs",
+              "required": false,
+              "id": "reasonForGrowthFailure",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "bbf0b810-d865-481c-8012-c446e1679fbd",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "262dcf2e-eac0-4577-9554-b43ef1ec9cd9",
+                    "label": "Crossing two percentile"
+                  },
+                  {
+                    "concept": "ec45263a-ea42-459a-b6b1-38d2c7565d67",
+                    "label": "Weight for age >3 percentile"
+                  },
+                  {
+                    "concept": "3937c003-ce94-44e9-8ce6-c46b53179530",
+                    "label": "Length for age >3 percentile"
+                  },
+                  {
+                    "concept": "e60698a9-61d1-4b65-993f-82771fcd8761",
+                    "label": "Head circumference <-3 SD"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Development milestone",
+              "type": "obs",
+              "required": false,
+              "id": "developmentMilestone",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "d646c980-b04d-46a0-8a49-4800506ad64c",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No red flags"
+                  },
+                  {
+                    "concept": "6022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Red flags"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "AT",
+              "type": "obs",
+              "required": false,
+              "id": "reasonForRedFlag",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "104e6fa9-efb5-4be9-b115-415e96671ab5",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "f2e1e852-57e1-4f9b-97eb-10922b00b43a",
+                    "label": "2 months : Unable to smile in response to your smile"
+                  },
+                  {
+                    "concept": "72483e1b-e737-43f9-a2df-9f0c30d46ad6",
+                    "label": "3 months: Does not respond to sound by quieting"
+                  },
+                  {
+                    "concept": "b5b0e154-8802-414a-9640-626524b33b4e",
+                    "label": "4 months: Does not grasp rattle put into palm or hold head steady when you sit him up"
+                  },
+                  {
+                    "concept": "09b3775f-027c-47c2-9648-ecc13dc9166f",
+                    "label": "6 months: Does not reach for object held at eye level in front of him"
+                  },
+                  {
+                    "concept": "aebfcd87-e3df-4e72-9a54-eee61137dae0",
+                    "label": "9 months: Does not bear weight and stand with hands held"
+                  },
+                  {
+                    "concept": "bdded679-3e99-460b-bd8b-3bdc1de4b740",
+                    "label": "12 months: Does not stand alone"
+                  },
+                  {
+                    "concept": "ae95b72b-a489-4d4f-82fc-e403c25487ae",
+                    "label": "14 months: Inability to walk alone"
+                  },
+                  {
+                    "concept": "2c8678b1-67ba-4ab9-ae07-8bf581d0b566",
+                    "label": "15 months: Does not use one work meaningfully"
+                  },
+                  {
+                    "concept": "bd9a2472-6bff-4b01-aafc-0e4cf2f26345",
+                    "label": "18 months: Does not use atleast 3 words, does not point to what he wants"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "developmentMilestone !== '6022AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Infant Feeding Practice",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Is infant less than 6 months",
+              "type": "obs",
+              "required": false,
+              "id": "isInfantLessThanSixMonths",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "8183f31e-de09-4d5c-a96f-f88520b228a4",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Feeding practice for infant less than 6 months",
+              "type": "obs",
+              "required": false,
+              "id": "feedingPracticeForInfantLessThan6Months",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "164858AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "164858"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "164857AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Infant is on exclusive replacement Feeding (ERF)"
+                  },
+                  {
+                    "concept": "5526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Infant is on exclusive Breastfeeding (EBF)"
+                  },
+                  {
+                    "concept": "6046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Infant is on mixed feeding (MF)"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isInfantLessThanSixMonths !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Feeding practice for infant older than 6 months",
+              "type": "obs",
+              "required": false,
+              "id": "feedingPracticeForInfantOlderThan6Months",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "db416d1c-d29b-4257-8cd7-76ff835845c5",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "6046AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Infant is on breastfeeding and complementary feeding"
+                  },
+                  {
+                    "concept": "1595AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Replacement feeds with complementary feeds"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isInfantLessThanSixMonths !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Abnormal findings",
+              "type": "obs",
+              "required": false,
+              "id": "abnormalFindings",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "a9ddac88-830f-438d-bdff-fc492e9de8b1",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "ba3c5c14-beab-4284-80eb-e7b7f921802f",
+                    "label": "Generalized lymphadenopathy"
+                  },
+                  {
+                    "concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Candidiasis, oral"
+                  },
+                  {
+                    "concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Diarrhea, chronic"
+                  },
+                  {
+                    "concept": "825AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hepatosplenomegaly"
+                  },
+                  {
+                    "concept": "55849119-c6c6-419d-a1fb-e019c4b7fe14",
+                    "label": "Persistent fever"
+                  },
+                  {
+                    "concept": "6b509110-fea2-4b2c-b340-e83a7aab8e10",
+                    "label": "Pneumonia or lower respiratory tract infections"
+                  },
+                  {
+                    "concept": "09b3e279-11ff-4d52-ab6d-e668139defa5",
+                    "label": "Purulent ear discharge"
+                  },
+                  {
+                    "concept": "d1301939-1a0d-4afb-956d-3cd82da39496",
+                    "label": "Severe skin lesions"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "None"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Other abnormal finding",
+              "type": "obs",
+              "required": false,
+              "id": "otherAbnormalFinding",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "03cd50c0-827d-47b4-92cb-12c8181ce84a",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
+            },
+            {
+              "label": "Mother's breast condition",
+              "type": "obs",
+              "required": false,
+              "id": "mothersBreastCondition",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "5efb8e8d-36e1-4eef-9a50-d59ce5d50d7d",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Normal"
+                  },
+                  {
+                    "concept": "ec4886c3-b2c7-41ff-af66-f5d1519c35eb",
+                    "label": "Breast abscess"
+                  },
+                  {
+                    "concept": "243f42c7-ecab-4d73-a2f9-15c8a4999f24",
+                    "label": "Cracked nipples"
+                  },
+                  {
+                    "concept": "b3e08818-e665-453a-b046-1aac1e3ed8c4",
+                    "label": "Mastitis"
+                  },
+                  {
+                    "concept": "1175AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Not Applicable"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Other breast condition",
+              "type": "obs",
+              "required": false,
+              "id": "otherBreastCondition",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "00ed2ac0-aacc-402b-b587-7a4bbe1321d5"
+              },
+              "hide": {
+								"hideWhenExpression": "!includes('mothersBreastCondition', '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							  },
+              "validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
+            }
+            
+          ]
+        }
+      ]
+    },
+    {
+      "label": "HIV Test",
+      "sections": [
+        {
+          "label": "HIV DNA/PCR Test Request",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Maternal ART status",
+              "type": "obs",
+              "required": false,
+              "id": "maternalARTStatus",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "70961c32-e9aa-4006-9b12-64d0e71978f5",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "New client"
+                  },
+                  {
+                    "concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "On antiretroviral therapy"
+                  },
+                  {
+                    "concept": "78347c84-f08d-4cc0-8347-f745dc3439f1",
+                    "label": "Not on ART"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Unknown"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "HIV test done",
+              "type": "obs",
+              "required": false,
+              "id": "hivTestDone",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "164401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "164401"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Test Indication",
+              "type": "obs",
+              "required": false,
+              "id": "testIndication",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "cc8b10f3-a1ff-4d82-8143-a45af803bd56",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "42807db4-c4cc-4dc4-9154-a78e1c867f9f",
+                    "label": "Initial / Diagnostic"
+                  },
+                  {
+                    "concept": "d3fa0a12-d04c-410d-85bf-48eab683010d",
+                    "label": "Confirmatory for positive"
+                  },
+                  {
+                    "concept": "45f7234a-c038-450a-8e55-d6e353dce67f",
+                    "label": "At 9 month of age for previous negative"
+                  }
+                ]
+              },
+               "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "Specimen type",
+              "type": "obs",
+              "required": false,
+              "id": "specimenType",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "4c1fed7f-7346-498d-9846-effd0629ecff",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "f3e5d62c-d420-4015-b77c-677c3d50ecfa",
+                    "label": "DBS"
+                  },
+                  {
+                    "concept": "161939AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "EDTA Whole blood"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date of sample collection date",
+              "type": "obs",
+              "required": false,
+              "id": "dateOfSampleCollectionDate",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "159951AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "org.openmrs.module.mdrtb",
+                    "value": "SPUTUM COLLECTION DATE"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "159951"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "Name of the testing laboratory",
+              "type": "obs",
+              "required": false,
+              "id": "nameOfTheTestingLaboratory",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "164422AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "416342005"
+                  },
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "LOINC",
+                    "value": "42216-2"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "164422"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 20",
+                  "message": "Please use a maximum of 20 characters"
+                }
+              ]
+            },
+            {
+              "label": "Specimen collected by ",
+              "type": "obs",
+              "required": false,
+              "id": "specimenCollectedBy",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "870d892b-43b1-4718-a910-8d6346c27454",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Telephone No.",
+              "type": "obs",
+              "required": false,
+              "id": "telephoneNumber",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "167158AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "6589"
+                  },
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "416342005"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "167158"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Date of DBS referral to regional lab",
+              "type": "obs",
+              "required": false,
+              "id": "dateOfDBSReferral",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "161561"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "Date of DBS result received back",
+              "type": "obs",
+              "required": false,
+              "id": "dateOfDbsResultReceivedBack",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "ec2f989b-bdf8-4abe-8601-dc7a99d000eb",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Testing Lab Information",
+          "isExpanded": "true",
+          "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    },
+          "questions": [
+            {
+              "label": "Date of sample received",
+              "type": "obs",
+              "required": false,
+              "id": "dateSampleReceived",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "e724050c-cd85-4405-94a0-7a8e3b082d58",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "Sample quality",
+              "type": "obs",
+              "required": false,
+              "id": "sampleQuality",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "165253AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "165253"
+                  },
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "364708003"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "160113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Accepted"
+                  },
+                  {
+                    "concept": "126224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Rejected"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date test performed",
+              "type": "obs",
+              "required": false,
+              "id": "dateTestPerformed",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "164400"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "Platform used",
+              "type": "obs",
+              "required": false,
+              "id": "platformUsed",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "278b3046-d653-4cb2-a4c6-8f4f5d8fb54f",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "b69e48b1-8913-419c-93c2-d6c33ced33b9",
+                    "label": "Conventional method"
+                  },
+                  {
+                    "concept": "1747b3fa-047e-4b92-9c2d-c7199b5714ea",
+                    "label": "POC"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Reason rejected or test not done",
+              "type": "obs",
+              "required": false,
+              "id": "restonRejectedOrTestNotDone",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "38295027-00a8-42a2-9bce-ec12103035bf",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "0c316ccf-dbed-4fa5-90ae-37dbe72fce31",
+                    "label": "No requisition with sample"
+                  },
+                  {
+                    "concept": "1304AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Poor sample quality"
+                  },
+                  {
+                    "concept": "be792a50-fd0e-4338-b61d-44cb2b27285b",
+                    "label": "Improper identification"
+                  },
+                  {
+                    "concept": "ccd4e871-e989-4f72-994e-a77a8ef1c6f7",
+                    "label": "No sample with requisition"
+                  },
+                  {
+                    "concept": "cc3f8b9e-1bbb-4138-ba7f-630411036830",
+                    "label": "Insufficient sample volume"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "sampleQuality !== '126224AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "label": "DNA PCR result",
+              "type": "obs",
+              "required": false,
+              "id": "testResult",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Inconclusive"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Comment",
+              "type": "obs",
+              "required": false,
+              "id": "comment",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "BROADER-THAN",
+                    "type": "LOINC",
+                    "value": "48767-8"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "161011"
+                  }
+                ],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Lab test done by",
+              "type": "obs",
+              "required": false,
+              "id": "labTestDoneBy",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "1397f314-836f-4858-ba12-53c37f845fbf",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            },
+            {
+              "label": "Test results checked by",
+              "type": "obs",
+              "required": false,
+              "id": "testResultsCheckedBy",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "ebfa7dbd-8f02-41d4-bef5-1fc90196f52a",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Confirmartory Rapid Antibody Test",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Confirmatory test done",
+              "type": "obs",
+              "required": false,
+              "id": "confirmatoryTestDone",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "870d0e93-1afc-42ef-9721-84a1a5c33be9",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Rapid antibody result",
+              "type": "obs",
+              "required": false,
+              "id": "rapidAntibodyResult",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "aa69908a-989a-4fef-ad65-cbd73ba487b7",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                    "label": "Negative"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "confirmatoryTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Treatment",
+      "sections": [
+        {
+          "label": "ARV Drug",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "ARV prophylaxis",
+              "type": "obs",
+              "required": false,
+              "readonly": true,
+              "id": "arvStarted",
+              "questionOptions": {
+                "calculate": {
+									"calculateExpression": "resolve(api.getLatestObs(patient.id, 'b7f50074-b9f2-4b0d-9f20-d18b646d822e', 'ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97' ))?.valueCodeableConcept?.coding?"
+								},
+                "rendering": "radio",
+                "concept": "b7f50074-b9f2-4b0d-9f20-d18b646d822e",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "b5b94269-9ee1-4733-8a24-96213cf3c291",
+                    "label": "NVP + AZT for 6 weeks and NVP only for additionally 6 weeks"
+                  },
+                  {
+                    "concept": "d32ee1d2-2518-478d-bceb-7e80fc8cb3b1",
+                    "label": "None"
+                  }
+                ]
+              },
+              "behaviours": [
+								{
+									"intent": "edit",
+									"questionOptions": {
+										"rendering": "radio",
+                "concept": "b7f50074-b9f2-4b0d-9f20-d18b646d822e",
+                "answers": [
+                  {
+                    "concept": "b5b94269-9ee1-4733-8a24-96213cf3c291",
+                    "label": "NVP + AZT for 6 weeks and NVP only for additionally 6 weeks"
+                  },
+                  {
+                    "concept": "d32ee1d2-2518-478d-bceb-7e80fc8cb3b1",
+                    "label": "None"
+                  }
+                ]
+								}
+								}
+								,{
+									"intent": "view",
+									"questionOptions": {
+										"rendering": "radio",
+                "concept": "b7f50074-b9f2-4b0d-9f20-d18b646d822e",
+                "answers": [
+                  {
+                    "concept": "b5b94269-9ee1-4733-8a24-96213cf3c291",
+                    "label": "NVP + AZT for 6 weeks and NVP only for additionally 6 weeks"
+                  },
+                  {
+                    "concept": "d32ee1d2-2518-478d-bceb-7e80fc8cb3b1",
+                    "label": "None"
+                  }
+                ]
+								}
+								}
+							],
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Cotrimoxazole Prophylaxis",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Dose",
+              "type": "obs",
+              "required": false,
+              "id": "dose",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "ec9670c2-ee1f-42db-aea1-d238fb4fc33f",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+                    "label": "30"
+                  },
+                  {
+                    "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+                    "label": "60"
+                  },
+                  {
+                    "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+                    "label": "90"
+                  },
+                  {
+                    "concept": "d7b06ad1-b132-4714-baff-b99b2af194a3",
+                    "label": "DC"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Adherence",
+              "type": "obs",
+              "required": false,
+              "id": "adherence",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "af63fc87-379b-4fc4-8e68-936026da9f54",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "161652"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Poor"
+                  },
+                  {
+                    "concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Fair"
+                  },
+                  {
+                    "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Good"
+                  }
+                  
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Treatment / Medication given",
+              "type": "obs",
+              "required": false,
+              "id": "treatmentMedicationGiven",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "9fc090d6-d646-40f8-8809-7e2f12a88639",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+            
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Conclusion / Decision",
+      "sections": [
+        {
+          "label": "Conclusion / Decision",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Conclusion",
+              "type": "obs",
+              "required": false,
+              "id": "conclusion",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "19c28608-a5c5-4095-8966-4ddac6f93847",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "57bdda27-1e18-4716-b860-735a045e52bd",
+                    "label": "No clinical or laboratory evidence of HIV"
+                  },
+                  {
+                    "concept": "c8cde5eb-ef6e-4740-80f9-e879279a3c19",
+                    "label": "Clinical evidence of HIV"
+                  },
+                  {
+                    "concept": "198731de-2a03-418d-a0ba-833accb88f58",
+                    "label": "Laboratory evidence of HIV (DNA PCR/ Antibody tests)"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Decision",
+              "type": "obs",
+              "required": true,
+              "id": "decision",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "f0652b88-d1dd-4ec5-add7-8bdda63b5a8a",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "041eed6b-3684-4a7d-903b-a44705fdb50f",
+                    "label": "Continue to followup - Still on BF/Exposed"
+                  },
+                  {
+                    "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "TO (before Final Outcome known)"
+                  },
+                  {
+                    "concept": "34a4c62c-4c5c-4e4b-bc13-f68e07eea076",
+                    "label": "Lost to Follow-up"
+                  },
+                  {
+                    "concept": "160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Died"
+                  },
+                  {
+                    "concept": "bd5d0757-95f8-4fcb-bd1a-f24953efeca3",
+                    "label": "Positive - Referred for pediatric HIV care within facility"
+                  },
+                  {
+                    "concept": "5425b021-8539-420b-ad60-4636e98034f2",
+                    "label": "Positive - Referred for pediatric HIV care outside facility"
+                  },
+                  {
+                    "concept": "00c3deda-9bb6-490f-821b-75ba9cc85db5",
+                    "label": "Discharged negative from care (HIV free)"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Next visit date",
+              "type": "obs",
+              "required": false,
+              "id": "nextVisitDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+								{
+									"type": "js_expression",
+									"failsWhenExpression": "myValue < new Date(followupDate)",
+									"message": "Next visit date should not be earlier than Followup date"
+								}
+							]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
+  "processor": "EncounterFormProcessor",
+  "uuid": "f4504bb0-b656-3c8a-8fd8-038fb9ba75b8",
+  "referencedForms": [],
+  "encounterType": "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d",
+  "allowUnspecifiedAll": true
+}

@@ -1,17 +1,11 @@
+/* eslint-disable unused-imports/no-unused-imports */
 import {
   getAsyncLifecycle,
   defineConfigSchema,
-  provide,
   getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
-import ethiohriConfigOverrides from "./ethiohri-configuration-overrides.json";
-import ethiohriConfig from "./ethiohri-config";
-import {
-  addToBaseFormsRegistry,
-  registerControl,
-} from "@openmrs/openmrs-form-engine-lib";
-import formsRegistry from "./forms/forms-registry";
+import { registerExpressionHelper } from "@openmrs/esm-form-engine-lib";
 import {
   createDashboardGroup,
   createDashboardLink,
@@ -21,261 +15,223 @@ import {
   CLINICAL_VISITS,
   HIV_CARE_AND_TREATMENT,
   HIV_TESTING_SERVICE_META,
-  MATERNAL_HEALTH_SUMMARY,
+  INDEX_CASE_TESTING_META,
   PMTCT_META,
   POST_META,
   PREP_META,
   PROGRAM_MANAGEMENT_META,
+  MOTHER_HEALTH_SUMMARY,
 } from "./ethiohri-dashboard.meta";
+import {
+  CalcNextVisitDate,
+  CalcTreatmentEndDate,
+  CalcPrepDoseEndDate,
+  CalcMonthsOnART,
+  CalcViralLoadStatus,
+  CalcAdultNutritionalStatus,
+  CalcNutritionalScreening,
+  CalcOlderChildNutritionalStatus,
+  CalcNextFollowupDateForCxCa,
+  CalcBMI,
+  getGender,
+  getIdentifier,
+  calcEGFR,
+  isDateAlreadyUsed,
+  isSupplementaryFoodVisible,
+  isTreatmentVisible,
+  loadFollowupStatus,
+  getBirthdateFromAge,
+  getAgeFromBirthdate,
+} from "./custom-expressions";
+import {
+  createConditionalDashboardGroup,
+  createConditionalDashboardLink,
+} from "@ohri/openmrs-esm-ohri-commons-lib";
+import ProgramManagment from "./views/program-management/program-managment-summary.component";
+import VisitsSummary from "./views/followup/followup.component";
+import MotherHealth from "./views/pmtct/mother/pmtct-mother.component";
+import PreExposure from "./views/pre-exposure/pre-exposure-summary.component";
+import PostExposure from "./views/post-exposure/post-exposure.component";
+import HIVTestingService from "./views/hiv-testing-service/hiv-testing-service-summary.component";
+import IndexCaseTesting from "./views/index-case-testing/index-case-testing-summary.component";
+import ActiveMedications from "./views/medications/active-medications.component";
+import VitalsSummary from "./views/vitals/vitals-summary.component";
+import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
+import ChildHealth from "./views/pmtct/child/hei.component";
+import { PatientList } from "./components/patient-lists/patient-list.component";
 
-const importTranslation = require.context(
+export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
+export const options = { featureName: "ethiohri", moduleName };
+export const importTranslation = require.context(
   "../translations",
   false,
   /.json$/,
   "lazy"
 );
 
-export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
-
-const backendDependencies = {
-  fhir2: "^1.2.0",
-  "webservices.rest": "^2.2.0",
-};
-
-function setupOpenMRS() {
-  const options = { featureName: "ethiohri", moduleName };
-
+export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
-  provide(ethiohriConfigOverrides);
-  provide(ethiohriConfig);
-
-  addToBaseFormsRegistry(formsRegistry);
-
-  registerControl({
-    id: "eth-date",
-    loadControl: () => import("./controls/date/ethiohri-date.component"),
-    type: "eth-date",
-  });
-
-  return {
-    pages: [],
-    extensions: [
-      {
-        id: "test-patient-details-button",
-        slot: "patient-actions-slot",
-        load: getAsyncLifecycle(
-          () =>
-            import("./actions-buttons/test-patient-details-button.component"),
-          options
-        ),
-        online: true,
-        offline: true,
-      },
-      {
-        id: "test-attribute-tags",
-        slot: "patient-banner-tags-slot",
-        load: getAsyncLifecycle(
-          () => import("./patient-banner-tags/test-attribute-tags.component"),
-          {
-            featureName: "test-attribute-tags",
-            moduleName,
-          }
-        ),
-      },
-      {
-        id: "hiv-baseline-ext-et",
-        slot: "patient-chart-summary-dashboard-slot",
-        load: getAsyncLifecycle(
-          () => import("./views/hiv-baseline/hiv-baseline-summary.component"),
-          {
-            featureName: "hiv-baseline-summary",
-            moduleName,
-          }
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-      {
-        name: "active-medications-widget-et",
-        slot: "patient-chart-summary-dashboard-slot",
-        load: getAsyncLifecycle(
-          () => import("./views/medications/active-medications.component"),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-        online: { showAddMedications: true },
-        offline: { showAddMedications: false },
-      },
-      {
-        name: "vitals-overview-widget-et",
-        slot: "patient-chart-summary-dashboard-slot",
-        load: getAsyncLifecycle(
-          () => import("./views/vitals/vitals-summary.component"),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-        online: { showAddVitals: true },
-        offline: { showAddVitals: false },
-      },
-      {
-        id: "hiv-care-and-treatment-ext",
-        slot: "patient-chart-dashboard-slot",
-        load: getSyncLifecycle(
-          createDashboardGroup(HIV_CARE_AND_TREATMENT),
-          options
-        ),
-        meta: HIV_CARE_AND_TREATMENT,
-      },
-      {
-        id: "program-management-ext",
-        slot: "hiv-care-and-treatment-slot",
-        load: getSyncLifecycle(
-          createDashboardLink(PROGRAM_MANAGEMENT_META),
-          options
-        ),
-        meta: PROGRAM_MANAGEMENT_META,
-      },
-      {
-        id: "program-management-chart-ext",
-        slot: "program-management-slot",
-        load: getAsyncLifecycle(
-          () =>
-            import(
-              "./pages/program-management/program-managment-summary.component"
-            ),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-      {
-        id: "clinical-visits-ext",
-        slot: "hiv-care-and-treatment-slot",
-        load: getSyncLifecycle(createDashboardLink(CLINICAL_VISITS), options),
-        meta: CLINICAL_VISITS,
-      },
-      {
-        id: "clinical-visits-chart-ext",
-        slot: "clinical-visits-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/visits/visits-summary.component"),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-      {
-        id: "pmtct-ext",
-        slot: "patient-chart-dashboard-slot",
-        load: getSyncLifecycle(createDashboardGroup(PMTCT_META), options),
-        meta: PMTCT_META,
-      },
-      {
-        id: "maternal-health-ext",
-        slot: "ethio-pmtct-slot",
-        load: getSyncLifecycle(
-          createDashboardLink(MATERNAL_HEALTH_SUMMARY),
-          options
-        ),
-        meta: MATERNAL_HEALTH_SUMMARY,
-      },
-      {
-        id: "child-health-ext",
-        slot: "ethio-pmtct-slot",
-        load: getSyncLifecycle(
-          createDashboardLink(CHILD_HEALTH_SUMMARY),
-          options
-        ),
-        meta: CHILD_HEALTH_SUMMARY,
-      },
-      {
-        id: "maternal-health-chart-ext",
-        slot: "maternal-health-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/pmtct/maternal-health.component"),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-      {
-        id: "child-health-chart-ext",
-        slot: "child-health-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/child-care/child-care.component"),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-      {
-        id: "prep-ext",
-        slot: "hiv-care-and-treatment-slot",
-        load: getSyncLifecycle(createDashboardLink(PREP_META), options),
-        meta: PREP_META,
-      },
-      {
-        id: "prep-chart-ext",
-        slot: "prep-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/pre-exposure/pre-exposure-summary.component"),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-      {
-        id: "post-exposure-ext",
-        slot: "hiv-care-and-treatment-slot",
-        load: getSyncLifecycle(createDashboardLink(POST_META), options),
-        meta: POST_META,
-      },
-      {
-        id: "post-exposure-chart-ext",
-        slot: "post-exposure-slot",
-        load: getAsyncLifecycle(
-          () => import("./pages/post-exposure/post-exposure.component"),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-      {
-        id: "hiv-testing-service-ext",
-        slot: "hiv-care-and-treatment-slot",
-        load: getSyncLifecycle(
-          createDashboardLink(HIV_TESTING_SERVICE_META),
-          options
-        ),
-        meta: HIV_TESTING_SERVICE_META,
-      },
-      {
-        id: "hiv-testing-chart-ext",
-        slot: "hiv-testing-service-slot",
-        load: getAsyncLifecycle(
-          () =>
-            import(
-              "./pages/hiv-testing-service/hiv-testing-service-summary.component"
-            ),
-          options
-        ),
-        meta: {
-          columnSpan: 4,
-        },
-      },
-    ],
-  };
+  registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
+  registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
+  registerExpressionHelper("CustomPrepDoseEndDateCalc", CalcPrepDoseEndDate);
+  registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
+  registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
+  registerExpressionHelper(
+    "CustomAdultNutritionalStatusCalc",
+    CalcAdultNutritionalStatus
+  );
+  registerExpressionHelper(
+    "CustomNutritionalScreeningCalc",
+    CalcNutritionalScreening
+  );
+  registerExpressionHelper(
+    "CustomOlderChildNutritionalStatusCalc",
+    CalcOlderChildNutritionalStatus
+  );
+  registerExpressionHelper(
+    "CustomNextFollowupDateForCxCa",
+    CalcNextFollowupDateForCxCa
+  );
+  registerExpressionHelper("CustomBMICalc", CalcBMI);
+  registerExpressionHelper("getGender", getGender);
+  registerExpressionHelper("getIdentifier", getIdentifier);
+  registerExpressionHelper("calcEGFR", calcEGFR);
+  registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
+  registerExpressionHelper("isTreatmentVisible", isTreatmentVisible);
+  registerExpressionHelper(
+    "isSupplementaryFoodVisible",
+    isSupplementaryFoodVisible
+  );
+  registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
+  registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);
+  registerExpressionHelper("getAgeFromBirthdate", getAgeFromBirthdate);
+  // registerControl({
+  //   name: "eth-date",
+  //   load: () => import("./components/controls/date/ethiohri-date.component"),
+  //   type: "eth-date",
+  // });
 }
 
-export { backendDependencies, importTranslation, setupOpenMRS };
+export const patientDetailsButton = getAsyncLifecycle(
+  () =>
+    import(
+      "./components/actions-buttons/test-patient-details-button.component"
+    ),
+  options
+);
+
+export const attributeTags = getAsyncLifecycle(
+  () =>
+    import("./components/patient-banner-tags/test-attribute-tags.component"),
+  {
+    featureName: "test-attribute-tags",
+    moduleName,
+  }
+);
+export const hivBaseline = getSyncLifecycle(HivBaselineSummary, {
+  featureName: "hiv-baseline-summary",
+  moduleName,
+});
+export const ethiohriActiveMedications = getSyncLifecycle(
+  ActiveMedications,
+  options
+);
+export const vitalsOverview = getSyncLifecycle(VitalsSummary, options);
+
+export const hivCareAndTreatmentMenu = getSyncLifecycle(
+  createDashboardGroup(HIV_CARE_AND_TREATMENT),
+  options
+);
+export const facilityName = getAsyncLifecycle(
+  () => import("./views/navbar/facility-name.component"),
+  options
+);
+export const programManagementMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...PROGRAM_MANAGEMENT_META,
+    moduleName,
+  }),
+  options
+);
+
+export const programManagementChart = getSyncLifecycle(
+  ProgramManagment,
+  options
+);
+export const clinicalVisitsMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...CLINICAL_VISITS,
+    moduleName,
+  }),
+  options
+);
+export const clinicalVisitsChart = getSyncLifecycle(VisitsSummary, options);
+
+export const pmtctMenu = getSyncLifecycle(
+  createConditionalDashboardGroup(PMTCT_META),
+  options
+);
+export const childHealthMenu = getSyncLifecycle(
+  createConditionalDashboardLink({
+    ...CHILD_HEALTH_SUMMARY,
+    moduleName,
+  }),
+  options
+);
+export const childHealthChart = getSyncLifecycle(ChildHealth, options);
+export const motherHealthMenu = getSyncLifecycle(
+  createConditionalDashboardLink({
+    ...MOTHER_HEALTH_SUMMARY,
+    moduleName,
+  }),
+  options
+);
+export const motherHealthChart = getSyncLifecycle(MotherHealth, options);
+export const prepMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...PREP_META,
+    moduleName,
+  }),
+  options
+);
+export const prepChart = getSyncLifecycle(PreExposure, options);
+export const pepMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...POST_META,
+    moduleName,
+  }),
+  options
+);
+export const pepChart = getSyncLifecycle(PostExposure, options);
+export const hivTestingServiceMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...HIV_TESTING_SERVICE_META,
+    moduleName,
+  }),
+  options
+);
+export const hivTestingServiceChart = getSyncLifecycle(
+  HIVTestingService,
+  options
+);
+export const indexCaseTestingMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...INDEX_CASE_TESTING_META,
+    moduleName,
+  }),
+  options
+);
+export const indexCaseTestingChart = getSyncLifecycle(
+  IndexCaseTesting,
+  options
+);
+
+export const patientList = getSyncLifecycle(PatientList, {
+  featureName: "home",
+  moduleName,
+});
+
+export const helpMenu = getAsyncLifecycle(
+  () => import("./views/navbar/help-button.component"),
+  options
+);

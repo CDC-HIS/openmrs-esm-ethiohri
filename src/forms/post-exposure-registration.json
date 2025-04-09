@@ -1,0 +1,707 @@
+{
+	"name": "Exposed Person Information",
+	"version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Exposed Person Information",
+	"pages": [
+		{
+			"label": "Post Exposure To HIV Prophylaxis (PEP) Registration",
+			"sections": [
+				{
+					"label": "GENERAL INFORMATION",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Reporting date",
+							"type": "obs",
+							"required": true,
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c",
+								"weeksList": ""
+							},
+							"validators": [
+								{
+								  "type": "date",
+								  "allowFutureDates": "false"
+								}
+							  ],
+							"id": "reportingDate"
+						},
+						{
+							"label": "Occupation",
+							"type": "obs",
+							"required": false,
+							"id": "occupation",
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "6b28ccbd-3cea-4d7f-81a7-25c770e45c32",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+									"concept": "162591AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Physician"
+								},
+								{
+									"concept": "164969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Health officer"
+								},
+								{
+									"concept": "1577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Nurse"
+								},
+								{
+									"concept": "159905AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Health Assistant"
+								},
+								{
+									"concept": "165796AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Laboratory professional"
+								},
+								{
+								  "concept": "164832AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Cleaner"
+								},
+								{
+								  "concept": "164833AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								  "label": "Sanitarian"
+								},
+								{
+									"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+									"label": "Other"
+								}
+							  ]
+							},
+							"validators": []
+						  },
+						  {
+							"label": "Other occupation",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "4e694dca-33b5-4694-b2b7-6b738198d217"
+							},
+							"id": "otherOccupation",
+							"hide": {
+								"hideWhenExpression": "occupation !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
+						},
+						{
+							"label": "Department",
+							"type": "obs",
+							"required": false,
+							"id": "department",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "cdc0f46f-7cc4-490b-a32b-8088c67c884a",
+								"answers": [
+									{
+										"concept": "d1e97037-c599-47c3-93cb-c256b9c27fbc",
+										"label": "Labor ward"
+									},
+									{
+										"concept": "7cab843b-ba81-475c-a9a1-ca6d06faed9e",
+										"label": "Emergency"
+									},
+									{
+										"concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Regular OPD"
+									},
+									{
+										"concept": "167050AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Inpatient"
+									},
+									{
+										"concept": "e1ea3319-08e5-44f1-9408-edd664b5094e",
+										"label": "Operation Room"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other"
+									}
+								]
+							}
+						},
+						{
+							"label": "Other department",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "dfe7b0bf-6498-4d92-8f36-bb1a7cc68e50"
+							},
+							"id": "otherDepartment",
+							"hide": {
+								"hideWhenExpression": "department !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"validators": [
+								{
+								  "type": "js_expression",
+								  "failsWhenExpression": "myValue.length > 50",
+								  "message": "Please use a maximum of 50 characters"
+								}
+							  ]
+						}
+					]
+				},
+				{
+					"label": "EXPOSURE",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Duration (in hours)",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "162603AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": 99999999,
+								"min": 0,
+								"showDate": "",
+								"conceptMappings": [
+									{
+										"type": "CIEL",
+										"value": "162603"
+									}
+								]
+							},
+							"id": "durationInHours"
+						},
+						{
+							"label": "Exposure type",
+							"type": "obs",
+							"required": true,
+							"id": "exposureType",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "916eebc3-1141-40e6-beaa-ad2b5685956b",
+								"answers": [
+									{
+										"concept": "453bf209-c408-4692-83e7-17d21282a8ae",
+										"label": "Occupational"
+									},
+									{
+										"concept": "126582AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Sexual Assault (Rape)"
+									},
+									{
+										"concept": "164837AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Non-occupational"
+									}
+								]
+							}
+						},
+						{
+							"label": "Non-occupational exposure type",
+							"type": "obs",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "a58651ae-26ae-4e48-8931-2c37cbcf6850"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "exposureType !== '164837AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "nonoccupationalType"
+						},
+						{
+							"label": "Source of exposure",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "1c92b574-953a-458e-9fa7-82f5538d8aee",
+								"answers": [
+									{
+										"concept": "181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Needle stick injury",
+										"conceptMappings": []
+									},
+									{
+										"concept": "164838AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Skin injury with sharps",
+										"conceptMappings": []
+									},
+									{
+										"concept": "c66806da-e333-41c6-b2c6-b95d2e43b07a",
+										"label": "Blood and products splash",
+										"conceptMappings": []
+									},
+									{
+										"concept": "162631AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Potentially infectious body fluids",
+										"conceptMappings": []
+									},
+									{
+										"concept": "111505AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Rape",
+										"conceptMappings": []
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Other",
+										"conceptMappings": [
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "CIEL",
+												"value": "5622"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "OTHER"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-MVP",
+												"value": "56221000105001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "6408"
+											},
+											{
+												"type": "AMPATH",
+												"value": "5622"
+											},
+											{
+												"type": "PIH",
+												"value": "5622"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "74964007"
+											}
+										]
+									}
+								]
+							},
+							"id": "sourceOfExposure"
+						},
+						{
+							"label": "Other source of exposure",
+							"type": "obs",
+							"questionOptions": {
+							  "rendering": "text",
+							  "concept": "5b703cff-eac5-4129-b1b3-9817790c8a09"
+							},
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "sourceOfExposure !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "otherSource"
+						},
+						{
+							"label": "Exposure code",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "2d55e533-6670-45be-960a-99e8eeb31938",
+								"answers": [
+									{
+										"concept": "0686b090-479b-4df1-b717-f8ae4b21abc7",
+										"label": "EC1",
+										"conceptMappings": []
+									},
+									{
+										"concept": "463e58f2-0625-4d6b-927d-2c6211d555b3",
+										"label": "EC2",
+										"conceptMappings": []
+									},
+									{
+										"concept": "699c9452-92ea-4cbf-a148-deb3376b3189",
+										"label": "EC3",
+										"conceptMappings": []
+									}
+								]
+							},
+							"id": "exposureCode"
+						}
+					]
+				},
+				{
+					"label": "BASELINE HIV STATUS",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Source person",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "dc23b554-65b1-479a-aeeb-b47dc9fc2f7e",
+								"answers": [
+									{
+										"concept": "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Reactive",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Non-reactive",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown status",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "ANC-DAK",
+												"value": "ANC.B6.DE2"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											}
+										]
+									}
+								]
+							},
+							"id": "sourcePerson"
+						},
+						{
+							"label": "Exposed person",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "select",
+								"concept": "ad4935e0-624a-4e01-8e51-02acd0b45f07",
+								"answers": [
+									{
+										"concept": "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Reactive",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1229AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Non-reactive",
+										"conceptMappings": []
+									},
+									{
+										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Unknown status",
+										"conceptMappings": [
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 261665006"
+											},
+											{
+												"type": "ANC-DAK",
+												"value": "ANC.B6.DE2"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "HL7-MedicationDispenseStatus",
+												"value": "unknown"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1067"
+											},
+											{
+												"type": "PIH",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "CIEL",
+												"value": "1067"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "261665006"
+											},
+											{
+												"type": "org.openmrs.module.mdrtb",
+												"value": "UNKNOWN"
+											}
+										]
+									}
+								]
+							},
+							"id": "exposedPerson"
+						}
+					]
+				},
+				{
+					"label": "PEP PROVISION",
+					"isExpanded": "true",
+					"questions": [
+						{
+							"label": "Eligible",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "78dc1be4-4668-4170-b994-fc5e9a697e56",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "Yes",
+										"conceptMappings": [
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "PIH",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "CIEL",
+												"value": "1065"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373066001"
+											},
+											{
+												"type": "SNOMED CT",
+												"value": "CT: 373066001"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1065"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1065"
+											}
+										]
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+										"label": "No",
+										"conceptMappings": [
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH",
+												"value": "1066"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "CIEL",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											},
+											{
+												"type": "SNOMED-CT",
+												"value": "373067005"
+											},
+											{
+												"type": "PIH-Malawi",
+												"value": "1066"
+											},
+											{
+												"type": "AMPATH",
+												"value": "1066"
+											}
+										]
+									}
+								]
+							},
+							"id": "eligible"
+						},
+						{
+							"label": "Time between exposure and PEP in hours",
+							"type": "obs",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "0885bb1e-6a2e-47d0-a597-8e8da07e4e59",
+								"max": 99999999,
+								"min": 0,
+								"showDate": ""
+							},
+							"hide": {
+								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"id": "timeBetweenExposure"
+						},
+						  {
+							"label": "PEP Regimen",
+							"type": "obs",
+							"required": true,
+							"id": "pepRegimen",
+							"hide": {
+								"hideWhenExpression": "eligible !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+							  "rendering": "select",
+							  "concept": "17c0da08-509d-483f-905c-01c0c9ddd72a",
+							  "conceptMappings": [],
+							  "answers": [
+								{
+								  "concept": "76c43a1d-c393-49da-a518-a377551e201f",
+								  "label": "AZT +3TC"
+								},
+								{
+								  "concept": "2539a997-cb0c-4cc4-9c10-e46f1fe69d12",
+								  "label": "AZT+3TC+ATV/r"
+								},
+								{
+								  "concept": "d9e435b0-d436-4ff9-8a0c-8b6aeb9467d8",
+								  "label": "AZT+3TC+DTG"
+								},
+								{
+								  "concept": "bb2410bf-fd9a-404d-90fd-e57e33881be7",
+								  "label": "AZT+3TC+EFV"
+								},
+								{
+								  "concept": "8f9776c6-0cf5-4dd3-9e19-cf3cbb9a0571",
+								  "label": "AZT+3TC+LPV/r"
+								},
+								{
+								  "concept": "caffc411-7641-4e3e-b9e2-9f25c3dc3b79",
+								  "label": "TDF +3TC"
+								},
+								{
+								  "concept": "14ca5a47-b214-4d8d-88b4-b677faa3753c",
+								  "label": "TDF+3TC+ATV/r"
+								},
+								{
+								  "concept": "9df31185-a0b2-4e92-b3e8-c373e2c66c29",
+								  "label": "TDF+3TC+DTG (TLD)"
+								},
+								{
+								  "concept": "d0de9d87-b108-4e57-9917-fdc1006cbf1f",
+								  "label": "TDF+3TC+EFV (TLE)"
+								},
+								{
+								  "concept": "f1315a7c-94da-4f53-a28d-2da32c56b6a2",
+								  "label": "TDF+3TC+LPV/r"
+								}
+							  ]
+							},
+							"validators": []
+						  }
+					]
+				}
+			]
+		}
+	],
+	"availableIntents": [
+		{
+			"intent": "*",
+			"display": "default_intent"
+		}
+	],
+	"processor": "EncounterFormProcessor",
+	"uuid": "0937d863-6940-40d2-9c7f-779c427fd766",
+	"referencedForms": [],
+	"encounterType": "de4cef7c-0aca-4593-9b5f-64a51c841c9d",
+	"allowUnspecifiedAll": true
+}

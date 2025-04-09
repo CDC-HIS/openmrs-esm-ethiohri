@@ -1,0 +1,469 @@
+{
+    "name": "Family Index Case Contacts",
+    "version": "1.0",
+	"published": true,
+	"retired": false,
+	"encounter": "Follow Up",
+    "pages": [
+      {
+        "label": "Index Case",
+        "sections": [
+          {
+            "label": "Personal Information",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Registration Date",
+                "type": "obs",
+                "required": false,
+                "id": "registrationDate",
+                "datePickerFormat": "calendar",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+                }
+              },
+              {
+                "label": "First Name",
+                "type": "obs",
+                "required": false,
+                "id": "firstName",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+              },
+              {
+                "label": "Father's Name",
+                "type": "obs",
+                "required": false,
+                "id": "fathersName",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+              },
+              {
+                "label": "Grand Father's Name",
+                "type": "obs",
+                "required": false,
+                "id": "grandfathersName",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+              },
+              {
+                "label": "Gender",
+                "type": "obs",
+                "required": false,
+                "id": "gender",
+                "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                        {
+                            "concept": "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "label": "Male"
+                        },
+                        {
+                            "concept": "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "label": "Female"
+                        }
+                    ]
+                }
+            },
+            {
+                      "label": "Date of Birth",
+                      "type": "obs",
+                      "required": false,
+                      "id": "dateOfBirth",
+                      "questionOptions": {
+                        "rendering": "date",
+                        "concept": "e27ae70c-6131-4004-9da8-841619e19480"
+                      }
+                    },
+                    {
+                      "label": "Age",
+                      "type": "obs",
+                      "required": false,
+                      "id": "age",
+                      "questionOptions": {
+                        "rendering": "number",
+                        "concept": "301aee32-885f-4f56-aed1-497ad7aaf8d7"
+                      }
+                    },
+              {
+                "label": "Relationship",
+                "type": "obs",
+                "required": false,
+                "id": "relationship",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "f5d1f4ec-22b8-4b47-a136-1ffb12aefe31",
+                  "answers": [
+                    {
+                      "concept": "163565AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Casual sexual partner"
+                    },
+                    {
+                      "concept": "1528AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Child"
+                    },
+                    {
+                      "concept": "10540efa-421e-4a6d-b2a3-22cb4ceee6d0",
+                      "label": "Non-Spouse Partner"
+                    },
+                    {
+                      "concept": "1527AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Parent"
+                    },
+                    {
+                      "concept": "5617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Partner or spouse"
+                    },
+                    {
+                      "concept": "972AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Sibling"
+                    },
+                    {
+                      "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Other"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
+                "label": "Address",
+                "type": "obs",
+                "required": false,
+                "id": "address",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "1eb080aa-7921-425e-801f-b53f4ca93a7d"
+                }
+              },
+              {
+                "label": "Home Phone Number",
+                "type": "obs",
+                "required": false,
+                "id": "homePhoneNumber",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "2481f720-0490-4c89-aeb8-dd128b8cb001"
+                }
+              },
+              {
+                "label": "Mobile Phone Number",
+                "type": "obs",
+                "required": false,
+                "id": "mobilePhoneNumber",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "d266ec50-0ba1-442a-8f2c-7895eaad84ab"
+                }
+              },
+              {
+                "label": "Work Phone Number",
+                "type": "obs",
+                "required": false,
+                "id": "workPhoneNumber",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "605a3cfe-a072-4b1b-8067-317538ffdfbb"
+                }
+              }
+            ]
+          },
+          {
+            "label": "Case Information",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Currently living with the Index Case",
+                "type": "obs",
+                "required": false,
+                "id": "currentlyLivingWithIndexCase",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "fad2e4c5-d6f3-47b4-bb94-eb5f3539775b",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
+                "label": "Health status of the client",
+                "type": "obs",
+                "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "4ab0e5e3-fff7-4819-bd2e-4f070eedcd3d",
+                    "answers": [
+                        {
+                            "concept": "1855AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "label": "Healthy",
+                            "conceptMappings": []
+                        },
+                        {
+                            "concept": "9c849633-3589-42c7-bcb1-b4af7ec392c5",
+                            "label": "Chronically Ill",
+                            "conceptMappings": []
+                        },
+                        {
+                            "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                            "label": "Dead",
+                            "conceptMappings": []
+                        }
+                    ]
+                },
+                "id": "healthStatusOfClient"
+            },
+            {
+                "label": "Has the client been previously tested",
+                "type": "obs",
+                "required": false,
+                "id": "hasTheClientBeenPreviouslyTested",
+                "questionOptions": {
+                  "rendering": "radio",
+                  "concept": "f4bcd7bc-83c2-40b1-9159-dadb97a83fc8",
+                  "answers": [
+                    {
+                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
+                "label": "Previous Date Tested",
+                "type": "obs",
+                "required": false,
+                "id": "previousDateTested",
+                "questionOptions": {
+                  "rendering": "date",
+                  "concept": "87a98d42-ec07-46a0-b291-36f66b68fe2c"
+                }
+              },
+              {
+                "label": "Previous HIV Test Result",
+                "type": "obs",
+                "required": false,
+                "id": "previousTestResult",
+                "questionOptions": {
+                  "rendering": "select",
+                  "concept": "23ef2580-e9e5-4e1b-af9b-584cdd30abc4",
+                  "answers": [
+                    {
+                      "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Positive"
+                    },
+                    {
+                      "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                      "label": "Negative"
+                    },
+                    {
+                      "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "label": "Unknown"
+                    }
+                  ]
+                }
+                          },
+                          {
+                            "label": "Is the contact counseled for HIV today",
+                            "type": "obs",
+                            "required": false,
+                            "id": "isTheCotanctCounseledForHiv",
+                            "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "0692893e-95bd-4749-a7fe-b0ca96a79407",
+                              "answers": [
+                                {
+                                  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Yes"
+                                },
+                                {
+                                  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "No"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "label": "Has the contact been tested for HIV",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hasTheContactBeenTestedForHIV",
+                            "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "fa1d653a-c84e-48ad-9daa-447c4d87c497",
+                              "answers": [
+                                {
+                                  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Yes"
+                                },
+                                {
+                                  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "No"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "label": "Date Tested",
+                            "type": "obs",
+                            "required": false,
+                            "id": "dateTested",
+                            "questionOptions": {
+                              "rendering": "date",
+                              "concept": "05124366-dd0d-4bf1-91ac-5d6c2f76ad55"
+                            }
+                          },
+                          {
+                            "label": "HIV Test Result",
+                            "type": "obs",
+                            "required": false,
+                            "id": "hivTestResult",
+                            "questionOptions": {
+                              "rendering": "select",
+                              "concept": "fee36db1-6b65-4625-b1ac-6290716f39b7",
+                              "answers": [
+                                {
+                                  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Positive"
+                                },
+                                {
+                                  "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Negative"
+                                },
+                                {
+                                  "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                  "label": "Unknown"
+                                }
+                              ]
+                            }
+                                      },
+                                      {
+                                        "label": "Linked to HIV Care",
+                                        "type": "obs",
+                                        "required": false,
+                                        "id": "linkedToHivCare",
+                                        "questionOptions": {
+                                          "rendering": "radio",
+                                          "concept": "c1bb9738-10aa-4905-bb5d-af4e55b4bb69",
+                                          "answers": [
+                                            {
+                                              "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                              "label": "Yes"
+                                            },
+                                            {
+                                              "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                              "label": "No"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "label": "Contact MRN",
+                                        "type": "obs",
+                                        "required": false,
+                                        "id": "contactMRN",
+                                        "questionOptions": {
+                                          "rendering": "text",
+                                          "concept": "9f760fe1-5cde-41ab-99b8-b8e1d77de902"
+                                        }
+                                      },
+                                      {
+                                        "label": "Contact UAN",
+                                        "type": "obs",
+                                        "required": false,
+                                        "id": "contactUAN",
+                                        "questionOptions": {
+                                          "rendering": "text",
+                                          "concept": "72750cad-0b54-4875-97c7-c94fb9caa50e"
+                                        }
+                                      },
+                                      {
+                                        "label": "Reason for not testing",
+                                        "type": "obs",
+                                        "required": false,
+                                        "id": "reasonForNotTesting",
+                                        "questionOptions": {
+                                          "rendering": "radio",
+                                          "concept": "c51e4c11-369c-4b12-a55c-11580f04a7ac",
+                                          "answers": [
+                                            {
+                                              "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                              "label": "Known HIV Positive"
+                                            },
+                                            {
+                                              "concept": "afe90395-0720-4515-929b-6796e45a11ae",
+                                              "label": "Refused"
+                                            },
+                                            {
+                                              "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                              "label": "Other"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "label": "Has the partner started ART",
+                                        "type": "obs",
+                                        "required": false,
+                                        "id": "hasThePartnerStartedART",
+                                        "questionOptions": {
+                                          "rendering": "radio",
+                                          "concept": "b285191d-56ff-4244-83a6-38c3fa2a33f7",
+                                          "answers": [
+                                            {
+                                              "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                              "label": "Yes"
+                                            },
+                                            {
+                                              "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                              "label": "No"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "label": "Partner UAN",
+                                        "type": "obs",
+                                        "required": false,
+                                        "id": "partnerUAN",
+                                        "questionOptions": {
+                                          "rendering": "text",
+                                          "concept": "668bdf1d-2da0-4c6c-83b1-f5ab3fa9bdae"
+                                        }
+                                      }
+            ]
+          }
+        ]
+      }
+    ],
+    "availableIntents": [
+      {
+        "intent": "*",
+        "display": "default_intent"
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "encounterType": "57c02902-a9fe-4b63-a1a7-0a070fd3a48a",
+    "referencedForms": [],
+    "uuid": "1283d7d6-6431-446d-87d1-6fe00177cb85",
+    "description": "Family Index Case Contacts"
+  }

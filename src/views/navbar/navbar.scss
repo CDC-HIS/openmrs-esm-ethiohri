@@ -1,0 +1,94 @@
+@use "@carbon/styles/scss/spacing";
+@import "../../root.scss";
+
+.switcherContainer {
+  display: flex;
+  flex-direction: column;
+}
+.switcherContainer ul {
+  display: flex;
+  flex-direction: row;
+  width: 20rem;
+  justify-content: flex-start;
+  color: $field-01;
+  align-items: center;
+  @extend .productiveHeading01;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.switcherContainer ul > svg {
+  margin: 0rem 0.75rem;
+  fill: $field-01;
+}
+
+.switcherContainer ul button {
+  @extend .productiveHeading01;
+  width: 100%;
+  background-color: var(--brand-02);
+}
+
+.switcherContainer ul button:hover {
+  color: $field-01;
+  background-color: var(--brand-01);
+}
+
+.switcherContainer ul div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  @extend .bodyLong01;
+}
+
+.switcherContainer ul div button {
+  color: $inverse-link;
+  margin-left: 0.5rem;
+  width: 5rem;
+}
+
+.switcherContainer ul div button:hover {
+  background-color: var(--brand-01);
+  color: $inverse-link;
+}
+
+.switcherContainer hr {
+  background-color: $ui-background;
+  width: 16rem;
+  margin: 0.5rem 0rem;
+}
+.topNavActionsSlot {
+    display: flex;
+    align-items: center;
+  }
+
+.navDivider {
+    background-color: #f4f4f4;
+    width: 0.07rem;
+    height: 2.25rem;
+  }
+  
+  .patientDetails {
+    display: flex;
+    align-items: center;
+    color: $ui-02;
+    padding: 0 spacing.$spacing-05;
+  
+    &:hover {
+      background-color: #032a30;
+    }
+  
+    .patientName {
+      // @include type.type-style('heading-compact-01');
+      margin-right: spacing.$spacing-05;
+      color: $ui-02;
+      margin: spacing.$spacing-04 0;
+      padding-right: 0.5rem;
+    }
+  
+    .patientInfo {
+      color: $color-gray-30;
+      // @include type.type-style('body-compact-01');
+      margin: 0 spacing.$spacing-05 0;
+    }
+  }
