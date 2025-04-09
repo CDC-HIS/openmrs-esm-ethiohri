@@ -5,10 +5,7 @@ import {
   getSyncLifecycle,
 } from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
-import {
-  registerControl,
-  registerExpressionHelper,
-} from "@openmrs/openmrs-form-engine-lib";
+import { registerExpressionHelper } from "@openmrs/esm-form-engine-lib";
 import {
   createDashboardGroup,
   createDashboardLink,
