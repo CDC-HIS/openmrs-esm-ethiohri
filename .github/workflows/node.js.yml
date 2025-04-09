@@ -94,21 +94,21 @@ jobs:
         - name: Run the Update MicroFronEnd Script on dev server
           run: cd /usr/share/tomcat/frontendmodules/ && /bin/bash update_frontend_modules.sh
 
-  demo:
-      runs-on: ubuntu-latest
-      needs: release
+#  demo:
+#      runs-on: ubuntu-latest
+#     needs: release
 
-      if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master'}}
+#      if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master'}}
 
-      steps:
-        - name: Download Artifacts
-          uses: actions/download-artifact@v3
-        - name: Compute Timestamp
-          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-        - uses: garygrossgarten/github-action-ssh@release
-          name: Run the Update MicroFronEnd Script on Demo server
-          with:
-              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_modules.sh
-              host: ${{ secrets.ETHIOHRI_DEMO_HOST }}
-              username: ${{ secrets.ETHIOHRI_DEMO_USER }}
-              privateKey: ${{ secrets.ETHIOHRI_DEMO_PRIVATE_KEY}}
+#      steps:
+#        - name: Download Artifacts
+#          uses: actions/download-artifact@v3
+#        - name: Compute Timestamp
+#          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+#        - uses: garygrossgarten/github-action-ssh@release
+#          name: Run the Update MicroFronEnd Script on Demo server
+#          with:
+#              command: cd /usr/share/tomcat7/frontendmodules/ && /bin/bash update_frontend_modules.sh
+#              host: ${{ secrets.ETHIOHRI_DEMO_HOST }}
+#              username: ${{ secrets.ETHIOHRI_DEMO_USER }}
+#              privateKey: ${{ secrets.ETHIOHRI_DEMO_PRIVATE_KEY}}
