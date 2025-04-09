@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
       - run: yarn
@@ -29,7 +29,7 @@ jobs:
       - run: yarn typescript
       - run: yarn build
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: |
@@ -43,11 +43,11 @@ jobs:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop'}}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Download Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
           registry-url: "https://registry.npmjs.org"
@@ -66,11 +66,11 @@ jobs:
     if: ${{ github.event_name == 'pull_request' && github.base_ref == 'master'}}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Download Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
       - name: Use Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
           registry-url: 'https://registry.npmjs.org'
@@ -88,7 +88,7 @@ jobs:
 
       steps:
         - name: Download Artifacts
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
         - name: Compute Timestamp
           run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
         - name: Run the Update MicroFronEnd Script on dev server
@@ -102,7 +102,7 @@ jobs:
 
 #      steps:
 #        - name: Download Artifacts
-#          uses: actions/download-artifact@v3
+#          uses: actions/download-artifact@v4
 #        - name: Compute Timestamp
 #          run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 #        - uses: garygrossgarten/github-action-ssh@release
