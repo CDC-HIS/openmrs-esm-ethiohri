@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import {
-  FAMILY_INDEX_CASE_CONTACTS_ENCOUNTER_TYPE
-} from "../../../constants";
+import { FAMILY_INDEX_CASE_CONTACTS_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import { fetchIdentifiers } from "../../../api/api";
@@ -65,7 +63,9 @@ const columns = [
   },
 ];
 
-const FamilyIndexCaseContacts: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const FamilyIndexCaseContacts: React.FC<{ patientUuid: string }> = ({
+  patientUuid,
+}) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hideAddButton, setHideAddButton] = useState(true);
   useEffect(() => {

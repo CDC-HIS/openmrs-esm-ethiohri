@@ -1,11 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import { MRN_NULL_WARNING, RETEST_ENCOUNTER_TYPE } from "../../../constants";
-import {
-  doesEncounterExist,
-  doesPatientHaveIdentifier,
-  getData,
-} from "../../encounterUtils";
+import { doesPatientHaveIdentifier, getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "../../../root.scss";
 import { getPatientEncounters } from "../../../api/api";
