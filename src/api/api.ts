@@ -47,10 +47,48 @@ export function getLatestObs(
     encounterTypeUuid ? `&encounter.type=${encounterTypeUuid}` : ""
   }`;
   // the latest obs
-  params += "&_sort=-_lastUpdated&_count=1";
+  if (conceptUuid === "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b") {
+    params += "&_sort=-_lastUpdated&_count=2";
+  } else {
+    params += "&_sort=-_lastUpdated&_count=1";
+  }
+
   return openmrsFetch(`${fhirBaseUrl}/Observation?${params}`).then(
     ({ data }) => {
-      return data.entry?.length ? data.entry[0].resource : null;
+      if (data.entry?.length) {
+        const latestObs = data.entry[0].resource;
+
+        // Handle multi-select for checkbox fields (e.g., Eligibility status)
+        if (conceptUuid === "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b") {
+          // Map over the coding array to get the codes
+          const selectedCodes = latestObs.valueCodeableConcept?.coding?.map(
+            (coding) => coding.code
+          );
+
+          // Define the available options for eligibility status
+          const eligibilityOptions = [
+            {
+              concept: "78dc1be4-4668-4170-b994-fc5e9a697e56",
+              label: "Eligible",
+            },
+            {
+              concept: "ebd88a37-1187-4e56-8d63-2f505c6833b0",
+              label: "Eligible and ready",
+            },
+          ];
+
+          // Map the selected codes to their corresponding labels
+          const selectedLabels = eligibilityOptions
+            .filter((option) => selectedCodes?.includes(option.concept))
+            .map((option) => option.label);
+
+          return selectedLabels; // This will return the labels of selected options for checkbox
+        }
+
+        return latestObs;
+      }
+
+      return null;
     }
   );
 }
