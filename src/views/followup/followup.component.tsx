@@ -15,18 +15,6 @@ import { moduleName } from "../../index";
 import styles from "../../root.scss";
 import { fetchIdentifiers, getPatientEncounters } from "../../api/api";
 
-function shouldShadeRow(encounter: any): boolean {
-  const viralLoadPerformed = getData(
-    encounter,
-    "163310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-  );
-  const viralLoadResult = getData(
-    encounter,
-    "856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-  );
-  return viralLoadPerformed === "Completed" && viralLoadResult === "--";
-}
-
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
     () => [
@@ -72,31 +60,6 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         header: "Weight",
         getValue: (encounter) => {
           return getData(encounter, "4ab93a3c-4373-4b9b-9268-5ff0641cc242");
-        },
-      },
-      {
-        key: "dateViralLoadRequested",
-        header: "Date VL Requested",
-        getValue: (encounter) => {
-          //return getData(encounter, "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
-          const value = getData(
-            encounter,
-            "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            true
-          );
-          return (
-            <div
-              style={{
-                backgroundColor: shouldShadeRow(encounter)
-                  ? "#ffe6e6"
-                  : "transparent",
-                padding: "8px",
-                display: "inline-block",
-              }}
-            >
-              {value || "N/A"}
-            </div>
-          );
         },
       },
       {
