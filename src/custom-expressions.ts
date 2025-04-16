@@ -127,7 +127,7 @@ export async function CalcMonthsOnART(
   followupDate: Date
 ) {
   // If artStartDate is null, fetch the latest one
-  if (!artStartDate && followupDate) {
+  if (!artStartDate) {
     const latestObs = await getLatestObs(
       patient.id,
       "ae329187-6232-4142-aa91-22c85bc8e5b5",
@@ -137,13 +137,16 @@ export async function CalcMonthsOnART(
     artStartDate = value ? new Date(value) : null;
   }
 
-  if (!artStartDate || !followupDate) return null;
-
-  const artInDays = Math.round(
-    (followupDate.getTime() - artStartDate.getTime()) / 86400000
-  );
-
-  return artInDays < 30 ? "0 months" : `${Math.floor(artInDays / 30)} months`;
+    let resultMonthsOnART: string;
+    let artInDays = Math.round(
+      (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
+    );
+    if (artStartDate && followupDate && artInDays < 30) {
+      resultMonthsOnART = "0 months";
+    } else if (artStartDate && followupDate && artInDays >= 30) {
+      resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
+    }
+    return artStartDate && followupDate ? resultMonthsOnART : null;
 }
 
 export function CalcViralLoadStatus(viralLoadCount: number) {
