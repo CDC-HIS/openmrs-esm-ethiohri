@@ -1,4 +1,8 @@
-import { getCurrentUser, getLatestObs } from "./api/api";
+import {
+  getCurrentUser,
+  getLatestObs,
+  getLatestEligibilityFromLatestFollowup,
+} from "./api/api";
 import {
   female,
   kidneyDiseaseStage1,
@@ -89,9 +93,8 @@ export function CalcPrepDoseEndDate(
   if (
     followupDate &&
     dispensedDoseReturned !== 0 &&
-    followupStatus ==
-      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    (followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
   ) {
     resultPrepDoseDate = new Date(
       followupDate.getTime() + dispensedDoseReturned * 24 * 60 * 60 * 1000
@@ -99,24 +102,48 @@ export function CalcPrepDoseEndDate(
   }
   return followupDate &&
     dispensedDoseReturned !== 0 &&
-    followupStatus ==
-      ("160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-        "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    (followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
     ? resultPrepDoseDate
     : null;
 }
 
-export function CalcMonthsOnART(artStartDate: Date, followupDate: Date) {
-  let resultMonthsOnART: string;
-  let artInDays = Math.round(
-    (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
-  );
-  if (artStartDate && followupDate && artInDays < 30) {
-    resultMonthsOnART = "0 months";
-  } else if (artStartDate && followupDate && artInDays >= 30) {
-    resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
+// export function CalcMonthsOnART(artStartDate: Date, followupDate: Date) {
+//   let resultMonthsOnART: string;
+//   let artInDays = Math.round(
+//     (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
+//   );
+//   if (artStartDate && followupDate && artInDays < 30) {
+//     resultMonthsOnART = "0 months";
+//   } else if (artStartDate && followupDate && artInDays >= 30) {
+//     resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
+//   }
+//   return artStartDate && followupDate ? resultMonthsOnART : null;
+// }
+
+export async function CalcMonthsOnART(
+  patient,
+  artStartDate: Date,
+  followupDate: Date
+) {
+  // If artStartDate is null, fetch the latest one
+  if (!artStartDate && followupDate) {
+    const latestObs = await getLatestObs(
+      patient.id,
+      "ae329187-6232-4142-aa91-22c85bc8e5b5",
+      FOLLOWUP_ENCOUNTER_TYPE
+    );
+    const value = latestObs?.entry?.[0]?.resource?.valueDateTime;
+    artStartDate = value ? new Date(value) : null;
   }
-  return artStartDate && followupDate ? resultMonthsOnART : null;
+
+  if (!artStartDate || !followupDate) return null;
+
+  const artInDays = Math.round(
+    (followupDate.getTime() - artStartDate.getTime()) / 86400000
+  );
+
+  return artInDays < 30 ? "0 months" : `${Math.floor(artInDays / 30)} months`;
 }
 
 export function CalcViralLoadStatus(viralLoadCount: number) {
@@ -439,6 +466,10 @@ export async function loadFollowupStatus(patient) {
     return "";
   }
   return status?.valueCodeableConcept?.coding[0]?.code;
+}
+
+export async function getEligibilityStatus(patient) {
+  return await getLatestEligibilityFromLatestFollowup(patient.id);
 }
 
 export async function getAgeFromBirthdate(dateOfBirth) {

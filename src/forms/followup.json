@@ -134,7 +134,7 @@
 				"type": "obs",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "resolve(api.getLatestObs(patient.id, '9ed5856a-a20a-44d2-bc8e-2acaa68cf11b', '136b2ded-22a3-4831-a39a-088d35a50ef5')).then(obs => obs?.valueCodeableConcept?.coding?.map(coding => coding.code))"
+					"calculateExpression": "getEligibilityStatus(patient)"
 				  },
 				  "rendering": "checkbox",
 				  "concept": "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b",

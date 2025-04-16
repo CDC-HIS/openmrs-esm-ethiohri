@@ -45,6 +45,7 @@ import {
   loadFollowupStatus,
   getBirthdateFromAge,
   getAgeFromBirthdate,
+  getEligibilityStatus,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -98,6 +99,7 @@ export function startupApp() {
   registerExpressionHelper("CustomBMICalc", CalcBMI);
   registerExpressionHelper("getGender", getGender);
   registerExpressionHelper("getIdentifier", getIdentifier);
+  registerExpressionHelper("getEligibilityStatus", getEligibilityStatus);
   registerExpressionHelper("calcEGFR", calcEGFR);
   registerExpressionHelper("isDateAlreadyUsed", isDateAlreadyUsed);
   registerExpressionHelper("isTreatmentVisible", isTreatmentVisible);

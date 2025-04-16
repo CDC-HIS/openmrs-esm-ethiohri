@@ -51,6 +51,8 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
             return "Restart";
           } else if (status === "Ran away") {
             return "Drop";
+          } else if (status === "Stop all") {
+            return "Stop";
           }
           return status; // Return the original value if no modification is needed
         },

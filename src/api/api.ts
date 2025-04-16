@@ -47,50 +47,49 @@ export function getLatestObs(
     encounterTypeUuid ? `&encounter.type=${encounterTypeUuid}` : ""
   }`;
   // the latest obs
-  if (conceptUuid === "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b") {
-    params += "&_sort=-_lastUpdated&_count=2";
-  } else {
-    params += "&_sort=-_lastUpdated&_count=1";
-  }
-
+  params += "&_sort=-_lastUpdated&_count=1";
   return openmrsFetch(`${fhirBaseUrl}/Observation?${params}`).then(
     ({ data }) => {
-      if (data.entry?.length) {
-        const latestObs = data.entry[0].resource;
-
-        // Handle multi-select for checkbox fields (e.g., Eligibility status)
-        if (conceptUuid === "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b") {
-          // Map over the coding array to get the codes
-          const selectedCodes = latestObs.valueCodeableConcept?.coding?.map(
-            (coding) => coding.code
-          );
-
-          // Define the available options for eligibility status
-          const eligibilityOptions = [
-            {
-              concept: "78dc1be4-4668-4170-b994-fc5e9a697e56",
-              label: "Eligible",
-            },
-            {
-              concept: "ebd88a37-1187-4e56-8d63-2f505c6833b0",
-              label: "Eligible and ready",
-            },
-          ];
-
-          // Map the selected codes to their corresponding labels
-          const selectedLabels = eligibilityOptions
-            .filter((option) => selectedCodes?.includes(option.concept))
-            .map((option) => option.label);
-
-          return selectedLabels; // This will return the labels of selected options for checkbox
-        }
-
-        return latestObs;
-      }
-
-      return null;
+      return data.entry?.length ? data.entry[0].resource : null;
     }
   );
+}
+
+export async function getEncounterWithLatestFollowUpDate(
+  patientUuid: string
+): Promise<string | null> {
+  const conceptUuid = "5c118396-52dc-4cac-8860-e6d8e4a7f296"; // follow-up date concept
+  const response = await openmrsFetch(
+    `${fhirBaseUrl}/Observation?patient=${patientUuid}&code=${conceptUuid}&_sort=-date&_count=1`
+  );
+
+  const latestFollowupObs = response?.data?.entry?.[0]?.resource;
+  return latestFollowupObs?.encounter?.reference?.split("/")[1] || null;
+}
+
+export async function getLatestEligibilityFromLatestFollowup(
+  patientUuid: string
+): Promise<string[]> {
+  const latestEncounterUuid = await getEncounterWithLatestFollowUpDate(
+    patientUuid
+  );
+
+  if (!latestEncounterUuid) return [];
+
+  const conceptUuid = "9ed5856a-a20a-44d2-bc8e-2acaa68cf11b"; // Eligibility status
+
+  const response = await openmrsFetch(
+    `${fhirBaseUrl}/Observation?patient=${patientUuid}&code=${conceptUuid}&encounter=${latestEncounterUuid}`
+  );
+
+  const entries = response?.data?.entry ?? [];
+
+  const selectedCodes: string[] = entries.flatMap((entry) => {
+    const coding = entry.resource.valueCodeableConcept?.coding ?? [];
+    return coding.map((c) => c.code);
+  });
+
+  return selectedCodes;
 }
 
 export function getCurrentUser() {

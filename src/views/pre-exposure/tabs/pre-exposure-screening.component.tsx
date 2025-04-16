@@ -66,7 +66,7 @@ const columns = [
     key: "prepStartDate",
     header: "PrEP Start Date",
     getValue: (encounter) => {
-      return getData(encounter, "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
     },
   },
   {
