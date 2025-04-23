@@ -121,32 +121,32 @@ export function CalcPrepDoseEndDate(
 //   return artStartDate && followupDate ? resultMonthsOnART : null;
 // }
 
-export async function CalcMonthsOnART(
+export function CalcMonthsOnART(
   patient,
   artStartDate: Date,
   followupDate: Date
 ) {
   // If artStartDate is null, fetch the latest one
   if (!artStartDate) {
-    const latestObs = await getLatestObs(
+    const latestObs = getLatestObs(
       patient.id,
       "ae329187-6232-4142-aa91-22c85bc8e5b5",
       FOLLOWUP_ENCOUNTER_TYPE
     );
-    const value = latestObs?.entry?.[0]?.resource?.valueDateTime;
+    const value = latestObs?.[0]?.resource?.valueDateTime;
     artStartDate = value ? new Date(value) : null;
   }
 
-    let resultMonthsOnART: string;
-    let artInDays = Math.round(
-      (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
-    );
-    if (artStartDate && followupDate && artInDays < 30) {
-      resultMonthsOnART = "0 months";
-    } else if (artStartDate && followupDate && artInDays >= 30) {
-      resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
-    }
-    return artStartDate && followupDate ? resultMonthsOnART : null;
+  let resultMonthsOnART: string;
+  let artInDays = Math.round(
+    (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
+  );
+  if (artStartDate && followupDate && artInDays < 30) {
+    resultMonthsOnART = "0 months";
+  } else if (artStartDate && followupDate && artInDays >= 30) {
+    resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
+  }
+  return artStartDate && followupDate ? resultMonthsOnART : null;
 }
 
 export function CalcViralLoadStatus(viralLoadCount: number) {
