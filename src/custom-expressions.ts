@@ -121,23 +121,32 @@ export function CalcPrepDoseEndDate(
 //   return artStartDate && followupDate ? resultMonthsOnART : null;
 // }
 
-export function CalcMonthsOnART(
-  patient,
-  artStartDate: Date,
-  followupDate: Date
-) {
-  // If artStartDate is null, fetch the latest one
-  if (!artStartDate) {
-    const latestObs = getLatestObs(
+export async function FetchArtStartDate(
+  patientUuid: string,
+  conceptUuid: string,
+  encounterTypeUuid?: string) {
+  let resultMonthsOnART: string;
+    const latestArtStartDate = await getLatestObs(
+      patientUuid,
+      "ae329187-6232-4142-aa91-22c85bc8e5b5",
+      FOLLOWUP_ENCOUNTER_TYPE
+    );
+    const value = latestArtStartDate?.valueDateTime;
+    let artStartDate = value ? new Date(value) : null;
+    return artStartDate;
+}
+
+export function CalcMonthsOnART(patient, artStartDate: Date, followupDate: Date) {
+  let resultMonthsOnART: string;
+  if (!artStartDate)
+  {
+    let latestArtStartDate =  FetchArtStartDate(
       patient.id,
       "ae329187-6232-4142-aa91-22c85bc8e5b5",
       FOLLOWUP_ENCOUNTER_TYPE
     );
-    const value = latestObs?.[0]?.resource?.valueDateTime;
-    artStartDate = value ? new Date(value) : null;
+    artStartDate = latestArtStartDate?.[0].Date;
   }
-
-  let resultMonthsOnART: string;
   let artInDays = Math.round(
     (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
   );
