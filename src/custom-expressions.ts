@@ -108,45 +108,8 @@ export function CalcPrepDoseEndDate(
     : null;
 }
 
-// export function CalcMonthsOnART(artStartDate: Date, followupDate: Date) {
-//   let resultMonthsOnART: string;
-//   let artInDays = Math.round(
-//     (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
-//   );
-//   if (artStartDate && followupDate && artInDays < 30) {
-//     resultMonthsOnART = "0 months";
-//   } else if (artStartDate && followupDate && artInDays >= 30) {
-//     resultMonthsOnART = `${Math.floor(artInDays / 30)} months`;
-//   }
-//   return artStartDate && followupDate ? resultMonthsOnART : null;
-// }
-
-export async function FetchArtStartDate(
-  patientUuid: string,
-  conceptUuid: string,
-  encounterTypeUuid?: string) {
+export function CalcMonthsOnART(artStartDate: Date, followupDate: Date) {
   let resultMonthsOnART: string;
-    const latestArtStartDate = await getLatestObs(
-      patientUuid,
-      "ae329187-6232-4142-aa91-22c85bc8e5b5",
-      FOLLOWUP_ENCOUNTER_TYPE
-    );
-    const value = latestArtStartDate?.valueDateTime;
-    let artStartDate = value ? new Date(value) : null;
-    return artStartDate;
-}
-
-export function CalcMonthsOnART(patient, artStartDate: Date, followupDate: Date) {
-  let resultMonthsOnART: string;
-  if (!artStartDate)
-  {
-    let latestArtStartDate =  FetchArtStartDate(
-      patient.id,
-      "ae329187-6232-4142-aa91-22c85bc8e5b5",
-      FOLLOWUP_ENCOUNTER_TYPE
-    );
-    artStartDate = latestArtStartDate?.[0].Date;
-  }
   let artInDays = Math.round(
     (followupDate.getTime() - artStartDate.getTime?.()) / 86400000
   );
