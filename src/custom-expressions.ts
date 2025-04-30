@@ -132,7 +132,7 @@ export async function FetchArtStartDate(patientUuid: string) {
   return artStartDate;
 }
 
-export async function CalcMonthsOnART(patient, artStartD: any, followupD: any) {
+export function CalcMonthsOnART(patient, artStartD: any, followupD: any) {
   let resultMonthsOnART: string;
   let followupDate = followupD ? new Date(followupD) : null;
   let artStartDate = artStartD ? new Date(artStartD) : null;
@@ -142,7 +142,10 @@ export async function CalcMonthsOnART(patient, artStartD: any, followupD: any) {
   }
 
   if (!artStartDate || isNaN(artStartDate.getTime())) {
-    artStartDate = await FetchArtStartDate(patient.id);
+    const latestObs = FetchArtStartDate(patient.id);
+
+    const value = latestObs?.[0]?.resource?.valueDateTime;
+    artStartDate = value ? new Date(value) : null;
   }
 
   if (!artStartDate || isNaN(artStartDate.getTime())) {
