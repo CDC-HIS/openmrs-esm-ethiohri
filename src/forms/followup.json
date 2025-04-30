@@ -22,14 +22,12 @@
 					"calculateExpression": "resolve(api.getLatestObs(patient.id, 'dadc86a8-1e44-4a6d-91c2-e3b54089b54c', 'a0fde61e-f493-4f1f-b709-22aa94f72dc3'))?.valueDateTime"
 				  }
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
 					"questionOptions": {
 					  "rendering": "fixed",
 					  "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
-
 					}
 				  },
 				  {
@@ -37,7 +35,6 @@
 					"questionOptions": {
 					  "rendering": "fixed",
 					  "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
-
 					}
 				  }
 				],
@@ -52,7 +49,6 @@
 				  "usePreviousValueDisabled": "true",
 				  "rendering": "date",
 				  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
-
 				  "answers": []
 				},
 				"validators": [
@@ -83,7 +79,6 @@
 					{
 					  "concept": "1246AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Scheduled visit"
-
 					},
 					{
 					  "concept": "160101AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -105,7 +100,6 @@
 					"calculateExpression": "resolve(api.getLatestObs(patient.id, '160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueDateTime"
 				  }
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -196,9 +190,7 @@
 				  },
 				  "rendering": "date",
 				  "concept": "162227AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -313,7 +305,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -402,7 +393,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -446,20 +436,18 @@
 			  },
 			  {
 				"label": "ART start date",
-				"type": "obs",	
-				"id": "artStartDate",			
+				"type": "obs",
 				"required": true,
 				"hide": {
 				  "hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"questionOptions": {
+				  "rendering": "date",
+				  "concept": "ae329187-6232-4142-aa91-22c85bc8e5b5",
 				  "calculate": {
 					"calculateExpression": "resolve(api.getLatestObs(patient.id, 'ae329187-6232-4142-aa91-22c85bc8e5b5', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
-				  },
-				  "rendering": "date",
-				  "concept": "ae329187-6232-4142-aa91-22c85bc8e5b5"
+				  }
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -486,7 +474,8 @@
 					"failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
 					"message": "ART started date should not be earlier than HIV Confirmation date in Intake A"
 				  }
-				]
+				],
+				"id": "artStartDate"
 			  },
 			  {
 				"label": "Months on ART",
@@ -496,7 +485,7 @@
 				  "rendering": "text",
 				  "concept": "0503b8d4-e6db-4a87-ba42-8ef892791dba",
 				  "calculate": {
-					"calculateExpression": "CustomMonthsOnARTCalc('artStartDate', 'followupDate')"
+					"calculateExpression": "CustomMonthsOnARTCalc(patient, artStartDate, followupDate)"
 				  },
 				  "answers": []
 				},
@@ -591,7 +580,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -686,52 +674,42 @@
 					{
 					  "concept": "102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Toxicity / Side effects"
-
 					},
 					{
 					  "concept": "159598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Poor adherence"
-
 					},
 					{
 					  "concept": "1434AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Pregnancy"
-
 					},
 					{
 					  "concept": "164435AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other patient decisions"
-
 					},
 					{
 					  "concept": "160016AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Planned treatment interruption"
-
 					},
 					{
 					  "concept": "5485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Illness / hospitalization"
-
 					},
 					{
 					  "concept": "843AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Treatment failure"
-
 					},
 					{
 					  "concept": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Drugs out of stock"
-
 					},
 					{
 					  "concept": "819AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Patient lack finances"
-
 					},
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -1093,7 +1071,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -1826,12 +1803,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -1851,7 +1826,6 @@
 					{
 					  "concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Diarrhea"
-
 					},
 					{
 					  "concept": "110149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1860,7 +1834,6 @@
 					{
 					  "concept": "983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Fat changes"
-
 					},
 					{
 					  "concept": "38c9e93c-1530-4298-8a8d-ed1c5c799116",
@@ -1889,12 +1862,10 @@
 					{
 					  "concept": "119537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Dizzy, anxiety, nightmare, depression"
-
 					},
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -1970,12 +1941,10 @@
 					{
 					  "concept": "164506AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "First switch"
-
 					},
 					{
 					  "concept": "164513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Second switch"
-
 					},
 					{
 					  "concept": "892d5c76-f59f-486d-9b42-945761e9bae7",
@@ -1998,37 +1967,30 @@
 					{
 					  "concept": "102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Toxicity / Side effects"
-
 					},
 					{
 					  "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Pregnancy"
-
 					},
 					{
 					  "concept": "160567AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Due to new TB"
-
 					},
 					{
 					  "concept": "160559AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Risk of pregnancy"
-
 					},
 					{
 					  "concept": "163523AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Clinical failure"
-
 					},
 					{
 					  "concept": "160569AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Virologic failure"
-
 					},
 					{
 					  "concept": "160566AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Immunologic failure"
-
 					},
 					{
 					  "concept": "266a67b5-28cb-49d6-801f-e6c19559317d",
@@ -2037,17 +1999,14 @@
 					{
 					  "concept": "160561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "New drug available"
-
 					},
 					{
 					  "concept": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Drug stock-out"
-
 					},
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -2072,17 +2031,14 @@
 					{
 					  "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Good"
-
 					},
 					{
 					  "concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Fair"
-
 					},
 					{
 					  "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Poor"
-
 					}
 				  ]
 				},
@@ -2101,70 +2057,56 @@
 					{
 					  "concept": "102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Toxicity / Side effects"
-
 					},
 					{
 					  "concept": "160583AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Shares with others"
-
 					},
 					{
 					  "concept": "160586AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Felt better"
-
 					},
 					{
 					  "concept": "121725AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Alcohol"
-
 					},
 					{
 					  "concept": "160585AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Too ill"
-
 					},
 					{
 					  "concept": "160587AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Forgot"
-
 					},
 					{
 					  "concept": "1754AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Drug stock-out"
-
 					},
 					{
 					  "concept": "160584AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Lost / ran out of pill"
-
 					},
 					{
 					  "concept": "819AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Inability to pay"
-
 					},
 					{
 					  "concept": "119537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Depression"
-
 					},
 					{
 					  "concept": "820AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Delivery / Travel problems"
-
 					},
 					{
 					  "concept": "160589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Stigma disclosure"
-
 					},
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
-
 				},
 				"hide": {
 				  "hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && arvAdherence !== '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -2200,10 +2142,10 @@
 				"behaviours": [
 				  {
 					"intent": "edit",
-					"questionOptions": {	
-						"calculate": {
-					"calculateExpression": "!nextVisitDate ? CustomNextVisitDateCalc('followupDate','arvDispensedInDays') : nextVisitDate"
-				  },				  
+					"questionOptions": {
+					  "calculate": {
+						"calculateExpression": "!nextVisitDate ? CustomNextVisitDateCalc('followupDate','arvDispensedInDays') : nextVisitDate"
+					  },
 					  "rendering": "date",
 					  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
 					}
@@ -2255,7 +2197,7 @@
 	  },
 	  {
 		"label": "Observations",
-		"sections":[
+		"sections": [
 		  {
 			"label": "Observations conducted during current visit",
 			"isExpanded": "true",
@@ -2364,7 +2306,6 @@
 				  "max": 999,
 				  "min": 0
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -2374,8 +2315,8 @@
 					  "max": 999,
 					  "min": 0
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "number",
@@ -2430,12 +2371,10 @@
 					{
 					  "concept": "163748AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Present"
-
 					},
 					{
 					  "concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Absent"
-
 					}
 				  ]
 				},
@@ -2449,7 +2388,6 @@
 				  "concept": "1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "max": 99999999,
 				  "min": 0
-
 				},
 				"id": "muac"
 			  },
@@ -2504,27 +2442,22 @@
 					{
 					  "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Normal"
-
 					},
 					{
 					  "concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Mild Malnutrition"
-
 					},
 					{
 					  "concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Moderate Malnutrition"
-
 					},
 					{
 					  "concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Severe Malnutrition"
-
 					},
 					{
 					  "concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Overweight"
-
 					},
 					{
 					  "concept": "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2550,27 +2483,22 @@
 					{
 					  "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Normal"
-
 					},
 					{
 					  "concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Mild Malnutrition"
-
 					},
 					{
 					  "concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Moderate Malnutrition"
-
 					},
 					{
 					  "concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Severe Malnutrition"
-
 					},
 					{
 					  "concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Overweight"
-
 					}
 				  ]
 				},
@@ -2585,32 +2513,26 @@
 				"questionOptions": {
 				  "rendering": "select",
 				  "concept": "1854AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Overweight"
-
 					},
 					{
 					  "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Normal"
-
 					},
 					{
 					  "concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Mild Malnutrition"
-
 					},
 					{
 					  "concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Moderate Malnutrition"
-
 					},
 					{
 					  "concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Severe Malnutrition"
-
 					}
 				  ]
 				},
@@ -2632,17 +2554,14 @@
 					{
 					  "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Normal"
-
 					},
 					{
 					  "concept": "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Undernourished"
-
 					},
 					{
 					  "concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Overweight"
-
 					}
 				  ]
 				},
@@ -2654,22 +2573,18 @@
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "161005AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					},
 					{
 					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Unknown"
-
 					}
 				  ]
 				},
@@ -2697,7 +2612,6 @@
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -2740,7 +2654,6 @@
 				  "concept": "5314AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "max": 99999999,
 				  "min": 0
-
 				},
 				"id": "headCircumference"
 			  },
@@ -2810,47 +2723,38 @@
 				"questionOptions": {
 				  "rendering": "select",
 				  "concept": "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Stage I"
-
 					},
 					{
 					  "concept": "1205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Stage II"
-
 					},
 					{
 					  "concept": "1206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Stage III"
-
 					},
 					{
 					  "concept": "1207AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Stage IV"
-
 					},
 					{
 					  "concept": "1220AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "T1"
-
 					},
 					{
 					  "concept": "1221AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "T2"
-
 					},
 					{
 					  "concept": "1222AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "T3"
-
 					},
 					{
 					  "concept": "1223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "T4"
-
 					}
 				  ]
 				},
@@ -2884,58 +2788,48 @@
 				  },
 				  "rendering": "radio",
 				  "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
 					"questionOptions": {
 					  "rendering": "radio",
 					  "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 					  "answers": [
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
 					  "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 					  "answers": [
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
@@ -2952,17 +2846,14 @@
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "160571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -2980,58 +2871,48 @@
 				  },
 				  "rendering": "radio",
 				  "concept": "5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
 					"questionOptions": {
 					  "rendering": "radio",
 					  "concept": "5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 					  "answers": [
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
 					  "concept": "5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 					  "answers": [
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
@@ -3069,7 +2950,6 @@
 					"calculateExpression": "calcEDD('lmp')"
 				  },
 				  "concept": "5596AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
 				"hide": {
 				  "hideWhenExpression": "patient.gender === 'male' || pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -3083,17 +2963,14 @@
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -3115,7 +2992,6 @@
 				  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "answers": []
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3157,7 +3033,6 @@
 					{
 					  "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Condoms"
-
 					},
 					{
 					  "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3165,7 +3040,6 @@
 					  "hide": {
 						"hideWhenExpression": "patient.gender === 'male'"
 					  }
-
 					},
 					{
 					  "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3173,7 +3047,6 @@
 					  "hide": {
 						"hideWhenExpression": "patient.gender === 'male'"
 					  }
-
 					},
 					{
 					  "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3181,7 +3054,6 @@
 					  "hide": {
 						"hideWhenExpression": "patient.gender === 'male'"
 					  }
-
 					},
 					{
 					  "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3189,17 +3061,14 @@
 					  "hide": {
 						"hideWhenExpression": "patient.gender === 'male'"
 					  }
-
 					},
 					{
 					  "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Vasectomy/tubal legation"
-
 					},
 					{
 					  "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Abstinence"
-
 					},
 					{
 					  "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3207,12 +3076,10 @@
 					  "hide": {
 						"hideWhenExpression": "patient.gender === 'male'"
 					  }
-
 					},
 					{
 					  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "None"
-
 					}
 				  ]
 				},
@@ -3295,12 +3162,10 @@
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "160108AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Positive"
-
 					},
 					{
 					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
@@ -3319,17 +3184,14 @@
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "161934AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -3439,17 +3301,14 @@
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "164500AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -3464,9 +3323,7 @@
 				  },
 				  "rendering": "date",
 				  "concept": "159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3500,17 +3357,14 @@
 				"questionOptions": {
 				  "rendering": "radio",
 				  "concept": "166449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -3529,9 +3383,7 @@
 				  },
 				  "rendering": "date",
 				  "concept": "1113AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3631,7 +3483,6 @@
 				  "rendering": "date",
 				  "concept": "d4a98e9e-26b0-429b-82cb-e6a2197eeb05"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3675,7 +3526,6 @@
 				  "rendering": "date",
 				  "concept": "93c114b1-ddcb-41eb-bca5-0c08a2a8c349"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3683,8 +3533,8 @@
 					  "rendering": "date",
 					  "concept": "93c114b1-ddcb-41eb-bca5-0c08a2a8c349"
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
@@ -3718,12 +3568,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -3745,12 +3593,10 @@
 					{
 					  "concept": "166463AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "History of previous TPT"
-
 					},
 					{
 					  "concept": "159398AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Previous treatment for TB"
-
 					},
 					{
 					  "concept": "4b415cf9-29cb-49db-88d6-a40282a232bc",
@@ -3758,7 +3604,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3769,12 +3614,10 @@
 						{
 						  "concept": "166463AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "History of previous TPT"
-
 						},
 						{
 						  "concept": "159398AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Previous treatment for TB"
-
 						},
 						{
 						  "concept": "4b415cf9-29cb-49db-88d6-a40282a232bc",
@@ -3782,8 +3625,8 @@
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
@@ -3792,12 +3635,10 @@
 						{
 						  "concept": "166463AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "History of previous TPT"
-
 						},
 						{
 						  "concept": "159398AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Previous treatment for TB"
-
 						},
 						{
 						  "concept": "4b415cf9-29cb-49db-88d6-a40282a232bc",
@@ -3815,16 +3656,14 @@
 			  {
 				"label": "TPT start date",
 				"type": "obs",
-				"required":true,
+				"required": true,
 				"questionOptions": {
 				  "calculate": {
 					"calculateExpression": "resolve(api.getLatestObs(patient.id, '162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 				  },
 				  "rendering": "date",
 				  "concept": "162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3832,8 +3671,8 @@
 					  "rendering": "date",
 					  "concept": "162320AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
@@ -3866,7 +3705,6 @@
 					{
 					  "concept": "8ba598a1-9e8a-4499-bd7a-54c3d0c94f01",
 					  "label": "6H"
-
 					},
 					{
 					  "concept": "e8588507-635c-4e28-a1f8-3c493e30b2f5",
@@ -3874,7 +3712,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -3885,7 +3722,6 @@
 						{
 						  "concept": "8ba598a1-9e8a-4499-bd7a-54c3d0c94f01",
 						  "label": "6H"
-
 						},
 						{
 						  "concept": "e8588507-635c-4e28-a1f8-3c493e30b2f5",
@@ -3893,8 +3729,8 @@
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
@@ -3903,7 +3739,6 @@
 						{
 						  "concept": "8ba598a1-9e8a-4499-bd7a-54c3d0c94f01",
 						  "label": "6H"
-
 						},
 						{
 						  "concept": "e8588507-635c-4e28-a1f8-3c493e30b2f5",
@@ -4021,7 +3856,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -4122,8 +3956,8 @@
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "select",
@@ -4240,7 +4074,6 @@
 				  "rendering": "date",
 				  "concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -4284,7 +4117,6 @@
 				  },
 				  "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -4292,8 +4124,8 @@
 					  "rendering": "date",
 					  "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
@@ -4379,21 +4211,17 @@
 					{
 					  "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Good"
-
 					},
 					{
 					  "concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Fair"
-
 					},
 					{
 					  "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Poor"
-
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -4404,22 +4232,19 @@
 						{
 						  "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Good"
-
 						},
 						{
 						  "concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Fair"
-
 						},
 						{
 						  "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Poor"
-
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
@@ -4428,17 +4253,14 @@
 						{
 						  "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Good"
-
 						},
 						{
 						  "concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Fair"
-
 						},
 						{
 						  "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Poor"
-
 						}
 					  ]
 					}
@@ -4459,12 +4281,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -4491,7 +4311,6 @@
 					{
 					  "concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Diarrhea"
-
 					},
 					{
 					  "concept": "2423abaf-6cd5-4409-8b39-2d90ca584fba",
@@ -4508,7 +4327,6 @@
 					{
 					  "concept": "983AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Fat changes"
-
 					},
 					{
 					  "concept": "151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -4525,12 +4343,10 @@
 					{
 					  "concept": "119537AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Dizzy, anxiety, nightmare, depression"
-
 					},
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -4568,12 +4384,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -4597,17 +4411,14 @@
 					{
 					  "concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Chronic diarrhea"
-
 					},
 					{
 					  "concept": "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Cervical cancer"
-
 					},
 					{
 					  "concept": "117543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Zoster"
-
 					},
 					{
 					  "concept": "fadf2d65-cf3a-4bc1-aa83-9a938b7d205d",
@@ -4616,12 +4427,10 @@
 					{
 					  "concept": "644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Kaposi sarcoma"
-
 					},
 					{
 					  "concept": "1294AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Cryptococcal Meningitis"
-
 					},
 					{
 					  "concept": "988737cf-d3ae-4fa3-99f1-0929ccafeb9d",
@@ -4646,7 +4455,6 @@
 					{
 					  "concept": "5334AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Thrush Oral"
-
 					},
 					{
 					  "concept": "6fdd205f-d467-40c0-ab3d-62e73c22acf6",
@@ -4660,11 +4468,9 @@
 					  "concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
 					  "label": "Genital ulcer"
 					},
-
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -4708,12 +4514,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -4725,27 +4529,22 @@
 				"questionOptions": {
 				  "rendering": "select",
 				  "concept": "166000AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-
 				  "answers": [
 					{
 					  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No pain"
-
 					},
 					{
 					  "concept": "1498AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "WHO Step 1"
-
 					},
 					{
 					  "concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "WHO Step 2"
-
 					},
 					{
 					  "concept": "1500AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "WHO Step 3"
-
 					}
 				  ]
 				},
@@ -4805,7 +4604,6 @@
 				  "concept": "5497AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "max": 9999999,
 				  "min": 0
-
 				},
 				"hide": {
 				  "hideWhenExpression": "age < 5"
@@ -4820,7 +4618,6 @@
 				  "concept": "730AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "max": 9999999,
 				  "min": 0
-
 				},
 				"hide": {
 				  "hideWhenExpression": "age >= 5"
@@ -4833,7 +4630,6 @@
 				"questionOptions": {
 				  "rendering": "text",
 				  "concept": "8729e0b9-c1b4-416f-b47e-9d9b8855d023"
-
 				},
 				"validators": [
 				  {
@@ -4850,7 +4646,6 @@
 				"questionOptions": {
 				  "rendering": "text",
 				  "concept": "49296372-8a07-4182-8506-ded37e2bc667"
-
 				},
 				"validators": [
 				  {
@@ -4867,7 +4662,6 @@
 				"questionOptions": {
 				  "rendering": "text",
 				  "concept": "33297367-9a74-4e2c-a474-923e61d45252"
-
 				},
 				"validators": [
 				  {
@@ -4884,7 +4678,6 @@
 				"questionOptions": {
 				  "rendering": "text",
 				  "concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0"
-
 				},
 				"validators": [
 				  {
@@ -4909,12 +4702,10 @@
 					{
 					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Positive"
-
 					},
 					{
 					  "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Inconclusive"
-
 					}
 				  ]
 				},
@@ -5041,7 +4832,6 @@
 					  "label": "Viral load after EAC: confirmatory viral load where initial viral load greater than 1000 copies per ml"
 					}
 				  ]
-
 				},
 				"hide": {
 				  "hideWhenExpression": "viralLoadIndication !== '9b8cef86-9093-4737-a641-3b8399618c85'"
@@ -5081,7 +4871,6 @@
 				"questionOptions": {
 				  "rendering": "date",
 				  "concept": "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
 				"hide": {
 				  "hideWhenExpression": "viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -5110,12 +4899,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -5162,7 +4949,6 @@
 				  "concept": "856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 				  "max": 999999999999,
 				  "min": 0
-
 				},
 				"hide": {
 				  "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -5212,7 +4998,6 @@
 				"questionOptions": {
 				  "rendering": "number",
 				  "concept": "051f22d7-24dc-423c-a13d-b5de1e2e8361"
-
 				},
 				"hide": {
 				  "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -5225,7 +5010,7 @@
 			"label": "Enhanced Adherence Counseling",
 			"isExpanded": "true",
 			"hide": {
-			  "hideWhenExpression": "viralLoadCount <= 50"
+			  "hideWhenExpression": "viralLoadStatus !== '167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viralLoadStatus !== '162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viralLoadStatus !== '167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 			},
 			"questions": [
 			  {
@@ -5238,12 +5023,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -5350,17 +5133,13 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
-
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -5371,18 +5150,15 @@
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
-
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
@@ -5391,15 +5167,12 @@
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
-
 					}
 				  }
 				],
@@ -5414,24 +5187,20 @@
 				  },
 				  "rendering": "date",
 				  "concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
 					"questionOptions": {
 					  "rendering": "date",
 					  "concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
 					  "concept": "164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 					}
 				  }
 				],
@@ -5455,24 +5224,20 @@
 				  },
 				  "rendering": "date",
 				  "concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
 					"questionOptions": {
 					  "rendering": "date",
 					  "concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
 					  "concept": "164362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 					}
 				  }
 				],
@@ -5542,22 +5307,18 @@
 					{
 					  "concept": "159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Fair"
-
 					},
 					{
 					  "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Good"
-
 					},
 					{
 					  "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Poor"
-
 					},
 					{
 					  "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Stop"
-
 					}
 				  ]
 				},
@@ -5585,16 +5346,13 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -5605,17 +5363,15 @@
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
@@ -5624,12 +5380,10 @@
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
@@ -5647,7 +5401,6 @@
 				  "rendering": "date",
 				  "concept": "5ac4300a-5e19-45c8-8692-31a57d6d5b8c"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -5655,8 +5408,8 @@
 					  "rendering": "date",
 					  "concept": "5ac4300a-5e19-45c8-8692-31a57d6d5b8c"
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
@@ -5728,7 +5481,6 @@
 				  "rendering": "date",
 				  "concept": "c2d57bcb-02f2-457d-af05-8d759a1457a7"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -5736,8 +5488,8 @@
 					  "rendering": "date",
 					  "concept": "c2d57bcb-02f2-457d-af05-8d759a1457a7"
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
@@ -5786,42 +5538,34 @@
 				"questionOptions": {
 				  "rendering": "checkbox",
 				  "concept": "a3758771-f534-495e-9a3c-290acc79dda0",
-
 				  "answers": [
 					{
 					  "concept": "a56cdd43-f2eb-49d6-88fd-113aaea2e85f",
 					  "label": "Planned to bring partner for test"
-
 					},
 					{
 					  "concept": "8c3aeb01-71d6-42df-9d70-606586fd8561",
 					  "label": "Agreed to disclose to partners"
-
 					},
 					{
 					  "concept": "1a093518-7d2d-44a7-a2dc-e3cc84f3df31",
 					  "label": "Discussed & agreed to practice safer sex"
-
 					},
 					{
 					  "concept": "9ad0a69e-9725-4c3b-ac8c-f68c29fece79",
 					  "label": "Agreed to bring children for test"
-
 					},
 					{
 					  "concept": "167125AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Client managed for STI"
-
 					},
 					{
 					  "concept": "cf907a84-caca-4b80-b873-52a4ebad27cf",
 					  "label": "Decided to avoid or decrease substance use"
-
 					},
 					{
 					  "concept": "161558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Assessed for STI"
-
 					}
 				  ]
 				},
@@ -5904,7 +5648,6 @@
 				  "rendering": "date",
 				  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -5912,8 +5655,8 @@
 					  "rendering": "date",
 					  "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a"
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
@@ -5962,7 +5705,6 @@
 				  "rendering": "date",
 				  "concept": "78c8abfb-1989-444a-8750-947227f4bde8"
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -5970,8 +5712,8 @@
 					  "rendering": "date",
 					  "concept": "78c8abfb-1989-444a-8750-947227f4bde8"
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
@@ -6008,7 +5750,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -6026,8 +5767,8 @@
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
@@ -6109,7 +5850,6 @@
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					},
 					{
 					  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6117,7 +5857,6 @@
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -6176,7 +5915,6 @@
 						{
 						  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Other"
-
 						},
 						{
 						  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6184,8 +5922,8 @@
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "select",
@@ -6242,7 +5980,6 @@
 						{
 						  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Other"
-
 						},
 						{
 						  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6267,16 +6004,13 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -6287,17 +6021,15 @@
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "radio",
@@ -6306,12 +6038,10 @@
 						{
 						  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Yes"
-
 						},
 						{
 						  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "No"
-
 						}
 					  ]
 					}
@@ -6352,16 +6082,13 @@
 					{
 					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Unknown"
-
 					},
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
-
 				"behaviours": [
 				  {
 					"intent": "edit",
@@ -6392,17 +6119,15 @@
 						{
 						  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Unknown"
-
 						},
 						{
 						  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Other"
-
 						}
 					  ]
 					}
-				  	}
-					,{
+				  },
+				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "select",
@@ -6431,12 +6156,10 @@
 						{
 						  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Unknown"
-
 						},
 						{
 						  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 						  "label": "Other"
-
 						}
 					  ]
 					}
@@ -6571,12 +6294,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -6746,7 +6467,6 @@
 					{
 					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Positive"
-
 					},
 					{
 					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
@@ -6785,7 +6505,6 @@
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other subtype"
-
 					}
 				  ]
 				},
@@ -6804,12 +6523,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -6828,12 +6545,10 @@
 					{
 					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Yes"
-
 					},
 					{
 					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No"
-
 					}
 				  ]
 				},
@@ -6898,12 +6613,10 @@
 					{
 					  "concept": "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Suspicious for cervical cancer"
-
 					},
 					{
 					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Unknown screening result"
-
 					}
 				  ]
 				},
@@ -6989,7 +6702,6 @@
 					{
 					  "concept": "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "ASCUS"
-
 					},
 					{
 					  "concept": "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68",
@@ -7066,7 +6778,6 @@
 					{
 					  "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Not done"
-
 					},
 					{
 					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
@@ -7087,7 +6798,6 @@
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -7201,27 +6911,22 @@
 					{
 					  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "No treatment"
-
 					},
 					{
 					  "concept": "159619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Surgical treatment"
-
 					},
 					{
 					  "concept": "166917AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Chemotherapy"
-
 					},
 					{
 					  "concept": "161174AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Radiotherapy"
-
 					},
 					{
 					  "concept": "164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Referred to other HF"
-
 					},
 					{
 					  "concept": "166938AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -7230,7 +6935,6 @@
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -7245,7 +6949,6 @@
 				"questionOptions": {
 				  "rendering": "date",
 				  "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
 				"validators": [
 				  {
@@ -7308,12 +7011,10 @@
 					{
 					  "concept": "164165AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Referred to another facility"
-
 					},
 					{
 					  "concept": "1502AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Arrival in receiving facility confirmed"
-
 					},
 					{
 					  "concept": "c4929407-300e-480b-b9cf-46f424dbd89e",
@@ -7329,7 +7030,6 @@
 				"questionOptions": {
 				  "rendering": "date",
 				  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-
 				},
 				"validators": [
 				  {
@@ -7354,17 +7054,14 @@
 					{
 					  "concept": "164805AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "VIA screening for women aged between 30-49 years"
-
 					},
 					{
 					  "concept": "165084AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Loop electrosurgical excision procedure of cervix"
-
 					},
 					{
 					  "concept": "162812AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Cryosurgery of lesion of cervix"
-
 					},
 					{
 					  "concept": "3e02da2d-b62a-4b17-b1fc-5eb8b4b164b9",
@@ -7373,7 +7070,6 @@
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Other"
-
 					}
 				  ]
 				},
@@ -7393,7 +7089,6 @@
 					{
 					  "concept": "1502AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 					  "label": "Confirmed Client seen the referral HF"
-
 					},
 					{
 					  "concept": "3192af69-db4b-4031-9add-5871883980cc",
@@ -7459,9 +7154,10 @@
 				  "rendering": "date",
 				  "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
 				  "calculate": {
-									"calculateExpression": "CustomNextFollowupDateForCxCa('screeningStrategy', 'hpvScreeningResult', 'viaScreeningResult', 'cytologyResult', 'hpvDnaSampleCollectedDate', 'viaScreeningDate', 'cytologySampleCollectionDate', 'dateTreatmentGiven')" }
-							},
-							"validators":[
+					"calculateExpression": "CustomNextFollowupDateForCxCa('screeningStrategy', 'hpvScreeningResult', 'viaScreeningResult', 'cytologyResult', 'hpvDnaSampleCollectedDate', 'viaScreeningDate', 'cytologySampleCollectionDate', 'dateTreatmentGiven')"
+				  }
+				},
+				"validators": [
 				  {
 					"type": "js_expression",
 					"failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
