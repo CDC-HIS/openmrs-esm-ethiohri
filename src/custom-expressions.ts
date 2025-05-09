@@ -312,41 +312,38 @@ export function CalcNextFollowupDateForCxCa(
 ) {
   let nextFollowupDateCxCa;
   if (dateTreatmentGiven) {
-    nextFollowupDateCxCa = new Date(
-      dateTreatmentGiven.setMonth(dateTreatmentGiven.getMonth() + 6)
-    );
+    
+    const treatmentDateClone = new Date(dateTreatmentGiven.getTime());
+    treatmentDateClone.setMonth(treatmentDateClone.getMonth() + 6);
+    nextFollowupDateCxCa = treatmentDateClone;
   } else {
     if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
       if (hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {
-        nextFollowupDateCxCa = new Date(
-          hpvDnaSampleCollectedDate.setFullYear(
-            hpvDnaSampleCollectedDate.getFullYear() + 3
-          )
-        );
+        const hpvDateClone = new Date(hpvDnaSampleCollectedDate.getTime());
+        hpvDateClone.setFullYear(hpvDateClone.getFullYear() + 3);
+        nextFollowupDateCxCa = hpvDateClone;
       } else if (
-        hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
+        (hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || hpvScreeningResult == "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") &&
         viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"
       ) {
-        nextFollowupDateCxCa = new Date(
-          viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 1)
-        );
+        const viaDateClone = new Date(viaScreeningDate.getTime());
+        viaDateClone.setFullYear(viaDateClone.getFullYear() + 1);
+        nextFollowupDateCxCa = viaDateClone;
       }
     } else if (
       screeningStrategy == "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1" &&
       viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"
     ) {
-      nextFollowupDateCxCa = new Date(
-        viaScreeningDate.setFullYear(viaScreeningDate.getFullYear() + 2)
-      );
+      const viaDateClone = new Date(viaScreeningDate.getTime());
+      viaDateClone.setFullYear(viaDateClone.getFullYear() + 2);
+      nextFollowupDateCxCa = viaDateClone;
     } else if (
       screeningStrategy == "f32b7edd-f70a-4b32-a684-4fa35eb2abcd" &&
       cytologyResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15"
     ) {
-      nextFollowupDateCxCa = new Date(
-        cytologySampleCollectionDate.setFullYear(
-          cytologySampleCollectionDate.getFullYear() + 3
-        )
-      );
+      const cytologyDateClone = new Date(cytologySampleCollectionDate.getTime());
+      cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 3);
+      nextFollowupDateCxCa = cytologyDateClone;
     }
   }
   return nextFollowupDateCxCa;
@@ -443,7 +440,6 @@ export function isTreatmentVisible(
     viaScreeningResult !== "be297cab-5ae6-4e7c-8657-b82730b7b8f1" &&
     viaScreeningResult !== "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
   const condition3 =
-    cytologyResult !== "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
     cytologyResult !== "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68";
   const condition4 =
     biopsyResult !== "ba4420d5-acc2-4d1c-8ead-43476e17960d" &&

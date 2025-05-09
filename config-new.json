@@ -109,7 +109,7 @@
       {
         "id": "demographics",
         "name": "Basic Info",
-        "fields": ["registrationDate","name", "gender", "dob", "id", "enrolledInPmtct"]
+        "fields": ["registrationDate","name", "gender", "dob", "id"]
       }
     ],
     "fieldDefinitions": [
@@ -142,23 +142,7 @@
         "validation": {
           "required": true
         }
-      },
-      {
-        "id": "enrolledInPmtct",
-        "label": "Enrolled in PMTCT ?",
-        "type": "obs",
-        "uuid": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-        "customConceptAnswers": [
-            {
-            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "label": "Yes"
-            },
-            {
-            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "label": "No"
-            }
-        ]
-      },
+      },      
       {
         "id": "hometelephoneNumber",
         "label": "Home Telephone Number",

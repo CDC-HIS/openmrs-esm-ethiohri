@@ -2279,13 +2279,14 @@
 				"type": "obs",
 				"required": false,
 				"questionOptions": {
-				  "rendering": "text",
-				  "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
+				  "rendering": "number",
+				  "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242",
+				  "max": 300
 				},
 				"validators": [
 				  {
 					"type": "js_expression",
-					"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+					"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d{1,2})?$/.test(myValue)",
 					"message": "Weight should be a numeric value"
 				  }
 				],
@@ -6509,7 +6510,7 @@
 				  ]
 				},
 				"hide": {
-				  "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
 				},
 				"id": "hpvSubtype"
 			  },
@@ -6531,7 +6532,7 @@
 				  ]
 				},
 				"hide": {
-				  "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || (hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hpvScreeningResult !== '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 				},
 				"id": "viaDone"
 			  },
