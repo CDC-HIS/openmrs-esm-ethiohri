@@ -27,6 +27,7 @@ import {
 } from "./ethiohri-dashboard.meta";
 import {
   CalcNextVisitDate,
+  CalcNextVisitDateEdit,
   CalcTreatmentEndDate,
   CalcPrepDoseEndDate,
   CalcMonthsOnART,
@@ -76,6 +77,7 @@ export const importTranslation = require.context(
 export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
+  registerExpressionHelper("CustomNextVisitDateCalcEdit", CalcNextVisitDateEdit);
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
   registerExpressionHelper("CustomPrepDoseEndDateCalc", CalcPrepDoseEndDate);
   registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);

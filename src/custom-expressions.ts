@@ -57,6 +57,37 @@ export function CalcNextVisitDate(
   return followupDate && arvDispensedInDays ? resultNextVisitDate : null;
 }
 
+export function CalcNextVisitDateEdit(
+  followupDateStr: string,
+  arvDispensedInDaysConcept: string,
+  savedNextVisitDateStr: string,
+  initialFollowupDateStr: string,
+  initialArvDispensedInDaysConcept: string,
+) {
+  const followupDate = followupDateStr ? new Date(followupDateStr) : null;
+  const savedNextVisitDate = savedNextVisitDateStr ? new Date(savedNextVisitDateStr) : null;
+  const dispensedDays = DispensedDoseInNumber(arvDispensedInDaysConcept);
+  const initialFollowupDate = initialFollowupDateStr ? new Date(initialFollowupDateStr) : null;
+  const initialDispensedDays = DispensedDoseInNumber(initialArvDispensedInDaysConcept);
+
+  const inputChanged = 
+    initialDispensedDays !== dispensedDays ||
+    followupDate?.getTime() !== initialFollowupDate.getTime()
+
+  if (savedNextVisitDate && !inputChanged) {
+    return savedNextVisitDate;
+  }
+  
+  if (followupDate && dispensedDays) {
+    const recalculatedDate = new Date(
+      followupDate.getTime() + dispensedDays * 24 * 60 * 60 * 1000
+    );
+      return recalculatedDate;
+  }
+  return savedNextVisitDate || null;
+}
+
+
 export function CalcTreatmentEndDate(
   followupDate: Date,
   arvDispensedInDays: string,
