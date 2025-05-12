@@ -18,7 +18,7 @@ export function fetchIdentifiers(patientUUID) {
 }
 
 export function fetchLocation() {
-  return openmrsFetch(`${restBaseUrl}/location?q=&v=default`);
+  return openmrsFetch(`${restBaseUrl}/location?v=default`);
 }
 
 // TODO: The WS/REST Encounter resource doesn't support sorting, figure out a better approach ie. FHIR or Reporting
