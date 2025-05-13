@@ -70,9 +70,18 @@ export function CalcNextVisitDateEdit(
   const initialFollowupDate = initialFollowupDateStr ? new Date(initialFollowupDateStr) : null;
   const initialDispensedDays = DispensedDoseInNumber(initialArvDispensedInDaysConcept);
 
+  const isSameDate = (date1: Date | null, date2: Date | null): boolean => {
+    if (!date1 || !date2) return false;
+    return (
+      date1.getFullYear() === date2.getFullYear() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getDate() === date2.getDate()
+    );
+  };
+
   const inputChanged = 
     initialDispensedDays !== dispensedDays ||
-    followupDate?.getTime() !== initialFollowupDate.getTime()
+    !isSameDate(followupDate, initialFollowupDate);
 
   if (savedNextVisitDate && !inputChanged) {
     return savedNextVisitDate;
@@ -82,6 +91,7 @@ export function CalcNextVisitDateEdit(
     const recalculatedDate = new Date(
       followupDate.getTime() + dispensedDays * 24 * 60 * 60 * 1000
     );
+
       return recalculatedDate;
   }
   return savedNextVisitDate || null;
@@ -420,31 +430,37 @@ export function CalcNextFollowupDateForCxCaEdit(
   const savedDateTreatmentGiven = parseDate(savedDateTreatmentGivenStr);
   const savedNextFollowupScreeningDate = parseDate(savedNextFollowupScreeningDateStr);
 
+  const isSameDate = (date1: Date | null | undefined, date2: Date | null | undefined): boolean => {
+    if (!date1 || !date2) return date1 === date2; 
+    return (
+      date1.getFullYear() === date2.getFullYear() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getDate() === date2.getDate()
+    );
+  };
+  
   const inputChanged =
     screeningStrategy !== savedScreeningStrategy ||
     hpvScreeningResult !== savedHpvScreeningResult ||
     viaScreeningResult !== savedViaScreeningResult ||
     cytologyResult !== savedCytologyResult ||
-    (hpvDnaSampleCollectedDate?.getTime() ?? null) !== (savedHpvDnaSampleCollectedDate?.getTime() ?? null) ||
-    (viaScreeningDate?.getTime() ?? null) !== (savedViaScreeningDate?.getTime() ?? null) ||
-    (cytologySampleCollectionDate?.getTime() ?? null) !== (savedCytologySampleCollectionDate?.getTime() ?? null) ||
-    (dateTreatmentGiven?.getTime() ?? null) !== (savedDateTreatmentGiven?.getTime() ?? null);
+    !isSameDate(hpvDnaSampleCollectedDate, savedHpvDnaSampleCollectedDate) ||
+    !isSameDate(viaScreeningDate, savedViaScreeningDate) ||
+    !isSameDate(cytologySampleCollectionDate, savedCytologySampleCollectionDate) ||
+    !isSameDate(dateTreatmentGiven, savedDateTreatmentGiven);
 
-  // Return saved date if input hasn't changed
   if (savedNextFollowupScreeningDate && !inputChanged) {
     return savedNextFollowupScreeningDate;
   }
-
   let nextFollowupDateCxCa: Date | null = null;
 
-  // Rule 1: If treatment was given
   if (dateTreatmentGiven) {
     const treatmentDateClone = new Date(dateTreatmentGiven.getTime());
     treatmentDateClone.setMonth(treatmentDateClone.getMonth() + 6);
     nextFollowupDateCxCa = treatmentDateClone;
 
   } else if (screeningStrategy === "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
-    // HPV + VIA strategy
+    
     if (hpvScreeningResult === "5e4fc757-0b14-49ae-b3b7-419666f41e15" && hpvDnaSampleCollectedDate) {
       const hpvDateClone = new Date(hpvDnaSampleCollectedDate.getTime());
       hpvDateClone.setFullYear(hpvDateClone.getFullYear() + 3);
@@ -465,7 +481,7 @@ export function CalcNextFollowupDateForCxCaEdit(
     viaScreeningResult === "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc" &&
     viaScreeningDate
   ) {
-    // VIA only
+    
     const viaDateClone = new Date(viaScreeningDate.getTime());
     viaDateClone.setFullYear(viaDateClone.getFullYear() + 2);
     nextFollowupDateCxCa = viaDateClone;
@@ -475,7 +491,7 @@ export function CalcNextFollowupDateForCxCaEdit(
     cytologyResult === "5e4fc757-0b14-49ae-b3b7-419666f41e15" &&
     cytologySampleCollectionDate
   ) {
-    // Cytology
+    
     const cytologyDateClone = new Date(cytologySampleCollectionDate.getTime());
     cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 3);
     nextFollowupDateCxCa = cytologyDateClone;
