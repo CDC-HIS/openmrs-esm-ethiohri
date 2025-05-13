@@ -380,6 +380,111 @@ export function CalcNextFollowupDateForCxCa(
   return nextFollowupDateCxCa;
 }
 
+export function CalcNextFollowupDateForCxCaEdit(
+  screeningStrategyStr: string,
+  hpvScreeningResultStr: string,
+  viaScreeningResultStr: string,
+  cytologyResultStr: string,
+  hpvDnaSampleCollectedDateStr: string,
+  viaScreeningDateStr: string,
+  cytologySampleCollectionDateStr: string,
+  dateTreatmentGivenStr: string,
+  savedScreeningStrategyStr: string,
+  savedHpvScreeningResultStr: string,
+  savedViaScreeningResultStr: string,
+  savedCytologyResultStr: string,
+  savedHpvDnaSampleCollectedDateStr: string,
+  savedViaScreeningDateStr: string,
+  savedCytologySampleCollectionDateStr: string,
+  savedDateTreatmentGivenStr: string,
+  savedNextFollowupScreeningDateStr: string
+) {
+  const parseDate = (str: string) => (str ? new Date(str) : null);
+
+  const screeningStrategy = screeningStrategyStr || null;
+  const hpvScreeningResult = hpvScreeningResultStr || null;
+  const viaScreeningResult = viaScreeningResultStr || null;
+  const cytologyResult = cytologyResultStr || null;
+  const hpvDnaSampleCollectedDate = parseDate(hpvDnaSampleCollectedDateStr);
+  const viaScreeningDate = parseDate(viaScreeningDateStr);
+  const cytologySampleCollectionDate = parseDate(cytologySampleCollectionDateStr);
+  const dateTreatmentGiven = parseDate(dateTreatmentGivenStr);
+
+  const savedScreeningStrategy = savedScreeningStrategyStr || null;
+  const savedHpvScreeningResult = savedHpvScreeningResultStr || null;
+  const savedViaScreeningResult = savedViaScreeningResultStr || null;
+  const savedCytologyResult = savedCytologyResultStr || null;
+  const savedHpvDnaSampleCollectedDate = parseDate(savedHpvDnaSampleCollectedDateStr);
+  const savedViaScreeningDate = parseDate(savedViaScreeningDateStr);
+  const savedCytologySampleCollectionDate = parseDate(savedCytologySampleCollectionDateStr);
+  const savedDateTreatmentGiven = parseDate(savedDateTreatmentGivenStr);
+  const savedNextFollowupScreeningDate = parseDate(savedNextFollowupScreeningDateStr);
+
+  const inputChanged =
+    screeningStrategy !== savedScreeningStrategy ||
+    hpvScreeningResult !== savedHpvScreeningResult ||
+    viaScreeningResult !== savedViaScreeningResult ||
+    cytologyResult !== savedCytologyResult ||
+    (hpvDnaSampleCollectedDate?.getTime() ?? null) !== (savedHpvDnaSampleCollectedDate?.getTime() ?? null) ||
+    (viaScreeningDate?.getTime() ?? null) !== (savedViaScreeningDate?.getTime() ?? null) ||
+    (cytologySampleCollectionDate?.getTime() ?? null) !== (savedCytologySampleCollectionDate?.getTime() ?? null) ||
+    (dateTreatmentGiven?.getTime() ?? null) !== (savedDateTreatmentGiven?.getTime() ?? null);
+
+  // Return saved date if input hasn't changed
+  if (savedNextFollowupScreeningDate && !inputChanged) {
+    return savedNextFollowupScreeningDate;
+  }
+
+  let nextFollowupDateCxCa: Date | null = null;
+
+  // Rule 1: If treatment was given
+  if (dateTreatmentGiven) {
+    const treatmentDateClone = new Date(dateTreatmentGiven.getTime());
+    treatmentDateClone.setMonth(treatmentDateClone.getMonth() + 6);
+    nextFollowupDateCxCa = treatmentDateClone;
+
+  } else if (screeningStrategy === "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
+    // HPV + VIA strategy
+    if (hpvScreeningResult === "5e4fc757-0b14-49ae-b3b7-419666f41e15" && hpvDnaSampleCollectedDate) {
+      const hpvDateClone = new Date(hpvDnaSampleCollectedDate.getTime());
+      hpvDateClone.setFullYear(hpvDateClone.getFullYear() + 3);
+      nextFollowupDateCxCa = hpvDateClone;
+    } else if (
+      (hpvScreeningResult === "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+        hpvScreeningResult === "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") &&
+      viaScreeningResult === "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc" &&
+      viaScreeningDate
+    ) {
+      const viaDateClone = new Date(viaScreeningDate.getTime());
+      viaDateClone.setFullYear(viaDateClone.getFullYear() + 1);
+      nextFollowupDateCxCa = viaDateClone;
+    }
+
+  } else if (
+    screeningStrategy === "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1" &&
+    viaScreeningResult === "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc" &&
+    viaScreeningDate
+  ) {
+    // VIA only
+    const viaDateClone = new Date(viaScreeningDate.getTime());
+    viaDateClone.setFullYear(viaDateClone.getFullYear() + 2);
+    nextFollowupDateCxCa = viaDateClone;
+
+  } else if (
+    screeningStrategy === "f32b7edd-f70a-4b32-a684-4fa35eb2abcd" &&
+    cytologyResult === "5e4fc757-0b14-49ae-b3b7-419666f41e15" &&
+    cytologySampleCollectionDate
+  ) {
+    // Cytology
+    const cytologyDateClone = new Date(cytologySampleCollectionDate.getTime());
+    cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 3);
+    nextFollowupDateCxCa = cytologyDateClone;
+  }
+
+  return nextFollowupDateCxCa ?? null;
+}
+
+
 export async function getGender(patient) {
   if (patient.gender === "male") {
     return male;

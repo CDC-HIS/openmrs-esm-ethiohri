@@ -36,6 +36,7 @@ import {
   CalcNutritionalScreening,
   CalcOlderChildNutritionalStatus,
   CalcNextFollowupDateForCxCa,
+  CalcNextFollowupDateForCxCaEdit,
   CalcBMI,
   getGender,
   getIdentifier,
@@ -97,6 +98,10 @@ export function startupApp() {
   registerExpressionHelper(
     "CustomNextFollowupDateForCxCa",
     CalcNextFollowupDateForCxCa
+  );
+  registerExpressionHelper(
+    "CustomNextFollowupDateForCxCaEdit",
+    CalcNextFollowupDateForCxCaEdit
   );
   registerExpressionHelper("CustomBMICalc", CalcBMI);
   registerExpressionHelper("getGender", getGender);

@@ -43,7 +43,7 @@
 			  {
 				"label": "Initial Followup date",
 				"type": "obs",
-				"id": "SavedFollowupDate",
+				"id": "savedFollowupDate",
 				"questionOptions": {
 				  "rendering": "fixed",
 				  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
@@ -736,391 +736,37 @@
 			  "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 			},
 			"questions": [
-			  {
-				"label": "Dispense code",
-				"type": "obs",
-				"required": true,
-				"id": "dispenseCode",
-				"questionOptions": {
-				  "calculate": {
-					"calculateExpression": "resolve(api.getLatestObs(patient.id, '6d7d0327-e1f8-4246-bfe5-be1e82d94b14', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
-				  },
-				  "rendering": "select",
-				  "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
-				  "answers": [
-					{
-					  "concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
-					  "label": "1a30 - D4T(30)+3TC+NVP",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
-					  "label": "1a40 - D4T(40)+3TC+NVP",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
-					  "label": "1b30 - D4T(30)+3TC+EFV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
-					  "label": "1b40 - D4T(40)+3TC+EFV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
-					  "label": "1c - AZT+3TC+NVP",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
-					  "label": "1d - AZT+3TC+EFV"
-					},
-					{
-					  "concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
-					  "label": "1e - TDF+3TC+EFV"
-					},
-					{
-					  "concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
-					  "label": "1f - TDF+3TC+NVP",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
-					  "label": "1g - ABC+3TC+EFV"
-					},
-					{
-					  "concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
-					  "label": "1h - ABC+3TC+NVP",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
-					  "label": "1i - Other Adult 1st line regimen"
-					},
-					{
-					  "concept": "2a811ceb-3c34-47ff-943a-425b41651784",
-					  "label": "1j - TDF+3TC+DTG"
-					},
-					{
-					  "concept": "c56be3a9-d678-4693-9566-84430239a2f5",
-					  "label": "1k - AZT+3TC+DTG"
-					},
-					{
-					  "concept": "a87d9674-11af-4440-afd0-d097d84d0393",
-					  "label": "2a - ABC+DDL+LPV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
-					  "label": "2b - ABC+DDL+NFV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
-					  "label": "2c - TDF+DDL+LPV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
-					  "label": "2d - TDF+DDL+NFV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
-					  "label": "2e - AZT+3TC+LPVr"
-					},
-					{
-					  "concept": "891bf06e-298a-40ee-8970-2311d18fed48",
-					  "label": "2f - AZT+3TC+ATVr"
-					},
-					{
-					  "concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
-					  "label": "2g - TDF+3TC+LPVr"
-					},
-					{
-					  "concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
-					  "label": "2h - TDF+3TC+ATVr"
-					},
-					{
-					  "concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
-					  "label": "2i - ABC+3TC+LPVr"
-					},
-					{
-					  "concept": "2a17d96a-3457-4b93-b007-b540a7543618",
-					  "label": "2j -TDF+3TC+DTG"
-					},
-					{
-					  "concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
-					  "label": "2k - AZT+3TC+DTG"
-					},
-					{
-					  "concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
-					  "label": "2L - Other Adult 2nd line regimen"
-					},
-					{
-					  "concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
-					  "label": "3a -  DRV/r+DTG+AZT+3TC"
-					},
-					{
-					  "concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
-					  "label": "3b - DRV/r+DTG+TDF+3TC"
-					},
-					{
-					  "concept": "664137bb-d538-4afc-bbd1-7538cf158882",
-					  "label": "3c - DRV/r+ABC+3TC+DTG"
-					},
-					{
-					  "concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
-					  "label": "3d - Other Adult 3rd line regimen"
-					},
-					{
-					  "concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
-					  "label": "3e - DRV/r+TDF+3TC+EFV"
-					},
-					{
-					  "concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
-					  "label": "3f - DRV/r+AZT+3TC+EFV"
-					},
-					{
-					  "concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
-					  "label": "4a - D4T+3TC+NVP",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
-					  "label": "4b - D4T+3TC+EFV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "756b4487-f358-4817-b248-9c05080bad67",
-					  "label": "4c - AZT+3TC+NVP",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
-					  "label": "4d - AZT+3TC+EFV"
-					},
-					{
-					  "concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
-					  "label": "4f - AZT+3TC+LPVr"
-					},
-					{
-					  "concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
-					  "label": "4e - TDF+3TC+EFV"
-					},
-					{
-					  "concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
-					  "label": "4g - ABC+3TC+LPVr"
-					},
-					{
-					  "concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
-					  "label": "4h - Other Child 1st line regimen"
-					},
-					{
-					  "concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
-					  "label": "4i - TDF+3TC+DTG"
-					},
-					{
-					  "concept": "eae01634-65ec-4174-a95c-622456663727",
-					  "label": "4j - ABC+3TC+DTG"
-					},
-					{
-					  "concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
-					  "label": "4K - AZT+3TC+DTG"
-					},
-					{
-					  "concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
-					  "label": "4L - ABC+3TC+EFV"
-					},
-					{
-					  "concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
-					  "label": "5a - ABC+DDL+LPY",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "7c30ed1a-a770-4b74-8704-82077427128d",
-					  "label": "5b - ABC+DDL+NFV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
-					  "label": "5c - TDF+DDL+LPV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
-					  "label": "5d - TDF+DDL+NFV",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
-					  "label": "5e - ABC+3TC+LPVr"
-					},
-					{
-					  "concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
-					  "label": "5f - AZT+3TC+LPVr"
-					},
-					{
-					  "concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
-					  "label": "5g - TDF+3TC+EFV"
-					},
-					{
-					  "concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
-					  "label": "5h - ABC+3TC+EFV"
-					},
-					{
-					  "concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
-					  "label": "5i - TDF+3TC+LPVr"
-					},
-					{
-					  "concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
-					  "label": "5j - Other Child 2nd line regimen"
-					},
-					{
-					  "concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
-					  "label": "5k - RAL+AZT+3TC",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
-					  "label": "5l - RAL+ABC+3TC",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
-					  "label": "5m - ABC+3TC+DTG"
-					},
-					{
-					  "concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
-					  "label": "5n - AZT+3TC+DTG"
-					},
-					{
-					  "concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
-					  "label": "5o - TDF+3TC+DTG"
-					},
-					{
-					  "concept": "5415f1b1-a680-4870-89c5-3324d42da408",
-					  "label": "6a - DRVr+RAL+AZT+3TC",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
-					  "label": "6b - DRVr+RAL+TDF+3TC",
-					  "hide": {
-						"hideWhenExpression": "true"
-					  }
-					},
-					{
-					  "concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
-					  "label": "6c - DRVr+DTG+AZT+3TC"
-					},
-					{
-					  "concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
-					  "label": "6d - DRVr+DTG+TDF+3TC"
-					},
-					{
-					  "concept": "57eef726-e977-4efd-996b-a94860341320",
-					  "label": "6e - Other Child 3rd line regimen"
-					},
-					{
-					  "concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
-					  "label": "6f - DRV/r+DTG+ABC+3TC"
-					},
-					{
-					  "concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
-					  "label": "6g - DRV/r+ABC+3TC+EFV"
-					},
-					{
-					  "concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
-					  "label": "6h - DRV/r+AZT+3TC+EFV"
-					}
-				  ]
-				},
-				"behaviours": [
-				  {
-					"intent": "edit",
+				{
+					"label": "Dispense code",
+					"type": "obs",
+					"required": true,
+					"id": "dispenseCode",
 					"questionOptions": {
+					  "calculate": {
+						"calculateExpression": "resolve(api.getLatestObs(patient.id, '6d7d0327-e1f8-4246-bfe5-be1e82d94b14', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+					  },
 					  "rendering": "select",
 					  "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
 					  "answers": [
 						{
 						  "concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
-						  "label": "1a30 - D4T(30)+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "1a30 - D4T(30)+3TC+NVP"
 						},
 						{
 						  "concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
-						  "label": "1a40 - D4T(40)+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "1a40 - D4T(40)+3TC+NVP"
 						},
 						{
 						  "concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
-						  "label": "1b30 - D4T(30)+3TC+EFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "1b30 - D4T(30)+3TC+EFV"
 						},
 						{
 						  "concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
-						  "label": "1b40 - D4T(40)+3TC+EFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "1b40 - D4T(40)+3TC+EFV"
 						},
 						{
 						  "concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
-						  "label": "1c - AZT+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "1c - AZT+3TC+NVP"
 						},
 						{
 						  "concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
@@ -1132,10 +778,7 @@
 						},
 						{
 						  "concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
-						  "label": "1f - TDF+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "1f - TDF+3TC+NVP"
 						},
 						{
 						  "concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
@@ -1143,10 +786,7 @@
 						},
 						{
 						  "concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
-						  "label": "1h - ABC+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "1h - ABC+3TC+NVP"
 						},
 						{
 						  "concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
@@ -1162,31 +802,19 @@
 						},
 						{
 						  "concept": "a87d9674-11af-4440-afd0-d097d84d0393",
-						  "label": "2a - ABC+DDL+LPV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "2a - ABC+DDL+LPV"
 						},
 						{
 						  "concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
-						  "label": "2b - ABC+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "2b - ABC+DDL+NFV"
 						},
 						{
 						  "concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
-						  "label": "2c - TDF+DDL+LPV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "2c - TDF+DDL+LPV"
 						},
 						{
 						  "concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
-						  "label": "2d - TDF+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "2d - TDF+DDL+NFV"
 						},
 						{
 						  "concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
@@ -1246,24 +874,15 @@
 						},
 						{
 						  "concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
-						  "label": "4a - D4T+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "4a - D4T+3TC+NVP"
 						},
 						{
 						  "concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
-						  "label": "4b - D4T+3TC+EFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "4b - D4T+3TC+EFV"
 						},
 						{
 						  "concept": "756b4487-f358-4817-b248-9c05080bad67",
-						  "label": "4c - AZT+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "4c - AZT+3TC+NVP"
 						},
 						{
 						  "concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
@@ -1303,31 +922,19 @@
 						},
 						{
 						  "concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
-						  "label": "5a - ABC+DDL+LPY",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "5a - ABC+DDL+LPY"
 						},
 						{
 						  "concept": "7c30ed1a-a770-4b74-8704-82077427128d",
-						  "label": "5b - ABC+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "5b - ABC+DDL+NFV"
 						},
 						{
 						  "concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
-						  "label": "5c - TDF+DDL+LPV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "5c - TDF+DDL+LPV"
 						},
 						{
 						  "concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
-						  "label": "5d - TDF+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "5d - TDF+DDL+NFV"
 						},
 						{
 						  "concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
@@ -1355,17 +962,11 @@
 						},
 						{
 						  "concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
-						  "label": "5k - RAL+AZT+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "5k - RAL+AZT+3TC"
 						},
 						{
 						  "concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
-						  "label": "5l - RAL+ABC+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "5l - RAL+ABC+3TC"
 						},
 						{
 						  "concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
@@ -1381,17 +982,11 @@
 						},
 						{
 						  "concept": "5415f1b1-a680-4870-89c5-3324d42da408",
-						  "label": "6a - DRVr+RAL+AZT+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "6a - DRVr+RAL+AZT+3TC"
 						},
 						{
 						  "concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
-						  "label": "6b - DRVr+RAL+TDF+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
+						  "label": "6b - DRVr+RAL+TDF+3TC"
 						},
 						{
 						  "concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
@@ -1418,350 +1013,563 @@
 						  "label": "6h - DRV/r+AZT+3TC+EFV"
 						}
 					  ]
-					}
+					},
+					"behaviours": [
+					  {
+						"intent": "edit",
+						"questionOptions": {
+						  "rendering": "select",
+						  "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
+						  "answers": [
+							{
+							  "concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
+							  "label": "1a30 - D4T(30)+3TC+NVP"
+							},
+							{
+							  "concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
+							  "label": "1a40 - D4T(40)+3TC+NVP"
+							},
+							{
+							  "concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
+							  "label": "1b30 - D4T(30)+3TC+EFV"
+							},
+							{
+							  "concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
+							  "label": "1b40 - D4T(40)+3TC+EFV"
+							},
+							{
+							  "concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
+							  "label": "1c - AZT+3TC+NVP"
+							},
+							{
+							  "concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
+							  "label": "1d - AZT+3TC+EFV"
+							},
+							{
+							  "concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
+							  "label": "1e - TDF+3TC+EFV"
+							},
+							{
+							  "concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
+							  "label": "1f - TDF+3TC+NVP"
+							},
+							{
+							  "concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
+							  "label": "1g - ABC+3TC+EFV"
+							},
+							{
+							  "concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
+							  "label": "1h - ABC+3TC+NVP"
+							},
+							{
+							  "concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
+							  "label": "1i - Other Adult 1st line regimen"
+							},
+							{
+							  "concept": "2a811ceb-3c34-47ff-943a-425b41651784",
+							  "label": "1j - TDF+3TC+DTG"
+							},
+							{
+							  "concept": "c56be3a9-d678-4693-9566-84430239a2f5",
+							  "label": "1k - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "a87d9674-11af-4440-afd0-d097d84d0393",
+							  "label": "2a - ABC+DDL+LPV"
+							},
+							{
+							  "concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
+							  "label": "2b - ABC+DDL+NFV"
+							},
+							{
+							  "concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
+							  "label": "2c - TDF+DDL+LPV"
+							},
+							{
+							  "concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
+							  "label": "2d - TDF+DDL+NFV"
+							},
+							{
+							  "concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
+							  "label": "2e - AZT+3TC+LPVr"
+							},
+							{
+							  "concept": "891bf06e-298a-40ee-8970-2311d18fed48",
+							  "label": "2f - AZT+3TC+ATVr"
+							},
+							{
+							  "concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
+							  "label": "2g - TDF+3TC+LPVr"
+							},
+							{
+							  "concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
+							  "label": "2h - TDF+3TC+ATVr"
+							},
+							{
+							  "concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
+							  "label": "2i - ABC+3TC+LPVr"
+							},
+							{
+							  "concept": "2a17d96a-3457-4b93-b007-b540a7543618",
+							  "label": "2j -TDF+3TC+DTG"
+							},
+							{
+							  "concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
+							  "label": "2k - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
+							  "label": "2L - Other Adult 2nd line regimen"
+							},
+							{
+							  "concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
+							  "label": "3a -  DRV/r+DTG+AZT+3TC"
+							},
+							{
+							  "concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
+							  "label": "3b - DRV/r+DTG+TDF+3TC"
+							},
+							{
+							  "concept": "664137bb-d538-4afc-bbd1-7538cf158882",
+							  "label": "3c - DRV/r+ABC+3TC+DTG"
+							},
+							{
+							  "concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
+							  "label": "3d - Other Adult 3rd line regimen"
+							},
+							{
+							  "concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
+							  "label": "3e - DRV/r+TDF+3TC+EFV"
+							},
+							{
+							  "concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
+							  "label": "3f - DRV/r+AZT+3TC+EFV"
+							},
+							{
+							  "concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
+							  "label": "4a - D4T+3TC+NVP"
+							},
+							{
+							  "concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
+							  "label": "4b - D4T+3TC+EFV"
+							},
+							{
+							  "concept": "756b4487-f358-4817-b248-9c05080bad67",
+							  "label": "4c - AZT+3TC+NVP"
+							},
+							{
+							  "concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
+							  "label": "4d - AZT+3TC+EFV"
+							},
+							{
+							  "concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
+							  "label": "4f - AZT+3TC+LPVr"
+							},
+							{
+							  "concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
+							  "label": "4e - TDF+3TC+EFV"
+							},
+							{
+							  "concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
+							  "label": "4g - ABC+3TC+LPVr"
+							},
+							{
+							  "concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
+							  "label": "4h - Other Child 1st line regimen"
+							},
+							{
+							  "concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
+							  "label": "4i - TDF+3TC+DTG"
+							},
+							{
+							  "concept": "eae01634-65ec-4174-a95c-622456663727",
+							  "label": "4j - ABC+3TC+DTG"
+							},
+							{
+							  "concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
+							  "label": "4K - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
+							  "label": "4L - ABC+3TC+EFV"
+							},
+							{
+							  "concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
+							  "label": "5a - ABC+DDL+LPY"
+							},
+							{
+							  "concept": "7c30ed1a-a770-4b74-8704-82077427128d",
+							  "label": "5b - ABC+DDL+NFV"
+							},
+							{
+							  "concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
+							  "label": "5c - TDF+DDL+LPV"
+							},
+							{
+							  "concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
+							  "label": "5d - TDF+DDL+NFV"
+							},
+							{
+							  "concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
+							  "label": "5e - ABC+3TC+LPVr"
+							},
+							{
+							  "concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
+							  "label": "5f - AZT+3TC+LPVr"
+							},
+							{
+							  "concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
+							  "label": "5g - TDF+3TC+EFV"
+							},
+							{
+							  "concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
+							  "label": "5h - ABC+3TC+EFV"
+							},
+							{
+							  "concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
+							  "label": "5i - TDF+3TC+LPVr"
+							},
+							{
+							  "concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
+							  "label": "5j - Other Child 2nd line regimen"
+							},
+							{
+							  "concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
+							  "label": "5k - RAL+AZT+3TC"
+							},
+							{
+							  "concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
+							  "label": "5l - RAL+ABC+3TC"
+							},
+							{
+							  "concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
+							  "label": "5m - ABC+3TC+DTG"
+							},
+							{
+							  "concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
+							  "label": "5n - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
+							  "label": "5o - TDF+3TC+DTG"
+							},
+							{
+							  "concept": "5415f1b1-a680-4870-89c5-3324d42da408",
+							  "label": "6a - DRVr+RAL+AZT+3TC"
+							},
+							{
+							  "concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
+							  "label": "6b - DRVr+RAL+TDF+3TC"
+							},
+							{
+							  "concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
+							  "label": "6c - DRVr+DTG+AZT+3TC"
+							},
+							{
+							  "concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
+							  "label": "6d - DRVr+DTG+TDF+3TC"
+							},
+							{
+							  "concept": "57eef726-e977-4efd-996b-a94860341320",
+							  "label": "6e - Other Child 3rd line regimen"
+							},
+							{
+							  "concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
+							  "label": "6f - DRV/r+DTG+ABC+3TC"
+							},
+							{
+							  "concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
+							  "label": "6g - DRV/r+ABC+3TC+EFV"
+							},
+							{
+							  "concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
+							  "label": "6h - DRV/r+AZT+3TC+EFV"
+							}
+						  ]
+						}
+					  },
+					  {
+						"intent": "view",
+						"questionOptions": {
+						  "rendering": "select",
+						  "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
+						  "answers": [
+							{
+							  "concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
+							  "label": "1a30 - D4T(30)+3TC+NVP"
+							},
+							{
+							  "concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
+							  "label": "1a40 - D4T(40)+3TC+NVP"
+							},
+							{
+							  "concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
+							  "label": "1b30 - D4T(30)+3TC+EFV"
+							},
+							{
+							  "concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
+							  "label": "1b40 - D4T(40)+3TC+EFV"
+							},
+							{
+							  "concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
+							  "label": "1c - AZT+3TC+NVP"
+							},
+							{
+							  "concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
+							  "label": "1d - AZT+3TC+EFV"
+							},
+							{
+							  "concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
+							  "label": "1e - TDF+3TC+EFV"
+							},
+							{
+							  "concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
+							  "label": "1f - TDF+3TC+NVP"
+							},
+							{
+							  "concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
+							  "label": "1g - ABC+3TC+EFV"
+							},
+							{
+							  "concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
+							  "label": "1h - ABC+3TC+NVP"
+							},
+							{
+							  "concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
+							  "label": "1i - Other Adult 1st line regimen"
+							},
+							{
+							  "concept": "2a811ceb-3c34-47ff-943a-425b41651784",
+							  "label": "1j - TDF+3TC+DTG"
+							},
+							{
+							  "concept": "c56be3a9-d678-4693-9566-84430239a2f5",
+							  "label": "1k - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "a87d9674-11af-4440-afd0-d097d84d0393",
+							  "label": "2a - ABC+DDL+LPV"
+							},
+							{
+							  "concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
+							  "label": "2b - ABC+DDL+NFV"
+							},
+							{
+							  "concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
+							  "label": "2c - TDF+DDL+LPV"
+							},
+							{
+							  "concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
+							  "label": "2d - TDF+DDL+NFV"
+							},
+							{
+							  "concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
+							  "label": "2e - AZT+3TC+LPVr"
+							},
+							{
+							  "concept": "891bf06e-298a-40ee-8970-2311d18fed48",
+							  "label": "2f - AZT+3TC+ATVr"
+							},
+							{
+							  "concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
+							  "label": "2g - TDF+3TC+LPVr"
+							},
+							{
+							  "concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
+							  "label": "2h - TDF+3TC+ATVr"
+							},
+							{
+							  "concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
+							  "label": "2i - ABC+3TC+LPVr"
+							},
+							{
+							  "concept": "2a17d96a-3457-4b93-b007-b540a7543618",
+							  "label": "2j -TDF+3TC+DTG"
+							},
+							{
+							  "concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
+							  "label": "2k - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
+							  "label": "2L - Other Adult 2nd line regimen"
+							},
+							{
+							  "concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
+							  "label": "3a -  DRV/r+DTG+AZT+3TC"
+							},
+							{
+							  "concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
+							  "label": "3b - DRV/r+DTG+TDF+3TC"
+							},
+							{
+							  "concept": "664137bb-d538-4afc-bbd1-7538cf158882",
+							  "label": "3c - DRV/r+ABC+3TC+DTG"
+							},
+							{
+							  "concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
+							  "label": "3d - Other Adult 3rd line regimen"
+							},
+							{
+							  "concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
+							  "label": "3e - DRV/r+TDF+3TC+EFV"
+							},
+							{
+							  "concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
+							  "label": "3f - DRV/r+AZT+3TC+EFV"
+							},
+							{
+							  "concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
+							  "label": "4a - D4T+3TC+NVP"
+							},
+							{
+							  "concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
+							  "label": "4b - D4T+3TC+EFV"
+							},
+							{
+							  "concept": "756b4487-f358-4817-b248-9c05080bad67",
+							  "label": "4c - AZT+3TC+NVP"
+							},
+							{
+							  "concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
+							  "label": "4d - AZT+3TC+EFV"
+							},
+							{
+							  "concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
+							  "label": "4f - AZT+3TC+LPVr"
+							},
+							{
+							  "concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
+							  "label": "4e - TDF+3TC+EFV"
+							},
+							{
+							  "concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
+							  "label": "4g - ABC+3TC+LPVr"
+							},
+							{
+							  "concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
+							  "label": "4h - Other Child 1st line regimen"
+							},
+							{
+							  "concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
+							  "label": "4i - TDF+3TC+DTG"
+							},
+							{
+							  "concept": "eae01634-65ec-4174-a95c-622456663727",
+							  "label": "4j - ABC+3TC+DTG"
+							},
+							{
+							  "concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
+							  "label": "4K - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
+							  "label": "4L - ABC+3TC+EFV"
+							},
+							{
+							  "concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
+							  "label": "5a - ABC+DDL+LPY"
+							},
+							{
+							  "concept": "7c30ed1a-a770-4b74-8704-82077427128d",
+							  "label": "5b - ABC+DDL+NFV"
+							},
+							{
+							  "concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
+							  "label": "5c - TDF+DDL+LPV"
+							},
+							{
+							  "concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
+							  "label": "5d - TDF+DDL+NFV"
+							},
+							{
+							  "concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
+							  "label": "5e - ABC+3TC+LPVr"
+							},
+							{
+							  "concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
+							  "label": "5f - AZT+3TC+LPVr"
+							},
+							{
+							  "concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
+							  "label": "5g - TDF+3TC+EFV"
+							},
+							{
+							  "concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
+							  "label": "5h - ABC+3TC+EFV"
+							},
+							{
+							  "concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
+							  "label": "5i - TDF+3TC+LPVr"
+							},
+							{
+							  "concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
+							  "label": "5j - Other Child 2nd line regimen"
+							},
+							{
+							  "concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
+							  "label": "5k - RAL+AZT+3TC"
+							},
+							{
+							  "concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
+							  "label": "5l - RAL+ABC+3TC"
+							},
+							{
+							  "concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
+							  "label": "5m - ABC+3TC+DTG"
+							},
+							{
+							  "concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
+							  "label": "5n - AZT+3TC+DTG"
+							},
+							{
+							  "concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
+							  "label": "5o - TDF+3TC+DTG"
+							},
+							{
+							  "concept": "5415f1b1-a680-4870-89c5-3324d42da408",
+							  "label": "6a - DRVr+RAL+AZT+3TC"
+							},
+							{
+							  "concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
+							  "label": "6b - DRVr+RAL+TDF+3TC"
+							},
+							{
+							  "concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
+							  "label": "6c - DRVr+DTG+AZT+3TC"
+							},
+							{
+							  "concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
+							  "label": "6d - DRVr+DTG+TDF+3TC"
+							},
+							{
+							  "concept": "57eef726-e977-4efd-996b-a94860341320",
+							  "label": "6e - Other Child 3rd line regimen"
+							},
+							{
+							  "concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
+							  "label": "6f - DRV/r+DTG+ABC+3TC"
+							},
+							{
+							  "concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
+							  "label": "6g - DRV/r+ABC+3TC+EFV"
+							},
+							{
+							  "concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
+							  "label": "6h - DRV/r+AZT+3TC+EFV"
+							}
+						  ]
+						}
+					  }
+					],
+					"validators": [
+					  {
+						"type": "js_expression",
+						"failsWhenExpression": "['2798d3bc-2e0a-459c-b249-9516b380a69e','3495d89f-4d46-44d8-b1c9-d101bc9f15d4','ae0dc59c-eb3d-421b-913b-ee5a06ec6182','c5995b5c-19bb-42f6-895b-0b4627bc9dd1','a9da3e97-3916-4834-854c-6bcbc5142aca','8b727274-4a3c-4a81-ae50-9f759a87358d', '8b727274-4a3c-4a81-ae50-9f759a87358d','71ecf102-8d3d-4a2a-b799-30773ad5d447','a87d9674-11af-4440-afd0-d097d84d0393','82e23d8c-4c9d-4b18-a960-9f8890b86f2f','cf29c24b-b796-4536-aaa5-8303f45bb5f8','2e84a82a-8b93-40fc-a556-2028d39f5710','c33efc4a-734f-4e89-92a4-71b259a5e547','7bbee32a-31a8-4199-a8a2-2d15c748d80a','756b4487-f358-4817-b248-9c05080bad67','fcafc964-f018-41c8-9dc9-343a2f4a94b5','7c30ed1a-a770-4b74-8704-82077427128d','18c78c5f-082c-4acc-a121-62fa334f34d3','5c9424e6-4f18-44e1-a074-e561643a7d91','2e58ef33-d019-4bd9-97b8-553e39e12646','8feb33db-71db-4fd0-a0e7-c02f81fcc76f','5415f1b1-a680-4870-89c5-3324d42da408','3e7d018b-9669-4f48-9298-d7c633f86b0f'].includes(myValue)",
+						"message": "⚠️ Warning: This Regimen is retired."
+					  }
+					]
 				  },
-				  {
-					"intent": "view",
-					"questionOptions": {
-					  "rendering": "select",
-					  "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14",
-					  "answers": [
-						{
-						  "concept": "2798d3bc-2e0a-459c-b249-9516b380a69e",
-						  "label": "1a30 - D4T(30)+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "3495d89f-4d46-44d8-b1c9-d101bc9f15d4",
-						  "label": "1a40 - D4T(40)+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "ae0dc59c-eb3d-421b-913b-ee5a06ec6182",
-						  "label": "1b30 - D4T(30)+3TC+EFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "c5995b5c-19bb-42f6-895b-0b4627bc9dd1",
-						  "label": "1b40 - D4T(40)+3TC+EFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "a9da3e97-3916-4834-854c-6bcbc5142aca",
-						  "label": "1c - AZT+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "b5951dd9-6bb2-4b63-af20-0707500108ea",
-						  "label": "1d - AZT+3TC+EFV"
-						},
-						{
-						  "concept": "1f735bdd-4ccd-40ce-8746-28f031f38675",
-						  "label": "1e - TDF+3TC+EFV"
-						},
-						{
-						  "concept": "8b727274-4a3c-4a81-ae50-9f759a87358d",
-						  "label": "1f - TDF+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "a664a63f-57f5-4cfc-80c0-4a8456725c2a",
-						  "label": "1g - ABC+3TC+EFV"
-						},
-						{
-						  "concept": "71ecf102-8d3d-4a2a-b799-30773ad5d447",
-						  "label": "1h - ABC+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "eb171a2d-1b67-4adc-ae09-49b6d272810d",
-						  "label": "1i - Other Adult 1st line regimen"
-						},
-						{
-						  "concept": "2a811ceb-3c34-47ff-943a-425b41651784",
-						  "label": "1j - TDF+3TC+DTG"
-						},
-						{
-						  "concept": "c56be3a9-d678-4693-9566-84430239a2f5",
-						  "label": "1k - AZT+3TC+DTG"
-						},
-						{
-						  "concept": "a87d9674-11af-4440-afd0-d097d84d0393",
-						  "label": "2a - ABC+DDL+LPV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "82e23d8c-4c9d-4b18-a960-9f8890b86f2f",
-						  "label": "2b - ABC+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "cf29c24b-b796-4536-aaa5-8303f45bb5f8",
-						  "label": "2c - TDF+DDL+LPV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "2e84a82a-8b93-40fc-a556-2028d39f5710",
-						  "label": "2d - TDF+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "a1056dfb-c16d-4e5c-a56b-e33228d634f8",
-						  "label": "2e - AZT+3TC+LPVr"
-						},
-						{
-						  "concept": "891bf06e-298a-40ee-8970-2311d18fed48",
-						  "label": "2f - AZT+3TC+ATVr"
-						},
-						{
-						  "concept": "e2d1786e-4849-473e-b32a-2c82bd35e947",
-						  "label": "2g - TDF+3TC+LPVr"
-						},
-						{
-						  "concept": "a9ef6721-d2fb-4f47-bfe3-9f7902e107c7",
-						  "label": "2h - TDF+3TC+ATVr"
-						},
-						{
-						  "concept": "73c10f0d-0a24-411f-9c97-49ab9e7eb2ce",
-						  "label": "2i - ABC+3TC+LPVr"
-						},
-						{
-						  "concept": "2a17d96a-3457-4b93-b007-b540a7543618",
-						  "label": "2j -TDF+3TC+DTG"
-						},
-						{
-						  "concept": "707d6943-9ec0-4c6b-8c72-f64143663043",
-						  "label": "2k - AZT+3TC+DTG"
-						},
-						{
-						  "concept": "25758e89-bfb1-4b9f-ba6d-240d953c99e8",
-						  "label": "2L - Other Adult 2nd line regimen"
-						},
-						{
-						  "concept": "ab265c19-afab-4497-84a9-c8b44a202ca5",
-						  "label": "3a -  DRV/r+DTG+AZT+3TC"
-						},
-						{
-						  "concept": "7f9aed33-cc7e-4043-adc8-b947dd9638eb",
-						  "label": "3b - DRV/r+DTG+TDF+3TC"
-						},
-						{
-						  "concept": "664137bb-d538-4afc-bbd1-7538cf158882",
-						  "label": "3c - DRV/r+ABC+3TC+DTG"
-						},
-						{
-						  "concept": "dea28eb8-1f9b-455f-afcc-dc566898cb86",
-						  "label": "3d - Other Adult 3rd line regimen"
-						},
-						{
-						  "concept": "74f685e8-7ea1-40e1-adf1-651cdf30b272",
-						  "label": "3e - DRV/r+TDF+3TC+EFV"
-						},
-						{
-						  "concept": "e8cdf6eb-2b36-4cde-bb4b-f0fd1d6d748b",
-						  "label": "3f - DRV/r+AZT+3TC+EFV"
-						},
-						{
-						  "concept": "c33efc4a-734f-4e89-92a4-71b259a5e547",
-						  "label": "4a - D4T+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "7bbee32a-31a8-4199-a8a2-2d15c748d80a",
-						  "label": "4b - D4T+3TC+EFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "756b4487-f358-4817-b248-9c05080bad67",
-						  "label": "4c - AZT+3TC+NVP",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "ad169a6d-cf1a-4363-a2da-be85998612bd",
-						  "label": "4d - AZT+3TC+EFV"
-						},
-						{
-						  "concept": "0343175a-e931-4f6c-a0c2-99e55637bda9",
-						  "label": "4f - AZT+3TC+LPVr"
-						},
-						{
-						  "concept": "d3eedcf3-9571-42a2-b8b0-189e93f72f47",
-						  "label": "4e - TDF+3TC+EFV"
-						},
-						{
-						  "concept": "e4353cd1-5a0e-4870-8af4-f012ca0145fe",
-						  "label": "4g - ABC+3TC+LPVr"
-						},
-						{
-						  "concept": "582c6b67-2f0a-4cc0-b7c0-632b4b387a17",
-						  "label": "4h - Other Child 1st line regimen"
-						},
-						{
-						  "concept": "0dbe6b49-7356-4cf0-b489-890e18c38465",
-						  "label": "4i - TDF+3TC+DTG"
-						},
-						{
-						  "concept": "eae01634-65ec-4174-a95c-622456663727",
-						  "label": "4j - ABC+3TC+DTG"
-						},
-						{
-						  "concept": "dabcfa6d-56e5-4e5d-a2f2-faf4e18b9211",
-						  "label": "4K - AZT+3TC+DTG"
-						},
-						{
-						  "concept": "c94ca2da-8066-42f7-b4c9-582dae83e552",
-						  "label": "4L - ABC+3TC+EFV"
-						},
-						{
-						  "concept": "fcafc964-f018-41c8-9dc9-343a2f4a94b5",
-						  "label": "5a - ABC+DDL+LPY",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "7c30ed1a-a770-4b74-8704-82077427128d",
-						  "label": "5b - ABC+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "18c78c5f-082c-4acc-a121-62fa334f34d3",
-						  "label": "5c - TDF+DDL+LPV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "5c9424e6-4f18-44e1-a074-e561643a7d91",
-						  "label": "5d - TDF+DDL+NFV",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "fbb4db0f-4cf4-4ca3-bde0-e20eb065e7da",
-						  "label": "5e - ABC+3TC+LPVr"
-						},
-						{
-						  "concept": "9ef4d67d-0e05-422a-aac5-80eaf71daadc",
-						  "label": "5f - AZT+3TC+LPVr"
-						},
-						{
-						  "concept": "ee5b1c56-1131-40a6-a880-5dd33a72a861",
-						  "label": "5g - TDF+3TC+EFV"
-						},
-						{
-						  "concept": "e341cf6c-4923-4eb1-8c47-e76eef19e8cf",
-						  "label": "5h - ABC+3TC+EFV"
-						},
-						{
-						  "concept": "1294646b-2c36-4169-a0aa-a0c7692003fc",
-						  "label": "5i - TDF+3TC+LPVr"
-						},
-						{
-						  "concept": "0cc9e467-c1ce-4eff-879d-8936a81b6ea3",
-						  "label": "5j - Other Child 2nd line regimen"
-						},
-						{
-						  "concept": "2e58ef33-d019-4bd9-97b8-553e39e12646",
-						  "label": "5k - RAL+AZT+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "8feb33db-71db-4fd0-a0e7-c02f81fcc76f",
-						  "label": "5l - RAL+ABC+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "3ed5d8a0-c957-4439-8f86-6c2538e69d3a",
-						  "label": "5m - ABC+3TC+DTG"
-						},
-						{
-						  "concept": "10c0f78a-cd78-40cd-9824-8d24dc95bb90",
-						  "label": "5n - AZT+3TC+DTG"
-						},
-						{
-						  "concept": "d34b5c26-c70d-4720-9784-cf8a0673d6b0",
-						  "label": "5o - TDF+3TC+DTG"
-						},
-						{
-						  "concept": "5415f1b1-a680-4870-89c5-3324d42da408",
-						  "label": "6a - DRVr+RAL+AZT+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "3e7d018b-9669-4f48-9298-d7c633f86b0f",
-						  "label": "6b - DRVr+RAL+TDF+3TC",
-						  "hide": {
-							"hideWhenExpression": "true"
-						  }
-						},
-						{
-						  "concept": "5c8d27eb-4642-4c6f-b131-1182df8d1276",
-						  "label": "6c - DRVr+DTG+AZT+3TC"
-						},
-						{
-						  "concept": "ee226f28-5e37-4c40-a8e0-47dfade32712",
-						  "label": "6d - DRVr+DTG+TDF+3TC"
-						},
-						{
-						  "concept": "57eef726-e977-4efd-996b-a94860341320",
-						  "label": "6e - Other Child 3rd line regimen"
-						},
-						{
-						  "concept": "e3eb6ae1-fd70-47b2-b1a6-702fae87b061",
-						  "label": "6f - DRV/r+DTG+ABC+3TC"
-						},
-						{
-						  "concept": "a270c994-8182-4204-9a1e-c7aa78a43b23",
-						  "label": "6g - DRV/r+ABC+3TC+EFV"
-						},
-						{
-						  "concept": "f0724e33-ca6e-415e-b385-91d53e125cfb",
-						  "label": "6h - DRV/r+AZT+3TC+EFV"
-						}
-					  ]
-					}
-				  }
-				],
-				"validators": []
-			  },
 			  {
 				"label": "Initial Dispensed dose",
 				"type": "obs",
@@ -1799,7 +1607,7 @@
 					}
 				  ]
 				},
-				"id": "SavedArvDispensedInDays"
+				"id": "savedArvDispensedInDays"
 			  },
 			  {
 				"label": "Dispensed dose",
@@ -2201,7 +2009,7 @@
 					"intent": "edit",
 					"questionOptions": {
 					  "calculate": {
-						"calculateExpression": "CustomNextVisitDateCalcEdit(followupDate,arvDispensedInDays,InitialNextVisitDate,SavedFollowupDate,SavedArvDispensedInDays)"
+						"calculateExpression": "CustomNextVisitDateCalcEdit(followupDate,arvDispensedInDays,InitialNextVisitDate,savedFollowupDate,savedArvDispensedInDays)"
 					  },
 					  "rendering": "date",
 					  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
@@ -6443,6 +6251,29 @@
 				"id": "typeOfScreening"
 			  },
 			  {
+				"label": "Initial Screening strategy",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "c842a287-f94c-48ee-a370-bd6540a0d1af",
+				  "answers": [
+					{
+					  "concept": "d3989991-4f6d-4336-9f84-cb4208d39ae6",
+					  "label": "HPV DNA screening & VIA triage"
+					},
+					{
+					  "concept": "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1",
+					  "label": "VIA"
+					},
+					{
+					  "concept": "f32b7edd-f70a-4b32-a684-4fa35eb2abcd",
+					  "label": "Cytology"
+					}
+				  ]
+				},
+				"id": "savedScreeningStrategy"
+			  },
+			  {
 				"label": "Screening strategy",
 				"type": "obs",
 				"required": "true",
@@ -6468,6 +6299,15 @@
 				  "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"id": "screeningStrategy"
+			  },
+			  {
+				"label": "Initial HPV DNA sample collection date",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "8b57d62c-c9a3-454a-b1af-929ca69603ce"
+				},
+				"id": "savedHpvDnaSampleCollectedDate"
 			  },
 			  {
 				"label": "HPV DNA sample collection date",
@@ -6514,6 +6354,29 @@
 				  }
 				],
 				"id": "hpvDnaResultReceivedDate"
+			  },
+			  {
+				"label": "Initial HPV DNA screening result",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "8ecc6d15-26dd-4840-8667-a517a93bea5f",
+				  "answers": [
+					{
+					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Positive"
+					},
+					{
+					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+					  "label": "Negative"
+					},
+					{
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Unknown"
+					}
+				  ]
+				},
+				"id": "savedHpvScreeningResult"
 			  },
 			  {
 				"label": "HPV DNA screening result",
@@ -6625,6 +6488,15 @@
 			},
 			"questions": [
 			  {
+				"label": "Initial VIA screening date",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "f46c7ed3-65c3-451c-a8e1-4c615f795db1"
+				},
+				"id": "savedViaScreeningDate"
+			  },
+			  {
 				"label": "VIA screening date",
 				"type": "obs",
 				"required": "true",
@@ -6647,6 +6519,37 @@
 				  }
 				],
 				"id": "viaScreeningDate"
+			  },
+			  {
+				"label": "Initial VIA screening result",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "ff6b60e4-7310-4ddc-98ce-a2910c32a7a0",
+				  "answers": [
+					{
+					  "concept": "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc",
+					  "label": "VIA negative"
+					},
+					{
+					  "concept": "7bc7c4f3-a636-478d-8a3f-65116093e37a",
+					  "label": "VIA positive: eligible for cryo/thermo-coagulation"
+					},
+					{
+					  "concept": "be297cab-5ae6-4e7c-8657-b82730b7b8f1",
+					  "label": "VIA positive: non-eligible for cryo/thermo-coagulation"
+					},
+					{
+					  "concept": "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Suspicious for cervical cancer"
+					},
+					{
+					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "Unknown screening result"
+					}
+				  ]
+				},
+				"id": "savedViaScreeningResult"
 			  },
 			  {
 				"label": "VIA screening result",
@@ -6692,6 +6595,15 @@
 			  "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || cytologyDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
 			},
 			"questions": [
+			  {
+				"label": "Initial Cytology sample collection date",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "3b5034de-ce0f-4017-80ab-17746ab3fe15"
+				},
+				"id": "savedCytologySampleCollectionDate"
+			  },
 			  {
 				"label": "Cytology sample collection date",
 				"type": "obs",
@@ -6744,6 +6656,29 @@
 				  }
 				],
 				"id": "cytologyResultReceivedDate"
+			  },
+			  {
+				"label": "Initial Cytology result",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "9e5c5bd8-276c-497b-9ea1-9a5c9f94faa7",
+				  "answers": [
+					{
+					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+					  "label": "Negative"
+					},
+					{
+					  "concept": "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+					  "label": "ASCUS"
+					},
+					{
+					  "concept": "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68",
+					  "label": "> Ascus"
+					}
+				  ]
+				},
+				"id": "savedCytologyResult"
 			  },
 			  {
 				"label": "Cytology result",
@@ -6999,6 +6934,15 @@
 				"id": "confirmedCxCaCases"
 			  },
 			  {
+				"label": "Initial Date treatment given",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+				},
+				"id": "savedDateTreatmentGiven"
+			  },
+			  {
 				"label": "Date treatment given",
 				"type": "obs",
 				"hide": {
@@ -7206,13 +7150,22 @@
 			},
 			"questions": [
 			  {
+				"label": "Initial Next follow-up/screening date for CxCa",
+				"type": "obs",
+				"questionOptions": {
+				  "rendering": "fixed",
+				  "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f"
+				},
+				"id": "savedNextFollowupScreeningDate"
+			  },
+			  {
 				"label": "Next follow-up/screening date for CxCa",
 				"type": "obs",
 				"questionOptions": {
 				  "rendering": "date",
 				  "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
 				  "calculate": {
-					"calculateExpression": "CustomNextFollowupDateForCxCa('screeningStrategy', 'hpvScreeningResult', 'viaScreeningResult', 'cytologyResult', 'hpvDnaSampleCollectedDate', 'viaScreeningDate', 'cytologySampleCollectionDate', 'dateTreatmentGiven')"
+					"calculateExpression": "CalcNextFollowupDateForCxCaEdit(screeningStrategy, hpvScreeningResult, viaScreeningResult, cytologyResult, hpvDnaSampleCollectedDate, viaScreeningDate, cytologySampleCollectionDate, dateTreatmentGiven, savedScreeningStrategy, savedHpvScreeningResult, savedViaScreeningResult, savedCytologyResult, SavedHpvDnaSampleCollectedDate, savedViaScreeningDate, savedCytologySampleCollectionDate, savedDateTreatmentGiven, savedNextFollowupScreeningDate)"
 				  }
 				},
 				"validators": [
