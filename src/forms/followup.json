@@ -1933,7 +1933,7 @@
 				},
 				"readonly": "true",
 				"hide": {
-				  "hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+				  "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"id": "treatmentEndDate"
 			  },
@@ -1961,6 +1961,13 @@
 					  "rendering": "date",
 					  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
 					}
+				  }
+				],
+				"validators": [
+				  {
+					"type": "js_expression",
+					"failsWhenExpression": "myValue < new Date(followupDate)",
+					"message": "Next visit date should not be earlier than Followup date"
 				  }
 				],
 				"hide": {

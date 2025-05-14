@@ -12,8 +12,8 @@ import {
 } from "../../constants";
 import { getData } from "../encounterUtils";
 import { moduleName } from "../../index";
-import styles from "../../root.scss";
-import { fetchIdentifiers, getPatientEncounters } from "../../api/api";
+import styles from "./followup.scss";
+import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../api/api";
 import dayjs from "dayjs";
 
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
@@ -26,7 +26,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           const rawDate = getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
           return rawDate ? rawDate.split(',')[0].trim() : "";
         },
-      },      
+      }, 
       {
         key: "artRegimen",
         header: "ART Regimen",
@@ -133,6 +133,8 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasUAN, setHasUAN] = useState(false);
   const [hasIntakeAEncounter, setHasIntakeAEncounter] = useState(false);
+  const [isDead, setIsDead] = useState(false);
+
   useEffect(() => {
     (async () => {
       const identifiers = await fetchIdentifiers(patientUuid);
@@ -157,6 +159,18 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         setHasIntakeAEncounter(true);
       }
     })();
+    (async () => {
+      const latestObs = await getLatestObs(
+        patientUuid,
+        "222f64a8-a603-4d2e-b70e-2d90b622bb04", // Follow-up status
+        FOLLOWUP_ENCOUNTER_TYPE
+      );
+    
+      if (latestObs?.valueCodeableConcept?.text?.toLowerCase() === "dead") {
+        setIsDead(true);
+      }
+    })();
+    
   });
   return (
     <>
@@ -170,7 +184,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN || !hasIntakeAEncounter,
+          hideFormLauncher: !hasMRN || !hasIntakeAEncounter || isDead,
         }}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
@@ -178,6 +192,12 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       {!hasIntakeAEncounter && (
         <p className={styles.patientName}>{formWarning("Intake A")}</p>
       )}
+      {isDead && (
+        <p className={styles.warningMessage}>
+          ⚠️ Patient last follow-up status is set to be Dead, please edit the previous follow-up before preceeding.
+        </p>
+)}
+
     </>
   );
 };
