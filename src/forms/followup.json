@@ -1938,15 +1938,6 @@
 				"id": "treatmentEndDate"
 			  },
 			  {
-				"label": "Initial Next visit date",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
-				},
-				"id": "initialNextVisitDate"
-			  },
-			  {
 				"label": "Next visit date",
 				"type": "obs",
 				"questionOptions": {
@@ -5885,7 +5876,7 @@
 					},
 					{
 					  "concept": "e687b464-e1fe-4f1b-ab76-8071f354fdaa",
-					  "label": "Returned to covenatal care"
+					  "label": "Returned to conventional care"
 					},
 					{
 					  "concept": "32847bee-a237-423d-93d1-61017213a14c",

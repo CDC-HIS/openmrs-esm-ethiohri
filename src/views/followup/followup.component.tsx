@@ -14,21 +14,19 @@ import { getData } from "../encounterUtils";
 import { moduleName } from "../../index";
 import styles from "../../root.scss";
 import { fetchIdentifiers, getPatientEncounters } from "../../api/api";
+import dayjs from "dayjs";
 
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
     () => [
       {
         key: "followUpDate",
-        header: "Follow-Up Date",
+        header: "FollowUp Date",
         getValue: (encounter) => {
-          return getData(
-            encounter,
-            "5c118396-52dc-4cac-8860-e6d8e4a7f296",
-            true
-          );
+          const rawDate = getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
+          return rawDate ? rawDate.split(',')[0].trim() : "";
         },
-      },
+      },      
       {
         key: "artRegimen",
         header: "ART Regimen",
@@ -89,22 +87,16 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "cxcaScreeningDate",
         header: "CXCA Screening Date",
         getValue: (encounter) => {
-          return getData(
-            encounter,
-            "72a28ebe-77ba-4592-9291-ac91e46ea770",
-            true
-          );
+          const rawDate = getData(encounter, "72a28ebe-77ba-4592-9291-ac91e46ea770", true);
+          return rawDate ? rawDate.split(',')[0].trim() : "";
         },
       },
       {
         key: "nextVisitDate",
         header: "Next Visit Date",
         getValue: (encounter) => {
-          return getData(
-            encounter,
-            "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
-            true
-          );
+          const rawDate = getData(encounter, "c596f199-4d76-4eca-b3c4-ffa631c0aee9", true);
+          return rawDate ? rawDate.split(',')[0].trim() : "";
         },
       },
       {
