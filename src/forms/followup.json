@@ -41,15 +41,6 @@
 				"id": "enrollment_date"
 			  },
 			  {
-				"label": "Initial Followup date",
-				"type": "obs",
-				"id": "savedFollowupDate",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
-				}
-			  },
-			  {
 				"label": "Followup date",
 				"type": "obs",
 				"required": "true",
@@ -1571,45 +1562,6 @@
 				]
 			  },
 			  {
-				"label": "Initial Dispensed dose",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
-				  "answers": [
-					{
-					  "concept": "3ae4256e-6d23-44dc-9f44-5d3e647ca1ba",
-					  "label": "15"
-					},
-					{
-					  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
-					  "label": "30"
-					},
-					{
-					  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
-					  "label": "60"
-					},
-					{
-					  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
-					  "label": "90"
-					},
-					{
-					  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
-					  "label": "120"
-					},
-					{
-					  "concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
-					  "label": "150"
-					},
-					{
-					  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
-					  "label": "180"
-					}
-				  ]
-				},
-				"id": "savedArvDispensedInDays"
-			  },
-			  {
 				"label": "Dispensed dose",
 				"type": "obs",
 				"required": "true",
@@ -2008,9 +1960,6 @@
 				  {
 					"intent": "edit",
 					"questionOptions": {
-					  "calculate": {
-						"calculateExpression": "CustomNextVisitDateCalcEdit(followupDate,arvDispensedInDays,initialNextVisitDate,savedFollowupDate,savedArvDispensedInDays)"
-					  },
 					  "rendering": "date",
 					  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
 					}
@@ -2047,7 +1996,7 @@
 				"validators": [
 				  {
 					"type": "date",
-					"allowFutureDates": "false"
+					"allowFutureDates": "true"
 				  },
 				  {
 					"type": "js_expression",
@@ -6248,29 +6197,6 @@
 				"id": "typeOfScreening"
 			  },
 			  {
-				"label": "Initial Screening strategy",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "c842a287-f94c-48ee-a370-bd6540a0d1af",
-				  "answers": [
-					{
-					  "concept": "d3989991-4f6d-4336-9f84-cb4208d39ae6",
-					  "label": "HPV DNA screening & VIA triage"
-					},
-					{
-					  "concept": "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1",
-					  "label": "VIA"
-					},
-					{
-					  "concept": "f32b7edd-f70a-4b32-a684-4fa35eb2abcd",
-					  "label": "Cytology"
-					}
-				  ]
-				},
-				"id": "savedScreeningStrategy"
-			  },
-			  {
 				"label": "Screening strategy",
 				"type": "obs",
 				"required": "true",
@@ -6296,15 +6222,6 @@
 				  "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"id": "screeningStrategy"
-			  },
-			  {
-				"label": "Initial HPV DNA sample collection date",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "8b57d62c-c9a3-454a-b1af-929ca69603ce"
-				},
-				"id": "savedHpvDnaSampleCollectedDate"
 			  },
 			  {
 				"label": "HPV DNA sample collection date",
@@ -6351,29 +6268,6 @@
 				  }
 				],
 				"id": "hpvDnaResultReceivedDate"
-			  },
-			  {
-				"label": "Initial HPV DNA screening result",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "8ecc6d15-26dd-4840-8667-a517a93bea5f",
-				  "answers": [
-					{
-					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Positive"
-					},
-					{
-					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-					  "label": "Negative"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Unknown"
-					}
-				  ]
-				},
-				"id": "savedHpvScreeningResult"
 			  },
 			  {
 				"label": "HPV DNA screening result",
@@ -6485,15 +6379,6 @@
 			},
 			"questions": [
 			  {
-				"label": "Initial VIA screening date",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "f46c7ed3-65c3-451c-a8e1-4c615f795db1"
-				},
-				"id": "savedViaScreeningDate"
-			  },
-			  {
 				"label": "VIA screening date",
 				"type": "obs",
 				"required": "true",
@@ -6516,37 +6401,6 @@
 				  }
 				],
 				"id": "viaScreeningDate"
-			  },
-			  {
-				"label": "Initial VIA screening result",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "ff6b60e4-7310-4ddc-98ce-a2910c32a7a0",
-				  "answers": [
-					{
-					  "concept": "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc",
-					  "label": "VIA negative"
-					},
-					{
-					  "concept": "7bc7c4f3-a636-478d-8a3f-65116093e37a",
-					  "label": "VIA positive: eligible for cryo/thermo-coagulation"
-					},
-					{
-					  "concept": "be297cab-5ae6-4e7c-8657-b82730b7b8f1",
-					  "label": "VIA positive: non-eligible for cryo/thermo-coagulation"
-					},
-					{
-					  "concept": "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Suspicious for cervical cancer"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Unknown screening result"
-					}
-				  ]
-				},
-				"id": "savedViaScreeningResult"
 			  },
 			  {
 				"label": "VIA screening result",
@@ -6592,15 +6446,6 @@
 			  "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || cytologyDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
 			},
 			"questions": [
-			  {
-				"label": "Initial Cytology sample collection date",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "3b5034de-ce0f-4017-80ab-17746ab3fe15"
-				},
-				"id": "savedCytologySampleCollectionDate"
-			  },
 			  {
 				"label": "Cytology sample collection date",
 				"type": "obs",
@@ -6653,29 +6498,6 @@
 				  }
 				],
 				"id": "cytologyResultReceivedDate"
-			  },
-			  {
-				"label": "Initial Cytology result",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "9e5c5bd8-276c-497b-9ea1-9a5c9f94faa7",
-				  "answers": [
-					{
-					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-					  "label": "Negative"
-					},
-					{
-					  "concept": "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "ASCUS"
-					},
-					{
-					  "concept": "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68",
-					  "label": "> Ascus"
-					}
-				  ]
-				},
-				"id": "savedCytologyResult"
 			  },
 			  {
 				"label": "Cytology result",
@@ -6931,15 +6753,6 @@
 				"id": "confirmedCxCaCases"
 			  },
 			  {
-				"label": "Initial Date treatment given",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-				},
-				"id": "savedDateTreatmentGiven"
-			  },
-			  {
 				"label": "Date treatment given",
 				"type": "obs",
 				"hide": {
@@ -7147,24 +6960,31 @@
 			},
 			"questions": [
 			  {
-				"label": "Initial Next follow-up/screening date for CxCa",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "fixed",
-				  "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f"
-				},
-				"id": "savedNextFollowupScreeningDate"
-			  },
-			  {
 				"label": "Next follow-up/screening date for CxCa",
 				"type": "obs",
 				"questionOptions": {
 				  "rendering": "date",
 				  "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
 				  "calculate": {
-					"calculateExpression": "CalcNextFollowupDateForCxCaEdit(screeningStrategy, hpvScreeningResult, viaScreeningResult, cytologyResult, hpvDnaSampleCollectedDate, viaScreeningDate, cytologySampleCollectionDate, dateTreatmentGiven, savedScreeningStrategy, savedHpvScreeningResult, savedViaScreeningResult, savedCytologyResult, savedHpvDnaSampleCollectedDate, savedViaScreeningDate, savedCytologySampleCollectionDate, savedDateTreatmentGiven, savedNextFollowupScreeningDate)"
+					"calculateExpression": "CustomNextFollowupDateForCxCa(screeningStrategy, hpvScreeningResult, viaScreeningResult, cytologyResult, hpvDnaSampleCollectedDate, viaScreeningDate, cytologySampleCollectionDate, dateTreatmentGiven)"
 				  }
 				},
+				"behaviours": [
+				  {
+					"intent": "edit",
+					"questionOptions": {
+					  "rendering": "date",
+					  "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f"
+					}
+				  },
+				  {
+					"intent": "view",
+					"questionOptions": {
+					  "rendering": "date",
+					  "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f"
+					}
+				  }
+				],
 				"validators": [
 				  {
 					"type": "js_expression",

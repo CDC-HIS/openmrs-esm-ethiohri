@@ -27,7 +27,6 @@ import {
 } from "./ethiohri-dashboard.meta";
 import {
   CalcNextVisitDate,
-  CalcNextVisitDateEdit,
   CalcTreatmentEndDate,
   CalcPrepDoseEndDate,
   CalcMonthsOnART,
@@ -36,7 +35,6 @@ import {
   CalcNutritionalScreening,
   CalcOlderChildNutritionalStatus,
   CalcNextFollowupDateForCxCa,
-  CalcNextFollowupDateForCxCaEdit,
   CalcBMI,
   getGender,
   getIdentifier,
@@ -78,7 +76,6 @@ export const importTranslation = require.context(
 export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
-  registerExpressionHelper("CustomNextVisitDateCalcEdit", CalcNextVisitDateEdit);
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
   registerExpressionHelper("CustomPrepDoseEndDateCalc", CalcPrepDoseEndDate);
   registerExpressionHelper("CustomMonthsOnARTCalc", CalcMonthsOnART);
@@ -98,10 +95,6 @@ export function startupApp() {
   registerExpressionHelper(
     "CustomNextFollowupDateForCxCa",
     CalcNextFollowupDateForCxCa
-  );
-  registerExpressionHelper(
-    "CustomNextFollowupDateForCxCaEdit",
-    CalcNextFollowupDateForCxCaEdit
   );
   registerExpressionHelper("CustomBMICalc", CalcBMI);
   registerExpressionHelper("getGender", getGender);
