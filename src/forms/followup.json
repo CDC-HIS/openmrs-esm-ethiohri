@@ -1972,6 +1972,11 @@
 					"type": "js_expression",
 					"failsWhenExpression": "myValue < new Date(followupDate)",
 					"message": "Next visit date should not be earlier than Followup date"
+				  },
+				  {
+					"type": "js_expression",
+					"failsWhenExpression": "myValue > new Date(treatmentEndDate)",
+					"message": "Next visit date should not be later than Treatment end date"
 				  }
 				],
 				"hide": {
@@ -2023,7 +2028,7 @@
 				"type": "obs",
 				"required": false,
 				"hide": {
-				  "hideWhenExpression": "followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e'"
+				  "hideWhenExpression": "followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 				},
 				"id": "observationsConductedDuringCurrentVisit",
 				"questionOptions": {
