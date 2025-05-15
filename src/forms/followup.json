@@ -1940,6 +1940,7 @@
 			  {
 				"label": "Next visit date",
 				"type": "obs",
+				"required": true,
 				"questionOptions": {
 				  "calculate": {
 					"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays')"
@@ -1951,6 +1952,9 @@
 				  {
 					"intent": "edit",
 					"questionOptions": {
+					  "calculate": {
+						"calculateExpression": "nextVisitDate ? nextVisitDate : CustomNextVisitDateCalc(followupDate,arvDispensedInDays)"
+					  },
 					  "rendering": "date",
 					  "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
 					}
@@ -2018,6 +2022,9 @@
 				"label": "List of observations",
 				"type": "obs",
 				"required": false,
+				"hide": {
+				  "hideWhenExpression": "followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e'"
+				},
 				"id": "observationsConductedDuringCurrentVisit",
 				"questionOptions": {
 				  "rendering": "checkbox",
