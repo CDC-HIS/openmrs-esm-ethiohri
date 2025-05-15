@@ -2811,10 +2811,10 @@
 				"id": "dateOfPMTCTReferral",
 				"questionOptions": {
 				  "calculate": {
-					"calculateExpression": "resolve(api.getLatestObs(patient.id, '161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
+					"calculateExpression": "resolve(api.getLatestObs(patient.id, '51882d86-f124-4ac0-991d-59cce5b81763', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
 				  },
 				  "rendering": "date",
-				  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+				  "concept": "51882d86-f124-4ac0-991d-59cce5b81763",
 				  "answers": []
 				},
 				"behaviours": [
@@ -2822,14 +2822,14 @@
 					"intent": "edit",
 					"questionOptions": {
 					  "rendering": "date",
-					  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+					  "concept": "51882d86-f124-4ac0-991d-59cce5b81763"
 					}
 				  },
 				  {
 					"intent": "view",
 					"questionOptions": {
 					  "rendering": "date",
-					  "concept": "161561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+					  "concept": "51882d86-f124-4ac0-991d-59cce5b81763"
 					}
 				  }
 				],
