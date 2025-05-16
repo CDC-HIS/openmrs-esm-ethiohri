@@ -12,13 +12,6 @@ import { getPatientEncounters } from "../../../api/api";
 
 const columns = [
   {
-    key: "dateOfRetesting",
-    header: "Date of Re-test",
-    getValue: (encounter) => {
-      return getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7", true);
-    },
-  },
-  {
     key: "dateOfInitialTest",
     header: "Date of Initial test",
     getValue: (encounter) => {
@@ -26,38 +19,38 @@ const columns = [
     },
   },
   {
+    key: "dateOfRetesting",
+    header: "Date of Re-test",
+    getValue: (encounter) => {
+      return getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7", true);
+    },
+  },  
+  {
     key: "entryPoint",
     header: "Entry Point",
     getValue: (encounter) => {
       return getData(encounter, "d2b461e5-dd7f-4d16-968e-354ac68cbd38");
     },
-  },
-  {
-    key: "result1",
-    header: "Test 1 Result",
-    getValue: (encounter) => {
-      return getData(encounter, "be4e10ae-f149-439e-904b-a02a264cbfdb");
-    },
-  },
-  {
-    key: "result2",
-    header: "Test 2 Result",
-    getValue: (encounter) => {
-      return getData(encounter, "6d5b24ab-8ea3-4aca-a9a3-2abc14db1b96");
-    },
-  },
-  {
-    key: "result3",
-    header: "Test 3 Result",
-    getValue: (encounter) => {
-      return getData(encounter, "04e7081b-4a0d-4409-9cef-3623b29f8bd2");
-    },
-  },
+  },  
   {
     key: "finalResult",
     header: "Final Result",
     getValue: (encounter) => {
       return getData(encounter, "2b1ea8df-3293-4964-9b44-9e31dff678a4");
+    },
+  },
+  {
+    key: "resultFinal",
+    header: "Final result from lab",
+    getValue: (encounter) => {
+      return getData(encounter, "2e770be1-7397-4684-bea6-6632c23b00d7");
+    },
+  },
+  {
+    key: "actionTaken",
+    header: "Action taken/Final result",
+    getValue: (encounter) => {
+      return getData(encounter, "3e8686f9-694f-496b-8f5c-565833d035d1");
     },
   },
   {
