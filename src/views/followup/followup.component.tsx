@@ -12,7 +12,8 @@ import {
 } from "../../constants";
 import { getData } from "../encounterUtils";
 import { moduleName } from "../../index";
-import styles from "./followup.scss";
+import styles from "../../root.scss";
+import stylesDead from "./followup.scss";
 import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../api/api";
 import dayjs from "dayjs";
 
@@ -193,7 +194,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         <p className={styles.patientName}>{formWarning("Intake A")}</p>
       )}
       {isDead && (
-        <p className={styles.warningMessage}>
+        <p className={stylesDead.warningMessage}>
           ⚠️ Patient last follow-up status is set to be Dead, please edit the previous follow-up before preceeding.
         </p>
 )}
