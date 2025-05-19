@@ -191,39 +191,55 @@ export function CalcBMI(height: number, weight: number) {
   return height && weight ? resultBMI : null;
 }
 
-export function CalcAdultNutritionalStatus(height, weight, muac) {
-  let nutritionalStatus: string;
-  let resultBMI = CalcBMI(height, weight);
+export function CalcAdultNutritionalStatus(height, weight, muac, functionalStatus, pregnant, breastfeeding) {
+  let nutritionalStatus: string | null = null;
+  const BEDRIDDEN = "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  const YES = "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
-  if (muac) {
+  const resultBMI = CalcBMI(height, weight);
+
+  // Priority 1: Functional Status 'bedridden' with MUAC
+  if (functionalStatus === BEDRIDDEN && muac != null) {
     if (muac > 23) {
-      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (muac >= 19 && muac <= 23) {
-      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (muac < 19) {
-      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      return null;
-    }
-  } else if (resultBMI) {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
-      nutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
-      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI < 16) {
-      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-      nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (resultBMI >= 30) {
-      nutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      return null;
+      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (muac >= 18 && muac <= 23) {
+      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (muac < 18) {
+      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
     }
   }
+
+  // Priority 2: Pregnant or Breastfeeding with MUAC
+  else if ((pregnant === YES || breastfeeding === YES) && muac != null) {
+    if (muac > 23) {
+      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (muac >= 19 && muac <= 23) {
+      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (muac < 19) {
+      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    }
+  }
+
+  // Priority 3: Use BMI
+  else if (resultBMI != null) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+      nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
+      nutritionalStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Mild Malnutrition
+    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
+      nutritionalStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (resultBMI < 16) {
+      nutritionalStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+      nutritionalStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight
+    } else if (resultBMI >= 30) {
+      nutritionalStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Obese
+    }
+  }
+
   return nutritionalStatus;
 }
+
 
 export function CalcOlderChildNutritionalStatus(bmiForAge) {
   switch (bmiForAge) {
