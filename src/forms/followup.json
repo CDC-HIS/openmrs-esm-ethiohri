@@ -2307,23 +2307,23 @@
                 "answers": [
                   {
                     "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Normal"
+                    "label": "Normal/ Appropriate  (> -1Z-score)"
                   },
                   {
                     "concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Mild Malnutrition"
+                    "label": "Mild (<-1 and > -2 Z-score)"
                   },
                   {
                     "concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Moderate Malnutrition"
+                    "label": "MAM- Moderate Acute Malnutrition  (<-2 and >-3 Z-score)"
                   },
                   {
                     "concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Severe Malnutrition"
+                    "label": "SAM-Severe Acute Malnutrition (<-3 Z-score)"
                   },
                   {
                     "concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Overweight"
+                    "label": "Overweight (>+2 Z-score)"
                   }
                 ]
               },
@@ -2341,26 +2341,26 @@
                 "calculate": {
                   "calculateExpression": "CustomOlderChildNutritionalStatusCalc('bmiForAge')"
                 },
-                "answers": [                  
+                "answers": [
                   {
                     "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Normal"
+                    "label": "Normal/ Appropriate  (> -1Z-score)"
                   },
                   {
                     "concept": "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Mild Malnutrition"
+                    "label": "Mild (<-1 and > -2 Z-score)"
                   },
                   {
                     "concept": "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Moderate Malnutrition"
+                    "label": "MAM- Moderate Acute Malnutrition  (<-2 and >-3 Z-score)"
                   },
                   {
                     "concept": "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Severe Malnutrition"
+                    "label": "SAM-Severe Acute Malnutrition (<-3 Z-score)"
                   },
                   {
                     "concept": "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Overweight"
+                    "label": "Overweight (>+2 Z-score)"
                   }
                 ]
               },
@@ -2772,6 +2772,7 @@
             {
               "label": "EDD",
               "type": "obs",
+              "readonly": true,
               "questionOptions": {
                 "rendering": "date",
                 "calculate": {
@@ -2789,6 +2790,9 @@
               "type": "obs",
               "required": true,
               "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                },
                 "rendering": "radio",
                 "concept": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "answers": [
@@ -3515,6 +3519,11 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(dateTptCompleted)",
+                  "message": "TPT Start Date should not be later than Date TPT Completed"
                 }
               ],
               "id": "tptStartDate"
@@ -4879,6 +4888,16 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
                   "message": "Date EAC-1 provided should not be earlier than Viral Load Result Received date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue >= new Date(dateEAC2Provided)",
+                  "message": "Date EAC-1 provided should not be later than Date EAC-2 provided"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue >= new Date(dateEAC3Provided)",
+                  "message": "Date EAC-1 provided should not be later than Date EAC-3 provided"
                 }
               ],
               "id": "dateEAC1Provided"
@@ -4900,8 +4919,13 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateEAC1Provided)",
+                  "failsWhenExpression": "myValue <= new Date(dateEAC1Provided)",
                   "message": "Date EAC-2 provided should not be earlier than Date EAC-1 provided"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue >= new Date(dateEAC3Provided)",
+                  "message": "Date EAC-2 provided should not be later than Date EAC-3 provided"
                 }
               ],
               "id": "dateEAC2Provided"
@@ -4923,8 +4947,13 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateEAC2Provided)",
+                  "failsWhenExpression": "myValue <= new Date(dateEAC2Provided)",
                   "message": "Date EAC-3 provided should not be earlier than Date EAC-2 provided"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue <= new Date(dateEAC1Provided)",
+                  "message": "Date EAC-3 provided should not be earlier than Date EAC-1 provided"
                 }
               ],
               "id": "dateEAC3Provided"
@@ -5438,7 +5467,7 @@
           "label": "Operation Triple Zero",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "age < 10 || age > 19"
+            "hideWhenExpression": "age < 10 || age > 24"
           },
           "questions": [
             {

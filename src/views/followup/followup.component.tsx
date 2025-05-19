@@ -73,8 +73,20 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       {
         key: "vlStatus",
         header: "VL Status",
+        // getValue: (encounter) => {
+        //   return getData(encounter, "2dc9ee04-4d12-4606-ae0f-86895bf14a44");
+        // },
         getValue: (encounter) => {
-          return getData(encounter, "2dc9ee04-4d12-4606-ae0f-86895bf14a44");
+          const vlStatus = getData(
+            encounter,
+            "2dc9ee04-4d12-4606-ae0f-86895bf14a44"
+          );
+          if (vlStatus === "LLV") {
+            return "Low Level Viremia";
+          } else if (vlStatus === "HIV infection with high viral load") {
+            return "High Viral Load";
+          }
+          return vlStatus; // Return the original value if no modification is needed
         },
       },
       {
