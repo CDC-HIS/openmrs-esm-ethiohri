@@ -5068,6 +5068,11 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(cotrimoxazoleStopDate)",
+                  "message": "Cotrimoxazole started date should not be later than stopped date"
                 }
               ],
               "id": "cotrimoxazoleStartDate"
@@ -5281,6 +5286,11 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(fluconazoleStopDate)",
+                  "message": "Fluconazole started date should not be later than stopped date"
                 }
               ],
               "id": "fluconazoleStartDate"
@@ -5931,7 +5941,10 @@
                   },
                   {
                     "concept": "32847bee-a237-423d-93d1-61017213a14c",
-                    "label": "Moved to other DSD model"
+                    "label": "Moved to other DSD model",
+                    "hide": {
+                      "hideWhenExpression": "assessmentCategory === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    }
                   },
                   {
                     "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
