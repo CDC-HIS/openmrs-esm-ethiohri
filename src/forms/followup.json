@@ -473,6 +473,11 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
                   "message": "ART started date should not be earlier than HIV Confirmation date in Intake A"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(followupDate)",
+                  "message": "ART started date should not be later than Followup date"
                 }
               ],
               "id": "artStartDate"
