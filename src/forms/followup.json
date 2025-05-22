@@ -105,22 +105,6 @@
                   "calculateExpression": "resolve(api.getLatestObs(patient.id, '160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueDateTime"
                 }
               },
-              "behaviours": [
-                {
-                  "intent": "edit",
-                  "questionOptions": {
-                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "date"
-                  }
-                },
-                {
-                  "intent": "view",
-                  "questionOptions": {
-                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "rendering": "date"
-                  }
-                }
-              ],
               "validators": [
                 {
                   "type": "date",
@@ -226,64 +210,6 @@
               "id": "eligibleDate"
             },
             {
-              "label": "Transferred-In (check this for all TI cases)",
-              "type": "obs",
-              "questionOptions": {
-                "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
-                },
-                "rendering": "radio",
-                "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
-                "answers": [
-                  {
-                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Yes"
-                  },
-                  {
-                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "No"
-                  }
-                ]
-              },
-              "behaviours": [
-                {
-                  "intent": "edit",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "intent": "view",
-                  "questionOptions": {
-                    "rendering": "radio",
-                    "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
-                    "answers": [
-                      {
-                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Yes"
-                      },
-                      {
-                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "No"
-                      }
-                    ]
-                  }
-                }
-              ],
-              "id": "transferredInCase"
-            },
-            {
               "label": "Why Eligible?",
               "type": "obs",
               "questionOptions": {
@@ -360,10 +286,65 @@
                   }
                 }
               ],
-              "hide": {
-                "hideWhenExpression": "transferredInCase === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              },
               "id": "whyEligible"
+            },
+            {
+              "label": "Transferred-In (check this for all TI cases)",
+              "type": "obs",
+              "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                },
+                "rendering": "radio",
+                "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "id": "transferredInCase"
             },
             {
               "label": "UAN",
@@ -552,7 +533,7 @@
               "id": "followupStatus",
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '222f64a8-a603-4d2e-b70e-2d90b622bb04', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                  "calculateExpression": "loadFollowupStatus(patient)"
                 },
                 "rendering": "select",
                 "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
