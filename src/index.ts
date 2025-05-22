@@ -41,6 +41,7 @@ import {
   calcEGFR,
   isDateAlreadyUsed,
   isSupplementaryFoodVisible,
+  isTOVisible,
   isTreatmentVisible,
   loadFollowupStatus,
   getBirthdateFromAge,
@@ -106,6 +107,10 @@ export function startupApp() {
   registerExpressionHelper(
     "isSupplementaryFoodVisible",
     isSupplementaryFoodVisible
+  );
+  registerExpressionHelper(
+    "isTOVisible",
+    isTOVisible
   );
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
   registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);

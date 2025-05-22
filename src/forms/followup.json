@@ -65,6 +65,11 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue < new Date(enrollment_date)",
                   "message": "Followup date should not be earlier than Registration date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(toDate)",
+                  "message": "Followup date should not be later than Planned Transfer-Out Date"
                 }
               ]
             },
@@ -1927,7 +1932,7 @@
               "id": "reasonForPoorARVAdherence"
             },
             {
-              "label": "Treatment end date",
+              "label": "Last TX_Curr Date",
               "type": "obs",
               "questionOptions": {
                 "calculate": {
@@ -1992,11 +1997,14 @@
           ]
         },
         {
-          "label": "Transfer-Out(TO) Reminder",
+          "label": "Transfer-Out (TO) Schedule",
           "isExpanded": "true",
+          "hide": {
+            "hideWhenExpression": "isTOVisible(followupDate,arvDispensedInDays)"
+          },
           "questions": [
             {
-              "label": "Transfer-Out(TO) date",
+              "label": "Planned Transfer-Out Date",
               "type": "obs",
               "required": false,
               "id": "toDate",
@@ -2012,8 +2020,8 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate)",
-                  "message": "Transfer out date should not be earlier than Followup date"
+                  "failsWhenExpression": "myValue < CustomNextVisitDateCalc('followupDate','arvDispensedInDays')",
+                  "message": "Transfer out date should not be earlier than Dose End Date"
                 }
               ]
             }
@@ -2125,7 +2133,7 @@
               "label": "Height (in cm) for Adult",
               "type": "obs",
               "hide": {
-                "hideWhenExpression": "age <= 4"
+                "hideWhenExpression": "age < 5"
               },
               "questionOptions": {
                 "calculate": {
@@ -2296,7 +2304,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "age <= 17"
+                "hideWhenExpression": "age < 18"
               },
               "id": "nutritionalStatusOfAdult"
             },
@@ -2333,7 +2341,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "age <= 4 || age >= 17"
+                "hideWhenExpression": "age < 5 || age > 18"
               },
               "id": "nutritionalStatusOfOlderChild"
             },
@@ -2370,7 +2378,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "age >= 4"
+                "hideWhenExpression": "age >= 5"
               },
               "id": "nutritionalStatusOfChild"
             },
@@ -2381,7 +2389,7 @@
                 "rendering": "radio",
                 "concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
                 "calculate": {
-                  "calculateExpression": "CustomNutritionalScreeningCalc(patient, 'height','weight', 'muac', 'bmiForAge')"
+                  "calculateExpression": "CustomNutritionalScreeningCalc(height, weight, muac, functionalStatus, pregnant, breastfeeding).screening"
                 },
                 "answers": [
                   {
@@ -2913,6 +2921,10 @@
                     "hide": {
                       "hideWhenExpression": "patient.gender === 'male'"
                     }
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "None"
                   }
                 ]
               },
@@ -3514,7 +3526,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -3587,7 +3599,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "TBProphylaxisType"
             },
@@ -3897,95 +3909,9 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || (!tptStartDate && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
               },
               "id": "tptFollowup"
-            },
-            {
-              "label": "Date TPT completed",
-              "type": "obs",
-              "required": true,
-              "questionOptions": {
-                "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
-                },
-                "rendering": "date",
-                "concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-              },
-              "behaviours": [
-                {
-                  "intent": "edit",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                  }
-                },
-                {
-                  "intent": "view",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                  }
-                }
-              ],
-              "hide": {
-                "hideWhenExpression": "tptFollowup !== 'a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb' && tptFollowup !== '574f5071-03fb-4067-a26d-419ecf3ce151'"
-              },
-              "validators": [
-                {
-                  "type": "date",
-                  "allowFutureDates": "false"
-                },
-                {
-                  "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
-                  "message": "Date TPT Completed should not be earlier than TPT Start Date"
-                }
-              ],
-              "id": "dateTptCompleted"
-            },
-            {
-              "label": "Date TPT discontinued",
-              "type": "obs",
-              "required": true,
-              "questionOptions": {
-                "rendering": "date",
-                "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
-                },
-                "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-              },
-              "behaviours": [
-                {
-                  "intent": "edit",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                  }
-                },
-                {
-                  "intent": "view",
-                  "questionOptions": {
-                    "rendering": "date",
-                    "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                  }
-                }
-              ],
-              "hide": {
-                "hideWhenExpression": "tptFollowup !== '86e102e6-ddf4-423c-b5b7-3d157de0c96f' && tptFollowup !== '4176b0d5-8f11-4681-8d9e-1f153cd0205d'"
-              },
-              "validators": [
-                {
-                  "type": "date",
-                  "allowFutureDates": "false"
-                },
-                {
-                  "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
-                  "message": "Date TPT Discontinued should not be earlier than TPT Start Date"
-                }
-              ],
-              "id": "dateTptDiscontinued"
             },
             {
               "label": "TPT dispensed dose in days",
@@ -4032,9 +3958,95 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || (!tptStartDate && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
               },
               "validators": []
+            },
+            {
+              "label": "Date TPT completed",
+              "type": "obs",
+              "required": true,
+              "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
+                },
+                "rendering": "date",
+                "concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "162279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!myValue && tptFollowup !== 'a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb' && tptFollowup !== '574f5071-03fb-4067-a26d-419ecf3ce151'"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
+                  "message": "Date TPT Completed should not be earlier than TPT Start Date"
+                }
+              ],
+              "id": "dateTptCompleted"
+            },
+            {
+              "label": "Date TPT discontinued",
+              "type": "obs",
+              "required": true,
+              "questionOptions": {
+                "rendering": "date",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
+                },
+                "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "162281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!myValue && tptFollowup !== '86e102e6-ddf4-423c-b5b7-3d157de0c96f' && tptFollowup !== '4176b0d5-8f11-4681-8d9e-1f153cd0205d'"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
+                  "message": "Date TPT Discontinued should not be earlier than TPT Start Date"
+                }
+              ],
+              "id": "dateTptDiscontinued"
             },
             {
               "label": "Adherence for TPT",
@@ -4105,7 +4117,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "tptAdherence"
             },
@@ -6054,8 +6066,129 @@
       ],
       "sections": [
         {
+          "label": "Eligibility For CxCa",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Is the client eligible for CxCa Screening?",
+              "type": "obs",
+              "required": "true",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "50bf403b-8814-4cc9-aec5-73a4effd0b67",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "id": "isEligibleForCxCa"
+            },
+            {
+              "label": "Reason for not being eligible",
+              "type": "obs",
+              "required": "true",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "53ea1a45-0ee3-4b38-a7d2-250042327781",
+                "answers": [
+                  {
+                    "concept": "1a9292fe-a9f3-44ec-852e-1d21a8ab70a7",
+                    "label": "No Sexual Exposure"
+                  },
+                  {
+                    "concept": "a498b20d-70ae-450d-8d97-cf63d3275316",
+                    "label": "Total Abdominal Hysterectomy"
+                  },
+                  {
+                    "concept": "bc8827be-968b-4b8a-8e9c-7174b750281f",
+                    "label": "Already Diagnosed with Cervical Cancer"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Others"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEligibleForCxCa !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "reasonForNotEligible"
+            },
+            {
+              "label": "If others, specify",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "3e12436e-3d8c-4fd8-ba29-137644d99c2b"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 50",
+                  "message": "Please use a maximum of 50 characters"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!includes('reasonForNotEligible','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || isEligibleForCxCa !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "otherReasonForNotEligible"
+            },
+            {
+              "label": "Is the client screened in this Facility?",
+              "type": "obs",
+              "required": "true",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "fc78ad4e-a665-4dae-a056-20562426363c",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "screenedInThisFacility"
+            },
+            {
+              "label": "If No, Specify",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "161550AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "hide": {
+                "hideWhenExpression": "screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 50",
+                  "message": "Please use a maximum of 50 characters"
+                }
+              ],
+              "id": "screenedOutSide"
+            }
+          ]
+        },
+        {
           "label": "Consultation And Linkage",
           "isExpanded": "true",
+          "hide": {
+            "hideWhenExpression": "isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          },
           "questions": [
             {
               "label": "Is CxCa screening counselling given ?",
@@ -6074,6 +6207,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "screenedInThisFacility === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "id": "isCxCaCounsellingGiven"
             },
             {
@@ -6085,7 +6221,7 @@
                 "concept": "72a28ebe-77ba-4592-9291-ac91e46ea770"
               },
               "hide": {
-                "hideWhenExpression": "isCxCaCounsellingGiven !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screenedInThisFacility === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isCxCaCounsellingGiven !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -6119,7 +6255,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "isCxCaCounsellingGiven !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screenedInThisFacility === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isCxCaCounsellingGiven !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "acceptedCervicalCancerScreening"
             },
@@ -6132,7 +6268,7 @@
                 "concept": "c7ecf767-325a-41c2-80a7-79c91762ab3e"
               },
               "hide": {
-                "hideWhenExpression": "acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screenedInThisFacility === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -6170,7 +6306,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screenedInThisFacility === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "linkedToCxCaScreeningUnit"
             },
@@ -6182,17 +6318,12 @@
                 "concept": "2df6bd1b-c200-4363-8293-0d72ef24e8b7"
               },
               "hide": {
-                "hideWhenExpression": "linkedToCxCaScreeningUnit !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screenedInThisFacility === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || linkedToCxCaScreeningUnit !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
                   "type": "date",
                   "allowFutureDates": "false"
-                },
-                {
-                  "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
-                  "message": "Date Linked to CxCa unit should not be earlier than the patient's birthdate"
                 },
                 {
                   "type": "js_expression",
@@ -6221,7 +6352,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "screeningDone"
             },
@@ -6296,6 +6427,16 @@
                 },
                 {
                   "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "HPV DNA sample collection date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "HPV DNA sample collection date should not be earlier than Date accepted CxCa Screening"
+                },
+                {
+                  "type": "js_expression",
                   "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
                   "message": "HPV DNA sample collection date should not be earlier than Date counseling given"
                 }
@@ -6321,6 +6462,26 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue < new Date(hpvDnaSampleCollectedDate)",
                   "message": "HPV DNA result received date should not be earlier than HPV DNA sample collection date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "HPV DNA sample collection date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(viaScreeningDate)",
+                  "message": "HPV DNA result received date should not be later than via screen date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "HPV DNA sample collection date should not be earlier than Date accepted CxCa Screening"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+                  "message": "HPV DNA sample collection date should not be earlier than Date counseling given"
                 }
               ],
               "id": "hpvDnaResultReceivedDate"
@@ -6431,7 +6592,7 @@
           "label": "VIA",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viaDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viaDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -6449,6 +6610,21 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(hpvDnaResultReceivedDate)",
+                  "message": "VIA screening date should not be earlier than HPV DNA result received date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "VIA screening date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "VIA screening date should not be earlier than Date accepted CxCa Screening"
                 },
                 {
                   "type": "js_expression",
@@ -6499,7 +6675,7 @@
           "label": "Cytology",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || cytologyDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || cytologyDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -6520,8 +6696,23 @@
                 },
                 {
                   "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "Cytology sample collection date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "Cytology sample collection date should not be earlier than Date accepted CxCa Screening"
+                },
+                {
+                  "type": "js_expression",
                   "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
                   "message": "Cytology sample collection date should not be earlier than Date counseling given"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(cytologyResultReceivedDate)",
+                  "message": "Cytology sample collection date should not be later than Cytology Result Received Date"
                 }
               ],
               "id": "cytologySampleCollectionDate"
@@ -6544,13 +6735,23 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
-                  "message": "Cytology result received date should not be earlier than Date counseling given"
+                  "failsWhenExpression": "myValue < new Date(cytologySampleCollectionDate)",
+                  "message": "Cytology result received date should not be earlier than Cytology sample collection date"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(cytologySampleCollectionDate)",
-                  "message": "Cytology result received date should not be earlier than Cytology sample collection date"
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "Cytology result received date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "Cytology result received date should not be earlier than Date accepted CxCa Screening"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+                  "message": "Cytology result received date should not be earlier than Date counseling given"
                 }
               ],
               "id": "cytologyResultReceivedDate"
@@ -6588,7 +6789,7 @@
           "label": "Biopsy",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -6602,6 +6803,21 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue > new Date(biopsyResultReceivedDate)",
+                  "message": "Biopsy sample collection date should not be later than Biopsy Result Received Date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "Biopsy sample collection date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "Biopsy sample collection date should not be earlier than Date accepted CxCa Screening"
                 },
                 {
                   "type": "js_expression",
@@ -6625,13 +6841,23 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
-                  "message": "Biopsy result received date should not be earlier than Date counseling given"
+                  "failsWhenExpression": "myValue < new Date(biopsySampleCollectedDate)",
+                  "message": "Biopsy result received date should not be earlier than Biopsy sample collection date"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(biopsySampleCollectedDate)",
-                  "message": "Biopsy result received date should not be earlier than Biopsy sample collection date"
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "Biopsy result received date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "Biopsy result received date should not be earlier than Date accepted CxCa Screening"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+                  "message": "Biopsy result received date should not be earlier than Date counseling given"
                 }
               ],
               "id": "biopsyResultReceivedDate"
@@ -6677,7 +6903,7 @@
           "label": "Colposcopy",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -6691,6 +6917,16 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCxCaScreeningUnit)",
+                  "message": "Colposcopy exam date should not be earlier than Date linked to CxCa"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(dateAcceptedCervicalCancerScreening)",
+                  "message": "Colposcopy exam date should not be earlier than Date accepted CxCa Screening"
                 },
                 {
                   "type": "js_expression",
@@ -6733,7 +6969,7 @@
           "label": "Treatment",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding)"
+            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding) || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -6862,7 +7098,7 @@
           "label": "Referral",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding)"
+            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding) || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7012,7 +7248,7 @@
           "label": "Next Follow-up Screening Date",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7047,7 +7283,7 @@
               "validators": [
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateCxCaCounsellingGiven)",
+                  "failsWhenExpression": "myValue <= new Date(dateCxCaCounsellingGiven)",
                   "message": "Next follow-up/screening date for CxCa should not be earlier than Date counseling given"
                 }
               ],

@@ -195,11 +195,12 @@ export function CalcAdultNutritionalStatus(height, weight, muac, functionalStatu
   let nutritionalStatus: string | null = null;
   const BEDRIDDEN = "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
   const YES = "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-
+  
   const resultBMI = CalcBMI(height, weight);
 
   // Priority 1: Functional Status 'bedridden' with MUAC
-  if (functionalStatus === BEDRIDDEN && muac != null) {
+  if (functionalStatus === BEDRIDDEN && muac !== "") {
+    
     if (muac > 23) {
       nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
     } else if (muac >= 18 && muac <= 23) {
@@ -210,7 +211,7 @@ export function CalcAdultNutritionalStatus(height, weight, muac, functionalStatu
   }
 
   // Priority 2: Pregnant or Breastfeeding with MUAC
-  else if ((pregnant === YES || breastfeeding === YES) && muac != null) {
+  else if ((pregnant === YES || breastfeeding === YES) && muac !== "") {
     if (muac > 23) {
       nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
     } else if (muac >= 19 && muac <= 23) {
@@ -260,60 +261,68 @@ export function CalcOlderChildNutritionalStatus(bmiForAge) {
   }
 }
 
-export function CalcNutritionalScreening(
-  patient,
-  height,
-  weight,
-  muac,
-  bmiForAge
-) {
-  let resultBMI = CalcBMI(height, weight);
-  let nutritionalScreening: string;
+export function CalcNutritionalScreening(height, weight, muac, functionalStatus, pregnant, breastfeeding) {
+  let calculatedStatus: string | null = null;
+  let nutritionalScreening: string | null = null;
 
-  if (patient.age >= 18) {
-    if (muac) {
-      if (muac > 23) {
-        nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (muac <= 23) {
-        nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else {
-        return null;
-      }
-    } else if (resultBMI) {
-      if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-        nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI <= 18.49) {
-        nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-        nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else if (resultBMI >= 30) {
-        nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-      } else {
-        return null;
-      }
-    } else {
-      return null;
-    }
-  } else if (patient.age >= 5 && patient.age < 18) {
-    if (bmiForAge == "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f") {
-      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (bmiForAge == "6f384ab3-5587-478e-a685-0b43c0f64163") {
-      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (bmiForAge == "b782c7a5-639e-4f7e-9eee-608a62439885") {
-      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (bmiForAge == "c3354c3c-b708-4821-94ee-cebc9eadf1e3") {
-      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (bmiForAge == "9324e838-c96d-4312-91b0-deae5cc0334c") {
-      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (bmiForAge == "9a41b3bb-7c37-40f2-9022-d0f672e171cc") {
-      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else {
-      return null;
-    }
-  } else {
-    return null;
+  const BEDRIDDEN = "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  const YES = "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
+  const resultBMI = CalcBMI(height, weight);
+
+  // Step 1: Calculate status
+  if (functionalStatus === BEDRIDDEN && muac !== "") {
+    calculatedStatus = muac > 23
+      ? "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      : muac >= 18
+      ? "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      : "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  } else if ((pregnant === YES || breastfeeding === YES) && muac !== "") {
+    calculatedStatus = muac > 23
+      ? "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      : muac >= 19
+      ? "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      : "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  } else if (resultBMI != null) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99)
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    else if (resultBMI >= 17 && resultBMI <= 18.49)
+      calculatedStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    else if (resultBMI >= 16 && resultBMI <= 16.99)
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    else if (resultBMI < 16)
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    else if (resultBMI >= 25 && resultBMI <= 29.99)
+      calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    else if (resultBMI >= 30)
+      calculatedStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
   }
-  return nutritionalScreening;
+
+  // Step 2: Use manual override if exists, else fallback to calculated
+  const effectiveStatus = calculatedStatus;
+
+  // Step 3: Determine screening based on final effective status
+  if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+    nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+  } else if (
+    effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
+    effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
+    effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Severe
+  ) {
+    nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // At Risk
+  } else if (
+    effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
+    effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Obese
+  ) {
+    nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
+  } else {
+    nutritionalScreening = null;
+  }
+
+  return {
+    status: calculatedStatus,
+    screening: nutritionalScreening
+  };
 }
 
 export function CalcNextFollowupDateForCxCa(
@@ -330,7 +339,7 @@ export function CalcNextFollowupDateForCxCa(
   if (dateTreatmentGiven) {
     
     const treatmentDateClone = new Date(dateTreatmentGiven.getTime());
-    treatmentDateClone.setMonth(treatmentDateClone.getMonth() + 6);
+    treatmentDateClone.setMonth(treatmentDateClone.getMonth() + 12);
     nextFollowupDateCxCa = treatmentDateClone;
   } else {
     if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
@@ -482,6 +491,15 @@ export function isSupplementaryFoodVisible(height, weight, muac) {
     return null;
   }
   return finalCondition;
+}
+
+export function isTOVisible(followupDate, dispensedDays) {
+
+  if (!followupDate || !dispensedDays) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 export async function loadFollowupStatus(patient) {

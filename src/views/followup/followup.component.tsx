@@ -97,11 +97,22 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         },
       },
       {
-        key: "cxcaScreeningDate",
-        header: "CXCA Screening Date",
+        key: "screeningDone",
+        header: "CXCA Screening Done",
+        // getValue: (encounter) => {
+        //   return getData(encounter, "01c546b4-e08a-4c0c-82ef-d387cab6bbbf");
+        // },
         getValue: (encounter) => {
-          const rawDate = getData(encounter, "72a28ebe-77ba-4592-9291-ac91e46ea770", true);
-          return rawDate ? rawDate.split(',')[0].trim() : "";
+          const screened = getData(
+            encounter,
+            "01c546b4-e08a-4c0c-82ef-d387cab6bbbf"
+          );
+          if (screened === "Cervical cancer screening not performed") {
+            return "No";
+          } else if (screened === "Cervical cancer screening performed") {
+            return "Yes";
+          }
+          return screened; // Return the original value if no modification is needed
         },
       },
       {
