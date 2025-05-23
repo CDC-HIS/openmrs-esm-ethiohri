@@ -2,6 +2,7 @@ import {
   getCurrentUser,
   getLatestObs,
   getLatestEligibilityFromLatestFollowup,
+  getLatestObservation,
 } from "./api/api";
 import {
   female,
@@ -502,19 +503,29 @@ export function isTOVisible(followupDate, dispensedDays) {
   }
 }
 
+export async function CustomLatestObservations(patient) {
+  return await getLatestObs(
+    patient.id,
+    "7d175fa9-e64c-4923-ae6d-e35512be07a3",
+    FOLLOWUP_ENCOUNTER_TYPE
+  );
+}
+
 export async function loadFollowupStatus(patient) {
   const status = await getLatestObs(
     patient.id,
     "222f64a8-a603-4d2e-b70e-2d90b622bb04",
     FOLLOWUP_ENCOUNTER_TYPE
   );
-  if (
-    status?.valueCodeableConcept?.coding[0]?.code ===
-    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-  ) {
-    return "";
-  }
-  return status?.valueCodeableConcept?.coding[0]?.code;
+
+  const code = status?.valueCodeableConcept?.coding[0]?.code;
+
+  const excludeStatuses = new Set([
+    "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", // Dead
+    "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", // Restart
+  ]);
+
+  return excludeStatuses.has(code) ? "" : code;
 }
 
 export async function getEligibilityStatus(patient) {

@@ -52,7 +52,9 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
             return "Drop";
           } else if (status === "Stop all") {
             return "Stop";
-          }
+          } else if (status === "Loss to follow-up (LTFU)") {
+            return "Lost";
+          } 
           return status; // Return the original value if no modification is needed
         },
       },

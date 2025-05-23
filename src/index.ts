@@ -44,6 +44,7 @@ import {
   isTOVisible,
   isTreatmentVisible,
   loadFollowupStatus,
+  CustomLatestObservations,
   getBirthdateFromAge,
   getAgeFromBirthdate,
   getEligibilityStatus,
@@ -113,6 +114,7 @@ export function startupApp() {
     isTOVisible
   );
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
+  registerExpressionHelper("CustomLatestObservations", CustomLatestObservations);
   registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);
   registerExpressionHelper("getAgeFromBirthdate", getAgeFromBirthdate);
   // registerControl({

@@ -92,6 +92,41 @@ export async function getLatestEligibilityFromLatestFollowup(
   return selectedCodes;
 }
 
+export async function getLatestObservation(
+  patientUuid: string
+): Promise<string[]> {
+  const latestEncounterUuid = await getEncounterWithLatestFollowUpDate(
+    patientUuid
+  );
+
+  if (!latestEncounterUuid) return [];
+
+  const conceptUuid = "7d175fa9-e64c-4923-ae6d-e35512be07a3"; // Observation
+
+  const response = await openmrsFetch(
+    `${fhirBaseUrl}/Observation?patient=${patientUuid}&code=${conceptUuid}&encounter=${latestEncounterUuid}`
+  );
+
+  const entries = response?.data?.entry ?? [];
+
+  const allowedCodes = [
+    "98ed68a9-9596-45dc-8015-2289a969c6fe", // CPT and FPT
+    "98b00c1a-d81c-4648-be6f-86793d0ae23f", // DSD
+    "773f6394-47ca-4bfc-bd29-ebfdafc9916d", // HIV Prevention Plan - OTZ
+    "d7098e8d-601f-472c-8914-0632930818a8", // Nutrition - Height
+    "53b2f5a8-0478-44c9-9507-d397b174be7f", // Pregnancy and FP - Preg.=Yes or BF=Yes
+    "246831e5-65e8-411f-aac9-57adcc4fb12c"  // TB
+  ];
+
+  const selectedCodes: string[] = entries.flatMap((entry) => {
+    const coding = entry.resource.valueCodeableConcept?.coding ?? [];
+    return coding
+      .map((c) => c.code)
+      .filter((code) => allowedCodes.includes(code));
+  });
+  return selectedCodes;
+}
+
 export function getCurrentUser() {
   return openmrsFetch(`ws/rest/v1/session`).then(({ data }) => {
     return data.user ? data.user : null;
