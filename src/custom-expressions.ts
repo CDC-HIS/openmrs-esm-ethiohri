@@ -504,11 +504,7 @@ export function isTOVisible(followupDate, dispensedDays) {
 }
 
 export async function CustomLatestObservations(patient) {
-  return await getLatestObs(
-    patient.id,
-    "7d175fa9-e64c-4923-ae6d-e35512be07a3",
-    FOLLOWUP_ENCOUNTER_TYPE
-  );
+  return await getLatestObservation(patient.id);
 }
 
 export async function loadFollowupStatus(patient) {
