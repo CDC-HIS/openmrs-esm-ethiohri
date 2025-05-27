@@ -631,8 +631,8 @@ export function isTOVisible(followupDate, dispensedDays) {
   }
 }
 
-export async function CustomLatestObservations(patient) {
-  return await getLatestObservation(patient.id);
+export async function CustomLatestObservations(patient, followupStatus) {
+  return await getLatestObservation(patient.id, followupStatus);
 }
 
 export async function loadFollowupStatus(patient) {
