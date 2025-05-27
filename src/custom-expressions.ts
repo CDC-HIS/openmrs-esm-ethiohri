@@ -271,36 +271,47 @@ export function CalcNutritionalScreening(height, weight, muac, functionalStatus,
 
   const resultBMI = CalcBMI(height, weight);
 
-  // Step 1: Calculate status
+  // Priority 1: Functional Status 'bedridden' with MUAC
   if (functionalStatus === BEDRIDDEN && muac !== "") {
-    calculatedStatus = muac > 23
-      ? "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      : muac >= 18
-      ? "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      : "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-  } else if ((pregnant === YES || breastfeeding === YES) && muac !== "") {
-    calculatedStatus = muac > 23
-      ? "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      : muac >= 19
-      ? "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-      : "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-  } else if (resultBMI != null) {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99)
-      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    else if (resultBMI >= 17 && resultBMI <= 18.49)
-      calculatedStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    else if (resultBMI >= 16 && resultBMI <= 16.99)
-      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    else if (resultBMI < 16)
-      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    else if (resultBMI >= 25 && resultBMI <= 29.99)
-      calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    else if (resultBMI >= 30)
-      calculatedStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    
+    if (muac > 23) {
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (muac >= 18 && muac <= 23) {
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (muac < 18) {
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    }
   }
 
+  // Priority 2: Pregnant or Breastfeeding with MUAC
+  else if ((pregnant === YES || breastfeeding === YES) && muac !== "") {
+    if (muac > 23) {
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (muac >= 19 && muac <= 23) {
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (muac < 19) {
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    }
+  }
+
+  // Priority 3: Use BMI
+  else if (resultBMI != null) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
+      calculatedStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Mild Malnutrition
+    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (resultBMI < 16) {
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+      calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight
+    } else if (resultBMI >= 30) {
+      calculatedStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Obese
+    }
+  }
   // Step 2: Use manual override if exists, else fallback to calculated
-  const effectiveStatus = calculatedStatus;
+  const effectiveStatus =  calculatedStatus;
 
   // Step 3: Determine screening based on final effective status
   if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
@@ -478,20 +489,137 @@ export function isTreatmentVisible(
   return condition1 && condition2 && condition3 && condition4 && condition5;
 }
 
-export function isSupplementaryFoodVisible(height, weight, muac) {
-  let resultBMI = CalcBMI(height, weight);
+export function isSupplementaryFoodVisible(patient, height, weight, muac, functionalStatus, pregnant, breastfeeding, bmiForAge) {
+  let calculatedStatus: string | null = null;
+  let nutritionalScreening: string | null = null;
   let finalCondition: boolean;
 
-  if (muac === "" && resultBMI === null) {
+  const BEDRIDDEN = "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  const YES = "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
+  const resultBMI = CalcBMI(height, weight);
+
+  // ========== ADULT LOGIC ==========
+  const isAdult = patient.age >= 18;
+  const isChild = patient.age < 18;
+  if (isAdult) {
+    // Priority 1: Functional Status 'bedridden' with MUAC
+  if (functionalStatus === BEDRIDDEN && muac !== "") {
+    
+    if (muac > 23) {
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (muac >= 18 && muac <= 23) {
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (muac < 18) {
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    }
+  }
+
+  // Priority 2: Pregnant or Breastfeeding with MUAC
+  else if ((pregnant === YES || breastfeeding === YES) && muac !== "") {
+    if (muac > 23) {
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (muac >= 19 && muac <= 23) {
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (muac < 19) {
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    }
+  }
+
+  // Priority 3: Use BMI
+  else if (resultBMI != null) {
+    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
+      calculatedStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Mild Malnutrition
+    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+    } else if (resultBMI < 16) {
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+      calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight
+    } else if (resultBMI >= 30) {
+      calculatedStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Obese
+    }
+  }
+  // ========== SCREENING CATEGORY ==========
+  const effectiveStatus = calculatedStatus;  
+
+  if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+    nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
     finalCondition = true;
-  } else if (muac <= 23 || resultBMI <= 19) {
+  } else if (
+    effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
+    effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
+    effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Severe
+  ) {
+    nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Undernourished
     finalCondition = false;
-  } else if (muac > 23 || resultBMI > 19) {
+  } else if (
+    effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
+    effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Obese
+  ) {
+    nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
     finalCondition = true;
   } else {
-    return null;
+    nutritionalScreening = null;
+    finalCondition = false;
+  } 
+const effectiveFood = nutritionalScreening
+    return {
+      status: calculatedStatus,
+      screening: nutritionalScreening,
+      supplementary: finalCondition
+    }
   }
-  return finalCondition;
+
+  // ========== CHILD LOGIC ==========
+  else if (bmiForAge != null && isChild) {
+    if (bmiForAge === "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f") {
+      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge === "6f384ab3-5587-478e-a685-0b43c0f64163") {
+      calculatedStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge === "b782c7a5-639e-4f7e-9eee-608a62439885") {
+      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge === "c3354c3c-b708-4821-94ee-cebc9eadf1e3") {
+      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge === "9324e838-c96d-4312-91b0-deae5cc0334c") {
+      calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    } else if (bmiForAge === "9a41b3bb-7c37-40f2-9022-d0f672e171cc") {
+      calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+    }  
+
+    // ========== SCREENING CATEGORY ==========
+  const effectiveStatus = calculatedStatus;  
+
+  if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+    nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+    finalCondition = true;
+  } else if (
+    effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
+    effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
+    effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Severe
+  ) {
+    nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Undernourished
+    finalCondition = false;
+  } else if (
+    effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
+    effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Obese
+  ) {
+    nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
+    finalCondition = true;
+  } else {
+    nutritionalScreening = null;
+    finalCondition = false;
+  } 
+const effectiveFood = nutritionalScreening
+  return {
+      status: calculatedStatus,
+      screening: nutritionalScreening,
+      supplementary: finalCondition
+    }
+  }
+  
 }
 
 export function isTOVisible(followupDate, dispensedDays) {

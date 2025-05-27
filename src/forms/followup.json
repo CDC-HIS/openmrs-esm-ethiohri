@@ -2373,11 +2373,11 @@
               "label": "Nutritional status - Adult",
               "type": "obs",
               "questionOptions": {
-                "rendering": "radio",
-                "concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
                 "calculate": {
                   "calculateExpression": "CustomAdultNutritionalStatusCalc(height, weight, muac, functionalStatus, pregnant, breastfeeding)"
                 },
+                "rendering": "radio",
+                "concept": "ae4d72a4-ccf5-49ff-b395-6687c534b1a2",
                 "answers": [
                   {
                     "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2488,11 +2488,11 @@
               "label": "Nutritional screening result",
               "type": "obs",
               "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "isSupplementaryFoodVisible(patient, height, weight, muac, functionalStatus, pregnant, breastfeeding, bmiForAge).screening"
+                },
                 "rendering": "radio",
                 "concept": "2c5b553b-58f8-4462-b14e-0a6a6628a790",
-                "calculate": {
-                  "calculateExpression": "CustomNutritionalScreeningCalc(height, weight, muac, functionalStatus, pregnant, breastfeeding).screening"
-                },
                 "answers": [
                   {
                     "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -2532,7 +2532,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "nutritionalScreeningResult !== '123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isSupplementaryFoodVisible(patient, height, weight, muac, functionalStatus, pregnant, breastfeeding, bmiForAge).supplementary"
               },
               "id": "TherapeuticSupplementaryFood"
             },
@@ -2967,7 +2967,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "referredToPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.gender === 'male'"
+                "hideWhenExpression": "(referredToPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || patient.gender === 'male'"
               }
             },
             {
