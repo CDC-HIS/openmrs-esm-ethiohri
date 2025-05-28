@@ -199,6 +199,8 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
     
       if (latestObs?.valueCodeableConcept?.text?.toLowerCase() === "dead") {
         setIsDead(true);
+      } else {
+        setIsDead(false);
       }
     })();
     
