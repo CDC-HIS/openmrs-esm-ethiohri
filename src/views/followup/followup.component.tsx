@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   EncounterList,
   EncounterListColumn,
@@ -160,6 +160,11 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const [hasUAN, setHasUAN] = useState(false);
   const [hasIntakeAEncounter, setHasIntakeAEncounter] = useState(false);
   const [isDead, setIsDead] = useState(false);
+  const [isFormSaved, setIsFormSaved] = useState(false);
+
+  const updateFormSavedStatus = useCallback(() => {
+      setIsFormSaved((prev) => !prev);
+    }, []);
 
   useEffect(() => {
     (async () => {
@@ -212,6 +217,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || !hasIntakeAEncounter || isDead,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
       {!hasUAN && <p className={styles.patientName}>{UAN_NULL_WARNING}</p>}
