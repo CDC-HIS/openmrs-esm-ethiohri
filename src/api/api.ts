@@ -135,6 +135,7 @@ export async function getLatestObservation(
     allowedCodes = [
       "d7098e8d-601f-472c-8914-0632930818a8", // Nutrition - Height
       "246831e5-65e8-411f-aac9-57adcc4fb12c", // TB
+      "98b00c1a-d81c-4648-be6f-86793d0ae23f", // DSD
       "98ed68a9-9596-45dc-8015-2289a969c6fe"  // CPT and FPT
     ];
   } else {

@@ -2099,10 +2099,7 @@
                   },
                   {
                     "concept": "98b00c1a-d81c-4648-be6f-86793d0ae23f",
-                    "label": "DSD",
-                    "hide": {
-                      "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                    }
+                    "label": "DSD"
                   },
                   {
                     "concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
@@ -2169,10 +2166,7 @@
                       },
                       {
                         "concept": "98b00c1a-d81c-4648-be6f-86793d0ae23f",
-                        "label": "DSD",
-                        "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                        }
+                        "label": "DSD"
                       },
                       {
                         "concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
@@ -2239,10 +2233,7 @@
                       },
                       {
                         "concept": "98b00c1a-d81c-4648-be6f-86793d0ae23f",
-                        "label": "DSD",
-                        "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                        }
+                        "label": "DSD"
                       },
                       {
                         "concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
@@ -5959,7 +5950,7 @@
         {
           "intent": "*",
           "hide": {
-            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','98b00c1a-d81c-4648-be6f-86793d0ae23f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','98b00c1a-d81c-4648-be6f-86793d0ae23f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           }
         }
       ],
