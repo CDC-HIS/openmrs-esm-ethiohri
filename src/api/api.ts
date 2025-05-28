@@ -129,8 +129,10 @@ export async function getLatestObservation(
 
   let allowedCodes: string[] = [];
     if (
-    currentFollowupStatus !== "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&
-    currentFollowupStatus !== "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" 
+    currentFollowupStatus === "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+    currentFollowupStatus === "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+    currentFollowupStatus === "27e28afa-b4a6-44e0-b331-ea7250121a0e" ||
+    currentFollowupStatus === "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" 
   ) {    
     allowedCodes = [
       "d7098e8d-601f-472c-8914-0632930818a8", // Nutrition - Height

@@ -2054,7 +2054,7 @@
                     "concept": "93bdee94-e934-4612-b749-eced1a2a8670",
                     "label": "Select All Observations",
                     "hide": {
-                      "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
@@ -2065,7 +2065,7 @@
                     "concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
                     "label": "Pregnancy and Family Planning",
                     "hide": {
-                      "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
@@ -2076,14 +2076,14 @@
                     "concept": "3150e1a6-2d57-43f8-8e35-8b36fcbdceb3",
                     "label": "OI and Pain Management",
                     "hide": {
-                      "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
                     "concept": "42ca808f-4231-46f6-90a4-80ff22cb3aa2",
                     "label": "Lab Results",
                     "hide": {
-                      "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
@@ -2094,7 +2094,7 @@
                     "concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
                     "label": "HIV Prevention Plan",
                     "hide": {
-                      "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
@@ -2105,7 +2105,7 @@
                     "concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
                     "label": "Cervical Cancer",
                     "hide": {
-                      "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   }
                 ]
@@ -2121,7 +2121,7 @@
                         "concept": "93bdee94-e934-4612-b749-eced1a2a8670",
                         "label": "Select All Observations",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2132,7 +2132,7 @@
                         "concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
                         "label": "Pregnancy and Family Planning",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2143,14 +2143,14 @@
                         "concept": "3150e1a6-2d57-43f8-8e35-8b36fcbdceb3",
                         "label": "OI and Pain Management",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
                         "concept": "42ca808f-4231-46f6-90a4-80ff22cb3aa2",
                         "label": "Lab Results",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2161,7 +2161,7 @@
                         "concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
                         "label": "HIV Prevention Plan",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2172,7 +2172,7 @@
                         "concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
                         "label": "Cervical Cancer",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       }
                     ]
@@ -2188,7 +2188,7 @@
                         "concept": "93bdee94-e934-4612-b749-eced1a2a8670",
                         "label": "Select All Observations",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2199,7 +2199,7 @@
                         "concept": "53b2f5a8-0478-44c9-9507-d397b174be7f",
                         "label": "Pregnancy and Family Planning",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2210,14 +2210,14 @@
                         "concept": "3150e1a6-2d57-43f8-8e35-8b36fcbdceb3",
                         "label": "OI and Pain Management",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
                         "concept": "42ca808f-4231-46f6-90a4-80ff22cb3aa2",
                         "label": "Lab Results",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2228,7 +2228,7 @@
                         "concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
                         "label": "HIV Prevention Plan",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2239,7 +2239,7 @@
                         "concept": "23ad6d16-d8a5-46fa-ac98-dfab4db06d1a",
                         "label": "Cervical Cancer",
                         "hide": {
-                          "hideWhenExpression": "followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       }
                     ]
@@ -2999,7 +2999,7 @@
         {
           "intent": "*",
           "hide": {
-            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','53b2f5a8-0478-44c9-9507-d397b174be7f') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           }
         }
       ],
@@ -3253,7 +3253,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "referredToPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.gender === 'male'"
+                "hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || referredToPMTCT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.gender === 'male'"
               }
             },
             {
@@ -4603,7 +4603,7 @@
         {
           "intent": "*",
           "hide": {
-            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')  || !includes('observationsConductedDuringCurrentVisit','3150e1a6-2d57-43f8-8e35-8b36fcbdceb3') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')  || !includes('observationsConductedDuringCurrentVisit','3150e1a6-2d57-43f8-8e35-8b36fcbdceb3') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           }
         }
       ],
@@ -4825,7 +4825,7 @@
         {
           "intent": "*",
           "hide": {
-            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','42ca808f-4231-46f6-90a4-80ff22cb3aa2') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','42ca808f-4231-46f6-90a4-80ff22cb3aa2') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           }
         }
       ],
@@ -5791,7 +5791,7 @@
         {
           "intent": "*",
           "hide": {
-            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','773f6394-47ca-4bfc-bd29-ebfdafc9916d') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','773f6394-47ca-4bfc-bd29-ebfdafc9916d') && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           }
         }
       ],
@@ -6059,7 +6059,7 @@
               "required": true,
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                  "calculateExpression": "assessmentCategory ? assessmentCategory : resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
                 },
                 "rendering": "select",
                 "concept": "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2",
@@ -6068,53 +6068,71 @@
                     "concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
                     "label": "Appointment spacing model (ASM) / 6MMD",
                     "hide": {
-                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                     }
                   },
                   {
                     "concept": "c4797711-5a47-49ad-980c-bed044a91c6d",
-                    "label": "3MMD"
+                    "label": "3MMD",
+                    "hide": {
+                      "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                    }
                   },
                   {
                     "concept": "347b4cbf-76ec-47f7-bdd0-f75f159d0665",
                     "label": "FTAR (Fast track antiretroviral refill)",
                     "hide": {
-                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                     }
                   },
                   {
                     "concept": "83b84a66-7b31-4b61-be54-f14bc4d50da7",
                     "label": "HEP-CAG (Health extension professional led community)",
                     "hide": {
-                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                     }
                   },
                   {
                     "concept": "6624ab9c-7aeb-4a26-942f-f5717739a762",
                     "label": "PCAD (Community based group model by peer)",
                     "hide": {
-                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                      "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                     }
                   },
                   {
                     "concept": "69e20fac-25ff-46c5-8681-756ba0078c80",
-                    "label": "AHD (Advanced HIV disease model)"
+                    "label": "AHD (Advanced HIV disease model)",
+                    "hide": {
+                      "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                    }
                   },
                   {
                     "concept": "7b30d810-4c0c-4bb7-a0b6-c1be570d3e80",
-                    "label": "DSD for adolescent"
+                    "label": "DSD for adolescent",
+                    "hide": {
+                      "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                    }
                   },
                   {
                     "concept": "e2d258e7-31fb-403b-92b2-8dd309695f02",
-                    "label": "DSD for MCH"
+                    "label": "DSD for MCH",
+                    "hide": {
+                      "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                    }
                   },
                   {
                     "concept": "a8e97cdd-b094-4589-a724-3b123be7391e",
-                    "label": "KP_DSD"
+                    "label": "KP_DSD",
+                    "hide": {
+                      "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                    }
                   },
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other"
+                    "label": "Other",
+                    "hide": {
+                      "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                    }
                   },
                   {
                     "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6133,53 +6151,71 @@
                         "concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
                         "label": "Appointment spacing model (ASM) / 6MMD",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "c4797711-5a47-49ad-980c-bed044a91c6d",
-                        "label": "3MMD"
+                        "label": "3MMD",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "347b4cbf-76ec-47f7-bdd0-f75f159d0665",
                         "label": "FTAR (Fast track antiretroviral refill)",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "83b84a66-7b31-4b61-be54-f14bc4d50da7",
                         "label": "HEP-CAG (Health extension professional led community)",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "6624ab9c-7aeb-4a26-942f-f5717739a762",
                         "label": "PCAD (Community based group model by peer)",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "69e20fac-25ff-46c5-8681-756ba0078c80",
-                        "label": "AHD (Advanced HIV disease model)"
+                        "label": "AHD (Advanced HIV disease model)",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "7b30d810-4c0c-4bb7-a0b6-c1be570d3e80",
-                        "label": "DSD for adolescent"
+                        "label": "DSD for adolescent",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "e2d258e7-31fb-403b-92b2-8dd309695f02",
-                        "label": "DSD for MCH"
+                        "label": "DSD for MCH",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "a8e97cdd-b094-4589-a724-3b123be7391e",
-                        "label": "KP_DSD"
+                        "label": "KP_DSD",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Other"
+                        "label": "Other",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6198,53 +6234,71 @@
                         "concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
                         "label": "Appointment spacing model (ASM) / 6MMD",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "c4797711-5a47-49ad-980c-bed044a91c6d",
-                        "label": "3MMD"
+                        "label": "3MMD",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "347b4cbf-76ec-47f7-bdd0-f75f159d0665",
                         "label": "FTAR (Fast track antiretroviral refill)",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "83b84a66-7b31-4b61-be54-f14bc4d50da7",
                         "label": "HEP-CAG (Health extension professional led community)",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "6624ab9c-7aeb-4a26-942f-f5717739a762",
                         "label": "PCAD (Community based group model by peer)",
                         "hide": {
-                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2'"
+                          "hideWhenExpression": "assessmentStatus !== '564d389c-f131-45b9-a8e6-ecc4888b46b2' || reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
                         }
                       },
                       {
                         "concept": "69e20fac-25ff-46c5-8681-756ba0078c80",
-                        "label": "AHD (Advanced HIV disease model)"
+                        "label": "AHD (Advanced HIV disease model)",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "7b30d810-4c0c-4bb7-a0b6-c1be570d3e80",
-                        "label": "DSD for adolescent"
+                        "label": "DSD for adolescent",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "e2d258e7-31fb-403b-92b2-8dd309695f02",
-                        "label": "DSD for MCH"
+                        "label": "DSD for MCH",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "a8e97cdd-b094-4589-a724-3b123be7391e",
-                        "label": "KP_DSD"
+                        "label": "KP_DSD",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Other"
+                        "label": "Other",
+                        "hide": {
+                          "hideWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa'"
+                        }
                       },
                       {
                         "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -6252,6 +6306,13 @@
                       }
                     ]
                   }
+                }
+              ],
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa' ? myValue !== 'None' : false",
+                  "message": "Category must be 'None' if status is Dead, Default / LTFU, TO, or Returned to conventional care"
                 }
               ],
               "id": "assessmentCategory"
@@ -6319,26 +6380,38 @@
               "type": "obs",
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '2780c548-5118-4ae4-99da-c8557cb55f28', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                  "calculateExpression": "assessmentCategory === '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? null : myValue"
                 },
                 "rendering": "select",
                 "concept": "2780c548-5118-4ae4-99da-c8557cb55f28",
                 "answers": [
                   {
                     "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Dead"
+                    "label": "Dead",
+                    "hide": {
+                      "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    }
                   },
                   {
                     "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
-                    "label": "Default / LTFU"
+                    "label": "Default / LTFU",
+                    "hide": {
+                      "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    }
                   },
                   {
                     "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Transfer Out / TO"
+                    "label": "Transfer Out / TO",
+                    "hide": {
+                      "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    }
                   },
                   {
                     "concept": "e687b464-e1fe-4f1b-ab76-8071f354fdaa",
-                    "label": "Returned to conventional care"
+                    "label": "Returned to conventional care",
+                    "hide": {
+                      "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    }
                   },
                   {
                     "concept": "32847bee-a237-423d-93d1-61017213a14c",
@@ -6366,19 +6439,31 @@
                     "answers": [
                       {
                         "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Dead"
+                        "label": "Dead",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
-                        "label": "Default / LTFU"
+                        "label": "Default / LTFU",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Transfer Out / TO"
+                        "label": "Transfer Out / TO",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "e687b464-e1fe-4f1b-ab76-8071f354fdaa",
-                        "label": "Returned to conventional care"
+                        "label": "Returned to conventional care",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "32847bee-a237-423d-93d1-61017213a14c",
@@ -6403,19 +6488,31 @@
                     "answers": [
                       {
                         "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Dead"
+                        "label": "Dead",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
-                        "label": "Default / LTFU"
+                        "label": "Default / LTFU",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                        "label": "Transfer Out / TO"
+                        "label": "Transfer Out / TO",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "e687b464-e1fe-4f1b-ab76-8071f354fdaa",
-                        "label": "Returned to conventional care"
+                        "label": "Returned to conventional care",
+                        "hide": {
+                          "hideWhenExpression": "assessmentCategory !== '1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
                       },
                       {
                         "concept": "32847bee-a237-423d-93d1-61017213a14c",
@@ -6436,6 +6533,13 @@
               "hide": {
                 "hideWhenExpression": "dsdCategoryChangedBtThisDate !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "getValue('status') === 'Dead' || getValue('status') === 'Default / LTFU' || getValue('status') === 'Transfer Out / TO' || getValue('status') === 'Returned to conventional care' ? myValue !== 'None' : false",
+                  "message": "Category must be 'None' if status is Dead, Default / LTFU, TO, or Returned to conventional care"
+                }
+              ],
               "id": "reasonForDsdCategoryChange"
             }
           ]
@@ -6448,7 +6552,7 @@
         {
           "intent": "*",
           "hide": {
-            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','23ad6d16-d8a5-46fa-ac98-dfab4db06d1a')  && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || patient.gender === 'male' || age < 15 || followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  && followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "includes('followupStatus','160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || !includes('observationsConductedDuringCurrentVisit','23ad6d16-d8a5-46fa-ac98-dfab4db06d1a')  && !includes('observationsConductedDuringCurrentVisit','93bdee94-e934-4612-b749-eced1a2a8670') || patient.gender === 'male' || age < 15 || followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           }
         }
       ],
