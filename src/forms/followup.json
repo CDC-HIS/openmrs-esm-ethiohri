@@ -5960,12 +5960,24 @@
           "isExpanded": "true",
           "questions": [
             {
+              "label": "Prev Assessment date",
+              "type": "obs",
+              "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '78c8abfb-1989-444a-8750-947227f4bde8', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
+                },
+                "rendering": "fixed",
+                "concept": "prev-value"
+              },
+              "id": "prevAssessmentDate"
+            },
+            {
               "label": "Assessment date",
               "required": true,
               "type": "obs",
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '78c8abfb-1989-444a-8750-947227f4bde8', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
+                  "calculateExpression": "customAssessmentDate(patient, prevAssessmentDate, assessmentDate, prevAssessmentCategory, assessmentCategory)"
                 },
                 "rendering": "date",
                 "concept": "78c8abfb-1989-444a-8750-947227f4bde8"
@@ -6052,6 +6064,64 @@
                 }
               ],
               "id": "assessmentStatus"
+            },
+            {
+              "label": "Prev DSD category",
+              "type": "obs",
+              "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                },
+                "rendering": "Fixed",
+                "concept": "prev-category",
+                "answers": [
+                  {
+                    "concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
+                    "label": "Appointment spacing model (ASM) / 6MMD"
+                  },
+                  {
+                    "concept": "c4797711-5a47-49ad-980c-bed044a91c6d",
+                    "label": "3MMD"
+                  },
+                  {
+                    "concept": "347b4cbf-76ec-47f7-bdd0-f75f159d0665",
+                    "label": "FTAR (Fast track antiretroviral refill)"
+                  },
+                  {
+                    "concept": "83b84a66-7b31-4b61-be54-f14bc4d50da7",
+                    "label": "HEP-CAG (Health extension professional led community)"
+                  },
+                  {
+                    "concept": "6624ab9c-7aeb-4a26-942f-f5717739a762",
+                    "label": "PCAD (Community based group model by peer)"
+                  },
+                  {
+                    "concept": "69e20fac-25ff-46c5-8681-756ba0078c80",
+                    "label": "AHD (Advanced HIV disease model)"
+                  },
+                  {
+                    "concept": "7b30d810-4c0c-4bb7-a0b6-c1be570d3e80",
+                    "label": "DSD for adolescent"
+                  },
+                  {
+                    "concept": "e2d258e7-31fb-403b-92b2-8dd309695f02",
+                    "label": "DSD for MCH"
+                  },
+                  {
+                    "concept": "a8e97cdd-b094-4589-a724-3b123be7391e",
+                    "label": "KP_DSD"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "None"
+                  }
+                ]
+              },
+              "id": "prevAssessmentCategory"
             },
             {
               "label": "DSD category",
@@ -6308,13 +6378,7 @@
                   }
                 }
               ],
-              "validators": [
-                {
-                  "type": "js_expression",
-                  "failsWhenExpression": "reasonForDsdCategoryChange === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || reasonForDsdCategoryChange === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForDsdCategoryChange === 'e687b464-e1fe-4f1b-ab76-8071f354fdaa' ? myValue !== 'None' : false",
-                  "message": "Category must be 'None' if status is Dead, Default / LTFU, TO, or Returned to conventional care"
-                }
-              ],
+              "validators": [],
               "id": "assessmentCategory"
             },
             {

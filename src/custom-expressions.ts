@@ -166,6 +166,39 @@ export function CalcMonthsOnART(patient, artStartD: any, followupD: any) {
   return resultMonthsOnART;
 }
 
+export async function customAssessmentDate(
+  patient,
+  prevAssessmentDate: Date,
+  assessmentDate: Date,
+  prevAssessmentCategory: string,
+  assessmentCategory: string
+) {
+  const datesAreSame =
+    prevAssessmentDate &&
+    assessmentDate &&
+    new Date(prevAssessmentDate).toDateString() === new Date(assessmentDate).toDateString();
+
+  // If category changed but date didn't, reset (null) the assessment date
+  if (prevAssessmentCategory !== assessmentCategory && datesAreSame) {
+    return null;
+  }
+
+  // If no assessment date entered (first form open), load the latest from DB
+  if (!assessmentDate && prevAssessmentCategory === assessmentCategory) {
+    const latestAssessmentObs = await getLatestObs(
+      patient.id,
+      "78c8abfb-1989-444a-8750-947227f4bde8", // ✅ This is the concept for Assessment Date
+      FOLLOWUP_ENCOUNTER_TYPE
+    );
+
+    const value = latestAssessmentObs?.valueDateTime;
+    return value ? new Date(value) : null;
+  }
+
+  // Otherwise return the user-entered date
+  return assessmentDate;
+}
+
 export function CalcViralLoadStatus(viralLoadCount: number) {
   let resultViralLoadStatus: string;
   if (viralLoadCount) {
