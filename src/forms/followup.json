@@ -561,35 +561,35 @@
                     "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "TO",
                     "hide": {
-                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prevFollowupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
                     "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Stop",
                     "hide": {
-                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prevFollowupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
                     "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
                     "label": "Lost",
                     "hide": {
-                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prevFollowupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
                     "concept": "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Drop",
                     "hide": {
-                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prevFollowupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
                     "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Dead",
                     "hide": {
-                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "prevFollowupStatus === '160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prevFollowupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   }
                 ]

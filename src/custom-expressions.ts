@@ -680,6 +680,7 @@ export async function loadFollowupStatus(patient) {
   const excludeStatuses = new Set([
     "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", // Dead
     "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", // Restart
+    "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", // TO
   ]);
 
   return excludeStatuses.has(code) ? "" : code;
