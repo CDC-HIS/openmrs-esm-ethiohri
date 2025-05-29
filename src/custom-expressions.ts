@@ -180,7 +180,7 @@ export async function customAssessmentDate(
 
   // If category changed but date didn't, reset (null) the assessment date
   if (prevAssessmentCategory !== assessmentCategory && datesAreSame) {
-    return "";
+    return undefined;
   }
 
   // If no assessment date entered (first form open), load the latest from DB
