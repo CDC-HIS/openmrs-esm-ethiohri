@@ -70,6 +70,11 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue > new Date(toDate)",
                   "message": "Followup date should not be later than Planned Transfer-Out Date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "(myValue > new Date(prevTreatmentEndDate)) && followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'",
+                  "message": "A 'Lost/Drop' status cannot be assigned before the patient's last TX_Curr date"
                 }
               ]
             },
@@ -671,7 +676,13 @@
                   }
                 }
               ],
-              "validators": []
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "(new Date(prevTreatmentEndDate) > new Date(followupDate)) && (myValue === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || myValue === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')",
+                  "message": "A 'Lost/Drop' status cannot be assigned before the patient's last TX_Curr date"
+                }
+              ]
             },
             {
               "label": "Reason ART regimen stopped",
@@ -1929,6 +1940,22 @@
                 "hideWhenExpression": "arvAdherence !== '159406AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && arvAdherence !== '159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "reasonForPoorARVAdherence"
+            },
+            {
+              "label": "Prev Last TX_Curr Date",
+              "type": "obs",
+              "questionOptions": {
+                "isTransient": true,
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '164384AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
+                },
+                "rendering": "fixed",
+                "concept": ""
+              },
+              "hide": {
+                "hideWhenExpression": "true"
+              },
+              "id": "prevTreatmentEndDate"
             },
             {
               "label": "Last TX_Curr Date",

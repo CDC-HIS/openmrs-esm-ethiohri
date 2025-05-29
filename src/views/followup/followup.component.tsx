@@ -55,7 +55,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           } else if (status === "Loss to follow-up (LTFU)") {
             return "Lost";
           } 
-          return status; // Return the original value if no modification is needed
+          return status; 
         },
       },
       {
@@ -88,14 +88,28 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           } else if (vlStatus === "HIV infection with high viral load") {
             return "High Viral Load";
           }
-          return vlStatus; // Return the original value if no modification is needed
+          return vlStatus; 
         },
       },
       {
         key: "dsdCategory",
         header: "DSD Category",
+        // getValue: (encounter) => {
+        //   return getData(encounter, "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2");
+        // },
         getValue: (encounter) => {
-          return getData(encounter, "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2");
+          const category = getData(
+            encounter,
+            "222f64a8-a603-4d2e-b70e-2d90b622bb04"
+          );
+          if (category === "Community based group model by peer") {
+            return "PCAD";
+          } else if (category === "AHID") {
+            return "AHD";
+          } else if (category === "KP DSD") {
+            return "People High risk for HIV infection DSD";
+          } 
+          return category; 
         },
       },
       {
@@ -114,7 +128,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           } else if (screened === "Cervical cancer screening performed") {
             return "Yes";
           }
-          return screened; // Return the original value if no modification is needed
+          return screened; 
         },
       },
       {
