@@ -2083,7 +2083,7 @@
                     "concept": "42ca808f-4231-46f6-90a4-80ff22cb3aa2",
                     "label": "Lab Results",
                     "hide": {
-                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                      "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                     }
                   },
                   {
@@ -5191,6 +5191,13 @@
               "hide": {
                 "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^[0-9]+$/.test(myValue)",
+                  "message": "Viral load count should be a whole number"
+                }
+              ],
               "id": "viralLoadCount"
             },
             {
@@ -5248,7 +5255,7 @@
           "label": "Enhanced Adherence Counseling",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "viralLoadStatus !== '167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viralLoadStatus !== '162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viralLoadStatus !== '167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "viralLoadStatus !== '167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viralLoadStatus !== '162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viralLoadStatus !== '167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && viralLoadCount <= 50"
           },
           "questions": [
             {
@@ -5963,11 +5970,15 @@
               "label": "Prev Assessment date",
               "type": "obs",
               "questionOptions": {
+                "isTransient": true,
                 "calculate": {
                   "calculateExpression": "resolve(api.getLatestObs(patient.id, '78c8abfb-1989-444a-8750-947227f4bde8', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueDateTime"
                 },
                 "rendering": "fixed",
-                "concept": "prev-value"
+                "concept": ""
+              },
+              "hide": {
+                "hideWhenExpression": "true"
               },
               "id": "prevAssessmentDate"
             },
@@ -6069,11 +6080,12 @@
               "label": "Prev DSD category",
               "type": "obs",
               "questionOptions": {
+                "isTransient": true,
                 "calculate": {
                   "calculateExpression": "resolve(api.getLatestObs(patient.id, 'defeb4ff-d07b-4e4a-bbd6-d4281c1384a2', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
                 },
-                "rendering": "Fixed",
-                "concept": "prev-category",
+                "rendering": "fixed",
+                "concept": "",
                 "answers": [
                   {
                     "concept": "0f8de420-27b1-46bb-9619-b2f86bc775bb",
@@ -6120,6 +6132,9 @@
                     "label": "None"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "true"
               },
               "id": "prevAssessmentCategory"
             },
