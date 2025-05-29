@@ -3545,6 +3545,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "eligibleForTPT === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
               "id": "activeTB"
             },
             {
@@ -3574,7 +3577,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && !myValue || activeTB === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -3634,7 +3637,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "!myValue && tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !myValue && activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -3653,11 +3656,10 @@
               "label": "TB treatment status",
               "type": "obs",
               "required": false,
-              "id": "tbTreatmentStatus",
-              "hide": {
-                "hideWhenExpression": "tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              },
               "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'cc9215e5-454f-4cdf-a773-62b2f2f17fdb', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                },
                 "rendering": "select",
                 "concept": "cc9215e5-454f-4cdf-a773-62b2f2f17fdb",
                 "answers": [
@@ -3703,6 +3705,10 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "!myValue && tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || !myValue && activeTB !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "tbTreatmentStatus",
               "validators": []
             },
             {
@@ -3744,7 +3750,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "tbTreatmentStatus !== '9d4ca0d6-4c10-4d58-af2b-e74c510a6221' || tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "tbTreatmentStatus !== '9d4ca0d6-4c10-4d58-af2b-e74c510a6221' || (!myValue && tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || activeTB === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "dateActiveTBRxCompleted"
             },
@@ -3787,7 +3793,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "tbTreatmentStatus !== '8b1b2f2d-27ef-4ee4-bf0e-cf9abcf7f3f0' || tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "tbTreatmentStatus !== '8b1b2f2d-27ef-4ee4-bf0e-cf9abcf7f3f0' || (!myValue && tbTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || activeTB === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "dateActiveTBRxDiscontinued"
             },
@@ -3882,7 +3888,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "eligibleForTPT !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "eligibleForTPT !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "reasonForNotBeingElgible"
             },
@@ -3914,7 +3920,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -3987,7 +3993,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "TBProphylaxisType"
             },
@@ -4297,7 +4303,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || (!tptStartDate && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || (!tptStartDate && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "tptFollowup"
             },
@@ -4346,7 +4352,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || (!tptStartDate && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                "hideWhenExpression": "TBProphylaxisType !== '8ba598a1-9e8a-4499-bd7a-54c3d0c94f01' && TBProphylaxisType !== 'e8588507-635c-4e28-a1f8-3c493e30b2f5' || (!tptStartDate && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') || eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -4378,7 +4384,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "!myValue && tptFollowup !== 'a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb' && tptFollowup !== '574f5071-03fb-4067-a26d-419ecf3ce151'"
+                "hideWhenExpression": "tptFollowup !== 'a9990ef1-d8bc-43d2-a55d-a6f8a9704fcb' && tptFollowup !== '574f5071-03fb-4067-a26d-419ecf3ce151' || eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -4421,7 +4427,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "!myValue && tptFollowup !== '86e102e6-ddf4-423c-b5b7-3d157de0c96f' && tptFollowup !== '4176b0d5-8f11-4681-8d9e-1f153cd0205d'"
+                "hideWhenExpression": "tptFollowup !== '86e102e6-ddf4-423c-b5b7-3d157de0c96f' && tptFollowup !== '4176b0d5-8f11-4681-8d9e-1f153cd0205d' || eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -4441,9 +4447,6 @@
               "type": "obs",
               "questionOptions": {
                 "rendering": "radio",
-                "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '23d97715-589c-4dcf-bb86-70e26bba2269', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
-                },
                 "concept": "23d97715-589c-4dcf-bb86-70e26bba2269",
                 "answers": [
                   {
@@ -4505,7 +4508,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "!myValue && eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "eligibleForTPT !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'|| !tptStartDate"
               },
               "id": "tptAdherence"
             },
