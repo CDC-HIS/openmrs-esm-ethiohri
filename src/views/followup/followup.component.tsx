@@ -100,7 +100,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         getValue: (encounter) => {
           const category = getData(
             encounter,
-            "222f64a8-a603-4d2e-b70e-2d90b622bb04"
+            "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2"
           );
           if (category === "Community based group model by peer") {
             return "PCAD";
