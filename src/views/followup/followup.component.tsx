@@ -106,8 +106,6 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
             return "PCAD";
           } else if (category === "AHID") {
             return "AHD";
-          } else if (category === "KP DSD") {
-            return "People High risk for HIV infection DSD";
           } 
           return category; 
         },
