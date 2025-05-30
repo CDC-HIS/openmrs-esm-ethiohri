@@ -15,6 +15,7 @@
       "name": "hiv-testing-service-ext",
       "slot": "hiv-care-and-treatment-slot",
       "component": "hivTestingServiceMenu",
+      "order":1,
       "meta": {
         "title": "HIV Testing Service",
         "slot": "hiv-testing-service-slot",
@@ -31,6 +32,7 @@
       "name": "index-case-testing-ext",
       "slot": "hiv-care-and-treatment-slot",
       "component": "indexCaseTestingMenu",
+      "order":2,
       "meta": {
         "title": "Index Case Testing",
         "slot": "index-case-testing-slot",
@@ -47,6 +49,7 @@
       "name": "program-management-ext",
       "slot": "hiv-care-and-treatment-slot",
       "component": "programManagementMenu",
+      "order":3,
       "meta": {
         "title": "Intakes",
         "slot": "program-management-slot",
@@ -63,6 +66,7 @@
       "name": "clinical-visits-ext",
       "slot": "hiv-care-and-treatment-slot",
       "component": "clinicalVisitsMenu",
+      "order":4,
       "meta": {
         "title": "Clinical Visits",
         "slot": "clinical-visits-slot",
@@ -120,6 +124,7 @@
     {
       "name": "prep-ext",
       "slot": "hiv-care-and-treatment-slot",
+      "order":5,
       "component": "prepMenu",
       "meta": {
         "title": "PrEP Prophylaxis",
@@ -137,6 +142,7 @@
       "name": "post-exposure-ext",
       "slot": "hiv-care-and-treatment-slot",
       "component": "pepMenu",
+      "order":7,
       "meta": {
         "title": "PEP Prophylaxis",
         "slot": "post-exposure-slot",
