@@ -17,7 +17,8 @@ const columns = [
     key: "screeningDate",
     header: "Screening Date",
     getValue: (encounter) => {
-      return getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f", true);
+      const rawDate = getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f", true);
+      return rawDate ? rawDate.split(',')[0].trim() : "";
     },
   },
   {
@@ -66,7 +67,8 @@ const columns = [
     key: "prepStartDate",
     header: "PrEP Start Date",
     getValue: (encounter) => {
-      return getData(encounter, "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      const rawDate = getData(encounter, "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return rawDate ? rawDate.split(',')[0].trim() : "";
     },
   },
   {

@@ -24,7 +24,8 @@ const columns = [
     key: "followupDate",
     header: "Follow-up Date",
     getValue: (encounter) => {
-      return getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
+      const rawDate = getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
+      return rawDate ? rawDate.split(',')[0].trim() : "";
     },
   },
   {
@@ -66,8 +67,15 @@ const columns = [
     key: "prepRegimen",
     header: "PrEP Regimen",
     getValue: (encounter) => {
-      return getData(encounter, "722ff3de-e2d1-4df4-8d05-ca881dc7073b");
-    },
+              const status = getData(
+                encounter,
+                "722ff3de-e2d1-4df4-8d05-ca881dc7073b"
+              );
+              if (status === "Tenofovir disoproxil fumarate (TDF)/lamivudine (3TC)") {
+                return "TDF/3TC";
+              } 
+              return status; 
+            },
   },
   {
     key: "arvDispensedInDays",

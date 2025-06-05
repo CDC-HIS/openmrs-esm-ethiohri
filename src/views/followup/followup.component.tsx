@@ -65,11 +65,19 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
           return getData(encounter, "4ab93a3c-4373-4b9b-9268-5ff0641cc242");
         },
       },
+      // {
+      //   key: "viralLoadCount",
+      //   header: "Viral Load Count",
+      //   getValue: (encounter) => {
+      //     return getData(encounter, "856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      //   },
+      // },
       {
-        key: "viralLoadCount",
-        header: "Viral Load Count",
+        key: "dateViralLoadRequested",
+        header: "VL Sent Date",
         getValue: (encounter) => {
-          return getData(encounter, "856AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+          const rawDate = getData(encounter, "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+          return rawDate ? rawDate.split(',')[0].trim() : "";
         },
       },
       {

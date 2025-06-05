@@ -180,7 +180,7 @@ export async function customAssessmentDate(
 
   // If category changed but date didn't, reset (null) the assessment date
   if (prevAssessmentCategory !== assessmentCategory && datesAreSame) {
-    return undefined;
+    return null;
   }
 
   // If no assessment date entered (first form open), load the latest from DB
@@ -199,20 +199,21 @@ export async function customAssessmentDate(
   return assessmentDate;
 }
 
-export function CalcViralLoadStatus(viralLoadCount: number) {
+export function CalcViralLoadStatus(viralLoadCount: string) {
   let resultViralLoadStatus: string;
-  if (viralLoadCount) {
-    if (viralLoadCount == 0) {
+  if (viralLoadCount !== null && viralLoadCount !== undefined && viralLoadCount !== "") {
+    if (viralLoadCount >= "0" && viralLoadCount <= "50") {
       resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (viralLoadCount <= 50) {
-      resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (viralLoadCount >= 51 && viralLoadCount <= 1000) {
+    } else if (viralLoadCount >= "51" && viralLoadCount <= "1000") {
       resultViralLoadStatus = "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    } else if (viralLoadCount > 1000) {
+    } else if (viralLoadCount > "1000") {
       resultViralLoadStatus = "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     }
+    return resultViralLoadStatus || null;
   }
-  return viralLoadCount ? resultViralLoadStatus : null;
+  else {
+    return viralLoadCount ? resultViralLoadStatus : null;
+  }  
 }
 
 export function CalcBMI(height: number, weight: number) {

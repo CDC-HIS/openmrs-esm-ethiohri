@@ -2170,7 +2170,7 @@
                         "concept": "3150e1a6-2d57-43f8-8e35-8b36fcbdceb3",
                         "label": "OI and Pain Management",
                         "hide": {
-                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -2255,7 +2255,7 @@
                         "concept": "773f6394-47ca-4bfc-bd29-ebfdafc9916d",
                         "label": "HIV Prevention Plan",
                         "hide": {
-                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          "hideWhenExpression": "followupStatus === '159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                         }
                       },
                       {
@@ -3336,10 +3336,6 @@
                     "hide": {
                       "hideWhenExpression": "patient.gender === 'male'"
                     }
-                  },
-                  {
-                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "None"
                   }
                 ]
               },
@@ -5102,7 +5098,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "viralLoadIndication !== '9b8cef86-9093-4737-a641-3b8399618c85'"
+                "hideWhenExpression": "viralLoadIndication !== '9b8cef86-9093-4737-a641-3b8399618c85' || viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "routineTest"
             },
@@ -5128,7 +5124,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "viralLoadIndication !== '8f75ce27-29fa-4a67-bc8a-295c94323220'"
+                "hideWhenExpression": "viralLoadIndication !== '8f75ce27-29fa-4a67-bc8a-295c94323220' || viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "targeted"
             },
@@ -5210,7 +5206,7 @@
               ]
             },
             {
-              "label": "Viral load count",
+              "label": "Viral load count (copies/ml)",
               "type": "obs",
               "questionOptions": {
                 "rendering": "number",
@@ -6980,7 +6976,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "typeOfScreening"
             },
@@ -7007,7 +7003,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "screeningStrategy"
             },
@@ -7019,7 +7015,7 @@
                 "concept": "8b57d62c-c9a3-454a-b1af-929ca69603ce"
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -7052,7 +7048,7 @@
                 "concept": "510f2a47-3761-4903-b7eb-8ea389cecfe9"
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -7109,7 +7105,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "hpvScreeningResult"
             },
@@ -7135,13 +7131,52 @@
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Other subtype"
+                  },
+                  {
+                    "concept": "d217dbf3-9b45-4bbc-ad83-43ac98afa98a",
+                    "label": "Other HR HPV"
+                  },
+                  {
+                    "concept": "f62af4be-f11f-43a1-9c17-1ad59756733f",
+                    "label": "HPV 16 and other HR HPV"
+                  },
+                  {
+                    "concept": "4b8f7779-3a05-4ca4-af0d-1218628cc2be",
+                    "label": "HPV 18 and other HR HPV"
+                  },
+                  {
+                    "concept": "25439e8c-d91d-4e36-a183-b957c10d33d5",
+                    "label": "HPV 16 and 18"
+                  },
+                  {
+                    "concept": "deb0acbb-a6a9-440e-9c33-1d4c9d86066e",
+                    "label": "7HPV 16 and 18 other HR HPV"
                   }
                 ]
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "hpvSubtype"
+            },
+            {
+              "label": "If other, specify",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "2bdbdd4d-038e-4617-8adc-f8de588afd6e"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 50",
+                  "message": "Please use a maximum of 50 characters"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!includes('hpvSubtype','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') && !includes('hpvSubtype','d217dbf3-9b45-4bbc-ad83-43ac98afa98a') || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "otherHpvSubtype"
             },
             {
               "label": "VIA done?",
@@ -7161,7 +7196,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || (hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hpvScreeningResult !== '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hpvScreeningResult !== '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "viaDone"
             },
@@ -7183,7 +7218,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || hpvScreeningResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "cytologyDone"
             }
@@ -7193,7 +7228,7 @@
           "label": "VIA",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viaDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viaDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7276,7 +7311,7 @@
           "label": "Cytology",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || cytologyDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || cytologyDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7371,11 +7406,15 @@
                   },
                   {
                     "concept": "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "ASCUS"
+                    "label": "ASCUS/LSIL"
                   },
                   {
                     "concept": "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68",
-                    "label": "> Ascus"
+                    "label": "ASC-H/HSIL"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
                   }
                 ]
               },
@@ -7383,6 +7422,25 @@
                 "hideWhenExpression": "screeningStrategy !== 'f32b7edd-f70a-4b32-a684-4fa35eb2abcd' && screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6'"
               },
               "id": "cytologyResult"
+            },
+            {
+              "label": "If other, specify",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "54fcd5cb-3498-46c6-a6aa-0b60733bebe3"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 50",
+                  "message": "Please use a maximum of 50 characters"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!includes('cytologyResult','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              },
+              "id": "otherCytologyResult"
             }
           ]
         },
@@ -7390,7 +7448,7 @@
           "label": "Biopsy",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7480,11 +7538,15 @@
                   },
                   {
                     "concept": "ba4420d5-acc2-4d1c-8ead-43476e17960d",
-                    "label": "CIN (1-3)"
+                    "label": "CIN-1"
+                  },
+                  {
+                    "concept": "2db008f4-8768-4917-bfca-395508529776",
+                    "label": "CIN-2"
                   },
                   {
                     "concept": "fde5cd74-e503-4ce1-9afe-f74195f95f6e",
-                    "label": "Carcinoma institu"
+                    "label": "Carcinoma institu (CIN-3)"
                   },
                   {
                     "concept": "baab7d76-69e0-426d-afca-99cd1c9849a5",
@@ -7497,6 +7559,25 @@
                 ]
               },
               "id": "biopsyResult"
+            },
+            {
+              "label": "If other, specify",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "2bdbdd4d-038e-4617-8adc-f8de588afd6e"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 50",
+                  "message": "Please use a maximum of 50 characters"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!includes('biopsyResult','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              },
+              "id": "otherBiopsyResult"
             }
           ]
         },
@@ -7504,7 +7585,7 @@
           "label": "Colposcopy",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7546,23 +7627,50 @@
                 "answers": [
                   {
                     "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Normal / Negative"
+                    "label": "Normal"
                   },
                   {
                     "concept": "f0f52e6c-56fa-44c6-a81e-a3a7ac8548c4",
-                    "label": "Low grade SIL / Positive"
+                    "label": "Low grade"
                   },
                   {
                     "concept": "7276fa8a-3bab-4bd7-b647-8e9c8536ef30",
-                    "label": "High Grade SIL / Suspicious cancer"
+                    "label": "High Grade"
                   },
                   {
                     "concept": "1118AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Not done"
+                  },
+                  {
+                    "concept": "8ff46195-bc5d-47c4-b559-853fe18e7286",
+                    "label": "Suspicious for CxCa"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
                   }
                 ]
               },
               "id": "colposcopyExamFinding"
+            },
+            {
+              "label": "If other, specify",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "b76ccdab-f0ba-45ea-bce8-78dc292a4681"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 50",
+                  "message": "Please use a maximum of 50 characters"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!includes('colposcopyExamFinding','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              },
+              "id": "otherColposcopyExamFinding"
             }
           ]
         },
@@ -7570,7 +7678,7 @@
           "label": "Treatment",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding) || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding) || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7601,10 +7709,33 @@
                   {
                     "concept": "162812AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Cryotherapy"
+                  },
+                  {
+                    "concept": "961b77c7-d0d7-44ea-9b13-7aa495ffe788",
+                    "label": "Cold knife conization"
                   }
                 ]
               },
               "validators": []
+            },
+            {
+              "label": "If other, specify",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "9f1bfaba-ebf9-4bfe-a9f2-0caa52442085"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue.length > 50",
+                  "message": "Please use a maximum of 50 characters"
+                }
+              ],
+              "hide": {
+                "hideWhenExpression": "!includes('treatmentReceivedForPrecancerousLesion','5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              },
+              "id": "otherTreatmentReceivedForPrecancerousLesion"
             },
             {
               "label": "Treatment received for confirmed CxCa cases",
@@ -7699,7 +7830,7 @@
           "label": "Referral",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding) || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "isTreatmentVisible(hpvScreeningResult, viaScreeningResult, cytologyResult, biopsyResult,colposcopyExamFinding) || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -7747,6 +7878,9 @@
                   "message": "Date of referral to other HF should not be earlier than Date counseling given"
                 }
               ],
+              "hide": {
+                "hideWhenExpression": "referralOrLinkageStatus === 'c877f896-835b-4a22-a96b-5c4986ba4e9d'"
+              },
               "id": "dateOfReferralToOtherHF"
             },
             {
@@ -7778,6 +7912,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "referralOrLinkageStatus === 'c877f896-835b-4a22-a96b-5c4986ba4e9d'"
+              },
               "id": "reasonForReferral"
             },
             {
@@ -7801,6 +7938,9 @@
                   }
                 ]
               },
+              "hide": {
+                "hideWhenExpression": "referralOrLinkageStatus === 'c877f896-835b-4a22-a96b-5c4986ba4e9d'"
+              },
               "id": "feedback"
             },
             {
@@ -7821,6 +7961,9 @@
                   "message": "Date confirmed client seen the referral HF should not be earlier than Date counseling given"
                 }
               ],
+              "hide": {
+                "hideWhenExpression": "referralOrLinkageStatus === 'c877f896-835b-4a22-a96b-5c4986ba4e9d'"
+              },
               "id": "dateClientArrivedAtReferredHF"
             },
             {
@@ -7841,6 +7984,9 @@
                   "message": "Date client served in the referral HF should not be earlier than Date counseling given"
                 }
               ],
+              "hide": {
+                "hideWhenExpression": "referralOrLinkageStatus === 'c877f896-835b-4a22-a96b-5c4986ba4e9d'"
+              },
               "id": "dateClientServedAtReferredHF"
             }
           ]
@@ -7849,7 +7995,7 @@
           "label": "Next Follow-up Screening Date",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+            "hideWhenExpression": "screeningDone !== '165619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEligibleForCxCa === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
