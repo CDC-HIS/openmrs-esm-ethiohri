@@ -25,7 +25,20 @@ const columns = [
     key: "referredFrom",
     header: "Referred From",
     getValue: (encounter) => {
-      return getData(encounter, "e2fc6b60-70e8-4a87-a164-fb175c788330");
+      const referredFrom = getData(
+        encounter,
+        "e2fc6b60-70e8-4a87-a164-fb175c788330"
+      );
+      if (referredFrom === "Voluntary testing and counselling") {
+        return "VCT";
+      } else if (referredFrom === "Outpatient department") {
+        return "OPD";
+      } else if (referredFrom === "Key population clinic") {
+        return "People high risk for HIV infection";
+      } else if (referredFrom === "Other non-coded") {
+        return "Other";
+      }
+      return referredFrom; 
     },
   },
   {
@@ -73,10 +86,17 @@ const columns = [
   },
   {
     key: "prepPrescribed",
-    header: "PrEP Regimen",
+    header: "PrEP Regimen",   
     getValue: (encounter) => {
-      return getData(encounter, "51c2429d-21d7-4319-a27d-7a9b10b8759c");
-    },
+      const prepRegimen = getData(
+        encounter,
+        "51c2429d-21d7-4319-a27d-7a9b10b8759c"
+      );
+      if (prepRegimen === "Tenofovir disoproxil fumarate (TDF)/lamivudine (3TC)") {
+        return "TDF/3TC";
+      } 
+      return prepRegimen; 
+    }, 
   },
   {
     key: "doseDays",

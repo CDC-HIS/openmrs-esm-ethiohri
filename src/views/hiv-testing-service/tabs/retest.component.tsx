@@ -23,8 +23,8 @@ const columns = [
     key: "dateOfRetesting",
     header: "Date of Re-test",
     getValue: (encounter) => {
-      const rawDate = getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7", true);
-      return rawDate ? rawDate.split(',')[0].trim() : "";
+      const retestDate = getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7", true);
+      return retestDate ? retestDate.split(',')[0].trim() : "";
     },
   },  
   {
@@ -38,14 +38,32 @@ const columns = [
     key: "finalResult",
     header: "Final Result",
     getValue: (encounter) => {
-      return getData(encounter, "2b1ea8df-3293-4964-9b44-9e31dff678a4");
+      const finalResult = getData(
+        encounter,
+        "2b1ea8df-3293-4964-9b44-9e31dff678a4"
+      );
+      if (finalResult === "Reactive") {
+        return "Positive";
+      } else if (finalResult === "Non-reactive") {
+        return "Negative";
+      }
+      return finalResult; 
     },
   },
   {
     key: "resultFinal",
     header: "Final result from lab",
     getValue: (encounter) => {
-      return getData(encounter, "2e770be1-7397-4684-bea6-6632c23b00d7");
+      const finalResultLab = getData(
+        encounter,
+        "2e770be1-7397-4684-bea6-6632c23b00d7"
+      );
+      if (finalResultLab === "Reactive") {
+        return "Positive";
+      } else if (finalResultLab === "Non-reactive") {
+        return "Negative";
+      }
+      return finalResultLab; 
     },
   },
   {

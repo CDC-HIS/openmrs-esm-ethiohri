@@ -16,7 +16,7 @@
               "label": "Followup date",
               "type": "obs",
               "required": "true",
-							"id": "followupDate",
+              "id": "followupDate",
               "questionOptions": {
                 "rendering": "date",
                 "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
@@ -29,40 +29,40 @@
                   "allowFutureDates": "false"
                 },
                 {
-									"type": "js_expression",
-									"failsWhenExpression": "myValue < new Date(prepScreeningDate)",
-									"message": "Followup date should not be earlier than Prep Screening date"
-								}
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(prepScreeningDate)",
+                  "message": "Followup date should not be earlier than Prep Screening date"
+                }
               ]
             },
             {
-							"label": "Prep Screening Date",
-							"type": "obs",
-							"id": "prepScreeningDate",
-							"questionOptions": {
-							  "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
-							  "rendering": "fixed",
-							  "calculate": {
-								"calculateExpression": "resolve(api.getLatestObs(patient.id, 'bd09b775-0294-4775-9615-964d98e06a4f', '8c2b6a9b-4795-417d-affe-2530a753b715'))?.valueDateTime"
-							  }
-							},
+              "label": "Prep Screening Date",
+              "type": "obs",
+              "id": "prepScreeningDate",
+              "questionOptions": {
+                "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
+                "rendering": "fixed",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'bd09b775-0294-4775-9615-964d98e06a4f', '8c2b6a9b-4795-417d-affe-2530a753b715'))?.valueDateTime"
+                }
+              },
               "behaviours": [
-								{
-									"intent": "edit",
-									"questionOptions": {
-										"concept": "bd09b775-0294-4775-9615-964d98e06a4f",
-							  "rendering": "fixed"
-								}
-								}
-								,{
-									"intent": "view",
-									"questionOptions": {
-										"concept": "bd09b775-0294-4775-9615-964d98e06a4f",
-							  "rendering": "fixed"
-								}
-								}
-							]
-						  }
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
+                    "rendering": "fixed"
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
+                    "rendering": "fixed"
+                  }
+                }
+              ]
+            }
           ]
         },
         {
@@ -378,10 +378,10 @@
               "required": false,
               "id": "lmp",
               "questionOptions": {
-								"rendering": "date",
-								"concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
-								"weeksList": ""
-							},
+                "rendering": "date",
+                "concept": "30d8d278-5ace-4d01-b2f1-8efc28372070",
+                "weeksList": ""
+              },
               "hide": {
                 "hideWhenExpression": "isClientPregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
@@ -474,10 +474,10 @@
                     "label": "Abdominal pain"
                   },
                   {
-										"concept": "110149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-										"label": "Rash",
-										"conceptMappings": []
-									},
+                    "concept": "110149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Rash",
+                    "conceptMappings": []
+                  },
                   {
                     "concept": "5978AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Nausea"
@@ -952,8 +952,8 @@
               "id": "eGFR",
               "questionOptions": {
                 "calculate": {
-									"calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
-								},
+                  "calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
+                },
                 "rendering": "select",
                 "concept": "165570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                 "conceptMappings": [
@@ -1135,8 +1135,8 @@
                 "rendering": "date",
                 "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
                 "calculate": {
-									"calculateExpression": "CustomPrepDoseEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
-								},
+                  "calculateExpression": "CustomPrepDoseEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
+                },
                 "conceptMappings": [],
                 "answers": []
               },
@@ -1203,7 +1203,7 @@
                   },
                   {
                     "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other non-coded"
+                    "label": "Other"
                   }
                 ]
               },
@@ -1231,33 +1231,37 @@
                     "label": "No"
                   }
                 ]
-              }
+              },
+              "hide": {
+                "hideWhenExpression": "numberOfMissedTablets !== 'bc3d60f6-e873-4e99-94ac-579549a340d0'"
+              },
+              "validators": []
             },
             {
-							"label": "Next visit date",
-							"type": "obs",
-							"questionOptions": {
-								"calculate": {
-									"calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays')"
-								},
-								"rendering": "date",
-								"concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
-								"weeksList": ""
-							},
-							"readonly": "false",
-							"id": "nextVisitDate"
-						}
+              "label": "Next visit date",
+              "type": "obs",
+              "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "CustomNextVisitDateCalc('followupDate','arvDispensedInDays')"
+                },
+                "rendering": "date",
+                "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+                "weeksList": ""
+              },
+              "readonly": "false",
+              "id": "nextVisitDate"
+            }
           ]
         }
       ]
     }
   ],
   "availableIntents": [
-		{
-			"intent": "*",
-			"display": "default_intent"
-		}
-	],
+    {
+      "intent": "*",
+      "display": "default_intent"
+    }
+  ],
   "processor": "EncounterFormProcessor",
   "uuid": "3329c50b-2cd2-44ab-af2b-06f3b914cc7e",
   "referencedForms": [],

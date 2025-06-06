@@ -10,14 +10,16 @@ const columns = [
     key: "registrationDate",
     header: "Registration Date",
     getValue: (encounter) => {
-      return getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
+      const regDate = getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
+      return regDate ? regDate.split(',')[0].trim() : "";
     },
   },
   {
     key: "hivPositiveDate",
     header: "HIV Positive Date",
     getValue: (encounter) => {
-      return getData(encounter, "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      const positiveDate = getData(encounter, "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return positiveDate ? positiveDate.split(',')[0].trim() : "";
     },
   },
   {

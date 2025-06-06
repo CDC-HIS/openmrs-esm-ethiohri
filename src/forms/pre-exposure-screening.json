@@ -87,15 +87,15 @@
 					},
 					{
 					  "concept": "c39e1140-4b4c-402c-81b1-354677306304",
-					  "label": "People high risk for HIV infection"
+					  "label": "People high risk for HIV infection clinic"
 					},
 					{
 					  "concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Voluntary testing and counselling"
+					  "label": "VCT"
 					},
 					{
 					  "concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Outpatient department"
+					  "label": "OPD"
 					},
 					{
 					  "concept": "166512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -103,7 +103,7 @@
 					},
 					{
 					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Other non-coded"
+					  "label": "Other"
 					}
 				  ]
 				},
@@ -1268,7 +1268,7 @@
 				}
 			  },
 			  {
-				"label": "How long has your partner been on treatment",
+				"label": "How long has your partner been on treatment(in month)",
 				"type": "obs",
 				"required": false,
 				"id": "howLongHasYourPartnerBeenOnTreatment",
