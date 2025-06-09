@@ -1,1860 +1,1872 @@
 {
-	"name": "Prep",
-	"version": "1.0",
-	"published": true,
-	"retired": false,
-	"encounter": "Pre Exposure Screening",
-	"pages": [
-	  {
-		"label": "Patient Information",
-		"sections": [
-		  {
-			"label": "Patient info",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Screening Date",
-				"type": "obs",
-				"required": true,
-				"id": "screeningDate",
-				"questionOptions": {
-				  "rendering": "date",
-				  "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
-				  "conceptMappings": [],
-				  "answers": []
-				},
-				"validators": [
-				  {
-					"type": "date",
-					"allowFutureDates": "false"
-				  }
-				]
-			  }
-			]
-		  }
-		]
-	  },
-	  {
-		"label": "PrEP Screening",
-		"sections": [
-		  {
-			"label": "Screening",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "PrEP provision site",
-				"type": "obs",
-				"required": false,
-				"id": "provisionSite",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "01b3efef-b954-4622-a88a-4b680e4d4956",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "90f138a5-9a94-488a-b5c9-6daf8b2400d1",
-					  "label": "ART Clinic"
-					},
-					{
-					  "concept": "160538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "PMTCT"
-					},
-					{
-					  "concept": "141899AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Drop-in Center"
-					},
-					{
-					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Other"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Referred from",
-				"type": "obs",
-				"required": true,
-				"id": "referredFrom",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "e2fc6b60-70e8-4a87-a164-fb175c788330",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "0d6fc7c2-7ed1-4ab8-a224-80f0cafba725",
-					  "label": "Not a referred client"
-					},
-					{
-					  "concept": "c39e1140-4b4c-402c-81b1-354677306304",
-					  "label": "People high risk for HIV infection clinic"
-					},
-					{
-					  "concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "VCT"
-					},
-					{
-					  "concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "OPD"
-					},
-					{
-					  "concept": "166512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Peer educator"
-					},
-					{
-					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Other"
-					}
-				  ]
-				},
-				"validators": []
-			  }
-			]
-		  }
-		]
-	  },
-	  {
-		"label": "Baseline Laboratory Tests",
-		"sections": [
-		  {
-			"label": "HIV",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "HIV test done",
-				"type": "obs",
-				"required": false,
-				"id": "hivTestDone",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "164401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "HIV test Result",
-				"type": "obs",
-				"required": false,
-				"id": "hivTestResult",
-				"hide": {
-				  "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Positive"
-					},
-					{
-					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-					  "label": "Negative"
-					},
-					{
-					  "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Inconclusive"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Scheduled for retesting",
-				"type": "obs",
-				"required": false,
-				"id": "scheduledForRetesting",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "256ca5e8-6929-49f6-9cb2-dd549300a270",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "hivTestResult !== '165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Referred for HIV treatment",
-				"type": "obs",
-				"required": false,
-				"id": "referredForHivTreatment",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "164849AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "164849"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  }
-			]
-		  },
-		  {
-			"label": "Hepatitis",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Hepatitis B test done",
-				"type": "obs",
-				"required": false,
-				"id": "hepatitisTestDone",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "6c6a1af6-f37b-4e40-9dc3-cb69c1e9d96c",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Hepatitis B test result",
-				"type": "obs",
-				"required": false,
-				"id": "hepatitisBTest",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "1322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-MVP",
-					  "value": "13221000105000"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "AMPATH",
-					  "value": "1322"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Positive"
-					},
-					{
-					  "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-					  "label": "Negative"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "hepatitisTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Referred for further testing and assessment",
-				"type": "obs",
-				"required": false,
-				"id": "referredForFurtherTesting",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "3e02da2d-b62a-4b17-b1fc-5eb8b4b164b9",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "hepatitisBTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  }
-			]
-		  },
-		  {
-			"label": "Creatinine",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Creatinine level tested",
-				"type": "obs",
-				"required": false,
-				"id": "creatinineLevelTested",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "272e945c-6ed9-4612-89ea-a4ffeb916c16",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Weight",
-				"type": "obs",
-				"required": false,
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
-				},
-				"validators": [
-				  {
-					"type": "js_expression",
-					"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
-					"message": "Weight should be a numeric value"
-				  }
-				],
-				"id": "weight"
-			  },
-			  {
-				"label": "ScCr",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0",
-				  "conceptMappings": [
-					{
-					  "type": "CIEL",
-					  "value": "790"
-					},
-					{
-					  "type": "SNOMED-CT",
-					  "value": "113075003"
-					},
-					{
-					  "type": "LOINC",
-					  "value": "14682-9"
-					},
-					{
-					  "type": "AMPATH",
-					  "value": "790"
-					},
-					{
-					  "type": "AMPATH",
-					  "value": "790"
-					},
-					{
-					  "type": "CIEL",
-					  "value": "790"
-					}
-				  ]
-				},
-				"validators": [
-				  {
-					"type": "js_expression",
-					"failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
-					"message": "ScCr should be a numeric value"
-				  }
-				],
-				"id": "creatinineLevel"
-			  },
-			  {
-				"label": "eGFR",
-				"type": "obs",
-				"required": false,
-				"id": "eGFR",
-				"questionOptions": {
-				  "calculate": {
-					"calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
-				  },
-				  "rendering": "select",
-				  "concept": "165570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "364183002"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "165570"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "120575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Chronic kidney disease, stage I"
-					},
-					{
-					  "concept": "120574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Chronic kidney disease, stage II (mild)"
-					},
-					{
-					  "concept": "2c156b19-3b11-4e11-9ae2-5ea2bff2b093",
-					  "label": "Chronic kidney disease, stage IIIA (moderate)"
-					},
-					{
-					  "concept": "3034271b-5d91-4616-9f49-8a8cae5c2e76",
-					  "label": "Chronic kidney disease, stage IIIB (moderate)"
-					},
-					{
-					  "concept": "120578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Chronic kidney disease, stage IV (severe)"
-					},
-					{
-					  "concept": "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Chronic kidney disease, stage V"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Referred for further review of creatinine clearance",
-				"type": "obs",
-				"required": false,
-				"id": "referredForFurtherReview",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "3efc7899-2de6-4cee-a1fd-ad5b32e4719b",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  }
-			]
-		  },
-		  {
-			"label": "Family planning",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Pregnancy status",
-				"type": "obs",
-				"required": false,
-				"id": "pregnancyStatus",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "AMPATH",
-					  "value": "5272"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "PIH",
-					  "value": "5272"
-					},
-					{
-					  "relationship": "BROADER-THAN",
-					  "type": "LOINC",
-					  "value": "11449-6"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "PIH-Malawi",
-					  "value": "1755"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "AMPATH",
-					  "value": "44"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "5272"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "PIH-Malawi",
-					  "value": "1755"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "AMPATH",
-					  "value": "44"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "PIH",
-					  "value": "5272"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "AMPATH",
-					  "value": "5272"
-					},
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "77386006"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Family planning method",
-				"type": "obs",
-				"required": false,
-				"id": "familyPlanningMethod",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-CT",
-					  "value": "13197004"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "374"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "AMPATH",
-					  "value": "374"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "PIH",
-					  "value": "374"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Condoms",
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "706506000"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5270"
-						},
-						{
-						  "type": "PIH",
-						  "value": "190"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5270"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "190"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "190"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "706506000"
-						},
-						{
-						  "type": "PIH",
-						  "value": "190"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "190"
-						}
-					  ]
-					},
-					{
-					  "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Oral contraceptive pill",
-					  "hide": {
-						"hideWhenExpression": "patient.gender === 'male'"
-					  },
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "5935008"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "780"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "780"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "13"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "5935008"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "13"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "780"
-						}
-					  ]
-					},
-					{
-					  "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Injectable",
-					  "hide": {
-						"hideWhenExpression": "patient.gender === 'male'"
-					  },
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "5279"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "169552007"
-						},
-						{
-						  "type": "SNOMED-MVP",
-						  "value": "52791000105008"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5279"
-						},
-						{
-						  "type": "SNOMED-MVP",
-						  "value": "52791000105008"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5279"
-						}
-					  ]
-					},
-					{
-					  "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Diaphragm/cervical cap",
-					  "hide": {
-						"hideWhenExpression": "patient.gender === 'male'"
-					  },
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "5278"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "368441006"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5278"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "5278"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5278"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "368441006"
-						}
-					  ]
-					},
-					{
-					  "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Intrauterine device",
-					  "hide": {
-						"hideWhenExpression": "patient.gender === 'male'"
-					  },
-					  "conceptMappings": [
-						{
-						  "type": "SNOMED-CT",
-						  "value": "312081001"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "312081001"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "268460000"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5275"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "268460000"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "5275"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "5275"
-						}
-					  ]
-					},
-					{
-					  "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Vasectomy/tubal legation",
-					  "hide": {
-						"hideWhenExpression": "patient.gender === 'female'"
-					  },
-					  "conceptMappings": [
-						{
-						  "type": "IMO-ProcedureIT",
-						  "value": "1848460"
-						},
-						{
-						  "type": "IMO-ProcedureIT",
-						  "value": "1809386"
-						},
-						{
-						  "type": "IMO-ProcedureIT",
-						  "value": "1809386"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1489"
-						},
-						{
-						  "type": "IMO-ProcedureIT",
-						  "value": "1848460"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "22523008"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "22523008"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1721"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1489"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1721"
-						}
-					  ]
-					},
-					{
-					  "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Abstinence",
-					  "conceptMappings": [
-						{
-						  "type": "AMPATH",
-						  "value": "6219"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "159524"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1274"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "162171002"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1274"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "159524"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1720"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "3628"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1720"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "3628"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "162171002"
-						}
-					  ]
-					},
-					{
-					  "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Implantable hormone",
-					  "hide": {
-						"hideWhenExpression": "patient.gender === 'male'"
-					  },
-					  "conceptMappings": [
-						{
-						  "type": "CIEL",
-						  "value": "159589"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "428987008"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "169552007"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "169552007"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "6220"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "159589"
-						}
-					  ]
-					},
-					{
-					  "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "None",
-					  "conceptMappings": [
-						{
-						  "type": "HL7-ActSubstanceAdminSubstitutionCode",
-						  "value": "N"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1107"
-						},
-						{
-						  "type": "ANC-DAK",
-						  "value": "ANC.B8.DE28"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1107"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1107"
-						},
-						{
-						  "type": "ANC-DAK",
-						  "value": "ANC.B5.DE49"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1107"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "260413007"
-						},
-						{
-						  "type": "PIH",
-						  "value": "1107"
-						},
-						{
-						  "type": "org.openmrs.module.mdrtb",
-						  "value": "NONE"
-						},
-						{
-						  "type": "PIH-Malawi",
-						  "value": "1107"
-						},
-						{
-						  "type": "AMPATH",
-						  "value": "1107"
-						},
-						{
-						  "type": "SNOMED-CT",
-						  "value": "260413007"
-						},
-						{
-						  "type": "org.openmrs.module.mdrtb",
-						  "value": "NONE"
-						},
-						{
-						  "type": "CIEL",
-						  "value": "1107"
-						}
-					  ]
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "pregnancyStatus == '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  }
-			]
-		  }
-		]
-	  },
-	  {
-		"label": "Sexually Transmitted Infections",
-		"sections": [
-		  {
-			"label": "STI",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Screened for STI based on syndromic STI approach ",
-				"type": "obs",
-				"required": false,
-				"id": "screenedForSti",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "f461ff79-1873-4f80-bffd-6b3164db7e88",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "STI screening result",
-				"type": "obs",
-				"required": false,
-				"hide": {
-				  "hideWhenExpression": "screenedForSti !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"id": "screeningResult",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "7a643a93-3f11-4ad0-acfa-b15f2d7c8ddc",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "b0ff6e2e-ff01-4683-859a-9fcd69dff12e",
-					  "label": "No STI"
-					},
-					{
-					  "concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
-					  "label": "Genital ulcer"
-					},
-					{
-					  "concept": "b3855356-bedc-492e-bec5-2d19bfabcced",
-					  "label": "Urethral discharge"
-					},
-					{
-					  "concept": "123396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Vaginal discharge"
-					},
-					{
-					  "concept": "157544AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Lower abdominal pain"
-					},
-					{
-					  "concept": "125203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Scrotal swelling"
-					},
-					{
-					  "concept": "e5e4cb90-b6ee-4b15-b920-2efafc359ee3",
-					  "label": "Inguinal bubo"
-					},
-					{
-					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Other"
-					}
-				  ]
-				}
-			  },
-			  {
-				"label": "STI treatment started",
-				"type": "obs",
-				"required": false,
-				"id": "stiTreatmentStarted",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "54d669ec-627d-4ee9-9ba4-fe9aba73004e",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "screeningResult == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || isEmpty('screeningResult')"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "STI treatment started Date",
-				"type": "obs",
-				"required": false,
-				"id": "stiTreatmentStartedDate",
-				"questionOptions": {
-				  "rendering": "date",
-				  "concept": "1428AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-MVP",
-					  "value": "14281000105003"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "1428"
-					},
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "413946009"
-					}
-				  ],
-				  "answers": []
-				},
-				"hide": {
-				  "hideWhenExpression": "stiTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": [
-				  {
-					"type": "date",
-					"allowFutureDates": "false"
-				  }
-				]
-			  }
-			]
-		  },
-		  {
-			"label": "Screening for substantial risk for HIV infection",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Self-identifying FSw",
-				"type": "obs",
-				"required": true,
-				"id": "selfIdentifyingSexWorker",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "160579AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "160579"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "160579"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-CT",
-					  "value": "53713009"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-CT",
-					  "value": "53713009"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": [],
-				"hide": {
-				  "hideWhenExpression": "patient.gender === 'male'"
-				}
-			  },
-			  {
-				"label": "Do you have an HIV positive partner",
-				"type": "obs",
-				"required": true,
-				"id": "doYouHaveHIVPositivePartner",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "f15222fd-c4dd-44e0-b7f4-407599596998",
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "I don't know"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Is your partner on HIV treatment",
-				"type": "obs",
-				"required": false,
-				"id": "isYourPartnerOnHIVTreatment ",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "163561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "KenyaEMR",
-					  "value": "165095"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "163561"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "I don't know"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Is your partner adherent to ART medications",
-				"type": "obs",
-				"required": false,
-				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"id": "isYourPartnerAdherentToARTMedications",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "82f819c8-856f-49f1-b73f-7c28359088c8",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "I don't know"
-					}
-				  ]
-				}
-			  },
-			  {
-				"label": "How long has your partner been on treatment(in month)",
-				"type": "obs",
-				"required": false,
-				"id": "howLongHasYourPartnerBeenOnTreatment",
-				"questionOptions": {
-				  "rendering": "number",
-				  "concept": "c9db677c-330c-45c9-997e-5d192287041e",
-				  "conceptMappings": [],
-				  "answers": []
-				},
-				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Last viral load result of your partner",
-				"type": "obs",
-				"required": false,
-				"hide": {
-				  "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"id": "lastViralLoadResultOfYourPartner",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "9eb17c98-d76d-4ee1-b706-b33641f63f99",
-				  "conceptMappings": [
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "18316001"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "167486"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Suppressed"
-					},
-					{
-					  "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Unsuppressed"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "I don't know"
-					}
-				  ]
-				}
-			  },
-			  {
-				"label": "Client at substantial risk  for HIV infection",
-				"type": "obs",
-				"required": false,
-				"id": "riskFactorPresent",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "165430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "80943009"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "165430"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  }
-			]
-		  }
-		]
-	  },
-	  {
-		"label": "Recent Exposure To HIV",
-		"behaviours": [
-		  {
-			"intent": "*",
-			"hide": {
-			  "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-			}
-		  }
-		],
-		"sections": [
-		  {
-			"label": "Exposure to HIV",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Have you had sex without a condom with someone living with HIV who is not on treatment in the past 2 weeks ?",
-				"type": "obs",
-				"required": false,
-				"id": "hasSexWithoutCondom",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "166658AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "2314005"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "KenyaEMR",
-					  "value": "165097"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "166658"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "I don't know"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Referred for PEP",
-				"type": "obs",
-				"required": false,
-				"id": "referredForPreventativeServices",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "166656AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "NARROWER-THAN",
-					  "type": "SNOMED-CT",
-					  "value": "309018005"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "KenyaEMR",
-					  "value": "165093"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "166656"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Have you had a Cold or Flu or a sore throat, runny nose, or fever in the last two weeks ?",
-				"type": "obs",
-				"required": false,
-				"id": "haveYouHadColdOrFlu",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "41d9141f-8dee-4300-80d0-4c217db6f885",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					},
-					{
-					  "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "I don't know"
-					}
-				  ]
-				},
-				"validators": []
-			  }
-			]
-		  }
-		]
-	  },
-	  {
-		"label": "PrEP Eligibility",
-		"behaviours": [
-		  {
-			"intent": "*",
-			"hide": {
-			  "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-			}
-		  }
-		],
-		"sections": [
-		  {
-			"label": "Eligibility",
-			"isExpanded": "true",
-			"questions": [
-			  {
-				"label": "Contraindications to PrEP medicines",
-				"type": "obs",
-				"required": false,
-				"id": "contraindicationsToPrepMedicines",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "d8831943-7b41-405a-ac65-2ae11c8ede42",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "PrEP processed by:",
-				"type": "obs",
-				"required": false,
-				"id": "prepProcessedBy",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": "b6b52311-e3aa-4955-a4f5-1baeb6533384",
-				  "conceptMappings": [],
-				  "answers": []
-				},
-				"validators": []
-			  }
-			]
-		  }
-		]
-	  },
-	  {
-		"label": "Treatment Initiation",
-		"behaviours": [
-		  {
-			"intent": "*",
-			"hide": {
-			  "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-			}
-		  }
-		],
-		"sections": [
-		  {
-			"label": "Treatment Initiation",
-			"isExpanded": "true",
-			"hide": {
-			  "hideWhenExpression": "contraindicationsToPrepMedicines === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-			},
-			"questions": [
-			  {
-				"label": "Eligible for PrEP",
-				"type": "obs",
-				"required": false,
-				"id": "eligibileForPrep",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "e5d11e73-835a-4fdf-9924-ed59c6a18f3d",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"validators": []
-			  },
-			  {
-				"label": "PrEP offered",
-				"type": "obs",
-				"required": false,
-				"id": "prepOffered",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "f1d396ad-d2b9-4c9e-84c5-3e152ba01e5a",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "PrEP accepted",
-				"type": "obs",
-				"required": false,
-				"id": "prepAccepted",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "166657AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "KenyaEMR",
-					  "value": "165094"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "166657"
-					}
-				  ],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "PrEP started",
-				"type": "obs",
-				"required": false,
-				"id": "prepStarted",
-				"questionOptions": {
-				  "rendering": "radio",
-				  "concept": "3b4bc0b2-acbb-4fb5-82eb-6f0479915862",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Yes"
-					},
-					{
-					  "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "No"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prepAccepted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Type of client",
-				"type": "obs",
-				"required": true,
-				"id": "typeOfClient",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "da8c5265-2ab4-43f8-af66-ec1c9c8e9d4f",
-				  "answers": [
-					{
-					  "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Newly Started (started in the facility)"
-					},
-					{
-					  "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
-					  "label": "Transfer In (started in another facility)"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "PrEP Start Date",
-				"type": "obs",
-				"required": true,
-				"id": "prepStartDate",
-				"questionOptions": {
-				  "rendering": "date",
-				  "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-CT",
-					  "value": "413946009"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "163526"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "SNOMED-CT",
-					  "value": "413946009"
-					},
-					{
-					  "relationship": "SAME-AS",
-					  "type": "CIEL",
-					  "value": "163526"
-					}
-				  ],
-				  "answers": []
-				},
-				"hide": {
-				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": [
-				  {
-					"type": "date",
-					"allowFutureDates": "false"
-				  },
-				  {
-					"type": "js_expression",
-					"failsWhenExpression": "myValue < new Date(screeningDate)",
-					"message": "PrEP Start date should not be earlier than Screening date"
-				  }
-				]
-			  },
-			  {
-				"label": "PrEP (ARVs) prescribed",
-				"type": "obs",
-				"required": false,
-				"id": "prepPrescribed",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "51c2429d-21d7-4319-a27d-7a9b10b8759c",
-				  "conceptMappings": [],
-				  "answers": [
-					{
-					  "concept": "97d14de6-89c4-49cb-9553-55de5cbc9b03",
-					  "label": " TDF/3TC"
-					},
-					{
-					  "concept": "ff27e3c2-1453-4819-ba89-74bd70749848",
-					  "label": "TDF"
-					},
-					{
-					  "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-					  "label": "Other"
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Number of first dose day provided",
-				"type": "obs",
-				"required": "true",
-				"id": "doseDays",
-				"questionOptions": {
-				  "rendering": "select",
-				  "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
-				  "answers": [
-					{
-					  "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
-					  "label": "30",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "75d94023-7804-44f8-9998-9d678488af3e",
-					  "label": "60",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
-					  "label": "90",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
-					  "label": "120",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
-					  "label": "150",
-					  "conceptMappings": []
-					},
-					{
-					  "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
-					  "label": "180",
-					  "conceptMappings": []
-					}
-				  ]
-				},
-				"hide": {
-				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "PrEP dose end date",
-				"type": "obs",
-				"required": false,
-				"id": "prepDoseEndDate",
-				"questionOptions": {
-				  "rendering": "date",
-				  "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
-				  "calculate": {
-					"calculateExpression": "CustomPrepDoseEndDateCalc('prepStartDate', 'doseDays', '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
-				  },
-				  "conceptMappings": [],
-				  "answers": []
-				},
-				"readonly": "true",
-				"hide": {
-				  "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-				},
-				"validators": []
-			  },
-			  {
-				"label": "Unique identification code (UIC)",
-				"type": "obs",
-				"questionOptions": {
-				  "rendering": "text",
-				  "concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-				  "conceptMappings": [],
-				  "answers": []
-				},
-				"id": "uniqueIdentificaitonCode"
-			  }
-			]
-		  }
-		]
-	  }
-	],
-	"availableIntents": [
-	  {
-		"intent": "*",
-		"display": "default_intent"
-	  }
-	],
-	"processor": "EncounterFormProcessor",
-	"uuid": "e7bce9e2-5ed6-4cbb-ab93-3531a4c33760",
-	"referencedForms": [],
-	"encounterType": "8c2b6a9b-4795-417d-affe-2530a753b715",
-	"allowUnspecifiedAll": true
-  }
+  "name": "Prep",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "Pre Exposure Screening",
+  "pages": [
+    {
+      "label": "Patient Information",
+      "sections": [
+        {
+          "label": "Patient info",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Screening Date",
+              "type": "obs",
+              "required": true,
+              "id": "screeningDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "PrEP Screening",
+      "sections": [
+        {
+          "label": "Screening",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "PrEP provision site",
+              "type": "obs",
+              "required": false,
+              "id": "provisionSite",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "01b3efef-b954-4622-a88a-4b680e4d4956",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "90f138a5-9a94-488a-b5c9-6daf8b2400d1",
+                    "label": "ART Clinic"
+                  },
+                  {
+                    "concept": "160538AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "PMTCT"
+                  },
+                  {
+                    "concept": "141899AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Drop-in Center"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred from",
+              "type": "obs",
+              "required": true,
+              "id": "referredFrom",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "e2fc6b60-70e8-4a87-a164-fb175c788330",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "0d6fc7c2-7ed1-4ab8-a224-80f0cafba725",
+                    "label": "Not a referred client"
+                  },
+                  {
+                    "concept": "c39e1140-4b4c-402c-81b1-354677306304",
+                    "label": "People high risk for HIV infection clinic"
+                  },
+                  {
+                    "concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "VCT"
+                  },
+                  {
+                    "concept": "160542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "OPD"
+                  },
+                  {
+                    "concept": "166512AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Peer educator"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Baseline Laboratory Tests",
+      "sections": [
+        {
+          "label": "HIV",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "HIV test done",
+              "type": "obs",
+              "required": false,
+              "id": "hivTestDone",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "164401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "HIV test Result",
+              "type": "obs",
+              "required": false,
+              "id": "hivTestResult",
+              "hide": {
+                "hideWhenExpression": "hivTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "2e770be1-7397-4684-bea6-6632c23b00d7",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Inconclusive"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Scheduled for retesting",
+              "type": "obs",
+              "required": false,
+              "id": "scheduledForRetesting",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "256ca5e8-6929-49f6-9cb2-dd549300a270",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "hivTestResult !== '165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred for HIV treatment",
+              "type": "obs",
+              "required": false,
+              "id": "referredForHivTreatment",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "164849AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "164849"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "hivTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Hepatitis",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Hepatitis B test done",
+              "type": "obs",
+              "required": false,
+              "id": "hepatitisTestDone",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "6c6a1af6-f37b-4e40-9dc3-cb69c1e9d96c",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Hepatitis B test result",
+              "type": "obs",
+              "required": false,
+              "id": "hepatitisBTest",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "1322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-MVP",
+                    "value": "13221000105000"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "1322"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  },
+                  {
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                    "label": "Negative"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "hepatitisTestDone !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred for further testing and assessment",
+              "type": "obs",
+              "required": false,
+              "id": "referredForFurtherTesting",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "3e02da2d-b62a-4b17-b1fc-5eb8b4b164b9",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "hepatitisBTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Creatinine",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Creatinine level tested",
+              "type": "obs",
+              "required": false,
+              "id": "creatinineLevelTested",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "272e945c-6ed9-4612-89ea-a4ffeb916c16",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Weight",
+              "type": "obs",
+              "required": false,
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+                  "message": "Weight should be a numeric value"
+                }
+              ],
+              "id": "weight"
+            },
+            {
+              "label": "ScCr",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "790"
+                  },
+                  {
+                    "type": "SNOMED-CT",
+                    "value": "113075003"
+                  },
+                  {
+                    "type": "LOINC",
+                    "value": "14682-9"
+                  },
+                  {
+                    "type": "AMPATH",
+                    "value": "790"
+                  },
+                  {
+                    "type": "AMPATH",
+                    "value": "790"
+                  },
+                  {
+                    "type": "CIEL",
+                    "value": "790"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "creatinineLevelTested !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+                  "message": "ScCr should be a numeric value"
+                }
+              ],
+              "id": "creatinineLevel"
+            },
+            {
+              "label": "eGFR",
+              "type": "obs",
+              "required": false,
+              "id": "eGFR",
+              "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
+                },
+                "rendering": "select",
+                "concept": "165570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "364183002"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "165570"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "120575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Chronic kidney disease, stage I"
+                  },
+                  {
+                    "concept": "120574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Chronic kidney disease, stage II (mild)"
+                  },
+                  {
+                    "concept": "2c156b19-3b11-4e11-9ae2-5ea2bff2b093",
+                    "label": "Chronic kidney disease, stage IIIA (moderate)"
+                  },
+                  {
+                    "concept": "3034271b-5d91-4616-9f49-8a8cae5c2e76",
+                    "label": "Chronic kidney disease, stage IIIB (moderate)"
+                  },
+                  {
+                    "concept": "120578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Chronic kidney disease, stage IV (severe)"
+                  },
+                  {
+                    "concept": "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Chronic kidney disease, stage V"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "creatinineLevelTested !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred for further review of creatinine clearance",
+              "type": "obs",
+              "required": false,
+              "id": "referredForFurtherReview",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "3efc7899-2de6-4cee-a1fd-ad5b32e4719b",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "creatinineLevelTested !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Family planning",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Pregnancy status",
+              "type": "obs",
+              "required": false,
+              "id": "pregnancyStatus",
+              "hide": {
+                "hideWhenExpression": "patient.gender === 'male' || patient.age <= 10"
+              },
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "5272"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "5272"
+                  },
+                  {
+                    "relationship": "BROADER-THAN",
+                    "type": "LOINC",
+                    "value": "11449-6"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH-Malawi",
+                    "value": "1755"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "44"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "5272"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH-Malawi",
+                    "value": "1755"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "44"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "5272"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "5272"
+                  },
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "77386006"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Family planning method",
+              "type": "obs",
+              "required": false,
+              "id": "familyPlanningMethod",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "374AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "13197004"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "374"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "AMPATH",
+                    "value": "374"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "PIH",
+                    "value": "374"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Condoms",
+                    "conceptMappings": [
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "706506000"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5270"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "190"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5270"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "190"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "190"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "706506000"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "190"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "190"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "780AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Oral contraceptive pill",
+                    "hide": {
+                      "hideWhenExpression": "patient.gender === 'male'"
+                    },
+                    "conceptMappings": [
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "5935008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "780"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "780"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "13"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "5935008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "13"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "780"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "5279AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Injectable",
+                    "hide": {
+                      "hideWhenExpression": "patient.gender === 'male'"
+                    },
+                    "conceptMappings": [
+                      {
+                        "type": "CIEL",
+                        "value": "5279"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "169552007"
+                      },
+                      {
+                        "type": "SNOMED-MVP",
+                        "value": "52791000105008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5279"
+                      },
+                      {
+                        "type": "SNOMED-MVP",
+                        "value": "52791000105008"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5279"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "5278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Diaphragm/cervical cap",
+                    "hide": {
+                      "hideWhenExpression": "patient.gender === 'male'"
+                    },
+                    "conceptMappings": [
+                      {
+                        "type": "CIEL",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "368441006"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5278"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "368441006"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "5275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Intrauterine device",
+                    "hide": {
+                      "hideWhenExpression": "patient.gender === 'male'"
+                    },
+                    "conceptMappings": [
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "312081001"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "312081001"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "268460000"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5275"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "268460000"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "5275"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "5275"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "1489AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Vasectomy/tubal legation",
+                    "hide": {
+                      "hideWhenExpression": "patient.gender === 'female'"
+                    },
+                    "conceptMappings": [
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1848460"
+                      },
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1809386"
+                      },
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1809386"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1489"
+                      },
+                      {
+                        "type": "IMO-ProcedureIT",
+                        "value": "1848460"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "22523008"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "22523008"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1721"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1489"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1721"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "159524AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Abstinence",
+                    "conceptMappings": [
+                      {
+                        "type": "AMPATH",
+                        "value": "6219"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "159524"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1274"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "162171002"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1274"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "159524"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1720"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "3628"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1720"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "3628"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "162171002"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "159589AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Implantable hormone",
+                    "hide": {
+                      "hideWhenExpression": "patient.gender === 'male'"
+                    },
+                    "conceptMappings": [
+                      {
+                        "type": "CIEL",
+                        "value": "159589"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "428987008"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "169552007"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "169552007"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "6220"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "159589"
+                      }
+                    ]
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No Family Planning",
+                    "conceptMappings": [
+                      {
+                        "type": "HL7-ActSubstanceAdminSubstitutionCode",
+                        "value": "N"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "ANC-DAK",
+                        "value": "ANC.B8.DE28"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "ANC-DAK",
+                        "value": "ANC.B5.DE49"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "260413007"
+                      },
+                      {
+                        "type": "PIH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "org.openmrs.module.mdrtb",
+                        "value": "NONE"
+                      },
+                      {
+                        "type": "PIH-Malawi",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "AMPATH",
+                        "value": "1107"
+                      },
+                      {
+                        "type": "SNOMED-CT",
+                        "value": "260413007"
+                      },
+                      {
+                        "type": "org.openmrs.module.mdrtb",
+                        "value": "NONE"
+                      },
+                      {
+                        "type": "CIEL",
+                        "value": "1107"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "pregnancyStatus == '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.age <= 10"
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Sexually Transmitted Infections",
+      "sections": [
+        {
+          "label": "STI",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Screened for STI based on syndromic STI approach ",
+              "type": "obs",
+              "required": false,
+              "id": "screenedForSti",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "f461ff79-1873-4f80-bffd-6b3164db7e88",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "STI screening result",
+              "type": "obs",
+              "required": false,
+              "hide": {
+                "hideWhenExpression": "screenedForSti !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "screeningResult",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "7a643a93-3f11-4ad0-acfa-b15f2d7c8ddc",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "b0ff6e2e-ff01-4683-859a-9fcd69dff12e",
+                    "label": "No STI"
+                  },
+                  {
+                    "concept": "6ff0d9f0-f955-4750-bd8d-2619f86967bd",
+                    "label": "Genital ulcer"
+                  },
+                  {
+                    "concept": "b3855356-bedc-492e-bec5-2d19bfabcced",
+                    "label": "Urethral discharge"
+                  },
+                  {
+                    "concept": "123396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Vaginal discharge"
+                  },
+                  {
+                    "concept": "157544AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lower abdominal pain"
+                  },
+                  {
+                    "concept": "125203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Scrotal swelling"
+                  },
+                  {
+                    "concept": "e5e4cb90-b6ee-4b15-b920-2efafc359ee3",
+                    "label": "Inguinal bubo"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "STI treatment started",
+              "type": "obs",
+              "required": false,
+              "id": "stiTreatmentStarted",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "54d669ec-627d-4ee9-9ba4-fe9aba73004e",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "screeningResult == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || isEmpty('screeningResult')"
+              },
+              "validators": []
+            },
+            {
+              "label": "STI treatment started Date",
+              "type": "obs",
+              "required": false,
+              "id": "stiTreatmentStartedDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "1428AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-MVP",
+                    "value": "14281000105003"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "1428"
+                  },
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "413946009"
+                  }
+                ],
+                "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "stiTreatmentStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Screening for substantial risk for HIV infection",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Self-identifying FSw",
+              "type": "obs",
+              "required": true,
+              "id": "selfIdentifyingSexWorker",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "160579AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "160579"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "160579"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "53713009"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "53713009"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "patient.gender === 'male'"
+              }
+            },
+            {
+              "label": "Do you have an HIV positive partner",
+              "type": "obs",
+              "required": true,
+              "id": "doYouHaveHIVPositivePartner",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "f15222fd-c4dd-44e0-b7f4-407599596998",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Is your partner on HIV treatment",
+              "type": "obs",
+              "required": false,
+              "id": "isYourPartnerOnHIVTreatment ",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "163561AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "KenyaEMR",
+                    "value": "165095"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "163561"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Is your partner adherent to ART medications",
+              "type": "obs",
+              "required": false,
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "isYourPartnerAdherentToARTMedications",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "82f819c8-856f-49f1-b73f-7c28359088c8",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "How long has your partner been on treatment(in month)",
+              "type": "obs",
+              "required": false,
+              "id": "howLongHasYourPartnerBeenOnTreatment",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "c9db677c-330c-45c9-997e-5d192287041e",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Last viral load result of your partner",
+              "type": "obs",
+              "required": false,
+              "hide": {
+                "hideWhenExpression": "doYouHaveHIVPositivePartner !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "lastViralLoadResultOfYourPartner",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "9eb17c98-d76d-4ee1-b706-b33641f63f99",
+                "conceptMappings": [
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "18316001"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "167486"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Suppressed"
+                  },
+                  {
+                    "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Unsuppressed"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Client at substantial risk  for HIV infection",
+              "type": "obs",
+              "required": false,
+              "id": "riskFactorPresent",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "165430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "80943009"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "165430"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Recent Exposure To HIV",
+      "behaviours": [
+        {
+          "intent": "*",
+          "hide": {
+            "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "label": "Exposure to HIV",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Have you had sex without a condom with someone living with HIV who is not on treatment in the past 2 weeks ?",
+              "type": "obs",
+              "required": false,
+              "id": "hasSexWithoutCondom",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "166658AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "2314005"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "KenyaEMR",
+                    "value": "165097"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "166658"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Referred for PEP",
+              "type": "obs",
+              "required": false,
+              "id": "referredForPreventativeServices",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "166656AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "NARROWER-THAN",
+                    "type": "SNOMED-CT",
+                    "value": "309018005"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "KenyaEMR",
+                    "value": "165093"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "166656"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Have you had a Cold or Flu or a sore throat, runny nose, or fever in the last two weeks ?",
+              "type": "obs",
+              "required": false,
+              "id": "haveYouHadColdOrFlu",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "41d9141f-8dee-4300-80d0-4c217db6f885",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "I don't know"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "PrEP Eligibility",
+      "behaviours": [
+        {
+          "intent": "*",
+          "hide": {
+            "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "label": "Eligibility",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Contraindications to PrEP medicines",
+              "type": "obs",
+              "required": false,
+              "id": "contraindicationsToPrepMedicines",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "d8831943-7b41-405a-ac65-2ae11c8ede42",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "PrEP processed by:",
+              "type": "obs",
+              "required": false,
+              "id": "prepProcessedBy",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "b6b52311-e3aa-4955-a4f5-1baeb6533384",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Treatment Initiation",
+      "behaviours": [
+        {
+          "intent": "*",
+          "hide": {
+            "hideWhenExpression": "hivTestDone === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && hivTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          }
+        }
+      ],
+      "sections": [
+        {
+          "label": "Treatment Initiation",
+          "isExpanded": "true",
+          "hide": {
+            "hideWhenExpression": "contraindicationsToPrepMedicines === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          },
+          "questions": [
+            {
+              "label": "Eligible for PrEP",
+              "type": "obs",
+              "required": false,
+              "id": "eligibileForPrep",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "e5d11e73-835a-4fdf-9924-ed59c6a18f3d",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "PrEP offered",
+              "type": "obs",
+              "required": false,
+              "id": "prepOffered",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "f1d396ad-d2b9-4c9e-84c5-3e152ba01e5a",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "PrEP accepted",
+              "type": "obs",
+              "required": false,
+              "id": "prepAccepted",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "166657AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "KenyaEMR",
+                    "value": "165094"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "166657"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "PrEP started",
+              "type": "obs",
+              "required": false,
+              "id": "prepStarted",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "3b4bc0b2-acbb-4fb5-82eb-6f0479915862",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "eligibileForPrep !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prepOffered !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || prepAccepted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Type of client",
+              "type": "obs",
+              "required": true,
+              "id": "typeOfClient",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "da8c5265-2ab4-43f8-af66-ec1c9c8e9d4f",
+                "answers": [
+                  {
+                    "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Newly Started (started in the facility)"
+                  },
+                  {
+                    "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
+                    "label": "Transfer In (started in another facility)"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "PrEP Start Date",
+              "type": "obs",
+              "required": true,
+              "id": "prepStartDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "413946009"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "163526"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "SNOMED-CT",
+                    "value": "413946009"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "163526"
+                  }
+                ],
+                "answers": []
+              },
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(screeningDate)",
+                  "message": "PrEP Start date should not be earlier than Screening date"
+                }
+              ]
+            },
+            {
+              "label": "PrEP (ARVs) prescribed",
+              "type": "obs",
+              "required": false,
+              "id": "prepPrescribed",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "51c2429d-21d7-4319-a27d-7a9b10b8759c",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "97d14de6-89c4-49cb-9553-55de5cbc9b03",
+                    "label": " TDF/3TC"
+                  },
+                  {
+                    "concept": "ff27e3c2-1453-4819-ba89-74bd70749848",
+                    "label": "TDF"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Number of first dose day provided",
+              "type": "obs",
+              "required": "true",
+              "id": "doseDays",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa",
+                "answers": [
+                  {
+                    "concept": "fba421cf-a483-4329-b8b1-6a3ef16081bc",
+                    "label": "30",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "75d94023-7804-44f8-9998-9d678488af3e",
+                    "label": "60",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "4abbd98d-0c07-42f4-920c-7bbf0f5824dc",
+                    "label": "90",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "684c450f-878b-4b96-ab1b-2b539c30f033",
+                    "label": "120",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "fa23df4a-dd90-4a0b-a1c9-b44b7f820c93",
+                    "label": "150",
+                    "conceptMappings": []
+                  },
+                  {
+                    "concept": "e5f7cc4d-922a-4838-8c75-af9bdbb59bc8",
+                    "label": "180",
+                    "conceptMappings": []
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "PrEP dose end date",
+              "type": "obs",
+              "required": false,
+              "id": "prepDoseEndDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
+                "calculate": {
+                  "calculateExpression": "CustomPrepDoseEndDateCalc('prepStartDate', 'doseDays', '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                },
+                "conceptMappings": [],
+                "answers": []
+              },
+              "readonly": "true",
+              "hide": {
+                "hideWhenExpression": "prepStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
+            },
+            {
+              "label": "Unique identification code (UIC)",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "162054AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [],
+                "answers": []
+              },
+              "id": "uniqueIdentificaitonCode"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "availableIntents": [
+    {
+      "intent": "*",
+      "display": "default_intent"
+    }
+  ],
+  "processor": "EncounterFormProcessor",
+  "uuid": "e7bce9e2-5ed6-4cbb-ab93-3531a4c33760",
+  "referencedForms": [],
+  "encounterType": "8c2b6a9b-4795-417d-affe-2530a753b715",
+  "allowUnspecifiedAll": true
+}

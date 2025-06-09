@@ -12,10 +12,9 @@ import {
 } from "../../constants";
 import { getData } from "../encounterUtils";
 import { moduleName } from "../../index";
-import styles from "../../root.scss";
+import styles from "./followup.scss";
 import stylesDead from "./followup.scss";
 import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../api/api";
-import dayjs from "dayjs";
 
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
@@ -227,6 +226,16 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   });
   return (
     <>
+      {!hasMRN && <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>}
+      {!hasUAN && <p className={styles.warningMessage}>{UAN_NULL_WARNING}</p>}
+      {!hasIntakeAEncounter && (
+        <p className={styles.warningMessage}>{formWarning("Intake A")}</p>
+      )}    
+    {isDead && (
+        <p className={stylesDead.warningMessage}>
+          ⚠️ Patient last follow-up status is set to be Dead, please edit the previous follow-up before preceeding.
+        </p>
+)}
       <EncounterList
         patientUuid={patientUuid}
         encounterType={FOLLOWUP_ENCOUNTER_TYPE}
@@ -241,17 +250,6 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         }}
         afterFormSaveAction={updateFormSavedStatus}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
-      {!hasUAN && <p className={styles.patientName}>{UAN_NULL_WARNING}</p>}
-      {!hasIntakeAEncounter && (
-        <p className={styles.patientName}>{formWarning("Intake A")}</p>
-      )}
-      {isDead && (
-        <p className={stylesDead.warningMessage}>
-          ⚠️ Patient last follow-up status is set to be Dead, please edit the previous follow-up before preceeding.
-        </p>
-)}
-
     </>
   );
 };

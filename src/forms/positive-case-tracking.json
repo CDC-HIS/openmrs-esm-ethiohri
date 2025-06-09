@@ -277,7 +277,6 @@
                 "concept": "73d76014-365e-484c-bf5b-0959add4e3f3",
                 "conceptMappings": [],
                 "answers": [
-                  
                   {
                     "concept": "1275AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "HF Outreach testing"
@@ -667,7 +666,7 @@
                 "concept": "0e10d5b1-ff3f-4c87-a6bb-0b5bbc8ebec2"
               },
               "hide": {
-                "hideWhenExpression": "reasonForNotStartingArtTheSameDay !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "reasonForNotStartingArtTheSameDay !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || startedArt !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -758,7 +757,7 @@
               },
               "id": "planForNextStep",
               "hide": {
-                "hideWhenExpression": "startedArt !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "startedArt !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || reasonForNotStartingArtTheSameDay === '160034AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {

@@ -13,6 +13,34 @@
           "isExpanded": "true",
           "questions": [
             {
+              "label": "Registration/Enrollment Date",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "fixed",
+                "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'dadc86a8-1e44-4a6d-91c2-e3b54089b54c', 'a0fde61e-f493-4f1f-b709-22aa94f72dc3'))?.valueDateTime"
+                }
+              },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "fixed",
+                    "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "fixed",
+                    "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d"
+                  }
+                }
+              ],
+              "id": "enrollment_date"
+            },
+            {
               "label": "Referral type",
               "type": "obs",
               "questionOptions": {
@@ -237,6 +265,11 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue > new Date(dateOfRetesting)",
                   "message": "Date of initial test should be earlier than date of re-test"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "message": "Date of initial test should not be earlier than the patient's birthdate"
                 }
               ],
               "id": "dateOfInitialTest"
@@ -259,6 +292,16 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue < new Date(dateOfInitialTest)",
                   "message": "Date of retest should not be earlier than date of initial test"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "message": "Date of retest should not be earlier than the patient's birthdate"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(enrollment_date)",
+                  "message": "Date of retest should not be earlier than Registration date"
                 }
               ],
               "id": "dateOfRetesting"

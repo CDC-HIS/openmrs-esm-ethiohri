@@ -6048,7 +6048,7 @@
               "id": "assessmentDate"
             },
             {
-              "label": "Assessment status",
+              "label": "Client Classification",
               "type": "obs",
               "required": false,
               "questionOptions": {
@@ -6060,11 +6060,11 @@
                 "answers": [
                   {
                     "concept": "564d389c-f131-45b9-a8e6-ecc4888b46b2",
-                    "label": "Stable"
+                    "label": "Less Intensive"
                   },
                   {
                     "concept": "eb5b1d5e-ffee-4887-9e3b-bf3ea627badf",
-                    "label": "Unstable"
+                    "label": "More Intensive"
                   }
                 ]
               },

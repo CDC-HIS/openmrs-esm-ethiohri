@@ -171,39 +171,45 @@ export const kidneyDiseaseStage4 = "120578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const kidneyDiseaseStage5 = "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
 export const MRN_NULL_WARNING =
-  "* Patient needs to have a registered MRN, before this form can be filled! Please add an MRN on patient details.";
+  "⚠️ Patient needs to have a registered MRN, before this form can be filled! Please add an MRN on patient details.";
 
 export const UAN_NULL_WARNING =
-  "* Please fill Unique ART Number if the client has started ART!";
+  "⚠️ Please fill Unique ART Number if the client has started ART!";
 
 export const formWarning = (formName) =>
-  `* Patient needs to have ${formName} form filled, before this form can be filled !`;
+  `⚠️ Patient needs to have ${formName} form filled, before this form can be filled !`;
 
 export const POSITIVE_PATIENT_WARNING =
-  "* Patient has already been confirmed as HIV positive !";
+  "⚠️ Patient has already been confirmed as HIV positive !";
 
 export const REACTIVE_EXPOSED_PERSON_WARNING =
-  "* Exposed person's status is reactive in PEP Registration form !";
+  "⚠️ Exposed person's status is reactive in PEP Registration form !";
 
 export const REACTIVE_HIV_STATUS_WARNING =
-  "* Patient's HIV status is reactive in a previous PEP Followup form !";
+  "⚠️ Patient's HIV status is reactive in a previous PEP Followup form !";
 
 export const AGE_ABOVE_THREE_WARNING =
-  "* Children above three years old are not eligible for PMTCT !";
+  "⚠️ Children above three years old are not eligible for PMTCT !";
 
 export const GENDER_PMTCT_WARNING =
-  "* Male patients are not eligible for PMTCT !";
+  "⚠️ Male patients are not eligible for PMTCT !";
 
 export const ICT_OFFER_DECLINED_WARNING =
-  "* ICT hasn't been offered/accepted by patient !";
+  "⚠️ ICT hasn't been offered/accepted by patient !";
 
 export const PRIVILEGE_WARNING =
-  "* You do not have the privilege to view this section !";
+  "⚠️ You do not have the privilege to view this section !";
 
 export const NOT_ENROLLED_IN_PMTCT_WARNING =
-  "* Patient was not reffered to PMTCT during registration !";
+  "⚠️ Patient was not reffered to PMTCT during registration !";
 
-export const PATIENT_ENROLLED_IN_ART = "* Patient is on ART !";
+export const PATIENT_ENROLLED_IN_ART = "⚠️ Patient is on ART !";
 
 export const PMTCT_REFERRAL_WARNING =
-  "* Patient has not been referred to PMTCT during previous followup !";
+  "⚠️ Patient has not been referred to PMTCT during previous followup !";
+
+export const POSITIVE_TRACKING_WARNING =
+  "⚠️ Patient already has a positive tracking form filled !";
+
+export const RETESTING_WARNING =
+  "⚠️ Patient already has HIV retesting form filled !";
