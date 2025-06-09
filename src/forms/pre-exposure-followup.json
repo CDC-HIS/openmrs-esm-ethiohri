@@ -13,6 +13,36 @@
           "isExpanded": "true",
           "questions": [
             {
+              "label": "Screening Date",
+              "type": "obs",
+              "readonly": true,
+              "id": "screeningDate",
+              "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'bd09b775-0294-4775-9615-964d98e06a4f', '8c2b6a9b-4795-417d-affe-2530a753b715'))?.valueDateTime"
+                },
+                "rendering": "date",
+                "concept": "bd09b775-0294-4775-9615-964d98e06a4f"
+              },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "bd09b775-0294-4775-9615-964d98e06a4f"
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "date",
+                    "concept": "bd09b775-0294-4775-9615-964d98e06a4f"
+                  }
+                }
+              ],
+              "validators": []
+            },
+            {
               "label": "Followup date",
               "type": "obs",
               "required": "true",

@@ -5,8 +5,12 @@ import {
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
   POSITIVE_PATIENT_WARNING,
+  POSITIVE_TRACKING_ENCOUNTER_TYPE,
+  POSITIVE_TRACKING_WARNING,
   PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE,
   PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE,
+  RETESTING_WARNING,
+  RETEST_ENCOUNTER_TYPE,
   dateOfHIVConfirmation,
   formWarning,
 } from "../../../constants";
@@ -17,7 +21,7 @@ import {
   getLatestObs,
   getPatientEncounters,
 } from "../../../api/api";
-import styles from "../../../root.scss";
+import styles from "./prep.scss";
 
 const columns = [
   {
@@ -124,6 +128,8 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasScreeningEncounter, setHasScreeningEncounter] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
+  const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] = useState(false);
+  const [hasRetestingEncounter, setHasRetestingEncounter] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -153,9 +159,42 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
       );
       if (positiveConfirmationDate != null) setIsConfirmedPositive(true);
     })();
+
+    (async () => {
+              const positiveTrackingEncounters = await getPatientEncounters(
+                patientUuid,
+                POSITIVE_TRACKING_ENCOUNTER_TYPE
+              );
+              if (positiveTrackingEncounters.length > 0) {
+                setHasPositiveTrackingEncounter(true);
+              }
+        })();
+    
+        (async () => {
+          const retestingEncounters = await getPatientEncounters(
+            patientUuid,
+            RETEST_ENCOUNTER_TYPE
+          );
+          if (retestingEncounters.length > 0) {
+            setHasRetestingEncounter(true);
+          }
+        })();
   });
   return (
     <>
+      {!hasMRN && <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>}
+      {!hasScreeningEncounter && (
+        <p className={styles.warningMessage}>{formWarning("PREP Screening")}</p>
+      )}
+      {isConfirmedPositive && (
+        <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
+      )}
+      {hasPositiveTrackingEncounter && (
+                  <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
+                )} 
+            {hasRetestingEncounter && (
+                  <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
+                )}  
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
@@ -167,16 +206,9 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
           displayText: "Add",
           moduleName: moduleName,
           hideFormLauncher:
-            !hasMRN || !hasScreeningEncounter || isConfirmedPositive,
+            !hasMRN || !hasScreeningEncounter || isConfirmedPositive || hasPositiveTrackingEncounter || hasRetestingEncounter,
         }}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
-      {!hasScreeningEncounter && (
-        <p className={styles.patientName}>{formWarning("PREP Screening")}</p>
-      )}
-      {isConfirmedPositive && (
-        <p className={styles.patientName}>{POSITIVE_PATIENT_WARNING}</p>
-      )}
     </>
   );
 };
