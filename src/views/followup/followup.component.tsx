@@ -13,7 +13,6 @@ import {
 import { getData } from "../encounterUtils";
 import { moduleName } from "../../index";
 import styles from "./followup.scss";
-import stylesDead from "./followup.scss";
 import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../api/api";
 
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
@@ -232,7 +231,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         <p className={styles.warningMessage}>{formWarning("Intake A")}</p>
       )}    
     {isDead && (
-        <p className={stylesDead.warningMessage}>
+        <p className={styles.warningMessage}>
           ⚠️ Patient last follow-up status is set to be Dead, please edit the previous follow-up before preceeding.
         </p>
 )}
