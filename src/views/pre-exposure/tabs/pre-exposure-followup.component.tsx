@@ -182,19 +182,17 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
   });
   return (
     <>
-      {!hasMRN && <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>}
-      {!hasScreeningEncounter && (
-        <p className={styles.warningMessage}>{formWarning("PREP Screening")}</p>
-      )}
-      {isConfirmedPositive && (
-        <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
-      )}
-      {hasPositiveTrackingEncounter && (
-                  <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
-                )} 
-            {hasRetestingEncounter && (
-                  <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
-                )}  
+      {!hasMRN ? (
+    <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+  ) : isConfirmedPositive ? (
+    <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
+  ) : hasPositiveTrackingEncounter ? (
+    <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
+  ) : hasRetestingEncounter ? (
+    <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
+  ) : !hasScreeningEncounter ? (
+    <p className={styles.warningMessage}>{formWarning("PREP Screening")}</p>
+  ) : null}
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
