@@ -225,16 +225,17 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   });
   return (
     <>
-      {!hasMRN && <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>}
-      {!hasUAN && <p className={styles.warningMessage}>{UAN_NULL_WARNING}</p>}
-      {!hasIntakeAEncounter && (
+      {!hasMRN ? (
+        <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+      ) : !hasIntakeAEncounter ? (
         <p className={styles.warningMessage}>{formWarning("Intake A")}</p>
-      )}    
-    {isDead && (
+      ) : isDead ? (
         <p className={styles.warningMessage}>
           ⚠️ Patient last follow-up status is set to be Dead, please edit the previous follow-up before preceeding.
         </p>
-)}
+      ) : !hasUAN ? (
+        <p className={styles.warningMessage}>{UAN_NULL_WARNING}</p>
+      ) : null}
       <EncounterList
         patientUuid={patientUuid}
         encounterType={FOLLOWUP_ENCOUNTER_TYPE}
