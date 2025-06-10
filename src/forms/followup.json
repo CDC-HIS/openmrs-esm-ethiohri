@@ -4984,6 +4984,9 @@
         {
           "label": "VIRAL LOAD",
           "isExpanded": "true",
+          "hide": {
+            "hideWhenExpression": "artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+          },
           "questions": [
             {
               "label": "Viral load performed?",
@@ -5194,7 +5197,7 @@
                 "concept": "beeede36-cae4-4f6e-b4b9-e39e37353a82"
               },
               "hide": {
-                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "dateViralLoadResultReceived",
               "validators": [
@@ -5219,7 +5222,7 @@
                 "min": 0
               },
               "hide": {
-                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -5264,7 +5267,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -5275,7 +5278,7 @@
                 "concept": "051f22d7-24dc-423c-a13d-b5de1e2e8361"
               },
               "hide": {
-                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "labId"
             }
@@ -5905,7 +5908,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "age > 15"
+                "hideWhenExpression": "age > 15 || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "disclosure"
             }
@@ -5915,7 +5918,7 @@
           "label": "Operation Triple Zero",
           "isExpanded": "true",
           "hide": {
-            "hideWhenExpression": "age < 10 || age > 24"
+            "hideWhenExpression": "age < 10 || age > 24 || artStarted !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
           },
           "questions": [
             {
@@ -5973,6 +5976,11 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(artStartDate)",
+                  "message": "OTZ enrollment date should not be earlier than ART start date"
                 }
               ],
               "id": "otzEnrollmentDate"
@@ -6077,11 +6085,11 @@
                     "answers": [
                       {
                         "concept": "564d389c-f131-45b9-a8e6-ecc4888b46b2",
-                        "label": "Stable"
+                        "label": "Less Intensive"
                       },
                       {
                         "concept": "eb5b1d5e-ffee-4887-9e3b-bf3ea627badf",
-                        "label": "Unstable"
+                        "label": "More Intensive"
                       }
                     ]
                   }
@@ -6094,11 +6102,11 @@
                     "answers": [
                       {
                         "concept": "564d389c-f131-45b9-a8e6-ecc4888b46b2",
-                        "label": "Stable"
+                        "label": "Less Intensive"
                       },
                       {
                         "concept": "eb5b1d5e-ffee-4887-9e3b-bf3ea627badf",
-                        "label": "Unstable"
+                        "label": "More Intensive"
                       }
                     ]
                   }
