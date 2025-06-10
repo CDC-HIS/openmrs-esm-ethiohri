@@ -7,7 +7,7 @@ import {
   getData,
 } from "../../encounterUtils";
 import { moduleName } from "../../../index";
-import styles from "../../../root.scss";
+import styles from "./hivtesting.scss";
 import { getPatientEncounters } from "../../../api/api";
 
 const columns = [
@@ -128,6 +128,7 @@ const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   }, [isFormSaved]);
   return (
     <>
+      {!hasMRN && <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>}
       <EncounterList
         patientUuid={patientUuid}
         encounterType={RETEST_ENCOUNTER_TYPE}
@@ -142,7 +143,6 @@ const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         }}
         afterFormSaveAction={updateFormSavedStatus}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
     </>
   );
 };

@@ -47,7 +47,7 @@ export function getLatestObs(
     encounterTypeUuid ? `&encounter.type=${encounterTypeUuid}` : ""
   }`;
   // the latest obs
-  params += "&_sort=-_lastUpdated&_count=1";
+  params += "&_sort=-date&_count=1";
   return openmrsFetch(`${fhirBaseUrl}/Observation?${params}`).then(
     ({ data }) => {
       return data.entry?.length ? data.entry[0].resource : null;

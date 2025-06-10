@@ -209,7 +209,7 @@ export const PMTCT_REFERRAL_WARNING =
   "⚠️ Patient has not been referred to PMTCT during previous followup !";
 
 export const POSITIVE_TRACKING_WARNING =
-  "⚠️ Patient already has a positive tracking form filled !";
+  "⚠️ HIV +ve tracking form already completed for this patient.";
 
 export const RETESTING_WARNING =
-  "⚠️ Patient already has HIV retesting form filled !";
+  "⚠️ HIV re-testing form already completed for this patient.";
