@@ -3336,10 +3336,6 @@
                     "hide": {
                       "hideWhenExpression": "patient.gender === 'male'"
                     }
-                  },
-                  {
-                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "None"
                   }
                 ]
               },

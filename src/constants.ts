@@ -42,6 +42,12 @@ export const FAMILY_INDEX_CASE_CONTACTS_ENCOUNTER_TYPE =
 export const PARTNER_INDEX_CASE_INFORMATION_ENCOUNTER_TYPE =
   "bc17321c-a1a8-45a3-a49e-e8d0c91c476d";
 
+//Patient-List Concepts
+export const FOLLOWUP_STATUS = "222f64a8-a603-4d2e-b70e-2d90b622bb04";
+export const MRN_UUID = "52c28db7-09fb-4d33-8f9f-4500347256b6";
+export const UAN_UUID = "d956f302-1723-4eca-9548-fb7e66706d34";
+export const PHONE_NUMBER = "1794bcad-b2d2-47ae-8e26-1d4ec31ade13";
+
 //Intake A concepts
 export const male = "1534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 export const female = "1535AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";

@@ -68,6 +68,21 @@ export const PatientList: React.FC = () => {
       header: t("age", "Age"),
     },
     {
+      key: "mrn",
+      header: t("mrn", "MRN"),
+    },
+    {
+      key: "uan",
+      header: t("uan", "UAN"),
+    },
+    {
+      key: "phone",
+      header: t("phone", "Mobile No."),
+    },
+    { key: "lastFollowupStatus", 
+      header: t("lastFollowupStatus", "Followup Status") 
+    },
+    {
       key: "actions",
       header: "",
     },
