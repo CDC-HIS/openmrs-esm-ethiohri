@@ -1952,6 +1952,22 @@
                 "rendering": "fixed",
                 "concept": ""
               },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "fixed",
+                    "concept": ""
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "fixed",
+                    "concept": ""
+                  }
+                }
+              ],
               "hide": {
                 "hideWhenExpression": "true"
               },
@@ -7118,7 +7134,7 @@
               "id": "hpvScreeningResult"
             },
             {
-              "label": "HPV subtype",
+              "label": "Genotype",
               "type": "obs",
               "questionOptions": {
                 "rendering": "select",
@@ -7126,19 +7142,11 @@
                 "answers": [
                   {
                     "concept": "bc4bb2e7-1e29-4f26-96a2-f64e239fc1db",
-                    "label": "Subtype 16"
+                    "label": "HPV 16"
                   },
                   {
                     "concept": "9162ebc9-b9bc-4c8a-9f4a-e18ef02e24cd",
-                    "label": "Subtype 18"
-                  },
-                  {
-                    "concept": "da17aa2b-7319-46cc-907a-51f053cc8869",
-                    "label": "Mixed subtype"
-                  },
-                  {
-                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other subtype"
+                    "label": "HPV 18"
                   },
                   {
                     "concept": "d217dbf3-9b45-4bbc-ad83-43ac98afa98a",
@@ -7159,6 +7167,14 @@
                   {
                     "concept": "deb0acbb-a6a9-440e-9c33-1d4c9d86066e",
                     "label": "7HPV 16 and 18 other HR HPV"
+                  },
+                  {
+                    "concept": "da17aa2b-7319-46cc-907a-51f053cc8869",
+                    "label": "Mixed subtype"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other subtype"
                   }
                 ]
               },
