@@ -65,7 +65,7 @@ export const PatientList: React.FC = () => {
     },
     {
       key: "age",
-      header: t("age", "Age"),
+      header: t("age", "Age (in years)"),
     },
     {
       key: "mrn",
@@ -74,10 +74,6 @@ export const PatientList: React.FC = () => {
     {
       key: "uan",
       header: t("uan", "UAN"),
-    },
-    {
-      key: "phone",
-      header: t("phone", "Mobile No."),
     },
     { key: "lastFollowupStatus", 
       header: t("lastFollowupStatus", "Followup Status") 

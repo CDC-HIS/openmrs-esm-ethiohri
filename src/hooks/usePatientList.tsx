@@ -23,29 +23,6 @@ function getPatientIdentifier(resource: any, identifierUuid: string): string {
   return idObj?.value || "";
 }
 
-async function fetchPhoneNumber(patientUuid: string): Promise<string> {
-  try {
-    const personRes = await openmrsFetch(
-      `/ws/rest/v1/person/${patientUuid}?v=custom:(attributes:(value,attributeType:(uuid)))`
-    );
-
-    const attributes = personRes?.data?.attributes || [];
-
-    const phoneAttr = attributes.find(
-      (attr) => attr.attributeType?.uuid === PHONE_NUMBER
-    );
-
-    return phoneAttr?.value || "";
-  } catch (e) {
-    console.error(
-      `Failed to load phone number for patient ${patientUuid}`,
-      e
-    );
-    return "";
-  }
-}
-
-
 export function usePatientList(
   offSet: number,
   pageSize: number,
@@ -138,7 +115,6 @@ export function usePatientList(
             const { followupStatus} = await fetchFollowupData(patientResource.id);
             const mrn = getPatientIdentifier(patientResource, MRN_UUID);
             const uan = getPatientIdentifier(patientResource, UAN_UUID);
-            const phoneNumber = await fetchPhoneNumber(patientResource.id);
 
             return {
               id: patientResource.id,
@@ -146,10 +122,9 @@ export function usePatientList(
               patientLink: getPatientLink(),
               gender: capitalize(patientResource.gender),
               birthDate: patientResource.birthDate,
-              age: dayjs().diff(dayjs(patientResource.birthDate), "year") + " years",
+              age: dayjs().diff(dayjs(patientResource.birthDate), "year"),
               mrn,
               uan,
-              phone: phoneNumber,
               lastFollowupStatus: followupStatus,
               actions: patientActions,
             };
