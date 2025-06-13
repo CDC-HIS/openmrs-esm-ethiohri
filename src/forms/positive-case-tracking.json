@@ -13,7 +13,22 @@
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Registraton date",
+              "label": "Registration/Enrollment Date",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "fixed",
+                "concept": "",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, 'dadc86a8-1e44-4a6d-91c2-e3b54089b54c', 'a0fde61e-f493-4f1f-b709-22aa94f72dc3'))?.valueDateTime"
+                }
+              },
+              "hide": {
+                "hideWhenExpression": "true"
+              },
+              "id": "enrollment_date"
+            },
+            {
+              "label": "Registration date",
               "type": "obs",
               "required": true,
               "questionOptions": {
@@ -24,6 +39,11 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(enrollment_date)",
+                  "message": "+ve Tracking Registration date should not be earlier than Patient Registration date"
                 }
               ],
               "id": "registrationDate"
