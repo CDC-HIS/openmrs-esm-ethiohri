@@ -18,7 +18,7 @@ import {
   getLatestObs,
   getPatientEncounters,
 } from "../../api/api";
-import { InlineLoading } from "@carbon/react";
+import { InlineLoading, SkeletonText } from "@carbon/react";
 
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
@@ -166,7 +166,8 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   if (isLoading)
   return (
     <div className={styles.loadingContainer}>
-      <InlineLoading description="Loading ..." />
+      <SkeletonText heading width="40%" />
+      <SkeletonText paragraph lineCount={2} />
     </div>
   );
 
