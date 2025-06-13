@@ -57,11 +57,11 @@ export const PatientList: React.FC = () => {
   const headerData = [
     {
       key: "patientLink",
-      header: t("name", "Name"),
+      header: t("name", "Patient Name"),
     },
     {
       key: "gender",
-      header: t("gender", "Gender"),
+      header: t("gender", "Sex"),
     },
     {
       key: "age",

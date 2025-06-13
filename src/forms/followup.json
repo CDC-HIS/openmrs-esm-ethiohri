@@ -70,11 +70,6 @@
                   "type": "js_expression",
                   "failsWhenExpression": "myValue > new Date(toDate)",
                   "message": "Followup date should not be later than Planned Transfer-Out Date"
-                },
-                {
-                  "type": "js_expression",
-                  "failsWhenExpression": "(myValue > new Date(prevTreatmentEndDate)) && followupStatus === '27e28afa-b4a6-44e0-b331-ea7250121a0e' || followupStatus === '160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'",
-                  "message": "A 'Lost/Drop' status cannot be assigned before the patient's last TX_Curr date"
                 }
               ]
             },
@@ -7039,7 +7034,7 @@
                 "concept": "8b57d62c-c9a3-454a-b1af-929ca69603ce"
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screeningStrategy == '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -7072,7 +7067,7 @@
                 "concept": "510f2a47-3761-4903-b7eb-8ea389cecfe9"
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screeningStrategy == '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -7129,7 +7124,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "screeningStrategy !== 'd3989991-4f6d-4336-9f84-cb4208d39ae6' && cytologyResult !== '145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screeningStrategy == '19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1' || acceptedCervicalCancerScreening !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && screenedInThisFacility !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "hpvScreeningResult"
             },
@@ -7570,7 +7565,7 @@
                   },
                   {
                     "concept": "fde5cd74-e503-4ce1-9afe-f74195f95f6e",
-                    "label": "Carcinoma institu (CIN-3)"
+                    "label": "Carcinoma In Situ (CIN-3)"
                   },
                   {
                     "concept": "baab7d76-69e0-426d-afca-99cd1c9849a5",
