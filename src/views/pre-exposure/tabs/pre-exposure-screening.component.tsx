@@ -16,6 +16,7 @@ import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "./prep.scss";
 import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../../api/api";
+import { SkeletonText } from "@carbon/react";
 
 const columns = [
   {
@@ -139,60 +140,60 @@ const columns = [
   },
 ];
 
-const PreExposureScreeningList = ({ patientUuid, updateFormSavedStatus }) => {
+const PreExposureScreeningList = ({ patientUuid, isFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
   const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] = useState(false);
   const [hasRetestingEncounter, setHasRetestingEncounter] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-    (async () => {
-      const positiveConfirmationDate = await getLatestObs(
+      (async () => {
+        const [identifiers, confirmedPositive, hasPosTracking, hasHIVRetesting] = await Promise.all([
+          fetchIdentifiers(patientUuid),
+          getLatestObs(
         patientUuid,
         dateOfHIVConfirmation,
         INTAKE_A_ENCOUNTER_TYPE
-      );
-      if (positiveConfirmationDate != null) setIsConfirmedPositive(true);
-    })();
-
-    (async () => {
-          const positiveTrackingEncounters = await getPatientEncounters(
+      ),
+      getPatientEncounters(
             patientUuid,
             POSITIVE_TRACKING_ENCOUNTER_TYPE
-          );
-          if (positiveTrackingEncounters.length > 0) {
-            setHasPositiveTrackingEncounter(true);
-          }
-    })();
-
-    (async () => {
-      const retestingEncounters = await getPatientEncounters(
+          ),
+          getPatientEncounters(
         patientUuid,
         RETEST_ENCOUNTER_TYPE
+      )
+        ]);
+  
+        setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));  
+        setIsConfirmedPositive(confirmedPositive != null)   
+        setHasPositiveTrackingEncounter(hasPosTracking.length > 0)  
+        setHasRetestingEncounter(hasHIVRetesting.length > 0); 
+        
+        setIsLoading(false);
+      })();
+    }, [patientUuid, isFormSaved]);  
+
+  if (isLoading)
+      return (
+        <div className={styles.loadingContainer}>
+          <SkeletonText heading width="40%" />
+          <SkeletonText paragraph lineCount={2} />
+        </div>
       );
-      if (retestingEncounters.length > 0) {
-        setHasRetestingEncounter(true);
-      }
-    })();
-  });
+
   return (
     <>
-      {!hasMRN && <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>}
-      {isConfirmedPositive && (
-        <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
-      )}
-      {hasPositiveTrackingEncounter && (
-            <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
-          )} 
-      {hasRetestingEncounter && (
-            <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
-          )}  
+      {!hasMRN ? (
+          <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+        ) : isConfirmedPositive ? (
+          <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
+        ) : hasPositiveTrackingEncounter ? (
+          <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
+        ) : hasRetestingEncounter ? (
+          <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
+        ) : null}
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE}
@@ -205,7 +206,6 @@ const PreExposureScreeningList = ({ patientUuid, updateFormSavedStatus }) => {
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || isConfirmedPositive || hasPositiveTrackingEncounter || hasRetestingEncounter,
         }}
-        afterFormSaveAction={updateFormSavedStatus}
       />
     </>
   );

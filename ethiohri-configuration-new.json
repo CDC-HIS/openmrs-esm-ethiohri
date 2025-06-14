@@ -15,10 +15,18 @@
         ]
       },
       "patient-chart-summary-dashboard-slot": {
-        "remove": ["vitals-overview-widget", "active-medications-widget"]
+        "remove": [
+          "active-medications-widget",
+          "biometrics-overview-widget",
+          "conditions-overview-widget",
+          "patient-flags-overview",
+          "vitals-overview-widget"
+        ]
       },
       "visits-summary-slot": {
-        "remove": ["visits-summary-ext"]
+        "remove": [
+          "visits-summary-ext"
+        ]
       },
       "patient-chart-dashboard-slot": {
         "remove": [
@@ -34,7 +42,10 @@
           "medications-summary-dashboard",
           "patient-appointments-summary-dashboard",
           "patient-orders-summary-dashboard",
-          "programs-summary-dashboard"
+          "programs-summary-dashboard",
+          "transfer-out-summary-dashboard",
+          "ettors-summary-dashboard",
+          "ethio-summary-dashboard"
         ]
       }
     },
@@ -45,14 +56,29 @@
   "@openmrs/esm-home-app": {
     "extensionSlots": {
       "homepage-widgets-slot": {
-        "remove": ["home-appointments", "active-visits-widget"],
-        "add": ["eth-patient-list"]
+        "remove": [
+          "home-appointments",
+          "active-visits-widget",
+          "linked-to-art-widget"
+        ],
+        "add": [
+          "eth-patient-list"
+        ]
       },
       "home-metrics-tiles-slot": {
         "remove": [
           "active-visits-tile",
           "home-appointments-tile",
           "total-visits-tile"
+        ]
+      },
+      "homepage-dashboard-slot": {
+        "remove": [
+          "clinical-appointments-dashboard-link",
+          "linked-to-art-dashboard-link",
+          "patient-lists-dashboard-link",
+          "service-queues-dashboard-link",
+          "ohri-home-programs-text"
         ]
       }
     }
@@ -80,7 +106,11 @@
         ]
       }
     },
-    "sections": ["demographics", "contact", "relationships"],
+    "sections": [
+      "demographics",
+      "contact",
+      "relationships"
+    ],
     "Translation overrides": {
       "en": {
         "givenNameLabelText": "Client's Name",
@@ -109,7 +139,13 @@
       {
         "id": "demographics",
         "name": "Basic Info",
-        "fields": ["registrationDate","name", "gender", "dob", "id"]
+        "fields": [
+          "registrationDate",
+          "name",
+          "gender",
+          "dob",
+          "id"
+        ]
       }
     ],
     "fieldDefinitions": [
@@ -142,7 +178,7 @@
         "validation": {
           "required": true
         }
-      },      
+      },
       {
         "id": "hometelephoneNumber",
         "label": "Home Telephone Number",

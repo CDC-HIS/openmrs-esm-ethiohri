@@ -140,7 +140,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const updateFormSavedStatus = useCallback(() => {
     setIsFormSaved((prev) => !prev);
   }, []);
-
+  
   useEffect(() => {
     (async () => {
       const [identifiers, encounters, latestObs] = await Promise.all([
@@ -161,7 +161,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       );
       setIsLoading(false);
     })();
-  }, [patientUuid]);
+  }, [patientUuid,isFormSaved]);
 
   if (isLoading)
   return (

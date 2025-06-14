@@ -22,6 +22,7 @@ import {
   getPatientEncounters,
 } from "../../../api/api";
 import styles from "./prep.scss";
+import { SkeletonText } from "@carbon/react";
 
 const columns = [
   {
@@ -130,66 +131,58 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
   const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] = useState(false);
   const [hasRetestingEncounter, setHasRetestingEncounter] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
-      const previousEncounters = await getPatientEncounters(
+        (async () => {
+          const [identifiers, confirmedPositive, hasPosTracking, hasHIVRetesting, previousEncounters] = await Promise.all([
+            fetchIdentifiers(patientUuid),
+            getLatestObs(
+          patientUuid,
+          dateOfHIVConfirmation,
+          INTAKE_A_ENCOUNTER_TYPE
+        ),
+        getPatientEncounters(
+              patientUuid,
+              POSITIVE_TRACKING_ENCOUNTER_TYPE
+            ),
+            getPatientEncounters(
+          patientUuid,
+          RETEST_ENCOUNTER_TYPE
+        ),
+        getPatientEncounters(
         patientUuid,
         PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE
-      );
-      if (previousEncounters.length) {
-        setHasScreeningEncounter(true);
-      }
-    })();
-  }, [isFormSaved]);
-
-  useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-
-    (async () => {
-      const positiveConfirmationDate = await getLatestObs(
-        patientUuid,
-        dateOfHIVConfirmation,
-        INTAKE_A_ENCOUNTER_TYPE
-      );
-      if (positiveConfirmationDate != null) setIsConfirmedPositive(true);
-    })();
-
-    (async () => {
-              const positiveTrackingEncounters = await getPatientEncounters(
-                patientUuid,
-                POSITIVE_TRACKING_ENCOUNTER_TYPE
-              );
-              if (positiveTrackingEncounters.length > 0) {
-                setHasPositiveTrackingEncounter(true);
-              }
-        })();
+      )
+          ]);
     
-        (async () => {
-          const retestingEncounters = await getPatientEncounters(
-            patientUuid,
-            RETEST_ENCOUNTER_TYPE
-          );
-          if (retestingEncounters.length > 0) {
-            setHasRetestingEncounter(true);
-          }
+          setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));  
+          setIsConfirmedPositive(confirmedPositive != null)   
+          setHasPositiveTrackingEncounter(hasPosTracking.length)  
+          setHasRetestingEncounter(hasHIVRetesting.length); 
+          setHasScreeningEncounter(previousEncounters.length);
+          setIsLoading(false);
         })();
-  });
+      }, [patientUuid, isFormSaved]);  
+  
+    if (isLoading)
+        return (
+          <div className={styles.loadingContainer}>
+            <SkeletonText heading width="40%" />
+            <SkeletonText paragraph lineCount={2} />
+          </div>
+        );
+        
   return (
     <>
       {!hasMRN ? (
-    <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
-  ) : isConfirmedPositive ? (
-    <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
-  ) : hasPositiveTrackingEncounter ? (
-    <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
-  ) : hasRetestingEncounter ? (
-    <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
+                <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+              ) : isConfirmedPositive ? (
+                <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
+              ) : hasPositiveTrackingEncounter ? (
+                <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
+              ) : hasRetestingEncounter ? (
+                <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
   ) : !hasScreeningEncounter ? (
     <p className={styles.warningMessage}>{formWarning("PREP Screening")}</p>
   ) : null}
@@ -198,7 +191,7 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
         encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
         formList={[{ name: "Pre Exposure Followup" }]}
         columns={columns}
-        description="Pre Exposure Followup Tracking List"
+        description="Pre Exposure Followup"
         headerTitle="Pre Exposure Followup"
         launchOptions={{
           displayText: "Add",

@@ -21,7 +21,7 @@ const PreExposure: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         <TabPanels>
           <TabPanel>
             <PreExposureScreeningList
-              updateFormSavedStatus={updateFormSavedStatus}
+              isFormSaved={isFormSaved}
               patientUuid={patientUuid}
             />
           </TabPanel>
