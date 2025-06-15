@@ -48,3 +48,54 @@
   text-align: center;
   border: 1px solid $ui-03;
 }
+.patientListContainer {
+  background-color: $ui-02;
+  border: 1px solid $ui-03;
+  width: 100%;
+  margin: auto;  
+  margin-bottom: spacing.$spacing-05;
+  max-width: 95vw;
+}
+.desktopHeading,
+.tabletHeading {
+  text-align: left;
+  text-transform: capitalize;
+
+  h4 {
+    @include type.type-style('heading-compact-02');
+    color: $text-02;
+
+    &:after {
+      content: '';
+      display: block;
+      width: spacing.$spacing-07;
+      padding-top: 3px;
+      border-bottom: 0.375rem solid;
+      @include brand-03(border-bottom-color);
+    }
+  }
+}
+.tableContainer section {
+  position: relative;
+}
+
+.tableContainer a {
+  text-decoration: none;
+}
+
+.patientListTable {
+  tbody tr[data-parent-row] {
+    // Don't show a bottom border on the last row so we don't end up with a double border from the activeVisitContainer
+    &:nth-last-of-type(2) > td {
+      border-bottom: none;
+    }
+  }
+}
+
+.linkedToArtDetailHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: spacing.$spacing-02 0 spacing.$spacing-04 spacing.$spacing-05;
+  background-color: $ui-02;
+}

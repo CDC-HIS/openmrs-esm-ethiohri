@@ -30,7 +30,7 @@ export function usePatientList(
 ) {
   const url = `/ws/fhir2/R4/Patient?_getpagesoffset=${offSet}&_count=${pageSize}${
     searchTerm ? `&name=${searchTerm}` : ""
-  }&_summary=data&_sort=name`; 
+  }&_summary=data&_sort=given`; 
   
   const [paginatedPatientRows, setPaginatedPatientRows] = useState([]);
   const [totalCount, setTotalCount] = useState(0);

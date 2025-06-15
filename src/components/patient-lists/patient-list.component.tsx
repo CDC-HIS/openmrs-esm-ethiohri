@@ -89,15 +89,15 @@ export const PatientList: React.FC = () => {
     navigate({ to: "${openmrsSpaBase}/patient-registration" });
 
   return (
-    <div>
+    <div className={styles.patientListContainer} >
       {isLoading && !searchTerm ? (
         <DataTableSkeleton rowCount={5} columnCount={4} />
       ) : patients?.length > 0 ? (
         <Layer>
           <Tile className={styles.tile}>
-            <div className={styles.headerWrapper}>
-              <h1 className={styles.heading}>{displayTitle}</h1>
-            </div>
+            <div className={styles.desktopHeading}>
+          <h4>{displayTitle}</h4>
+        </div>  
             <div id="table-tool-bar" className={styles.searchContainer}>
               <div>{isLoading && searchTerm && <InlineLoading />}</div>
               <div className={styles.searchBox}>
