@@ -172,17 +172,17 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
             <SkeletonText paragraph lineCount={2} />
           </div>
         );
-        
+
   return (
     <>
       {!hasMRN ? (
-                <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
-              ) : isConfirmedPositive ? (
-                <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
-              ) : hasPositiveTrackingEncounter ? (
-                <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
-              ) : hasRetestingEncounter ? (
-                <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
+    <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+  ) : isConfirmedPositive ? (
+    <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
+  ) : hasPositiveTrackingEncounter ? (
+    <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
+  ) : hasRetestingEncounter ? (
+    <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
   ) : !hasScreeningEncounter ? (
     <p className={styles.warningMessage}>{formWarning("PREP Screening")}</p>
   ) : null}

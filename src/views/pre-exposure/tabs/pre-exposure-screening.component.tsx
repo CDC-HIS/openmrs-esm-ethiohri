@@ -140,7 +140,7 @@ const columns = [
   },
 ];
 
-const PreExposureScreeningList = ({ patientUuid, isFormSaved }) => {
+const PreExposureScreeningList = ({ patientUuid, updateFormSavedStatus }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
   const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] = useState(false);
@@ -173,7 +173,7 @@ const PreExposureScreeningList = ({ patientUuid, isFormSaved }) => {
         
         setIsLoading(false);
       })();
-    }, [patientUuid, isFormSaved]);  
+    }, [patientUuid, updateFormSavedStatus]);  
 
   if (isLoading)
       return (
@@ -206,6 +206,7 @@ const PreExposureScreeningList = ({ patientUuid, isFormSaved }) => {
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || isConfirmedPositive || hasPositiveTrackingEncounter || hasRetestingEncounter,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
     </>
   );
