@@ -28,6 +28,22 @@
               "id": "enrollment_date"
             },
             {
+              "label": "HIV confirmation date",
+              "type": "obs",
+              "id": "hivConfirmationDate",
+              "questionOptions": {
+                "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "rendering": "fixed",
+                "calculate": {
+                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '05add044-67f8-48c9-928d-79002ab19efe'))?.valueDateTime"
+                }
+              },
+              "hide": {
+                "hideWhenExpression": "true"
+              },
+              "validators": []
+            },
+            {
               "label": "Registration date",
               "type": "obs",
               "required": true,
@@ -87,6 +103,16 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(registrationDate)",
+                  "message": "HIV +ve date should not be earlier than +ve Tracking Registration date"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
+                  "message": "HIV +ve date should not be earlier than HIV Confirmation date in Intake A"
                 }
               ],
               "id": "hivPostiveDate"
