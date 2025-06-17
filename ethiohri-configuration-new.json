@@ -243,5 +243,25 @@
     "registrationObs": {
       "encounterTypeUuid": "a0fde61e-f493-4f1f-b709-22aa94f72dc3"
     }
+  },
+  ,
+"@openmrs/esm-patient-search-app": {
+    "contactAttributeType": [
+      "1794bcad-b2d2-47ae-8e26-1d4ec31ade13",
+      "e3d177ee-04ad-11ed-828d-0242ac1e0002"
+    ],
+    "defaultIdentifierTypes": [
+      "52c28db7-09fb-4d33-8f9f-4500347256b6",
+      "d956f302-1723-4eca-9548-fb7e66706d34"
+    ]
+  },
+  "@icap-ethiopia/esm-ethiohri-app": {
+    "extensionSlots": {
+      "hiv-care-and-treatment-slot": {
+        "remove": [
+          "program-management-ext"
+        ]
+      }
+    }
   }
 }
