@@ -27,26 +27,26 @@ const columns = [
       return rawDate ? rawDate.split(',')[0].trim() : "";
     },
   },
-  {
-    key: "referredFrom",
-    header: "Referred From",
-    getValue: (encounter) => {
-      const referredFrom = getData(
-        encounter,
-        "e2fc6b60-70e8-4a87-a164-fb175c788330"
-      );
-      if (referredFrom === "Voluntary testing and counselling") {
-        return "VCT";
-      } else if (referredFrom === "Outpatient department") {
-        return "OPD";
-      } else if (referredFrom === "Key population clinic") {
-        return "People high risk for HIV infection";
-      } else if (referredFrom === "Other non-coded") {
-        return "Other";
-      }
-      return referredFrom; 
-    },
-  },
+  // {   
+  //   key: "referredFrom",
+  //   header: "Referred From",
+  //   getValue: (encounter) => {
+  //     const referredFrom = getData(
+  //       encounter,
+  //       "e2fc6b60-70e8-4a87-a164-fb175c788330"
+  //     );
+  //     if (referredFrom === "Voluntary testing and counselling") {
+  //       return "VCT";
+  //     } else if (referredFrom === "Outpatient department") {
+  //       return "OPD";
+  //     } else if (referredFrom === "Key population clinic") {
+  //       return "People high risk for HIV infection";
+  //     } else if (referredFrom === "Other non-coded") {
+  //       return "Other";
+  //     }
+  //     return referredFrom; 
+  //   },
+  // },
   {
     key: "hivTestResult",
     header: "HIV Test Result",
