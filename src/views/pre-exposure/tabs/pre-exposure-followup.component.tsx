@@ -22,7 +22,7 @@ import {
   getPatientEncounters,
 } from "../../../api/api";
 import styles from "./prep.scss";
-import { SkeletonText } from "@carbon/react";
+import { SkeletonText, DataTableSkeleton } from "@carbon/react";
 
 const columns = [
   {
@@ -166,12 +166,7 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
       }, [patientUuid, isFormSaved]);  
   
     if (isLoading)
-        return (
-          <div className={styles.loadingContainer}>
-            <SkeletonText heading width="40%" />
-            <SkeletonText paragraph lineCount={2} />
-          </div>
-        );
+        return <DataTableSkeleton role="progressbar" zebra />;
 
   return (
     <>

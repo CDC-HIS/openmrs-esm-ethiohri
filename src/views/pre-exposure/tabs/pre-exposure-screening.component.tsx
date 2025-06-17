@@ -16,7 +16,7 @@ import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "./prep.scss";
 import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../../api/api";
-import { SkeletonText } from "@carbon/react";
+import { SkeletonText, DataTableSkeleton } from "@carbon/react";
 
 const columns = [
   {
@@ -176,12 +176,7 @@ const PreExposureScreeningList = ({ patientUuid, updateFormSavedStatus }) => {
     }, [patientUuid, updateFormSavedStatus]);  
 
   if (isLoading)
-      return (
-        <div className={styles.loadingContainer}>
-          <SkeletonText heading width="40%" />
-          <SkeletonText paragraph lineCount={2} />
-        </div>
-      );
+      return <DataTableSkeleton role="progressbar" zebra />;
 
   return (
     <>

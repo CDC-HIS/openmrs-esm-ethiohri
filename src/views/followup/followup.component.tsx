@@ -18,7 +18,7 @@ import {
   getLatestObs,
   getPatientEncounters,
 } from "../../api/api";
-import { InlineLoading, SkeletonText } from "@carbon/react";
+import { InlineLoading, SkeletonText, DataTableSkeleton, } from "@carbon/react";
 
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
@@ -164,12 +164,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   }, [patientUuid,isFormSaved]);
 
   if (isLoading)
-  return (
-    <div className={styles.loadingContainer}>
-      <SkeletonText heading width="40%" />
-      <SkeletonText paragraph lineCount={2} />
-    </div>
-  );
+    return <DataTableSkeleton role="progressbar" zebra />;
 
   return (
     <>

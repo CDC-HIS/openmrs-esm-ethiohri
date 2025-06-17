@@ -19,8 +19,7 @@
           "active-medications-widget",
           "biometrics-overview-widget",
           "conditions-overview-widget",
-          "patient-flags-overview",
-          "vitals-overview-widget"
+          "patient-flags-overview"
         ]
       },
       "visits-summary-slot": {
@@ -43,7 +42,8 @@
           "programs-summary-dashboard",
           "transfer-out-summary-dashboard",
           "ettors-summary-dashboard",
-          "ethio-summary-dashboard"
+          "ethio-summary-dashboard",
+          "encounters-summary-dashboard"
         ]
       }
     },

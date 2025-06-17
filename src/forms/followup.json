@@ -418,6 +418,7 @@
               "hide": {
                 "hideWhenExpression": "isEmpty(uan)"
               },
+              "validators": [],
               "id": "artStarted"
             },
             {
@@ -5273,6 +5274,67 @@
                   }
                 ]
               },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "calculate": {
+                      "calculateExpression": "viralLoadStatus ? viralLoadStatus : CustomViralLoadStatusCalc('viralLoadCount')"
+                    },
+                    "concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
+                    "answers": [
+                      {
+                        "concept": "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Suppressed (<=50)"
+                      },
+                      {
+                        "concept": "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Low Level Viremia (51-1000)"
+                      },
+                      {
+                        "concept": "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "High Viral Load (>1000 copies/ML)"
+                      },
+                      {
+                        "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Unsuppressed",
+                        "hide": {
+                          "hideWhenExpression": "true"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
+                    "answers": [
+                      {
+                        "concept": "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Suppressed (<=50)"
+                      },
+                      {
+                        "concept": "167378AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Low Level Viremia (51-1000)"
+                      },
+                      {
+                        "concept": "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "High Viral Load (>1000 copies/ML)"
+                      },
+                      {
+                        "concept": "167485AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Unsuppressed",
+                        "hide": {
+                          "hideWhenExpression": "true"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
               "hide": {
                 "hideWhenExpression": "vlReceived !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || viralLoadPerformed !== '1267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
