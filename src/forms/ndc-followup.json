@@ -1,0 +1,1330 @@
+{
+  "name": "NCD Screening Form",
+  "pages": [
+    {
+      "label": "Visit Details",
+      "sections": [
+        {
+          "label": "Visit Particulars",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "value": [
+                "**This form is used to**:Document Diabetes Mellitus (DM) and Hypertension (HTN) Follow Up details"
+              ],
+              "questionOptions": {
+                "rendering": "markdown"
+              },
+              "id": "heading"
+            },
+            {
+              "type": "encounterDatetime",
+              "questionOptions": {
+                "rendering": "datetime"
+              },
+              "id": "encounterDatetime",
+              "label": "Encounter & Datetime",
+              "required": true,
+              "datePickerFormat": "both",
+              "questionInfo": "Date the encounter took place"
+            },
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "b3f60308-cda4-41f9-af08-b98d2c1562c7",
+                "answers": [
+                  {
+                    "concept": "165269AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "BL: Baseline"
+                  },
+                  {
+                    "concept": "1246AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "S: Scheduled"
+                  },
+                  {
+                    "concept": "160101AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "US: Unscheduled"
+                  }
+                ]
+              },
+              "id": "visitType",
+              "label": "Visit Type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "History & Risk Factors",
+      "sections": [
+        {
+          "label": "Symptoms",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "type": "obsGroup",
+              "questionOptions": {
+                "rendering": "repeating",
+                "concept": "1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "id": "chiefComplaint",
+              "label": "Symptoms",
+              "questions": [
+                {
+                  "type": "obs",
+                  "questionOptions": {
+                    "rendering": "select",
+                    "concept": "166664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "DM symptoms"
+                      },
+                      {
+                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "HTN Symptoms"
+                      }
+                    ]
+                  },
+                  "id": "symptomCategory",
+                  "label": "Select Disease Category"
+                },
+                {
+                  "type": "obs",
+                  "questionOptions": {
+                    "rendering": "select",
+                    "concept": "1390AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "133051AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Ang: Angina"
+                      },
+                      {
+                        "concept": "141829AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "AutoN: Postural dizziness"
+                      },
+                      {
+                        "concept": "",
+                        "label": "AutoN: Sexual dysfunction"
+                      },
+                      {
+                        "concept": "",
+                        "label": "C: cough"
+                      },
+                      {
+                        "concept": "",
+                        "label": "DFU: Diabetic Foot Ulcer"
+                      },
+                      {
+                        "concept": "",
+                        "label": "DKA: abdominal pain"
+                      },
+                      {
+                        "concept": "",
+                        "label": "DKA: fast and deep breathing"
+                      },
+                      {
+                        "concept": "",
+                        "label": "DKA: Nausea"
+                      },
+                      {
+                        "concept": "",
+                        "label": "DKA: Vomiting"
+                      },
+                      {
+                        "concept": "",
+                        "label": "DKA: weakness"
+                      },
+                      {
+                        "concept": "",
+                        "label": "DKA: worsening Poly symptoms"
+                      },
+                      {
+                        "concept": "",
+                        "label": "Dysp: Dyspnea"
+                      },
+                      {
+                        "concept": "",
+                        "label": "F: fever"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HA: Headache"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HemP: Hemiparesis"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HemP: Hemiplegia"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HyperG: Fatigue"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HyperG: Nocturia"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HyperG: Polydipsia"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HyperG: Polyuria"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: bad dreams"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: confusion"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: dizziness"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: extreme fatigue"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: Hunger"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: lightheadedness"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: palpitations"
+                      },
+                      {
+                        "concept": "",
+                        "label": "HypoG: sweating"
+                      },
+                      {
+                        "concept": "",
+                        "label": "Infections"
+                      },
+                      {
+                        "concept": "",
+                        "label": "IntCl: Intermittent claudication"
+                      },
+                      {
+                        "concept": "",
+                        "label": "LSw: Leg swelling"
+                      },
+                      {
+                        "concept": "",
+                        "label": "NkP: Neck pain"
+                      },
+                      {
+                        "concept": "",
+                        "label": "NkP: Stiffness"
+                      },
+                      {
+                        "concept": "",
+                        "label": "Ortp: Orthopnea"
+                      },
+                      {
+                        "concept": "",
+                        "label": "Other"
+                      },
+                      {
+                        "concept": "",
+                        "label": "PhP: Photophobia"
+                      },
+                      {
+                        "concept": "",
+                        "label": "PN: burning sensation of Feet"
+                      },
+                      {
+                        "concept": "",
+                        "label": "PN: burning sensation of hands"
+                      },
+                      {
+                        "concept": "",
+                        "label": "PN: numbness"
+                      },
+                      {
+                        "concept": "",
+                        "label": "PN: tingling"
+                      },
+                      {
+                        "concept": "",
+                        "label": "PND: Paroxysmal Nocturnal Dyspnea"
+                      },
+                      {
+                        "concept": "",
+                        "label": "Seiz: Seizure"
+                      },
+                      {
+                        "concept": "",
+                        "label": "SL: skin lesions,"
+                      },
+                      {
+                        "concept": "",
+                        "label": "SpA: Speech Abnormality"
+                      },
+                      {
+                        "concept": "",
+                        "label": "UOP: Decreased Urine Output"
+                      },
+                      {
+                        "concept": "",
+                        "label": "UTI: dysuria"
+                      },
+                      {
+                        "concept": "",
+                        "label": "UTI: frequency"
+                      },
+                      {
+                        "concept": "",
+                        "label": "VisB: Visual Blurring"
+                      },
+                      {
+                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "None"
+                      }
+                    ]
+                  },
+                  "id": "complaint",
+                  "label": "Symptom"
+                }
+              ]
+            },
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "160531AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "minLength": "0"
+              },
+              "id": "otherComplaint",
+              "label": "Other Symptoms"
+            }
+          ]
+        },
+        {
+          "label": "Risk Factors",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Risk Factors Present",
+              "type": "obs",
+              "required": false,
+              "id": "riskFactorsPresent",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "165430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "121725AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Alc: Alcohol use"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Fat: High Fat Consumption"
+                  },
+                  {
+                    "concept": "159779AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Khat: Khat Consumption"
+                  },
+                  {
+                    "concept": "",
+                    "label": "PhIn: Physical inactivity"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Salt: High Salt Consumption"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Sug: High Sugar Consumption"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Tbco: Tobacco Use including shisha"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Veg: Low Vegetable and fruit consumption"
+                  }
+                ]
+              },
+              "validators": [],
+              "hide": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Anthropometry & Vital signs",
+      "sections": [
+        {
+          "label": "Anthropometry/Vital signs",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Waist circumference (cm)",
+              "type": "obs",
+              "required": false,
+              "id": "waistCircumference",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "163080AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [],
+              "hide": {}
+            },
+            {
+              "label": "Height (cm)",
+              "type": "obs",
+              "required": false,
+              "id": "height",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [],
+              "hide": {}
+            },
+            {
+              "label": "Weight (kg)",
+              "type": "obs",
+              "required": false,
+              "id": "weight",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [],
+              "hide": {}
+            },
+            {
+              "label": "BMI (kg/m2)",
+              "type": "obs",
+              "required": false,
+              "id": "bmi",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [],
+              "hide": {}
+            },
+            {
+              "label": "Blood Pressure Systolic (mmHg)",
+              "type": "obs",
+              "required": false,
+              "id": "bloodPressure",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [],
+              "hide": {}
+            },
+            {
+              "label": "Blood Pressure Diastolic (mmHg)",
+              "type": "obs",
+              "required": false,
+              "id": "bloodPressureDiastolic",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": [],
+              "hide": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Physical Examination",
+      "sections": [
+        {
+          "label": "Systemic Examination",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "162737AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "CVS (Cardiovascular System): "
+                  },
+                  {
+                    "concept": "1129AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Neurologic: Motor, Sensory, Eye exam"
+                  },
+                  {
+                    "concept": "1128AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Musculoskeletal (MSS)/ Foot exam:"
+                  },
+                  {
+                    "concept": "1122AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "HEENT"
+                  },
+                  {
+                    "concept": "1120AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Skin"
+                  }
+                ]
+              },
+              "id": "reviewsOfSystems",
+              "label": "Physical Examination",
+              "hide": {}
+            },
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Normal Cardiac Exam"
+                  },
+                  {
+                    "concept": "550AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "S3 gallop"
+                  },
+                  {
+                    "concept": "a9b9445b-b81f-4a05-9de9-4beaa0cfa9e3",
+                    "label": "S4 gallop"
+                  },
+                  {
+                    "concept": "139063AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Murmurs"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Neck Veins engorged or JVP raised"
+                  },
+                  {
+                    "concept": "120148AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Signs of arrhythmia"
+                  }
+                ]
+              },
+              "id": "cvsFindings",
+              "label": "Cardiovascular System findings",
+              "hide": {
+                "hideWhenExpression": "isEmpty(reviewsOfSystems) || !arrayContains(reviewsOfSystems, '1124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              }
+            },
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "163109AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": []
+              },
+              "id": "cnsFindings",
+              "label": "Central Nervous System Findings",
+              "hide": {
+                "hideWhenExpression": "isEmpty(reviewsOfSystems) || !arrayContains(reviewsOfSystems, '1129AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              }
+            },
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "1122AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "GOH: Adequately hygienic"
+                  },
+                  {
+                    "concept": "",
+                    "label": "POH: Poor Oral Hygiene"
+                  },
+                  {
+                    "concept": "119558AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "DNTC: Dental Caries"
+                  },
+                  {
+                    "concept": "139438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Ging: Gingivitis"
+                  },
+                  {
+                    "concept": "112345AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "DNTL: Dental Loss"
+                  },
+                  {
+                    "concept": "146517AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Cand: Oral Candidiasis"
+                  }
+                ]
+              },
+              "id": "heentFindings",
+              "label": "HEENT Findings",
+              "hide": {
+                "hideWhenExpression": "isEmpty(reviewsOfSystems) || !arrayContains(reviewsOfSystems, '1122AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              }
+            },
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "1128AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "141692AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Dry skin"
+                  },
+                  {
+                    "concept": "155388AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Callus"
+                  },
+                  {
+                    "concept": "142677AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Deformity"
+                  },
+                  {
+                    "concept": "163411AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Ulcer"
+                  },
+                  {
+                    "concept": "2e62efa7-fdbd-4bb5-995a-b59640503aa1",
+                    "label": "Absent/asymmetric pulses"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Poor capillary filling"
+                  },
+                  {
+                    "concept": "166844AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Reduced or absent light touch, Vibration or position senses"
+                  },
+                  {
+                    "concept": "1448AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Decreased/Absent DTR"
+                  },
+                  {
+                    "concept": "152805AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Infected wound,"
+                  },
+                  {
+                    "concept": "141478AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Pedal edema/Pretibial Edema"
+                  },
+                  {
+                    "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Normal findings"
+                  }
+                ]
+              },
+              "id": "musculoskeletalSystemFindings",
+              "label": "Musculoskeletal System Findings",
+              "hide": {
+                "hideWhenExpression": "isEmpty(reviewsOfSystems) || !arrayContains(reviewsOfSystems, '1128AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              }
+            },
+            {
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "checkbox",
+                "concept": "1120AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Normal findings"
+                  },
+                  {
+                    "concept": "121342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Atrophic injection site"
+                  },
+                  {
+                    "concept": "43769c10-7326-40ca-9c4a-77d0b7c7e808",
+                    "label": "Hypertrophic injection site"
+                  },
+                  {
+                    "concept": "137300AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Signs of infection"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Wrong injection site"
+                  }
+                ]
+              },
+              "id": "skinFindings",
+              "label": "Skin and Injection Site",
+              "hide": {
+                "hideWhenExpression": "isEmpty(reviewsOfSystems) || !arrayContains(reviewsOfSystems, '1120AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Diagnostic Tests",
+      "sections": [
+        {
+          "label": "Laboratory Tests",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Fasting Blood Glucose (mg/dL)",
+              "type": "obs",
+              "required": false,
+              "id": "fbs",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": []
+            },
+            {
+              "label": "HBA1C",
+              "type": "obs",
+              "required": false,
+              "id": "hb1ctest",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "159644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": []
+            },
+            {
+              "label": "U/A Protein",
+              "type": "obs",
+              "required": false,
+              "id": "protein",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "1875AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "1874AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Trace"
+                  },
+                  {
+                    "concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "One plus"
+                  },
+                  {
+                    "concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Two plus"
+                  },
+                  {
+                    "concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Three plus"
+                  },
+                  {
+                    "concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Four plus"
+                  },
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Ketone",
+              "type": "obs",
+              "required": false,
+              "id": "ketone_",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "161442AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Negative"
+                  },
+                  {
+                    "concept": "1874AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Trace"
+                  },
+                  {
+                    "concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "One plus"
+                  },
+                  {
+                    "concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Two plus"
+                  },
+                  {
+                    "concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Three plus"
+                  },
+                  {
+                    "concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Four plus"
+                  },
+                  {
+                    "concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Positive"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Cr (Creatinine) (mg/dl)",
+              "type": "obs",
+              "required": false,
+              "id": "creatinine",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "dfe842c9-e089-4b2a-a243-f90ec90332f7"
+              },
+              "validators": []
+            },
+            {
+              "label": "Potassium K+ mmol/L",
+              "type": "obs",
+              "required": false,
+              "id": "postassium",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": []
+            },
+            {
+              "label": "Total cholesterol (mmol/L)",
+              "type": "obs",
+              "required": false,
+              "id": "totalCholestrol",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": []
+            },
+            {
+              "label": "LDL (Low-Density Lipid) (mmol/L)",
+              "type": "obs",
+              "required": false,
+              "id": "ldl",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "ECG",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "ECG",
+              "type": "obs",
+              "required": false,
+              "id": "ecg",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "160845AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Fundoscopy",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Fundoscopy",
+              "type": "obs",
+              "required": false,
+              "id": "fundoscopy",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "dd28005a-8786-48a0-816d-62da86923fb8",
+                "answers": [
+                  {
+                    "concept": "128401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "PRO: Proliferative"
+                  },
+                  {
+                    "concept": "115223AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "NPRO: Non-proliferative"
+                  },
+                  {
+                    "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "NORMAL: Normal finding"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Diagnosis",
+      "sections": [
+        {
+          "label": "Diagnosis",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Visit Diagnosis",
+              "type": "obs",
+              "required": false,
+              "id": "visitDiagnosis",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "1284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "142474AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Diabetic Mellitus-Type 1"
+                  },
+                  {
+                    "concept": "142473AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Diabetic Mellitus-Type 2"
+                  },
+                  {
+                    "concept": "1449AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Gestational DM"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other Specific Types"
+                  },
+                  {
+                    "concept": "165206AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hypertension - Grade 1 (≥140/90 - 159/99 mmHg)"
+                  },
+                  {
+                    "concept": "165203AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hypertension - Grade 2 (≥160/100-179/109 mmHg)"
+                  },
+                  {
+                    "concept": "165204AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hypertension - Grade 3 (≥180/110mmHg)"
+                  },
+                  {
+                    "concept": "165205AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hypertensive urgency  - Grade 4"
+                  },
+                  {
+                    "concept": "161644AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Hypertensive emergency  - Grade 4"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Complications",
+              "type": "obs",
+              "required": false,
+              "id": "complications",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "50f28c1f-4afc-4ba3-a07a-502794249ad7",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "DM:Diabetic Retinopathy"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:Diabetic Neuropathy"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:Diabetic nephropathy"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:Macro-vascular (CAD)"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:Macro-vascular (PAD)"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:Macro-vascular Stroke"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:Macro-vascular TIA"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:Diabetic Foot Ulcer"
+                  },
+                  {
+                    "concept": "",
+                    "label": "DM:DKA/HHS"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HTN: CKD"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HTN: TIA"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HTN: Stroke"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HTN: Hypertensive heart disease"
+                  },
+                  {
+                    "concept": "",
+                    "label": "HTN: Peripheral arterial disease"
+                  },
+                  {
+                    "concept": "",
+                    "label": "NOC: No complication"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "10-year CVD (cardiovascular disease) risk model",
+              "type": "obs",
+              "required": false,
+              "id": "riskCategory",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "59a275cb-ecf5-4562-93a3-71d7b279edf5",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "Lab Based"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Non-Lab based "
+                  }
+                ]
+              }
+            },
+            {
+              "label": "10 years CVD risk",
+              "type": "obs",
+              "required": false,
+              "id": "10YearsCvdRisk",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "165430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "166675AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lab-based risk <10%(low)"
+                  },
+                  {
+                    "concept": "1499AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lab-based risk 10-20% (Moderate)"
+                  },
+                  {
+                    "concept": "1500AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Lab-based risk >=20 (High)"
+                  },
+                  {
+                    "concept": "162821AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Non-Lab based <10% (low to moderate)"
+                  },
+                  {
+                    "concept": "166674AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Non-Lab based >=10% (high)"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "NOC: No complication"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Outcomes",
+      "sections": [
+        {
+          "label": "NCD Treatment Status",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Treatment Status",
+              "type": "obs",
+              "required": false,
+              "id": "outcome",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "84055eb6-03a1-48c2-a95c-500a3a05777d",
+                "answers": [
+                  {
+                    "concept": "35f76856-c8ff-4cfa-9f58-12ebd7200933",
+                    "label": "Controlled"
+                  },
+                  {
+                    "concept": "33a9fa7d-9ea7-4377-ac69-a8a1253635dc",
+                    "label": "Uncontrolled"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Management",
+      "sections": [
+        {
+          "label": "Lifestyle",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Lifestyle Changes",
+              "type": "obs",
+              "required": false,
+              "id": "lifestyleChanges",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "5aaee7ea-3bab-4a35-8385-38dd9efead72",
+                "answers": [
+                  {
+                    "concept": "",
+                    "label": "Cessation of smoking"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Exercise (150min/week) & Weight reduction"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Healthy Diet"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Reduce alcohol use"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Medication adherence & Side effect"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Dental care"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Daily Foot inspection"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Family screening"
+                  },
+                  {
+                    "concept": "",
+                    "label": "Injection Techniques"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "Regimen",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "NCD Treatment Regimen",
+              "type": "obsGroup",
+              "questionOptions": {
+                "rendering": "repeating",
+                "concept": "162747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "id": "ncdRegimen",
+              "hide": {},
+              "questions": [
+                {
+                  "label": "Drug",
+                  "type": "obs",
+                  "id": "drug",
+                  "questionOptions": {
+                    "concept": "1282AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "select",
+                    "answers": [
+                      {
+                        "concept": "78068AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ",
+                        "label": "NPH insulin"
+                      },
+                      {
+                        "concept": "282AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Regular insulin"
+                      },
+                      {
+                        "concept": "104914AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Premixed insulin"
+                      },
+                      {
+                        "concept": "77031AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Glibenclamide"
+                      },
+                      {
+                        "concept": "79651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Metformin"
+                      },
+                      {
+                        "concept": "77031AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Glimepiride"
+                      },
+                      {
+                        "concept": "75633AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Enalapril"
+                      },
+                      {
+                        "concept": "71137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Amlodipine"
+                      },
+                      {
+                        "concept": "77696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "HCT—Hydrochlorothiazide"
+                      },
+                      {
+                        "concept": "78945AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Lis—Lisinopril"
+                      },
+                      {
+                        "concept": "71617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Aspirin"
+                      },
+                      {
+                        "concept": "73602AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Clopidogrel"
+                      },
+                      {
+                        "concept": " 83936AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Simasatin"
+                      },
+                      {
+                        "concept": "71665AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Atorvastatin"
+                      },
+                      {
+                        "concept": "163101AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Other (specify)"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "label": "Dose",
+                  "type": "obs",
+                  "id": "doseage",
+                  "questionOptions": {
+                    "concept": "165502AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "rendering": "text"
+                  },
+                  "hide": {}
+                },
+                {
+                  "label": "#Months dispensed",
+                  "type": "obs",
+                  "id": "monthsDispensed",
+                  "questionOptions": {
+                    "concept": "164242b1-c3ba-4d2a-9ce6-36f6f0309205",
+                    "rendering": "number"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Adherence",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Adherence",
+              "type": "obs",
+              "required": false,
+              "id": "adherence",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "164075AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "answers": [
+                  {
+                    "concept": "159405AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Good (missed <20% of the doses last month)"
+                  },
+                  {
+                    "concept": "159407AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Poor (missed ≥20% of the doses last month)"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Appointment",
+      "sections": [
+        {
+          "label": "Next Appointment Date",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Next Appointment Date",
+              "type": "obs",
+              "required": false,
+              "id": "nextAppointmentDate",
+              "datePickerFormat": "both",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+              },
+              "validators": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "processor": "EncounterFormProcessor",
+  "encounterType": "f4ff3fcc-823a-4b19-b156-b2d73e332707",
+  "referencedForms": [],
+  "uuid": "76a5dc97-c09c-466b-a846-5a596aad4caf",
+  "description": "Hypertension Follow-up Encounter Form",
+  "version": "1.0"
+}

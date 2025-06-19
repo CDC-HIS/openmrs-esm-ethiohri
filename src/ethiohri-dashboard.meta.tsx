@@ -62,3 +62,9 @@ export const CLINICAL_VISITS = {
   slot: "clinical-visits-slot",
   path: "clinical-visits",
 };
+
+export const NDC_MANAGEMENT_META = {
+  title: "NDC",
+  slot: "ndc-management-slot",
+  path: "ndc-management",
+};

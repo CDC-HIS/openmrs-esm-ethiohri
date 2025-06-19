@@ -24,6 +24,7 @@ import {
   PREP_META,
   PROGRAM_MANAGEMENT_META,
   MOTHER_HEALTH_SUMMARY,
+  NDC_MANAGEMENT_META,
 } from "./ethiohri-dashboard.meta";
 import {
   CalcNextVisitDate,
@@ -66,6 +67,7 @@ import VitalsSummary from "./views/vitals/vitals-summary.component";
 import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
 import ChildHealth from "./views/pmtct/child/hei.component";
 import { PatientList } from "./components/patient-lists/patient-list.component";
+import NdcManagment from "./views/ndc/ndc.component";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -111,12 +113,12 @@ export function startupApp() {
     "isSupplementaryFoodVisible",
     isSupplementaryFoodVisible
   );
-  registerExpressionHelper(
-    "isTOVisible",
-    isTOVisible
-  );
+  registerExpressionHelper("isTOVisible", isTOVisible);
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
-  registerExpressionHelper("CustomLatestObservations", CustomLatestObservations);
+  registerExpressionHelper(
+    "CustomLatestObservations",
+    CustomLatestObservations
+  );
   registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);
   registerExpressionHelper("getAgeFromBirthdate", getAgeFromBirthdate);
   // registerControl({
@@ -249,3 +251,13 @@ export const helpMenu = getAsyncLifecycle(
   () => import("./views/navbar/help-button.component"),
   options
 );
+
+export const NdcAppMenu = getSyncLifecycle(
+  createDashboardLink({
+    ...NDC_MANAGEMENT_META,
+    moduleName,
+  }),
+  options
+);
+
+export const ndcAppChart = getSyncLifecycle(NdcManagment, options);

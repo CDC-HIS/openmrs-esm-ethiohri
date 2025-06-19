@@ -219,3 +219,9 @@ export const POSITIVE_TRACKING_WARNING =
 
 export const RETESTING_WARNING =
   "⚠️ HIV re-testing form already completed for this patient.";
+
+export const ndcFollowUpEncounterType = "f4ff3fcc-823a-4b19-b156-b2d73e332707";
+export const ndcFollowupFormUuid = "f4ff3fcc-823a-4b19-b156-b2d73e332707";
+
+export const ndcScreeningEncounterType = "f4ff3fcc-823a-4b19-b156-b2d73e332707";
+export const ndcScreeningFormUuid = "76a5dc97-c09c-466b-a846-5a596aad4caf";
