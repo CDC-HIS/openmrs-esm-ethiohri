@@ -68,6 +68,7 @@ import VitalsSummary from "./views/vitals/vitals-summary.component";
 import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
 import ChildHealth from "./views/pmtct/child/hei.component";
 import { PatientList } from "./components/patient-lists/patient-list.component";
+import { getValidPatientFollowUpDate } from "./api/api";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -115,14 +116,18 @@ export function startupApp() {
     "isSupplementaryFoodVisible",
     isSupplementaryFoodVisible
   );
-  registerExpressionHelper(
-    "isTOVisible",
-    isTOVisible
-  );
+  registerExpressionHelper("isTOVisible", isTOVisible);
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
-  registerExpressionHelper("CustomLatestObservations", CustomLatestObservations);
+  registerExpressionHelper(
+    "CustomLatestObservations",
+    CustomLatestObservations
+  );
   registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);
   registerExpressionHelper("getAgeFromBirthdate", getAgeFromBirthdate);
+  registerExpressionHelper(
+    "getValidPatientFollowUpDate",
+    getValidPatientFollowUpDate
+  );
   // registerControl({
   //   name: "eth-date",
   //   load: () => import("./components/controls/date/ethiohri-date.component"),
