@@ -9,10 +9,10 @@ const columns = [
   //   header: "Visit Date",
   // },
   {
-    key: "riskFactor",
-    header: "Risk Factor",
+    key: "visitType",
+    header: "Visit Type",
     getValue: (encounter) => {
-      return getData(encounter, "50f28c1f-4afc-4ba3-a07a-502794249ad7");
+      return getData(encounter, "b3f60308-cda4-41f9-af08-b98d2c1562c7");
     },
   },
   {
@@ -23,17 +23,17 @@ const columns = [
     },
   },
   {
-    key: "Blood Sugar",
-    header: "Blood Sugar",
+    key: "Weight",
+    header: "Weight",
     getValue: (encounter) => {
-      return getData(encounter, "887AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
-    key: "Diagnosis",
-    header: "Diagnosis",
+    key: "BMI",
+    header: "BMI",
     getValue: (encounter) => {
-      return getData(encounter, "1284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return getData(encounter, "1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
   },
   {
