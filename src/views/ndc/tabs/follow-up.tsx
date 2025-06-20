@@ -92,8 +92,8 @@ const FollowUp: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       encounterType={ndcFollowUpEncounterType}
       formList={[{ name: "NCD Screening Form" }]}
       columns={columns}
-      description="NCD Screening Form"
-      headerTitle="NCD Screening Form"
+      description="NCD Follow Up Form"
+      headerTitle="NCD Follow Up Form"
       launchOptions={{
         displayText: "Add",
         moduleName: moduleName,

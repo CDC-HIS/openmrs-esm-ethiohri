@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [devv1]
+    branches: [hackathon]
   release:
     types:
       - created
@@ -41,7 +41,7 @@ jobs:
 
     needs: build
 
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/devv1'}}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/hackathon'}}
 
     steps:
       - uses: actions/checkout@v4
@@ -85,7 +85,7 @@ jobs:
       runs-on: ethiohri-dev
       needs: pre_release
 
-      if: ${{ github.ref == 'refs/heads/devv1' }}
+      if: ${{ github.ref == 'refs/heads/hackathon' }}
 
       steps:
         - name: Download Artifacts
