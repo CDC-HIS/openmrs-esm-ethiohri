@@ -9,7 +9,7 @@ const NdcManagment: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
     <div className={styles.tabContainer}>
       <Tabs>
         <TabList contained aria-label={""}>
-          <Tab>NDC Screening </Tab>
+          <Tab>NCD Screening </Tab>
           <Tab>Follow Up</Tab>
         </TabList>
         <TabPanels>
