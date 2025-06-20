@@ -654,9 +654,6 @@
                   }
                 ]
               },
-              "hide": {
-                "hideWhenExpression": "linkedToCareAndTreatment !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              },
               "id": "startedArt"
             },
             {

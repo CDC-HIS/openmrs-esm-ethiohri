@@ -432,27 +432,27 @@
                 "answers": [
                   {
                     "concept": "120575AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Chronic kidney disease, stage I"
+                    "label": "G1 Normal or High (GFR >= 90)"
                   },
                   {
                     "concept": "120574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Chronic kidney disease, stage II (mild)"
+                    "label": "G2 Mildly Decreased (60-89)"
                   },
                   {
                     "concept": "2c156b19-3b11-4e11-9ae2-5ea2bff2b093",
-                    "label": "Chronic kidney disease, stage IIIA (moderate)"
+                    "label": "G3a Mildly to moderately decreased (45-59)"
                   },
                   {
                     "concept": "3034271b-5d91-4616-9f49-8a8cae5c2e76",
-                    "label": "Chronic kidney disease, stage IIIB (moderate)"
+                    "label": "G3b Moderately to severely decreased (30 -44)"
                   },
                   {
                     "concept": "120578AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Chronic kidney disease, stage IV (severe)"
+                    "label": "G4 Severely decreased (15 -29)"
                   },
                   {
                     "concept": "120577AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Chronic kidney disease, stage V"
+                    "label": "G5 Kidney failure (< 15)"
                   }
                 ]
               },
