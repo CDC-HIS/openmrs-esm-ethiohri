@@ -26,18 +26,33 @@ import { SkeletonText, DataTableSkeleton } from "@carbon/react";
 
 const columns = [
   {
+    key: "screeningDate",
+    header: "Screening Date",
+    getValue: (encounter) => {
+      const screeningDate = getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f", true);
+      return screeningDate ? screeningDate.split(',')[0].trim() : "";
+    },
+  },
+  {
     key: "followupDate",
     header: "Follow-up Date",
     getValue: (encounter) => {
-      const rawDate = getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
-      return rawDate ? rawDate.split(',')[0].trim() : "";
+      const followupDate = getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
+      return followupDate ? followupDate.split(',')[0].trim() : "";
     },
   },
   {
     key: "finalTestResult",
     header: "HIV Test Result",
     getValue: (encounter) => {
-      return getData(encounter, "40d1c129-5373-4005-95b1-409e56db9743");
+      const status = getData(
+        encounter,
+        "40d1c129-5373-4005-95b1-409e56db9743"
+      );
+      if (status === "Negative result") {
+        return "Negative";
+      } 
+      return status; 
     },
   },
   {
@@ -46,17 +61,10 @@ const columns = [
     getValue: (encounter) => {
       return getData(encounter, "402e8f8c-0931-4e6a-9d53-962ab9519d4d");
     },
-  },
-  {
-    key: "linkageToHivCare",
-    header: "Linkage to HIV Care",
-    getValue: (encounter) => {
-      return getData(encounter, "02776be4-f96e-40d9-9615-2db00cae6df5");
-    },
-  },
+  },  
   {
     key: "isClientPregnant",
-    header: "Pregnant/BreastFeeding?",
+    header: "Pregnant?",
     getValue: (encounter) => {
       return getData(encounter, "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
     },
@@ -65,8 +73,14 @@ const columns = [
     key: "followupStatus",
     header: "Follow-up Status",
     getValue: (encounter) => {
-      return getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
-    },
+              const status = getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
+              if (status === "Restart medication") return "Restart";
+              if (status === "Alive") return "On PrEP";
+              if (status === "New client") return "Newly started";
+              if (status === "Stop all") return "Stop";
+              if (status === "Loss to follow-up (LTFU)") return "Lost";
+              return status;
+            },
   },
   {
     key: "prepRegimen",

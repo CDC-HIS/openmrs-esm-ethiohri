@@ -115,7 +115,7 @@
                   },
                   {
                     "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                    "label": "Negative result"
+                    "label": "Negative"
                   }
                 ]
               },
@@ -137,7 +137,7 @@
                   },
                   {
                     "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                    "label": "Negative result"
+                    "label": "Negative"
                   }
                 ]
               }
@@ -158,7 +158,7 @@
                   },
                   {
                     "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                    "label": "Negative result"
+                    "label": "Negative"
                   }
                 ]
               }
@@ -180,6 +180,10 @@
                   {
                     "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
                     "label": "Negative"
+                  },
+                  {
+                    "concept": "165649AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Inconclusive"
                   }
                 ]
               }
@@ -206,7 +210,7 @@
                   },
                   {
                     "concept": "167441AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "HIV DNA polymerase chain reaction, dried blood spot (DBS)"
+                    "label": "DNA/PCR (for children)"
                   }
                 ]
               },
@@ -1155,7 +1159,7 @@
                 "answers": []
               },
               "hide": {
-                "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e'"
+                "hideWhenExpression": "screeningResultForSTI == 'b0ff6e2e-ff01-4683-859a-9fcd69dff12e' || screenedForSTI !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": [
                 {
@@ -1355,9 +1359,6 @@
         {
           "label": "Adherence",
           "isExpanded": "true",
-          "hide": {
-            "hideWhenExpression": "finalTestResult == '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-          },
           "questions": [
             {
               "label": "Followup Status",
@@ -1378,7 +1379,10 @@
                   },
                   {
                     "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "On PrEP"
+                    "label": "On PrEP",
+                    "hide": {
+                      "hideWhenExpression": "finalTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    }
                   },
                   {
                     "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
@@ -1394,7 +1398,10 @@
                   },
                   {
                     "concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Restart"
+                    "label": "Restart",
+                    "hide": {
+                      "hideWhenExpression": "finalTestResult == '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                    }
                   },
                   {
                     "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1436,7 +1443,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
               },
               "validators": []
             },
@@ -1482,9 +1489,31 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
               }
-            },            
+            }, 
+            {
+              "label": "Adherence assessment and counselling provided",
+              "type": "obs",
+              "required": false,
+              "id": "adherenceAssessmentAndCounsellingProvided",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "d2e7ccba-2dc5-4310-b5ce-e554c19a9370",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },           
             {
               "label": "Number of missed tablets in the past 30 days",
               "type": "obs",
@@ -1510,7 +1539,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus === '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
               },
               "validators": []
             },
@@ -1552,13 +1581,13 @@
               "validators": []
             },
             {
-              "label": "Adherence assessment and counselling provided",
+              "label": "Enhanced Adherence and Counselling Provided",
               "type": "obs",
               "required": false,
-              "id": "adherenceAssessmentAndCounsellingProvided",
+              "id": "EnhancedAdherenceAndCounsellingProvided",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "d2e7ccba-2dc5-4310-b5ce-e554c19a9370",
+                "concept": "2fd150f0-fb6d-40f6-bea0-96b4f8aaaabb",
                 "conceptMappings": [],
                 "answers": [
                   {
@@ -1570,9 +1599,6 @@
                     "label": "No"
                   }
                 ]
-              },
-              "hide": {
-                "hideWhenExpression": "numberOfMissedTablets !== 'bc3d60f6-e873-4e99-94ac-579549a340d0'"
               },
               "validators": []
             },
@@ -1588,6 +1614,10 @@
                 "weeksList": ""
               },
               "readonly": "false",
+              "hide": {
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
+              },
+              "validators": [],
               "id": "nextVisitDate"
             },
             {
@@ -1606,7 +1636,7 @@
               },
               "readonly": "true",
               "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
               },
               "validators": []
             }
