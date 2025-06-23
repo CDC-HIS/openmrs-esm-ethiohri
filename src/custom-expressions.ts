@@ -95,7 +95,9 @@ export function CalcPrepDoseEndDate(
     followupDate &&
     dispensedDoseReturned !== 0 &&
     (followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || 
+      followupStatus == "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+      followupStatus == "cc2dfcbd-e099-47d5-b01c-74caa296ba3c")
   ) {
     resultPrepDoseDate = new Date(
       followupDate.getTime() + dispensedDoseReturned * 24 * 60 * 60 * 1000
@@ -104,7 +106,9 @@ export function CalcPrepDoseEndDate(
   return followupDate &&
     dispensedDoseReturned !== 0 &&
     (followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || 
+      followupStatus == "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
+      followupStatus == "cc2dfcbd-e099-47d5-b01c-74caa296ba3c")
     ? resultPrepDoseDate
     : null;
 }
@@ -456,21 +460,54 @@ export async function getIdentifier(patient, identifierName) {
   return identifierValue?.value;
 }
 
-export function calCreatinineClearance(patient, weight, creatinineLevel) {
+export function calCreatinineClearance(patient, weight, creatinineLevel, visitDate) {
   if (patient && weight && creatinineLevel) {
+    let age;
+    
+    if (patient.birthDate) {
+      const birthDateObj = new Date(patient.birthDate);
+      const visitDateObj = new Date(visitDate);
+      age = visitDateObj.getFullYear() - birthDateObj.getFullYear();
+      
+      const monthDiff = visitDateObj.getMonth() - birthDateObj.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && visitDateObj.getDate() < birthDateObj.getDate())) {
+        age--;
+      }
+
+    } else if (patient.age) {
+      const today = new Date();
+      const visitDateObj = new Date(visitDate);
+      const estimatedBirthYear = today.getFullYear() - patient.age;
+      const estimatedBirthDate = new Date(visitDateObj); // clone
+      estimatedBirthDate.setFullYear(estimatedBirthYear);
+
+      age = visitDateObj.getFullYear() - estimatedBirthDate.getFullYear();
+      const monthDiff = visitDateObj.getMonth() - estimatedBirthDate.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && visitDateObj.getDate() < estimatedBirthDate.getDate())) {
+        age--;
+      }
+
+    } else {
+      return null; // cannot calculate age
+    }
+
+    // If age is still null or invalid (e.g., negative), return null
+    if (age === null || age < 0) return null;
+
     let multiplier = patient.gender === "male" ? 1 : 0.85;
-    let numerator = (140 - patient.age) * weight;
+    let numerator = (140 - age) * weight;
     let denominator = 72 * creatinineLevel * multiplier;
     return numerator / denominator;
   }
   return null;
 }
 
-export function calcEGFR(patient, weight, creatinineLevel) {
+export function calcEGFR(patient, weight, creatinineLevel, visitDate) {
   let creatinineClearance = calCreatinineClearance(
     patient,
     weight,
-    creatinineLevel
+    creatinineLevel,
+    visitDate
   );
 
   if (creatinineClearance) {

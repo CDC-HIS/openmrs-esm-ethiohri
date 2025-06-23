@@ -250,7 +250,7 @@
             {
               "label": "Sign and symptoms of acute HIV infection present",
               "type": "obs",
-              "required": true,
+              "required": false,
               "id": "symptomsOfHIVInfection",
               "questionOptions": {
                 "rendering": "radio",
@@ -517,7 +517,7 @@
                     "label": "Vomiting"
                   },
                   {
-                    "concept": "142412AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "concept": "5018AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                     "label": "Diarrhea"
                   },
                   {
@@ -1244,10 +1244,16 @@
               "id": "weight",
               "questionOptions": {
                 "rendering": "number",
-                "concept": "8ddaed89-5474-424a-a9e1-a8ad28b091fb",
+                "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242",
                 "conceptMappings": []
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+                  "message": "Weight should be a numeric value"
+                }
+              ]
             },
             {
               "label": "Creatinine Level",
@@ -1256,10 +1262,41 @@
               "id": "creatinineLevel",
               "questionOptions": {
                 "rendering": "number",
-                "concept": "dfe842c9-e089-4b2a-a243-f90ec90332f7",
-                "conceptMappings": []
+                "concept": "5f39ac9e-7338-4a79-8b40-58dbef9debb0",
+                "conceptMappings": [
+                  {
+                    "type": "CIEL",
+                    "value": "790"
+                  },
+                  {
+                    "type": "SNOMED-CT",
+                    "value": "113075003"
+                  },
+                  {
+                    "type": "LOINC",
+                    "value": "14682-9"
+                  },
+                  {
+                    "type": "AMPATH",
+                    "value": "790"
+                  },
+                  {
+                    "type": "AMPATH",
+                    "value": "790"
+                  },
+                  {
+                    "type": "CIEL",
+                    "value": "790"
+                  }
+                ]
               },
-              "validators": []
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "!/^(0|[1-9]\\d*)(\\.\\d+)?$/.test(myValue)",
+                  "message": "ScCr should be a numeric value"
+                }
+              ]
             },
             {
               "label": "eGFR",
@@ -1268,7 +1305,7 @@
               "id": "eGFR",
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
+                  "calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel', 'followupDate')"
                 },
                 "rendering": "select",
                 "concept": "165570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1447,27 +1484,7 @@
               "hide": {
                 "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
-            },
-            {
-              "label": "PrEP dose end date",
-              "type": "obs",
-              "required": false,
-              "id": "prepDoseEndDate",
-              "questionOptions": {
-                "rendering": "date",
-                "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
-                "calculate": {
-                  "calculateExpression": "CustomPrepDoseEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
-                },
-                "conceptMappings": [],
-                "answers": []
-              },
-              "readonly": "true",
-              "hide": {
-                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-              },
-              "validators": []
-            },
+            },            
             {
               "label": "Number of missed tablets in the past 30 days",
               "type": "obs",
@@ -1572,6 +1589,26 @@
               },
               "readonly": "false",
               "id": "nextVisitDate"
+            },
+            {
+              "label": "PrEP dose end date",
+              "type": "obs",
+              "required": false,
+              "id": "prepDoseEndDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
+                "calculate": {
+                  "calculateExpression": "CustomPrepDoseEndDateCalc('followupDate','arvDispensedInDays', 'followupStatus')"
+                },
+                "conceptMappings": [],
+                "answers": []
+              },
+              "readonly": "true",
+              "hide": {
+                "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": []
             }
           ]
         }

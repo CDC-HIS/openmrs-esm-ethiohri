@@ -27,6 +27,11 @@
                 {
                   "type": "date",
                   "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "message": "Screening Date should not be earlier than the patient's birthdate"
                 }
               ]
             }
@@ -87,7 +92,7 @@
                   },
                   {
                     "concept": "c39e1140-4b4c-402c-81b1-354677306304",
-                    "label": "People high risk for HIV infection clinic"
+                    "label": "WECSW clinic"
                   },
                   {
                     "concept": "159940AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -413,7 +418,7 @@
               "id": "eGFR",
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel')"
+                  "calculateExpression": "calcEGFR(patient, 'weight', 'creatinineLevel', 'screeningDate')"
                 },
                 "rendering": "select",
                 "concept": "165570AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -1831,7 +1836,7 @@
                 "rendering": "date",
                 "concept": "1dcc457b-638c-4103-887b-4e8581e052f8",
                 "calculate": {
-                  "calculateExpression": "CustomPrepDoseEndDateCalc('prepStartDate', 'doseDays', '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+                  "calculateExpression": "CustomPrepDoseEndDateCalc('prepStartDate', 'doseDays', 'typeOfClient')"
                 },
                 "conceptMappings": [],
                 "answers": []
