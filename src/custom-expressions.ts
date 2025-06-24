@@ -170,6 +170,17 @@ export function CalcMonthsOnART(patient, artStartD: any, followupD: any) {
   return resultMonthsOnART;
 }
 
+export async function customPrepStatus(
+  patient,
+  finalTestResult: string
+) { 
+  console.log("finalTestResult", finalTestResult)
+  if (finalTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') {
+    return null;
+  }
+
+}
+
 export async function customAssessmentDate(
   patient,
   prevAssessmentDate: Date,

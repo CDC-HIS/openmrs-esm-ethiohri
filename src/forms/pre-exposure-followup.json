@@ -1366,6 +1366,9 @@
               "required": false,
               "id": "followupStatus",
               "questionOptions": {
+                "calculate": {
+                  "calculateExpression": "customPrepStatus(patient, finalTestResult)"
+                },
                 "rendering": "select",
                 "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
                 "conceptMappings": [],
@@ -1415,6 +1418,153 @@
                     }
                   }
                 ]
+              },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "select",
+                    "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+                    "conceptMappings": [],
+                    "answers": [
+                      {
+                        "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Newly started",
+                        "hide": {
+                          "hideWhenExpression": "true"
+                        }
+                      },
+                      {
+                        "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "On PrEP",
+                        "hide": {
+                          "hideWhenExpression": "finalTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
+                      },
+                      {
+                        "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
+                        "label": "Loss to follow-up (LTFU)"
+                      },
+                      {
+                        "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Discontinued/Stop"
+                      },
+                      {
+                        "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Dead"
+                      },
+                      {
+                        "concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Restart",
+                        "hide": {
+                          "hideWhenExpression": "finalTestResult == '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
+                      },
+                      {
+                        "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "TO"
+                      },
+                      {
+                        "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
+                        "label": "Transfer in (Started in other Facility)",
+                        "hide": {
+                          "hideWhenExpression": "true"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "select",
+                    "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04",
+                    "conceptMappings": [],
+                    "answers": [
+                      {
+                        "concept": "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Newly started",
+                        "hide": {
+                          "hideWhenExpression": "true"
+                        }
+                      },
+                      {
+                        "concept": "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "On PrEP",
+                        "hide": {
+                          "hideWhenExpression": "finalTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
+                      },
+                      {
+                        "concept": "27e28afa-b4a6-44e0-b331-ea7250121a0e",
+                        "label": "Loss to follow-up (LTFU)"
+                      },
+                      {
+                        "concept": "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Discontinued/Stop"
+                      },
+                      {
+                        "concept": "160432AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Dead"
+                      },
+                      {
+                        "concept": "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Restart",
+                        "hide": {
+                          "hideWhenExpression": "finalTestResult == '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                        }
+                      },
+                      {
+                        "concept": "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "TO"
+                      },
+                      {
+                        "concept": "cc2dfcbd-e099-47d5-b01c-74caa296ba3c",
+                        "label": "Transfer in (Started in other Facility)",
+                        "hide": {
+                          "hideWhenExpression": "true"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "validators": []
+            },
+            {
+              "label": "Reason for stopping treatment",
+              "type": "obs",
+              "required": false,
+              "id": "reasonForStoppingTreatment",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "4bf84596-dd44-4b81-a638-4617e189a89d",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "HIV positive"
+                  },
+                  {
+                    "concept": "1403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "HIV negative, no longer at risk"
+                  },
+                  {
+                    "concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Medication side effect"
+                  },
+                  {
+                    "concept": "f29234f7-9522-404f-8fed-837ff57e2ac9",
+                    "label": "At substantial risk but decided to discontinue for personal reasons"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
@@ -1491,7 +1641,7 @@
               "hide": {
                 "hideWhenExpression": "followupStatus !== '162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== '160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && followupStatus !== 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
               }
-            }, 
+            },
             {
               "label": "Adherence assessment and counselling provided",
               "type": "obs",
@@ -1513,7 +1663,7 @@
                 ]
               },
               "validators": []
-            },           
+            },
             {
               "label": "Number of missed tablets in the past 30 days",
               "type": "obs",
@@ -1540,43 +1690,6 @@
               },
               "hide": {
                 "hideWhenExpression": "followupStatus === '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
-              },
-              "validators": []
-            },
-            {
-              "label": "Reason for stopping treatment",
-              "type": "obs",
-              "required": false,
-              "id": "reasonForStoppingTreatment",
-              "questionOptions": {
-                "rendering": "select",
-                "concept": "4bf84596-dd44-4b81-a638-4617e189a89d",
-                "conceptMappings": [],
-                "answers": [
-                  {
-                    "concept": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "HIV positive"
-                  },
-                  {
-                    "concept": "1403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "HIV negative, no longer at risk"
-                  },
-                  {
-                    "concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Medication side effect"
-                  },
-                  {
-                    "concept": "f29234f7-9522-404f-8fed-837ff57e2ac9",
-                    "label": "At substantial risk but decided to discontinue for personal reasons"
-                  },
-                  {
-                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Other"
-                  }
-                ]
-              },
-              "hide": {
-                "hideWhenExpression": "followupStatus !== '1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "validators": []
             },
