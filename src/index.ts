@@ -251,3 +251,8 @@ export const helpMenu = getAsyncLifecycle(
   () => import("./views/navbar/help-button.component"),
   options
 );
+
+export const releaseNote = getAsyncLifecycle(
+  () => import("./views/navbar/release-note.component"),
+  options
+);

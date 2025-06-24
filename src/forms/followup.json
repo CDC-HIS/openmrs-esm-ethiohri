@@ -3352,7 +3352,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "patient.gender !== 'male' && pregnant !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.age <= 10"
+                "hideWhenExpression": "patient.gender !== 'male' && pregnant === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.age <= 10"
               },
               "id": "familyPlanningMethods"
             }

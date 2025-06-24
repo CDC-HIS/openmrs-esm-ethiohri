@@ -164,6 +164,11 @@
       "name": "help-menu-ext",
       "slot": "user-panel-slot",
       "component": "helpMenu"
+    },
+    {
+      "name": "release-note-ext",
+      "slot": "user-panel-slot",
+      "component": "releaseNote"
     }
   ]
 }
