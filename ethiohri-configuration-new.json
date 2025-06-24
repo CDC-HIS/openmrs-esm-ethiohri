@@ -97,6 +97,19 @@
     "Brand color #3": "#1A75BB"
   },
   "@openmrs/esm-primary-navigation-app": {
+    "extensionSlots": {
+      "top-nav-actions-slot": {
+        "remove": []
+      },
+      "app-menu-slot": {
+        "remove": [
+          "dispensing-link",
+          "form-render-link",
+          "forms-app-link",
+          "system-administration-app-menu-link"
+        ]
+      }
+    },
     "logo": {
       "src": "ethiohri_logo_light.svg"
     }

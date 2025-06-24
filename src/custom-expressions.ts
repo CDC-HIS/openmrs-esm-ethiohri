@@ -180,6 +180,23 @@ export async function customPrepStatus(
 
 }
 
+export async function customLatestObs(
+  patient,
+  obs: string
+) { 
+  const latestObs = await getLatestObs(
+      patient.id,
+      obs,
+      FOLLOWUP_ENCOUNTER_TYPE
+    );
+
+    const value = latestObs?.valueCodeableConcept?.coding[0]?.code;
+
+  // Return "1065" only if it's the latest value, otherwise return null
+  return value === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? value : null;
+
+}
+
 export async function customAssessmentDate(
   patient,
   prevAssessmentDate: Date,

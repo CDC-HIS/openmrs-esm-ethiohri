@@ -3052,7 +3052,7 @@
               "type": "obs",
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                  "calculateExpression": "customLatestObs(patient, '5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                 },
                 "rendering": "radio",
                 "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -3135,7 +3135,7 @@
               "type": "obs",
               "questionOptions": {
                 "calculate": {
-                  "calculateExpression": "resolve(api.getLatestObs(patient.id, '5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', '136b2ded-22a3-4831-a39a-088d35a50ef5'))?.valueCodeableConcept?.coding[0]?.code"
+                  "calculateExpression": "customLatestObs(patient, '5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
                 },
                 "rendering": "radio",
                 "concept": "5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

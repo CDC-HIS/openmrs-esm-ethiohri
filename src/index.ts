@@ -33,6 +33,7 @@ import {
   CalcViralLoadStatus,
   customAssessmentDate,
   customPrepStatus,
+  customLatestObs,
   CalcAdultNutritionalStatus,
   CalcNutritionalScreening,
   CalcOlderChildNutritionalStatus,
@@ -86,6 +87,7 @@ export function startupApp() {
   registerExpressionHelper("CustomViralLoadStatusCalc", CalcViralLoadStatus);
   registerExpressionHelper("customAssessmentDate", customAssessmentDate);
   registerExpressionHelper("customPrepStatus", customPrepStatus);
+  registerExpressionHelper("customLatestObs", customLatestObs);
   registerExpressionHelper(
     "CustomAdultNutritionalStatusCalc",
     CalcAdultNutritionalStatus
