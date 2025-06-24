@@ -174,7 +174,6 @@ export async function customPrepStatus(
   patient,
   finalTestResult: string
 ) { 
-  console.log("finalTestResult", finalTestResult)
   if (finalTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') {
     return null;
   }
