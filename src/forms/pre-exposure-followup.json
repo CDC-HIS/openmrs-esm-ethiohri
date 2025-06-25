@@ -1003,7 +1003,7 @@
                 ]
               },
               "hide": {
-                "hideWhenExpression": "familyPlanningMethod !== '190AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.age <= 10"
+                "hideWhenExpression": "patient.age <= 10"
               },
               "validators": []
             },
