@@ -1543,15 +1543,15 @@
                 "answers": [
                   {
                     "concept": "138571AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "HIV positive"
+                    "label": "Tested HIV+"
                   },
                   {
                     "concept": "1403AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "HIV negative, no longer at risk"
+                    "label": "No Longer at Substantial Risk"
                   },
                   {
                     "concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Medication side effect"
+                    "label": "Side Effects"
                   },
                   {
                     "concept": "f29234f7-9522-404f-8fed-837ff57e2ac9",
@@ -1700,7 +1700,7 @@
               "id": "EnhancedAdherenceAndCounsellingProvided",
               "questionOptions": {
                 "rendering": "radio",
-                "concept": "2fd150f0-fb6d-40f6-bea0-96b4f8aaaabb",
+                "concept": "ebb4f716-7da3-4110-b9e2-6d6838140346",
                 "conceptMappings": [],
                 "answers": [
                   {
@@ -1712,6 +1712,9 @@
                     "label": "No"
                   }
                 ]
+              },
+              "hide": {
+                "hideWhenExpression": "followupStatus === '164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || followupStatus === 'cc2dfcbd-e099-47d5-b01c-74caa296ba3c'"
               },
               "validators": []
             },
