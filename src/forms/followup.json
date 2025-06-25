@@ -2000,9 +2000,6 @@
                 {
                   "intent": "edit",
                   "questionOptions": {
-                    "calculate": {
-                      "calculateExpression": "nextVisitDate ? nextVisitDate : CustomNextVisitDateCalc(followupDate,arvDispensedInDays)"
-                    },
                     "rendering": "date",
                     "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
                   }
@@ -5279,9 +5276,6 @@
                   "intent": "edit",
                   "questionOptions": {
                     "rendering": "radio",
-                    "calculate": {
-                      "calculateExpression": "viralLoadStatus ? viralLoadStatus : CustomViralLoadStatusCalc('viralLoadCount')"
-                    },
                     "concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44",
                     "answers": [
                       {
@@ -8094,10 +8088,7 @@
                   "intent": "edit",
                   "questionOptions": {
                     "rendering": "date",
-                    "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f",
-                    "calculate": {
-                      "calculateExpression": "nextFollowupScreeningDate ? nextFollowupScreeningDate : CustomNextFollowupDateForCxCa(screeningStrategy, hpvScreeningResult, viaScreeningResult, cytologyResult, hpvDnaSampleCollectedDate, viaScreeningDate, cytologySampleCollectionDate, dateTreatmentGiven)"
-                    }
+                    "concept": "4ce065b6-aecb-46a3-b60b-41bc5dc8022f"
                   }
                 },
                 {
