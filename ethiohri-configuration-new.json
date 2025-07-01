@@ -96,6 +96,23 @@
     "Brand color #2": "#002F6C",
     "Brand color #3": "#1A75BB"
   },
+  "@openmrs/esm-patient-banner-app": {
+    "extensionSlots": {
+      "patient-actions-slot": {
+        "remove": [
+          "add-past-visit-button",
+          "add-patient-to-patient-list-button",
+          "cancel-visit-button",
+          "link-patient",
+          "mark-alive-button",
+          "mark-patient-deceased-button",
+          "print-identifier-sticker-button",
+          "start-visit-button",
+          "stop-visit-button"
+        ]
+      }
+    }
+  },
   "@openmrs/esm-primary-navigation-app": {
     "extensionSlots": {
       "top-nav-actions-slot": {
