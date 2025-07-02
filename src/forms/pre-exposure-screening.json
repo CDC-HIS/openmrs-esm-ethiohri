@@ -1763,7 +1763,7 @@
               "id": "prepPrescribed",
               "questionOptions": {
                 "rendering": "select",
-                "concept": "51c2429d-21d7-4319-a27d-7a9b10b8759c",
+                "concept": "722ff3de-e2d1-4df4-8d05-ca881dc7073b",
                 "conceptMappings": [],
                 "answers": [
                   {
