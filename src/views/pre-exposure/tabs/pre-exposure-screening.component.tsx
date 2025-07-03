@@ -96,7 +96,7 @@ const columns = [
     getValue: (encounter) => {
       const prepRegimen = getData(
         encounter,
-        "51c2429d-21d7-4319-a27d-7a9b10b8759c"
+        "722ff3de-e2d1-4df4-8d05-ca881dc7073b"
       );
       if (prepRegimen === "Tenofovir disoproxil fumarate (TDF)/lamivudine (3TC)") {
         return "TDF/3TC";
