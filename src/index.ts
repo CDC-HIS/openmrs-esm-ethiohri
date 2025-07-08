@@ -1,10 +1,14 @@
 /* eslint-disable unused-imports/no-unused-imports */
-import { getAsyncLifecycle, getSyncLifecycle } from "@openmrs/esm-framework";
+import {
+  getAsyncLifecycle,
+  getSyncLifecycle,
+  defineConfigSchema,
+} from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 import {
   registerControl,
   registerExpressionHelper,
-} from "@openmrs/openmrs-form-engine-lib";
+} from "@openmrs/esm-form-engine-lib";
 import {
   createDashboardGroup,
   createDashboardLink,
@@ -76,7 +80,7 @@ export const importTranslation = require.context(
 );
 
 export function startupApp() {
-  // defineConfigSchema(moduleName, configSchema);
+  defineConfigSchema(moduleName, configSchema);
   registerExpressionHelper("CustomNextVisitDateCalc", CalcNextVisitDate);
   registerExpressionHelper("CustomTreatmentEndDateCalc", CalcTreatmentEndDate);
   registerExpressionHelper("CustomPrepDoseEndDateCalc", CalcPrepDoseEndDate);

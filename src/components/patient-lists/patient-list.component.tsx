@@ -19,8 +19,7 @@ import styles from "./patient-list.scss";
 import { useTranslation } from "react-i18next";
 import { EmptyState } from "@openmrs/esm-patient-common-lib";
 import { navigate } from "@openmrs/esm-framework";
-// eslint-disable-next-line no-restricted-imports
-import { debounce } from "lodash";
+import debounce from "lodash/debounce";
 import { usePatientList } from "../../hooks/usePatientList";
 
 export interface PatientListProps {
@@ -75,8 +74,9 @@ export const PatientList: React.FC = () => {
       key: "uan",
       header: t("uan", "UAN"),
     },
-    { key: "lastFollowupStatus", 
-      header: t("lastFollowupStatus", "Followup Status") 
+    {
+      key: "lastFollowupStatus",
+      header: t("lastFollowupStatus", "Followup Status"),
     },
     {
       key: "actions",
@@ -89,15 +89,15 @@ export const PatientList: React.FC = () => {
     navigate({ to: "${openmrsSpaBase}/patient-registration" });
 
   return (
-    <div className={styles.patientListContainer} >
+    <div className={styles.patientListContainer}>
       {isLoading && !searchTerm ? (
         <DataTableSkeleton rowCount={5} columnCount={4} />
       ) : patients?.length > 0 ? (
         <Layer>
           <Tile className={styles.tile}>
             <div className={styles.desktopHeading}>
-          <h4>{displayTitle}</h4>
-        </div>  
+              <h4>{displayTitle}</h4>
+            </div>
             <div id="table-tool-bar" className={styles.searchContainer}>
               <div>{isLoading && searchTerm && <InlineLoading />}</div>
               <div className={styles.searchBox}>
@@ -106,7 +106,6 @@ export const PatientList: React.FC = () => {
                   labelText="Search"
                   placeholder="Search Patient List"
                   size="sm"
-                  light
                   onChange={(event) => onSearchQueryChange(event.target.value)}
                   onClear={handleClear}
                 />

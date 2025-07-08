@@ -1,4 +1,5 @@
 @use "@carbon/layout";
+@use '@carbon/type';
 
 .switcherContainer {
   display: flex;
@@ -10,7 +11,7 @@
   width: 20rem;
   justify-content: flex-start;
   align-items: center;
-  @extend .productiveHeading01;
+  @include type.type-style('heading-01');
   height: 3rem;
   cursor: pointer;
 }
@@ -20,7 +21,7 @@
 }
 
 .switcherContainer ul button {
-  @extend .productiveHeading01;
+  @include type.type-style('heading-01');
   width: 100%;
   background-color: var(--brand-02);
 }
@@ -34,7 +35,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  @extend .bodyLong01;
+  @include type.type-style('body-01');
 }
 
 .switcherContainer ul div button {

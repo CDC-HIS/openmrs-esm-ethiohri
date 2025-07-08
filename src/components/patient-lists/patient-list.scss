@@ -36,7 +36,6 @@
   text-transform: capitalize;
   margin-bottom: 1rem;
   @include type.type-style("heading-03");
-  color: $text-02;
 }
 
 .headerWrapper {
@@ -69,7 +68,6 @@
       width: layout.$spacing-07;
       padding-top: 3px;
       border-bottom: 0.375rem solid;
-      @include brand-03(border-bottom-color);
     }
   }
 }
