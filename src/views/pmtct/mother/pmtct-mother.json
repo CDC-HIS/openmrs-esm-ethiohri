@@ -1,0 +1,132 @@
+{
+    "@openmrs/esm-patient-chart-app": {
+      "extensionSlots": {
+        "pmtct-mother-visits-dashboard-slot": {
+          "add": ["encounter-list"],
+          "configure": {
+            "encounter-list": {
+              "tabDefinitions": [
+                {
+                  "tabName": "pmtctEnrollment",
+                  "headerTitle": "pmtctEnrollment",
+                  "displayText": "pmtctEnrollment",
+                  "encounterType": "1914ed4a-86fe-43d2-8338-2be2937ff11e",
+                  "columns": [
+                    {
+                      "id": "dateOfEnrollment",
+                      "isDate": true,
+                      "title": "dateOfEnrollment",
+                      "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
+                      "isLink": true
+                    },
+                    {
+                      "id": "placeOfDelivery",
+                      "title": "placeOfDelivery",
+                      "concept": "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "statusAtEnrollment",
+                      "title": "statusAtEnrollment",
+                      "concept": "ab192dd0-bb1c-4417-b8f9-4c35dc991b55"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "PMTCT Enrollment",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "PMTCT Enrollment",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "PMTCT Enrollment",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                    "tabName": "pmtctDischarge",
+                    "headerTitle": "pmtctDischarge",
+                    "displayText": "pmtctDischarge",
+                    "encounterType": "e5557459-db41-49b0-ade8-afa7b4767bf9",
+                    "columns": [
+                      {
+                        "id": "dischargeDate",
+                        "isDate": true,
+                        "title": "dischargeDate",
+                        "concept": "18f78400-d91c-40ea-bd9f-4388c10d50c1",
+                        "isLink": true
+                      },
+                      {
+                        "id": "reasonForDischarge",
+                        "title": "reasonForDischarge",
+                        "concept": "ba47a98e-b6b0-42f1-b612-496d501b1272"
+                      },
+                      {
+                        "id": "actions",
+                        "title": "actions",
+                        "actionOptions": [
+                          {
+                            "formName": "PMTCT Discharge",
+                            "label": "viewDetails", 
+                            "mode": "view"
+                          },
+                          {
+                            "formName": "PMTCT Discharge",
+                            "label": "editForm",
+                            "mode": "edit"
+                          },
+                          {
+                            "formName": "PMTCT Discharge",
+                            "label": "deleteForm",
+                            "mode": "delete"
+                          }
+                        ]
+                      }
+                    ],
+                    "launchOptions": {
+                      "displayText": "add"
+                    },
+                    "formList": [
+                      {
+                        "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                      }
+                    ]
+                  }
+              ]
+            },
+            "Translation overrides": {
+              "en": {
+                "clinicalVisit": "Clinical Visit",
+                "clinicalVisitEncounters": "clinical visit encounters",
+                "visitDate": "Visit Date",
+                "visitType": "Visit Type",
+                "tbScreeningOutcome": "TB Screening Outcome",
+                "nextAppointmentDate": "Next Appointment Date",
+                "actionsTitle": "Actions",
+                "viewDetails": "View Details",
+                "editForm": "Edit Form",
+                "add": "Add"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

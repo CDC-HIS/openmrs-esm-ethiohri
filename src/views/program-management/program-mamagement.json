@@ -1,0 +1,294 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "program-management-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "intakeA",
+                "headerTitle": "intakeA",
+                "displayText": "intakeA",
+                "encounterType": "f28bb488-0f83-417c-98ba-06ea5f1765e3",
+                "columns": [
+                  {
+                    "id": "dateConfirmed",
+                    "isDate": true,
+                    "title": "dateConfirmed",
+                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "isLink": true
+                  },
+                  {
+                    "id": "testType", 
+                    "title": "testType",
+                    "concept": "5583b0a6-f390-446d-ab39-d98584ee330c"
+                  },
+                  {
+                    "id": "entryPoint",
+                    "title": "entryPoint", 
+                    "concept": "dd282c99-ea69-44e7-9252-aff0198cc1e8"
+                  },
+                  {
+                    "id": "occupation",
+                    "title": "occupation",
+                    "concept": "2d2073e1-8377-4c4a-b6c7-0ab848760716"
+                  },
+                  {
+                    "id": "targetPopulation",
+                    "title": "targetPopulation",
+                    "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016"
+                  },
+                  {
+                    "id": "childsCareGiverMaritalStatus",
+                    "title": "childsCareGiverMaritalStatus",
+                    "concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "POC Intake-A",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "POC Intake-A",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "POC Intake-A",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                }
+              },
+              {
+                "tabName": "intakeB", 
+                "headerTitle": "intakeB",
+                "displayText": "intakeB",
+                "encounterType": "3a010ff9-0c42-4c3f-9868-95c3b01c9699",
+                "columns": [
+                  {
+                    "id": "HIVRelatedOIs",
+                    "title": "HIVRelatedOIs",
+                    "concept": "339d3209-c797-457f-afb8-8d19d99c63b7"
+                  },
+                  {
+                    "id": "patientFunctionalStatus",
+                    "title": "patientFunctionalStatus",
+                    "concept": "2b7b8471-b19e-4d55-b2a4-4fe5b80f889a"
+                  },
+                  {
+                    "id": "developmentalStatus",
+                    "title": "developmentalStatus",
+                    "concept": "1200AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "pregnancyAtEnrollment",
+                    "title": "pregnancyAtEnrollment",
+                    "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "presentingComplaints",
+                    "title": "presentingComplaints",
+                    "concept": "14718b2b-d38a-4f68-8e22-8bc739ae43f7"
+                  },
+                  {
+                    "id": "WHOStaging",
+                    "title": "WHOStaging",
+                    "concept": "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "POC Intake-B",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "POC Intake-B",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "POC Intake-B",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add" 
+                }
+              },
+              {
+                "tabName": "familyInformation",
+                "headerTitle": "familyInformation",
+                "displayText": "familyInformation",
+                "encounterType": "e5557459-db41-49b0-ade8-afa7b4767bf9",
+                "columns": [
+                  {
+                    "id": "familyMember",
+                    "title": "familyMember",
+                    "concept": "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "familyMemberAge",
+                    "title": "familyMemberAge",
+                    "concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "Sex",
+                    "title": "Sex",
+                    "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "healthStatus",
+                    "title": "healthStatus",
+                    "concept": "4ab0e5e3-fff7-4819-bd2e-4f070eedcd3d"
+                  },
+                  {
+                    "id": "counselledforhiv",
+                    "title": "counselledforhiv",
+                    "concept": "ff9eccda-485e-4044-ad92-414e97b279c0"
+                  },
+                  {
+                    "id": "testedforHIV",
+                    "title": "testedforHIV",
+                    "concept": "164401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "testeResult",
+                    "title": "testeResult",
+                    "concept": "2e770be1-7397-4684-bea6-6632c23b00d7"
+                  },
+                  {
+                    "id": "enrolledInCare",
+                    "title": "enrolledInCare",
+                    "concept": "3ca41707-40ef-424c-9e1a-923a407e68fc"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "Family Information",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Family Information",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "Family Information",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                }
+              },
+              {
+                "tabName": "phdp",
+                "headerTitle": "phdp",
+                "displayText": "phdp",
+                "encounterType": "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d",
+                "columns": [
+                  {
+                    "id": "phdpdate",
+                    "isDate": true,
+                    "title": "phdpdate",
+                    "concept": "2c4db7e7-1ece-49a6-a075-d466e6d9b27d",
+                    "isLink": true
+                  },
+                  {
+                    "id": "issuesAddressed",
+                    "title": "issuesAddressed",
+                    "concept": "5e8e03b1-d6ad-4362-a99a-f610af940f57"
+                  },
+                  {
+                    "id": "conclusion",
+                    "title": "conclusion",
+                    "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "POC PHDP Form",
+                        "label": "viewDetails",
+                        "mode": "view" 
+                      },
+                      {
+                        "formName": "POC PHDP Form",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "POC PHDP Form",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                }
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "intakeA": "Intake A",
+              "intakeB": "Intake B", 
+              "familyInformation": "Family Information",
+              "dateConfirmed": "Date Confirmed HIV+",
+              "testType": "Type of HIV Test",
+              "entryPoint": "Entry Point",
+              "occupation": "Occupation",
+              "targetPopulation": "Target Population",
+              "HIVRelatedOIs": "Past OI",
+              "patientFunctionalStatus": "Functional Status",
+              "developmentalStatus": "Developmental Status",
+              "pregnancyAtEnrollment": "Pregnancy Status",
+              "presentingComplaints": "Presenting Symptoms",
+              "WHOStaging": "WHO HIV Clinical Stage",
+              "familyMember": "Relationship",
+              "familyMemberAge": "Age",
+              "Sex": "Sex",
+              "healthStatus": "Health Status",
+              "testeResult": "HIV test Result",
+              "enrolledInCare": "Enrolled in Care",
+              "phdpdate": "Date",
+              "issuesAddressed": "Issues Addressed",
+              "conclusion": "Conclusion",
+              "actions": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "deleteForm": "Delete",
+              "add": "Add"
+            }
+          }
+        }
+      }
+    }
+  }
+}

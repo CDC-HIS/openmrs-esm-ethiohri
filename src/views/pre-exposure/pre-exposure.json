@@ -1,0 +1,204 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "pre-exposure-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "preExposureScreening",
+                "headerTitle": "preExposureScreening",
+                "displayText": "preExposureScreening",
+                "encounterType": "f28bb488-0f83-417c-98ba-06ea5f1765e3",
+                "columns": [
+                  {
+                    "id": "screeningDate",
+                    "isDate": true,
+                    "title": "screeningDate",
+                    "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
+                    "isLink": true
+                  },
+                  {
+                    "id": "hivTestResult",
+                    "title": "hivTestResult",
+                    "concept": "2e770be1-7397-4684-bea6-6632c23b00d7"
+                  },
+                  {
+                    "id": "pregnancyStatus",
+                    "title": "pregnancyStatus",
+                    "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "selfIdentifyingSexWorker",
+                    "title": "selfIdentifyingSexWorker",
+                    "concept": "160579AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "doYouHaveHIVPositivePartner",
+                    "title": "doYouHaveHIVPositivePartner",
+                    "concept": "1436AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "typeOfClient",
+                    "title": "typeOfClient",
+                    "concept": "da8c5265-2ab4-43f8-af66-ec1c9c8e9d4f"
+                  },
+                  {
+                    "id": "prepStartDate",
+                    "isDate": true,
+                    "title": "prepStartDate",
+                    "concept": "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "prepPrescribed",
+                    "title": "prepPrescribed",
+                    "concept": "722ff3de-e2d1-4df4-8d05-ca881dc7073b"
+                  },
+                  {
+                    "id": "doseDays",
+                    "title": "doseDays",
+                    "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "Prep",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Prep",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "Prep",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                }
+              },
+              {
+                "tabName": "preExposureFollowup",
+                "headerTitle": "preExposureFollowup",
+                "displayText": "preExposureFollowup",
+                "encounterType": "3a010ff9-0c42-4c3f-9868-95c3b01c9699",
+                "columns": [
+                  {
+                    "id": "screeningDate",
+                    "isDate": true,
+                    "title": "screeningDate",
+                    "concept": "bd09b775-0294-4775-9615-964d98e06a4f",
+                    "isLink": true
+                  },
+                  {
+                    "id": "followupDate",
+                    "isDate": true,
+                    "title": "followupDate",
+                    "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
+                  },
+                  {
+                    "id": "finalTestResult",
+                    "title": "finalTestResult",
+                    "concept": "40d1c129-5373-4005-95b1-409e56db9743"
+                  },
+                  {
+                    "id": "symptomsOfHIVInfection",
+                    "title": "symptomsOfHIVInfection",
+                    "concept": "402e8f8c-0931-4e6a-9d53-962ab9519d4d"
+                  },
+                  {
+                    "id": "isClientPregnant",
+                    "title": "isClientPregnant",
+                    "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "followupStatus",
+                    "title": "followupStatus",
+                    "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04"
+                  },
+                  {
+                    "id": "prepRegimen",
+                    "title": "prepRegimen",
+                    "concept": "722ff3de-e2d1-4df4-8d05-ca881dc7073b"
+                  },
+                  {
+                    "id": "arvDispensedInDays",
+                    "title": "arvDispensedInDays",
+                    "concept": "f3911009-1a8f-42ee-bdfc-1e343c2839aa"
+                  },
+                  {
+                    "id": "nextVisitDate",
+                    "isDate": true,
+                    "title": "nextVisitDate",
+                    "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "Pre Exposure Followup",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Pre Exposure Followup",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "Pre Exposure Followup",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                }
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "preExposureScreening": "Pre Exposure Screening",
+              "preExposureFollowup": "Pre Exposure Followup",
+              "screeningDate": "Screening Date",
+              "hivTestResult": "HIV Test Result",
+              "pregnancyStatus": "Pregnant?", 
+              "selfIdentifyingSexWorker": "Self-Identified FSW",
+              "doYouHaveHIVPositivePartner": "HIV+ Partner",
+              "typeOfClient": "Type of Client",
+              "prepStartDate": "PrEP Start Date",
+              "prepPrescribed": "PrEP Regimen",
+              "doseDays": "Dose Days",
+              "followupDate": "Follow-up Date",
+              "finalTestResult": "HIV Test Result",
+              "symptomsOfHIVInfection": "Sign of HIV?",
+              "isClientPregnant": "Pregnant?",
+              "followupStatus": "Follow-up Status",
+              "prepRegimen": "PrEP Regimen",
+              "arvDispensedInDays": "ARV Dispensed In Days",
+              "nextVisitDate": "Next Visit Date",
+              "actions": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "deleteForm": "Delete",
+              "add": "Add"
+            }
+          }
+        }
+      }
+    }
+  }
+}

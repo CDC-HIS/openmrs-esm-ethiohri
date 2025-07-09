@@ -1,0 +1,180 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "post-exposure-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "postExposureRegistration",
+                "headerTitle": "postExposureRegistration",
+                "displayText": "postExposureRegistrationEncounters",
+                "encounterType": "f28bb488-0f83-417c-98ba-06ea5f1765e3",
+                "columns": [
+                  {
+                    "id": "reportingDate",
+                    "isDate": true,
+                    "title": "reportingDate",
+                    "concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c",
+                    "isLink": true
+                  },
+                  {
+                    "id": "exposureType",
+                    "title": "exposureType", 
+                    "concept": "916eebc3-1141-40e6-beaa-ad2b5685956b"
+                  },
+                  {
+                    "id": "sourceOfExposure",
+                    "title": "sourceOfExposure",
+                    "concept": "1c92b574-953a-458e-9fa7-82f5538d8aee"
+                  },
+                  {
+                    "id": "sourcePerson",
+                    "title": "sourcePerson",
+                    "concept": "dc23b554-65b1-479a-aeeb-b47dc9fc2f7e"
+                  },
+                  {
+                    "id": "exposedPerson",
+                    "title": "exposedPerson",
+                    "concept": "ad4935e0-624a-4e01-8e51-02acd0b45f07"
+                  },
+                  {
+                    "id": "pepRegimen",
+                    "title": "pepRegimen",
+                    "concept": "17c0da08-509d-483f-905c-01c0c9ddd72a"
+                  },
+                  {
+                    "id": "timeBetweenExposure",
+                    "title": "timeBetweenExposure",
+                    "concept": "0885bb1e-6a2e-47d0-a597-8e8da07e4e59"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "Post Exposure Registration",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Post Exposure Registration",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "Post Exposure Registration",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                }
+              },
+              {
+                "tabName": "postExposureFollowup",
+                "headerTitle": "postExposureFollowup",
+                "displayText": "postExposureFollowupEncounters",
+                "encounterType": "3a010ff9-0c42-4c3f-9868-95c3b01c9699",
+                "columns": [
+                  {
+                    "id": "reportingDate",
+                    "isDate": true,
+                    "title": "reportingDate",
+                    "concept": "4285d9e8-3ab4-4a94-bd4e-4dd92855795c",
+                    "isLink": true
+                  },
+                  {
+                    "id": "visitDate",
+                    "isDate": true,
+                    "title": "visitDate",
+                    "concept": "163260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "visitPeriod",
+                    "title": "visitPeriod",
+                    "concept": "957a79b4-e771-4ab8-bcc6-e77f7dbcfd9d"
+                  },
+                  {
+                    "id": "adherence",
+                    "title": "adherence",
+                    "concept": "b1a646d3-78ff-4dd5-823a-5bef7d69ff3d"
+                  },
+                  {
+                    "id": "hivStatus",
+                    "title": "hivStatus",
+                    "concept": "21ea1d83-acd7-4c99-b4cc-33a90e6dd7d7"
+                  },
+                  {
+                    "id": "sideEffect",
+                    "title": "sideEffect",
+                    "concept": "164377AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "remark",
+                    "title": "remark",
+                    "concept": "161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "Post Exposure Followup",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Post Exposure Followup",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "Post Exposure Followup",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                }
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "postExposureRegistration": "Post Exposure Registration",
+              "postExposureRegistrationEncounters": "Post Exposure Registration Encounters",
+              "postExposureFollowup": "Post Exposure Followup",
+              "postExposureFollowupEncounters": "Post Exposure Followup Encounters",
+              "reportingDate": "Reporting Date",
+              "exposureType": "Exposure Type",
+              "sourceOfExposure": "Source of Exposure",
+              "sourcePerson": "Source Person Status",
+              "exposedPerson": "Exposed Person Status", 
+              "pepRegimen": "PEP Regimen",
+              "timeBetweenExposure": "Time b/n Exposure & PEP",
+              "visitDate": "Visit Date",
+              "visitPeriod": "Visit Period",
+              "adherence": "Adherence",
+              "hivStatus": "HIV Status",
+              "sideEffect": "Side Effect",
+              "remark": "Remark",
+              "actions": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "deleteForm": "Delete",
+              "add": "Add"
+            }
+          }
+        }
+      }
+    }
+  }
+}

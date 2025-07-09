@@ -1,0 +1,189 @@
+{
+    "@openmrs/esm-patient-chart-app": {
+      "extensionSlots": {
+        "hts-clinical-visits-dashboard-slot": {
+          "add": ["encounter-list"],
+          "configure": {
+            "encounter-list": {
+              "tabDefinitions": [
+                {
+                  "tabName": "hivPositiveTracking",
+                  "headerTitle": "hivPositiveTracking",
+                  "displayText": "hivPositiveTrackingEncounters",
+                  "encounterType": "f28bb488-0f83-417c-98ba-06ea5f1765e3",
+                  "columns": [
+                    {
+                      "id": "registrationDate",
+                      "isDate": true,
+                      "title": "registrationDate",
+                      "concept": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                      "isLink": true
+                    },
+                    {
+                      "id": "hivPositiveDate",
+                      "title": "hivPositiveDate",
+                      "concept": "164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "linkedToCareAndTreatment",
+                      "title": "linkedToCareAndTreatment",
+                      "concept": "c1bb9738-10aa-4905-bb5d-af4e55b4bb69"
+                    },
+                    {
+                      "id": "startedART",
+                      "title": "startedART",
+                      "isDate": true,
+                      "concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "reasonForNotStartingArtTheSameDay",
+                      "title": "reasonForNotStartingArtTheSameDay",
+                      "isDate": true,
+                      "concept": "d8ffb301-9a47-45ee-a465-f053cc060aab"
+                    },
+                    {
+                      "id": "planForNextStep",
+                      "title": "planForNextStep",
+                      "isDate": true,
+                      "concept": "e96ea7a2-5285-41d3-bb0d-4f199cf5b8ee"
+                    },
+                    {
+                      "id": "finalOutcome",
+                      "title": "finalOutcome",
+                      "isDate": true,
+                      "concept": "413b265c-87ef-4988-a7bc-1bfc6b5e5528"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actionsTitle",
+                      "actionOptions": [
+                        {
+                          "formName": "Positive Tracking",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "Positive Tracking",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "Positive Tracking",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                    "tabName": "retest",
+                    "headerTitle": "hivRetest",
+                    "displayText": "hivRetest",
+                    "encounterType": "aedaa1d0-1c03-425b-a49d-864a4981cf2f",
+                    "columns": [
+                      {
+                        "id": "dateOfInitialTest",
+                        "isDate": true,
+                        "title": "dateOfInitialTest",
+                        "concept": "9182520e-24e8-4e84-aba7-6b56bdeb76d5",
+                        "isLink": true
+                      },
+                      {
+                        "id": "dateOfRetesting",
+                        "isDate": true,
+                        "title": "dateOfRetesting",
+                        "concept": "3c588dc4-cd32-47e6-a919-806e254b66c7"
+                      },
+                      {
+                        "id": "entryPoint",
+                        "title": "entryPoint",
+                        "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38"
+                      },
+                      {
+                        "id": "finalResult",
+                        "title": "finalResult",
+                        "concept": "2b1ea8df-3293-4964-9b44-9e31dff678a4"
+                      },
+                      {
+                        "id": "resultFinal",
+                        "title": "resultFinal",
+                        "concept": "2e770be1-7397-4684-bea6-6632c23b00d7"
+                      },
+                      {
+                        "id": "actionTaken",
+                        "title": "actionTaken",
+                        "concept": "3e8686f9-694f-496b-8f5c-565833d035d1"
+                      },
+                      {
+                        "id": "actions",
+                        "title": "actions",
+                        "actionOptions": [
+                          {
+                            "formName": "Re-test",
+                            "label": "viewDetails",
+                            "mode": "view"
+                          },
+                          {
+                            "formName": "Re-test",
+                            "label": "editForm",
+                            "mode": "edit"
+                          },
+                          {
+                            "formName": "Re-test",
+                            "label": "deleteForm",
+                            "mode": "delete"
+                          }
+                        ]
+                      }
+                    ],
+                    "launchOptions": {
+                      "displayText": "add"
+                    },
+                    "formList": [
+                      {
+                        "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                      }
+                    ]
+                  }
+              ]
+            },
+            "Translation overrides": {
+              "en": {
+                "hivPositiveTracking": "HIV Positive Tracking",
+                "hivPositiveTrackingEncounters": "HIV Positive Tracking Encounters",
+                "registrationDate": "Registration Date",
+                "hivPositiveDate": "HIV Positive Date",
+                "linkedToCareAndTreatment": "Linked to Care and Treatment", 
+                "startedART": "Started ART",
+                "reasonForNotStartingArtTheSameDay": "Reason for Not Starting ART the Same Day",
+                "planForNextStep": "Plan for Next Step",
+                "finalOutcome": "Final Outcome",
+                "actionsTitle": "Actions",
+                "viewDetails": "View Details",  
+                "editForm": "Edit Form",
+                "add": "Add",
+                "hivRetest": "HIV Retest",
+                "hivRetestEncounters": "HIV Retest Encounters",
+                "dateOfInitialTest": "Date of Initial Test",
+                "dateOfRetesting": "Date of Retesting",
+                "entryPoint": "Entry Point",
+                "finalResult": "Final Result",
+                "resultFinal": "Result Final",
+                "actionTaken": "Action Taken",
+                "actions": "Actions"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

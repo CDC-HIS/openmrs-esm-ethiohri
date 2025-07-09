@@ -15,7 +15,11 @@ import {
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "./prep.scss";
-import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../../api/api";
+import {
+  fetchIdentifiers,
+  getLatestObs,
+  getPatientEncounters,
+} from "../../../api/api";
 import { SkeletonText, DataTableSkeleton } from "@carbon/react";
 
 const columns = [
@@ -23,11 +27,15 @@ const columns = [
     key: "screeningDate",
     header: "Screening Date",
     getValue: (encounter) => {
-      const rawDate = getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f", true);
-      return rawDate ? rawDate.split(',')[0].trim() : "";
+      const rawDate = getData(
+        encounter,
+        "bd09b775-0294-4775-9615-964d98e06a4f",
+        true
+      );
+      return rawDate ? rawDate.split(",")[0].trim() : "";
     },
   },
-  // {   
+  // {
   //   key: "referredFrom",
   //   header: "Referred From",
   //   getValue: (encounter) => {
@@ -44,7 +52,7 @@ const columns = [
   //     } else if (referredFrom === "Other non-coded") {
   //       return "Other";
   //     }
-  //     return referredFrom; 
+  //     return referredFrom;
   //   },
   // },
   {
@@ -86,23 +94,29 @@ const columns = [
     key: "prepStartDate",
     header: "PrEP Start Date",
     getValue: (encounter) => {
-      const rawDate = getData(encounter, "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
-      return rawDate ? rawDate.split(',')[0].trim() : "";
+      const rawDate = getData(
+        encounter,
+        "163526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        true
+      );
+      return rawDate ? rawDate.split(",")[0].trim() : "";
     },
   },
   {
     key: "prepPrescribed",
-    header: "PrEP Regimen",   
+    header: "PrEP Regimen",
     getValue: (encounter) => {
       const prepRegimen = getData(
         encounter,
         "722ff3de-e2d1-4df4-8d05-ca881dc7073b"
       );
-      if (prepRegimen === "Tenofovir disoproxil fumarate (TDF)/lamivudine (3TC)") {
+      if (
+        prepRegimen === "Tenofovir disoproxil fumarate (TDF)/lamivudine (3TC)"
+      ) {
         return "TDF/3TC";
-      } 
-      return prepRegimen; 
-    }, 
+      }
+      return prepRegimen;
+    },
   },
   {
     key: "doseDays",
@@ -143,52 +157,47 @@ const columns = [
 const PreExposureScreeningList = ({ patientUuid, updateFormSavedStatus }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
-  const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] = useState(false);
+  const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] =
+    useState(false);
   const [hasRetestingEncounter, setHasRetestingEncounter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-      (async () => {
-        const [identifiers, confirmedPositive, hasPosTracking, hasHIVRetesting] = await Promise.all([
+    (async () => {
+      const [identifiers, confirmedPositive, hasPosTracking, hasHIVRetesting] =
+        await Promise.all([
           fetchIdentifiers(patientUuid),
           getLatestObs(
-        patientUuid,
-        dateOfHIVConfirmation,
-        INTAKE_A_ENCOUNTER_TYPE
-      ),
-      getPatientEncounters(
             patientUuid,
-            POSITIVE_TRACKING_ENCOUNTER_TYPE
+            dateOfHIVConfirmation,
+            INTAKE_A_ENCOUNTER_TYPE
           ),
-          getPatientEncounters(
-        patientUuid,
-        RETEST_ENCOUNTER_TYPE
-      )
+          getPatientEncounters(patientUuid, POSITIVE_TRACKING_ENCOUNTER_TYPE),
+          getPatientEncounters(patientUuid, RETEST_ENCOUNTER_TYPE),
         ]);
-  
-        setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));  
-        setIsConfirmedPositive(confirmedPositive != null)   
-        setHasPositiveTrackingEncounter(hasPosTracking.length > 0)  
-        setHasRetestingEncounter(hasHIVRetesting.length > 0); 
-        
-        setIsLoading(false);
-      })();
-    }, [patientUuid, updateFormSavedStatus]);  
 
-  if (isLoading)
-      return <DataTableSkeleton role="progressbar" zebra />;
+      setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));
+      setIsConfirmedPositive(confirmedPositive != null);
+      setHasPositiveTrackingEncounter(hasPosTracking.length > 0);
+      setHasRetestingEncounter(hasHIVRetesting.length > 0);
+
+      setIsLoading(false);
+    })();
+  }, [patientUuid, updateFormSavedStatus]);
+
+  if (isLoading) return <DataTableSkeleton role="progressbar" zebra />;
 
   return (
     <>
       {!hasMRN ? (
-          <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
-        ) : isConfirmedPositive ? (
-          <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
-        ) : hasPositiveTrackingEncounter ? (
-          <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
-        ) : hasRetestingEncounter ? (
-          <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
-        ) : null}
+        <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+      ) : isConfirmedPositive ? (
+        <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
+      ) : hasPositiveTrackingEncounter ? (
+        <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
+      ) : hasRetestingEncounter ? (
+        <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
+      ) : null}
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE}
@@ -199,7 +208,11 @@ const PreExposureScreeningList = ({ patientUuid, updateFormSavedStatus }) => {
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN || isConfirmedPositive || hasPositiveTrackingEncounter || hasRetestingEncounter,
+          hideFormLauncher:
+            !hasMRN ||
+            isConfirmedPositive ||
+            hasPositiveTrackingEncounter ||
+            hasRetestingEncounter,
         }}
         afterFormSaveAction={updateFormSavedStatus}
       />

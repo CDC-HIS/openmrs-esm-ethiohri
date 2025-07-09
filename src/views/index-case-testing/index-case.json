@@ -1,0 +1,409 @@
+{
+    "@openmrs/esm-patient-chart-app": {
+      "extensionSlots": {
+        "hct-clinical-visits-dashboard-slot": {
+          "add": ["encounter-list"],
+          "configure": {
+            "encounter-list": {
+              "tabDefinitions": [
+                {
+                  "tabName": "indexCaseInformation",
+                  "headerTitle": "indexCaseInformation",
+                  "displayText": "indexCaseInformationList",
+                  "encounterType": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
+                  "columns": [
+                    {
+                      "id": "ictNumber",
+                      "title": "ictNumber",
+                      "concept": "b35f9632-9ff8-410f-bfcb-f497023bbcf9"
+                    },
+                    {
+                      "id": "indexFirstName",
+                      "title": "indexFirstName",
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "indexLastName",
+                      "title": "indexLastName",
+                      "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "entryPoint",
+                      "title": "entryPoint",
+                      "isDate": true,
+                      "concept": "1201b688-45f8-4e56-b089-0b31138a19dd"
+                    },
+                    {
+                      "id": "targetPopulation",
+                      "title": "targetPopulation",
+                      "isDate": true,
+                      "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actionsTitle",
+                      "actionOptions": [
+                        {
+                          "formName": "POC ICT General",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "POC ICT General",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "POC ICT General",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "indexCaseInformation",
+                  "headerTitle": "indexCaseInformation",
+                  "displayText": "indexCaseInformationList",
+                  "encounterType": "23b08733-6d26-48b5-b135-dac294e25e1e",
+                  "columns": [
+                    {
+                      "id": "offered",
+                      "title": "offered",
+                      "concept": "eef33554-8844-48ed-abec-a06e4918b7fe"
+                    },
+                    {
+                      "id": "offeredDate",
+                      "title": "offeredDate",
+                      "concept": "a7c606b1-9f3e-4095-815a-3a623dc738e1"
+                    },
+                    {
+                      "id": "accepted",
+                      "title": "accepted",
+                      "concept": "fdcbadef-40c5-486a-a30b-a88477ab90ae"
+                    },
+                    {
+                      "id": "acceptedDate",
+                      "title": "acceptedDate",
+                      "isDate": true,
+                      "concept": "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "POC ICT Offer",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "POC ICT Offer",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "POC ICT Offer",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "indexContactFollowUp",
+                  "headerTitle": "indexContactFollowUp",
+                  "displayText": "indexContactFollow",
+                  "encounterType": "8a75cc8f-d700-4b09-8b96-97d519728d89",
+                  "columns": [
+                    {
+                      "id": "contactFirstName",
+                      "title": "contactFirstName",
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "contactLastName",
+                      "title": "contactLastName",
+                      "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "contactCategory",
+                      "title": "contactCategory",
+                      "concept": "a7d17e7a-a8b2-49b5-84f1-aade1277b658"
+                    },
+                    {
+                      "id": "contactTrialsOutcome",
+                      "title": "contactTrialsOutcome",
+                      "isDate": true,
+                      "concept": "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "POC Index Contact Followup",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "POC Index Contact Followup",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "POC Index Contact Followup",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "familyIndexCaseContacts",
+                  "headerTitle": "familyIndexCaseContacts",
+                  "displayText": "familyIndexCaseContacts",
+                  "encounterType": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
+                  "columns": [
+                    {
+                      "id": "registrationDate",
+                      "title": "registrationDate",
+                      "isDate": true,
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "healthStatus",
+                      "title": "healthStatus",
+                      "concept": "4ab0e5e3-fff7-4819-bd2e-4f070eedcd3d"
+                    },
+                    {
+                      "id": "previousDateTested",
+                      "title": "previousDateTested",
+                      "isDate": true,
+                      "concept": "87a98d42-ec07-46a0-b291-36f66b68fe2c"
+                    },
+                    {
+                      "id": "previousHIVTestResult",
+                      "title": "previousHIVTestResult",
+                      "concept": "23ef2580-e9e5-4e1b-af9b-584cdd30abc4"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "Family Index Case Contacts",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "Family Index Case Contacts",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "Family Index Case Contacts",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "partnerIndexCaseContacts",
+                  "headerTitle": "partnerIndexCaseContacts",
+                  "displayText": "partnerIndexCaseContacts",
+                  "encounterType": "bc17321c-a1a8-45a3-a49e-e8d0c91c476d",
+                  "columns": [
+                    {
+                      "id": "ictNumber",
+                      "title": "ictNumber",
+                      "concept": "b35f9632-9ff8-410f-bfcb-f497023bbcf9"
+                    },
+                    {
+                      "id": "indexFirstName",
+                      "title": "indexFirstName",
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "indexLastName",
+                      "title": "indexLastName",
+                      "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "entryPoint",
+                      "title": "entryPoint",
+                      "isDate": true,
+                      "concept": "1201b688-45f8-4e56-b089-0b31138a19dd"
+                    },
+                    {
+                      "id": "targetPopulation",
+                      "title": "targetPopulation",
+                      "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "Partner Index Case Information",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "Partner Index Case Information",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "Partner Index Case Information",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "ictScreening",
+                  "headerTitle": "ictScreening",
+                  "displayText": "ictScreening",
+                  "encounterType": "43a8ef4f-473e-4778-9c90-7b7f05014499",
+                  "columns": [
+                    {
+                      "id": "maternalHivStatus",
+                      "title": "maternalHivStatus",
+                      "concept": "3535f4d1-bf1e-47d5-822d-60c1da143cad"
+                    },
+                    {
+                      "id": "maritalStatus",
+                      "title": "maritalStatus",
+                      "concept": "2feaa615-f6af-41db-91c1-301def421146"
+                    },
+                    {
+                      "id": "agreeInterviewed",
+                      "title": "agreeInterviewed",
+                      "concept": "4dd6e628-fcc9-4629-92b8-192751c3de9c"
+                    },
+                    {
+                      "id": "icInterviewedForService",
+                      "title": "icInterviewedForService",
+                      "isDate": true,
+                      "concept": "75a0a101-a094-4c7d-a4c7-255fb0094440"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "ICT Screening",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "ICT Screening",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "ICT Screening",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Translation overrides": {
+              "en": {
+                "indexCaseInformation": "Index Case Information",
+                "indexCaseInformationList": "Index Case Information List",
+                "ictNumber": "ICT Number",
+                "indexFirstName": "Index First Name",
+                "indexLastName": "Index Last Name", 
+                "entryPoint": "Entry Point",
+                "targetPopulation": "Target Population",
+                "offered": "Offered",
+                "offeredDate": "Offered Date",
+                "accepted": "Accepted",
+                "acceptedDate": "Accepted Date",
+                "indexContactFollowUp": "Index Contact Follow Up",
+                "indexContactFollow": "Index Contact Follow",
+                "contactFirstName": "Contact First Name",
+                "contactLastName": "Contact Last Name",
+                "contactCategory": "Contact Category",
+                "contactTrialsOutcome": "Contact Trials Outcome",
+                "familyIndexCaseContacts": "Family Index Case Contacts",
+                "registrationDate": "Registration Date",
+                "healthStatus": "Health Status",
+                "previousDateTested": "Previous Date Tested",
+                "previousHIVTestResult": "Previous HIV Test Result",
+                "partnerIndexCaseContacts": "Partner Index Case Contacts",
+                "ictScreening": "ICT Screening",
+                "maternalHivStatus": "Maternal HIV Status",
+                "maritalStatus": "Marital Status",
+                "agreeInterviewed": "Agree Interviewed",  
+                "icInterviewedForService": "IC Interviewed for Service",
+                "actions": "Actions",
+                "deleteForm": "Delete Form"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

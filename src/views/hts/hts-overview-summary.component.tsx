@@ -5,7 +5,7 @@ const HtsOverview: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   return (
     <div>
       <Tabs>
-        <Tab label="HIV Testing Service">
+        <Tab>
           <div>HIV Testing Service Coming Soon</div>
         </Tab>
       </Tabs>

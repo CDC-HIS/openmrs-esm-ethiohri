@@ -1,0 +1,126 @@
+{
+  "@openmrs/esm-patient-chart-app": {
+    "extensionSlots": {
+      "hiv-followup-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "pocFollowupForm",
+                "headerTitle": "followup",
+                "displayText": "followupEncounterList",
+                "encounterType": "136b2ded-22a3-4831-a39a-088d35a50ef5",
+                "columns": [
+                  {
+                    "id": "date",
+                    "isDate": true,
+                    "title": "followUpDate",
+                    "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296"
+                  },
+                  {
+                    "id": "artRegimen",
+                    "title": "artRegimen",
+                    "concept": "6d7d0327-e1f8-4246-bfe5-be1e82d94b14"
+                  },
+                  {
+                    "id": "followUpStatus",
+                    "title": "followUpStatus",
+                    "concept": "222f64a8-a603-4d2e-b70e-2d90b622bb04"
+                  },
+                  {
+                    "id": "weight",
+                    "title": "weight",
+                    "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
+                  },
+                  {
+                    "id": "dateViralLoadRequested",
+                    "title": "dateViralLoadRequested",
+                    "isDate": true,
+                    "concept": "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "vlStatus",
+                    "title": "vlStatus",
+                    "isDate": true,
+                    "concept": "2dc9ee04-4d12-4606-ae0f-86895bf14a44"
+                  },
+                  {
+                    "id": "dsdCategory",
+                    "title": "dsdCategory",
+                    "isDate": true,
+                    "concept": "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2"
+                  },
+                  {
+                    "id": "screeningDone",
+                    "title": "screeningDone",
+                    "isDate": true,
+                    "concept": "01c546b4-e08a-4c0c-82ef-d387cab6bbbf"
+                  },
+                  {
+                    "id": "nextVisitDate",
+                    "title": "nextVisitDate",
+                    "isDate": true,
+                    "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actionsTitle",
+                    "actionOptions": [
+                      {
+                        "formName": "POC Followup Form",
+                        "package": "hiv-care-treatment",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "POC Followup Form",
+                        "package": "hiv-care-treatment",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "POC Followup Form",
+                        "package": "hiv-care-treatment",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "8f713e0e-94a0-3c57-9024-69520933802a"
+                  }
+                ]
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "pocFollowupForm": "POC Followup Form",
+              "followup": "Follow-up",
+              "followupEncounterList": "Follow-up Encounter List",
+              "followUpDate": "Follow-up Date",
+              "artRegimen": "ART Regimen",
+              "followUpStatus": "Follow-up Status",
+              "weight": "Weight",
+              "dateViralLoadRequested": "Date Viral Load Requested",
+              "vlStatus": "Viral Load Status",
+              "dsdCategory": "DSD Category",
+              "screeningDone": "Screening Done",
+              "nextVisitDate": "Next Visit Date",
+              "actionsTitle": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "add": "Add"
+            }
+          }
+        }
+      }
+    }
+  }
+}
