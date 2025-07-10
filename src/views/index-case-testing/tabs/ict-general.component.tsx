@@ -21,7 +21,7 @@ import { DataTableSkeleton } from "@carbon/react";
 const columns = [
   {
     key: "linkDate",
-    header: "Link Date",
+    header: "Linked Date",
     getValue: (encounter) => {
       const linkedDate = getData(encounter, "e2e44119-7633-4d39-97a4-0ceffbb98d91", true);
       return linkedDate ? linkedDate.split(',')[0].trim() : "";
@@ -59,13 +59,13 @@ const columns = [
     },
   },
   {
-    key: "caseFindingStrategy",
-    header: "Case finding strategy",
+    key: "caseClassification",
+    header: "Case Classification Status",
     getValue: (encounter) => {
-      const caseFinding = getData(encounter, "f81ddad3-ba72-4670-91d4-1dbed708958b");
-      if (caseFinding === "PICT (Provider-initiated counseling and testing)") return "PICT";
-      if (caseFinding === "VCT Program") return "VCT";
-      if (caseFinding === "EID Visit") return "EID";
+      const caseFinding = getData(encounter, "eee5289d-b5fc-49f3-94a7-4755e369d470");
+      if (caseFinding === "C2 - Newly diagnosed individuals age >= 13 years with current risk factors and identification with a KP group") return "C2";
+      if (caseFinding === "C1 - Newly diagnosed individuals age >= 15 years with probable recent infection") return "C1";
+      if (caseFinding === "C3 - All other newly diagnosed children, adolescents or adults not classified by C1 and C2") return "C3";
       return caseFinding;
     },
   },
@@ -154,14 +154,14 @@ const ICTGeneral = ({ patientUuid, updateIndexFormSavedStatus }) => {
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN || hasIndexInformation || (!isConfirmedPositive && !hasPositiveTrackingEncounter && !isStartedART),
+          hideFormLauncher: !hasMRN || hasIndexInformation || !isStartedART,
         }}
         afterFormSaveAction={updateIndexFormSavedStatus}
       />
       {!hasMRN ? (
                 <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
-              ) : !isConfirmedPositive && !hasPositiveTrackingEncounter && !isStartedART ? (
-                <p className={styles.warningMessage}>⚠️ Patient needs to have HIV+ or ART started date.</p>
+              ) : !isStartedART ? (
+                <p className={styles.warningMessage}>⚠️ Patient needs to have ART started date.</p>
               ) : null}
     </>
   );

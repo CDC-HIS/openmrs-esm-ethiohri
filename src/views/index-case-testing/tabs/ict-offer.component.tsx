@@ -111,7 +111,6 @@ const ICTOffer = ({ patientUuid, updateFormSavedStatus }) => {
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || !hasIndexInformation,
         }}
-        afterFormSaveAction={updateFormSavedStatus}
       />
       {!hasMRN ? (
                       <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>

@@ -34,9 +34,7 @@ const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
         <TabPanels>
           <TabPanel>
             <ICTGeneral
-    updateIndexFormSavedStatus={() => {
-      setIndexFormSaved(true); // ✅ when ICTGeneral saved, unlock ICTOffer
-    }}
+    updateIndexFormSavedStatus={updateIndexFormSavedStatus}
     patientUuid={patientUuid}
   />
           </TabPanel>
@@ -48,8 +46,9 @@ const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
           </TabPanel>
           <TabPanel>
             <IndexContactFollowup
-    updateOfferFormSavedStatus={updateFormSavedStatus} // ✅ Re-evaluate when ICTOffer saved
-    patientUuid={patientUuid}
+    updateOfferFormSavedStatus={() => {
+      setIsFormSaved(true); // ✅ when ICTGeneral saved, unlock ICTOffer
+    }}patientUuid={patientUuid}
   />
           </TabPanel>
         </TabPanels>

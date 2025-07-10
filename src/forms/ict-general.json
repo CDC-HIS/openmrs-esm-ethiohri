@@ -14,11 +14,11 @@
       "label": "INDEX CASE INFORMATION",
       "sections": [
         {
-          "label": "REGISTRATION",
+          "label": "GENERAL INFORMATION",
           "isExpanded": "true",
           "questions": [
             {
-              "label": "Link Date",
+              "label": "Linked Date",
               "type": "obs",
               "required": "true",
               "id": "linkDate",
@@ -35,7 +35,7 @@
               ]
             },
             {
-              "label": "ICT#",
+              "label": "ICT #",
               "type": "obs",
               "required": true,
               "id": "ictNumber",
@@ -47,7 +47,7 @@
               }
             },
             {
-              "label": "Target Group",
+              "label": "Target Population Group",
               "type": "obs",
               "required": false,
               "id": "targetGroup",
@@ -98,7 +98,7 @@
           ]
         },
         {
-          "label": "CBS & HST INFORMATION",
+          "label": "CBS and HIVST INFORMATION",
           "isExpanded": "true",
           "questions": [
             {
@@ -244,25 +244,21 @@
                 "answers": [
                   {
                     "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                    "label": "Probable Recent"
+                    "label": "R - Probable Recent"
                   },
                   {
                     "concept": "c0b85e2c-8c7e-456e-a0d5-1280c8bfa7d4",
-                    "label": "Long Term"
+                    "label": "LT - Long-term"
                   },
                   {
                     "concept": "07896600-8646-4f15-9a5b-92593ee5008f",
-                    "label": "Inconclusive"
-                  },
-                  {
-                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
-                    "label": "Negative"
+                    "label": "IR - Inconclusive/Invalid"
                   }
                 ]
               }
             },
             {
-              "label": "Case Classification Case",
+              "label": "Case Classification Status",
               "type": "obs",
               "required": false,
               "id": "caseClassification",
@@ -365,13 +361,7 @@
                   }
                 ]
               }
-            }
-          ]
-        },
-        {
-          "label": "CASE FINDING STRATEGY",
-          "isExpanded": "true",
-          "questions": [
+            },
             {
               "label": "Case finding strategy",
               "type": "obs",
@@ -398,7 +388,7 @@
               }
             },
             {
-              "label": "If PICT,",
+              "label": "If PICT, PICT service delivery point",
               "type": "obs",
               "required": false,
               "hide": {
