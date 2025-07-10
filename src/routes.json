@@ -34,7 +34,7 @@
       "component": "indexCaseTestingMenu",
       "order":2,
       "meta": {
-        "title": "Index Case Testing",
+        "title": "Index Case Testing Service",
         "slot": "index-case-testing-slot",
         "path": "index-case-testing",
         "columns": 1

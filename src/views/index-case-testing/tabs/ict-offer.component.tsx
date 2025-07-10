@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
-import { ICT_OFFER_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../../constants";
+import { ICT_GENERAL_ENCOUNTER_TYPE, ICT_OFFER_ENCOUNTER_TYPE, MRN_NULL_WARNING } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
-import styles from "../../../root.scss";
-import { fetchIdentifiers } from "../../../api/api";
+import styles from "./ictservice.scss";
+import { fetchIdentifiers, getPatientEncounters } from "../../../api/api";
+import { DataTableSkeleton } from "@carbon/react";
 
 const columns = [
+  {
+    key: "visitDate",
+    header: "Visit date",
+    getValue: (encounter) => {
+      const visitDate = getData(encounter, "53097498-c1b3-49d0-a159-ee09b4b5a914", true);
+      return visitDate ? visitDate.split(',')[0].trim() : "";
+    },
+  },
   {
     key: "offered",
     header: "Offered",
@@ -18,7 +27,8 @@ const columns = [
     key: "offeredDate",
     header: "Offered Date",
     getValue: (encounter) => {
-      return getData(encounter, "a7c606b1-9f3e-4095-815a-3a623dc738e1", true);
+      const offerDate = getData(encounter, "a7c606b1-9f3e-4095-815a-3a623dc738e1", true);
+      return offerDate ? offerDate.split(',')[0].trim() : "";
     },
   },
   {
@@ -32,7 +42,8 @@ const columns = [
     key: "acceptedDate",
     header: "Accepted Date",
     getValue: (encounter) => {
-      return getData(encounter, "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4", true);
+      const acceptDate = getData(encounter, "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4", true);
+      return acceptDate ? acceptDate.split(',')[0].trim() : "";
     },
   },
   {
@@ -64,16 +75,28 @@ const columns = [
   },
 ];
 
-const ICTOffer: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+const ICTOffer = ({ patientUuid, updateFormSavedStatus }) => {
   const [hasMRN, setHasMRN] = useState(false);
+  const [hasIndexInformation, setHasIndexInformation] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    (async () => {
-      const identifiers = await fetchIdentifiers(patientUuid);
-      if (identifiers?.find((e) => e.identifierType.display === "MRN")) {
-        setHasMRN(true);
-      }
-    })();
-  });
+          (async () => {
+            const [identifiers, indexInformation] = await Promise.all([
+              fetchIdentifiers(patientUuid),
+          getPatientEncounters(
+                patientUuid,
+                ICT_GENERAL_ENCOUNTER_TYPE
+              )
+            ]);
+      
+            setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));  
+            setHasIndexInformation(indexInformation.length > 0) 
+            
+            setIsLoading(false);
+          })();
+        }, [patientUuid, updateFormSavedStatus]);  
+        if (isLoading)
+              return <DataTableSkeleton role="progressbar" zebra />;
   return (
     <>
       <EncounterList
@@ -86,10 +109,15 @@ const ICTOffer: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
-          hideFormLauncher: !hasMRN,
+          hideFormLauncher: !hasMRN || !hasIndexInformation,
         }}
+        afterFormSaveAction={updateFormSavedStatus}
       />
-      {!hasMRN && <p className={styles.patientName}>{MRN_NULL_WARNING}</p>}
+      {!hasMRN ? (
+                      <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+                    ) : !hasIndexInformation ? (
+                      <p className={styles.warningMessage}>⚠️ Index case information should be filled.</p>
+                    ) : null}
     </>
   );
 };

@@ -1,413 +1,466 @@
 {
-    "name": "POC ICT General",
-    "version": "1.0",
-    "published": true,
-    "retired": false,
-    "encounter": "ICT General",
-    "processor": "EncounterFormProcessor",
-    "referencedForms": [],
-    "uuid": "bf097a70-4bb8-47dc-aict-generala86a0",
-    "encounterType": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
-    "allowUnspecifiedAll": true,
-    "pages": [
+  "name": "POC ICT General",
+  "version": "1.0",
+  "published": true,
+  "retired": false,
+  "encounter": "ICT General",
+  "processor": "EncounterFormProcessor",
+  "referencedForms": [],
+  "uuid": "bf097a70-4bb8-47dc-aict-generala86a0",
+  "encounterType": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
+  "allowUnspecifiedAll": true,
+  "pages": [
+    {
+      "label": "INDEX CASE INFORMATION",
+      "sections": [
         {
-            "label": "INDEX CASE INFORMATION",
-            "sections": [
+          "label": "REGISTRATION",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Link Date",
+              "type": "obs",
+              "required": "true",
+              "id": "linkDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "e2e44119-7633-4d39-97a4-0ceffbb98d91",
+                "answers": []
+              },
+              "validators": [
                 {
-                    "label": "REGISTRATION",
-                    "isExpanded": "true",
-                    "questions": [
-						{
-							"label": "Link Date",
-							"type": "obs",
-							"required": "false",
-							"id": "linkDate",
-							"questionOptions": {
-							  "rendering": "date",
-							  "concept": "e2e44119-7633-4d39-97a4-0ceffbb98d91",
-							  "answers": []
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                }
-							]
-						  },
-                        {
-                            "label": "ICT#",
-                            "type": "obs",
-                            "required": true,
-                            "id": "ictNumber",
-                            "questionOptions": {
-                                "rendering": "text",
-                                "concept": "b35f9632-9ff8-410f-bfcb-f497023bbcf9",
-                                "conceptMappings": [],
-                                "answers": []
-                            }
-                        }
-                    ]
-                },
-				{
-                    "label": "CBS & HST INFORMATION",
-                    "isExpanded": "true",
-                    "questions": [
-						{
-                            "label": "Linked to CBS?",
-                            "type": "obs",
-                            "required": false,
-                            "id": "linkedToCbs",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "8c7bf8d3-cbf7-4934-8c16-c4de4a461075",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Yes"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "No"
-                                    }
-                                ]
-                            }
-                        },
-						{
-                            "label": "Is CRF completed?",
-                            "type": "obs",
-                            "required": false,
-                            "id": "crf",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "f387c69d-ccb0-4f5b-b260-c51e23a491d9",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Yes"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "No"
-                                    }
-                                ]
-                            }
-                        },
-						{
-							"label": "Date CRF completed",
-							"type": "obs",
-							"required": false,
-							"id": "crfCompletedDate",
-							"hide": {
-								"hideWhenExpression": "crf !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							},
-							"validators": [
-							  {
-								  "type": "date",
-								  "allowFutureDates": "false"
-							  }
-						  ],
-							"questionOptions": {
-								"rendering": "date",
-								"concept": "98f33c89-bf71-4483-a76a-3ce94912b3d2",
-								"conceptMappings": [],
-								"answers": []
-							}
-						},
-						{
-                            "label": "CBS ID",
-                            "type": "obs",
-                            "required": false,
-                            "id": "cbsId",
-                            "questionOptions": {
-                                "rendering": "text",
-                                "concept": "3ef5c646-ce09-47b2-af22-2e3c544a1208",
-                                "conceptMappings": [],
-                                "answers": []
-                            }
-                        },
-						{
-                            "label": "Initial CBS ID",
-                            "type": "obs",
-                            "required": false,
-                            "id": "InitialCbsId",
-                            "questionOptions": {
-                                "rendering": "text",
-                                "concept": "b47c94cd-27ac-48b4-94f9-5783441c54d5",
-                                "conceptMappings": [],
-                                "answers": []
-                            }
-                        },
-						{
-                            "label": "Eligible for Recency testing",
-                            "type": "obs",
-                            "required": false,
-                            "id": "eligibleForRecency",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "63ffc936-492f-4ee3-b24e-d6d8a72674a9",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "8875cb57-a667-474d-9f9b-d3e592dfc75b",
-                                        "label": "E"
-                                    },
-                                    {
-                                        "concept": "b64e1eea-9dc4-4149-8644-646980d2ab4b",
-                                        "label": "NE"
-                                    }
-                                ]
-                            }
-                        },
-						{
-							"label": "RTRI test date",
-							"type": "obs",
-							"required": "false",
-							"id": "rtriTestDate",
-							"hide": {
-                                "hideWhenExpression": "eligibleForRecency !== '8875cb57-a667-474d-9f9b-d3e592dfc75b'"
-                            },
-							"questionOptions": {
-							  "rendering": "date",
-							  "concept": "884a3273-2e5b-4048-9bdc-d38dd0bb8b18",
-							  "answers": []
-							},
-							"validators": [
-								{
-                                    "type": "date",
-                                    "allowFutureDates": "false"
-                                }
-							]
-						  },
-                        {
-                            "label": "RTRI Result",
-                            "type": "obs",
-                            "required": false,
-                            "hide": {
-                                "hideWhenExpression": "eligibleForRecency !== '8875cb57-a667-474d-9f9b-d3e592dfc75b'"
-                            },
-                            "id": "rtriResult",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "3e0c5f07-cea4-4da5-8091-854c4d343bc0",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "R"
-                                    },
-                                    {
-                                        "concept": "c0b85e2c-8c7e-456e-a0d5-1280c8bfa7d4",
-                                        "label": "LT"
-                                    },
-                                    {
-                                        "concept": "07896600-8646-4f15-9a5b-92593ee5008f",
-                                        "label": "IR"
-                                    }
-                                ]
-                            }
-                        },
-						{
-                            "label": "Case Classification Case",
-                            "type": "obs",
-                            "required": false,
-                            "id": "caseClassification",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "eee5289d-b5fc-49f3-94a7-4755e369d470",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "eef543b9-eacd-4c40-98e8-4ddb9de23f16",
-                                        "label": "C1 - Newly diagnosed individuals age >= 15 years with probable recent infection"
-                                    },
-                                    {
-                                        "concept": "b53ad050-588c-4844-ba7b-ecd482b280de",
-                                        "label": "C2 - Newly diagnosed individuals age >= 13 years with current risk factors and identification with a KP group"
-                                    },
-                                    {
-                                        "concept": "5b308c44-c5d2-4549-9d15-3a7697d18e8c",
-                                        "label": "C3 - All other newly diagnosed children, adolescents, or adults not classified by C1 and C2"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "label": "Do you know about HIVST?",
-                            "type": "obs",
-                            "required": false,
-                            "id": "hivst",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "6949f032-06d5-4019-abce-dba4bb46e192",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Yes"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "No"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "label": "Have you ever tested using HIVST?",
-                            "type": "obs",
-                            "required": false,
-                            "id": "testedUsingHivst",
-                            "hide": {
-                                "hideWhenExpression": "hivst !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "166464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "conceptMappings": [
-                                    {
-                                        "relationship": "SAME-AS",
-                                        "type": "CIEL",
-                                        "value": "166464"
-                                    },
-                                    {
-                                        "relationship": "SAME-AS",
-                                        "type": "KenyaEMR",
-                                        "value": "164952"
-                                    }
-                                ],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Yes"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "No"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "label": "Have you ever recommended your friends for HIVST?",
-                            "type": "obs",
-                            "required": false,
-                            "hide": {
-                                "hideWhenExpression": "hivst !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "id": "recommendedHivst",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "0bc4754a-473f-4929-826e-8b11bee4ea0e",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Yes"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "No"
-                                    }
-                                ]
-                            }
-                        }
-					]
-                },
-				{
-                    "label": "CASE FINDING STRATEGY",
-                    "isExpanded": "true",
-                    "questions": [
-						{
-                            "label": "Case finding strategy",
-                            "type": "obs",
-                            "required": false,
-                            "id": "caseFindingStrategy",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "f81ddad3-ba72-4670-91d4-1dbed708958b",
-                                "conceptMappings": [],
-                                "answers": [
-                                    {
-                                        "concept": "9d0e9067-33a0-4d14-ad18-0baa4eab4297",
-                                        "label": "PICT"
-                                    },
-                                    {
-                                        "concept": "160539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "VCT"
-                                    },
-                                    {
-                                        "concept": "160526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "EID"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "label": "If PICT,",
-                            "type": "obs",
-                            "required": false,
-                            "hide": {
-                                "hideWhenExpression": "caseFindingStrategy !== '9d0e9067-33a0-4d14-ad18-0baa4eab4297'"
-                            },
-                            "id": "ifPict",
-                            "questionOptions": {
-                                "rendering": "select",
-                                "concept": "e5d1cf7c-d14a-49d2-bbdc-621804269115",
-                                "conceptMappings": [],
-                                "answers": [
-									{
-                                        "concept": "afcd8ca6-4706-4a0f-8d3b-bb46781a1698",
-                                        "label": "HRST"
-                                    },
-									{
-                                        "concept": "ca7df214-3fef-48d6-b8d7-16da8e921c4c",
-                                        "label": "ICT"
-                                    },
-									{
-                                        "concept": "41a9a67e-ce27-4a33-be91-0725209c69b0",
-                                        "label": "KP"
-                                    },
-									{
-                                        "concept": "8d560b25-6860-44fb-bf16-d21672435c6d",
-                                        "label": "SNS"
-                                    },
-                                    {
-                                        "concept": "6b4d8d21-a278-4649-963f-985025b28806",
-                                        "label": "ANC"
-                                    },
-                                    {
-                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                        "label": "Other"
-                                    }
-                                ]
-                            }
-                        },
-						{
-                            "label": "Specify other",
-                            "type": "obs",
-                            "required": true,
-                            "id": "specifyPict",
-							"hide": {
-                                "hideWhenExpression": "ifPict !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "questionOptions": {
-                                "rendering": "text",
-                                "concept": "a2148b80-36e8-4e3f-9759-a04c0deafa86",
-                                "conceptMappings": [],
-                                "answers": []
-                            }
-                        }
-					]
+                  "type": "date",
+                  "allowFutureDates": "false"
                 }
-            ]
+              ]
+            },
+            {
+              "label": "ICT#",
+              "type": "obs",
+              "required": true,
+              "id": "ictNumber",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "b35f9632-9ff8-410f-bfcb-f497023bbcf9",
+                "conceptMappings": [],
+                "answers": []
+              }
+            },
+            {
+              "label": "Target Group",
+              "type": "obs",
+              "required": false,
+              "id": "targetGroup",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016",
+                "answers": [
+                  {
+                    "concept": "166513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "FSW"
+                  },
+                  {
+                    "concept": "162198AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Long distance truck drivers"
+                  },
+                  {
+                    "concept": "e53cf0d0-86ed-4b20-aa93-58546b970c63",
+                    "label": "Prisoners"
+                  },
+                  {
+                    "concept": "9fb6c25b-4765-463b-9f26-7cc3addf1105",
+                    "label": "Mobile Worker/Daily laborer"
+                  },
+                  {
+                    "concept": "b696f324-05a5-49ba-8577-6172195473fc",
+                    "label": "OVC"
+                  },
+                  {
+                    "concept": "360d3b35-4946-454c-86e6-815fed0723f2",
+                    "label": "Partner of PLHIV"
+                  },
+                  {
+                    "concept": "e916113e-8d95-43f5-a07c-a21a8aca9bed",
+                    "label": "Children of PLHIV"
+                  },
+                  {
+                    "concept": "2453316b-2e88-43d7-87c9-32ef4725ec5d",
+                    "label": "Other MARPS"
+                  },
+                  {
+                    "concept": "166430AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "General population"
+                  }
+                ]
+              },
+              "validators": []
+            }
+          ]
+        },
+        {
+          "label": "CBS & HST INFORMATION",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Linked to CBS?",
+              "type": "obs",
+              "required": false,
+              "id": "linkedToCbs",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "8c7bf8d3-cbf7-4934-8c16-c4de4a461075",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Is CRF completed?",
+              "type": "obs",
+              "required": false,
+              "id": "crf",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "f387c69d-ccb0-4f5b-b260-c51e23a491d9",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Date CRF completed",
+              "type": "obs",
+              "required": false,
+              "id": "crfCompletedDate",
+              "hide": {
+                "hideWhenExpression": "crf !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "98f33c89-bf71-4483-a76a-3ce94912b3d2",
+                "conceptMappings": [],
+                "answers": []
+              }
+            },
+            {
+              "label": "CBS ID",
+              "type": "obs",
+              "required": false,
+              "id": "cbsId",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "3ef5c646-ce09-47b2-af22-2e3c544a1208",
+                "conceptMappings": [],
+                "answers": []
+              }
+            },
+            {
+              "label": "Initial CBS ID",
+              "type": "obs",
+              "required": false,
+              "id": "InitialCbsId",
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "b47c94cd-27ac-48b4-94f9-5783441c54d5",
+                "conceptMappings": [],
+                "answers": []
+              }
+            },
+            {
+              "label": "Eligible for Recency testing",
+              "type": "obs",
+              "required": false,
+              "id": "eligibleForRecency",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "63ffc936-492f-4ee3-b24e-d6d8a72674a9",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "8875cb57-a667-474d-9f9b-d3e592dfc75b",
+                    "label": "E"
+                  },
+                  {
+                    "concept": "b64e1eea-9dc4-4149-8644-646980d2ab4b",
+                    "label": "NE"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "RTRI test date",
+              "type": "obs",
+              "required": "false",
+              "id": "rtriTestDate",
+              "hide": {
+                "hideWhenExpression": "eligibleForRecency !== '8875cb57-a667-474d-9f9b-d3e592dfc75b'"
+              },
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "884a3273-2e5b-4048-9bdc-d38dd0bb8b18",
+                "answers": []
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ]
+            },
+            {
+              "label": "RTRI Result",
+              "type": "obs",
+              "required": false,
+              "hide": {
+                "hideWhenExpression": "eligibleForRecency !== '8875cb57-a667-474d-9f9b-d3e592dfc75b'"
+              },
+              "id": "rtriResult",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "3e0c5f07-cea4-4da5-8091-854c4d343bc0",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "165090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Probable Recent"
+                  },
+                  {
+                    "concept": "c0b85e2c-8c7e-456e-a0d5-1280c8bfa7d4",
+                    "label": "Long Term"
+                  },
+                  {
+                    "concept": "07896600-8646-4f15-9a5b-92593ee5008f",
+                    "label": "Inconclusive"
+                  },
+                  {
+                    "concept": "5e4fc757-0b14-49ae-b3b7-419666f41e15",
+                    "label": "Negative"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Case Classification Case",
+              "type": "obs",
+              "required": false,
+              "id": "caseClassification",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "eee5289d-b5fc-49f3-94a7-4755e369d470",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "eef543b9-eacd-4c40-98e8-4ddb9de23f16",
+                    "label": "C1 - Newly diagnosed individuals age >= 15 years with probable recent infection"
+                  },
+                  {
+                    "concept": "b53ad050-588c-4844-ba7b-ecd482b280de",
+                    "label": "C2 - Newly diagnosed individuals age >= 13 years with current risk factors and identification with a KP group"
+                  },
+                  {
+                    "concept": "5b308c44-c5d2-4549-9d15-3a7697d18e8c",
+                    "label": "C3 - All other newly diagnosed children, adolescents, or adults not classified by C1 and C2"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Do you know about HIVST?",
+              "type": "obs",
+              "required": false,
+              "id": "hivst",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "6949f032-06d5-4019-abce-dba4bb46e192",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Have you ever tested using HIVST?",
+              "type": "obs",
+              "required": false,
+              "id": "testedUsingHivst",
+              "hide": {
+                "hideWhenExpression": "hivst !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "166464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "conceptMappings": [
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "CIEL",
+                    "value": "166464"
+                  },
+                  {
+                    "relationship": "SAME-AS",
+                    "type": "KenyaEMR",
+                    "value": "164952"
+                  }
+                ],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Have you ever recommended your friends for HIVST?",
+              "type": "obs",
+              "required": false,
+              "hide": {
+                "hideWhenExpression": "hivst !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "id": "recommendedHivst",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "0bc4754a-473f-4929-826e-8b11bee4ea0e",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "label": "CASE FINDING STRATEGY",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "label": "Case finding strategy",
+              "type": "obs",
+              "required": false,
+              "id": "caseFindingStrategy",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "f81ddad3-ba72-4670-91d4-1dbed708958b",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "9d0e9067-33a0-4d14-ad18-0baa4eab4297",
+                    "label": "PICT"
+                  },
+                  {
+                    "concept": "160539AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "VCT"
+                  },
+                  {
+                    "concept": "160526AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "EID"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "If PICT,",
+              "type": "obs",
+              "required": false,
+              "hide": {
+                "hideWhenExpression": "caseFindingStrategy !== '9d0e9067-33a0-4d14-ad18-0baa4eab4297'"
+              },
+              "id": "ifPict",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "e5d1cf7c-d14a-49d2-bbdc-621804269115",
+                "conceptMappings": [],
+                "answers": [
+                  {
+                    "concept": "afcd8ca6-4706-4a0f-8d3b-bb46781a1698",
+                    "label": "HRST"
+                  },
+                  {
+                    "concept": "ca7df214-3fef-48d6-b8d7-16da8e921c4c",
+                    "label": "ICT"
+                  },
+                  {
+                    "concept": "41a9a67e-ce27-4a33-be91-0725209c69b0",
+                    "label": "WECSW"
+                  },
+                  {
+                    "concept": "8d560b25-6860-44fb-bf16-d21672435c6d",
+                    "label": "SNS"
+                  },
+                  {
+                    "concept": "6b4d8d21-a278-4649-963f-985025b28806",
+                    "label": "ANC"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "Specify other",
+              "type": "obs",
+              "required": true,
+              "id": "specifyPict",
+              "hide": {
+                "hideWhenExpression": "ifPict !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "text",
+                "concept": "a2148b80-36e8-4e3f-9759-a04c0deafa86",
+                "conceptMappings": [],
+                "answers": []
+              }
+            }
+          ]
         }
-    ],
-    "availableIntents": [
-		{
-			"intent": "*",
-			"display": "default_intent"
-		}
-	]
+      ]
+    }
+  ],
+  "availableIntents": [
+    {
+      "intent": "*",
+      "display": "default_intent"
+    }
+  ]
 }

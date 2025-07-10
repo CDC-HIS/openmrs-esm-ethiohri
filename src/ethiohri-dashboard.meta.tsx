@@ -46,7 +46,7 @@ export const HIV_TESTING_SERVICE_META = {
 };
 
 export const INDEX_CASE_TESTING_META = {
-  title: "Index Case Testing",
+  title: "ICT Service",
   slot: "index-case-testing-slot",
   path: "index-case-testing",
 };

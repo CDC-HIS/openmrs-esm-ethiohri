@@ -71,9 +71,7 @@ const columns = [
   },
 ];
 
-const IndexContactFollowup: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
+const IndexContactFollowup = ({ patientUuid, updateOfferFormSavedStatus }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasAcceptedICT, setHasAcceptedICT] = useState(false);
   useEffect(() => {
@@ -93,7 +91,7 @@ const IndexContactFollowup: React.FC<{ patientUuid: string }> = ({
         acceptedValue?.valueCodeableConcept?.coding[0]?.code === yesConceptUUID
       );
     })();
-  });
+  }, [patientUuid, updateOfferFormSavedStatus]); 
   return (
     <>
       <EncounterList
@@ -101,8 +99,8 @@ const IndexContactFollowup: React.FC<{ patientUuid: string }> = ({
         encounterType={INDEX_CONTACT_FOLLOWUP_ENCOUNTER_TYPE}
         formList={[{ name: "POC Index Contact Followup" }]}
         columns={columns}
-        description="ICT Followup"
-        headerTitle="ICT Followup"
+        description="Elicited Contact Information"
+        headerTitle="Elicited Contact Information"
         launchOptions={{
           displayText: "Add",
           moduleName: moduleName,
