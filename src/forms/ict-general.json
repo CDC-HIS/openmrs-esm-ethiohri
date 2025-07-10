@@ -200,11 +200,11 @@
                 "answers": [
                   {
                     "concept": "8875cb57-a667-474d-9f9b-d3e592dfc75b",
-                    "label": "E"
+                    "label": "E - Eligible"
                   },
                   {
                     "concept": "b64e1eea-9dc4-4149-8644-646980d2ab4b",
-                    "label": "NE"
+                    "label": "NE - Not Eligible"
                   }
                 ]
               }

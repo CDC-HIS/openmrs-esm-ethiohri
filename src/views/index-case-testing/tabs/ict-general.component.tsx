@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   artStartdate,
@@ -105,6 +105,11 @@ const ICTGeneral = ({ patientUuid, updateIndexFormSavedStatus }) => {
   const [isStartedART, setIsStartedART] = useState(false);
   const [hasIndexInformation, setHasIndexInformation] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [isFormSaved, setIsFormSaved] = useState(false);
+  
+    updateIndexFormSavedStatus = useCallback(() => {
+      setIsFormSaved((prev) => !prev);
+    }, []);
 
   useEffect(() => {
         (async () => {
@@ -138,7 +143,7 @@ const ICTGeneral = ({ patientUuid, updateIndexFormSavedStatus }) => {
           
           setIsLoading(false);
         })();
-      }, [patientUuid, updateIndexFormSavedStatus]);  
+      }, [isFormSaved]);  
       if (isLoading)
             return <DataTableSkeleton role="progressbar" zebra />;
 
