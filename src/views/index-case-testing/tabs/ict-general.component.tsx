@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
 import {
   artStartdate,
@@ -7,10 +7,7 @@ import {
   ICT_GENERAL_ENCOUNTER_TYPE,
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
-  POSITIVE_PATIENT_WARNING,
   POSITIVE_TRACKING_ENCOUNTER_TYPE,
-  POSITIVE_TRACKING_WARNING,
-  RETESTING_WARNING,
 } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
@@ -30,9 +27,7 @@ const columns = [
   {
     key: "ictNumber",
     header: "ICT #",
-    getValue: (encounter) => {
-      return getData(encounter, "b35f9632-9ff8-410f-bfcb-f497023bbcf9");
-    },
+    getValue: (encounter) => getData(encounter, "b35f9632-9ff8-410f-bfcb-f497023bbcf9"),
   },
   {
     key: "targetGroup",
@@ -63,9 +58,9 @@ const columns = [
     header: "Case Classification Status",
     getValue: (encounter) => {
       const caseFinding = getData(encounter, "eee5289d-b5fc-49f3-94a7-4755e369d470");
-      if (caseFinding === "C2 - Newly diagnosed individuals age >= 13 years with current risk factors and identification with a KP group") return "C2";
-      if (caseFinding === "C1 - Newly diagnosed individuals age >= 15 years with probable recent infection") return "C1";
-      if (caseFinding === "C3 - All other newly diagnosed children, adolescents or adults not classified by C1 and C2") return "C3";
+      if (caseFinding?.startsWith("C1")) return "C1";
+      if (caseFinding?.startsWith("C2")) return "C2";
+      if (caseFinding?.startsWith("C3")) return "C3";
       return caseFinding;
     },
   },
@@ -98,54 +93,28 @@ const columns = [
   },
 ];
 
-const ICTGeneral = ({ patientUuid, updateIndexFormSavedStatus }) => {
+const ICTGeneral = ({ patientUuid, isIndexFormSaved, onFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
-  const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
-  const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] = useState(false);
   const [isStartedART, setIsStartedART] = useState(false);
   const [hasIndexInformation, setHasIndexInformation] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isFormSaved, setIsFormSaved] = useState(false);
-  
-    updateIndexFormSavedStatus = useCallback(() => {
-      setIsFormSaved((prev) => !prev);
-    }, []);
 
   useEffect(() => {
-        (async () => {
-          const [identifiers, confirmedPositive, hasPosTracking, startedART, indexInformation] = await Promise.all([
-            fetchIdentifiers(patientUuid),
-            getLatestObs(
-          patientUuid,
-          dateOfHIVConfirmation,
-          INTAKE_A_ENCOUNTER_TYPE
-        ),
-        getPatientEncounters(
-              patientUuid,
-              POSITIVE_TRACKING_ENCOUNTER_TYPE
-            ),
-            getLatestObs(
-          patientUuid,
-          artStartdate,
-          FOLLOWUP_ENCOUNTER_TYPE
-        ),
-                  getPatientEncounters(
-                        patientUuid,
-                        ICT_GENERAL_ENCOUNTER_TYPE
-                      )
-          ]);
-    
-          setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));  
-          setIsConfirmedPositive(confirmedPositive != null)   
-          setHasPositiveTrackingEncounter(hasPosTracking.length > 0) 
-          setIsStartedART(startedART != null) 
-          setHasIndexInformation(indexInformation.length > 0)
-          
-          setIsLoading(false);
-        })();
-      }, [isFormSaved]);  
-      if (isLoading)
-            return <DataTableSkeleton role="progressbar" zebra />;
+    (async () => {
+      const [identifiers, startedART, indexInformation] = await Promise.all([
+        fetchIdentifiers(patientUuid),
+        getLatestObs(patientUuid, artStartdate, FOLLOWUP_ENCOUNTER_TYPE),
+        getPatientEncounters(patientUuid, ICT_GENERAL_ENCOUNTER_TYPE),
+      ]);
+
+      setHasMRN(identifiers?.some(e => e.identifierType.display === "MRN"));
+      setIsStartedART(!!startedART);
+      setHasIndexInformation(indexInformation.length > 0);
+      setIsLoading(false);
+    })();
+  }, [patientUuid, isIndexFormSaved]);
+
+  if (isLoading) return <DataTableSkeleton role="progressbar" zebra />;
 
   return (
     <>
@@ -161,13 +130,13 @@ const ICTGeneral = ({ patientUuid, updateIndexFormSavedStatus }) => {
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || hasIndexInformation || !isStartedART,
         }}
-        afterFormSaveAction={updateIndexFormSavedStatus}
+        afterFormSaveAction={onFormSaved}
       />
       {!hasMRN ? (
-                <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
-              ) : !isStartedART ? (
-                <p className={styles.warningMessage}>⚠️ Patient needs to have ART started date.</p>
-              ) : null}
+        <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+      ) : !isStartedART ? (
+        <p className={styles.warningMessage}>⚠️ Patient must initiate ART before accessing ICT services.</p>
+      ) : null}
     </>
   );
 };

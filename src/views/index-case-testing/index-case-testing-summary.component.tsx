@@ -1,32 +1,21 @@
-/* eslint-disable prettier/prettier */
 import { Tab, Tabs, TabList, TabPanels, TabPanel } from "@carbon/react";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import styles from "../program-management/program-management.scss";
 import ICTGeneral from "./tabs/ict-general.component";
 import ICTOffer from "./tabs/ict-offer.component";
 import IndexContactFollowup from "./tabs/index-contact-followup.component";
 
-const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
-  patientUuid,
-}) => {
-  const [isIndexFormSaved, setIndexFormSaved] = useState(false);
-  const [isFormSaved, setIsFormSaved] = useState(false);
-  const [isOfferFormSaved, setIsOfferFormSaved] = useState(false);
-  
-    const updateFormSavedStatus = useCallback(() => {
-      setIsFormSaved((prev) => !prev);
-    }, []);
+const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
+  const [isIndexFormSaved, setIsIndexFormSaved] = useState(false);
+  const [isICTOfferSaved, setIsICTOfferSaved] = useState(false);
 
-    const updateIndexFormSavedStatus = useCallback(() => {
-      setIndexFormSaved((prev) => !prev);
-    }, []);
-    const updateOfferFormSavedStatus = useCallback(() => {
-      setIsOfferFormSaved((prev) => !prev);
-    }, []);
+  const handleIndexFormSaved = () => setIsIndexFormSaved(prev => !prev);
+  const handleICTOfferSaved = () => setIsICTOfferSaved(prev => !prev);
+
   return (
     <div className={styles.tabContainer}>
       <Tabs>
-        <TabList contained aria-label={""}>
+        <TabList contained aria-label="ICT Module Tabs">
           <Tab>Index Case Information</Tab>
           <Tab>ICT Service Offering</Tab>
           <Tab>Elicited Contact Information</Tab>
@@ -34,22 +23,23 @@ const IndexCaseTesting: React.FC<{ patientUuid: string }> = ({
         <TabPanels>
           <TabPanel>
             <ICTGeneral
-    updateIndexFormSavedStatus={updateIndexFormSavedStatus}
-    patientUuid={patientUuid}
-  />
+              patientUuid={patientUuid}
+              isIndexFormSaved={isIndexFormSaved}
+              onFormSaved={handleIndexFormSaved}
+            />
           </TabPanel>
           <TabPanel>
             <ICTOffer
-    updateFormSavedStatus={isIndexFormSaved} // ✅ ICTOffer will re-check when index is saved
-    patientUuid={patientUuid}
-  />
+              patientUuid={patientUuid}
+              isIndexFormSaved={isIndexFormSaved}
+              onFormSaved={handleICTOfferSaved}
+            />
           </TabPanel>
           <TabPanel>
             <IndexContactFollowup
-    updateOfferFormSavedStatus={() => {
-      setIsFormSaved(true); // ✅ when ICTGeneral saved, unlock ICTOffer
-    }}patientUuid={patientUuid}
-  />
+              patientUuid={patientUuid}
+              isICTOfferSaved={isICTOfferSaved}
+            />
           </TabPanel>
         </TabPanels>
       </Tabs>

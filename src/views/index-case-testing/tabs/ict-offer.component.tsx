@@ -19,9 +19,7 @@ const columns = [
   {
     key: "offered",
     header: "Offered",
-    getValue: (encounter) => {
-      return getData(encounter, "eef33554-8844-48ed-abec-a06e4918b7fe");
-    },
+    getValue: (encounter) => getData(encounter, "eef33554-8844-48ed-abec-a06e4918b7fe"),
   },
   {
     key: "offeredDate",
@@ -34,9 +32,7 @@ const columns = [
   {
     key: "accepted",
     header: "Accepted",
-    getValue: (encounter) => {
-      return getData(encounter, "fdcbadef-40c5-486a-a30b-a88477ab90ae");
-    },
+    getValue: (encounter) => getData(encounter, "fdcbadef-40c5-486a-a30b-a88477ab90ae"),
   },
   {
     key: "acceptedDate",
@@ -75,28 +71,26 @@ const columns = [
   },
 ];
 
-const ICTOffer = ({ patientUuid, updateFormSavedStatus }) => {
+const ICTOffer = ({ patientUuid, isIndexFormSaved, onFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasIndexInformation, setHasIndexInformation] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-          (async () => {
-            const [identifiers, indexInformation] = await Promise.all([
-              fetchIdentifiers(patientUuid),
-          getPatientEncounters(
-                patientUuid,
-                ICT_GENERAL_ENCOUNTER_TYPE
-              )
-            ]);
-      
-            setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));  
-            setHasIndexInformation(indexInformation.length > 0) 
-            
-            setIsLoading(false);
-          })();
-        }, [patientUuid, updateFormSavedStatus]);  
-        if (isLoading)
-              return <DataTableSkeleton role="progressbar" zebra />;
+    (async () => {
+      const [identifiers, indexInformation] = await Promise.all([
+        fetchIdentifiers(patientUuid),
+        getPatientEncounters(patientUuid, ICT_GENERAL_ENCOUNTER_TYPE),
+      ]);
+
+      setHasMRN(identifiers?.some(e => e.identifierType.display === "MRN"));
+      setHasIndexInformation(indexInformation.length > 0);
+      setIsLoading(false);
+    })();
+  }, [patientUuid, isIndexFormSaved]);
+
+  if (isLoading) return <DataTableSkeleton role="progressbar" zebra />;
+
   return (
     <>
       <EncounterList
@@ -111,12 +105,13 @@ const ICTOffer = ({ patientUuid, updateFormSavedStatus }) => {
           moduleName: moduleName,
           hideFormLauncher: !hasMRN || !hasIndexInformation,
         }}
+        afterFormSaveAction={onFormSaved}
       />
       {!hasMRN ? (
-                      <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
-                    ) : !hasIndexInformation ? (
-                      <p className={styles.warningMessage}>⚠️ Index case information should be filled.</p>
-                    ) : null}
+        <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+      ) : !hasIndexInformation ? (
+        <p className={styles.warningMessage}>⚠️ Index case information should be filled.</p>
+      ) : null}
     </>
   );
 };
