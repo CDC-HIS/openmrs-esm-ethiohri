@@ -15,14 +15,22 @@ import { fetchIdentifiers, getLatestObs } from "../../../api/api";
 
 const columns = [
   {
-    key: "contactFirstName",
-    header: "Contact First Name",
-    getValue: (encounter) => getData(encounter, "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+    key: "elicitedDate",
+    header: "Elicited date",
+    getValue: (encounter) => {
+      const elicitedDate = getData(encounter, "58abd286-8f57-4717-aa41-efd8e93d5902", true);
+      return elicitedDate ? elicitedDate.split(',')[0].trim() : "";
+    },
   },
   {
-    key: "contactLastName",
-    header: "Contact Last Name",
-    getValue: (encounter) => getData(encounter, "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+    key: "contactFullName",
+    header: "Contact Full Name",
+    getValue: (encounter) => {
+      const firstName = getData(encounter, "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      const fatherName = getData(encounter, "166574AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      const lastName = getData(encounter, "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+      return [firstName, fatherName, lastName].filter(Boolean).join(" ");
+    },
   },
   {
     key: "contactCategory",
@@ -30,9 +38,17 @@ const columns = [
     getValue: (encounter) => getData(encounter, "a7d17e7a-a8b2-49b5-84f1-aade1277b658"),
   },
   {
-    key: "contactTrialsOutcome",
-    header: "Contact Trial Outcome",
-    getValue: (encounter) => getData(encounter, "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4"),
+    key: "hivTestDate",
+    header: "HIV test date",
+    getValue: (encounter) => {
+      const testDate = getData(encounter, "164400AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
+      return testDate ? testDate.split(',')[0].trim() : "";
+    },
+  },
+  {
+    key: "hivTestResult",
+    header: "HIV test result",
+    getValue: (encounter) => getData(encounter, "2e770be1-7397-4684-bea6-6632c23b00d7"),
   },
   {
     key: "actions",
