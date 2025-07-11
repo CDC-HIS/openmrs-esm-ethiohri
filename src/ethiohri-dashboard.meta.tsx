@@ -30,6 +30,7 @@ export const PREP_META = {
   title: "PrEP Prophylaxis",
   slot: "prep-slot",
   path: "prep-prophylaxis",
+  icon: "",
 };
 
 export const POST_META = {
@@ -37,28 +38,33 @@ export const POST_META = {
   slot: "post-exposure-slot",
   path: "pep-prophylaxis",
   columns: 1,
+  icon: "",
 };
 
 export const HIV_TESTING_SERVICE_META = {
   title: "HIV Testing Service",
   slot: "hiv-testing-service-slot",
   path: "hiv-testing-service",
+  icon: "",
 };
 
 export const INDEX_CASE_TESTING_META = {
   title: "Index Case Testing",
   slot: "index-case-testing-slot",
   path: "index-case-testing",
+  icon: "",
 };
 
 export const PROGRAM_MANAGEMENT_META = {
   title: "Intakes",
   slot: "program-management-slot",
   path: "program-management",
+  icon: "",
 };
 
 export const CLINICAL_VISITS = {
   title: "Clinical Visits",
   slot: "clinical-visits-slot",
   path: "clinical-visits",
+  icon: "",
 };

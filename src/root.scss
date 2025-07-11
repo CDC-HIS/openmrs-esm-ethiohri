@@ -1,12 +1,11 @@
-@use '@carbon/styles/scss/spacing';
-@use '@carbon/styles/scss/type';
-@import "~@openmrs/esm-styleguide/src/vars";
+@use '@carbon/type';
+@use '@openmrs/esm-styleguide/src/vars' as *;
 
 $ui-01: #f4f4f4;
 $ui-02: #ffffff;
 $ui-03: #e0e0e0;
 $ui-05: #161616;
-$ui-background: #ffffff;
+$ui-02: #ffffff;
 $color-gray-30: #c6c6c6;
 $color-gray-70: #525252;
 $color-blue-60-2: #0f62fe;
@@ -74,7 +73,7 @@ $button-primary: #0078A6;
 }
 
 aside {
-   background-color: $ui-02 !important;
+   background-color: #ffffff !important;
 }
 
 // Login Overrides

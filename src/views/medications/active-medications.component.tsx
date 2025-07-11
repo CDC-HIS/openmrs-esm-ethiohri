@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ETable } from "../../components/data-table/E-table.component";
-import { EmptyState } from "../empty-state/empty-state.component";
 import { DataTableSkeleton } from "@carbon/react";
 import {
   encounterType_follow_UP,
@@ -19,6 +18,7 @@ import {
   toCalendar,
   CalendarDate,
 } from "@internationalized/date";
+import { EmptyState } from "@openmrs/esm-patient-common-lib";
 
 interface ActiveMedicationsProps {
   patientUuid: string;

@@ -20,7 +20,7 @@ interface TableProps {
 export const ETable: React.FC<TableProps> = ({ tableHeaders, tableRows }) => {
   return (
     <TableContainer>
-      <DataTable rows={tableRows} headers={tableHeaders} size="short">
+      <DataTable rows={tableRows} headers={tableHeaders} size="sm">
         {({ rows, headers, getHeaderProps, getTableProps }) => (
           <Table {...getTableProps()}>
             <TableHead>
@@ -30,10 +30,10 @@ export const ETable: React.FC<TableProps> = ({ tableHeaders, tableRows }) => {
                     className={`${styles.productiveHeading01} ${styles.text02}`}
                     {...getHeaderProps({
                       header,
-                      isSortable: header.isSortable,
+                      isSortable: header["isSortable"],
                     })}
                   >
-                    {header.header?.content ?? header.header}
+                    {header.header?.["content"] ?? header.header}
                   </TableHeader>
                 ))}
               </TableRow>

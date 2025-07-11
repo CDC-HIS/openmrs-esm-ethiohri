@@ -1,0 +1,1643 @@
+{
+  "@openmrs/esm-home-app": {
+    "extensionSlots": {
+      "homepage-widgets-slot": {
+        "remove": ["home-appointments", "active-visits-widget"],
+        "add": ["ohri-patient-list"]
+      }
+    }
+  },
+  "@openmrs/esm-styleguide": {
+    "Brand color #1": "#002F6C",
+    "Brand color #2": "#002F6C",
+    "Brand color #3": "#1A75BB"
+  },
+  "@openmrs/esm-primary-navigation-app": {
+    "logo": {
+      "src": "ethiohri_logo_light.svg"
+    }
+  },
+  "@openmrs/esm-login-app": {
+    "logo": {
+      "src": "ethiohri_logo_dark.svg"
+    }
+  },
+  "@openmrs/esm-patient-registration-app": {
+    "extensionSlots": {
+      "capture-patient-photo-slot": {
+        "remove": ["capture-photo-widget"]
+      }
+    },
+    "sections": ["demographics", "contact", "relationships"],
+    "Translation overrides": {
+      "en": {
+        "givenNameLabelText": "Client's Name",
+        "middleNameLabelText": "Father's Name",
+        "familyNameLabelText": "Grandfather's Name"
+      },
+      "am": {
+        "givenNameLabelText": "Client's Name",
+        "middleNameLabelText": "Father's Name",
+        "familyNameLabelText": "Grandfather's Name"
+      }
+    },
+    "sectionDefinitions": [
+      {
+        "id": "contact",
+        "name": "Contact Info",
+        "fields": [
+          "address",
+          "kebela",
+          "houseNumber",
+          "mobiletelephoneNumber",
+          "hometelephoneNumber",
+          "worktelephoneNumber"
+        ]
+      },
+      {
+        "id": "demographics",
+        "name": "Basic Info",
+        "fields": [
+          "registrationDate",
+          "name",
+          "gender",
+          "dob",
+          "id",
+          "enrolledInPmtct"
+        ]
+      }
+    ],
+    "fieldDefinitions": [
+      {
+        "id": "kebela",
+        "label": "Kebele",
+        "type": "person attribute",
+        "uuid": "e1695908-916d-4c9e-b62b-90b512492da2"
+      },
+      {
+        "id": "houseNumber",
+        "label": "House Number",
+        "type": "person attribute",
+        "uuid": "553bedc6-4e59-42d3-b80b-d3cf02a792bd"
+      },
+      {
+        "id": "mobiletelephoneNumber",
+        "label": "Mobile Telephone Number",
+        "type": "person attribute",
+        "uuid": "1794bcad-b2d2-47ae-8e26-1d4ec31ade13",
+        "validation": {
+          "matches": "^[0-9]{10}$"
+        }
+      },
+      {
+        "id": "registrationDate",
+        "label": "Registration date",
+        "type": "obs",
+        "uuid": "dadc86a8-1e44-4a6d-91c2-e3b54089b54c",
+        "validation": {
+          "required": true
+        }
+      },
+      {
+        "id": "enrolledInPmtct",
+        "label": "Enrolled in PMTCT ?",
+        "type": "obs",
+        "uuid": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "customConceptAnswers": [
+          {
+            "uuid": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "label": "Yes"
+          },
+          {
+            "uuid": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "label": "No"
+          }
+        ]
+      },
+      {
+        "id": "hometelephoneNumber",
+        "label": "Home Telephone Number",
+        "type": "person attribute",
+        "uuid": "b3269e45-8e40-44a1-a5f2-bbb2765c6287",
+        "validation": {
+          "matches": "^[0-9]{10}$"
+        }
+      },
+      {
+        "id": "worktelephoneNumber",
+        "label": "Work Telephone Number",
+        "type": "person attribute",
+        "uuid": "a69aae3d-8c79-4ac5-a218-88889f007163",
+        "validation": {
+          "matches": "^[0-9]{10}$"
+        }
+      }
+    ],
+    "fieldConfigurations": {
+      "gender": [
+        {
+          "id": "male",
+          "value": "male",
+          "label": "Male"
+        },
+        {
+          "id": "female",
+          "value": "female",
+          "label": "Female"
+        }
+      ],
+      "name": {
+        "allowUnidentifiedPatients": false
+      },
+      "address": {
+        "useAddressHierarchy": {
+          "enabled": true,
+          "useQuickSearch": true,
+          "searchAddressByLevel": true,
+          "useAddressHierarchyLabel": {
+            "country": "Country",
+            "state": "Region",
+            "district": "Zone/Sub-City",
+            "city": "Woreda"
+          }
+        }
+      }
+    },
+    "defaultPatientIdentifierTypes": [
+      "52c28db7-09fb-4d33-8f9f-4500347256b6",
+      "d956f302-1723-4eca-9548-fb7e66706d34"
+    ],
+    "registrationObs": {
+      "encounterTypeUuid": "a0fde61e-f493-4f1f-b709-22aa94f72dc3"
+    }
+  },
+  "@openmrs/esm-patient-chart-app": {
+    "logo": {
+      "src": "ethiohri_logo_light.svg"
+    },
+    "extensionSlots": {
+      "patient-info-slot": {
+        "remove": ["patient-vitals-info"]
+      },
+      "action-menu-patient-chart-items-slot": {
+        "remove": [
+          "clinical-form-action-menu",
+          "order-basket-action-menu",
+          "patient-lists-action-menu",
+          "visit-note-nav-button"
+        ]
+      },
+      "patient-chart-summary-dashboard-slot": {
+        "remove": ["vitals-overview-widget", "active-medications-widget"]
+      },
+      "visits-summary-slot": {
+        "remove": ["visits-summary-ext"]
+      },
+      "patient-chart-dashboard-slot": {
+        "add": [
+          "nav-group#HIVCareTreatment",
+          "nav-group#PMTCT"
+        ],
+        "configure": {
+          "nav-group#HIVCareTreatment": {
+            "title": "hIVCareAndTreatment",
+            "slotName": "hiv-care-and-treatment-group-slot",
+            "isExpanded": true
+          },
+          "nav-group#PMTCT": {
+            "title": "pMTCT",
+            "slotName": "pmtct-group-slot",
+            "isExpanded": true
+          },
+          "Translation overrides": {
+            "en": {
+              "hIVCareAndTreatment": "HIV Care And Treatment",
+              "pMTCT": "PMTCT"
+            },
+            "fr": {
+              "hIVCareAndTreatment": "Soins et traitement du VIH",
+              "pMTCT": "PTME"
+            }
+          }
+        },
+        "remove": [
+          "allergies-summary-dashboard",
+          "attachments-results-summary-dashboard",
+          "conditions-summary-dashboard",
+          "offline-tools-patient-chart-actions-dashboard-link",
+          "results-summary-dashboard",
+          "test-results-summary-dashboard",
+          "clinical-views-divider",
+          "encounters-summary-dashboard",
+          "immunization-summary-dashboard",
+          "medications-summary-dashboard",
+          "patient-appointments-summary-dashboard",
+          "patient-orders-summary-dashboard",
+          "programs-summary-dashboard"
+        ]
+      },
+      "hiv-care-and-treatment-group-slot": {
+        "add": [
+          "dashboard#hts-clinical-visits-dashboard-slot",
+          "dashboard#index-case-visits-dashboard-slot",
+          "dashboard#program-management-dashboard-slot",
+          "dashboard#hiv-followup-dashboard-slot",
+          "dashboard#pre-exposure-dashboard-slot",
+          "dashboard#post-exposure-dashboard-slot"
+        ],
+        "configure": {
+          "dashboard#hts-clinical-visits-dashboard-slot": {
+            "title": "htsTestingService",
+            "slot": "hts-clinical-visits-dashboard-slot",
+            "path": "hiv-testing-service"
+          },
+          "dashboard#index-case-visits-dashboard-slot": {
+            "title": "indexCaseTesting",
+            "slot": "index-case-visits-dashboard-slot",
+            "path": "iindex-case-testing"
+          },
+          "dashboard#program-management-dashboard-slot": {
+            "title": "intakes",
+            "slot": "program-management-dashboard-slot",
+            "path": "intakes"
+          },
+          "dashboard#hiv-followup-dashboard-slot": {
+            "title": "clinicalVisits",
+            "slot": "hiv-followup-dashboard-slot",
+            "path": "clinical-visits"
+          },
+          "dashboard#pre-exposure-dashboard-slot": {
+            "title": "prepProphilaxis",
+            "slot": "pre-exposure-dashboard-slot",
+            "path": "prep-prophylaxis"
+          },
+          "dashboard#post-exposure-dashboard-slot": {
+            "title": "pepProphilaxis",
+            "slot": "post-exposure-dashboard-slot",
+            "path": "pep"
+          }
+        },
+        "Translation overrides": {
+          "en": {
+            "htsTestingService": "HTS Testing Service",
+            "indexCaseTesting": "Index Case Testing", 
+            "intakes": "Intakes",
+            "clinicalVisits": "Clinical Visits",
+            "prepProphilaxis": "PrEP Prophylaxis",
+            "pepProphilaxis": "PEP Prophylaxis"
+          }
+        }
+      },
+      "pmtct-group-slot": {
+        "add": [
+          "dashboard#pmtct-clinical-visits-dashboard-slot"
+        ],
+        "configure": {
+          "dashboard#pmtct-clinical-visits-dashboard-slot": {
+            "title": "maternalPmtctInformation",
+            "slot": "pmtct-clinical-visits-dashboard-slot",
+            "path": "mother-health"
+          },
+          "#dashboard#pmtct-clinical-visits-dashboard-slot": {
+            "title": "childPmtctInformation",
+            "slot": "pmtct-child-visits-dashboard-slot",
+            "path": "child-health"
+          },
+          "Translation overrides": {
+            "en": {
+              "maternalPmtctInformation": "Maternal PMTCT Information",
+              "childPmtctInformation": "Child PMTCT Information"
+            }
+          }
+        }
+      },
+      "hts-clinical-visits-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "hivPositiveTracking",
+                "headerTitle": "hivPositiveTracking",
+                "displayText": "hivPositiveTrackingEncounters",
+                "encounterType": "f28bb488-0f83-417c-98ba-06ea5f1765e3",
+                "columns": [
+                  {
+                    "id": "registrationDate",
+                    "isDate": true,
+                    "title": "registrationDate",
+                    "concept": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "isLink": true
+                  },
+                  {
+                    "id": "hivPositiveDate",
+                    "title": "hivPositiveDate",
+                    "concept": "164181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "linkedToCareAndTreatment",
+                    "title": "linkedToCareAndTreatment",
+                    "concept": "c1bb9738-10aa-4905-bb5d-af4e55b4bb69"
+                  },
+                  {
+                    "id": "startedART",
+                    "title": "startedART",
+                    "isDate": true,
+                    "concept": "1149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "reasonForNotStartingArtTheSameDay",
+                    "title": "reasonForNotStartingArtTheSameDay",
+                    "isDate": true,
+                    "concept": "d8ffb301-9a47-45ee-a465-f053cc060aab"
+                  },
+                  {
+                    "id": "planForNextStep",
+                    "title": "planForNextStep",
+                    "isDate": true,
+                    "concept": "e96ea7a2-5285-41d3-bb0d-4f199cf5b8ee"
+                  },
+                  {
+                    "id": "finalOutcome",
+                    "title": "finalOutcome",
+                    "isDate": true,
+                    "concept": "413b265c-87ef-4988-a7bc-1bfc6b5e5528"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actionsTitle",
+                    "actionOptions": [
+                      {
+                        "formName": "Positive Tracking",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Positive Tracking",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "Positive Tracking",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "f28bb488-0f83-417c-98ba-06ea5f1765e3"
+                  }
+                ]
+              },
+              {
+                  "tabName": "retest",
+                  "headerTitle": "hivRetest",
+                  "displayText": "hivRetest",
+                  "encounterType": "aedaa1d0-1c03-425b-a49d-864a4981cf2f",
+                  "columns": [
+                    {
+                      "id": "dateOfInitialTest",
+                      "isDate": true,
+                      "title": "dateOfInitialTest",
+                      "concept": "9182520e-24e8-4e84-aba7-6b56bdeb76d5",
+                      "isLink": true
+                    },
+                    {
+                      "id": "dateOfRetesting",
+                      "isDate": true,
+                      "title": "dateOfRetesting",
+                      "concept": "3c588dc4-cd32-47e6-a919-806e254b66c7"
+                    },
+                    {
+                      "id": "entryPoint",
+                      "title": "entryPoint",
+                      "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38"
+                    },
+                    {
+                      "id": "finalResult",
+                      "title": "finalResult",
+                      "concept": "2b1ea8df-3293-4964-9b44-9e31dff678a4"
+                    },
+                    {
+                      "id": "resultFinal",
+                      "title": "resultFinal",
+                      "concept": "2e770be1-7397-4684-bea6-6632c23b00d7"
+                    },
+                    {
+                      "id": "actionTaken",
+                      "title": "actionTaken",
+                      "concept": "3e8686f9-694f-496b-8f5c-565833d035d1"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "Re-test",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "Re-test",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "Re-test",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "3319f156-e639-4cf0-a80b-e90bc4590e66"
+                    }
+                  ]
+                }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "hivPositiveTracking": "HIV Positive Tracking",
+              "hivPositiveTrackingEncounters": "HIV Positive Tracking Encounters",
+              "registrationDate": "Registration Date",
+              "hivPositiveDate": "HIV Positive Date",
+              "linkedToCareAndTreatment": "Linked to Care and Treatment", 
+              "startedART": "Started ART",
+              "reasonForNotStartingArtTheSameDay": "Reason for Not Starting ART the Same Day",
+              "planForNextStep": "Plan for Next Step",
+              "finalOutcome": "Final Outcome",
+              "actionsTitle": "Actions",
+              "viewDetails": "View Details",  
+              "editForm": "Edit Form",
+              "add": "Add",
+              "hivRetest": "HIV Retest",
+              "hivRetestEncounters": "HIV Retest Encounters",
+              "dateOfInitialTest": "Date of Initial Test",
+              "dateOfRetesting": "Date of Retesting",
+              "entryPoint": "Entry Point",
+              "finalResult": "Final Result",
+              "resultFinal": "Result Final",
+              "actionTaken": "Action Taken",
+              "actions": "Actions"
+            }
+          }
+        }
+      },
+      "index-case-visits-dashboard-slot": {
+          "add": ["encounter-list"],
+          "configure": {
+            "encounter-list": {
+              "tabDefinitions": [
+                {
+                  "tabName": "indexCaseInformation",
+                  "headerTitle": "indexCaseInformation",
+                  "displayText": "indexCaseInformationList",
+                  "encounterType": "bf097a70-4bb8-47dc-a127-1aacf86a86a0",
+                  "columns": [
+                    {
+                      "id": "ictNumber",
+                      "title": "ictNumber",
+                      "concept": "b35f9632-9ff8-410f-bfcb-f497023bbcf9"
+                    },
+                    {
+                      "id": "indexFirstName",
+                      "title": "indexFirstName",
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "indexLastName",
+                      "title": "indexLastName",
+                      "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "entryPoint",
+                      "title": "entryPoint",
+                      "isDate": true,
+                      "concept": "1201b688-45f8-4e56-b089-0b31138a19dd"
+                    },
+                    {
+                      "id": "targetPopulation",
+                      "title": "targetPopulation",
+                      "isDate": true,
+                      "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actionsTitle",
+                      "actionOptions": [
+                        {
+                          "formName": "POC ICT General",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "POC ICT General",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "POC ICT General",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "c39ade81-678a-319c-93d7-f5b927ce7f27"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "indexCaseInformation",
+                  "headerTitle": "indexCaseInformation",
+                  "displayText": "indexCaseInformationList",
+                  "encounterType": "23b08733-6d26-48b5-b135-dac294e25e1e",
+                  "columns": [
+                    {
+                      "id": "offered",
+                      "title": "offered",
+                      "concept": "eef33554-8844-48ed-abec-a06e4918b7fe"
+                    },
+                    {
+                      "id": "offeredDate",
+                      "title": "offeredDate",
+                      "concept": "a7c606b1-9f3e-4095-815a-3a623dc738e1"
+                    },
+                    {
+                      "id": "accepted",
+                      "title": "accepted",
+                      "concept": "fdcbadef-40c5-486a-a30b-a88477ab90ae"
+                    },
+                    {
+                      "id": "acceptedDate",
+                      "title": "acceptedDate",
+                      "isDate": true,
+                      "concept": "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "POC ICT Offer",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "POC ICT Offer",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "POC ICT Offer",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "58211fe5-fbce-3530-b809-2597950fbb46"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "indexContactFollowUp",
+                  "headerTitle": "indexContactFollowUp",
+                  "displayText": "indexContactFollow",
+                  "encounterType": "8a75cc8f-d700-4b09-8b96-97d519728d89",
+                  "columns": [
+                    {
+                      "id": "contactFirstName",
+                      "title": "contactFirstName",
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "contactLastName",
+                      "title": "contactLastName",
+                      "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "contactCategory",
+                      "title": "contactCategory",
+                      "concept": "a7d17e7a-a8b2-49b5-84f1-aade1277b658"
+                    },
+                    {
+                      "id": "contactTrialsOutcome",
+                      "title": "contactTrialsOutcome",
+                      "isDate": true,
+                      "concept": "da8e65a1-04ee-44a0-be4b-d2bc4f002aa4"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "POC Index Contact Followup",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "POC Index Contact Followup",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "POC Index Contact Followup",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "8a75cc8f-d700-4b09-8ict-contact28d89"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "familyIndexCaseContacts",
+                  "headerTitle": "familyIndexCaseContacts",
+                  "displayText": "familyIndexCaseContacts",
+                  "encounterType": "1283d7d6-6431-446d-87d1-6fe00177cb85",
+                  "columns": [
+                    {
+                      "id": "registrationDate",
+                      "title": "registrationDate",
+                      "isDate": true,
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "healthStatus",
+                      "title": "healthStatus",
+                      "concept": "4ab0e5e3-fff7-4819-bd2e-4f070eedcd3d"
+                    },
+                    {
+                      "id": "previousDateTested",
+                      "title": "previousDateTested",
+                      "isDate": true,
+                      "concept": "87a98d42-ec07-46a0-b291-36f66b68fe2c"
+                    },
+                    {
+                      "id": "previousHIVTestResult",
+                      "title": "previousHIVTestResult",
+                      "concept": "23ef2580-e9e5-4e1b-af9b-584cdd30abc4"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "Family Index Case Contacts",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "Family Index Case Contacts",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "Family Index Case Contacts",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "b3abc4ce-c5ac-3c40-b8e7-442b163670f1"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "partnerIndexCaseContacts",
+                  "headerTitle": "partnerIndexCaseContacts",
+                  "displayText": "partnerIndexCaseContacts",
+                  "encounterType": "00e4d1c3-1989-4c6e-afc0-c84137fdf02d",
+                  "columns": [
+                    {
+                      "id": "ictNumber",
+                      "title": "ictNumber",
+                      "concept": "b35f9632-9ff8-410f-bfcb-f497023bbcf9"
+                    },
+                    {
+                      "id": "indexFirstName",
+                      "title": "indexFirstName",
+                      "concept": "166102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "indexLastName",
+                      "title": "indexLastName",
+                      "concept": "166103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                    },
+                    {
+                      "id": "entryPoint",
+                      "title": "entryPoint",
+                      "isDate": true,
+                      "concept": "1201b688-45f8-4e56-b089-0b31138a19dd"
+                    },
+                    {
+                      "id": "targetPopulation",
+                      "title": "targetPopulation",
+                      "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "Partner Index Case Information",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "Partner Index Case Information",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "Partner Index Case Information",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "a6852cda-1b17-34ea-bf0a-3ebc2a4e0670"
+                    }
+                  ]
+                },
+                {
+                  "tabName": "ictScreening",
+                  "headerTitle": "ictScreening",
+                  "displayText": "ictScreening",
+                  "encounterType": "43a8ef4f-473e-4778-9c90-7b7f05014499",
+                  "columns": [
+                    {
+                      "id": "maternalHivStatus",
+                      "title": "maternalHivStatus",
+                      "concept": "3535f4d1-bf1e-47d5-822d-60c1da143cad"
+                    },
+                    {
+                      "id": "maritalStatus",
+                      "title": "maritalStatus",
+                      "concept": "2feaa615-f6af-41db-91c1-301def421146"
+                    },
+                    {
+                      "id": "agreeInterviewed",
+                      "title": "agreeInterviewed",
+                      "concept": "4dd6e628-fcc9-4629-92b8-192751c3de9c"
+                    },
+                    {
+                      "id": "icInterviewedForService",
+                      "title": "icInterviewedForService",
+                      "isDate": true,
+                      "concept": "75a0a101-a094-4c7d-a4c7-255fb0094440"
+                    },
+                    {
+                      "id": "actions",
+                      "title": "actions",
+                      "actionOptions": [
+                        {
+                          "formName": "ICT Screening",
+                          "label": "viewDetails",
+                          "mode": "view"
+                        },
+                        {
+                          "formName": "ICT Screening",
+                          "label": "editForm",
+                          "mode": "edit"
+                        },
+                        {
+                          "formName": "ICT Screening",
+                          "label": "deleteForm",
+                          "mode": "delete"
+                        }
+                      ]
+                    }
+                  ],
+                  "launchOptions": {
+                    "displayText": "add"
+                  },
+                  "formList": [
+                    {
+                      "uuid": "ecefb340-0162-47b2-aec4-3db9b7bdc5e8"
+                    }
+                  ]
+                }
+              ]
+            },
+            "Translation overrides": {
+              "en": {
+                "indexCaseInformation": "Index Case Information",
+                "indexCaseInformationList": "Index Case Information List",
+                "ictNumber": "ICT Number",
+                "indexFirstName": "Index First Name",
+                "indexLastName": "Index Last Name", 
+                "entryPoint": "Entry Point",
+                "targetPopulation": "Target Population",
+                "offered": "Offered",
+                "offeredDate": "Offered Date",
+                "accepted": "Accepted",
+                "acceptedDate": "Accepted Date",
+                "indexContactFollowUp": "Index Contact Follow Up",
+                "indexContactFollow": "Index Contact Follow",
+                "contactFirstName": "Contact First Name",
+                "contactLastName": "Contact Last Name",
+                "contactCategory": "Contact Category",
+                "contactTrialsOutcome": "Contact Trials Outcome",
+                "familyIndexCaseContacts": "Family Index Case Contacts",
+                "registrationDate": "Registration Date",
+                "healthStatus": "Health Status",
+                "previousDateTested": "Previous Date Tested",
+                "previousHIVTestResult": "Previous HIV Test Result",
+                "partnerIndexCaseContacts": "Partner Index Case Contacts",
+                "ictScreening": "ICT Screening",
+                "maternalHivStatus": "Maternal HIV Status",
+                "maritalStatus": "Marital Status",
+                "agreeInterviewed": "Agree Interviewed",  
+                "icInterviewedForService": "IC Interviewed for Service",
+                "actions": "Actions",
+                "deleteForm": "Delete Form"
+              }
+            }
+          }
+      },
+      "program-management-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "intakeA",
+                "headerTitle": "intakeA",
+                "displayText": "intakeA",
+                "encounterType": "f28bb488-0f83-417c-98ba-06ea5f1765e3",
+                "columns": [
+                  {
+                    "id": "dateConfirmed",
+                    "isDate": true,
+                    "title": "dateConfirmed",
+                    "concept": "160753AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "isLink": true
+                  },
+                  {
+                    "id": "testType", 
+                    "title": "testType",
+                    "concept": "5583b0a6-f390-446d-ab39-d98584ee330c"
+                  },
+                  {
+                    "id": "entryPoint",
+                    "title": "entryPoint", 
+                    "concept": "dd282c99-ea69-44e7-9252-aff0198cc1e8"
+                  },
+                  {
+                    "id": "occupation",
+                    "title": "occupation",
+                    "concept": "2d2073e1-8377-4c4a-b6c7-0ab848760716"
+                  },
+                  {
+                    "id": "targetPopulation",
+                    "title": "targetPopulation",
+                    "concept": "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016"
+                  },
+                  {
+                    "id": "childsCareGiverMaritalStatus",
+                    "title": "childsCareGiverMaritalStatus",
+                    "concept": "e6eb59a1-8430-491d-b948-5b582f87d5ea"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "POC Intake-A",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "POC Intake-A",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "POC Intake-A",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "bd51548c-6b41-4e31-b249-77780566b774"
+                  }
+                ]
+              },
+              {
+                "tabName": "intakeB", 
+                "headerTitle": "intakeB",
+                "displayText": "intakeB",
+                "encounterType": "3a010ff9-0c42-4c3f-9868-95c3b01c9699",
+                "columns": [
+                  {
+                    "id": "HIVRelatedOIs",
+                    "title": "HIVRelatedOIs",
+                    "concept": "339d3209-c797-457f-afb8-8d19d99c63b7"
+                  },
+                  {
+                    "id": "patientFunctionalStatus",
+                    "title": "patientFunctionalStatus",
+                    "concept": "2b7b8471-b19e-4d55-b2a4-4fe5b80f889a"
+                  },
+                  {
+                    "id": "developmentalStatus",
+                    "title": "developmentalStatus",
+                    "concept": "1200AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "pregnancyAtEnrollment",
+                    "title": "pregnancyAtEnrollment",
+                    "concept": "5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "presentingComplaints",
+                    "title": "presentingComplaints",
+                    "concept": "14718b2b-d38a-4f68-8e22-8bc739ae43f7"
+                  },
+                  {
+                    "id": "WHOStaging",
+                    "title": "WHOStaging",
+                    "concept": "5356AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "POC Intake-B",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "POC Intake-B",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "POC Intake-B",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add" 
+                },
+                "formList": [
+                  {
+                    "uuid": "4d582871-22ab-41cd-a07c-5cc644d0b754"
+                  }
+                ]
+              },
+              {
+                "tabName": "familyInformation",
+                "headerTitle": "familyInformation",
+                "displayText": "familyInformation",
+                "encounterType": "e5557459-db41-49b0-ade8-afa7b4767bf9",
+                "columns": [
+                  {
+                    "id": "familyMember",
+                    "title": "familyMember",
+                    "concept": "1560AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "familyMemberAge",
+                    "title": "familyMemberAge",
+                    "concept": "1532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "Sex",
+                    "title": "Sex",
+                    "concept": "1533AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "healthStatus",
+                    "title": "healthStatus",
+                    "concept": "4ab0e5e3-fff7-4819-bd2e-4f070eedcd3d"
+                  },
+                  {
+                    "id": "counselledforhiv",
+                    "title": "counselledforhiv",
+                    "concept": "ff9eccda-485e-4044-ad92-414e97b279c0"
+                  },
+                  {
+                    "id": "testedforHIV",
+                    "title": "testedforHIV",
+                    "concept": "164401AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "testeResult",
+                    "title": "testeResult",
+                    "concept": "2e770be1-7397-4684-bea6-6632c23b00d7"
+                  },
+                  {
+                    "id": "enrolledInCare",
+                    "title": "enrolledInCare",
+                    "concept": "3ca41707-40ef-424c-9e1a-923a407e68fc"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "Family Information",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "Family Information",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "Family Information",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "8ea1c633-2582-42ca-8859-6cba03e72ac3"
+                  }
+                ]
+              },
+              {
+                "tabName": "phdp",
+                "headerTitle": "phdp",
+                "displayText": "phdp",
+                "encounterType": "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d",
+                "columns": [
+                  {
+                    "id": "phdpdate",
+                    "isDate": true,
+                    "title": "phdpdate",
+                    "concept": "2c4db7e7-1ece-49a6-a075-d466e6d9b27d",
+                    "isLink": true
+                  },
+                  {
+                    "id": "issuesAddressed",
+                    "title": "issuesAddressed",
+                    "concept": "5e8e03b1-d6ad-4362-a99a-f610af940f57"
+                  },
+                  {
+                    "id": "conclusion",
+                    "title": "conclusion",
+                    "concept": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "POC PHDP Form",
+                        "label": "viewDetails",
+                        "mode": "view" 
+                      },
+                      {
+                        "formName": "POC PHDP Form",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "POC PHDP Form",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "1e3aeb30-e55b-47d1-bf17-123550c351d1"
+                  }
+                ]
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "intakeA": "Intake A",
+              "intakeB": "Intake B", 
+              "familyInformation": "Family Information",
+              "dateConfirmed": "Date Confirmed HIV+",
+              "testType": "Type of HIV Test",
+              "entryPoint": "Entry Point",
+              "occupation": "Occupation",
+              "targetPopulation": "Target Population",
+              "HIVRelatedOIs": "Past OI",
+              "patientFunctionalStatus": "Functional Status",
+              "developmentalStatus": "Developmental Status",
+              "pregnancyAtEnrollment": "Pregnancy Status",
+              "presentingComplaints": "Presenting Symptoms",
+              "WHOStaging": "WHO HIV Clinical Stage",
+              "familyMember": "Relationship",
+              "familyMemberAge": "Age",
+              "Sex": "Sex",
+              "healthStatus": "Health Status",
+              "testeResult": "HIV test Result",
+              "enrolledInCare": "Enrolled in Care",
+              "phdpdate": "Date",
+              "issuesAddressed": "Issues Addressed",
+              "conclusion": "Conclusion",
+              "actions": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "deleteForm": "Delete",
+              "add": "Add"
+            }
+          }
+        }
+      },
+      "pmtct-child-visits-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "heiEnrollment",
+                "headerTitle": "heiEnrollment",
+                "displayText": "heiEnrollmentEncounters", 
+                "encounterType": "ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97",
+                "columns": [
+                  {
+                    "id": "enrollmentDate",
+                    "isDate": true,
+                    "title": "enrollmentDate",
+                    "concept": "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
+                    "isLink": true
+                  },
+                  {
+                    "id": "heiCode",
+                    "title": "heiCode",
+                    "concept": "2b30a270-be1f-4cce-9949-7d7eaba349be"
+                  },
+                  {
+                    "id": "mothersPmtct",
+                    "title": "mothersPmtct", 
+                    "concept": "6b60a8c6-da45-4f10-9135-e5e5d4b2a1b9"
+                  },
+                  {
+                    "id": "fathersStatus",
+                    "title": "fathersStatus", 
+                    "concept": "2d5b2754-423e-47d3-9bf5-81ee0c2108f5"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "HEI Enrollment",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "HEI Enrollment",
+                        "label": "editForm",
+                        "mode": "edit"  
+                      },
+                      {
+                        "formName": "HEI Enrollment",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "11b4730d-e689-336b-9ac2-e989e479cc2b"
+                  }
+                ]
+              },
+              {
+                "tabName": "heiImmunization",
+                "headerTitle": "heiImmunization",
+                "displayText": "heiImmunizationEncounters",
+                "encounterType": "1a548c84-2170-47d5-9a23-56fcad902f63",
+                "columns": [
+                  {
+                    "id": "bcg",
+                    "title": "bcg",
+                    "concept": "3d621104-4f93-4f68-8d59-407cd124cabb"
+                  },
+                  {
+                    "id": "opv3",
+                    "title": "opv3",
+                    "concept": "50c23a47-40ae-469d-b7a2-0f88b8e2c915"
+                  },
+                  {
+                    "id": "penta3", 
+                    "title": "penta3",
+                    "concept": "698adfa3-2b38-4d83-83a0-0811d7d90bb5"
+                  },
+                  {
+                    "id": "rota2",
+                    "title": "rota2", 
+                    "concept": "6236db83-5d44-4bb8-8032-472b4e6c24f0"
+                  },
+                  {
+                    "id": "pcv3",
+                    "title": "pcv3",
+                    "concept": "e0287c59-984a-40ae-a449-446576a7ee27"
+                  },
+                  {
+                    "id": "ipv",
+                    "title": "ipv",
+                    "concept": "923b4623-ac8d-4e65-a55a-aa4715752a14"
+                  },
+                  {
+                    "id": "mcv2",
+                    "title": "mcv2",
+                    "concept": "025f8bb8-96ce-4e4a-b38c-4a27e77a2f4a"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "HEI Immunization",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "HEI Immunization",
+                        "label": "editForm", 
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "HEI Immunization",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "54d8c12f-355d-3ad7-8261-2374480653bc"
+                  }
+                ]
+              },
+              {
+                "tabName": "heiFollowup",
+                "headerTitle": "heiFollowup", 
+                "displayText": "heiFollowupEncounters",
+                "encounterType": "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d",
+                "columns": [
+                  {
+                    "id": "followupDate",
+                    "isDate": true,
+                    "title": "followupDate",
+                    "concept": "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+                    "isLink": true
+                  },
+                  {
+                    "id": "weight",
+                    "title": "weight",
+                    "concept": "4ab93a3c-4373-4b9b-9268-5ff0641cc242"
+                  },
+                  {
+                    "id": "testResult",
+                    "title": "testResult",
+                    "concept": "2e770be1-7397-4684-bea6-6632c23b00d7"
+                  },
+                  {
+                    "id": "rapidAntibodyResult",
+                    "title": "rapidAntibodyResult",
+                    "concept": "aa69908a-989a-4fef-ad65-cbd73ba487b7"
+                  },
+                  {
+                    "id": "dose",
+                    "title": "dose",
+                    "concept": "ec9670c2-ee1f-42db-aea1-d238fb4fc33f"
+                  },
+                  {
+                    "id": "decision",
+                    "title": "decision",
+                    "concept": "f0652b88-d1dd-4ec5-add7-8bdda63b5a8a"
+                  },
+                  {
+                    "id": "nextVisitDate",
+                    "title": "nextVisitDate",
+                    "concept": "c596f199-4d76-4eca-b3c4-ffa631c0aee9"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "HEI Followup",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "HEI Followup",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "HEI Followup",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "f4504bb0-b656-3c8a-8fd8-038fb9ba75b8"
+                  }
+                ]
+              },
+              {
+                "tabName": "heiFinalOutcome",
+                "headerTitle": "heiFinalOutcome",
+                "displayText": "heiFinalOutcomeEncounters",
+                "encounterType": "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d",
+                "columns": [
+                  {
+                    "id": "dateOfFinalOutcome",
+                    "isDate": true,
+                    "title": "dateOfFinalOutcome",
+                    "concept": "e83fbaa5-073b-4a6d-b8ba-23f41d0c7302",
+                    "isLink": true
+                  },
+                  {
+                    "id": "finalOutcome",
+                    "title": "finalOutcome",
+                    "concept": "2171d944-a027-417f-a0af-f9c4a88a5ffe"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "HEI Final Outcome",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "HEI Final Outcome", 
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "HEI Final Outcome",
+                        "label": "deleteForm", 
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "81645610-e6af-3e5d-8b10-832bdd985c56"
+                  }
+                ]
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "heiImmunization": "HEI Immunization",
+              "heiImmunizationEncounters": "HEI Immunization Encounters",
+              "bcg": "BCG",
+              "opv3": "OPV",
+              "penta3": "PENTA",
+              "rota2": "ROTA",
+              "pcv3": "PCV",
+              "ipv": "IPV",
+              "mcv2": "MCV",
+              "actions": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "deleteForm": "Delete",
+              "add": "Add",
+              "heiEnrollment": "HEI Enrollment",
+              "heiEnrollmentEncounters": "HEI Enrollment Encounters",
+              "enrollmentDate": "Enrollment Date",
+              "heiCode": "HEI Code", 
+              "mothersPmtct": "Mother's PMTCT",
+              "heiFollowup": "HEI Followup",
+              "heiFollowupEncounters": "HEI Followup Encounters",
+              "followupDate": "Follow-up Date",
+              "weight": "Weight",
+              "testResult": "DNA PCR Result",
+              "rapidAntibodyResult": "Rapid Test Result",
+              "dose": "Cotrimoxazole Dose",
+              "decision": "Decision",
+              "nextVisitDate": "Next Visit Date",
+              "heiFinalOutcome": "HEI Final Outcome",
+              "heiFinalOutcomeEncounters": "HEI Final Outcome Encounters",
+              "dateOfFinalOutcome": "Final Outcome Date",
+              "finalOutcome": "Final Outcome",
+              "dateOfBirth": "Date of Birth",
+              "actionsTitle": "Actions",
+              "clinicalVisit": "Clinical Visit",
+              "clinicalVisitEncounters": "Clinical Visit Encounters",
+              "visitDate": "Visit Date",
+              "visitType": "Visit Type",
+              "tbScreeningOutcome": "TB Screening Outcome",
+              "nextAppointmentDate": "Next Appointment Date"
+            }
+          }
+        }
+      },
+      "pmtct-mother-visits-dashboard-slot": {
+        "add": ["encounter-list"],
+        "configure": {
+          "encounter-list": {
+            "tabDefinitions": [
+              {
+                "tabName": "pmtctEnrollment",
+                "headerTitle": "pmtctEnrollment",
+                "displayText": "pmtctEnrollment",
+                "encounterType": "1914ed4a-86fe-43d2-8338-2be2937ff11e",
+                "columns": [
+                  {
+                    "id": "dateOfEnrollment",
+                    "isDate": true,
+                    "title": "dateOfEnrollment",
+                    "concept": "0fe4faee-0717-4dc0-be3d-1cd52923804a",
+                    "isLink": true
+                  },
+                  {
+                    "id": "placeOfDelivery",
+                    "title": "placeOfDelivery",
+                    "concept": "1572AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "id": "statusAtEnrollment",
+                    "title": "statusAtEnrollment",
+                    "concept": "ab192dd0-bb1c-4417-b8f9-4c35dc991b55"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "PMTCT Enrollment",
+                        "label": "viewDetails",
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "PMTCT Enrollment",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "PMTCT Enrollment",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "4b93795c-928a-313e-ab2d-a6b758850f20"
+                  }
+                ]
+              },
+              {
+                "tabName": "pmtctDischarge",
+                "headerTitle": "pmtctDischarge",
+                "displayText": "pmtctDischarge",
+                "encounterType": "e5557459-db41-49b0-ade8-afa7b4767bf9",
+                "columns": [
+                  {
+                    "id": "dischargeDate",
+                    "isDate": true,
+                    "title": "dischargeDate",
+                    "concept": "18f78400-d91c-40ea-bd9f-4388c10d50c1",
+                    "isLink": true
+                  },
+                  {
+                    "id": "reasonForDischarge",
+                    "title": "reasonForDischarge",
+                    "concept": "ba47a98e-b6b0-42f1-b612-496d501b1272"
+                  },
+                  {
+                    "id": "actions",
+                    "title": "actions",
+                    "actionOptions": [
+                      {
+                        "formName": "PMTCT Discharge",
+                        "label": "viewDetails", 
+                        "mode": "view"
+                      },
+                      {
+                        "formName": "PMTCT Discharge",
+                        "label": "editForm",
+                        "mode": "edit"
+                      },
+                      {
+                        "formName": "PMTCT Discharge",
+                        "label": "deleteForm",
+                        "mode": "delete"
+                      }
+                    ]
+                  }
+                ],
+                "launchOptions": {
+                  "displayText": "add"
+                },
+                "formList": [
+                  {
+                    "uuid": "5a753d1a-926b-385c-9f6d-e336dde7a8da"
+                  }
+                ]
+              }
+            ]
+          },
+          "Translation overrides": {
+            "en": {
+              "clinicalVisit": "Clinical Visit",
+              "clinicalVisitEncounters": "clinical visit encounters",
+              "visitDate": "Visit Date",
+              "visitType": "Visit Type",
+              "tbScreeningOutcome": "TB Screening Outcome",
+              "nextAppointmentDate": "Next Appointment Date",
+              "actionsTitle": "Actions",
+              "viewDetails": "View Details",
+              "editForm": "Edit Form",
+              "add": "Add"
+            }
+          }
+        }
+      }
+    }
+  }
+}

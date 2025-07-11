@@ -3,9 +3,9 @@
  */
 module.exports = {
   transform: {
-    "^.+\\.(j|t)sx?$": "@swc/jest",
+    "^.+\\.m?[jt]sx?$": ["@swc/jest"],
   },
-  transformIgnorePatterns: ["/node_modules/(?!@openmrs)"],
+  transformIgnorePatterns: ["/node_modules/(?!@openmrs|.+\\.pnp\\.[^\\/]+$)"],
   moduleNameMapper: {
     "\\.(s?css)$": "identity-obj-proxy",
     "@openmrs/esm-framework": "@openmrs/esm-framework/mock",

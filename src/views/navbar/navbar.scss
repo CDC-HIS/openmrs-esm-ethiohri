@@ -1,5 +1,5 @@
-@use "@carbon/styles/scss/spacing";
-@import "../../root.scss";
+@use "@carbon/layout";
+@use '@carbon/type';
 
 .switcherContainer {
   display: flex;
@@ -10,26 +10,23 @@
   flex-direction: row;
   width: 20rem;
   justify-content: flex-start;
-  color: $field-01;
   align-items: center;
-  @extend .productiveHeading01;
+  @include type.type-style('heading-01');
   height: 3rem;
   cursor: pointer;
 }
 
 .switcherContainer ul > svg {
   margin: 0rem 0.75rem;
-  fill: $field-01;
 }
 
 .switcherContainer ul button {
-  @extend .productiveHeading01;
+  @include type.type-style('heading-01');
   width: 100%;
   background-color: var(--brand-02);
 }
 
 .switcherContainer ul button:hover {
-  color: $field-01;
   background-color: var(--brand-01);
 }
 
@@ -38,22 +35,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  @extend .bodyLong01;
+  @include type.type-style('body-01');
 }
 
 .switcherContainer ul div button {
-  color: $inverse-link;
   margin-left: 0.5rem;
   width: 5rem;
 }
 
 .switcherContainer ul div button:hover {
   background-color: var(--brand-01);
-  color: $inverse-link;
 }
 
 .switcherContainer hr {
-  background-color: $ui-background;
+  background-color: #ffffff;
   width: 16rem;
   margin: 0.5rem 0rem;
 }
@@ -71,8 +66,8 @@
   .patientDetails {
     display: flex;
     align-items: center;
-    color: $ui-02;
-    padding: 0 spacing.$spacing-05;
+    color: #ffffff;
+    padding: 0 layout.$spacing-05;
   
     &:hover {
       background-color: #032a30;
@@ -80,15 +75,15 @@
   
     .patientName {
       // @include type.type-style('heading-compact-01');
-      margin-right: spacing.$spacing-05;
-      color: $ui-02;
-      margin: spacing.$spacing-04 0;
+      margin-right: layout.$spacing-05;
+      color: #ffffff;
+      margin: layout.$spacing-04 0;
       padding-right: 0.5rem;
     }
   
     .patientInfo {
-      color: $color-gray-30;
+      // color: $color-gray-30;
       // @include type.type-style('body-compact-01');
-      margin: 0 spacing.$spacing-05 0;
+      margin: 0 layout.$spacing-05 0;
     }
   }

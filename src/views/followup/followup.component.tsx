@@ -18,7 +18,7 @@ import {
   getLatestObs,
   getPatientEncounters,
 } from "../../api/api";
-import { InlineLoading, SkeletonText, DataTableSkeleton, } from "@carbon/react";
+import { DataTableSkeleton } from "@carbon/react";
 
 const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const columns: EncounterListColumn[] = useMemo(
@@ -27,20 +27,28 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "followUpDate",
         header: "FollowUp Date",
         getValue: (encounter) => {
-          const rawDate = getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
-          return rawDate ? rawDate.split(',')[0].trim() : "";
+          const rawDate = getData(
+            encounter,
+            "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+            true
+          );
+          return rawDate ? rawDate.split(",")[0].trim() : "";
         },
       },
       {
         key: "artRegimen",
         header: "ART Regimen",
-        getValue: (encounter) => getData(encounter, "6d7d0327-e1f8-4246-bfe5-be1e82d94b14"),
+        getValue: (encounter) =>
+          getData(encounter, "6d7d0327-e1f8-4246-bfe5-be1e82d94b14"),
       },
       {
         key: "followUpStatus",
         header: "Follow Up Status",
         getValue: (encounter) => {
-          const status = getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
+          const status = getData(
+            encounter,
+            "222f64a8-a603-4d2e-b70e-2d90b622bb04"
+          );
           if (status === "Restart medication") return "Restart";
           if (status === "Ran away") return "Drop";
           if (status === "Stop all") return "Stop";
@@ -51,23 +59,32 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       {
         key: "weight",
         header: "Weight",
-        getValue: (encounter) => getData(encounter, "4ab93a3c-4373-4b9b-9268-5ff0641cc242"),
+        getValue: (encounter) =>
+          getData(encounter, "4ab93a3c-4373-4b9b-9268-5ff0641cc242"),
       },
       {
         key: "dateViralLoadRequested",
         header: "VL Sent Date",
         getValue: (encounter) => {
-          const rawDate = getData(encounter, "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
-          return rawDate ? rawDate.split(',')[0].trim() : "";
+          const rawDate = getData(
+            encounter,
+            "163281AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            true
+          );
+          return rawDate ? rawDate.split(",")[0].trim() : "";
         },
       },
       {
         key: "vlStatus",
         header: "VL Status",
         getValue: (encounter) => {
-          const vlStatus = getData(encounter, "2dc9ee04-4d12-4606-ae0f-86895bf14a44");
+          const vlStatus = getData(
+            encounter,
+            "2dc9ee04-4d12-4606-ae0f-86895bf14a44"
+          );
           if (vlStatus === "LLV") return "Low Level Viremia";
-          if (vlStatus === "HIV infection with high viral load") return "High Viral Load";
+          if (vlStatus === "HIV infection with high viral load")
+            return "High Viral Load";
           return vlStatus;
         },
       },
@@ -75,7 +92,10 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "dsdCategory",
         header: "DSD Category",
         getValue: (encounter) => {
-          const category = getData(encounter, "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2");
+          const category = getData(
+            encounter,
+            "defeb4ff-d07b-4e4a-bbd6-d4281c1384a2"
+          );
           if (category === "Community based group model by peer") return "PCAD";
           if (category === "AHID") return "AHD";
           return category;
@@ -85,8 +105,12 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "screeningDone",
         header: "CXCA Screening Done",
         getValue: (encounter) => {
-          const screened = getData(encounter, "01c546b4-e08a-4c0c-82ef-d387cab6bbbf");
-          if (screened === "Cervical cancer screening not performed") return "No";
+          const screened = getData(
+            encounter,
+            "01c546b4-e08a-4c0c-82ef-d387cab6bbbf"
+          );
+          if (screened === "Cervical cancer screening not performed")
+            return "No";
           if (screened === "Cervical cancer screening performed") return "Yes";
           return screened;
         },
@@ -95,8 +119,12 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "nextVisitDate",
         header: "Next Visit Date",
         getValue: (encounter) => {
-          const rawDate = getData(encounter, "c596f199-4d76-4eca-b3c4-ffa631c0aee9", true);
-          return rawDate ? rawDate.split(',')[0].trim() : "";
+          const rawDate = getData(
+            encounter,
+            "c596f199-4d76-4eca-b3c4-ffa631c0aee9",
+            true
+          );
+          return rawDate ? rawDate.split(",")[0].trim() : "";
         },
       },
       {
@@ -140,7 +168,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const updateFormSavedStatus = useCallback(() => {
     setIsFormSaved((prev) => !prev);
   }, []);
-  
+
   useEffect(() => {
     (async () => {
       const [identifiers, encounters, latestObs] = await Promise.all([
@@ -161,10 +189,9 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       );
       setIsLoading(false);
     })();
-  }, [patientUuid,isFormSaved]);
+  }, [patientUuid, isFormSaved]);
 
-  if (isLoading)
-    return <DataTableSkeleton role="progressbar" zebra />;
+  if (isLoading) return <DataTableSkeleton role="progressbar" zebra />;
 
   return (
     <>
