@@ -106,13 +106,8 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(registrationDate)",
-                  "message": "HIV +ve date should not be earlier than +ve Tracking Registration date"
-                },
-                {
-                  "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
-                  "message": "HIV +ve date should not be earlier than HIV Confirmation date in Intake A"
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "message": "HIV +ve date should not be earlier than the patient's birthdate"
                 }
               ],
               "id": "hivPostiveDate"
