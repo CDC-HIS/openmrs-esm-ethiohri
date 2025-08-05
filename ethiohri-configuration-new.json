@@ -19,7 +19,8 @@
           "active-medications-widget",
           "biometrics-overview-widget",
           "conditions-overview-widget",
-          "patient-flags-overview"
+          "patient-flags-overview",
+          "vitals-overview-widget"
         ]
       },
       "visits-summary-slot": {
@@ -39,11 +40,7 @@
           "medications-summary-dashboard",
           "patient-appointments-summary-dashboard",
           "patient-orders-summary-dashboard",
-          "programs-summary-dashboard",
-          "transfer-out-summary-dashboard",
-          "ettors-summary-dashboard",
-          "ethio-summary-dashboard",
-          "encounters-summary-dashboard"
+          "programs-summary-dashboard"
         ]
       }
     },
@@ -56,7 +53,8 @@
       "hiv-care-and-treatment-slot": {
         "remove": [
           "post-exposure-ext",
-          "program-management-ext"
+          "program-management-ext",
+          "index-case-testing-ext"
         ]
       }
     }
@@ -66,8 +64,7 @@
       "homepage-widgets-slot": {
         "remove": [
           "home-appointments",
-          "active-visits-widget",
-          "linked-to-art-widget"
+          "active-visits-widget"
         ],
         "add": [
           "eth-patient-list"
@@ -83,7 +80,6 @@
       "homepage-dashboard-slot": {
         "remove": [
           "clinical-appointments-dashboard-link",
-          "linked-to-art-dashboard-link",
           "patient-lists-dashboard-link",
           "service-queues-dashboard-link",
           "ohri-home-programs-text"

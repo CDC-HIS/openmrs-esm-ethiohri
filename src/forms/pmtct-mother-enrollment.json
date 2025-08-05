@@ -43,6 +43,22 @@
               }
             },
             {
+              "label": "Date of Delivery",
+              "type": "obs",
+              "required": "false",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "11e2265c-d312-49f6-9452-b3d099524460"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "id": "dateOfDelivery"
+            },
+            {
               "label": "Place of delivery",
               "type": "obs",
               "questionOptions": {

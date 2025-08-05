@@ -500,6 +500,64 @@
           "isExpanded": "true",
           "questions": [
             {
+              "label": "Infant on breatfeeding",
+              "type": "obs",
+              "required": false,
+              "id": "infantOnBreastfeeding",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "9a095b8c-66cb-4cbe-b666-bc8f4b21921f",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "HEI ARV Prophylaxis",
+              "type": "obs",
+              "required": false,
+              "id": "infantARVProphylaxis",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "3670654c-d963-420c-996b-18a8127bd979",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
+              },
+              "validators": []
+            },
+            {
+              "label": "Date of NVP & AZT Started",
+              "type": "obs",
+              "required": "false",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "06141bb3-e0c5-4fba-a481-4db8a8fed2e0"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                }
+              ],
+              "id": "dateOfNvpAztStarted"
+            },
+            {
               "label": "Maternal ART status",
               "type": "obs",
               "required": false,
