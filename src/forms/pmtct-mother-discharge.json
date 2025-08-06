@@ -135,7 +135,11 @@
                     {
                       "concept": "d2b461e5-dd7f-4d16-968e-354ac68cbd38",
                       "label": "Infant referred for pediatric HIV care within the facility"
-                    }
+                    },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Other"
+                  }
                   ]
                 },
                 "validators": []
