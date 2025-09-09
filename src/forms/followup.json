@@ -3227,6 +3227,42 @@
                   }
                 ]
               },
+              "behaviours": [
+                {
+                  "intent": "edit",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "intent": "view",
+                  "questionOptions": {
+                    "rendering": "radio",
+                    "concept": "163532AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "answers": [
+                      {
+                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "Yes"
+                      },
+                      {
+                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                        "label": "No"
+                      }
+                    ]
+                  }
+                }
+              ],
               "hide": {
                 "hideWhenExpression": "pregnant !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && breastfeeding !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || patient.gender === 'male'"
               },

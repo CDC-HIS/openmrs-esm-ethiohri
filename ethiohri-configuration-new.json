@@ -40,7 +40,8 @@
           "medications-summary-dashboard",
           "patient-appointments-summary-dashboard",
           "patient-orders-summary-dashboard",
-          "programs-summary-dashboard"
+          "programs-summary-dashboard",
+          "pmtct-ext"
         ]
       }
     },
