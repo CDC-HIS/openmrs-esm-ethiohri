@@ -4890,6 +4890,26 @@
           "isExpanded": "true",
           "questions": [
             {
+              "label": "VISITECT CD4 Test Date",
+              "type": "obs",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "82f4352c-4bb5-45e3-a457-4109773a72c6"
+              },
+              "validators": [
+                {
+                  "type": "date",
+                  "allowFutureDates": "false"
+                },
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "myValue < new Date(followupDate)",
+                  "message": "VISITECT CD4 Test Date should not be earlier than Followup Date"
+                }
+              ],
+              "id": "visitectCD4TestDate"
+            },
+            {
               "label": "VISITECT CD4 Result(copies/ml)",
               "type": "obs",
               "questionOptions": {
