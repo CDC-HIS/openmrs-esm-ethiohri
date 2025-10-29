@@ -4921,10 +4921,6 @@
                     "label": "< 200"
                   },
                   {
-                    "concept": "de86ef7c-189b-4737-9e29-3f03aecf94c0",
-                    "label": "<= 200"
-                  },
-                  {
                     "concept": "b5d97d6f-2f05-4420-b99c-e33ccf9dac27",
                     "label": "> 200"
                   }
