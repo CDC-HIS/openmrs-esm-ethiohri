@@ -4,7 +4,9 @@ import { Help } from "@carbon/react/icons";
 import styles from "./navbar.scss";
 
 const HelpMenu: React.FC = () => {
-  const currentUrl = `${window.location.protocol}//${window.location.hostname}:81/doku.php?id=start`;
+  const currentUrl = `${window.location.protocol}//${window.location.hostname}${
+    window.location.port ? `:${window.location.port}` : ""
+  }/openmrs/spa/EthiOHRI_1.5_Training_Participant_Manual.pdf`;
 
   return (
     <div className={styles.switcherContainer}>
