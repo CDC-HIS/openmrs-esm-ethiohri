@@ -3940,7 +3940,7 @@
                 }
               ],
               "hide": {
-                "hideWhenExpression": "eligibleForTPT !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "eligibleForTPT !== '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || activeTB === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && tbTreatmentStarted === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && eligibleForTPT === '1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "id": "reasonForNotBeingElgible"
             },
