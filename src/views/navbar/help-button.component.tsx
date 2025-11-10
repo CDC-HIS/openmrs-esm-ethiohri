@@ -6,7 +6,7 @@ import styles from "./navbar.scss";
 const HelpMenu: React.FC = () => {
   const currentUrl = `${window.location.protocol}//${window.location.hostname}${
     window.location.port ? `:${window.location.port}` : ""
-  }/openmrs/spa/EthiOHRI_1.5_Training_Participant_Manual.pdf`;
+  }/openmrs/spa/EthiOHRI_V1.6_User_Guide.pdf.pdf`;
 
   return (
     <div className={styles.switcherContainer}>
