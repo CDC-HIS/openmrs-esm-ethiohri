@@ -263,12 +263,12 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue > new Date(dateOfRetesting)",
+                  "failsWhenExpression": "myValue > new Date(dateOfRetesting).setHours(0,0,0,0)",
                   "message": "Date of initial test should be earlier than date of re-test"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate).setHours(0,0,0,0)",
                   "message": "Date of initial test should not be earlier than the patient's birthdate"
                 }
               ],
@@ -290,17 +290,17 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateOfInitialTest)",
+                  "failsWhenExpression": "myValue < new Date(dateOfInitialTest).setHours(0,0,0,0)",
                   "message": "Date of retest should not be earlier than date of initial test"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate).setHours(0,0,0,0)",
                   "message": "Date of retest should not be earlier than the patient's birthdate"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(enrollment_date)",
+                  "failsWhenExpression": "myValue < new Date(enrollment_date).setHours(0,0,0,0)",
                   "message": "Date of retest should not be earlier than Registration date"
                 }
               ],
@@ -352,7 +352,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateOfRetesting)",
+                  "failsWhenExpression": "myValue < new Date(dateOfRetesting).setHours(0,0,0,0)",
                   "message": "Expiry date should not be earlier than Date of Retesting"
                 }
               ],
@@ -468,7 +468,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateOfRetesting)",
+                  "failsWhenExpression": "myValue < new Date(dateOfRetesting).setHours(0,0,0,0)",
                   "message": "Expiry date should not be earlier than Date of Retesting"
                 }
               ],
@@ -584,7 +584,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateOfRetesting)",
+                  "failsWhenExpression": "myValue < new Date(dateOfRetesting).setHours(0,0,0,0)",
                   "message": "Expiry date should not be earlier than Date of Retesting"
                 }
               ],
@@ -960,7 +960,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateOfRetesting)",
+                  "failsWhenExpression": "myValue < new Date(dateOfRetesting).setHours(0,0,0,0)",
                   "message": "Expiry date should not be earlier than Date of Retesting"
                 }
               ],

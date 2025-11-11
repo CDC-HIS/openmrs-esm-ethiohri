@@ -42,12 +42,12 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
+                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate).setHours(0,0,0,0)",
                   "message": "Followup date should not be earlier than HIV+ Confirmation date"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(enrollment_date)",
+                  "failsWhenExpression": "myValue < new Date(enrollment_date).setHours(0,0,0,0)",
                   "message": "Followup date should not be earlier than Registration date"
                 },
                 {
@@ -187,7 +187,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
+                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate).setHours(0,0,0,0)",
                   "message": "Eligibility date should not be earlier than HIV Confirmation date in Intake A"
                 }
               ],
@@ -442,7 +442,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate)",
+                  "failsWhenExpression": "myValue < new Date(hivConfirmationDate).setHours(0,0,0,0)",
                   "message": "ART started date should not be earlier than HIV Confirmation date in Intake A"
                 },
                 {
@@ -1999,12 +1999,12 @@
               "validators": [
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate)",
+                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
                   "message": "Next visit date should not be earlier than Followup date"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue > new Date(treatmentEndDate)",
+                  "failsWhenExpression": "myValue > new Date(treatmentEndDate).setHours(0,0,0,0)",
                   "message": "Next visit date should not be later than Treatment end date"
                 }
               ],
@@ -3304,7 +3304,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate)",
+                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
                   "message": "Referred date should not be earlier than Followup date"
                 }
               ],
@@ -3429,7 +3429,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate)",
+                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
                   "message": "TB Screening date should be the same as Followup date"
                 },
                 {
@@ -3698,7 +3698,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(activeTbDiagnosedDate)",
+                  "failsWhenExpression": "myValue < new Date(activeTbDiagnosedDate).setHours(0,0,0,0)",
                   "message": "TB Treatment Start date should not be earlier than TB Diagnosed date"
                 }
               ],
@@ -3797,7 +3797,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
+                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate).setHours(0,0,0,0)",
                   "message": "TB Treatment Completed date should not be earlier than TB Treatment Started date"
                 }
               ],
@@ -3840,7 +3840,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
+                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate).setHours(0,0,0,0)",
                   "message": "TB Treatment Discontinued date should not be earlier than TB Treatment Started date"
                 }
               ],
@@ -4445,7 +4445,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
+                  "failsWhenExpression": "myValue < new Date(tptStartDate).setHours(0,0,0,0)",
                   "message": "Date TPT Completed should not be earlier than TPT Start Date"
                 }
               ],
@@ -4488,7 +4488,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
+                  "failsWhenExpression": "myValue < new Date(tptStartDate).setHours(0,0,0,0)",
                   "message": "Date TPT Discontinued should not be earlier than TPT Start Date"
                 }
               ],
@@ -4903,7 +4903,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate)",
+                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
                   "message": "VISITECT CD4 Test Date should not be earlier than Followup Date"
                 }
               ],
@@ -5218,7 +5218,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue > new Date(dateViralLoadResultReceived)",
+                  "failsWhenExpression": "myValue > new Date(dateViralLoadResultReceived).setHours(0,0,0,0)",
                   "message": "VL requested date should not be later than VL result received date"
                 }
               ]
@@ -5271,7 +5271,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateViralLoadRequested)",
+                  "failsWhenExpression": "myValue < new Date(dateViralLoadRequested).setHours(0,0,0,0)",
                   "message": "VL result received date should not be earlier than VL requested date"
                 }
               ]
@@ -5449,7 +5449,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
+                  "failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived).setHours(0,0,0,0)",
                   "message": "Date EAC-1 provided should not be earlier than Viral Load Result Received date"
                 },
                 {
@@ -6101,7 +6101,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(artStartDate)",
+                  "failsWhenExpression": "myValue < new Date(artStartDate).setHours(0,0,0,0)",
                   "message": "OTZ enrollment date should not be earlier than ART start date"
                 }
               ],
@@ -6961,7 +6961,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate).setHours(0,0,0,0)",
                   "message": "Date Counseling given should not be earlier than the patient's birthdate"
                 }
               ],
@@ -7008,7 +7008,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate).setHours(0,0,0,0)",
                   "message": "Date accepted CxCa screening should not be earlier than the patient's birthdate"
                 },
                 {

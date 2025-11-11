@@ -58,7 +58,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(enrollment_date)",
+                  "failsWhenExpression": "myValue < new Date(enrollment_date).setHours(0,0,0,0)",
                   "message": "+ve Tracking Registration date should not be earlier than Patient Registration date"
                 }
               ],
@@ -106,7 +106,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(patient.birthDate)",
+                  "failsWhenExpression": "myValue < new Date(patient.birthDate).setHours(0,0,0,0)",
                   "message": "HIV +ve date should not be earlier than the patient's birthdate"
                 }
               ],
@@ -502,7 +502,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(hivPostiveDate)",
+                  "failsWhenExpression": "myValue < new Date(hivPostiveDate).setHours(0,0,0,0)",
                   "message": "Date Linked should not be earlier than HIV Positive date"
                 }
               ],
@@ -945,12 +945,12 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateLinkedToCareAndTreatment)",
+                  "failsWhenExpression": "myValue < new Date(dateLinkedToCareAndTreatment).setHours(0,0,0,0)",
                   "message": "Final outcome known date should not be earlier than Date Linked to Care and Treatment"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(hivPostiveDate)",
+                  "failsWhenExpression": "myValue < new Date(hivPostiveDate).setHours(0,0,0,0)",
                   "message": "Final outcome known date should not be earlier than HIV Positive Confirmation date"
                 }
               ],
