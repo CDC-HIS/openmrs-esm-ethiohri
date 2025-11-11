@@ -1999,12 +1999,12 @@
               "validators": [
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(followupDate)",
                   "message": "Next visit date should not be earlier than Followup date"
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue > new Date(treatmentEndDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue > new Date(treatmentEndDate)",
                   "message": "Next visit date should not be later than Treatment end date"
                 }
               ],
@@ -3304,7 +3304,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(followupDate)",
                   "message": "Referred date should not be earlier than Followup date"
                 }
               ],
@@ -3429,7 +3429,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(followupDate)",
                   "message": "TB Screening date should be the same as Followup date"
                 },
                 {
@@ -3698,7 +3698,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(activeTbDiagnosedDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(activeTbDiagnosedDate)",
                   "message": "TB Treatment Start date should not be earlier than TB Diagnosed date"
                 }
               ],
@@ -3797,7 +3797,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
                   "message": "TB Treatment Completed date should not be earlier than TB Treatment Started date"
                 }
               ],
@@ -3840,7 +3840,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(tbTreatmentStartDate)",
                   "message": "TB Treatment Discontinued date should not be earlier than TB Treatment Started date"
                 }
               ],
@@ -4445,7 +4445,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tptStartDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
                   "message": "Date TPT Completed should not be earlier than TPT Start Date"
                 }
               ],
@@ -4488,7 +4488,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(tptStartDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(tptStartDate)",
                   "message": "Date TPT Discontinued should not be earlier than TPT Start Date"
                 }
               ],
@@ -4903,7 +4903,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(followupDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(followupDate)",
                   "message": "VISITECT CD4 Test Date should not be earlier than Followup Date"
                 }
               ],
@@ -5218,7 +5218,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue > new Date(dateViralLoadResultReceived).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue > new Date(dateViralLoadResultReceived)",
                   "message": "VL requested date should not be later than VL result received date"
                 }
               ]
@@ -5271,7 +5271,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateViralLoadRequested).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(dateViralLoadRequested)",
                   "message": "VL result received date should not be earlier than VL requested date"
                 }
               ]
@@ -5449,7 +5449,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(dateViralLoadResultReceived)",
                   "message": "Date EAC-1 provided should not be earlier than Viral Load Result Received date"
                 },
                 {
@@ -6101,7 +6101,7 @@
                 },
                 {
                   "type": "js_expression",
-                  "failsWhenExpression": "myValue < new Date(artStartDate).setHours(0,0,0,0)",
+                  "failsWhenExpression": "myValue < new Date(artStartDate)",
                   "message": "OTZ enrollment date should not be earlier than ART start date"
                 }
               ],
