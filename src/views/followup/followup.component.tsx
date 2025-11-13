@@ -97,9 +97,8 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         getValue: (encounter) => {
           const status = getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
           if (
-            status === "Ran away" ||
-            status === "Stop all" ||
-            status === "Loss to follow-up (LTFU)"
+            status !== "Restart medication" &&
+            status !== "Alive"
           ) {
             return "";
           }
