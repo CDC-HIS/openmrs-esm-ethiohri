@@ -95,8 +95,17 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
         key: "nextVisitDate",
         header: "Next Visit Date",
         getValue: (encounter) => {
+          const status = getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
+          if (
+            status === "Ran away" ||
+            status === "Stop all" ||
+            status === "Loss to follow-up (LTFU)"
+          ) {
+            return "";
+          }
+
           const rawDate = getData(encounter, "c596f199-4d76-4eca-b3c4-ffa631c0aee9", true);
-          return rawDate ? rawDate.split(',')[0].trim() : "";
+          return rawDate ? rawDate.split(",")[0].trim() : "";
         },
       },
       {
@@ -140,7 +149,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const updateFormSavedStatus = useCallback(() => {
     setIsFormSaved((prev) => !prev);
   }, []);
-  
+
   useEffect(() => {
     (async () => {
       const [identifiers, encounters, latestObs] = await Promise.all([
@@ -161,7 +170,7 @@ const Followup: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       );
       setIsLoading(false);
     })();
-  }, [patientUuid,isFormSaved]);
+  }, [patientUuid, isFormSaved]);
 
   if (isLoading)
     return <DataTableSkeleton role="progressbar" zebra />;
