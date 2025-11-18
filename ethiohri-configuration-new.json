@@ -55,7 +55,9 @@
         "remove": [
           "post-exposure-ext",
           "program-management-ext",
-          "index-case-testing-ext"
+          "index-case-testing-ext",
+          "prep-ext",
+          "hiv-testing-service-ext"
         ]
       }
     }
