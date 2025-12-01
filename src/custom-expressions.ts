@@ -3,6 +3,7 @@ import {
   getLatestObs,
   getLatestEligibilityFromLatestFollowup,
   getLatestObservation,
+  getLatestObsDate,
 } from "./api/api";
 import {
   female,
@@ -95,7 +96,7 @@ export function CalcPrepDoseEndDate(
     followupDate &&
     dispensedDoseReturned !== 0 &&
     (followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || 
+      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
       followupStatus == "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
       followupStatus == "cc2dfcbd-e099-47d5-b01c-74caa296ba3c")
   ) {
@@ -106,7 +107,7 @@ export function CalcPrepDoseEndDate(
   return followupDate &&
     dispensedDoseReturned !== 0 &&
     (followupStatus == "160429AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
-      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || 
+      followupStatus == "162904AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
       followupStatus == "164144AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
       followupStatus == "cc2dfcbd-e099-47d5-b01c-74caa296ba3c")
     ? resultPrepDoseDate
@@ -141,7 +142,7 @@ export function CalcMonthsOnART(patient, artStartD: any, followupD: any) {
   let resultMonthsOnART: string;
   let followupDate = followupD ? new Date(followupD) : null;
   let artStartDate = artStartD ? new Date(artStartD) : null;
-  
+
   if (!followupDate || isNaN(followupDate.getTime())) {
     return null;
   }
@@ -170,31 +171,23 @@ export function CalcMonthsOnART(patient, artStartD: any, followupD: any) {
   return resultMonthsOnART;
 }
 
-export async function customPrepStatus(
-  patient,
-  finalTestResult: string
-) { 
-  if (finalTestResult === '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') {
+export async function customPrepStatus(patient, finalTestResult: string) {
+  if (finalTestResult === "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
     return null;
   }
-
 }
 
-export async function customLatestObs(
-  patient,
-  obs: string
-) { 
+export async function customLatestObs(patient, obs: string) {
   const latestObs = await getLatestObs(
-      patient.id,
-      obs,
-      FOLLOWUP_ENCOUNTER_TYPE
-    );
+    patient.id,
+    obs,
+    FOLLOWUP_ENCOUNTER_TYPE
+  );
 
-    const value = latestObs?.valueCodeableConcept?.coding[0]?.code;
+  const value = latestObs?.valueCodeableConcept?.coding[0]?.code;
 
   // Return "1065" only if it's the latest value, otherwise return null
-  return value === '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? value : null;
-
+  return value === "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ? value : null;
 }
 
 export async function customAssessmentDate(
@@ -207,7 +200,8 @@ export async function customAssessmentDate(
   const datesAreSame =
     prevAssessmentDate &&
     assessmentDate &&
-    new Date(prevAssessmentDate).toDateString() === new Date(assessmentDate).toDateString();
+    new Date(prevAssessmentDate).toDateString() ===
+      new Date(assessmentDate).toDateString();
 
   // If category changed but date didn't, reset (null) the assessment date
   if (prevAssessmentCategory !== assessmentCategory && datesAreSame) {
@@ -232,7 +226,11 @@ export async function customAssessmentDate(
 
 export function CalcViralLoadStatus(viralLoadCount: string) {
   let resultViralLoadStatus: string;
-  if (viralLoadCount !== null && viralLoadCount !== undefined && viralLoadCount !== "") {
+  if (
+    viralLoadCount !== null &&
+    viralLoadCount !== undefined &&
+    viralLoadCount !== ""
+  ) {
     if (viralLoadCount >= "0" && viralLoadCount <= "50") {
       resultViralLoadStatus = "167484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (viralLoadCount >= "51" && viralLoadCount <= "1000") {
@@ -241,10 +239,9 @@ export function CalcViralLoadStatus(viralLoadCount: string) {
       resultViralLoadStatus = "162185AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     }
     return resultViralLoadStatus || null;
-  }
-  else {
+  } else {
     return viralLoadCount ? resultViralLoadStatus : null;
-  }  
+  }
 }
 
 export function CalcBMI(height: number, weight: number) {
@@ -257,16 +254,22 @@ export function CalcBMI(height: number, weight: number) {
   return height && weight ? resultBMI : null;
 }
 
-export function CalcAdultNutritionalStatus(height, weight, muac, functionalStatus, pregnant, breastfeeding) {
+export function CalcAdultNutritionalStatus(
+  height,
+  weight,
+  muac,
+  functionalStatus,
+  pregnant,
+  breastfeeding
+) {
   let nutritionalStatus: string | null = null;
   const BEDRIDDEN = "162752AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
   const YES = "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-  
+
   const resultBMI = CalcBMI(height, weight);
 
   // Priority 1: Functional Status 'bedridden' with MUAC
   if (functionalStatus === BEDRIDDEN && muac !== "") {
-    
     if (muac > 23) {
       nutritionalStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
     } else if (muac >= 18 && muac <= 23) {
@@ -307,29 +310,35 @@ export function CalcAdultNutritionalStatus(height, weight, muac, functionalStatu
   return nutritionalStatus;
 }
 
-
 export function CalcOlderChildNutritionalStatus(bmiForAge) {
-  if (bmiForAge) {    
-      switch (bmiForAge) {
-      case "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f":          // Z Score: >-1 and <+2
-        return "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";   // Normal
-      case "6f384ab3-5587-478e-a685-0b43c0f64163":          // Z Score: <-1 and >-2
-        return "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";   // Mild Malnutrition
-      case "b782c7a5-639e-4f7e-9eee-608a62439885":         // Z Score: <-2 and >-3
-        return "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";   // Moderate Malnutrition
-      case "c3354c3c-b708-4821-94ee-cebc9eadf1e3":        // Z Score: <-3
-        return "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";   // Severe Malnutrition
-      case "9324e838-c96d-4312-91b0-deae5cc0334c":        // Z Score: >+3
-        return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";   // Overweight
-      case "9a41b3bb-7c37-40f2-9022-d0f672e171cc":        // Z Score: >+2 and <+3
-        return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";   // Overweight
+  if (bmiForAge) {
+    switch (bmiForAge) {
+      case "c93ec1cc-a4eb-43b9-b99b-ace42ca6106f": // Z Score: >-1 and <+2
+        return "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+      case "6f384ab3-5587-478e-a685-0b43c0f64163": // Z Score: <-1 and >-2
+        return "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Mild Malnutrition
+      case "b782c7a5-639e-4f7e-9eee-608a62439885": // Z Score: <-2 and >-3
+        return "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+      case "c3354c3c-b708-4821-94ee-cebc9eadf1e3": // Z Score: <-3
+        return "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+      case "9324e838-c96d-4312-91b0-deae5cc0334c": // Z Score: >+3
+        return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight
+      case "9a41b3bb-7c37-40f2-9022-d0f672e171cc": // Z Score: >+2 and <+3
+        return "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight
       default:
         return null;
     }
   }
 }
 
-export function CalcNutritionalScreening(height, weight, muac, functionalStatus, pregnant, breastfeeding) {
+export function CalcNutritionalScreening(
+  height,
+  weight,
+  muac,
+  functionalStatus,
+  pregnant,
+  breastfeeding
+) {
   let calculatedStatus: string | null = null;
   let nutritionalScreening: string | null = null;
 
@@ -340,7 +349,6 @@ export function CalcNutritionalScreening(height, weight, muac, functionalStatus,
 
   // Priority 1: Functional Status 'bedridden' with MUAC
   if (functionalStatus === BEDRIDDEN && muac !== "") {
-    
     if (muac > 23) {
       calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
     } else if (muac >= 18 && muac <= 23) {
@@ -378,7 +386,7 @@ export function CalcNutritionalScreening(height, weight, muac, functionalStatus,
     }
   }
   // Step 2: Use manual override if exists, else fallback to calculated
-  const effectiveStatus =  calculatedStatus;
+  const effectiveStatus = calculatedStatus;
 
   // Step 3: Determine screening based on final effective status
   if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
@@ -386,12 +394,12 @@ export function CalcNutritionalScreening(height, weight, muac, functionalStatus,
   } else if (
     effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
     effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
-    effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Severe
+    effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" // Severe
   ) {
     nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // At Risk
   } else if (
     effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
-    effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Obese
+    effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" // Obese
   ) {
     nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
   } else {
@@ -400,7 +408,7 @@ export function CalcNutritionalScreening(height, weight, muac, functionalStatus,
 
   return {
     status: calculatedStatus,
-    screening: nutritionalScreening
+    screening: nutritionalScreening,
   };
 }
 
@@ -415,57 +423,64 @@ export function CalcNextFollowupDateForCxCa(
   dateTreatmentGiven: Date
 ) {
   let nextFollowupDateCxCa;
-    if (dateTreatmentGiven) {    
-      const treatmentDateClone = new Date(dateTreatmentGiven.getTime());
-      treatmentDateClone.setMonth(treatmentDateClone.getMonth() + 12);
-      nextFollowupDateCxCa = treatmentDateClone;
-    } else {
-       if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {            // Screening strategy = HPV DNA screening & VIA triage
-             if (hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {     //  HPV DNA screening result = Negative
-               const hpvDateClone = new Date(hpvDnaSampleCollectedDate.getTime());
-               hpvDateClone.setFullYear(hpvDateClone.getFullYear() + 3);
-               nextFollowupDateCxCa = hpvDateClone;
-             } else if (
-               (hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||    // HPV DNA screening result = Positive OR
-                hpvScreeningResult == "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") &&   // HPV DNA screening result = Unknown AND
-                viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"       // VIA screening result = VIA negative
-             ) {
-               const viaDateClone = new Date(viaScreeningDate.getTime());
-               viaDateClone.setFullYear(viaDateClone.getFullYear() + 1);
-               nextFollowupDateCxCa = viaDateClone;
-             } else if (
-                hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&    // HPV DNA screening result = Positive AND
-                cytologyResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15"           // Cytology result = Negative
-             ) {
-               const cytologyDateClone = new Date(cytologySampleCollectionDate.getTime());
-               cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 1);
-               nextFollowupDateCxCa = cytologyDateClone;
-             }
-       } 
-       else if (
-           screeningStrategy == "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1" &&         // Screening strategy = VIA
-           viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc"           // VIA screening result = VIA negative
-             ) {
-               const viaDateClone = new Date(viaScreeningDate.getTime());
-               viaDateClone.setFullYear(viaDateClone.getFullYear() + 2);
-               nextFollowupDateCxCa = viaDateClone;
-       } 
-       else if (screeningStrategy == "f32b7edd-f70a-4b32-a684-4fa35eb2abcd") {    // Screening strategy = Cytology
-            if (cytologyResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15")         // Cytology result = Negative
-               {
-                 const cytologyDateClone = new Date(cytologySampleCollectionDate.getTime());
-                 cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 2);
-                 nextFollowupDateCxCa = cytologyDateClone;
-               }
-            else if (cytologyResult == "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" &&         // Cytology result = ASCUS/LSIL
-                     hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15")       //  HPV DNA screening result = Negative
-               {
-                 const cytologyDateClone = new Date(cytologySampleCollectionDate.getTime());
-                 cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 2);
-                 nextFollowupDateCxCa = cytologyDateClone;
-               }
-       }
-            
+  if (dateTreatmentGiven) {
+    const treatmentDateClone = new Date(dateTreatmentGiven.getTime());
+    treatmentDateClone.setMonth(treatmentDateClone.getMonth() + 12);
+    nextFollowupDateCxCa = treatmentDateClone;
+  } else {
+    if (screeningStrategy == "d3989991-4f6d-4336-9f84-cb4208d39ae6") {
+      // Screening strategy = HPV DNA screening & VIA triage
+      if (hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {
+        //  HPV DNA screening result = Negative
+        const hpvDateClone = new Date(hpvDnaSampleCollectedDate.getTime());
+        hpvDateClone.setFullYear(hpvDateClone.getFullYear() + 3);
+        nextFollowupDateCxCa = hpvDateClone;
+      } else if (
+        (hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // HPV DNA screening result = Positive OR
+          hpvScreeningResult == "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") && // HPV DNA screening result = Unknown AND
+        viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc" // VIA screening result = VIA negative
+      ) {
+        const viaDateClone = new Date(viaScreeningDate.getTime());
+        viaDateClone.setFullYear(viaDateClone.getFullYear() + 1);
+        nextFollowupDateCxCa = viaDateClone;
+      } else if (
+        hpvScreeningResult == "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" && // HPV DNA screening result = Positive AND
+        cytologyResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15" // Cytology result = Negative
+      ) {
+        const cytologyDateClone = new Date(
+          cytologySampleCollectionDate.getTime()
+        );
+        cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 1);
+        nextFollowupDateCxCa = cytologyDateClone;
+      }
+    } else if (
+      screeningStrategy == "19cdb2fa-e25f-48bd-9e86-b00a72f9b4e1" && // Screening strategy = VIA
+      viaScreeningResult == "a08ab377-30bc-4ef6-bb9d-4cf6a0564ccc" // VIA screening result = VIA negative
+    ) {
+      const viaDateClone = new Date(viaScreeningDate.getTime());
+      viaDateClone.setFullYear(viaDateClone.getFullYear() + 2);
+      nextFollowupDateCxCa = viaDateClone;
+    } else if (screeningStrategy == "f32b7edd-f70a-4b32-a684-4fa35eb2abcd") {
+      // Screening strategy = Cytology
+      if (cytologyResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15") {
+        // Cytology result = Negative
+        const cytologyDateClone = new Date(
+          cytologySampleCollectionDate.getTime()
+        );
+        cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 2);
+        nextFollowupDateCxCa = cytologyDateClone;
+      } else if (
+        cytologyResult == "145822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" && // Cytology result = ASCUS/LSIL
+        hpvScreeningResult == "5e4fc757-0b14-49ae-b3b7-419666f41e15"
+      ) {
+        //  HPV DNA screening result = Negative
+        const cytologyDateClone = new Date(
+          cytologySampleCollectionDate.getTime()
+        );
+        cytologyDateClone.setFullYear(cytologyDateClone.getFullYear() + 2);
+        nextFollowupDateCxCa = cytologyDateClone;
+      }
+    }
   }
   return nextFollowupDateCxCa;
 }
@@ -489,20 +504,27 @@ export async function getIdentifier(patient, identifierName) {
   return identifierValue?.value;
 }
 
-export function calCreatinineClearance(patient, weight, creatinineLevel, visitDate) {
+export function calCreatinineClearance(
+  patient,
+  weight,
+  creatinineLevel,
+  visitDate
+) {
   if (patient && weight && creatinineLevel) {
     let age;
-    
+
     if (patient.birthDate) {
       const birthDateObj = new Date(patient.birthDate);
       const visitDateObj = new Date(visitDate);
       age = visitDateObj.getFullYear() - birthDateObj.getFullYear();
-      
+
       const monthDiff = visitDateObj.getMonth() - birthDateObj.getMonth();
-      if (monthDiff < 0 || (monthDiff === 0 && visitDateObj.getDate() < birthDateObj.getDate())) {
+      if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && visitDateObj.getDate() < birthDateObj.getDate())
+      ) {
         age--;
       }
-
     } else if (patient.age) {
       const today = new Date();
       const visitDateObj = new Date(visitDate);
@@ -512,10 +534,13 @@ export function calCreatinineClearance(patient, weight, creatinineLevel, visitDa
 
       age = visitDateObj.getFullYear() - estimatedBirthDate.getFullYear();
       const monthDiff = visitDateObj.getMonth() - estimatedBirthDate.getMonth();
-      if (monthDiff < 0 || (monthDiff === 0 && visitDateObj.getDate() < estimatedBirthDate.getDate())) {
+      if (
+        monthDiff < 0 ||
+        (monthDiff === 0 &&
+          visitDateObj.getDate() < estimatedBirthDate.getDate())
+      ) {
         age--;
       }
-
     } else {
       return null; // cannot calculate age
     }
@@ -593,8 +618,7 @@ export function isTreatmentVisible(
     viaScreeningResult !== "7bc7c4f3-a636-478d-8a3f-65116093e37a" &&
     viaScreeningResult !== "be297cab-5ae6-4e7c-8657-b82730b7b8f1" &&
     viaScreeningResult !== "159008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-  const condition3 =
-    cytologyResult !== "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68";
+  const condition3 = cytologyResult !== "912a5c48-8b07-4fd7-b2c3-ccb94fde7c68";
   const condition4 =
     biopsyResult !== "ba4420d5-acc2-4d1c-8ead-43476e17960d" &&
     biopsyResult !== "fde5cd74-e503-4ce1-9afe-f74195f95f6e" &&
@@ -606,7 +630,16 @@ export function isTreatmentVisible(
   return condition1 && condition2 && condition3 && condition4 && condition5;
 }
 
-export function isSupplementaryFoodVisible(patient, height, weight, muac, functionalStatus, pregnant, breastfeeding, bmiForAge) {
+export function isSupplementaryFoodVisible(
+  patient,
+  height,
+  weight,
+  muac,
+  functionalStatus,
+  pregnant,
+  breastfeeding,
+  bmiForAge
+) {
   let calculatedStatus: string | null = null;
   let nutritionalScreening: string | null = null;
   let finalCondition: boolean;
@@ -621,73 +654,72 @@ export function isSupplementaryFoodVisible(patient, height, weight, muac, functi
   const isChild = patient.age < 18;
   if (isAdult) {
     // Priority 1: Functional Status 'bedridden' with MUAC
-  if (functionalStatus === BEDRIDDEN && muac !== "") {
-    
-    if (muac > 23) {
-      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
-    } else if (muac >= 18 && muac <= 23) {
-      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
-    } else if (muac < 18) {
-      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    if (functionalStatus === BEDRIDDEN && muac !== "") {
+      if (muac > 23) {
+        calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+      } else if (muac >= 18 && muac <= 23) {
+        calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+      } else if (muac < 18) {
+        calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+      }
     }
-  }
 
-  // Priority 2: Pregnant or Breastfeeding with MUAC
-  else if ((pregnant === YES || breastfeeding === YES) && muac !== "") {
-    if (muac > 23) {
-      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
-    } else if (muac >= 19 && muac <= 23) {
-      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
-    } else if (muac < 19) {
-      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+    // Priority 2: Pregnant or Breastfeeding with MUAC
+    else if ((pregnant === YES || breastfeeding === YES) && muac !== "") {
+      if (muac > 23) {
+        calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+      } else if (muac >= 19 && muac <= 23) {
+        calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+      } else if (muac < 19) {
+        calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+      }
     }
-  }
 
-  // Priority 3: Use BMI
-  else if (resultBMI != null) {
-    if (resultBMI >= 18.5 && resultBMI <= 24.99) {
-      calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
-    } else if (resultBMI >= 17 && resultBMI <= 18.49) {
-      calculatedStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Mild Malnutrition
-    } else if (resultBMI >= 16 && resultBMI <= 16.99) {
-      calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
-    } else if (resultBMI < 16) {
-      calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
-    } else if (resultBMI >= 25 && resultBMI <= 29.99) {
-      calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight
-    } else if (resultBMI >= 30) {
-      calculatedStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Obese
+    // Priority 3: Use BMI
+    else if (resultBMI != null) {
+      if (resultBMI >= 18.5 && resultBMI <= 24.99) {
+        calculatedStatus = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+      } else if (resultBMI >= 17 && resultBMI <= 18.49) {
+        calculatedStatus = "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Mild Malnutrition
+      } else if (resultBMI >= 16 && resultBMI <= 16.99) {
+        calculatedStatus = "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Moderate Malnutrition
+      } else if (resultBMI < 16) {
+        calculatedStatus = "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Severe Malnutrition
+      } else if (resultBMI >= 25 && resultBMI <= 29.99) {
+        calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight
+      } else if (resultBMI >= 30) {
+        calculatedStatus = "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Obese
+      }
     }
-  }
-  // ========== SCREENING CATEGORY ==========
-  const effectiveStatus = calculatedStatus;  
+    // ========== SCREENING CATEGORY ==========
+    const effectiveStatus = calculatedStatus;
 
-  if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
-    finalCondition = true;
-  } else if (
-    effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
-    effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
-    effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Severe
-  ) {
-    nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Undernourished
-    finalCondition = false;
-  } else if (
-    effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
-    effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Obese
-  ) {
-    nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
-    finalCondition = true;
-  } else {
-    nutritionalScreening = null;
-    finalCondition = false;
-  } 
-const effectiveFood = nutritionalScreening
+    if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+      finalCondition = true;
+    } else if (
+      effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
+      effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
+      effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" // Severe
+    ) {
+      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Undernourished
+      finalCondition = false;
+    } else if (
+      effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
+      effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" // Obese
+    ) {
+      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
+      finalCondition = true;
+    } else {
+      nutritionalScreening = null;
+      finalCondition = false;
+    }
+    const effectiveFood = nutritionalScreening;
     return {
       status: calculatedStatus,
       screening: nutritionalScreening,
-      supplementary: finalCondition
-    }
+      supplementary: finalCondition,
+    };
   }
 
   // ========== CHILD LOGIC ==========
@@ -704,43 +736,41 @@ const effectiveFood = nutritionalScreening
       calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     } else if (bmiForAge === "9a41b3bb-7c37-40f2-9022-d0f672e171cc") {
       calculatedStatus = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-    }  
+    }
 
     // ========== SCREENING CATEGORY ==========
-  const effectiveStatus = calculatedStatus;  
+    const effectiveStatus = calculatedStatus;
 
-  if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
-    nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
-    finalCondition = true;
-  } else if (
-    effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
-    effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
-    effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Severe
-  ) {
-    nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Undernourished
-    finalCondition = false;
-  } else if (
-    effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
-    effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"    // Obese
-  ) {
-    nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
-    finalCondition = true;
-  } else {
-    nutritionalScreening = null;
-    finalCondition = false;
-  } 
-const effectiveFood = nutritionalScreening
-  return {
+    if (effectiveStatus === "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") {
+      nutritionalScreening = "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Normal
+      finalCondition = true;
+    } else if (
+      effectiveStatus === "134723AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Mild
+      effectiveStatus === "134722AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Moderate
+      effectiveStatus === "126598AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" // Severe
+    ) {
+      nutritionalScreening = "123815AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Undernourished
+      finalCondition = false;
+    } else if (
+      effectiveStatus === "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" || // Overweight
+      effectiveStatus === "132626AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" // Obese
+    ) {
+      nutritionalScreening = "114413AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // Overweight Screening
+      finalCondition = true;
+    } else {
+      nutritionalScreening = null;
+      finalCondition = false;
+    }
+    const effectiveFood = nutritionalScreening;
+    return {
       status: calculatedStatus,
       screening: nutritionalScreening,
-      supplementary: finalCondition
-    }
+      supplementary: finalCondition,
+    };
   }
-  
 }
 
 export function isTOVisible(followupDate, dispensedDays) {
-
   if (!followupDate || !dispensedDays) {
     return true;
   } else {
@@ -813,3 +843,66 @@ export async function getBirthdateFromAge(contactAge) {
     return null;
   }
 }
+
+export async function loadRegistrationDate(patientUuid: string) {
+  const registrationDate = await getLatestObsDate(
+    patientUuid,
+    "dadc86a8-1e44-4a6d-91c2-e3b54089b54c",
+    "a0fde61e-f493-4f1f-b709-22aa94f72dc3"
+  );
+
+  (window as any)._registrationDates = (window as any)._registrationDates || {};
+  (window as any)._registrationDates[patientUuid] = registrationDate ?? null;
+}
+
+export function calculateAgeFrom(birthDate: string, patient): number | false {
+  if (!birthDate) return false;
+  const regDate = loadRegistrationDate(patient.id);
+
+  const stored = (window as any)._registrationDates?.[patient.id];
+
+  if (!stored) return false;
+
+  const birth = new Date(birthDate);
+  const ref = new Date(stored);
+
+  if (isNaN(birth.getTime()) || isNaN(ref.getTime())) return false;
+
+  let age = ref.getFullYear() - birth.getFullYear();
+
+  const beforeBirthday =
+    ref.getMonth() < birth.getMonth() ||
+    (ref.getMonth() === birth.getMonth() && ref.getDate() < birth.getDate());
+
+  if (beforeBirthday) {
+    age -= 1;
+  }
+
+  return age;
+}
+
+// export function calculateAgeFrom(patientBirthDate: string, patient): number {
+//   if (!patientBirthDate) return null;
+//   const regDate = loadRegistrationDate(patient.id)
+//   const stored = (window as any)._registrationDates?.[patient.id];
+//   console.log("patientBirthDate", patientBirthDate)
+//   console.log("stored", stored)
+
+//   const birth = new Date(patientBirthDate);
+//   const ref = new Date(stored);
+//   if (isNaN(birth.getTime()) || isNaN(ref.getTime())) return null;
+
+//   window
+
+//   let age = ref.getFullYear() - birth.getFullYear();
+//   console.log("age", age)
+//   const hasNotHadBirthday =
+//     ref.getMonth() < birth.getMonth() ||
+//     (ref.getMonth() === birth.getMonth() && ref.getDate() < birth.getDate());
+
+//   if (hasNotHadBirthday) {
+//     age -= 1;
+//   }
+
+//   return age;
+// }

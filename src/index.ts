@@ -51,6 +51,7 @@ import {
   getBirthdateFromAge,
   getAgeFromBirthdate,
   getEligibilityStatus,
+  calculateAgeFrom,
 } from "./custom-expressions";
 import {
   createConditionalDashboardGroup,
@@ -115,12 +116,12 @@ export function startupApp() {
     "isSupplementaryFoodVisible",
     isSupplementaryFoodVisible
   );
-  registerExpressionHelper(
-    "isTOVisible",
-    isTOVisible
-  );
+  registerExpressionHelper("isTOVisible", isTOVisible);
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
-  registerExpressionHelper("CustomLatestObservations", CustomLatestObservations);
+  registerExpressionHelper(
+    "CustomLatestObservations",
+    CustomLatestObservations
+  );
   registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);
   registerExpressionHelper("getAgeFromBirthdate", getAgeFromBirthdate);
   // registerControl({
@@ -258,3 +259,5 @@ export const releaseNote = getAsyncLifecycle(
   () => import("./views/navbar/release-note.component"),
   options
 );
+
+(window as any).calculateAgeFrom = calculateAgeFrom;

@@ -55,6 +55,20 @@ export function getLatestObs(
   );
 }
 
+export async function getLatestObsDate(
+  patientUuid: string,
+  conceptUuid: string,
+  encounterTypeUuid?: string
+): Promise<Date | null> {
+  const obs = await getLatestObs(patientUuid, conceptUuid, encounterTypeUuid);
+
+  if (obs?.valueDateTime) {
+    return new Date(obs.valueDateTime);
+  }
+
+  return null;
+}
+
 export async function getEncounterWithLatestFollowUpDate(
   patientUuid: string
 ): Promise<string | null> {
@@ -102,19 +116,18 @@ export async function getLatestObservation(
   let currentFollowupStatus = followupStatus;
 
   if (currentFollowupStatus === "") {
-    const statusConceptUuid = '222f64a8-a603-4d2e-b70e-2d90b622bb04'; // Followup Status Concept
-  const statusResponse = await openmrsFetch(
-    `${fhirBaseUrl}/Observation?patient=${patientUuid}&code=${statusConceptUuid}&encounter=${latestEncounterUuid}&_sort=-date&_count=1`
-  );
+    const statusConceptUuid = "222f64a8-a603-4d2e-b70e-2d90b622bb04"; // Followup Status Concept
+    const statusResponse = await openmrsFetch(
+      `${fhirBaseUrl}/Observation?patient=${patientUuid}&code=${statusConceptUuid}&encounter=${latestEncounterUuid}&_sort=-date&_count=1`
+    );
 
-  const entries = statusResponse?.data?.entry ?? [];
-  if (entries.length > 0) {
-    const latestObs = entries[0].resource;
-    const followupCode = latestObs?.valueCodeableConcept?.coding?.[0]?.code ?? "";
-    currentFollowupStatus = followupCode;
-  }
-
-  
+    const entries = statusResponse?.data?.entry ?? [];
+    if (entries.length > 0) {
+      const latestObs = entries[0].resource;
+      const followupCode =
+        latestObs?.valueCodeableConcept?.coding?.[0]?.code ?? "";
+      currentFollowupStatus = followupCode;
+    }
   }
 
   if (!latestEncounterUuid) return [];
@@ -128,17 +141,17 @@ export async function getLatestObservation(
   const entries = response?.data?.entry ?? [];
 
   let allowedCodes: string[] = [];
-    if (
+  if (
     currentFollowupStatus === "159492AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
     currentFollowupStatus === "1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ||
     currentFollowupStatus === "27e28afa-b4a6-44e0-b331-ea7250121a0e" ||
-    currentFollowupStatus === "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" 
-  ) {    
+    currentFollowupStatus === "160431AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  ) {
     allowedCodes = [
       "d7098e8d-601f-472c-8914-0632930818a8", // Nutrition - Height
       "246831e5-65e8-411f-aac9-57adcc4fb12c", // TB
       "98b00c1a-d81c-4648-be6f-86793d0ae23f", // DSD
-      "98ed68a9-9596-45dc-8015-2289a969c6fe"  // CPT and FPT
+      "98ed68a9-9596-45dc-8015-2289a969c6fe", // CPT and FPT
     ];
   } else {
     allowedCodes = [
@@ -147,21 +160,19 @@ export async function getLatestObservation(
       "773f6394-47ca-4bfc-bd29-ebfdafc9916d", // HIV Prevention Plan - OTZ
       "d7098e8d-601f-472c-8914-0632930818a8", // Nutrition - Height
       "53b2f5a8-0478-44c9-9507-d397b174be7f", // Pregnancy and FP
-      "246831e5-65e8-411f-aac9-57adcc4fb12c"  // TB
+      "246831e5-65e8-411f-aac9-57adcc4fb12c", // TB
     ];
   }
 
   const selectedCodes: string[] = entries.flatMap((entry) => {
-        const coding = entry.resource.valueCodeableConcept?.coding ?? [];
-        return coding
-          .map((c) => c.code)
-          .filter((code) => allowedCodes.includes(code));
-      });
+    const coding = entry.resource.valueCodeableConcept?.coding ?? [];
+    return coding
+      .map((c) => c.code)
+      .filter((code) => allowedCodes.includes(code));
+  });
 
-      return selectedCodes;
-
+  return selectedCodes;
 }
-
 
 export function getCurrentUser() {
   return openmrsFetch(`ws/rest/v1/session`).then(({ data }) => {

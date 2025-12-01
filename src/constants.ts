@@ -16,6 +16,8 @@ export const ICT_SCREENING_ENCOUNTER_TYPE =
 export const RETEST_ENCOUNTER_TYPE = "aedaa1d0-1c03-425b-a49d-864a4981cf2f";
 export const HEI_FOLLOWUP_ENCOUNTER_TYPE =
   "d7f3c5d9-2927-41c4-a39f-ad9a6c7cf31d";
+export const HEI_HIVTEST_ENCOUNTER_TYPE =
+  "9b6feebc-7f9a-4257-ba80-7fa5108557bc";
 export const HEI_ENROLLMENT_ENCOUNTER_TYPE =
   "ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97";
 export const HEI_IMMUNIZATION_ENCOUNTER_TYPE =

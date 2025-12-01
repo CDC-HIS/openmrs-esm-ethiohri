@@ -7,15 +7,14 @@ export const PMTCT_META = {
   title: "PMTCT",
   slotName: "ethio-pmtct-slot",
   patientExpression:
-    "calculateAge(patient.birthDate) <= 3 || patient.gender === 'female'",
+    "calculateAgeFrom(patient.birthDate, patient) <= 3 || patient.gender === 'female'",
 };
 
 export const CHILD_HEALTH_SUMMARY = {
   title: "HEI Information",
   slot: "child-health-slot",
   path: "child-health",
-  patientExpression:
-    "calculateAge(patient.birthDate) <= 3 || hasPreviousEncounter(patient.id, 'ca7108d6-b4f2-4b46-be1c-d0ddd4f0ed97')",
+  patientExpression: "calculateAgeFrom(patient.birthDate, patient) <= 3",
 };
 
 export const MOTHER_HEALTH_SUMMARY = {

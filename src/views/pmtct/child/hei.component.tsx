@@ -5,6 +5,7 @@ import PMTCTRegistrationEncounterList from "./tabs/hei-enrollment.component";
 import PMTCTImmunizationEncounterList from "./tabs/hei-immunization.component";
 import PMTCTFollowupEncounterList from "./tabs/hei-followup.component";
 import PMTCTChildFinalOutcomeEncounterList from "./tabs/hei-final-outcome";
+import PMTCTHivTestEncounterList from "./tabs/hei-hivtest.component";
 
 const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
   const [isFormSaved, setIsFormSaved] = useState(false);
@@ -21,6 +22,7 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
             <Tab>HEI Enrollment</Tab>
             <Tab>HEI Immunization</Tab>
             <Tab>HEI Followup</Tab>
+            <Tab>HEI HIV Test</Tab>
             <Tab>HEI Final Outcome</Tab>
           </TabList>
           <TabPanels>
@@ -40,6 +42,12 @@ const ChildHealth: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
             </TabPanel>
             <TabPanel>
               <PMTCTFollowupEncounterList
+                isFormSaved={isFormSaved}
+                patientUuid={patientUuid}
+              />
+            </TabPanel>
+            <TabPanel>
+              <PMTCTHivTestEncounterList
                 isFormSaved={isFormSaved}
                 patientUuid={patientUuid}
               />
