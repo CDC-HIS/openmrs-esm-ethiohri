@@ -1,3 +1,6 @@
+# OS files
+.DS_Store
+
 # Logs
 logs
 *.log
@@ -64,12 +67,7 @@ dist/
 
 # Intellij integration
 *.iml
-
-.DS_Store
-
-# Intellij integration
-*.iml
-.idea/
+.idea
 
 # ignores for Yarn v3 w/o PNP
 .pnp.*
@@ -79,7 +77,9 @@ dist/
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-.yarn/install-state.gz
+
+# Turborepo
+.turbo
 
 # Playwright and e2e tests
 /test-results/

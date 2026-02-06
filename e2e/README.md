@@ -1,7 +1,7 @@
 # E2E Tests
 
 This directory contains an E2E test suite using the [Playwright](https://playwright.dev)
-framework. Check our [E2E guide](https://wiki.openmrs.org/display/docs/E2E+Tests) for more information about the E2E implementation. 
+framework. 
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ Please ensure that you have followed the basic installation guide in the
 Once everything is set up, make sure the dev server is running by using:
 
 ```sh
-yarn start --sources 
+yarn start --sources 'packages/esm-*-app/'
 ```
 Then, in a separate terminal, run:
 
@@ -69,7 +69,7 @@ Depending on what you want to achieve, you might want to create new fixtures and
 page object models. To see examples, have a look at the existing code to see how these
 different concepts play together.
 
-## Open reports from GitHub Actions
+## Open reports from GitHub Actions / Bamboo
 
 To download the report from the GitHub action/Bamboo plan, follow these steps:
 
@@ -88,12 +88,12 @@ Refer to [this documentation](https://playwright.dev/docs/debug) on how to debug
 
 ## Configuration
 
-This is very much underdeveloped/WIP. At the moment, there exists a (git-shared) `.env`
+This is very much underdeveloped/WIP. At the moment, there exists a (git-shared) `example.env`
 file which can be used for configuring certain test attributes. This is most likely
 about to change in the future. Stay tuned for updates!
 
 
-## GitHub Action integration
+## Github Action integration
 The e2e.yml workflow is made up of two jobs: one for running on pull requests (PRs) and
 one for running on commits.
 

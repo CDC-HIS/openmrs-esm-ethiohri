@@ -1,31 +1,31 @@
 /**
  * @returns {Promise<import('jest').Config>}
  */
+const path = require("path");
+
 module.exports = {
-  transform: {
-    "^.+\\.m?[jt]sx?$": ["@swc/jest"],
-  },
- transformIgnorePatterns: ["/node_modules/(?!@openmrs|.+\\.pnp\\.[^\\/]+$)"],
-  moduleNameMapper: {
-    "\\.(s?css)$": "identity-obj-proxy",
-     "@openmrs/esm-framework": "@openmrs/esm-framework/mock",
-    "^lodash-es/(.*)$": "lodash/$1",
-    "^uuid$": "<rootDir>/node_modules/uuid/dist/index.js",
-    "^dexie$": require.resolve("dexie"),
-  },
   collectCoverageFrom: [
     "**/src/**/*.component.tsx",
     "!**/node_modules/**",
     "!**/vendor/**",
     "!**/src/**/*.test.*",
-    "!**/src/declarations.d.tsx",
+    "!**/src/declarations.d.ts",
     "!**/e2e/**",
   ],
-  setupFilesAfterEnv: ["<rootDir>/src/setup-tests.ts"],
-  testPathIgnorePatterns: [
-    "<rootDir>/packages/esm-form-entry-app",
-    "<rootDir>/e2e",
-  ],
+  transform: {
+    "^.+\\.[jt]sx?$": ["@swc/jest"],
+  },
+  transformIgnorePatterns: ["/node_modules/(?!@openmrs|.+\\.pnp\\.[^\\/]+$)"],
+  moduleNameMapper: {
+    "@openmrs/esm-framework": "@openmrs/esm-framework/mock",
+    "\\.(s?css)$": "identity-obj-proxy",
+    "^lodash-es/(.*)$": "lodash/$1",
+    "lodash-es": "lodash",
+    "^dexie$": require.resolve("dexie"),
+    "^dayjs$": require.resolve("dayjs"),
+  },
+  setupFilesAfterEnv: [path.resolve(__dirname, "tools", "setup-tests.ts")],
+  testPathIgnorePatterns: [path.resolve(__dirname, "e2e")],
   testEnvironment: "jsdom",
   testEnvironmentOptions: {
     url: "http://localhost/",
