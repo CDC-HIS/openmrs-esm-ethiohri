@@ -51,10 +51,12 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
         {/* @ts-ignore */}
         <Button
           kind="ghost"
-          displayText={t("add", "Add")}
+          // displayText={t("add", "Add")}
           id="choose-intent"
-          label={t("add", "Add +")}
-        ></Button>
+          // label={t("ad`d", "Add +")}
+        >
+          {t("add", "Add +")}
+        </Button>
       </Tile>
     </Layer>
   );

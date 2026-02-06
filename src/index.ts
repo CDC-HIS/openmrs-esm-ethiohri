@@ -10,7 +10,7 @@ import {
   registerExpressionHelper,
 } from "@openmrs/openmrs-form-engine-lib";
 import {
-  createDashboardGroup,
+  // createDashboardGroup,
   createDashboardLink,
 } from "@openmrs/esm-patient-common-lib";
 import {
@@ -157,10 +157,10 @@ export const ethiohriActiveMedications = getSyncLifecycle(
 );
 export const vitalsOverview = getSyncLifecycle(VitalsSummary, options);
 
-export const hivCareAndTreatmentMenu = getSyncLifecycle(
-  createDashboardGroup(HIV_CARE_AND_TREATMENT),
-  options
-);
+// export const hivCareAndTreatmentMenu = getSyncLifecycle(
+//   createDashboardGroup(HIV_CARE_AND_TREATMENT),
+//   options
+// );
 export const facilityName = getAsyncLifecycle(
   () => import("./views/navbar/facility-name.component"),
   options

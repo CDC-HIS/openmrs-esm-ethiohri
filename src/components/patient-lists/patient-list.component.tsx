@@ -37,7 +37,7 @@ export const PatientList: React.FC = () => {
   const { patients, error, isLoading, total } = usePatientList(
     nextOffSet,
     pageSize,
-    searchTerm
+    searchTerm,
   );
   const [page, setPage] = useState(1);
   const [totalPatientCount, setPatientCount] = useState(0);
@@ -75,8 +75,9 @@ export const PatientList: React.FC = () => {
       key: "uan",
       header: t("uan", "UAN"),
     },
-    { key: "lastFollowupStatus", 
-      header: t("lastFollowupStatus", "Followup Status") 
+    {
+      key: "lastFollowupStatus",
+      header: t("lastFollowupStatus", "Followup Status"),
     },
     {
       key: "actions",
@@ -89,15 +90,15 @@ export const PatientList: React.FC = () => {
     navigate({ to: "${openmrsSpaBase}/patient-registration" });
 
   return (
-    <div className={styles.patientListContainer} >
+    <div className={styles.patientListContainer}>
       {isLoading && !searchTerm ? (
         <DataTableSkeleton rowCount={5} columnCount={4} />
       ) : patients?.length > 0 ? (
         <Layer>
           <Tile className={styles.tile}>
             <div className={styles.desktopHeading}>
-          <h4>{displayTitle}</h4>
-        </div>  
+              <h4>{displayTitle}</h4>
+            </div>
             <div id="table-tool-bar" className={styles.searchContainer}>
               <div>{isLoading && searchTerm && <InlineLoading />}</div>
               <div className={styles.searchBox}>
@@ -106,7 +107,7 @@ export const PatientList: React.FC = () => {
                   labelText="Search"
                   placeholder="Search Patient List"
                   size="sm"
-                  light
+                  // light
                   onChange={(event) => onSearchQueryChange(event.target.value)}
                   onClear={handleClear}
                 />
