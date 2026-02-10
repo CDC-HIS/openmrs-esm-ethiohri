@@ -30,15 +30,13 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
         <div className={styles.contentWrapper}>
           <EmptyDataIllustration />
           <p className={styles.content}>
-            <Trans
+            {/* <Trans
               i18nKey="emptyStateText"
               values={{ displayText: displayText.toLowerCase() }}
-            >
-              There are no {displayText.toLowerCase()} to display
-              {displayText.toLowerCase() != "patients"
-                ? " for this patient"
-                : ""}
-            </Trans>
+            > */}
+            There are no {displayText.toLowerCase()} to display
+            {displayText.toLowerCase() != "patients" ? " for this patient" : ""}
+            {/* </Trans> */}
           </p>
           {launchFormComponent && !hideFormLauncher && (
             <p className={styles.action}>
