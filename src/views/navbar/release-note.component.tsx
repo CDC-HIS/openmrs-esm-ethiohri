@@ -6,7 +6,7 @@ import styles from "./navbar.scss";
 const ReleaseNoteMenu: React.FC = () => {
   const currentUrl = `${window.location.protocol}//${window.location.hostname}${
     window.location.port ? `:${window.location.port}` : ""
-  }/openmrs/spa/Ethiohri_1.6_Release_Note.pdf`;
+  }/openmrs/spa/Ethiohri_2.0_Release_Note.pdf`;
 
   return (
     <div className={styles.switcherContainer}>
