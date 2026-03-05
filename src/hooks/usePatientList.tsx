@@ -13,7 +13,6 @@ import {
   FOLLOWUP_STATUS,
   MRN_UUID,
   UAN_UUID,
-  PHONE_NUMBER,
 } from "../../src/constants";
 
 function getPatientIdentifier(resource: any, identifierUuid: string): string {
@@ -30,8 +29,8 @@ export function usePatientList(
 ) {
   const url = `/ws/fhir2/R4/Patient?_getpagesoffset=${offSet}&_count=${pageSize}${
     searchTerm ? `&name=${searchTerm}` : ""
-  }&_summary=data&_sort=given`; 
-  
+  }&_summary=data&_sort=given`;
+
   const [paginatedPatientRows, setPaginatedPatientRows] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const { data, error, isLoading } = useSWRImmutable<
@@ -41,63 +40,63 @@ export function usePatientList(
 
   // Fetch the last follow-up status
   async function fetchFollowupData(patientUuid: string): Promise<{
-  followupStatus: string;
-}> {
-  try {
-    const encounterRes = await openmrsFetch(
-      `/ws/rest/v1/encounter?patient=${patientUuid}&encounterType=${FOLLOWUP_ENCOUNTER_TYPE}&v=custom:(obs:(value,concept:(uuid)))&limit=1&order=desc`
-    );
+    followupStatus: string;
+  }> {
+    try {
+      const encounterRes = await openmrsFetch(
+        `/ws/rest/v1/encounter?patient=${patientUuid}&encounterType=${FOLLOWUP_ENCOUNTER_TYPE}&v=custom:(obs:(value,concept:(uuid)))&limit=1&order=desc`
+      );
 
-    const obs = encounterRes?.data?.results?.[0]?.obs || [];
+      const obs = encounterRes?.data?.results?.[0]?.obs || [];
 
-    const statusObs = obs.find(o => o.concept?.uuid === FOLLOWUP_STATUS);
+      const statusObs = obs.find((o) => o.concept?.uuid === FOLLOWUP_STATUS);
 
-    const rawStatus = statusObs?.value?.display || "";
-    const formattedStatus = (() => {
-      switch (rawStatus) {
-        case "Loss to follow-up (LTFU)":
-          return "Lost";
-        case "Ran away":
-          return "Drop";
-        case "Restart medication":
-          return "Restart";
-        case "Stop all":
-          return "Stop";
-        case "Transferred out":
-          return "TO";
-        default:
-          return rawStatus;
-      }
-    })();
+      const rawStatus = statusObs?.value?.display || "";
+      const formattedStatus = (() => {
+        switch (rawStatus) {
+          case "Loss to follow-up (LTFU)":
+            return "Lost";
+          case "Ran away":
+            return "Drop";
+          case "Restart medication":
+            return "Restart";
+          case "Stop all":
+            return "Stop";
+          case "Transferred out":
+            return "TO";
+          default:
+            return rawStatus;
+        }
+      })();
 
-    return {
-      followupStatus: formattedStatus
-    };
-  } catch (e) {
-    console.error(
-      `Failed to load follow-up encounter data for patient ${patientUuid}`,
-      e
-    );
-    return {
-      followupStatus: ""
-    };
+      return {
+        followupStatus: formattedStatus,
+      };
+    } catch (e) {
+      console.error(
+        `Failed to load follow-up encounter data for patient ${patientUuid}`,
+        e
+      );
+      return {
+        followupStatus: "",
+      };
+    }
   }
-}
 
   useEffect(() => {
     async function loadPatientRows() {
       if (data) {
         const patientRows = await Promise.all(
-          data.data?.entry?.map(async (patient) => {
-            const patientResource = patient.resource;
+          data?.data?.entry?.map(async (patient) => {
+            const patientResource = patient?.resource;
             const patientName =
-              patientResource.name[0].given.join(" ") +
+              patientResource?.name?.[0].given.join(" ") +
               " " +
-              patientResource.name[0].family;
+              patientResource?.name?.[0].family;
 
             const getPatientLink = () => (
               <ConfigurableLink
-                to={`/openmrs/spa/patient/${patientResource.id}/chart`}
+                to={`/openmrs/spa/patient/${patientResource?.id}/chart`}
                 style={{ textDecoration: "inherit" }}
               >
                 {patientName}
@@ -107,22 +106,24 @@ export function usePatientList(
             const patientActions = (
               <OverflowMenu flipped>
                 <AddPatientToListOverflowMenuItem
-                  patientUuid={patientResource.id}
+                  patientUuid={patientResource?.id}
                   excludeCohorts={["Post-Test Counselling"]}
                 />
               </OverflowMenu>
             );
-            const { followupStatus} = await fetchFollowupData(patientResource.id);
+            const { followupStatus } = await fetchFollowupData(
+              patientResource?.id
+            );
             const mrn = getPatientIdentifier(patientResource, MRN_UUID);
             const uan = getPatientIdentifier(patientResource, UAN_UUID);
 
             return {
-              id: patientResource.id,
+              id: patientResource?.id,
               name: patientName,
               patientLink: getPatientLink(),
-              gender: capitalize(patientResource.gender),
-              birthDate: patientResource.birthDate,
-              age: dayjs().diff(dayjs(patientResource.birthDate), "year"),
+              gender: capitalize(patientResource?.gender),
+              birthDate: patientResource?.birthDate,
+              age: dayjs().diff(dayjs(patientResource?.birthDate), "year"),
               mrn,
               uan,
               lastFollowupStatus: followupStatus,
