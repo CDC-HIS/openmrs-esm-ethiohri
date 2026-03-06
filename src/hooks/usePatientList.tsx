@@ -90,9 +90,9 @@ export function usePatientList(
           data?.data?.entry?.map(async (patient) => {
             const patientResource = patient?.resource;
             const patientName =
-              patientResource?.name?.[0].given.join(" ") +
+              patientResource?.name?.[0].given?.join(" ") +
               " " +
-              patientResource?.name?.[0].family;
+              patientResource?.name?.[0]?.family;
 
             const getPatientLink = () => (
               <ConfigurableLink
