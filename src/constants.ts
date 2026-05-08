@@ -221,3 +221,5 @@ export const POSITIVE_TRACKING_WARNING =
 
 export const RETESTING_WARNING =
   "⚠️ HIV re-testing form already completed for this patient.";
+
+export const spaBasePath = window.spaBase;

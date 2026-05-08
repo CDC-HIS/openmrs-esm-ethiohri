@@ -13,6 +13,7 @@ import {
   createDashboardGroup,
   createDashboardLink,
 } from "@openmrs/esm-patient-common-lib";
+import { createDashboardLink as dashboardLink } from "./createDashboardLink";
 import {
   CHILD_HEALTH_SUMMARY,
   CLINICAL_VISITS,
@@ -69,6 +70,7 @@ import VitalsSummary from "./views/vitals/vitals-summary.component";
 import HivBaselineSummary from "./views/hiv-baseline/hiv-baseline-summary.component";
 import ChildHealth from "./views/pmtct/child/hei.component";
 import { PatientList } from "./components/patient-lists/patient-list.component";
+import { spaBasePath } from "./constants";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
@@ -261,3 +263,12 @@ export const releaseNote = getAsyncLifecycle(
 );
 
 (window as any).calculateAgeFrom = calculateAgeFrom;
+
+export const centralTriageDashboardLink = getSyncLifecycle(
+  dashboardLink({
+    path: "ethiohri",
+    title: "Ethiohri",
+    basePath: spaBasePath,
+  }),
+  options
+);

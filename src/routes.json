@@ -169,6 +169,32 @@
       "name": "release-note-ext",
       "slot": "user-panel-slot",
       "component": "releaseNote"
+    },
+
+     {
+      "name": "ethiohri-dashboard-link",
+      "component": "centralTriageDashboardLink",
+      "slot": "homepage-dashboard-slot",
+      "order": 0,
+      "meta": {
+        "name": "ethiohri",
+        "title": "Ethiohri",
+        "path": "ethiohri",
+        "slot": "ethiohri-dashboard-slot"
+      }
+    },
+    {
+      "name": "ethiohri-dashboard",
+      "component": "patientList",
+      "slot": "ethiohri-dashboard-slot",
+      "online": true,
+      "offline": false
+    },
+    {
+      "component": "ethiohriLeftPanelLink",
+      "name": "ethiohri-left-panel-link",
+      "slot": "ethiohri-left-panel-slot"
     }
+     
   ]
 }

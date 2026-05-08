@@ -1,23 +1,37 @@
 {
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "module": "esnext",
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "jsx": "react",
-    "skipLibCheck": true,
-    "moduleResolution": "node",
     "lib": [
       "dom",
       "es5",
       "scripthost",
-      "es2022",
+      "es2015",
+      "es2015.promise",
       "es2016.array.include",
-      "es2018"
+      "es2018",
+      "es2020",
+      "es2022"
     ],
-    "resolveJsonModule": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noImplicitAny": false,
     "noEmit": true,
-    "target": "esnext"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test.tsx", "src/**/*.outdated.tsx"]
+    "paths": {
+      "@openmrs/esm-framework": ["./node_modules/@openmrs/esm-framework/dist/index.d.ts"],
+      "@openmrs/esm-framework/*": ["./node_modules/@openmrs/esm-framework/dist/*"], 
+      "tools": ["./tools"],
+      "tools/*": ["./tools/*"],
+      "__mocks__": ["./__mocks__"],
+      "__mocks__/*": ["./__mocks__/*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "strictNullChecks": false,
+    "target": "esnext",
+    "typeRoots": ["./node_modules/@types"]
+  }
 }
