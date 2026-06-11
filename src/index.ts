@@ -10,7 +10,7 @@ import {
   registerExpressionHelper,
 } from "@openmrs/openmrs-form-engine-lib";
 import {
-  createDashboardGroup,
+  // createDashboardGroup,
   createDashboardLink,
 } from "@openmrs/esm-patient-common-lib";
 import {
@@ -72,12 +72,12 @@ import { PatientList } from "./components/patient-lists/patient-list.component";
 
 export const moduleName = "@icap-ethiopia/esm-ethiohri-app";
 export const options = { featureName: "ethiohri", moduleName };
-export const importTranslation = require.context(
-  "../translations",
-  false,
-  /.json$/,
-  "lazy"
-);
+// export const importTranslation = require.context(
+//   "../translations",
+//   false,
+//   /.json$/,
+//   "lazy"
+// );
 
 export function startupApp() {
   defineConfigSchema(moduleName, configSchema);
@@ -91,19 +91,19 @@ export function startupApp() {
   registerExpressionHelper("customLatestObs", customLatestObs);
   registerExpressionHelper(
     "CustomAdultNutritionalStatusCalc",
-    CalcAdultNutritionalStatus
+    CalcAdultNutritionalStatus,
   );
   registerExpressionHelper(
     "CustomNutritionalScreeningCalc",
-    CalcNutritionalScreening
+    CalcNutritionalScreening,
   );
   registerExpressionHelper(
     "CustomOlderChildNutritionalStatusCalc",
-    CalcOlderChildNutritionalStatus
+    CalcOlderChildNutritionalStatus,
   );
   registerExpressionHelper(
     "CustomNextFollowupDateForCxCa",
-    CalcNextFollowupDateForCxCa
+    CalcNextFollowupDateForCxCa,
   );
   registerExpressionHelper("CustomBMICalc", CalcBMI);
   registerExpressionHelper("getGender", getGender);
@@ -114,13 +114,13 @@ export function startupApp() {
   registerExpressionHelper("isTreatmentVisible", isTreatmentVisible);
   registerExpressionHelper(
     "isSupplementaryFoodVisible",
-    isSupplementaryFoodVisible
+    isSupplementaryFoodVisible,
   );
   registerExpressionHelper("isTOVisible", isTOVisible);
   registerExpressionHelper("loadFollowupStatus", loadFollowupStatus);
   registerExpressionHelper(
     "CustomLatestObservations",
-    CustomLatestObservations
+    CustomLatestObservations,
   );
   registerExpressionHelper("getBirthdateFromAge", getBirthdateFromAge);
   registerExpressionHelper("getAgeFromBirthdate", getAgeFromBirthdate);
@@ -133,10 +133,8 @@ export function startupApp() {
 
 export const patientDetailsButton = getAsyncLifecycle(
   () =>
-    import(
-      "./components/actions-buttons/test-patient-details-button.component"
-    ),
-  options
+    import("./components/actions-buttons/test-patient-details-button.component"),
+  options,
 );
 
 export const attributeTags = getAsyncLifecycle(
@@ -145,7 +143,7 @@ export const attributeTags = getAsyncLifecycle(
   {
     featureName: "test-attribute-tags",
     moduleName,
-  }
+  },
 );
 export const hivBaseline = getSyncLifecycle(HivBaselineSummary, {
   featureName: "hiv-baseline-summary",
@@ -153,49 +151,49 @@ export const hivBaseline = getSyncLifecycle(HivBaselineSummary, {
 });
 export const ethiohriActiveMedications = getSyncLifecycle(
   ActiveMedications,
-  options
+  options,
 );
 export const vitalsOverview = getSyncLifecycle(VitalsSummary, options);
 
-export const hivCareAndTreatmentMenu = getSyncLifecycle(
-  createDashboardGroup(HIV_CARE_AND_TREATMENT),
-  options
-);
+// export const hivCareAndTreatmentMenu = getSyncLifecycle(
+//   createDashboardGroup(HIV_CARE_AND_TREATMENT),
+//   options,
+// );
 export const facilityName = getAsyncLifecycle(
   () => import("./views/navbar/facility-name.component"),
-  options
+  options,
 );
 export const programManagementMenu = getSyncLifecycle(
   createDashboardLink({
     ...PROGRAM_MANAGEMENT_META,
     moduleName,
   }),
-  options
+  options,
 );
 
 export const programManagementChart = getSyncLifecycle(
   ProgramManagment,
-  options
+  options,
 );
 export const clinicalVisitsMenu = getSyncLifecycle(
   createDashboardLink({
     ...CLINICAL_VISITS,
     moduleName,
   }),
-  options
+  options,
 );
 export const clinicalVisitsChart = getSyncLifecycle(VisitsSummary, options);
 
 export const pmtctMenu = getSyncLifecycle(
   createConditionalDashboardGroup(PMTCT_META),
-  options
+  options,
 );
 export const childHealthMenu = getSyncLifecycle(
   createConditionalDashboardLink({
     ...CHILD_HEALTH_SUMMARY,
     moduleName,
   }),
-  options
+  options,
 );
 export const childHealthChart = getSyncLifecycle(ChildHealth, options);
 export const motherHealthMenu = getSyncLifecycle(
@@ -203,7 +201,7 @@ export const motherHealthMenu = getSyncLifecycle(
     ...MOTHER_HEALTH_SUMMARY,
     moduleName,
   }),
-  options
+  options,
 );
 export const motherHealthChart = getSyncLifecycle(MotherHealth, options);
 export const prepMenu = getSyncLifecycle(
@@ -211,7 +209,7 @@ export const prepMenu = getSyncLifecycle(
     ...PREP_META,
     moduleName,
   }),
-  options
+  options,
 );
 export const prepChart = getSyncLifecycle(PreExposure, options);
 export const pepMenu = getSyncLifecycle(
@@ -219,7 +217,7 @@ export const pepMenu = getSyncLifecycle(
     ...POST_META,
     moduleName,
   }),
-  options
+  options,
 );
 export const pepChart = getSyncLifecycle(PostExposure, options);
 export const hivTestingServiceMenu = getSyncLifecycle(
@@ -227,22 +225,22 @@ export const hivTestingServiceMenu = getSyncLifecycle(
     ...HIV_TESTING_SERVICE_META,
     moduleName,
   }),
-  options
+  options,
 );
 export const hivTestingServiceChart = getSyncLifecycle(
   HIVTestingService,
-  options
+  options,
 );
 export const indexCaseTestingMenu = getSyncLifecycle(
   createDashboardLink({
     ...INDEX_CASE_TESTING_META,
     moduleName,
   }),
-  options
+  options,
 );
 export const indexCaseTestingChart = getSyncLifecycle(
   IndexCaseTesting,
-  options
+  options,
 );
 
 export const patientList = getSyncLifecycle(PatientList, {
@@ -252,12 +250,12 @@ export const patientList = getSyncLifecycle(PatientList, {
 
 export const helpMenu = getAsyncLifecycle(
   () => import("./views/navbar/help-button.component"),
-  options
+  options,
 );
 
 export const releaseNote = getAsyncLifecycle(
   () => import("./views/navbar/release-note.component"),
-  options
+  options,
 );
 
 (window as any).calculateAgeFrom = calculateAgeFrom;

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+// import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import {
   ENROLLED_IN_PMTCT_CONCEPT_ID,
   NOT_ENROLLED_IN_PMTCT_WARNING,
@@ -97,23 +98,23 @@ const PMTCTRegistrationEncounterList = ({
       await doesEncounterExist(
         patientUuid,
         HEI_ENROLLMENT_ENCOUNTER_TYPE,
-        setHasPreviousEncounter
+        setHasPreviousEncounter,
       );
 
       const enrolledInPMTCT = await getLatestObs(
         patientUuid,
         ENROLLED_IN_PMTCT_CONCEPT_ID,
-        REGISTRATION_ENCOUNTER_TYPE
+        REGISTRATION_ENCOUNTER_TYPE,
       );
       setHasEnrolledInPMTCT(
         enrolledInPMTCT?.valueCodeableConcept?.coding[0]?.code ===
-          yesConceptUUID
+          yesConceptUUID,
       );
     })();
   }, [isFormSaved]);
   return (
     <>
-      <EncounterList
+      {/* <EncounterList
         patientUuid={patientUuid}
         encounterType={HEI_ENROLLMENT_ENCOUNTER_TYPE}
         formList={[{ name: "HEI Enrollment" }]}
@@ -129,7 +130,7 @@ const PMTCTRegistrationEncounterList = ({
       />
       {!hasEnrolledInPMTCT && (
         <p className={styles.patientName}>{NOT_ENROLLED_IN_PMTCT_WARNING}</p>
-      )}
+      )} */}
     </>
   );
 };

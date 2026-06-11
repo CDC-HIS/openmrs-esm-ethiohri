@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import {
   artStartdate,
   dateOfHIVConfirmation,
@@ -12,7 +13,11 @@ import {
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
 import styles from "./ictservice.scss";
-import { fetchIdentifiers, getLatestObs, getPatientEncounters } from "../../../api/api";
+import {
+  fetchIdentifiers,
+  getLatestObs,
+  getPatientEncounters,
+} from "../../../api/api";
 import { DataTableSkeleton } from "@carbon/react";
 
 const columns = [
@@ -20,14 +25,19 @@ const columns = [
     key: "linkDate",
     header: "Linked Date",
     getValue: (encounter) => {
-      const linkedDate = getData(encounter, "e2e44119-7633-4d39-97a4-0ceffbb98d91", true);
-      return linkedDate ? linkedDate.split(',')[0].trim() : "";
+      const linkedDate = getData(
+        encounter,
+        "e2e44119-7633-4d39-97a4-0ceffbb98d91",
+        true,
+      );
+      return linkedDate ? linkedDate.split(",")[0].trim() : "";
     },
   },
   {
     key: "ictNumber",
     header: "ICT #",
-    getValue: (encounter) => getData(encounter, "b35f9632-9ff8-410f-bfcb-f497023bbcf9"),
+    getValue: (encounter) =>
+      getData(encounter, "b35f9632-9ff8-410f-bfcb-f497023bbcf9"),
   },
   {
     key: "targetGroup",
@@ -36,8 +46,10 @@ const columns = [
       const target = getData(encounter, "ca2c04ba-d9bd-4bad-ab03-e57ea9e49016");
       if (target === "Female sex worker") return "FSW";
       if (target === "OVC (Orphans and vulnerable children)") return "OVC";
-      if (target === "Partner of PLHIV (People living with HIV)") return "Partner of PLHIV";
-      if (target === "Children of PLHIV (People living with HIV)") return "Children of PLHIV";
+      if (target === "Partner of PLHIV (People living with HIV)")
+        return "Partner of PLHIV";
+      if (target === "Children of PLHIV (People living with HIV)")
+        return "Children of PLHIV";
       if (target === "Other MARPS-Wido-Divo-Sepa") return "Other MARPS";
       return target;
     },
@@ -49,7 +61,8 @@ const columns = [
       const rtri = getData(encounter, "3e0c5f07-cea4-4da5-8091-854c4d343bc0");
       if (rtri === "Recent") return "Probable Recent";
       if (rtri === "LT (Long-Term Infection)") return "Long Term";
-      if (rtri === "IR (Incident/Intermittent Infection)") return "Inconclusive";
+      if (rtri === "IR (Incident/Intermittent Infection)")
+        return "Inconclusive";
       return rtri;
     },
   },
@@ -57,7 +70,10 @@ const columns = [
     key: "caseClassification",
     header: "Case Classification Status",
     getValue: (encounter) => {
-      const caseFinding = getData(encounter, "eee5289d-b5fc-49f3-94a7-4755e369d470");
+      const caseFinding = getData(
+        encounter,
+        "eee5289d-b5fc-49f3-94a7-4755e369d470",
+      );
       if (caseFinding?.startsWith("C1")) return "C1";
       if (caseFinding?.startsWith("C2")) return "C2";
       if (caseFinding?.startsWith("C3")) return "C3";
@@ -107,7 +123,7 @@ const ICTGeneral = ({ patientUuid, isIndexFormSaved, onFormSaved }) => {
         getPatientEncounters(patientUuid, ICT_GENERAL_ENCOUNTER_TYPE),
       ]);
 
-      setHasMRN(identifiers?.some(e => e.identifierType.display === "MRN"));
+      setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));
       setIsStartedART(!!startedART);
       setHasIndexInformation(indexInformation.length > 0);
       setIsLoading(false);
@@ -135,7 +151,9 @@ const ICTGeneral = ({ patientUuid, isIndexFormSaved, onFormSaved }) => {
       {!hasMRN ? (
         <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
       ) : !isStartedART ? (
-        <p className={styles.warningMessage}>⚠️ Patient must initiate ART before accessing ICT services.</p>
+        <p className={styles.warningMessage}>
+          ⚠️ Patient must initiate ART before accessing ICT services.
+        </p>
       ) : null}
     </>
   );

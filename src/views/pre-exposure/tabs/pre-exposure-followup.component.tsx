@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import {
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
@@ -29,30 +30,35 @@ const columns = [
     key: "screeningDate",
     header: "Screening Date",
     getValue: (encounter) => {
-      const screeningDate = getData(encounter, "bd09b775-0294-4775-9615-964d98e06a4f", true);
-      return screeningDate ? screeningDate.split(',')[0].trim() : "";
+      const screeningDate = getData(
+        encounter,
+        "bd09b775-0294-4775-9615-964d98e06a4f",
+        true,
+      );
+      return screeningDate ? screeningDate.split(",")[0].trim() : "";
     },
   },
   {
     key: "followupDate",
     header: "Follow-up Date",
     getValue: (encounter) => {
-      const followupDate = getData(encounter, "5c118396-52dc-4cac-8860-e6d8e4a7f296", true);
-      return followupDate ? followupDate.split(',')[0].trim() : "";
+      const followupDate = getData(
+        encounter,
+        "5c118396-52dc-4cac-8860-e6d8e4a7f296",
+        true,
+      );
+      return followupDate ? followupDate.split(",")[0].trim() : "";
     },
   },
   {
     key: "finalTestResult",
     header: "HIV Test Result",
     getValue: (encounter) => {
-      const status = getData(
-        encounter,
-        "40d1c129-5373-4005-95b1-409e56db9743"
-      );
+      const status = getData(encounter, "40d1c129-5373-4005-95b1-409e56db9743");
       if (status === "Negative result") {
         return "Negative";
-      } 
-      return status; 
+      }
+      return status;
     },
   },
   {
@@ -61,7 +67,7 @@ const columns = [
     getValue: (encounter) => {
       return getData(encounter, "402e8f8c-0931-4e6a-9d53-962ab9519d4d");
     },
-  },  
+  },
   {
     key: "isClientPregnant",
     header: "Pregnant?",
@@ -73,28 +79,25 @@ const columns = [
     key: "followupStatus",
     header: "Follow-up Status",
     getValue: (encounter) => {
-              const status = getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
-              if (status === "Restart medication") return "Restart";
-              if (status === "Alive") return "On PrEP";
-              if (status === "New client") return "Newly started";
-              if (status === "Stop all") return "Stop";
-              if (status === "Loss to follow-up (LTFU)") return "Lost";
-              return status;
-            },
+      const status = getData(encounter, "222f64a8-a603-4d2e-b70e-2d90b622bb04");
+      if (status === "Restart medication") return "Restart";
+      if (status === "Alive") return "On PrEP";
+      if (status === "New client") return "Newly started";
+      if (status === "Stop all") return "Stop";
+      if (status === "Loss to follow-up (LTFU)") return "Lost";
+      return status;
+    },
   },
   {
     key: "prepRegimen",
     header: "PrEP Regimen",
     getValue: (encounter) => {
-              const status = getData(
-                encounter,
-                "722ff3de-e2d1-4df4-8d05-ca881dc7073b"
-              );
-              if (status === "Tenofovir disoproxil fumarate (TDF)/lamivudine (3TC)") {
-                return "TDF/3TC";
-              } 
-              return status; 
-            },
+      const status = getData(encounter, "722ff3de-e2d1-4df4-8d05-ca881dc7073b");
+      if (status === "Tenofovir disoproxil fumarate (TDF)/lamivudine (3TC)") {
+        return "TDF/3TC";
+      }
+      return status;
+    },
   },
   {
     key: "arvDispensedInDays",
@@ -143,58 +146,58 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
   const [hasMRN, setHasMRN] = useState(false);
   const [hasScreeningEncounter, setHasScreeningEncounter] = useState(false);
   const [isConfirmedPositive, setIsConfirmedPositive] = useState(false);
-  const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] = useState(false);
+  const [hasPositiveTrackingEncounter, setHasPositiveTrackingEncounter] =
+    useState(false);
   const [hasRetestingEncounter, setHasRetestingEncounter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-        (async () => {
-          const [identifiers, confirmedPositive, hasPosTracking, hasHIVRetesting, previousEncounters] = await Promise.all([
-            fetchIdentifiers(patientUuid),
-            getLatestObs(
+    (async () => {
+      const [
+        identifiers,
+        confirmedPositive,
+        hasPosTracking,
+        hasHIVRetesting,
+        previousEncounters,
+      ] = await Promise.all([
+        fetchIdentifiers(patientUuid),
+        getLatestObs(
           patientUuid,
           dateOfHIVConfirmation,
-          INTAKE_A_ENCOUNTER_TYPE
+          INTAKE_A_ENCOUNTER_TYPE,
         ),
+        getPatientEncounters(patientUuid, POSITIVE_TRACKING_ENCOUNTER_TYPE),
+        getPatientEncounters(patientUuid, RETEST_ENCOUNTER_TYPE),
         getPatientEncounters(
-              patientUuid,
-              POSITIVE_TRACKING_ENCOUNTER_TYPE
-            ),
-            getPatientEncounters(
           patientUuid,
-          RETEST_ENCOUNTER_TYPE
+          PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE,
         ),
-        getPatientEncounters(
-        patientUuid,
-        PRE_EXPOSURE_SCREENING_ENCOUNTER_TYPE
-      )
-          ]);
-    
-          setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));  
-          setIsConfirmedPositive(confirmedPositive != null)   
-          setHasPositiveTrackingEncounter(hasPosTracking.length)  
-          setHasRetestingEncounter(hasHIVRetesting.length); 
-          setHasScreeningEncounter(previousEncounters.length);
-          setIsLoading(false);
-        })();
-      }, [patientUuid, isFormSaved]);  
-  
-    if (isLoading)
-        return <DataTableSkeleton role="progressbar" zebra />;
+      ]);
+
+      setHasMRN(identifiers?.some((e) => e.identifierType.display === "MRN"));
+      setIsConfirmedPositive(confirmedPositive != null);
+      setHasPositiveTrackingEncounter(hasPosTracking.length);
+      setHasRetestingEncounter(hasHIVRetesting.length);
+      setHasScreeningEncounter(previousEncounters.length);
+      setIsLoading(false);
+    })();
+  }, [patientUuid, isFormSaved]);
+
+  if (isLoading) return <DataTableSkeleton role="progressbar" zebra />;
 
   return (
     <>
       {!hasMRN ? (
-    <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
-  ) : isConfirmedPositive ? (
-    <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
-  ) : hasPositiveTrackingEncounter ? (
-    <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
-  ) : hasRetestingEncounter ? (
-    <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
-  ) : !hasScreeningEncounter ? (
-    <p className={styles.warningMessage}>{formWarning("PREP Screening")}</p>
-  ) : null}
+        <p className={styles.warningMessage}>{MRN_NULL_WARNING}</p>
+      ) : isConfirmedPositive ? (
+        <p className={styles.warningMessage}>{POSITIVE_PATIENT_WARNING}</p>
+      ) : hasPositiveTrackingEncounter ? (
+        <p className={styles.warningMessage}>{POSITIVE_TRACKING_WARNING}</p>
+      ) : hasRetestingEncounter ? (
+        <p className={styles.warningMessage}>{RETESTING_WARNING}</p>
+      ) : !hasScreeningEncounter ? (
+        <p className={styles.warningMessage}>{formWarning("PREP Screening")}</p>
+      ) : null}
       <EncounterList
         patientUuid={patientUuid}
         encounterType={PRE_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE}
@@ -206,7 +209,11 @@ const PreExposureFollowupList = ({ patientUuid, isFormSaved }) => {
           displayText: "Add",
           moduleName: moduleName,
           hideFormLauncher:
-            !hasMRN || !hasScreeningEncounter || isConfirmedPositive || hasPositiveTrackingEncounter || hasRetestingEncounter,
+            !hasMRN ||
+            !hasScreeningEncounter ||
+            isConfirmedPositive ||
+            hasPositiveTrackingEncounter ||
+            hasRetestingEncounter,
         }}
       />
     </>

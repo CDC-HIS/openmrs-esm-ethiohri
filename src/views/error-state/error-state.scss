@@ -1,6 +1,6 @@
 @use '@carbon/styles/scss/spacing';
 @use '@carbon/styles/scss/type';
-@import "../../root.scss";
+@use "../../root.scss";
 
 .errorMessage {
   @include type.type-style("heading-compact-02");

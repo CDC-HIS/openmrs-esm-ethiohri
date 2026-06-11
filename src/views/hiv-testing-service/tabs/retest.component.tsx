@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import { MRN_NULL_WARNING, RETEST_ENCOUNTER_TYPE } from "../../../constants";
 import {
   doesEncounterExist,
@@ -15,39 +16,47 @@ const columns = [
     key: "dateOfInitialTest",
     header: "Date of Initial test",
     getValue: (encounter) => {
-      const rawDate = getData(encounter, "9182520e-24e8-4e84-aba7-6b56bdeb76d5", true);
-      return rawDate ? rawDate.split(',')[0].trim() : "";
-    },    
+      const rawDate = getData(
+        encounter,
+        "9182520e-24e8-4e84-aba7-6b56bdeb76d5",
+        true,
+      );
+      return rawDate ? rawDate.split(",")[0].trim() : "";
+    },
   },
   {
     key: "dateOfRetesting",
     header: "Date of Re-test",
     getValue: (encounter) => {
-      const retestDate = getData(encounter, "3c588dc4-cd32-47e6-a919-806e254b66c7", true);
-      return retestDate ? retestDate.split(',')[0].trim() : "";
+      const retestDate = getData(
+        encounter,
+        "3c588dc4-cd32-47e6-a919-806e254b66c7",
+        true,
+      );
+      return retestDate ? retestDate.split(",")[0].trim() : "";
     },
-  },  
+  },
   {
     key: "entryPoint",
     header: "Entry Point",
     getValue: (encounter) => {
       return getData(encounter, "d2b461e5-dd7f-4d16-968e-354ac68cbd38");
     },
-  },  
+  },
   {
     key: "finalResult",
     header: "Final Result",
     getValue: (encounter) => {
       const finalResult = getData(
         encounter,
-        "2b1ea8df-3293-4964-9b44-9e31dff678a4"
+        "2b1ea8df-3293-4964-9b44-9e31dff678a4",
       );
       if (finalResult === "Reactive") {
         return "Positive";
       } else if (finalResult === "Non-reactive") {
         return "Negative";
       }
-      return finalResult; 
+      return finalResult;
     },
   },
   {
@@ -56,14 +65,14 @@ const columns = [
     getValue: (encounter) => {
       const finalResultLab = getData(
         encounter,
-        "2e770be1-7397-4684-bea6-6632c23b00d7"
+        "2e770be1-7397-4684-bea6-6632c23b00d7",
       );
       if (finalResultLab === "Reactive") {
         return "Positive";
       } else if (finalResultLab === "Non-reactive") {
         return "Negative";
       }
-      return finalResultLab; 
+      return finalResultLab;
     },
   },
   {
@@ -116,7 +125,7 @@ const HivRetestList: React.FC<{ patientUuid: string }> = ({ patientUuid }) => {
       (async () => {
         const previousEncounters = await getPatientEncounters(
           patientUuid,
-          RETEST_ENCOUNTER_TYPE
+          RETEST_ENCOUNTER_TYPE,
         );
         previousEncounters.length
           ? setHasPreviousEncounter(true)

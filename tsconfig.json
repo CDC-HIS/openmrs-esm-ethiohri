@@ -1,23 +1,46 @@
 {
+  "exclude": ["node_modules"],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "module": "esnext",
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "jsx": "react",
-    "skipLibCheck": true,
-    "moduleResolution": "node",
     "lib": [
       "dom",
       "es5",
       "scripthost",
-      "es2022",
+      "es2015",
+      "es2015.promise",
       "es2016.array.include",
-      "es2018"
+      "es2018",
+      "es2020",
+      "es2022"
     ],
-    "resolveJsonModule": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noImplicitAny": false,
     "noEmit": true,
-    "target": "esnext"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["src/**/*.test.tsx", "src/**/*.outdated.tsx"]
+    "paths": {
+     "@openmrs/*": ["./node_modules/@openmrs/*"],
+      "@openmrs/esm-framework": ["./node_modules/@openmrs/esm-framework/dist/index.d.ts"],
+      "@openmrs/esm-framework/*": ["./node_modules/@openmrs/esm-framework/dist/*"],
+      "@openmrs/esm-styleguide": ["./node_modules/@openmrs/esm-styleguide/dist/public.d.ts"],
+      "@openmrs/esm-styleguide/*": ["./node_modules/@openmrs/esm-styleguide/dist/*"],
+      "@openmrs/esm-styleguide/src/internal": ["./node_modules/@openmrs/esm-styleguide/dist/public.d.ts"],
+      "@openmrs/esm-styleguide/src/*": ["./node_modules/@openmrs/esm-styleguide/dist/*"],
+      "@openmrs/esm-patient-common-lib": ["./node_modules/@openmrs/esm-patient-common-lib/src/index.ts"],
+      "@ohri/openmrs-esm-ohri-commons-lib": ["./node_modules/@ohri/openmrs-esm-ohri-commons-lib/src/index.ts"],
+
+      "tools": ["./tools"],
+      "tools/*": ["./tools/*"],
+      "__mocks__": ["./__mocks__"],
+      "__mocks__/*": ["./__mocks__/*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "strictNullChecks": false,
+    "target": "esnext",
+     "types": ["jest", "node"],
+    "typeRoots": ["./node_modules/@types"]
+  }
 }

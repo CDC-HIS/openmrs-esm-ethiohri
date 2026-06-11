@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import {
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
@@ -106,7 +107,7 @@ const PostExposureRegistration = ({ patientUuid, updateFormSavedStatus }) => {
       const positiveConfirmationDate = await getLatestObs(
         patientUuid,
         dateOfHIVConfirmation,
-        INTAKE_A_ENCOUNTER_TYPE
+        INTAKE_A_ENCOUNTER_TYPE,
       );
       if (positiveConfirmationDate != null) setIsConfirmedPositive(true);
     })();

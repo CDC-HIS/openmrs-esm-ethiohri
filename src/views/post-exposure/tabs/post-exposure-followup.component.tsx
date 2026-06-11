@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import {
   INTAKE_A_ENCOUNTER_TYPE,
   MRN_NULL_WARNING,
@@ -112,7 +113,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
     (async () => {
       const previousEncounters = await getPatientEncounters(
         patientUuid,
-        POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE
+        POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE,
       );
       if (previousEncounters.length) {
         setHasScreeningEncounter(true);
@@ -131,7 +132,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
       const positiveConfirmationDate = await getLatestObs(
         patientUuid,
         dateOfHIVConfirmation,
-        INTAKE_A_ENCOUNTER_TYPE
+        INTAKE_A_ENCOUNTER_TYPE,
       );
       if (positiveConfirmationDate != null) setIsConfirmedPositive(true);
     })();
@@ -139,7 +140,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
       const exposedPerson = await getLatestObs(
         patientUuid,
         exposedPersonStatus,
-        POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE
+        POST_EXPOSURE_REGISTRATION_ENCOUNTER_TYPE,
       );
       if (exposedPerson == "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         setIsExposedPersonReactive(true);
@@ -148,7 +149,7 @@ const PostExposureFollowup = ({ patientUuid, isFormSaved }) => {
       const hivStatusReactive = await getLatestObs(
         patientUuid,
         hivStatus,
-        POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE
+        POST_EXPOSURE_FOLLOWUP_ENCOUNTER_TYPE,
       );
       if (hivStatusReactive == "1228AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         setIsHivStatusReactive(true);

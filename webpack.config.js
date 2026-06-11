@@ -1,35 +1,9 @@
-const path = require("path");
-const config = (module.exports = require("openmrs/default-webpack-config"));
-config.scriptRuleConfig.exclude =
-  path.sep == "/"
-    ? /(node_modules[^\/@openmrs\/esm\-patient\-common\-lib])/
-    : /(node_modules[^\\@openmrs\/esm\-patient\-common\-lib])/;
-config.overrides.resolve = {
-  extensions: [".tsx", ".ts", ".jsx", ".js", ".scss"],
-  alias: {
-    "@openmrs/esm-framework": "@openmrs/esm-framework/src/internal",
-    "@openmrs/openmrs-form-engine-lib":
-      "@openmrs/openmrs-form-engine-lib/src/index",
-    "@ohri/openmrs-esm-ohri-commons-lib":
-      "@ohri/openmrs-esm-ohri-commons-lib/src/index",
-  },
-};
-config.module = {
-  rules: [
-    {
-      test: /\.(png|jpe?g|gif)$/i,
-      use: [
-        {
-          loader: "file-loader",
-        },
-      ],
-    },
-  ],
-};
+const config = require("openmrs/default-webpack-config");
 
-// Overrides to disable CSS Modules for non-scss scripts, this means
-// CSS Modules will only be supported with .scss scripts
-config.cssRuleConfig.use = ["style-loader", "css-loader"];
-config.cssRuleConfig.test = /\.css$/;
+// @openmrs/esm-patient-common-lib ships source-only (no dist build),
+// so we must allow swc-loader to transpile its TypeScript files.
+const { scriptRuleConfig } = require("@openmrs/webpack-config");
+scriptRuleConfig.exclude =
+  /node_modules\/(?!@openmrs\/esm-patient-common-lib\/)/;
 
 module.exports = config;

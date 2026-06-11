@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import {
   FAMILY_INFO_ENCOUNTER_TYPE,
   INTAKE_A_ENCOUNTER_TYPE,
@@ -113,7 +114,7 @@ const FamilyInformationList: React.FC<{ patientUuid: string }> = ({
       const answer = await getLatestObs(
         patientUuid,
         doesClientHaveFamilyMembers,
-        INTAKE_A_ENCOUNTER_TYPE
+        INTAKE_A_ENCOUNTER_TYPE,
       );
     })();
   });

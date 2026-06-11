@@ -1,6 +1,8 @@
 @use '@carbon/styles/scss/spacing';
 @use '@carbon/styles/scss/type';
-@import '../../root.scss';
+@use '../../root.scss';
+@use '@openmrs/esm-styleguide/src/vars' as *;
+
 
 .searchField {
   width: 100%;

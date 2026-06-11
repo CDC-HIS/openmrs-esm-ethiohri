@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { EncounterList } from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import { POSITIVE_TRACKING_ENCOUNTER_TYPE } from "../../../constants";
 import { getData } from "../../encounterUtils";
 import { moduleName } from "../../../index";
@@ -10,16 +11,24 @@ const columns = [
     key: "registrationDate",
     header: "Registration Date",
     getValue: (encounter) => {
-      const regDate = getData(encounter, "1ebc345c-6f09-43e1-a616-d7e52fff4c7d", true);
-      return regDate ? regDate.split(',')[0].trim() : "";
+      const regDate = getData(
+        encounter,
+        "1ebc345c-6f09-43e1-a616-d7e52fff4c7d",
+        true,
+      );
+      return regDate ? regDate.split(",")[0].trim() : "";
     },
   },
   {
     key: "hivPositiveDate",
     header: "HIV Positive Date",
     getValue: (encounter) => {
-      const positiveDate = getData(encounter, "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", true);
-      return positiveDate ? positiveDate.split(',')[0].trim() : "";
+      const positiveDate = getData(
+        encounter,
+        "160554AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        true,
+      );
+      return positiveDate ? positiveDate.split(",")[0].trim() : "";
     },
   },
   {
@@ -100,7 +109,7 @@ const PositiveTrackingList: React.FC<{ patientUuid: string }> = ({
     (async () => {
       const previousEncounters = await getPatientEncounters(
         patientUuid,
-        POSITIVE_TRACKING_ENCOUNTER_TYPE
+        POSITIVE_TRACKING_ENCOUNTER_TYPE,
       );
       previousEncounters.length
         ? setHasPreviousEncounter(true)

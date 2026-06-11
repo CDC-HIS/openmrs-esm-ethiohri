@@ -66,13 +66,13 @@ const PMTCTChildFinalOutcomeEncounterList = ({
       await doesEncounterExist(
         patientUuid,
         HEI_FINAL_OUTCOME_ENCOUNTER_TYPE,
-        setHasPreviousEncounter
+        setHasPreviousEncounter,
       );
 
       await doesEncounterExist(
         patientUuid,
         HEI_ENROLLMENT_ENCOUNTER_TYPE,
-        setHasEnrollmentEncounter
+        setHasEnrollmentEncounter,
       );
     })();
   }, [isFormSaved]);

@@ -1,5 +1,7 @@
 @use "@carbon/styles/scss/spacing";
-@import "../../root.scss";
+@use "../../root.scss";
+@use '@openmrs/esm-styleguide/src/vars' as *;
+
 
 .switcherContainer {
   display: flex;

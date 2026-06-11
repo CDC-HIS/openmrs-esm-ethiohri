@@ -3,12 +3,13 @@
  */
 module.exports = {
   transform: {
-    "^.+\\.(j|t)sx?$": "@swc/jest",
+    "^.+\\.m?[jt]sx?$": ["@swc/jest"],
   },
-  transformIgnorePatterns: ["/node_modules/(?!@openmrs)"],
+  transformIgnorePatterns: ["/node_modules/(?!@openmrs|.+\\.pnp\\.[^\\/]+$)"],
   moduleNameMapper: {
-    "\\.(s?css)$": "identity-obj-proxy",
     "@openmrs/esm-framework": "@openmrs/esm-framework/mock",
+    "@openmrs/esm-utils": "@openmrs/esm-framework/mock",
+    "\\.(s?css)$": "identity-obj-proxy",
     "^lodash-es/(.*)$": "lodash/$1",
     "^uuid$": "<rootDir>/node_modules/uuid/dist/index.js",
     "^dexie$": require.resolve("dexie"),
