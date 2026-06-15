@@ -1202,7 +1202,7 @@ __metadata:
     "@carbon/icons-react": "npm:^11.79.0"
     "@carbon/react": "npm:^1.83.0"
     "@hookform/resolvers": "npm:^5.2.2"
-    "@ohri/openmrs-esm-ohri-commons-lib": "npm:^2.3.6"
+    "@ohri/openmrs-esm-ohri-commons-lib": "npm:latest"
     "@openmrs/esm-framework": "npm:next"
     "@openmrs/esm-patient-common-lib": "npm:next"
     "@openmrs/esm-styleguide": "npm:next"
@@ -1263,7 +1263,6 @@ __metadata:
     yup: "npm:^1.7.1"
     zod: "npm:^4.4.3"
   peerDependencies:
-    "@ohri/openmrs-esm-ohri-commons-lib": 2.3.5
     "@openmrs/esm-framework": 9.x
     dayjs: 1.x
     react: 18.x
@@ -3056,7 +3055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ohri/openmrs-esm-ohri-commons-lib@npm:^2.3.6":
+"@ohri/openmrs-esm-ohri-commons-lib@npm:latest":
   version: 2.3.9
   resolution: "@ohri/openmrs-esm-ohri-commons-lib@npm:2.3.9"
   dependencies:

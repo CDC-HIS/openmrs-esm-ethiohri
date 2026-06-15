@@ -1,5 +1,8 @@
 {
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules","node_modules/@ohri/**",
+    "node_modules/@openmrs/esm-emr-api/**",
+    "node_modules/@openmrs/esm-react-utils/**",
+    "node_modules/@openmrs/openmrs-form-engine-lib/**"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -27,9 +30,8 @@
       "@openmrs/esm-styleguide/*": ["./node_modules/@openmrs/esm-styleguide/dist/*"],
       "@openmrs/esm-styleguide/src/internal": ["./node_modules/@openmrs/esm-styleguide/dist/public.d.ts"],
       "@openmrs/esm-styleguide/src/*": ["./node_modules/@openmrs/esm-styleguide/dist/*"],
-      "@openmrs/esm-patient-common-lib": ["./node_modules/@openmrs/esm-patient-common-lib/src/index.ts"],
-      "@ohri/openmrs-esm-ohri-commons-lib": ["./node_modules/@ohri/openmrs-esm-ohri-commons-lib/src/index.ts"],
-
+      "@ohri/*": ["./node_modules/@ohri/*"],
+ 
       "tools": ["./tools"],
       "tools/*": ["./tools/*"],
       "__mocks__": ["./__mocks__"],
