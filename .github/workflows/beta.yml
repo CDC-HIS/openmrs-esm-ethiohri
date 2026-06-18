@@ -1,0 +1,82 @@
+name: Beta Release
+
+on:
+  push:
+    branches:
+      - update-version-6
+  pull_request:
+    branches:
+      - update-version-6
+
+env:
+  ESM_NAME: "@icap-ethiopia/esm-ethiohri-app"
+  JS_NAME: "openmrs-esm-ethiohri-app.js"
+
+jobs:
+  build:
+    name: Build & Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Run Tests
+        run: yarn coverage
+
+      # - name: Type Check
+      #   run: yarn typescript
+
+      - name: Build
+        run: yarn build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+  pre_release:
+    name: Publish Beta Package
+    runs-on: ubuntu-latest
+    needs: build
+
+    if: github.event_name == 'push' && github.ref == 'refs/heads/update-version-6'
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+
+      - name: Install Dependencies
+        run: yarn
+
+      - name: Update Beta Version
+        run: |
+          sed -i -e "s/\(\"version\":\\s\+\"\([0-9]\+\.\?\)\+\)/\1-pre.${{ github.run_number }}/" package.json
+
+      - name: Publish Beta Release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          yarn config set npmAuthToken "${NODE_AUTH_TOKEN}"
+          yarn cipublish --access public --tag beta --no-git-tag-version

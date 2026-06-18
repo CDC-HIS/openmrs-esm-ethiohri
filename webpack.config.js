@@ -1,10 +1,7 @@
 const { scriptRuleConfig } = require("@openmrs/webpack-config");
 
 scriptRuleConfig.exclude = (modulePath) => {
-  if (
-    modulePath.includes("@openmrs/esm-patient-common-lib") ||
-    modulePath.includes("@ohri/openmrs-esm-ohri-commons-lib")
-  ) {
+  if (modulePath.includes("@openmrs/esm-patient-common-lib")) {
     return false;
   }
   return /node_modules/.test(modulePath);

@@ -4,10 +4,7 @@ import { ConfigurableLink, openmrsFetch } from "@openmrs/esm-framework";
 import dayjs from "dayjs";
 import capitalize from "lodash/capitalize";
 import { OverflowMenu } from "@carbon/react";
-import {
-  AddPatientToListOverflowMenuItem,
-  FhirPatientResponse,
-} from "@ohri/openmrs-esm-ohri-commons-lib";
+
 import {
   FOLLOWUP_ENCOUNTER_TYPE,
   FOLLOWUP_STATUS,
@@ -17,7 +14,7 @@ import {
 
 function getPatientIdentifier(resource: any, identifierUuid: string): string {
   const idObj = resource.identifier?.find((id: any) =>
-    id.type?.coding?.some((coding: any) => coding.code === identifierUuid)
+    id.type?.coding?.some((coding: any) => coding.code === identifierUuid),
   );
   return idObj?.value || "";
 }
@@ -25,7 +22,7 @@ function getPatientIdentifier(resource: any, identifierUuid: string): string {
 export function usePatientList(
   offSet: number,
   pageSize: number,
-  searchTerm?: string
+  searchTerm?: string,
 ) {
   const url = `/ws/fhir2/R4/Patient?_getpagesoffset=${offSet}&_count=${pageSize}${
     searchTerm ? `&name=${searchTerm}` : ""
@@ -33,10 +30,10 @@ export function usePatientList(
 
   const [paginatedPatientRows, setPaginatedPatientRows] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
-  const { data, error, isLoading } = useSWRImmutable<
-    { data: FhirPatientResponse },
-    Error
-  >(url, openmrsFetch);
+  const { data, error, isLoading } = useSWRImmutable<{ data: any }, Error>(
+    url,
+    openmrsFetch,
+  );
 
   // Fetch the last follow-up status
   async function fetchFollowupData(patientUuid: string): Promise<{
@@ -44,7 +41,7 @@ export function usePatientList(
   }> {
     try {
       const encounterRes = await openmrsFetch(
-        `/ws/rest/v1/encounter?patient=${patientUuid}&encounterType=${FOLLOWUP_ENCOUNTER_TYPE}&v=custom:(obs:(value,concept:(uuid)))&limit=1&order=desc`
+        `/ws/rest/v1/encounter?patient=${patientUuid}&encounterType=${FOLLOWUP_ENCOUNTER_TYPE}&v=custom:(obs:(value,concept:(uuid)))&limit=1&order=desc`,
       );
 
       const obs = encounterRes?.data?.results?.[0]?.obs || [];
@@ -75,7 +72,7 @@ export function usePatientList(
     } catch (e) {
       console.error(
         `Failed to load follow-up encounter data for patient ${patientUuid}`,
-        e
+        e,
       );
       return {
         followupStatus: "",
@@ -105,14 +102,14 @@ export function usePatientList(
 
             const patientActions = (
               <OverflowMenu flipped>
-                <AddPatientToListOverflowMenuItem
+                {/* <AddPatientToListOverflowMenuItem
                   patientUuid={patientResource?.id}
                   excludeCohorts={["Post-Test Counselling"]}
-                />
+                /> */}
               </OverflowMenu>
             );
             const { followupStatus } = await fetchFollowupData(
-              patientResource?.id
+              patientResource?.id,
             );
             const mrn = getPatientIdentifier(patientResource, MRN_UUID);
             const uan = getPatientIdentifier(patientResource, UAN_UUID);
@@ -129,7 +126,7 @@ export function usePatientList(
               lastFollowupStatus: followupStatus,
               actions: patientActions,
             };
-          })
+          }),
         );
         setTotalCount(data?.data.total);
         setPaginatedPatientRows(patientRows);

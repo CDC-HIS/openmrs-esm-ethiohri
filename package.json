@@ -8,7 +8,7 @@
   "main": "src/index.ts",
   "source": true,
   "scripts": {
-    "start": "openmrs develop --backend https://ahmc01.dh.moh.gov.et",
+    "start": "openmrs develop --backend https://3.229.229.190  --config-file ./config.json",
     "serve": "webpack serve --mode=development",
     "build": "webpack --mode production",
     "analyze": "webpack --mode=production --env.analyze=true",
@@ -68,7 +68,6 @@
     "swr": "2.x"
   },
   "devDependencies": {
-    "@ohri/openmrs-esm-ohri-commons-lib": "latest",
     "@openmrs/esm-framework": "next",
     "@openmrs/esm-patient-common-lib": "next",
     "@openmrs/esm-styleguide": "next",
@@ -123,7 +122,7 @@
     "swc-loader": "^0.2.7",
     "swr": "^2.4.1",
     "turbo": "^2.5.2",
-    "typescript": "^5.0.0",
+    "typescript": "5.5.4",
     "zod": "^4.4.3"
   },
   "resolutions": {
