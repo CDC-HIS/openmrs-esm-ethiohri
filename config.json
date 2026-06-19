@@ -29,6 +29,15 @@
         ]
       },
       "patient-chart-dashboard-slot": {
+         "add": [
+          "nav-group#HIVCareAndTreatment"
+        ],
+        "configure": {
+          "nav-group#HIVCareAndTreatment": {
+            "slotName": "hiv-care-and-treatment-slot",
+            "title": "HIV Care & Treatment"
+          }
+        },
         "remove": [
           "allergies-summary-dashboard",
           "attachments-results-summary-dashboard",

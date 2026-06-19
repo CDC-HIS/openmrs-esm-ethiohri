@@ -9,16 +9,7 @@
       "route": "home"
     }],
   "extensions": [
-     {
-      "name": "template-esm-ext",
-      "slot": "patient-chart-dashboard-slot",
-      "component": "templateEsmMenu",
-      "meta": {
-        "slot": "hiv-care-and-treatment-slot",
-        "path": "hiv-care-and-treatment",
-        "title": "HIV Care & Treatment"
-      }
-    },
+      
      {
       "name": "home-dashboard-slot",
       "component": "homeLeftPanelLink",
@@ -34,7 +25,6 @@
       "name": "home-slot",
       "slot": "home-dashboard-slot",
       "component": "homeDashboard"
-    } 
-    
+    }     
   ]
 }
