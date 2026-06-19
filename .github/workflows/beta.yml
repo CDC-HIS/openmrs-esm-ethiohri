@@ -76,7 +76,7 @@ jobs:
 
       - name: Publish Beta Release
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           yarn config set npmAuthToken "${NODE_AUTH_TOKEN}"
           yarn cipublish --access public --tag beta --no-git-tag-version
